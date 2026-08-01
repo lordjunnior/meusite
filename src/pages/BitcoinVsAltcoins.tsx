@@ -168,7 +168,7 @@ export default function BitcoinVsAltcoins() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="relative rounded-2xl overflow-hidden border border-white/[0.06]"
           >
-            <img src={bitcoinVsAltcoinsImg} alt="Rei Bitcoin no tabuleiro com altcoins caídas" className="w-full h-64 md:h-96 object-cover" style={{ filter: 'brightness(0.7) saturate(0.9)' }} />
+            <img src={bitcoinVsAltcoinsImg} alt="Rei Bitcoin no tabuleiro com altcoins caídas" className="w-full h-64 md:h-96 object-cover" style={{ filter: 'brightness(0.7) saturate(0.9)' }} loading="lazy" decoding="async" />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 30%, rgba(5,8,8,0.85) 100%)' }} />
             <div className="absolute bottom-6 left-6 right-6">
               <p className="text-stone-400 text-xs font-mono uppercase tracking-widest">Existe apenas um rei no tabuleiro — o resto é distração</p>

@@ -118,7 +118,7 @@ const ComparisonCard = ({ verdict, label, title, description, features, icon: Ic
       )}
       {image && (
         <div className="relative w-full h-48 overflow-hidden">
-          <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" style={{ filter: 'brightness(0.6) saturate(0.85)' }} />
+          <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" style={{ filter: 'brightness(0.6) saturate(0.85)' }} loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-card" />
         </div>
       )}

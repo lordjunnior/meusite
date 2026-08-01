@@ -366,7 +366,7 @@ export default function KucoinPayPix() {
                            hover:border-emerald-500/15 transition-all duration-500 group">
                 <div className="relative h-32 md:h-40 overflow-hidden">
                   <img src={place.img} alt={place.label} className="w-full h-full object-cover
-                    group-hover:scale-110 transition-transform duration-700 ease-out" />
+                    group-hover:scale-110 transition-transform duration-700 ease-out" loading="lazy" decoding="async" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-[#050808]/40 to-transparent" />
                   <div className="absolute top-3 left-3 p-2 rounded-lg bg-black/50 backdrop-blur-sm border border-white/10">
                     <place.icon size={16} className="text-emerald-400" />

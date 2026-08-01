@@ -672,7 +672,7 @@ export default function ProjetoAutonomo() {
       <section id="fase-01" className="relative z-10 scroll-mt-20 py-20 md:py-32">
         {/* Ambient background image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={bgFase01} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" style={{ filter: 'saturate(0.5)' }} />
+          <img src={bgFase01} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" style={{ filter: 'saturate(0.5)' }} loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050808] via-transparent to-[#050808]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-transparent to-[#050808]" />
         </div>
@@ -785,7 +785,7 @@ export default function ProjetoAutonomo() {
       <section id="fase-02" className="relative z-10 scroll-mt-20 py-20 md:py-32">
         {/* Ambient background image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={bgFase02} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" style={{ filter: 'saturate(0.5)' }} />
+          <img src={bgFase02} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" style={{ filter: 'saturate(0.5)' }} loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050808] via-transparent to-[#050808]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-transparent to-[#050808]" />
         </div>
@@ -988,7 +988,7 @@ export default function ProjetoAutonomo() {
       <section id="fase-03" className="relative z-10 scroll-mt-20 py-20 md:py-32">
         {/* Ambient background image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={bgFase03} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" style={{ filter: 'saturate(0.4)' }} />
+          <img src={bgFase03} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" style={{ filter: 'saturate(0.4)' }} loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050808] via-transparent to-[#050808]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-transparent to-[#050808]" />
         </div>
@@ -1173,7 +1173,7 @@ export default function ProjetoAutonomo() {
       <section id="fase-04" className="relative z-10 scroll-mt-20 py-20 md:py-32">
         {/* Ambient background image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={bgFase04} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.06]" style={{ filter: 'saturate(0.4)' }} />
+          <img src={bgFase04} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.06]" style={{ filter: 'saturate(0.4)' }} loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050808] via-transparent to-[#050808]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-transparent to-[#050808]" />
         </div>
@@ -1314,7 +1314,7 @@ export default function ProjetoAutonomo() {
       <section id="fase-05" className="relative z-10 scroll-mt-20 py-20 md:py-32">
         {/* Ambient background image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={bgFase05} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.08]" style={{ filter: 'saturate(0.6)' }} />
+          <img src={bgFase05} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.08]" style={{ filter: 'saturate(0.6)' }} loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050808] via-transparent to-[#050808]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-transparent to-[#050808]" />
         </div>
@@ -1383,7 +1383,7 @@ export default function ProjetoAutonomo() {
       <section id="fase-06" className="relative z-10 scroll-mt-20 py-20 md:py-32">
         {/* Ambient background image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={tlMente} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.10]" style={{ filter: 'saturate(0.5)' }} />
+          <img src={tlMente} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.10]" style={{ filter: 'saturate(0.5)' }} loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050808] via-transparent to-[#050808]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-transparent to-[#050808]" />
         </div>
@@ -1451,7 +1451,7 @@ export default function ProjetoAutonomo() {
       ═══════════════════════════════════════════════════════════ */}
       <section id="fase-07" className="relative z-10 scroll-mt-20 py-20 md:py-32">
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={imgCozinhaFuncionalHero} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.12]" style={{ filter: 'saturate(0.6)' }} />
+          <img src={imgCozinhaFuncionalHero} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.12]" style={{ filter: 'saturate(0.6)' }} loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050808] via-transparent to-[#050808]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-transparent to-[#050808]" />
         </div>

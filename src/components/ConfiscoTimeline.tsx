@@ -223,8 +223,7 @@ const ConfiscoTimeline = () => {
                   <img
                     src={presidenteImg}
                     alt="Presidente com a faixa presidencial, 1990"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                  />
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
                   <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-transparent to-background/40" />
                   
@@ -325,8 +324,7 @@ const ConfiscoTimeline = () => {
                     <img
                       src={card.image}
                       alt=""
-                      className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-all duration-700 ease-out scale-[1.02] group-hover:scale-[1.12] group-hover:brightness-110"
-                    />
+                      className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-all duration-700 ease-out scale-[1.02] group-hover:scale-[1.12] group-hover:brightness-110" loading="lazy" decoding="async" />
                     {/* Cinematic gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent group-hover:via-background/40 transition-all duration-700" />
                     {/* Gold shimmer line on hover */}

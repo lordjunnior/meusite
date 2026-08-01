@@ -287,7 +287,7 @@ const SoberaniaFinanceira = () => {
           {/* Parallax background */}
           <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
             <div className="absolute inset-0 scale-110">
-              <img src={heroImg} alt="" className="w-full h-full object-cover" style={{ filter: 'brightness(0.35) saturate(0.7)' }} />
+              <img src={heroImg} alt="" className="w-full h-full object-cover" style={{ filter: 'brightness(0.35) saturate(0.7)' }} loading="lazy" decoding="async" />
             </div>
             <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(5,8,8,0.1) 0%, rgba(5,8,8,0.4) 40%, rgba(5,8,8,0.85) 70%, rgba(5,8,8,1) 100%)' }} />
             <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 120% 100% at 50% 20%, transparent 30%, rgba(5,8,8,0.9) 100%)' }} />

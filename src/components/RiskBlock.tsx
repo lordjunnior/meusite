@@ -32,8 +32,7 @@ const RiskBlock = ({ title, consequences, className = "", theme = "dark", showIm
           <img
             src={imgRisco}
             alt="Vulnerabilidade sem preparação — pessoa em encruzilhada na névoa"
-            className="w-full h-full object-cover"
-          />
+            className="w-full h-full object-cover" loading="lazy" decoding="async" />
           <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-transparent to-card' : 'bg-gradient-to-b from-transparent to-stone-100'}`} />
         </div>
       )}

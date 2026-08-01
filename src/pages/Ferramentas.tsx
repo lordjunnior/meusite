@@ -228,8 +228,7 @@ const ToolCard: React.FC<{
             src={(tool as any).cover}
             alt={tool.title}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            style={{ filter: 'brightness(0.7) saturate(0.9)' }}
-          />
+            style={{ filter: 'brightness(0.7) saturate(0.9)' }} loading="lazy" decoding="async" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #050808, transparent 60%)' }} />
         </div>
       )}

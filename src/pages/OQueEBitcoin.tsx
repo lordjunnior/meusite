@@ -79,7 +79,7 @@ export default function OQueEBitcoin() {
             {/* ══════ HERO — Full Width Cinematic ══════ */}
             <motion.header style={{ y: heroY }} className="mb-28 relative overflow-hidden rounded-2xl border border-border/50">
               <div className="relative min-h-[500px] md:min-h-[600px]">
-                <img src={heroImg} alt="Bitcoin dourado flutuando em atmosfera cinematográfica" className="absolute inset-0 w-full h-full object-cover" />
+                <img src={heroImg} alt="Bitcoin dourado flutuando em atmosfera cinematográfica" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
 
@@ -138,7 +138,7 @@ export default function OQueEBitcoin() {
 
                   {/* Image */}
                   <div className="relative rounded-xl overflow-hidden border border-border/50 aspect-[4/5] lg:aspect-auto lg:min-h-[520px]">
-                    <img src={p2pImg} alt="Troca P2P de Bitcoin entre mãos" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <img src={p2pImg} alt="Troca P2P de Bitcoin entre mãos" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                     <div className="absolute bottom-6 left-6 right-6">
                       <span className="font-mono text-[9px] tracking-[0.3em] text-orange-400/80">PEER-TO-PEER · SEM INTERMEDIÁRIOS</span>
@@ -154,7 +154,7 @@ export default function OQueEBitcoin() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                   {/* Image */}
                   <div className="relative rounded-xl overflow-hidden border border-border/50 aspect-[4/5] lg:aspect-auto lg:min-h-[520px] order-2 lg:order-1">
-                    <img src={fiatImg} alt="Dinheiro fiat queimando" className="absolute inset-0 w-full h-full object-cover" />
+                    <img src={fiatImg} alt="Dinheiro fiat queimando" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                     <div className="absolute bottom-6 left-6 right-6">
                       <span className="font-mono text-[9px] tracking-[0.3em] text-orange-400/80">FIAT MORRE · BITCOIN PERMANECE</span>
@@ -294,7 +294,7 @@ export default function OQueEBitcoin() {
 
                   {/* Image */}
                   <div className="relative rounded-xl overflow-hidden border border-border/50 aspect-[4/5] lg:aspect-auto lg:min-h-[600px]">
-                    <img src={miningImg} alt="Fazenda de mineração Bitcoin industrial" className="absolute inset-0 w-full h-full object-cover" />
+                    <img src={miningImg} alt="Fazenda de mineração Bitcoin industrial" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                     <div className="absolute bottom-6 left-6 right-6">
                       <span className="font-mono text-[9px] tracking-[0.3em] text-green-400/80">PROOF OF WORK · ENERGIA REAL</span>
@@ -310,7 +310,7 @@ export default function OQueEBitcoin() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                   {/* Image */}
                   <div className="relative rounded-xl overflow-hidden border border-border/50 aspect-[4/5] lg:aspect-auto lg:min-h-[520px] order-2 lg:order-1">
-                    <img src={vaultImg} alt="Cofre de Bitcoin com luz dourada" className="absolute inset-0 w-full h-full object-cover" />
+                    <img src={vaultImg} alt="Cofre de Bitcoin com luz dourada" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                     <div className="absolute bottom-6 left-6 right-6">
                       <span className="font-mono text-[9px] tracking-[0.3em] text-amber-400/80">21 MILHÕES · ESCASSEZ ABSOLUTA</span>
@@ -413,7 +413,7 @@ export default function OQueEBitcoin() {
 
                   {/* Image */}
                   <div className="relative rounded-xl overflow-hidden border border-border/50 aspect-[4/5] lg:aspect-auto lg:min-h-[520px]">
-                    <img src={globeImg} alt="Rede descentralizada global do Bitcoin" className="absolute inset-0 w-full h-full object-cover" />
+                    <img src={globeImg} alt="Rede descentralizada global do Bitcoin" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                     <div className="absolute bottom-6 left-6 right-6">
                       <span className="font-mono text-[9px] tracking-[0.3em] text-orange-400/80">REDE GLOBAL · SEM FRONTEIRAS</span>
@@ -429,7 +429,7 @@ export default function OQueEBitcoin() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-12">
                   {/* Image */}
                   <div className="relative rounded-xl overflow-hidden border border-destructive/20 aspect-[4/5] lg:aspect-auto lg:min-h-[480px] order-2 lg:order-1">
-                    <img src={walletImg} alt="Hardware wallet Bitcoin em mão" className="absolute inset-0 w-full h-full object-cover" />
+                    <img src={walletImg} alt="Hardware wallet Bitcoin em mão" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                     <div className="absolute bottom-6 left-6 right-6">
                       <span className="font-mono text-[9px] tracking-[0.3em] text-destructive/80 animate-pulse">● AUTOCUSTÓDIA · SUAS CHAVES</span>

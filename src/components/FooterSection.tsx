@@ -87,8 +87,7 @@ const FooterSection = () => {
               <img
                 src={qrCodeImage}
                 alt="QR Code Lightning"
-                className="w-52 h-52 rounded-lg block"
-              />
+                className="w-52 h-52 rounded-lg block" loading="lazy" decoding="async" />
             </div>
 
             <div
@@ -289,8 +288,7 @@ const FooterSection = () => {
                 <img
                   src={qrCodeImage}
                   alt="QR Code Lightning"
-                  className="w-56 h-56 rounded-lg block mx-auto"
-                />
+                  className="w-56 h-56 rounded-lg block mx-auto" loading="lazy" decoding="async" />
               </div>
 
               <p className="text-xs text-muted-foreground mb-3">

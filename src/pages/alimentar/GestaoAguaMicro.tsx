@@ -299,8 +299,7 @@ export default function GestaoAguaMicro() {
             width={1920}
             height={1080}
             fetchPriority="high"
-            className="w-full h-full object-cover"
-          />
+            className="w-full h-full object-cover" loading="lazy" decoding="async" />
           {/* Apenas darken plano para legibilidade. Sem fade artístico. */}
           <div className="absolute inset-0" style={{ backgroundColor: 'rgba(8,16,24,0.38)' }} />
         </div>

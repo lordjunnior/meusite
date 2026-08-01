@@ -141,7 +141,7 @@ export default function AbrigoEmergencia() {
             O solo é o <strong className="text-stone-200">maior dissipador de calor</strong>. Dormir direto no chão pode reduzir temperatura corporal rapidamente.
           </p>
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden mb-4">
-            <img src={imgSoloIsolamento} alt="Isolamento do solo com papelão e cobertores" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgSoloIsolamento} alt="Isolamento do solo com papelão e cobertores" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <h3 className="text-base font-bold text-stone-200 mb-3">Técnicas Domésticas Aplicáveis</h3>
               <Check items={['3 camadas de papelão', 'Tapetes + cobertor inferior', 'Paletes reaproveitados', 'Estrado improvisado com madeira']} />
@@ -158,7 +158,7 @@ export default function AbrigoEmergencia() {
             Mesmo dentro de casa, <strong className="text-stone-200">janelas são pontos frágeis</strong>.
           </p>
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden mb-4">
-            <img src={imgReforcoJanela} alt="Janela reforçada com compensado e fita adesiva" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgReforcoJanela} alt="Janela reforçada com compensado e fita adesiva" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -181,7 +181,7 @@ export default function AbrigoEmergencia() {
           </p>
 
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden mb-4">
-            <img src={imgQuartoNucleo} alt="Ambiente compacto isolado" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgQuartoNucleo} alt="Ambiente compacto isolado" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <div className="flex items-center gap-2 mb-3">
                 <Home size={16} className="text-rose-400" />
@@ -222,7 +222,7 @@ export default function AbrigoEmergencia() {
 
           {/* Aquecedor de vela */}
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden mt-4">
-            <img src={imgAquecedorVela} alt="Aquecedor artesanal de vela com vasos de cerâmica" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgAquecedorVela} alt="Aquecedor artesanal de vela com vasos de cerâmica" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <h3 className="text-base font-bold text-stone-200 mb-3">Técnica Manual — Aquecedor de Vela Controlado</h3>
               <div className="grid md:grid-cols-2 gap-4">
@@ -289,7 +289,7 @@ export default function AbrigoEmergencia() {
           </div>
 
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden">
-            <img src={imgBanheiroImprovisado} alt="Banheiro improvisado com balde e serragem" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgBanheiroImprovisado} alt="Banheiro improvisado com balde e serragem" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <div className="flex items-center gap-2 mb-3">
                 <Trash2 size={16} className="text-rose-400" />
@@ -337,7 +337,7 @@ export default function AbrigoEmergencia() {
           </div>
 
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden">
-            <img src={imgResfriamentoPassivo} alt="Resfriamento passivo com pano úmido na janela" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgResfriamentoPassivo} alt="Resfriamento passivo com pano úmido na janela" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <div className="flex items-center gap-2 mb-3">
                 <Sun size={16} className="text-rose-400" />
@@ -356,7 +356,7 @@ export default function AbrigoEmergencia() {
             <strong className="text-stone-200">Caos aumenta estresse.</strong> Rotina reduz ansiedade.
           </p>
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden">
-            <img src={imgOrganizacao} alt="Abrigo organizado com áreas definidas" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgOrganizacao} alt="Abrigo organizado com áreas definidas" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <div className="grid grid-cols-2 gap-3">
                 {[
@@ -473,7 +473,7 @@ export default function AbrigoEmergencia() {
             <h2 className="text-xl md:text-2xl font-bold text-stone-200">Abrigo Improvisado Fora de Casa</h2>
           </div>
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden mb-4">
-            <img src={imgAFrame} alt="Abrigo A-Frame com lona" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgAFrame} alt="Abrigo A-Frame com lona" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <h3 className="text-lg font-bold text-stone-200 mb-3">Técnica A-Frame com Lona</h3>
               <div className="grid md:grid-cols-2 gap-4">

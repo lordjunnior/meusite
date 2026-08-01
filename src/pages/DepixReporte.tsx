@@ -184,7 +184,7 @@ export default function DepixReporte() {
         {/* ═══ HERO ═══ */}
         <div ref={heroRef} className="relative h-screen min-h-[700px] max-h-[1000px] overflow-hidden">
           <motion.div className="absolute inset-0" style={{ y: heroImgY, scale: heroImgScale }}>
-            <img src={heroImg} alt="DePix reporte 2026 vigilancia financeira" className="w-full h-full object-cover" style={{ filter: 'brightness(0.4) saturate(0.8)' }} />
+            <img src={heroImg} alt="DePix reporte 2026 vigilancia financeira" className="w-full h-full object-cover" style={{ filter: 'brightness(0.4) saturate(0.8)' }} loading="lazy" decoding="async" />
           </motion.div>
           <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(5,8,8,0.2) 0%, transparent 30%, rgba(5,8,8,0.6) 60%, #050808 100%)' }} />
           <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 100% 80% at 50% 45%, transparent 30%, rgba(5,8,8,0.9) 100%)' }} />
@@ -429,7 +429,7 @@ export default function DepixReporte() {
             {/* CTA Assessoria */}
             <motion.div variants={staggerChild} className="relative border border-red-500/20 rounded-2xl overflow-hidden" style={{ background: 'rgba(239,68,68,0.04)' }}>
               <div className="absolute inset-0 overflow-hidden">
-                <img src={brasilParaguaiImg} alt="" className="w-full h-full object-cover" style={{ filter: 'brightness(0.15) saturate(0.5)' }} />
+                <img src={brasilParaguaiImg} alt="" className="w-full h-full object-cover" style={{ filter: 'brightness(0.15) saturate(0.5)' }} loading="lazy" decoding="async" />
               </div>
               <div className="relative p-8 md:p-12">
                 <p className="text-[10px] font-bold tracking-[0.5em] uppercase text-red-400/60 mb-4">Assessoria Exclusiva</p>

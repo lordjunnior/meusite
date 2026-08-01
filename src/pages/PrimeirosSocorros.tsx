@@ -152,8 +152,7 @@ const PrimeirosSocorros = () => {
             alt="Médico tático aplicando primeiros socorros em cenário de trauma"
             fetchPriority="high"
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ filter: 'brightness(0.62) saturate(1.05)' }}
-          />
+            style={{ filter: 'brightness(0.62) saturate(1.05)' }} loading="lazy" decoding="async" />
           <div
             className="absolute inset-0"
             style={{

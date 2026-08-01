@@ -165,7 +165,7 @@ const HalvingBitcoin = () => {
 
           {/* Imagem */}
           <div className="w-full rounded-2xl overflow-hidden border border-white/[0.06] mb-8">
-            <img src={halvingImpacto} alt="Impacto do halving no valor do Bitcoin" className="w-full h-auto object-cover" style={{ filter: 'brightness(0.85) saturate(0.9)' }} />
+            <img src={halvingImpacto} alt="Impacto do halving no valor do Bitcoin" className="w-full h-auto object-cover" style={{ filter: 'brightness(0.85) saturate(0.9)' }} loading="lazy" decoding="async" />
           </div>
 
           <div className="space-y-5 text-stone-400 text-sm md:text-base leading-relaxed">

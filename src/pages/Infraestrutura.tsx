@@ -106,7 +106,7 @@ export default function Infraestrutura() {
 
             <motion.div variants={fadeUp} custom={2} className="relative">
               <div className="rounded-2xl overflow-hidden border border-white/[0.06]">
-                <img src={infraHardwareWallet} alt="Hardware wallet conectada a laptop" className="w-full h-[400px] lg:h-[500px] object-cover" />
+                <img src={infraHardwareWallet} alt="Hardware wallet conectada a laptop" className="w-full h-[400px] lg:h-[500px] object-cover" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-transparent to-transparent rounded-2xl" />
               </div>
               <div className="absolute bottom-6 left-6 right-6">
@@ -136,7 +136,7 @@ export default function Infraestrutura() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div variants={fadeUp} custom={1} className="relative order-2 lg:order-1">
               <div className="rounded-2xl overflow-hidden border border-white/[0.06]">
-                <img src={infraRaspberryNode} alt="Raspberry Pi rodando node Bitcoin" className="w-full h-[400px] lg:h-[500px] object-cover" />
+                <img src={infraRaspberryNode} alt="Raspberry Pi rodando node Bitcoin" className="w-full h-[400px] lg:h-[500px] object-cover" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-transparent to-transparent rounded-2xl" />
               </div>
               <div className="absolute bottom-6 left-6 right-6">
@@ -246,7 +246,7 @@ export default function Infraestrutura() {
 
             <motion.div variants={fadeUp} custom={2} className="relative">
               <div className="rounded-2xl overflow-hidden border border-white/[0.06]">
-                <img src={infraSsdStorage} alt="SSD NVMe sendo instalado em servidor" className="w-full h-[500px] lg:h-[650px] object-cover" />
+                <img src={infraSsdStorage} alt="SSD NVMe sendo instalado em servidor" className="w-full h-[500px] lg:h-[650px] object-cover" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-transparent to-transparent rounded-2xl" />
               </div>
               <div className="absolute bottom-6 left-6 right-6">
@@ -276,7 +276,7 @@ export default function Infraestrutura() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div variants={fadeUp} custom={1} className="relative order-2 lg:order-1">
               <div className="rounded-2xl overflow-hidden border border-white/[0.06]">
-                <img src={infraTorNetwork} alt="Servidor com rede Tor ativa" className="w-full h-[400px] lg:h-[500px] object-cover" />
+                <img src={infraTorNetwork} alt="Servidor com rede Tor ativa" className="w-full h-[400px] lg:h-[500px] object-cover" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-transparent to-transparent rounded-2xl" />
               </div>
               <div className="absolute bottom-6 left-6 right-6">

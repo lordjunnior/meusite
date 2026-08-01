@@ -609,7 +609,7 @@ export default function ProtocoloInicial() {
               </div>
               <div className="bg-[#0E131F] p-10 flex items-center justify-center border-l border-white/5">
                 <div className="w-full max-w-[240px] aspect-[2/3] rounded-sm shadow-2xl relative overflow-hidden border border-white/10 group-hover:scale-[1.03] transition-transform duration-700">
-                  <img src={coverSilencioQueda} alt="O Silêncio da Queda" className="w-full h-full object-cover" />
+                  <img src={coverSilencioQueda} alt="O Silêncio da Queda" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 </div>
               </div>
             </div>

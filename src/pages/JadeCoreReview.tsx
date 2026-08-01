@@ -99,8 +99,7 @@ export default function JadeCoreReview() {
           src={heroImg}
           alt="Hardware wallet Jade Core da Blockstream sobre superfície escura, tela brilhando em azul cyan"
           className="absolute inset-0 w-full h-full object-cover"
-          width={1920} height={1280}
-        />
+          width={1920} height={1280} loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#07080c] via-[#07080c]/70 to-[#07080c]/30" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-20 md:pb-28">
           <motion.p {...fade(0)} className="font-mono text-[10px] tracking-[0.35em] text-primary uppercase mb-6">

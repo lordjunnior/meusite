@@ -71,7 +71,7 @@ export default function BaseFisiologica() {
         {/* ─── MAPA DOS SISTEMAS ─── */}
         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="mb-28">
           <div className="relative w-full h-56 md:h-72 rounded-xl overflow-hidden mb-14">
-            <img src={imgSistemas} alt="Os 5 sistemas fisiológicos" className="w-full h-full object-cover" />
+            <img src={imgSistemas} alt="Os 5 sistemas fisiológicos" className="w-full h-full object-cover" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0d08] via-[#0a0d08]/30 to-transparent" />
             <div className="absolute bottom-4 left-5 right-5">
               <div className="flex flex-wrap gap-2">
@@ -100,7 +100,7 @@ export default function BaseFisiologica() {
         {/* ─── FICHAS POR SISTEMA ─── */}
         <div className="mb-28">
           <div className="relative w-full h-56 md:h-72 rounded-xl overflow-hidden mb-14">
-            <img src={imgPlantas} alt="Plantas medicinais na prática" className="w-full h-full object-cover" />
+            <img src={imgPlantas} alt="Plantas medicinais na prática" className="w-full h-full object-cover" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0d08] via-[#0a0d08]/30 to-transparent" />
           </div>
 

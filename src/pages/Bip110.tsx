@@ -554,7 +554,7 @@ export default function Bip110() {
                   transition={{ duration: 0.6, ease: APPLE_EASE, delay: i * 0.08 }}
                   className={`${panelClass} overflow-hidden group hover:border-primary/40 hover:-translate-y-1 transition-all duration-500`}>
                   <div className="relative h-40 overflow-hidden">
-                    <img src={card.img} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <img src={card.img} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                   </div>
                   <div className="p-5">
@@ -662,7 +662,7 @@ export default function Bip110() {
               </div>
 
               <div className={`${panelClass} p-3 self-start`}>
-                <img src={qrCodeImage} alt="QR Code Lightning" className="w-full h-auto rounded-lg" />
+                <img src={qrCodeImage} alt="QR Code Lightning" className="w-full h-auto rounded-lg" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>

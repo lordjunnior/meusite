@@ -182,8 +182,7 @@ export default function ConfiscoBitcoin() {
               alt="Hardware wallet sendo confiscada sob vigilância"
               className="absolute inset-0 w-full h-full object-cover"
               style={{ filter: "brightness(0.3) saturate(0.8)" }}
-              fetchPriority="high"
-            />
+              fetchPriority="high" loading="lazy" decoding="async" />
             <div className="absolute inset-0" style={{
               background: "linear-gradient(180deg, rgba(5,8,8,0.3) 0%, rgba(5,8,8,0.6) 40%, rgba(5,8,8,0.95) 80%, rgba(5,8,8,1) 100%)",
             }} />

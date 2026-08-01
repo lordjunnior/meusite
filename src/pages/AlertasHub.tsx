@@ -293,7 +293,7 @@ export default function AlertasHub() {
         ══════════════════════════════════════════════════════ */}
         <section className="relative min-h-[90vh] flex items-center overflow-hidden">
           <div className="absolute inset-0">
-            <img src={imgVigilancia} alt="Sala de vigilância estatal monitorando contas bancárias" className="w-full h-full object-cover" width={1344} height={768} />
+            <img src={imgVigilancia} alt="Sala de vigilância estatal monitorando contas bancárias" className="w-full h-full object-cover" width={1344} height={768} loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-[#050808]/90 to-[#050808]/60" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-transparent to-[#050808]/40" />
           </div>

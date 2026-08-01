@@ -128,7 +128,7 @@ const ControleVetores = () => {
 
           {/* Imagem */}
           <motion.div variants={staggerChild} className="mb-10 rounded-sm overflow-hidden relative">
-            <img src={imgRepelentes} alt="Óleos essenciais repelentes naturais" className="w-full h-64 md:h-80 object-cover" />
+            <img src={imgRepelentes} alt="Óleos essenciais repelentes naturais" className="w-full h-64 md:h-80 object-cover" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
             <div className="absolute bottom-4 left-4 right-4">
               <span className="text-xs font-mono tracking-widest uppercase text-green-400/70">Citronela · Eucalipto-limão · Lavanda · Cravo</span>
@@ -219,7 +219,7 @@ const ControleVetores = () => {
 
           {/* Imagem */}
           <motion.div variants={staggerChild} className="mb-10 rounded-sm overflow-hidden relative">
-            <img src={imgCiclo} alt="Ciclo do mosquito Aedes aegypti" className="w-full h-64 md:h-96 object-cover" />
+            <img src={imgCiclo} alt="Ciclo do mosquito Aedes aegypti" className="w-full h-64 md:h-96 object-cover" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
             <div className="absolute bottom-4 left-4">
               <span className="text-xs font-mono tracking-widest uppercase text-sky-400/70">Ovo → Larva → Pupa → Adulto</span>
@@ -284,7 +284,7 @@ const ControleVetores = () => {
 
           {/* Imagem */}
           <motion.div variants={staggerChild} className="mb-10 rounded-sm overflow-hidden relative">
-            <img src={imgBarreiras} alt="Tela mosquiteira e mosquiteiro de cama" className="w-full h-64 md:h-96 object-cover" />
+            <img src={imgBarreiras} alt="Tela mosquiteira e mosquiteiro de cama" className="w-full h-64 md:h-96 object-cover" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
           </motion.div>
 
@@ -349,7 +349,7 @@ const ControleVetores = () => {
 
           {/* Imagem */}
           <motion.div variants={staggerChild} className="mb-10 rounded-sm overflow-hidden relative">
-            <img src={imgJardim} alt="Varanda com plantas repelentes" className="w-full h-64 md:h-80 object-cover" />
+            <img src={imgJardim} alt="Varanda com plantas repelentes" className="w-full h-64 md:h-80 object-cover" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
           </motion.div>
 
