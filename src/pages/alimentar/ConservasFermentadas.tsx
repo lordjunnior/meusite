@@ -265,7 +265,7 @@ export default function ConservasFermentadas() {
             alt="Crock cerâmico com vegetais lacto-fermentados borbulhando"
             width={1920}
             height={1280}
-            fetchPriority="high"
+           
             className="w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="async" />
           <div className="absolute inset-0" style={{ backgroundColor: 'rgba(20,12,8,0.38)' }} />
         </div>

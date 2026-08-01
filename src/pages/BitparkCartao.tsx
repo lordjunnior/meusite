@@ -187,7 +187,7 @@ export default function BitparkCartao() {
               src={imgHero}
               alt="Cartão Bipa Bitcoin — cartão premium com símbolo Bitcoin em dourado flutuando sobre grade tecnológica"
               className="absolute inset-0 w-full h-full object-cover"
-              fetchPriority="high" loading="eager" fetchPriority="high" decoding="async" />
+              loading="eager" fetchPriority="high" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-[#050808]/40 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-b from-[#050808]/60 via-transparent to-transparent" />
 

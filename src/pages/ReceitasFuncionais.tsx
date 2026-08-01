@@ -160,7 +160,7 @@ function Hero() {
   return (
     <section className="relative h-[88vh] min-h-[640px] w-full overflow-hidden" style={{ backgroundColor: C.sage }}>
       <motion.div className="absolute inset-0" style={{ y: yBg }}>
-        <img src={imgHubHero} alt="" fetchPriority="high" className="w-full h-full object-cover scale-110" style={{ filter: 'saturate(1.05) contrast(1.02)' }} loading="eager" fetchPriority="high" decoding="async" />
+        <img src={imgHubHero} alt="" className="w-full h-full object-cover scale-110" style={{ filter: 'saturate(1.05) contrast(1.02)' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0" style={{
           background: `linear-gradient(180deg, rgba(28,38,24,0.35) 0%, rgba(28,38,24,0.45) 45%, rgba(28,38,24,0.78) 78%, rgba(20,28,18,0.92) 100%)`,
         }} />

@@ -180,7 +180,7 @@ function Hero() {
       <motion.div className="absolute inset-0" style={{ y: yBg }}>
         <img src={imgHero}
           alt="Caneca de vidro com chá quente e fumegante de gengibre cúrcuma e cravo de cor âmbar dourado ao lado de raiz de gengibre fresca tigela de cúrcuma em pó cravos espalhados meio limão e pote de mel cru sobre toalha de linho cor creme em luz natural"
-          fetchPriority="high" className="w-full h-full object-cover scale-110"
+          className="w-full h-full object-cover scale-110"
           style={{ filter: 'saturate(1.05) contrast(1.02)' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0" style={{
           background: `linear-gradient(180deg, rgba(28,38,24,0.35) 0%, rgba(28,38,24,0.45) 45%, rgba(28,38,24,0.78) 78%, rgba(20,28,18,0.92) 100%)`,

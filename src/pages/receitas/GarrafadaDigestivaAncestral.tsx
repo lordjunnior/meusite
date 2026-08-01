@@ -138,7 +138,7 @@ function Hero() {
       <motion.div className="absolute inset-0" style={{ y: yBg }}>
         <img src={imgHero}
           alt="Garrafa de vidro com garrafada cor âmbar e tampa de cortiça ao lado de folhas frescas de boldo guaco e galho de aroeira com frutos rosa, pote de mel cru sobre toalha de linho cor creme em luz natural suave"
-          fetchPriority="high" className="w-full h-full object-cover scale-110"
+          className="w-full h-full object-cover scale-110"
           style={{ filter: 'saturate(1.05) contrast(1.02)' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0" style={{
           background: `linear-gradient(180deg, rgba(28,38,24,0.35) 0%, rgba(28,38,24,0.45) 45%, rgba(28,38,24,0.78) 78%, rgba(20,28,18,0.92) 100%)`,
