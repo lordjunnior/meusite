@@ -2,10 +2,7 @@ User-agent: *
 Allow: /
 
 Disallow: /api/
-Disallow: /_next/
-Disallow: /assets/
 Disallow: /*.json$
-Disallow: /src/
 
 # Crawl-delay para bots agressivos
 User-agent: AhrefsBot
@@ -19,6 +16,3 @@ Crawl-delay: 30
 
 # Sitemap
 Sitemap: https://lordjunnior.com.br/sitemap.xml
-
-# Host
-Host: https://lordjunnior.com.br
