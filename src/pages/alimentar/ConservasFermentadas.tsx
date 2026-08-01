@@ -266,7 +266,7 @@ export default function ConservasFermentadas() {
             width={1920}
             height={1280}
             fetchPriority="high"
-            className="w-full h-full object-cover" loading="lazy" decoding="async" />
+            className="w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="async" />
           <div className="absolute inset-0" style={{ backgroundColor: 'rgba(20,12,8,0.38)' }} />
         </div>
 

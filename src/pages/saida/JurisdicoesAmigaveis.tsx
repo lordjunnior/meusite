@@ -182,7 +182,7 @@ function Hero() {
     <section className="relative h-[88vh] min-h-[640px] w-full overflow-hidden" style={{ backgroundColor: '#0e3b3a' }}>
       <motion.div className="absolute inset-0" style={{ y: yBg }}>
         <img src={heroImg} alt="" fetchPriority="high" className="w-full h-full object-cover scale-110"
-          style={{ filter: 'saturate(1.05) contrast(1.02)' }} loading="lazy" decoding="async" />
+          style={{ filter: 'saturate(1.05) contrast(1.02)' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0" style={{
           background: 'linear-gradient(180deg, rgba(14,59,58,0.55) 0%, rgba(14,59,58,0.35) 40%, rgba(244,237,228,0.05) 70%, #f4ede4 100%)',
         }} />

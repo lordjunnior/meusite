@@ -264,7 +264,7 @@ const Audiobooks: React.FC<AudiobooksProps> = ({ onPlay }) => {
             <img 
               src="/heroes/audioteca-soberana.webp" 
               alt="Audioteca Soberana"
-              className="w-full h-full object-cover brightness-[0.4] saturate-[0.85] scale-105" loading="lazy" decoding="async" />
+              className="w-full h-full object-cover brightness-[0.4] saturate-[0.85] scale-105" loading="eager" fetchPriority="high" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-[#050808]/60 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#050808]/80 via-transparent to-[#050808]/40" />
           </div>

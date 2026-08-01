@@ -291,7 +291,7 @@ export default function DolarVirtual() {
         {/* ── HERO ── */}
         <div ref={heroRef} className="relative h-[60vh] md:h-[70vh] overflow-hidden">
           <motion.div style={{ y: heroY }} className="absolute inset-0">
-            <img src={heroImg} alt="Jade hardware wallet para stablecoins USDT" className="w-full h-full object-cover" loading="lazy" decoding="async" />
+            <img src={heroImg} alt="Jade hardware wallet para stablecoins USDT" className="w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/60 to-background" />
             <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
           </motion.div>

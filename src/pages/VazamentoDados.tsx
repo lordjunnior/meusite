@@ -90,7 +90,7 @@ const VazamentoDados = () => {
               alt="Câmera de vigilância refletindo dados binários"
               className="w-full h-full object-cover"
               style={{ filter: "brightness(0.35) saturate(0.7)" }}
-              fetchPriority="high" loading="lazy" decoding="async" />
+              fetchPriority="high" loading="eager" fetchPriority="high" decoding="async" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 0%, rgba(5,8,8,0.7) 50%, hsl(var(--background)) 100%)" }} />
           </div>
 

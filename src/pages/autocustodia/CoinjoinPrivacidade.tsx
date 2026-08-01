@@ -200,7 +200,7 @@ function Hero() {
   return (
     <section className="relative h-[88vh] min-h-[640px] w-full overflow-hidden" style={sectionBg.privacyWash}>
       <motion.div className="absolute inset-0" style={{ y: yBg }}>
-        <img src={heroImg} alt="" fetchPriority="high" className="w-full h-full object-cover scale-110" style={{ filter: 'saturate(1.02) contrast(1.02)' }} loading="lazy" decoding="async" />
+        <img src={heroImg} alt="" fetchPriority="high" className="w-full h-full object-cover scale-110" style={{ filter: 'saturate(1.02) contrast(1.02)' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, hsl(44 33% 97% / 0.18) 0%, hsl(44 33% 97% / 0.10) 28%, hsl(38 28% 94% / 0.18) 55%, hsl(38 28% 94%) 100%)' }} />
       </motion.div>
 

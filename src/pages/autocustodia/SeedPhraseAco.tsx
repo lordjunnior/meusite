@@ -151,7 +151,7 @@ function Hero() {
   return (
     <section className="relative h-[88vh] min-h-[640px] w-full overflow-hidden" style={{ backgroundColor: '#1a1c1f' }}>
       <motion.div className="absolute inset-0" style={{ y: yBg }}>
-        <img src={heroImg} alt="" fetchPriority="high" className="w-full h-full object-cover scale-110" style={{ filter: 'saturate(1.02) contrast(1.05)' }} loading="lazy" decoding="async" />
+        <img src={heroImg} alt="" fetchPriority="high" className="w-full h-full object-cover scale-110" style={{ filter: 'saturate(1.02) contrast(1.05)' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(26,28,31,0.45) 0%, rgba(26,28,31,0.28) 35%, rgba(236,228,211,0.05) 70%, #ece4d3 100%)' }} />
       </motion.div>
 

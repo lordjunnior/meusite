@@ -79,7 +79,7 @@ export default function OQueEBitcoin() {
             {/* ══════ HERO — Full Width Cinematic ══════ */}
             <motion.header style={{ y: heroY }} className="mb-28 relative overflow-hidden rounded-2xl border border-border/50">
               <div className="relative min-h-[500px] md:min-h-[600px]">
-                <img src={heroImg} alt="Bitcoin dourado flutuando em atmosfera cinematográfica" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+                <img src={heroImg} alt="Bitcoin dourado flutuando em atmosfera cinematográfica" className="absolute inset-0 w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
 

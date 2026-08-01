@@ -169,7 +169,7 @@ const ExchangesSemKyc = () => {
               src={heroImg}
               alt="Hardware wallet sob feixe de luz, simbolizando privacidade financeira"
               className="w-full h-full object-cover"
-              style={{ filter: 'brightness(0.55) saturate(1.1)' }} loading="lazy" decoding="async" />
+              style={{ filter: 'brightness(0.55) saturate(1.1)' }} loading="eager" fetchPriority="high" decoding="async" />
           </motion.div>
           <div className="absolute inset-0 bg-gradient-to-b from-[#050808]/30 via-[#050808]/40 to-[#050808]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050808]/80 via-transparent to-[#050808]/40" />

@@ -169,7 +169,7 @@ function Hero() {
         alt="Santiago do Chile ao entardecer com a Cordilheira dos Andes ao fundo, capital da nova rota de residência para brasileiros"
         width={1920}
         height={1280}
-        className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+        className="absolute inset-0 w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="async" />
       <div
         className="absolute inset-0"
         style={{

@@ -132,7 +132,7 @@ export default function PolymarketRedeNeural() {
       {/* ─── HERO ─── */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="Rede Neural analisando mercados Bitcoin na Polymarket" className="w-full h-full object-cover" fetchPriority="high" loading="lazy" decoding="async" />
+          <img src={heroImg} alt="Rede Neural analisando mercados Bitcoin na Polymarket" className="w-full h-full object-cover" fetchPriority="high" loading="eager" fetchPriority="high" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-[#050808]/90 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-transparent to-[#050808]/40" />
         </div>

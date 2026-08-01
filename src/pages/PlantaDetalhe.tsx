@@ -110,7 +110,7 @@ export default function PlantaDetalhe() {
       {/* ═══ HERO — IMAGEM PARALLAX ═══ */}
       <section className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
         <img ref={heroImgRef} src={planta.imagem} alt={`${planta.nome} — ${planta.cientifico}`}
-          className="absolute inset-0 w-full h-[120%] object-cover will-change-transform" loading="lazy" decoding="async" />
+          className="absolute inset-0 w-full h-[120%] object-cover will-change-transform" loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#060806] via-[#060806]/50 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#060806]/60 to-transparent" />
 

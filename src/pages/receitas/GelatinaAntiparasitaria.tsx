@@ -149,7 +149,7 @@ function Hero() {
         <img src={imgHero}
           alt="Pote de vidro com gelatina translúcida cor âmbar contendo sementes de mamão e abóbora visíveis ao lado de cravos da índia espalhados e xícara de chá quente sobre toalha de linho creme"
           fetchPriority="high" className="w-full h-full object-cover scale-110"
-          style={{ filter: 'saturate(1.05) contrast(1.02)' }} loading="lazy" decoding="async" />
+          style={{ filter: 'saturate(1.05) contrast(1.02)' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0" style={{
           background: `linear-gradient(180deg, rgba(28,38,24,0.35) 0%, rgba(28,38,24,0.45) 45%, rgba(28,38,24,0.78) 78%, rgba(20,28,18,0.92) 100%)`,
         }} />

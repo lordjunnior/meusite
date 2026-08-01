@@ -370,7 +370,7 @@ const PalauDigitalResidency = () => {
         {/* ════════ HERO, FULL BLEED EDITORIAL ════════ */}
         <section ref={heroRef} className="relative h-[100vh] min-h-[720px] overflow-hidden">
           <motion.div className="absolute inset-0 z-0" style={{ y: heroImgY }}>
-            <img src={heroImg} alt="ID de Palau sobre mapa do Pacífico" className="w-full h-full object-cover" style={{ transform: "scale(1.15)" }} fetchPriority="high" loading="lazy" decoding="async" />
+            <img src={heroImg} alt="ID de Palau sobre mapa do Pacífico" className="w-full h-full object-cover" style={{ transform: "scale(1.15)" }} fetchPriority="high" loading="eager" fetchPriority="high" decoding="async" />
           </motion.div>
 
           <motion.div

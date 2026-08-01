@@ -148,7 +148,7 @@ function Hero() {
         <img src={imgHero}
           alt="Quatro potinhos de sobremesa funcional com camadas de gelatina de maracujá e chia hidratada decorados com flores de camomila e folhas de melissa sobre toalha de linho cor creme"
           fetchPriority="high" className="w-full h-full object-cover scale-110"
-          style={{ filter: 'saturate(1.05) contrast(1.02)' }} loading="lazy" decoding="async" />
+          style={{ filter: 'saturate(1.05) contrast(1.02)' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0" style={{
           background: `linear-gradient(180deg, rgba(28,38,24,0.35) 0%, rgba(28,38,24,0.45) 45%, rgba(28,38,24,0.78) 78%, rgba(20,28,18,0.92) 100%)`,
         }} />
