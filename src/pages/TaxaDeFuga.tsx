@@ -3,6 +3,7 @@ import { PlaneTakeoff, Globe, ShieldAlert, Landmark, Zap, Activity, ArrowLeft } 
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import BackToHome from '@/components/BackToHome';
+import SeoHead from '@/components/SeoHead';
 
 const DESTINATIONS = [
   { id: 'us', name: 'Estados Unidos', flight: 4000, visa: 25000, rent: 12000, tax: '10-37%' },
@@ -44,6 +45,22 @@ const TaxaDeFuga: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-mono">
+      <SeoHead
+        custom={{
+          title: 'Taxa de Fuga: calcule o custo de sair do Brasil',
+          description: 'Calculadora de custo de saida do Brasil: passagens, vistos, reserva de emergencia e o valor equivalente em Bitcoin para 10 jurisdicoes.',
+          canonical: 'https://lordjunnior.com.br/taxa-de-fuga',
+          primaryKeyword: 'custo para sair do brasil',
+          lsiKeywords: ['residencia no exterior', 'segundo passaporte', 'expatriacao', 'jurisdicao fiscal', 'bitcoin no exterior'],
+          longTailKeywords: ['quanto custa sair do brasil com a familia', 'calculadora de custo de expatriacao', 'quanto custa morar no paraguai'],
+          breadcrumbs: [
+            { name: 'Inicio', url: '/' },
+            { name: 'Saida', url: '/saida' },
+            { name: 'Taxa de Fuga', url: '/taxa-de-fuga' },
+          ],
+          schemaType: 'WebPage',
+        }}
+      />
       <div className="relative z-20 px-6 md:px-12 lg:px-20 pt-[52px]">
         <BackToHome />
       </div>
