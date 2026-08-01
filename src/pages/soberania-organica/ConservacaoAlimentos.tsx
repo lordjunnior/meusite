@@ -307,9 +307,8 @@ export default function ConservacaoAlimentos() {
             alt="Despensa rústica de soberania alimentar com conservas em vidro, ervas penduradas e carnes curadas ao entardecer"
             width={1920}
             height={1280}
-            fetchPriority="high"
-            className="w-full h-full object-cover"
-          />
+           
+            className="w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="async" />
           {/* Apenas darken sutil para legibilidade do texto, SEM fade artístico */}
           <div className="absolute inset-0" style={{ backgroundColor: 'rgba(20,12,4,0.32)' }} />
         </div>

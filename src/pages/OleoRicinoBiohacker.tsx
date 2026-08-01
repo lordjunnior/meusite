@@ -342,7 +342,7 @@ export default function OleoRicinoBiohacker() {
         {/* ═══ SECTION DIVIDER: Cinematic Image ═══ */}
         <div className="relative z-10 h-64 md:h-96 overflow-hidden">
           <img src="/heroes/ricino-section-bg.webp" alt="Óleo de rícino em detalhe macro"
-            className="absolute inset-0 w-full h-full object-cover" style={{ filter: 'brightness(0.25) saturate(0.7)' }} />
+            className="absolute inset-0 w-full h-full object-cover" style={{ filter: 'brightness(0.25) saturate(0.7)' }} loading="eager" fetchPriority="high" decoding="async" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(8,6,4,1) 0%, transparent 30%, transparent 70%, rgba(8,6,4,1) 100%)' }} />
           <div className="absolute inset-0 flex items-center justify-center">
             <motion.p {...fade(0)} className="text-stone-500 text-xs md:text-sm font-bold uppercase tracking-[0.5em] text-center max-w-xl px-6">
@@ -522,7 +522,7 @@ export default function OleoRicinoBiohacker() {
         <section id="protocolo" className="relative z-10 py-20 md:py-32">
           {/* Section background */}
           <div className="absolute inset-0 z-0 overflow-hidden">
-            <img src="/heroes/ricino-protocolo-bg.webp" alt="" className="absolute inset-0 w-full h-full object-cover" style={{ filter: 'brightness(0.12) saturate(0.5)' }} />
+            <img src="/heroes/ricino-protocolo-bg.webp" alt="" className="absolute inset-0 w-full h-full object-cover" style={{ filter: 'brightness(0.12) saturate(0.5)' }} loading="eager" fetchPriority="high" decoding="async" />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(8,6,4,1) 0%, transparent 20%, transparent 80%, rgba(8,6,4,1) 100%)' }} />
           </div>
           <div className="max-w-7xl mx-auto px-6 md:px-10">

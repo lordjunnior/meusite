@@ -244,8 +244,7 @@ function Hero() {
         alt="Mão inserindo cartão preto matte em caixa eletrônico à noite, simbolizando saque privado de dinheiro vivo com cartão cripto"
         width={1920}
         height={1280}
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+        className="absolute inset-0 w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="async" />
       <div
         className="absolute inset-0"
         style={{

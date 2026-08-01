@@ -289,8 +289,7 @@ export default function TeoriaDasBandeiras() {
             src={heroImg}
             alt="Mesa clara com passaporte, mapa, cartão e bússola em composição editorial sobre soberania internacional"
             className="h-full w-full object-cover"
-            fetchPriority="high"
-          />
+            loading="eager" fetchPriority="high" decoding="async" />
         </motion.div>
 
         <div

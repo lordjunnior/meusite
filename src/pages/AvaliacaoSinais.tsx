@@ -98,7 +98,7 @@ const AvaliacaoSinais = () => {
           </motion.div>
 
           <motion.div variants={staggerChild} className="mb-10 rounded-xl overflow-hidden relative">
-            <img src={imgTemperatura} alt="Escala térmica" className="w-full h-64 md:h-80 object-cover" />
+            <img src={imgTemperatura} alt="Escala térmica" className="w-full h-64 md:h-80 object-cover" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-[#050808]/30 to-transparent" />
             <div className="absolute bottom-4 left-4 right-4">
               <span className="text-xs font-mono tracking-widest uppercase text-red-400/70">Hipotermia · Normal · Febre · Hiperpirexia</span>
@@ -190,7 +190,7 @@ const AvaliacaoSinais = () => {
           </motion.div>
 
           <motion.div variants={staggerChild} className="mb-10 rounded-xl overflow-hidden relative">
-            <img src={imgPerfusao} alt="Teste de perfusão capilar" className="w-full h-64 md:h-80 object-cover" />
+            <img src={imgPerfusao} alt="Teste de perfusão capilar" className="w-full h-64 md:h-80 object-cover" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-[#050808]/30 to-transparent" />
             <div className="absolute bottom-4 left-4 right-4">
               <span className="text-xs font-mono tracking-widest uppercase text-rose-400/70">Perfusão Capilar · Compensação · Taquicardia</span>
@@ -335,7 +335,7 @@ const AvaliacaoSinais = () => {
           </motion.div>
 
           <motion.div variants={staggerChild} className="mb-10 rounded-xl overflow-hidden relative">
-            <img src={imgDesidratacao} alt="Escala de desidratação" className="w-full h-64 md:h-80 object-cover" />
+            <img src={imgDesidratacao} alt="Escala de desidratação" className="w-full h-64 md:h-80 object-cover" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-[#050808]/30 to-transparent" />
           </motion.div>
 
@@ -390,7 +390,7 @@ const AvaliacaoSinais = () => {
           </motion.div>
 
           <motion.div variants={staggerChild} className="mb-10 rounded-xl overflow-hidden relative">
-            <img src={imgAvpu} alt="Escala AVPU" className="w-full h-64 md:h-80 object-cover" />
+            <img src={imgAvpu} alt="Escala AVPU" className="w-full h-64 md:h-80 object-cover" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-[#050808]/30 to-transparent" />
             <div className="absolute bottom-4 left-4 right-4">
               <span className="text-xs font-mono tracking-widest uppercase text-amber-400/70">Escala AVPU</span>
@@ -455,7 +455,7 @@ const AvaliacaoSinais = () => {
           </motion.div>
 
           <motion.div variants={staggerChild} className="mb-10 rounded-xl overflow-hidden relative">
-            <img src={imgFicha} alt="Ficha de monitoramento clínico" className="w-full h-64 md:h-80 object-cover" />
+            <img src={imgFicha} alt="Ficha de monitoramento clínico" className="w-full h-64 md:h-80 object-cover" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-[#050808]/30 to-transparent" />
           </motion.div>
 

@@ -204,7 +204,7 @@ export default function ConhecimentoPerdido() {
         ═══════════════════════════════════════════════════ */}
         <motion.header initial="hidden" animate="visible" variants={fadeUp} custom={0} className="mb-20">
           <div className="relative w-full h-72 md:h-96 rounded-2xl overflow-hidden mb-10">
-            <img src={imgHero} alt="Conhecimento Perdido" className="w-full h-full object-cover" />
+            <img src={imgHero} alt="Conhecimento Perdido" className="w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0d0b08] via-[#0d0b08]/40 to-transparent" />
             <div className="absolute bottom-6 left-6 md:left-10">
               <span className="text-amber-400/60 text-[10px] font-bold tracking-[0.5em] uppercase">Fase 04 · Núcleo Biológico</span>

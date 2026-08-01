@@ -298,9 +298,8 @@ export default function GestaoAguaMicro() {
             alt="Água da chuva caindo de calha em barril azul de captação ao entardecer"
             width={1920}
             height={1080}
-            fetchPriority="high"
-            className="w-full h-full object-cover"
-          />
+           
+            className="w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="async" />
           {/* Apenas darken plano para legibilidade. Sem fade artístico. */}
           <div className="absolute inset-0" style={{ backgroundColor: 'rgba(8,16,24,0.38)' }} />
         </div>

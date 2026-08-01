@@ -185,7 +185,7 @@ export default function Candlestick() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="relative rounded-2xl overflow-hidden border border-white/[0.06]"
           >
-            <img src={candlestickAnatomiaImg} alt="Gráfico candlestick em terminal profissional" className="w-full h-64 md:h-96 object-cover" style={{ filter: 'brightness(0.7) saturate(0.9)' }} />
+            <img src={candlestickAnatomiaImg} alt="Gráfico candlestick em terminal profissional" className="w-full h-64 md:h-96 object-cover" style={{ filter: 'brightness(0.7) saturate(0.9)' }} loading="lazy" decoding="async" />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 30%, rgba(5,8,8,0.8) 100%)' }} />
             <div className="absolute bottom-6 left-6 right-6">
               <p className="text-stone-400 text-xs font-mono uppercase tracking-widest">Cada vela carrega quatro dimensões do mercado</p>
@@ -267,7 +267,7 @@ export default function Candlestick() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="relative rounded-2xl overflow-hidden border border-white/[0.06]"
           >
-            <img src={candlestickPadroesImg} alt="Sala de operações com múltiplos monitores de análise gráfica" className="w-full h-64 md:h-96 object-cover" style={{ filter: 'brightness(0.65) saturate(0.85)' }} />
+            <img src={candlestickPadroesImg} alt="Sala de operações com múltiplos monitores de análise gráfica" className="w-full h-64 md:h-96 object-cover" style={{ filter: 'brightness(0.65) saturate(0.85)' }} loading="lazy" decoding="async" />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 30%, rgba(5,8,8,0.85) 100%)' }} />
             <div className="absolute bottom-6 left-6 right-6">
               <p className="text-stone-400 text-xs font-mono uppercase tracking-widest">Padrões se repetem porque a psicologia humana não muda</p>

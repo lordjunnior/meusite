@@ -137,7 +137,7 @@ const NovaLeiContaCorrente = () => {
 
       {/* HERO Full Bleed */}
       <div className="relative w-full h-[92vh] min-h-[640px] overflow-hidden">
-        <img src={heroImg} alt="Cofre bancario marmore com banknotes brasileiras sob luz dramatica" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
+        <img src={heroImg} alt="Cofre bancario marmore com banknotes brasileiras sob luz dramatica" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050606] via-[#050606]/70 to-[#050606]/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050606]/60 via-transparent to-[#050606]/40" />
 

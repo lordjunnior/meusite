@@ -97,7 +97,7 @@ export function EducacaoBotanica() {
 
       {/* Hero Image */}
       <div className="relative w-full h-56 md:h-72 rounded-xl overflow-hidden mb-14">
-        <img src={imgFamilia} alt="Educação botânica familiar" className="w-full h-full object-cover" />
+        <img src={imgFamilia} alt="Educação botânica familiar" className="w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0d08] via-[#0a0d08]/30 to-transparent" />
         <div className="absolute bottom-5 left-6">
           <p className="text-emerald-300/80 text-sm font-medium italic" style={{ fontFamily: "'Playfair Display', serif" }}>

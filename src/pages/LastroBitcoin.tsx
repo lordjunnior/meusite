@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import BackToHome from '@/components/BackToHome';
+import SeoHead from '@/components/SeoHead';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {
@@ -49,6 +50,7 @@ export default function LastroBitcoin() {
     <div className="min-h-screen text-stone-100 font-sans selection:bg-red-300/50 relative overflow-hidden"
       style={{ background: '#050808' }}
     >
+      <SeoHead path="/lastro" />
       <ScrollToTop />
       <div className="relative z-20 px-6 md:px-12 lg:px-20 pt-[52px]">
         <BackToHome />

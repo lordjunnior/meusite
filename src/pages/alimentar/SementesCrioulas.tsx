@@ -265,9 +265,8 @@ export default function SementesCrioulas() {
             alt="Mãos de agricultor segurando bacia com sementes crioulas variadas"
             width={1920}
             height={1280}
-            fetchPriority="high"
-            className="w-full h-full object-cover"
-          />
+           
+            className="w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="async" />
           <div className="absolute inset-0" style={{ backgroundColor: 'rgba(20,12,6,0.38)' }} />
         </div>
 

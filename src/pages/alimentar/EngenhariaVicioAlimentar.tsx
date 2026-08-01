@@ -189,10 +189,9 @@ const EngenhariaVicioAlimentar = () => {
           <img
             src={imgHero}
             alt="Laboratório de engenharia de alimentos analisando ultraprocessados sob luz clínica"
-            fetchPriority="high"
+           
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ filter: 'brightness(0.55) saturate(1.15) contrast(1.05)' }}
-          />
+            style={{ filter: 'brightness(0.55) saturate(1.15) contrast(1.05)' }} loading="eager" fetchPriority="high" decoding="async" />
           <div
             className="absolute inset-0"
             style={{

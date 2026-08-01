@@ -198,8 +198,7 @@ const Ebooks: React.FC = () => {
             <img 
               src="/heroes/biblioteca-soberana.webp" 
               alt="Biblioteca Soberana"
-              className="w-full h-full object-cover brightness-[0.4] saturate-[0.85] scale-105"
-            />
+              className="w-full h-full object-cover brightness-[0.4] saturate-[0.85] scale-105" loading="eager" fetchPriority="high" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-[#050808]/60 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#050808]/80 via-transparent to-[#050808]/40" />
           </div>
@@ -273,8 +272,7 @@ const Ebooks: React.FC = () => {
                     <img 
                       src={ebook.cover} 
                       alt={ebook.title}
-                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
-                    />
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110" loading="lazy" decoding="async" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
                       {ebook.tags.map(tag => (
@@ -366,8 +364,7 @@ const Ebooks: React.FC = () => {
                         <img 
                           src={book.cover} 
                           alt={book.title}
-                          className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110"
-                        />
+                          className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110" loading="lazy" decoding="async" />
                       ) : (
                         <div className="w-full h-full bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
                           <BookOpen className="w-12 h-12 text-muted-foreground/50" />

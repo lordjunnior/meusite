@@ -41,7 +41,7 @@ export function FichaPlanta({ planta }: { planta: PlantaFicha }) {
     >
       {/* ═══ IMAGEM DE IDENTIFICAÇÃO ═══ */}
       <div className="relative w-full h-56 md:h-64 overflow-hidden">
-        <img src={planta.imagem} alt={planta.nome} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <img src={planta.imagem} alt={planta.nome} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a0f] via-[#0f1a0f]/50 to-transparent" />
         <div className="absolute bottom-4 left-5 right-5">
           <div className="flex items-end justify-between">

@@ -54,8 +54,7 @@ const CinematicHero: React.FC<CinematicHeroProps> = ({
           alt=""
           fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover will-change-transform scale-110"
-          style={{ filter: 'brightness(0.45) saturate(0.85)' }}
-        />
+          style={{ filter: 'brightness(0.45) saturate(0.85)' }} loading="lazy" decoding="async" />
         {/* Multi-layer overlay */}
         <div
           className="absolute inset-0"

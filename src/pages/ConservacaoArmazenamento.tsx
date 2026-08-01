@@ -699,7 +699,7 @@ export default function ConservacaoArmazenamento() {
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
           className="relative rounded-3xl overflow-hidden mb-10 border border-white/[0.06]"
         >
-          <img src={imgArsenalAuxiliar} alt="Arsenal auxiliar: seladora a vácuo, baldes herméticos, absorvedores de oxigênio" className="w-full h-48 md:h-72 object-cover" />
+          <img src={imgArsenalAuxiliar} alt="Arsenal auxiliar: seladora a vácuo, baldes herméticos, absorvedores de oxigênio" className="w-full h-48 md:h-72 object-cover" loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-t from-stone-900/50 via-transparent to-transparent" />
           <div className="absolute bottom-5 left-6 right-6">
             <p className="text-white/90 text-sm font-semibold">Equipamentos e insumos que multiplicam a eficiência do armazenamento.</p>

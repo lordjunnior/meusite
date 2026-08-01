@@ -203,7 +203,7 @@ export default function PixAnonimo() {
 
       {/* ══ HERO FULL-BLEED ══ */}
       <section className="relative h-[90vh] min-h-[600px] flex items-end overflow-hidden">
-        <img src={imgHero} alt="Sistema de recebimento PIX anonimo com QR Code dinamico" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
+        <img src={imgHero} alt="Sistema de recebimento PIX anonimo com QR Code dinamico" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-[#050808]/70 to-[#050808]/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050808]/80 via-transparent to-transparent" />
 

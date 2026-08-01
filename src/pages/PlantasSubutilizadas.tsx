@@ -393,7 +393,7 @@ export default function PlantasSubutilizadas() {
           <div className="max-w-7xl mx-auto">
             <div className="border-2 border-red-500/50 bg-gradient-to-br from-red-950/50 to-[#07080c] rounded-3xl p-8 md:p-12 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-1/3 h-full opacity-20 pointer-events-none">
-                <img src={imgAristolochia} alt="" className="w-full h-full object-cover" />
+                <img src={imgAristolochia} alt="" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#07080c]" />
               </div>
               <div className="relative z-10 max-w-4xl">

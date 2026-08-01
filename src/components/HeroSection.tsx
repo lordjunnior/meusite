@@ -87,7 +87,7 @@ const HeroSection = () => {
     <section id="hero-section" ref={sectionRef} className="relative min-h-[110vh] flex items-center overflow-hidden">
       {/* ── Video Background ── */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
-        <img src="/heroes/hero-poster.webp" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110" style={{ filter: "brightness(0.3) saturate(0.7)" }} />
+        <img src="/heroes/hero-poster.webp" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110" style={{ filter: "brightness(0.3) saturate(0.7)" }} loading="eager" fetchPriority="high" decoding="async" />
         <video ref={videoRef} autoPlay loop muted playsInline preload="auto" poster="/heroes/hero-poster.webp" className="absolute inset-0 w-full h-full object-cover scale-110" style={{ filter: "brightness(0.3) saturate(0.7)" }}>
           <source src={HERO_VIDEO_URL} type="video/mp4" />
         </video>

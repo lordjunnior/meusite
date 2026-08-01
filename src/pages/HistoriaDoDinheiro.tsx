@@ -259,7 +259,7 @@ export default function HistoriaDoDinheiro() {
                 </p>
               </div>
               <div className="relative">
-                <img src={imgOuro} alt="Moedas de ouro antigas sobre mármore escuro" className="rounded-2xl border border-border/20 w-full object-cover" width={1280} height={720} />
+                <img src={imgOuro} alt="Moedas de ouro antigas sobre mármore escuro" className="rounded-2xl border border-border/20 w-full object-cover" width={1280} height={720} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 rounded-2xl" style={{ background: 'linear-gradient(180deg, transparent 50%, rgba(5,8,8,0.6) 100%)' }} />
                 <div className="absolute bottom-4 left-5 right-5">
                   <p className="text-muted-foreground text-[10px] font-mono uppercase tracking-[0.2em]">Ouro: 5.000 anos como reserva de valor — sem precisar de governo</p>

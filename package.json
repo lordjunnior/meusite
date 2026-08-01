@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "predev": "bunx tsx scripts/generate-sitemap.ts",
+    "prebuild": "bunx tsx scripts/generate-sitemap.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

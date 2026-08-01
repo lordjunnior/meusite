@@ -142,7 +142,7 @@ export default function NavegacaoPrimaria() {
           </div>
 
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden">
-            <img src={imgSombra} alt="Método da sombra com bastão" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgSombra} alt="Método da sombra com bastão" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <h3 className="text-lg font-bold text-stone-200 mb-3">Técnica da Sombra (Método do Bastão)</h3>
               <p className="text-stone-400 text-sm mb-4">Funciona sem qualquer equipamento.</p>
@@ -173,7 +173,7 @@ export default function NavegacaoPrimaria() {
             A bússola aponta para o <strong className="text-stone-200">Norte magnético</strong>.
           </p>
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden mb-4">
-            <img src={imgBussola} alt="Bússola nivelada em campo aberto" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgBussola} alt="Bússola nivelada em campo aberto" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -246,7 +246,7 @@ export default function NavegacaoPrimaria() {
             Mesmo sem GPS, <strong className="text-stone-200">cidades oferecem orientação</strong>.
           </p>
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden mb-4">
-            <img src={imgUrbana} alt="Horizonte urbano com referências de orientação" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgUrbana} alt="Horizonte urbano com referências de orientação" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-4">
                 {['Igrejas', 'Torres', 'Morros', 'Linhas de transmissão', 'Estradas principais'].map(item => (
@@ -321,7 +321,7 @@ export default function NavegacaoPrimaria() {
           </div>
 
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden">
-            <img src={imgNoturna} alt="Navegação noturna com lanterna" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgNoturna} alt="Navegação noturna com lanterna" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <div className="flex items-center gap-2 mb-3">
                 <Moon size={16} className="text-rose-400" />

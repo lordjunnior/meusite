@@ -20,8 +20,7 @@ const StrategicSignature = () => {
           <img
             src={imgManifesto}
             alt="Bússola e mapa antigo — símbolo de navegação autônoma e soberania pessoal"
-            className="w-full h-full object-cover"
-          />
+            className="w-full h-full object-cover" loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
           <div className="absolute bottom-8 left-8 md:left-12">
             <p className="font-mono text-[9px] tracking-[0.4em] text-gold/80 uppercase">Princípio fundador</p>

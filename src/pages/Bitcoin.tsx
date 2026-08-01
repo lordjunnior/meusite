@@ -180,7 +180,7 @@ const Bitcoin = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Image */}
             <div className="relative rounded-xl overflow-hidden border border-border/50 aspect-[4/5] lg:aspect-auto lg:min-h-[520px]">
-              <img src={seedImg} alt="Placa metálica de backup de seed phrase com hardware wallet" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={seedImg} alt="Placa metálica de backup de seed phrase com hardware wallet" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <span className="font-mono text-[9px] tracking-[0.3em] text-amber-400/80">SEED PHRASE · BACKUP METÁLICO</span>
@@ -243,7 +243,7 @@ const Bitcoin = () => {
 
             {/* Image */}
             <div className="relative rounded-xl overflow-hidden border border-border/50 aspect-[4/5] lg:aspect-auto lg:min-h-[680px] lg:sticky lg:top-24">
-              <img src={hwWalletsImg} alt="Hardware wallet conectada a laptop em ambiente escuro" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={hwWalletsImg} alt="Hardware wallet conectada a laptop em ambiente escuro" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <span className="font-mono text-[9px] tracking-[0.3em] text-amber-400/80">HARDWARE WALLET · SECURE ELEMENT</span>
@@ -257,7 +257,7 @@ const Bitcoin = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Image */}
             <div className="relative rounded-xl overflow-hidden border border-border/50 aspect-[4/5] lg:aspect-auto lg:min-h-[520px] order-2 lg:order-1">
-              <img src={nodeImg} alt="Raspberry Pi rodando node Bitcoin com LEDs verdes" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={nodeImg} alt="Raspberry Pi rodando node Bitcoin com LEDs verdes" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <span className="font-mono text-[9px] tracking-[0.3em] text-green-400/80">NODE SOBERANO · DON'T TRUST, VERIFY</span>
@@ -380,7 +380,7 @@ const Bitcoin = () => {
 
             {/* Image */}
             <div className="relative rounded-xl overflow-hidden border border-border/50 aspect-[4/5] lg:aspect-auto lg:min-h-[600px] lg:sticky lg:top-24">
-              <img src={chartImg} alt="Terminal financeiro exibindo gráfico de valorização" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={chartImg} alt="Terminal financeiro exibindo gráfico de valorização" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <span className="font-mono text-[9px] tracking-[0.3em] text-amber-400/80">PERFORMANCE · BTC vs ATIVOS TRADICIONAIS</span>

@@ -222,7 +222,7 @@ const PixCripto: React.FC = () => {
           {/* Tutorial image */}
           <motion.div variants={scaleIn} custom={0}
             className="rounded-2xl overflow-hidden border border-white/[0.06] mb-12">
-            <img src={pixCritoTutorial} alt="Tutorial PIX com Cripto" className="w-full h-auto object-cover" />
+            <img src={pixCritoTutorial} alt="Tutorial PIX com Cripto" className="w-full h-auto object-cover" loading="lazy" decoding="async" />
           </motion.div>
 
           <div className="max-w-3xl space-y-0">
@@ -506,7 +506,7 @@ const PixCripto: React.FC = () => {
                 Tudo aqui é gratuito. Sem paywall. Sem assinatura. Se isso te ajudou, apoie voluntariamente — é assim que projetos soberanos sobrevivem.
               </p>
               <div className="inline-block rounded-2xl overflow-hidden border border-white/[0.08]">
-                <img src={qrCodeLightning} alt="QR Code Lightning Network" className="w-48 h-48 object-cover" />
+                <img src={qrCodeLightning} alt="QR Code Lightning Network" className="w-48 h-48 object-cover" loading="lazy" decoding="async" />
               </div>
               <p className="text-xs text-stone-700 font-mono">Lightning Network</p>
             </div>

@@ -38,8 +38,7 @@ export default function AlertBanner() {
           src={alertImg}
           alt="Dinheiro em chamas sob câmeras de vigilância"
           className="absolute inset-0 w-full h-full object-cover will-change-transform"
-          style={{ filter: 'brightness(0.35) saturate(0.9)' }}
-        />
+          style={{ filter: 'brightness(0.35) saturate(0.9)' }} loading="eager" fetchPriority="high" decoding="async" />
         {/* Bottom fade */}
         <div
           className="absolute inset-0"

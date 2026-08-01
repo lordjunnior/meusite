@@ -150,10 +150,9 @@ const PrimeirosSocorros = () => {
           <img
             src={imgHero}
             alt="Médico tático aplicando primeiros socorros em cenário de trauma"
-            fetchPriority="high"
+           
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ filter: 'brightness(0.62) saturate(1.05)' }}
-          />
+            style={{ filter: 'brightness(0.62) saturate(1.05)' }} loading="eager" fetchPriority="high" decoding="async" />
           <div
             className="absolute inset-0"
             style={{

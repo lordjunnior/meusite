@@ -130,10 +130,9 @@ const RicosNaoInvestemFiis: React.FC = () => {
           <img
             src={heroImg}
             alt="Investidor solitário em corredor de mármore com luz dourada do entardecer, metáfora do investidor pessoa física diante do sistema financeiro"
-            fetchPriority="high"
+           
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ filter: "brightness(0.78) saturate(1.05)" }}
-          />
+            style={{ filter: "brightness(0.78) saturate(1.05)" }} loading="eager" fetchPriority="high" decoding="async" />
           <div
             className="absolute inset-0"
             style={{

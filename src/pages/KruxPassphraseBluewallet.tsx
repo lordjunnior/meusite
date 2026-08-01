@@ -486,7 +486,7 @@ const KruxPassphraseBluewallet = () => {
                 </p>
               </div>
               <div className="relative">
-                <img src={imgQrcode} alt="Comunicação air-gapped via QR code entre Krux e smartphone" className="rounded-2xl border border-border/20 w-full object-cover" width={1280} height={720} />
+                <img src={imgQrcode} alt="Comunicação air-gapped via QR code entre Krux e smartphone" className="rounded-2xl border border-border/20 w-full object-cover" width={1280} height={720} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 rounded-2xl" style={{ background: 'linear-gradient(180deg, transparent 50%, rgba(5,8,8,0.6) 100%)' }} />
                 <div className="absolute bottom-4 left-5 right-5">
                   <p className="text-muted-foreground text-[10px] font-mono uppercase tracking-[0.2em]">QR code: única ponte entre a Krux e o mundo exterior</p>

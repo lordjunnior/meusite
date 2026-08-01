@@ -206,7 +206,7 @@ export default function BankOfGeorgia() {
         {/* HERO */}
         <div ref={heroRef} className="relative h-[90vh] min-h-[650px] max-h-[950px] flex items-end overflow-hidden">
           <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
-            <div className="absolute inset-0 scale-110"><img src={heroImg} alt="" className="w-full h-full object-cover" style={{ filter: 'brightness(0.3) saturate(0.7)' }} /></div>
+            <div className="absolute inset-0 scale-110"><img src={heroImg} alt="" className="w-full h-full object-cover" style={{ filter: 'brightness(0.3) saturate(0.7)' }} loading="eager" fetchPriority="high" decoding="async" /></div>
             <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(5,8,8,0.05) 0%, rgba(5,8,8,0.4) 35%, rgba(5,8,8,0.88) 65%, #050808 100%)' }} />
             <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 130% 100% at 50% 15%, transparent 25%, rgba(5,8,8,0.92) 100%)' }} />
           </motion.div>
@@ -278,7 +278,7 @@ export default function BankOfGeorgia() {
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <motion.div variants={staggerChild} className="border border-white/[0.06] bg-white/[0.02] rounded-2xl p-6 md:row-span-2 flex items-center justify-center">
-                <img src={appImg} alt="Bank of Georgia App" className="w-full max-w-xs rounded-xl opacity-90" />
+                <img src={appImg} alt="Bank of Georgia App" className="w-full max-w-xs rounded-xl opacity-90" loading="lazy" decoding="async" />
               </motion.div>
               {FEATURES.map((item, i) => (
                 <motion.div key={i} variants={staggerChild} className="border border-white/[0.06] bg-white/[0.02] rounded-2xl p-6 hover:border-emerald-500/20 transition-colors duration-500">

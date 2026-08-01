@@ -154,7 +154,7 @@ const MultisigBitcoin = () => {
 
       {/* HERO — Full Bleed */}
       <div className="relative w-full h-[90vh] min-h-[600px] overflow-hidden">
-        <img src={heroImg} alt="Hardware wallets em formacao de seguranca Multisig Bitcoin" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
+        <img src={heroImg} alt="Hardware wallets em formacao de seguranca Multisig Bitcoin" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-[#050808]/60 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050808]/40 to-transparent" />
 

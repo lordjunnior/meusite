@@ -296,8 +296,7 @@ export default function SobreMim() {
           <img
             src={heroBg}
             alt="Hardware Bitcoin macro"
-            className="w-full h-full object-cover scale-105"
-          />
+            className="w-full h-full object-cover scale-105" loading="eager" fetchPriority="high" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#08090a] via-[#08090a]/80 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#08090a] via-transparent to-[#08090a]/60" />
           <div className="absolute inset-0 bg-[#08090a]/30" />
@@ -373,8 +372,7 @@ export default function SobreMim() {
                 <img
                   src={heroProfile}
                   alt="Lord Junnior, arquiteto de sistemas de soberania"
-                  className="w-full h-full object-cover grayscale contrast-110"
-                />
+                  className="w-full h-full object-cover grayscale contrast-110" loading="eager" fetchPriority="high" decoding="async" />
               </div>
             </Reveal>
           </div>

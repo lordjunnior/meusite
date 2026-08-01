@@ -124,7 +124,7 @@ export default function ComunicacaoOffline() {
             O rádio é o <strong className="text-stone-200">meio mais resiliente</strong>. Funciona com pilha, bateria, manivela ou energia solar portátil.
           </p>
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden mb-4">
-            <img src={imgRadio} alt="Rádio AM/FM portátil com bloco de frequências" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgRadio} alt="Rádio AM/FM portátil com bloco de frequências" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <div className="flex items-center gap-2 mb-3">
                 <Radio size={16} className="text-rose-400" />
@@ -163,7 +163,7 @@ export default function ComunicacaoOffline() {
           </div>
 
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden mb-4">
-            <img src={imgMapa} alt="Mapa com pontos de encontro marcados" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgMapa} alt="Mapa com pontos de encontro marcados" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <div className="flex items-center gap-2 mb-3">
                 <MapPin size={16} className="text-rose-400" />
@@ -214,7 +214,7 @@ export default function ComunicacaoOffline() {
             Se comunicação falhar completamente, <strong className="text-stone-200">sinalização visual orienta deslocamento</strong>.
           </p>
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden mb-4">
-            <img src={imgSinal} alt="Lençol branco em janela como sinal visual" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgSinal} alt="Lençol branco em janela como sinal visual" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <div className="flex items-center gap-2 mb-3">
                 <Eye size={16} className="text-rose-400" />
@@ -314,7 +314,7 @@ export default function ComunicacaoOffline() {
             Se tudo falhar: <strong className="text-stone-200">comunicação física</strong>.
           </p>
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden mb-4">
-            <img src={imgRecado} alt="Recado escrito preso na porta" className="w-full h-48 md:h-64 object-cover" />
+            <img src={imgRecado} alt="Recado escrito preso na porta" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
             <div className="p-5 md:p-6">
               <div className="grid grid-cols-3 gap-2 mb-4">
                 {['Recados escritos', 'Quadro na entrada da casa', 'Envelope em local combinado'].map(item => (

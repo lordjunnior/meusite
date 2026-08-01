@@ -310,8 +310,7 @@ const KnowledgeSection = () => {
                     <img
                       src={book.cover}
                       alt={book.title}
-                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
-                    />
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" loading="lazy" decoding="async" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-[#050808]/30 to-transparent" />
 
                     {/* Download overlay */}

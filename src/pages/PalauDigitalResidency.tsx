@@ -370,7 +370,7 @@ const PalauDigitalResidency = () => {
         {/* ════════ HERO, FULL BLEED EDITORIAL ════════ */}
         <section ref={heroRef} className="relative h-[100vh] min-h-[720px] overflow-hidden">
           <motion.div className="absolute inset-0 z-0" style={{ y: heroImgY }}>
-            <img src={heroImg} alt="ID de Palau sobre mapa do Pacífico" className="w-full h-full object-cover" style={{ transform: "scale(1.15)" }} fetchPriority="high" />
+            <img src={heroImg} alt="ID de Palau sobre mapa do Pacífico" className="w-full h-full object-cover" style={{ transform: "scale(1.15)" }} loading="eager" fetchPriority="high" decoding="async" />
           </motion.div>
 
           <motion.div
@@ -678,7 +678,7 @@ const PalauDigitalResidency = () => {
                     transition={{ duration: 0.9, ease: EASE }}
                     className="absolute inset-0"
                   >
-                    <img src={carouselSlides[carouselIndex].img} alt={carouselSlides[carouselIndex].title} className="w-full h-full object-cover" />
+                    <img src={carouselSlides[carouselIndex].img} alt={carouselSlides[carouselIndex].title} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                     <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(26,22,20,0.05) 0%, rgba(26,22,20,0.3) 50%, rgba(26,22,20,0.92) 100%)' }} />
                     <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-[var(--cream)]">
                       <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7, delay: 0.2, ease: EASE }}>

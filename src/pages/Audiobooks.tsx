@@ -264,8 +264,7 @@ const Audiobooks: React.FC<AudiobooksProps> = ({ onPlay }) => {
             <img 
               src="/heroes/audioteca-soberana.webp" 
               alt="Audioteca Soberana"
-              className="w-full h-full object-cover brightness-[0.4] saturate-[0.85] scale-105"
-            />
+              className="w-full h-full object-cover brightness-[0.4] saturate-[0.85] scale-105" loading="eager" fetchPriority="high" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050808] via-[#050808]/60 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#050808]/80 via-transparent to-[#050808]/40" />
           </div>
@@ -327,8 +326,7 @@ const Audiobooks: React.FC<AudiobooksProps> = ({ onPlay }) => {
                   <img 
                     src={activeTrack.coverImage} 
                     alt={activeTrack.title} 
-                    className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-75" 
-                  />
+                    className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-75" loading="lazy" decoding="async" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   <motion.button 
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-black/50 backdrop-blur-md border border-border/50 rounded-full flex items-center justify-center text-foreground opacity-0 group-hover:opacity-100 transition-all duration-300"
@@ -438,7 +436,7 @@ const Audiobooks: React.FC<AudiobooksProps> = ({ onPlay }) => {
                       </div>
 
                       <div className="w-12 h-12 rounded-lg shrink-0 overflow-hidden border border-border/20">
-                        <img src={book.coverImage} alt={book.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                        <img src={book.coverImage} alt={book.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" />
                       </div>
 
                       <div className="flex-1 min-w-0">

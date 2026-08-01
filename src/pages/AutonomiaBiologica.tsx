@@ -286,7 +286,7 @@ export default function AutonomiaBiologica() {
                 {/* Image with parallax */}
                 <div className="relative w-full h-56 md:h-64 overflow-hidden">
                   <img src={p.imagem} alt={`${p.nome} — ${p.cientifico}`}
-                    className="parallax-img absolute inset-0 w-full h-[130%] object-cover transition-transform duration-700 group-hover:scale-110" />
+                    className="parallax-img absolute inset-0 w-full h-[130%] object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#060806] via-[#060806]/40 to-transparent" />
                   <div className="absolute inset-0 bg-emerald-500/0 group-hover:bg-emerald-500/5 transition-colors duration-700" />
                   <div className="absolute top-3 right-3 bg-black/40 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center">
@@ -341,7 +341,7 @@ export default function AutonomiaBiologica() {
 
           <div className="mb-10 rounded-2xl overflow-hidden relative h-64 md:h-80">
             <img src={imgMetodosPreparo} alt="Métodos de preparo fitoterápico"
-              className="parallax-img absolute inset-0 w-full h-[130%] object-cover" />
+              className="parallax-img absolute inset-0 w-full h-[130%] object-cover" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#060806] via-[#060806]/30 to-transparent" />
             <div className="absolute bottom-4 left-5 right-5">
               <span className="text-xs font-bold tracking-[0.3em] uppercase text-emerald-400/60">
@@ -384,7 +384,7 @@ export default function AutonomiaBiologica() {
 
           <div className="mb-8 rounded-2xl overflow-hidden relative h-64 md:h-80">
             <img src={imgArmazenamento} alt="Armazenamento de ervas"
-              className="parallax-img absolute inset-0 w-full h-[130%] object-cover" />
+              className="parallax-img absolute inset-0 w-full h-[130%] object-cover" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#060806] via-[#060806]/30 to-transparent" />
           </div>
 
