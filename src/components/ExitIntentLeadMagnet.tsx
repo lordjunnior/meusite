@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Shield, Zap, ArrowRight, Loader2, CheckCircle } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { z } from 'zod';
+import BitcoinCoinRain from '@/components/BitcoinCoinRain';
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -134,6 +135,7 @@ const ExitIntentLeadMagnet = () => {
             />
 
             <div className="relative rounded-3xl border border-amber-500/25 bg-[#0a0e0e] overflow-hidden">
+              <BitcoinCoinRain active={success} />
               <button onClick={handleClose} className="absolute top-4 right-4 z-10 p-2 rounded-xl hover:bg-white/[0.05] transition-colors">
                 <X size={18} className="text-stone-500" />
               </button>

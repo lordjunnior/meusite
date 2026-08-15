@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Zap, Loader2, CheckCircle, Shield } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
+import BitcoinCoinRain from "@/components/BitcoinCoinRain";
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -62,8 +63,9 @@ const InlineLeadCapture = ({
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: EASE }}
-        className={`my-10 p-6 rounded-xl border border-emerald-500/20 bg-emerald-500/[0.04] text-center ${className}`}
+        className={`my-10 p-6 rounded-xl border border-emerald-500/20 bg-emerald-500/[0.04] text-center relative overflow-hidden ${className}`}
       >
+        <BitcoinCoinRain active={success} />
         <CheckCircle className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
         <p className="text-foreground font-semibold text-sm">Você está na lista.</p>
         <p className="text-muted-foreground text-xs mt-1">Alertas de soberania serão enviados para {email}.</p>
