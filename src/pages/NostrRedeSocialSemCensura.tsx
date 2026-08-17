@@ -82,7 +82,7 @@ const PILARES: Pilar[] = [
     num: '01',
     nome: 'Clientes: as torneiras que você usa no dia a dia',
     icon: Radio,
-    analogia: 'Pensa numa torneira de casa: a água que sai não pertence a ela, ela é só o ponto de acesso a um encanamento inteiro.',
+    analogia: 'É como escolher o aparelho de rádio: trocar de aparelho não muda a estação que está no ar, só muda o som na sua sala.',
     texto: 'Clientes são os aplicativos, como Primal, Damus e Amethyst. É ali que você lê, publica, responde e configura seu perfil. Qualquer desenvolvedor no mundo pode criar um novo cliente seguindo as mesmas regras abertas do protocolo, por isso existem tantas opções diferentes, cada uma com sua própria cara, todas conversando com o mesmo protocolo por trás.',
   },
   {
