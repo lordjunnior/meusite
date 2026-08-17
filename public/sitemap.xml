@@ -306,6 +306,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://lordjunnior.com.br/o-que-e-nostr</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://lordjunnior.com.br/palau-digital-residency</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
