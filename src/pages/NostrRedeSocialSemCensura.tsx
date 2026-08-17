@@ -358,16 +358,19 @@ export default function NostrRedeSemCensura() {
         </motion.div>
 
         {/* CAPÍTULO 2 — Os quatro problemas */}
-        <section className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20" style={{ backgroundColor: '#0e3b3a', color: '#f4ede4' }}>
+        <section id="cap-02" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24" style={{ backgroundColor: '#0e3b3a', color: '#f4ede4' }}>
           <div className="max-w-[1600px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
               <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#c4a6ff' }}>Capítulo 02 · O Problema</span>
               <h2 className="text-[clamp(2.25rem,5.5vw,5rem)] font-black leading-[1] tracking-tight">
-                Quatro dores que você{' '}
+                Em 2024 uma rede inteira sumiu do ar{' '}
                 <span style={{ color: '#c4a6ff', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
-                  já sentiu na pele.
+                  por decisão de uma pessoa.
                 </span>
               </h2>
+              <p className="mt-6 text-lg md:text-xl font-light leading-relaxed" style={{ color: 'rgba(244,237,228,0.8)' }}>
+                Foram cerca de 40 dias de bloqueio no Brasil, com dezenas de milhões de contas silenciadas de uma vez. Ninguém precisou invadir servidor, bastou uma ordem. Antes disso, e depois dela, quatro dores continuam se repetindo em toda rede social com dono.
+              </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
