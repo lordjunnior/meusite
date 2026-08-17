@@ -247,7 +247,7 @@ export const navGroups: NavGroup[] = [
       { label: "Infraestrutura", route: "/infraestrutura" },
       { label: "Economia Paralela", route: "/economia-paralela" },
       { label: "Silêncio e Queda", route: "/silencio-queda" },
-      { label: "Nostr: Rede Sem Censura", route: "/nostr-rede-social-sem-censura", badge: "Novo" },
+      { label: "Nostr: Rede Sem Censura", route: "/o-que-e-nostr", badge: "Novo" },
     ],
   },
   {

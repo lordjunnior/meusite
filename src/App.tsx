@@ -390,8 +390,9 @@ const App = () => (
             <Route path="/soberania-organica/soberania-veicular" element={<Navigate to="/soberania-organica/autonomia-veicular" replace />} />
             <Route path="/soberania-organica/defesa-digital" element={<DefesaDigital />} />
             <Route path="/soberania-organica/comunicacao-segura" element={<ComunicacaoSegura />} />
-            <Route path="/nostr-rede-social-sem-censura" element={<NostrRedeSemCensura />} />
-            <Route path="/soberania-organica/nostr-rede-social-sem-censura" element={<LegacyRedirect to="/nostr-rede-social-sem-censura" />} />
+            <Route path="/o-que-e-nostr" element={<NostrRedeSemCensura />} />
+            <Route path="/nostr-rede-social-sem-censura" element={<LegacyRedirect to="/o-que-e-nostr" />} />
+            <Route path="/soberania-organica/nostr-rede-social-sem-censura" element={<LegacyRedirect to="/o-que-e-nostr" />} />
             <Route path="/soberania-organica/autonomia-energetica" element={<AutonomiaEnergetica />} />
             <Route path="/soberania-organica/refugio-rural" element={<RefugioRural />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
