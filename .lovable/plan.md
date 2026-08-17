@@ -1,67 +1,53 @@
-# Plano de ajustes — /sobre-mim
+# Auditoria da página Nostr (/o-que-e-nostr) e plano de elevação
 
-## Objetivo
-Transformar a página de "portfólio de designer" em cartão de visita de autoridade do arquiteto de soberania, alinhada ao padrão das páginas pesadas do site (Jurisdições, Confisco 1990, Jade Core).
+A base está boa: paleta clara sand + teal + violeta, alternância de blocos, hero 88vh, 7 capítulos, FAQ com 8 perguntas e schema, "Continue sua trilha" com 3 links. Ou seja, passa no padrão editorial. Mas existem falhas graves e oportunidades perdidas.
 
-## Escopo
-Ajustes visuais, narrativos e de conversão na página `/sobre-mim`. Nenhuma alteração de backend ou schema.
+## 1. Correção urgente (está no ar agora)
 
-## Fases
+No bloco de fechamento existe um texto de rascunho visível ao público:
+"[Espaço reservado para sua frase de impacto de fechamento, no seu estilo autoral]".
 
-### Fase 1 — Hero de autoridade (Posicionamento + Percepção)
-- Reescrever headline do hero para vender o arquiteto de sistemas de soberania, não skills genéricos de designer.
-- Tornar a foto real (preto-e-branco, low-key) o protagonista visual do hero, com overlay gradiente escuro.
-- Substituir o fundo estático por vídeo loop macro de hardware (Bitcoin/infraestrutura) ou imagem cinematográfica real.
-- Adicionar grain sutil + brasas/partículas no hero para entrar no clima do site.
-- Garantir: a pessoa que chega de "Confisco 1990" ou "Jade Core" entenda em 5 segundos por que você é a autoridade daquele conteúdo.
+Substituir por uma frase autoral forte de fechamento, no tom de operador, sem travessão.
 
-### Fase 2 — Ponte narrativa (Posicionamento)
-- Inserir após o hero um bloco curto (2-3 parágrafos) que conecte a biografia técnica aos temas do site: jurisdição, autocustódia, infraestrutura, escape fiat.
-- Usar termos do universo do site ("gaiola", "blindagem", "jurisdição", "soberania") sem forçar.
-- Manter o tom de "operador que documenta o que viveu", não CV de freelancer.
+## 2. O que falta (criar)
 
-### Fase 3 — Prova viva (Prova + PNL)
-- Criar seção "Prova de Trabalho" com 3 projetos/cases reais e seus números (ex: crescimento de canal, views, ferramentas construídas, proteção estruturada).
-- Substituir os contadores genéricos por métricas que comprovem autoridade no nicho.
-- Adicionar foto real ou screenshot de cada projeto. Se não houver, gerar imagens cinematográficas.
+1. **Seu perfil no Nostr.** A página inteira ensina o protocolo e não oferece o passo mais óbvio: seguir você lá. Criar um bloco dedicado com seu npub, botão copiar, QR code e link direto para Primal. Esse é o CTA de maior conversão da página e hoje ele não existe.
+2. **Capítulo de limitações honestas.** Hoje a página só vende o Nostr. Faltam: relays também podem filtrar conteúdo, spam e golpe são reais, descoberta de perfis ainda é fraca, e perder a nsec é irreversível. Isso aumenta autoridade e evita frustração.
+3. **Glossário rápido npub / nsec / relay / zap / NIP.** Cartões curtos, antes do checklist. Também serve como isca de snippet no Google.
+4. **Bloco de segurança da chave.** Regras diretas: nsec nunca em site, uso de extensão de assinatura (Amber no Android, nos2x no desktop), papel físico. Encaixa como alerta visual dentro do Capítulo 03.
+5. **Índice flutuante (TOC)** com progresso de leitura e barra de scroll, padrão já usado em outras páginas pesadas.
+6. **Tempo de leitura + botões de compartilhar** no topo do conteúdo.
+7. **Captura de lead inline** após o Capítulo 06, no ponto de maior interesse.
+8. **Tabela comparativa em mobile.** Hoje ela vira rolagem horizontal, que é ruim. Virar cartões empilhados abaixo de md.
 
-### Fase 4 — Arsenal técnico (Produto + Percepção)
-- Manter o catálogo de serviços, mas reposicionar como "Arsenal de Autonomia" — cada skill vira uma ferramenta de construção de sistemas soberanos.
-- Substituir ícones genéricos por imagens macro/reais onde possível.
-- Ajustar a paleta dos gráficos de azul para âmbar/laranja Bitcoin para alinhar com o resto do site.
+## 3. O que mudaria
 
-### Fase 5 — Domínio Técnico (Percepção + Efeitos)
-- Manter o HUD interativo, mas aplicar efeitos de scanline e glow âmbar.
-- Garantir que os nós de tecnologia sejam acionáveis por hover e teclado (acessibilidade).
-- Animar a ativação dos nós com sequência de "boot" ao entrar no viewport.
+- **Imagens genéricas.** Todas as imagens são reaproveitadas de outras páginas (blockchain, comunicação mesh, lightning). Gerar de 4 a 5 imagens cinematográficas próprias da página: malha de relays iluminada, chave física sobre papel, celular com zap saindo em brasa, servidor doméstico, tela apagada de rede desligada.
+- **Hero.** A frase de gancho está em três blocos de texto seguidos, o que dilui. Reduzir para título + um parágrafo + linha de promessa, e adicionar 3 selos de dado rápido (2020, milhares de relays, sem dono).
+- **Capítulo 02 (Problema).** Trocar "Quatro dores" por uma abertura mais concreta ancorada no bloqueio de 2024 no Brasil, com números.
+- **Checklist.** Transformar em passo a passo numerado com tempo estimado por etapa e nomes de app clicáveis.
+- **Título SEO.** Alinhar o H1 e o title com a palavra-chave forte "Nostr" no início, mantendo o gancho "que ninguém desliga".
 
-### Fase 6 — CTA final duplo (PNL/CTA)
-- Substituir o CTA único "Protocolo de Ação" por CTA duplo: "Trabalhar comigo" + "Explorar conteúdo".
-- Aplicar gatilhos de escassez e autoridade no copy (sem exagerar).
-- Garantir que os CTAs sejam visíveis no mobile e acessíveis por teclado.
+## 4. O que tiraria
 
-### Fase 7 — Assets visuais
-- Gerar imagens cinematográficas/vídeo para:
-  - Hero (macro hardware / Bitcoin / infraestrutura)
-  - Bloco Prova de Trabalho (3 projetos)
-  - Arsenal (se necessário)
-- Verificar se a foto real do usuário já está otimizada; se não, otimizar.
+- O parágrafo violeta em caixa alta do hero (linha de promessa em uppercase) fica pesado. Vira texto normal com destaque leve.
+- A curiosidade do latim "noster" no Capítulo 01 pode sair do corpo principal e virar nota lateral, para não quebrar o ritmo do argumento.
+- Repetição da analogia torneira/encanamento em três lugares (capítulo 1, pilar 01 e FAQ). Manter apenas no capítulo 1 e na FAQ.
 
-### Fase 8 — Revisão e build
-- Revisar todos os textos para remover travessões longos e termos proibidos.
-- Verificar contraste, acessibilidade e responsividade.
-- Rodar build e verificar se não há erros de Tailwind/classes customizadas.
+## 5. Detalhes técnicos
 
-## Entregáveis
-- `src/pages/SobreMim.tsx` reescrito e expandido.
-- Novas imagens/vídeo em `src/assets/` (ou asset pointers).
-- Atualização de links internos se necessário (nenhuma mudança de rota).
+- Arquivo: `src/pages/NostrRedeSocialSemCensura.tsx`, rota `/o-que-e-nostr` já registrada na sidebar em "Saída & Infraestrutura".
+- Reusar componentes existentes: `PageFloatingToc`, `ReadingTime`, `ShareButtons`, `InlineLeadCapture`, `RiskBlock`, `AlertBox`.
+- Novas imagens em `src/assets/nostr/`, importadas como ES6, com alt descritivo, `loading="lazy"` e `decoding="async"`.
+- Manter schema Article + FAQPage já presente e acrescentar HowTo no checklist.
+- Sem emojis, sem travessão longo, paleta mantida (sand #f4ede4 / #ece2d3, teal #0e3b3a, violeta #8b5cf6).
 
-## O que NÃO será feito
-- Alterar rotas ou navegação.
-- Criar backend/Supabase/schema.
-- Adicionar novas páginas.
-- Copiar texto do usuário; tudo será reescrito para autoridade + CTA + SEO + PNL.
+## 6. Ordem de execução
 
-## Critério de conclusão
-A página deve parecer, ao vivo, do mesmo time de produção de `Jade Core`, `Cartões Cripto Sem Reporte` e `Confisco 1990`: escura, real, prova, movimento, autoridade.
+1. Corrigir o placeholder do fechamento.
+2. Blocos novos: perfil Nostr com npub, limitações, glossário, segurança da chave.
+3. TOC, tempo de leitura, compartilhar, captura de lead.
+4. Geração e troca das imagens próprias.
+5. Ajustes de hero, tabela mobile e checklist.
+
+Para o bloco do seu perfil eu preciso do seu npub. Se preferir, deixo o bloco pronto com espaço marcado e você me passa depois.
