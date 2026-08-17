@@ -596,29 +596,104 @@ export default function NostrRedeSemCensura() {
           </div>
         </section>
 
-        {/* CAPÍTULO 7 — Checklist */}
-        <section className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20">
+        {/* Captura de lead */}
+        <section className="px-6 md:px-12 lg:px-20 py-20" style={{ backgroundColor: '#f4ede4' }}>
+          <div className="max-w-[1100px] mx-auto">
+            <InlineLeadCapture
+              heading="Quer o próximo material sobre redes que não podem ser desligadas?"
+              subtext="Entre na lista de transmissão. Sem spam, sem algoritmo, direto na sua caixa."
+              interesse="nostr"
+            />
+          </div>
+        </section>
+
+        {/* CAPÍTULO 7 — Limites honestos */}
+        <section id="cap-07" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24" style={{ backgroundColor: '#ece2d3' }}>
+          <div className="max-w-[1400px] mx-auto">
+            <motion.div {...fade(0)} className="mb-14 max-w-3xl">
+              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#c4632a' }}>Capítulo 07 · Limites</span>
+              <h2 className="text-[clamp(2.25rem,5.5vw,5rem)] font-black leading-[1] tracking-tight" style={{ color: '#0e3b3a' }}>
+                O que ninguém te conta{' '}
+                <span style={{ color: '#c4632a', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
+                  antes de você entrar.
+                </span>
+              </h2>
+              <p className="mt-6 text-lg md:text-xl font-light leading-relaxed" style={{ color: '#2d3a37' }}>
+                Rede sem dono não significa rede sem problema. Entrar sabendo disso é a diferença entre continuar usando e desistir na primeira semana.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {LIMITES.map((l, i) => (
+                <motion.div key={l.titulo} {...fade(i * 0.08)} className="p-8 rounded-2xl bg-white/70"
+                  style={{ border: '1px solid #e8a36b' }}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <AlertTriangle size={20} style={{ color: '#c4632a' }} />
+                    <h3 className="text-xl md:text-2xl font-bold leading-tight" style={{ color: '#0e3b3a' }}>{l.titulo}</h3>
+                  </div>
+                  <p className="text-base md:text-lg leading-relaxed font-light" style={{ color: '#2d3a37' }}>{l.texto}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CAPÍTULO 8 — Glossário */}
+        <section id="cap-08" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24">
+          <div className="max-w-[1400px] mx-auto">
+            <motion.div {...fade(0)} className="mb-14 max-w-3xl">
+              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#7c3aed' }}>Capítulo 08 · Vocabulário</span>
+              <h2 className="text-[clamp(2.25rem,5.5vw,5rem)] font-black leading-[1] tracking-tight" style={{ color: '#0e3b3a' }}>
+                Seis palavras e você{' '}
+                <span style={{ color: '#7c3aed', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
+                  fala a língua da rede.
+                </span>
+              </h2>
+            </motion.div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {GLOSSARIO.map((g, i) => (
+                <motion.div key={g.termo} {...fade(i * 0.05)} className="p-7 rounded-2xl" style={{ backgroundColor: '#ece2d3' }}>
+                  <div className="flex items-center gap-3 mb-3">
+                    <BookOpen size={18} style={{ color: '#8b5cf6' }} />
+                    <h3 className="text-xl font-black" style={{ color: '#0e3b3a', fontFamily: "'Inter Tight', sans-serif" }}>{g.termo}</h3>
+                  </div>
+                  <p className="text-base leading-relaxed font-light" style={{ color: '#2d3a37' }}>{g.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CAPÍTULO 9 — Checklist */}
+        <section id="cap-09" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24" style={{ backgroundColor: '#ece2d3' }}>
           <div className="max-w-[1200px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
-              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#7c3aed' }}>Capítulo 07 · Prática</span>
+              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#7c3aed' }}>Capítulo 09 · Prática</span>
               <h2 className="text-[clamp(2.25rem,5.5vw,5rem)] font-black leading-[1] tracking-tight" style={{ color: '#0e3b3a' }}>
                 Como dar o primeiro{' '}
                 <span style={{ color: '#7c3aed', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
                   passo hoje.
                 </span>
               </h2>
+              <p className="mt-6 text-lg md:text-xl font-light leading-relaxed" style={{ color: '#2d3a37' }}>
+                Sete etapas, cerca de 20 minutos no total. Ao final você tem identidade própria, chave protegida e o primeiro zap enviado.
+              </p>
             </motion.div>
 
             <ol className="space-y-4">
               {CHECKLIST.map((item, i) => (
                 <motion.li key={i} {...fade(i * 0.04)}
                   className="flex items-start gap-6 p-6 md:p-7 rounded-2xl transition-all duration-500 hover:translate-x-2"
-                  style={{ backgroundColor: '#ece2d3' }}>
+                  style={{ backgroundColor: '#f4ede4' }}>
                   <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-xl md:text-2xl font-black"
                     style={{ backgroundColor: '#8b5cf6', color: '#f4ede4' }}>
                     {String(i + 1).padStart(2, '0')}
                   </div>
-                  <p className="text-lg md:text-xl leading-relaxed font-light pt-1.5" style={{ color: '#2d3a37' }}>{item}</p>
+                  <div className="pt-1">
+                    <span className="inline-block mb-2 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-[0.18em]"
+                      style={{ backgroundColor: 'rgba(139,92,246,0.14)', color: '#7c3aed' }}>{item.tempo}</span>
+                    <p className="text-lg md:text-xl leading-relaxed font-light" style={{ color: '#2d3a37' }}>{item.texto}</p>
+                  </div>
                 </motion.li>
               ))}
             </ol>
@@ -626,7 +701,7 @@ export default function NostrRedeSemCensura() {
         </section>
 
         {/* FAQ */}
-        <section className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20" style={{ backgroundColor: '#ece2d3' }}>
+        <section id="faq" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24">
           <div className="max-w-[1100px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
               <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#7c3aed' }}>Dúvidas frequentes</span>
