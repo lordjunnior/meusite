@@ -246,10 +246,27 @@ function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.65, ease: APPLE_EASE }}
-          className="mt-6 text-base md:text-lg font-semibold uppercase tracking-[0.1em]"
+          className="mt-5 max-w-2xl text-base md:text-lg font-light leading-relaxed"
           style={{ color: '#c4a6ff' }}>
-          Ainda hoje, em poucos minutos de leitura, você vai entender exatamente o que é o Nostr, sem economês e sem termo técnico difícil.
+          Em poucos minutos de leitura você entende exatamente o que é o Nostr, sem economês e sem termo técnico difícil.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8, ease: APPLE_EASE }}
+          className="mt-8 flex flex-wrap gap-3">
+          {[
+            { k: '2020', v: 'ano de lançamento' },
+            { k: 'Milhares', v: 'de relays independentes' },
+            { k: 'Zero', v: 'donos e botões de desligar' },
+          ].map((s) => (
+            <div key={s.k} className="px-5 py-3 rounded-2xl backdrop-blur-md"
+              style={{ backgroundColor: 'rgba(244,237,228,0.12)', border: '1px solid rgba(244,237,228,0.22)' }}>
+              <span className="block text-lg md:text-xl font-black" style={{ color: '#f4ede4' }}>{s.k}</span>
+              <span className="block text-[11px] uppercase tracking-[0.18em]" style={{ color: 'rgba(244,237,228,0.7)' }}>{s.v}</span>
+            </div>
+          ))}
+        </motion.div>
       </motion.div>
     </section>
   );
