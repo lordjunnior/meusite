@@ -137,14 +137,65 @@ const FAQ = [
 ];
 
 const CHECKLIST = [
-  'Escolha um cliente pra começar: Primal ou Amethyst (Android) e Damus (iPhone) são os mais fáceis pra quem nunca usou.',
-  'Ao criar seu perfil, o aplicativo gera suas duas chaves. Anote a chave privada (nsec) num papel físico, do mesmo jeito que você guardaria a seed de uma carteira Bitcoin.',
-  'Nunca digite sua chave privada em nenhum site ou aplicativo que não seja o processo oficial de login do seu cliente.',
-  'Complete seu perfil (nome, foto, descrição) para facilitar que outras pessoas te encontrem e confiem no seu perfil.',
-  'Siga alguns perfis conhecidos da comunidade brasileira de Bitcoin pra começar a entender o tom e o funcionamento da rede.',
-  'Explore trocar de aplicativo pelo menos uma vez, só pra sentir na prática que sua identidade realmente te acompanha entre clientes diferentes.',
-  'Se quiser testar os zaps, conecte uma carteira Lightning ao seu perfil e envie um zap pequeno pra alguém como teste.',
+  { tempo: '2 min', texto: 'Instale um cliente. Primal (Android e iPhone) é o mais simples pra quem nunca usou. Damus é a opção clássica no iPhone, Amethyst a mais completa no Android.' },
+  { tempo: '3 min', texto: 'Crie o perfil. O aplicativo gera suas duas chaves na hora. Anote a chave privada (nsec) num papel físico, do mesmo jeito que você guardaria a seed de uma carteira Bitcoin.' },
+  { tempo: '1 min', texto: 'Blinde a chave. Nunca digite sua nsec em site nenhum. No Android, use o Amber para assinar; no computador, use uma extensão de assinatura como nos2x.' },
+  { tempo: '3 min', texto: 'Complete nome, foto e descrição. Perfil vazio no Nostr é lido como bot, e quase ninguém segue de volta.' },
+  { tempo: '5 min', texto: 'Siga de 20 a 30 perfis da comunidade brasileira de Bitcoin. A timeline do Nostr é 100% quem você segue, então ela só ganha vida depois desse passo.' },
+  { tempo: '2 min', texto: 'Troque de cliente uma vez, só pra sentir na prática que o perfil, os seguidores e o histórico vão junto com você.' },
+  { tempo: '4 min', texto: 'Conecte uma carteira Lightning ao perfil e mande um zap pequeno pra alguém. É o teste que prova que o dinheiro roda dentro da própria rede.' },
 ];
+
+const GLOSSARIO = [
+  { termo: 'npub', desc: 'Sua chave pública. É o endereço que você divulga pra qualquer pessoa te encontrar e te seguir. Pode publicar à vontade.' },
+  { termo: 'nsec', desc: 'Sua chave privada. É a senha mestra da sua identidade. Quem tiver ela vira você. Nunca compartilhe, nunca digite em site.' },
+  { termo: 'relay', desc: 'Servidor independente que guarda e repassa suas publicações. Você usa vários ao mesmo tempo, e pode trocar quando quiser.' },
+  { termo: 'zap', desc: 'Gorjeta em Bitcoin enviada pela rede Lightning direto dentro do aplicativo, sem banco e sem intermediário.' },
+  { termo: 'NIP', desc: 'Padrão técnico que a comunidade adota de forma voluntária pra que apps e relays diferentes continuem se entendendo.' },
+  { termo: 'cliente', desc: 'O aplicativo que você usa pra ler e publicar. Primal, Damus e Amethyst são clientes diferentes do mesmo protocolo.' },
+];
+
+const LIMITES = [
+  {
+    titulo: 'Relay também filtra',
+    texto: 'Nenhum relay é obrigado a hospedar o que você publica. Um relay grande pode decidir não repassar seu conteúdo. A diferença é que isso não te apaga da rede: basta publicar em outros relays, ou subir o seu próprio.',
+  },
+  {
+    titulo: 'Spam e golpe existem',
+    texto: 'Rede aberta e sem cadastro significa que qualquer um cria mil identidades em minutos. Falsos sorteios e perfis clonados pedindo chave privada são comuns. Curadoria aqui é responsabilidade sua, não de um moderador.',
+  },
+  {
+    titulo: 'Descoberta ainda é fraca',
+    texto: 'Não existe algoritmo empurrando conteúdo novo pra você. Isso é bom pra atenção e ruim pro começo: sem seguir gente, sua timeline fica vazia e a sensação é de rede morta.',
+  },
+  {
+    titulo: 'Perder a nsec é definitivo',
+    texto: 'Não existe recuperar senha, não existe suporte, não existe verificação de identidade. Perdeu a chave privada, perdeu aquela identidade pra sempre, com seguidores e histórico junto.',
+  },
+];
+
+const COMPARATIVO = [
+  { criterio: 'Depende de uma empresa', nostr: 'Não', bluesky: 'Sim', mastodon: 'Não, mas federado' },
+  { criterio: 'Identidade portátil entre apps', nostr: 'Sim, total', bluesky: 'Parcial', mastodon: 'Limitada' },
+  { criterio: 'Pagamentos nativos embutidos', nostr: 'Sim, via Lightning', bluesky: 'Não', mastodon: 'Não' },
+  { criterio: 'Existe um centro que sofre pressão externa', nostr: 'Não', bluesky: 'Sim', mastodon: 'Por servidor' },
+];
+
+const TOC_ITEMS = [
+  { id: 'cap-01', num: '01', label: 'Torneira e encanamento' },
+  { id: 'cap-02', num: '02', label: 'O problema real' },
+  { id: 'cap-03', num: '03', label: 'Suas chaves' },
+  { id: 'cap-04', num: '04', label: 'Os três pilares' },
+  { id: 'cap-05', num: '05', label: 'As NIPs' },
+  { id: 'cap-06', num: '06', label: 'Origem e comparativo' },
+  { id: 'cap-07', num: '07', label: 'Limites honestos' },
+  { id: 'cap-08', num: '08', label: 'Glossário' },
+  { id: 'cap-09', num: '09', label: 'Primeiro passo' },
+  { id: 'faq', num: '10', label: 'Dúvidas frequentes' },
+];
+
+/** Preencher com o npub oficial para ativar o bloco de perfil com copiar e QR. */
+const NPUB: string | null = null;
 
 function Hero() {
   const { scrollY } = useScroll();
