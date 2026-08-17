@@ -540,7 +540,22 @@ export default function NostrRedeSemCensura() {
               O grande salto de visibilidade veio em dezembro de 2022, quando Jack Dorsey, ex-CEO do Twitter, doou o equivalente a cerca de 14 Bitcoin (na época, por volta de 250 mil dólares) pro desenvolvimento do protocolo. Isso atraiu desenvolvedores, jornalistas independentes e a própria comunidade Bitcoin, que reconheceu ali uma extensão natural dos mesmos valores de descentralização.
             </p>
 
-            <div className="overflow-x-auto rounded-2xl" style={{ border: '1px solid rgba(244,237,228,0.14)' }}>
+            {/* Comparativo em cartões (mobile) */}
+            <div className="md:hidden space-y-4">
+              {COMPARATIVO.map((c) => (
+                <div key={c.criterio} className="p-6 rounded-2xl"
+                  style={{ backgroundColor: 'rgba(244,237,228,0.06)', border: '1px solid rgba(244,237,228,0.14)' }}>
+                  <p className="text-base font-bold mb-4">{c.criterio}</p>
+                  <div className="space-y-2 text-base font-light" style={{ color: 'rgba(244,237,228,0.85)' }}>
+                    <p className="flex justify-between gap-4"><span>Nostr</span><span className="font-semibold" style={{ color: '#c4a6ff' }}>{c.nostr}</span></p>
+                    <p className="flex justify-between gap-4"><span>Bluesky</span><span>{c.bluesky}</span></p>
+                    <p className="flex justify-between gap-4"><span>Mastodon</span><span>{c.mastodon}</span></p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="hidden md:block overflow-x-auto rounded-2xl" style={{ border: '1px solid rgba(244,237,228,0.14)' }}>
               <table className="w-full text-left">
                 <thead>
                   <tr style={{ backgroundColor: 'rgba(244,237,228,0.06)' }}>
