@@ -175,7 +175,7 @@ const HigieneMental = lazy(() => import("./pages/soberania-organica/HigieneMenta
 const AutonomiaVeicular = lazy(() => import("./pages/soberania-organica/AutonomiaVeicular"));
 const DefesaDigital = lazy(() => import("./pages/soberania-organica/DefesaDigital"));
 const ComunicacaoSegura = lazy(() => import("./pages/soberania-organica/ComunicacaoSegura"));
-const NostrRedeSemCensura = lazy(() => import("./pages/soberania-organica/NostrRedeSemCensura"));
+const NostrRedeSemCensura = lazy(() => import("./pages/NostrRedeSocialSemCensura"));
 const AutonomiaEnergetica = lazy(() => import("./pages/soberania-organica/AutonomiaEnergetica"));
 const RefugioRural = lazy(() => import("./pages/soberania-organica/RefugioRural"));
 const queryClient = new QueryClient();
@@ -390,7 +390,9 @@ const App = () => (
             <Route path="/soberania-organica/soberania-veicular" element={<Navigate to="/soberania-organica/autonomia-veicular" replace />} />
             <Route path="/soberania-organica/defesa-digital" element={<DefesaDigital />} />
             <Route path="/soberania-organica/comunicacao-segura" element={<ComunicacaoSegura />} />
-            <Route path="/soberania-organica/nostr-rede-social-sem-censura" element={<NostrRedeSemCensura />} />
+            <Route path="/o-que-e-nostr" element={<NostrRedeSemCensura />} />
+            <Route path="/nostr-rede-social-sem-censura" element={<LegacyRedirect to="/o-que-e-nostr" />} />
+            <Route path="/soberania-organica/nostr-rede-social-sem-censura" element={<LegacyRedirect to="/o-que-e-nostr" />} />
             <Route path="/soberania-organica/autonomia-energetica" element={<AutonomiaEnergetica />} />
             <Route path="/soberania-organica/refugio-rural" element={<RefugioRural />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -12,9 +12,11 @@ import imgChave from '@/assets/saida/defesa-digital-criptografia.jpg';
 import imgRelay from '@/assets/saida/comunicacao-segura-mesh.jpg';
 import imgZap from '@/assets/lightning-rede-global.jpg';
 import imgLivro from '@/assets/blockchain-livro-razao.jpg';
+import imgImpacto from '@/assets/alertas-confisco-digital.jpg';
 
 /**
- * /soberania-organica/nostr-rede-social-sem-censura
+ * /nostr-rede-social-sem-censura
+ * Grupo de navegação: Saída & Infraestrutura (sistemas resilientes e resistentes a controle central).
  * Paleta temática desta página: Sand (#f4ede4 / #faf6f0) + Teal profundo (#0e3b3a) + Violeta Nostr (#8b5cf6).
  * Segue o padrão editorial claro obrigatório (mem://constraints/design/no-dark-pages-mandate),
  * referência visual: /saida/jurisdicoes-amigaveis.
@@ -161,7 +163,7 @@ function Hero() {
           style={{ backgroundColor: 'rgba(244,237,228,0.15)', border: '1px solid rgba(244,237,228,0.25)' }}>
           <Radio size={16} style={{ color: '#f4ede4' }} />
           <span className="text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase" style={{ color: '#f4ede4' }}>
-            Comunicação Segura · Workshop Nostr
+            Saída & Infraestrutura · Workshop Nostr
           </span>
         </motion.div>
 
@@ -184,6 +186,14 @@ function Hero() {
           style={{ color: 'rgba(244,237,228,0.85)', fontFamily: "'Inter Tight', sans-serif" }}>
           Em 2024, uma rede social inteira saiu do ar no Brasil por semanas, por decisão de uma única autoridade. O Nostr nasceu pra tornar isso impossível: um protocolo aberto, sem dono, sem servidor central, sem botão de desligar.
         </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.65, ease: APPLE_EASE }}
+          className="mt-6 text-base md:text-lg font-semibold uppercase tracking-[0.1em]"
+          style={{ color: '#c4a6ff' }}>
+          Ainda hoje, em poucos minutos de leitura, você vai entender exatamente o que é o Nostr, sem economês e sem termo técnico difícil.
+        </motion.p>
       </motion.div>
     </section>
   );
@@ -196,23 +206,22 @@ export default function NostrRedeSemCensura() {
   return (
     <>
       <SeoHead
-        path="/soberania-organica/nostr-rede-social-sem-censura"
+        path="/o-que-e-nostr"
         custom={{
-          title: 'O Fim da Censura? Conheça o Protocolo Nostr Sem Dono',
+          title: 'O Que É Nostr? O Protocolo Sem Dono Que Nenhum Governo Desliga',
           description: 'Entenda o que é o Nostr, o protocolo aberto que nenhum governo ou empresa consegue desligar. Como funciona, por que foi criado e como começar, sem jargão.',
-          canonical: 'https://lordjunnior.com.br/soberania-organica/nostr-rede-social-sem-censura',
+          canonical: 'https://lordjunnior.com.br/o-que-e-nostr',
           primaryKeyword: 'o que é Nostr',
           lsiKeywords: ['rede social sem censura', 'protocolo descentralizado', 'alternativa ao Twitter', 'nostr relays', 'zaps bitcoin', 'chave publica e privada nostr'],
           longTailKeywords: ['o que é o protocolo nostr', 'como funciona a rede social nostr', 'nostr é seguro', 'como criar perfil no nostr'],
           breadcrumbs: [
             { name: 'Início', url: '/' },
-            { name: 'Soberania Orgânica', url: '/soberania-organica' },
-            { name: 'Comunicação Segura', url: '/soberania-organica/comunicacao-segura' },
-            { name: 'Nostr: Rede Sem Censura', url: '/soberania-organica/nostr-rede-social-sem-censura' },
+            { name: 'Saída & Infraestrutura', url: '/infraestrutura' },
+            { name: 'O Que É Nostr', url: '/o-que-e-nostr' },
           ],
           schemaType: 'Article',
-          articleSection: 'Defesa & Segurança',
-          relatedPages: ['/soberania-organica/comunicacao-segura', '/soberania-organica/defesa-digital', '/autocustodia', '/lightning'],
+          articleSection: 'Saída & Infraestrutura',
+          relatedPages: ['/infraestrutura', '/silencio-queda', '/economia-paralela', '/lightning'],
         }}
         faqItems={FAQ.map((f) => ({ question: f.q, answer: f.a }))}
       />
@@ -292,6 +301,21 @@ export default function NostrRedeSemCensura() {
             </div>
           </div>
         </section>
+
+        {/* QUEBRA VISUAL FULL-BLEED — ponta a ponta, sem container, sem cantos arredondados */}
+        <motion.section {...fade(0)} className="relative w-full h-[70vh] min-h-[480px] overflow-hidden">
+          <img src={imgImpacto} alt="Tela apagada representando o desligamento forçado de uma rede social inteira por decisão de uma única autoridade" className="w-full h-full object-cover" loading="lazy" />
+          <div className="absolute inset-0 flex items-center justify-center px-6"
+            style={{ background: 'linear-gradient(180deg, rgba(14,59,58,0.55) 0%, rgba(14,59,58,0.75) 100%)' }}>
+            <p className="text-2xl md:text-4xl lg:text-5xl font-black text-center leading-[1.3] max-w-4xl"
+              style={{ color: '#f4ede4' }}>
+              Se a sua identidade depende da boa vontade de uma empresa,{' '}
+              <span style={{ color: '#c4a6ff', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
+                ela nunca foi realmente sua.
+              </span>
+            </p>
+          </div>
+        </motion.section>
 
         {/* CAPÍTULO 3 — Chave pública e privada */}
         <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36">
@@ -534,15 +558,15 @@ export default function NostrRedeSemCensura() {
               [Espaço reservado para sua frase de impacto de fechamento, no seu estilo autoral]
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link to="/soberania-organica/comunicacao-segura"
+              <Link to="/infraestrutura"
                 className="inline-flex items-center gap-3 px-8 py-5 rounded-full font-bold text-base uppercase tracking-[0.18em] transition-all hover:scale-[1.02]"
                 style={{ backgroundColor: '#8b5cf6', color: '#f4ede4' }}>
-                Aula 2: Criando sua identidade <ArrowRight size={18} />
+                Ver Infraestrutura Autônoma <ArrowRight size={18} />
               </Link>
-              <Link to="/autocustodia"
+              <Link to="/lightning"
                 className="inline-flex items-center gap-3 px-8 py-5 rounded-full font-bold text-base uppercase tracking-[0.18em] transition-all hover:scale-[1.02]"
                 style={{ backgroundColor: 'transparent', color: '#f4ede4', border: '2px solid #f4ede4' }}>
-                Ver autocustódia de Bitcoin
+                Entender a Lightning Network
               </Link>
             </div>
           </motion.div>
@@ -559,9 +583,9 @@ export default function NostrRedeSemCensura() {
             </motion.div>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { to: '/soberania-organica/comunicacao-segura', icon: Radio, titulo: 'Comunicação Segura', desc: 'Signal, SimpleX e PGP: o guia completo de mensageria criptografada.' },
-                { to: '/soberania-organica/defesa-digital', icon: ShieldOff, titulo: 'Defesa Digital Pessoal', desc: 'Como proteger seus dispositivos e sua identidade de ataques digitais.' },
-                { to: '/autocustodia', icon: KeyRound, titulo: 'Autocustódia de Bitcoin', desc: 'A mesma lógica de dono das próprias chaves, aplicada ao seu dinheiro.' },
+                { to: '/infraestrutura', icon: Network, titulo: 'Infraestrutura Autônoma', desc: 'Sistemas paralelos que continuam de pé mesmo quando a estrutura central falha.' },
+                { to: '/silencio-queda', icon: ShieldOff, titulo: 'Silêncio e Queda', desc: 'O que fazer quando a comunicação oficial para de funcionar.' },
+                { to: '/lightning', icon: Zap, titulo: 'Lightning Network', desc: 'A camada de pagamentos instantâneos que também move os zaps do Nostr.' },
               ].map((card, i) => (
                 <motion.div key={card.to} {...fade(i * 0.08)}>
                   <Link to={card.to}

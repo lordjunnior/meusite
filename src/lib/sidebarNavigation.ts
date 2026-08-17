@@ -188,7 +188,6 @@ export const navGroups: NavGroup[] = [
       { label: "Defesa Domiciliar", route: "/soberania-organica/defesa-domiciliar", badge: "Novo" },
       { label: "Defesa Digital Pessoal", route: "/soberania-organica/defesa-digital", badge: "Novo" },
       { label: "Comunicação Segura", route: "/soberania-organica/comunicacao-segura", badge: "Novo" },
-      { label: "Nostr: Rede Sem Censura", route: "/soberania-organica/nostr-rede-social-sem-censura", badge: "Novo" },
       { label: "Comunicação Offline", route: "/soberania-organica/comunicacao-offline" },
       { label: "Autonomia Veicular", route: "/soberania-organica/autonomia-veicular", badge: "Novo" },
       { label: "Higiene Mental", route: "/soberania-organica/higiene-mental", badge: "Novo" },
@@ -248,6 +247,7 @@ export const navGroups: NavGroup[] = [
       { label: "Infraestrutura", route: "/infraestrutura" },
       { label: "Economia Paralela", route: "/economia-paralela" },
       { label: "Silêncio e Queda", route: "/silencio-queda" },
+      { label: "Nostr: Rede Sem Censura", route: "/o-que-e-nostr", badge: "Novo" },
     ],
   },
   {
