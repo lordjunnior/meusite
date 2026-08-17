@@ -4,15 +4,20 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import {
   Radio, KeyRound, Zap, Network, ShieldOff, ChevronDown,
   ArrowRight, Ban, MessageSquareOff, Landmark, Megaphone, Compass, KeyRound as KeyIcon,
+  AlertTriangle, Copy, Check, ExternalLink, BookOpen,
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
+import PageFloatingToc from '@/components/PageFloatingToc';
+import ReadingTime from '@/components/ReadingTime';
+import ShareButtons from '@/components/ShareButtons';
+import InlineLeadCapture from '@/components/InlineLeadCapture';
 import heroImg from '@/assets/blockchain-rede-global.jpg';
-import imgChave from '@/assets/saida/defesa-digital-criptografia.jpg';
-import imgRelay from '@/assets/saida/comunicacao-segura-mesh.jpg';
-import imgZap from '@/assets/lightning-rede-global.jpg';
+import imgChave from '@/assets/nostr/nostr-chave-privada.jpg';
+import imgRelay from '@/assets/nostr/nostr-relays-malha.jpg';
+import imgZap from '@/assets/nostr/nostr-zap-lightning.jpg';
 import imgLivro from '@/assets/blockchain-livro-razao.jpg';
-import imgImpacto from '@/assets/alertas-confisco-digital.jpg';
+import imgImpacto from '@/assets/nostr/nostr-rede-desligada.jpg';
 
 /**
  * /nostr-rede-social-sem-censura
