@@ -82,7 +82,7 @@ const PILARES: Pilar[] = [
     num: '01',
     nome: 'Clientes: as torneiras que você usa no dia a dia',
     icon: Radio,
-    analogia: 'É como escolher o aparelho de rádio: trocar de aparelho não muda a estação que está no ar, só muda o som na sua sala.',
+    analogia: 'É como escolher o aparelho de rádio: trocar de aparelho não muda a estação que está no ar, só muda o som que chega na sua sala.',
     texto: 'Clientes são os aplicativos, como Primal, Damus e Amethyst. É ali que você lê, publica, responde e configura seu perfil. Qualquer desenvolvedor no mundo pode criar um novo cliente seguindo as mesmas regras abertas do protocolo, por isso existem tantas opções diferentes, cada uma com sua própria cara, todas conversando com o mesmo protocolo por trás.',
   },
   {
@@ -139,17 +139,17 @@ const FAQ = [
 const CHECKLIST = [
   { tempo: '2 min', texto: 'Instale um cliente. Primal (Android e iPhone) é o mais simples pra quem nunca usou. Damus é a opção clássica no iPhone, Amethyst a mais completa no Android.' },
   { tempo: '3 min', texto: 'Crie o perfil. O aplicativo gera suas duas chaves na hora. Anote a chave privada (nsec) num papel físico, do mesmo jeito que você guardaria a seed de uma carteira Bitcoin.' },
-  { tempo: '1 min', texto: 'Blinde a chave. Nunca digite sua nsec em site nenhum. No Android, use o Amber para assinar; no computador, use uma extensão de assinatura como nos2x.' },
-  { tempo: '3 min', texto: 'Complete nome, foto e descrição. Perfil vazio no Nostr é lido como bot, e quase ninguém segue de volta.' },
+  { tempo: '1 min', texto: 'Blinde a chave. Nunca digite sua nsec em site nenhum. No Android, use o Amber para assinar. No computador, use uma extensão de assinatura como o nos2x.' },
+  { tempo: '3 min', texto: 'Complete nome, foto e descrição. Perfil vazio no Nostr é lido como robô, e quase ninguém segue de volta.' },
   { tempo: '5 min', texto: 'Siga de 20 a 30 perfis da comunidade brasileira de Bitcoin. A timeline do Nostr é 100% quem você segue, então ela só ganha vida depois desse passo.' },
-  { tempo: '2 min', texto: 'Troque de cliente uma vez, só pra sentir na prática que o perfil, os seguidores e o histórico vão junto com você.' },
+  { tempo: '2 min', texto: 'Troque de cliente uma vez, só pra sentir na prática que perfil, seguidores e histórico vão junto com você.' },
   { tempo: '4 min', texto: 'Conecte uma carteira Lightning ao perfil e mande um zap pequeno pra alguém. É o teste que prova que o dinheiro roda dentro da própria rede.' },
 ];
 
 const GLOSSARIO = [
   { termo: 'npub', desc: 'Sua chave pública. É o endereço que você divulga pra qualquer pessoa te encontrar e te seguir. Pode publicar à vontade.' },
   { termo: 'nsec', desc: 'Sua chave privada. É a senha mestra da sua identidade. Quem tiver ela vira você. Nunca compartilhe, nunca digite em site.' },
-  { termo: 'relay', desc: 'Servidor independente que guarda e repassa suas publicações. Você usa vários ao mesmo tempo, e pode trocar quando quiser.' },
+  { termo: 'relay', desc: 'Servidor independente que guarda e repassa suas publicações. Você usa vários ao mesmo tempo e pode trocar quando quiser.' },
   { termo: 'zap', desc: 'Gorjeta em Bitcoin enviada pela rede Lightning direto dentro do aplicativo, sem banco e sem intermediário.' },
   { termo: 'NIP', desc: 'Padrão técnico que a comunidade adota de forma voluntária pra que apps e relays diferentes continuem se entendendo.' },
   { termo: 'cliente', desc: 'O aplicativo que você usa pra ler e publicar. Primal, Damus e Amethyst são clientes diferentes do mesmo protocolo.' },
@@ -162,40 +162,112 @@ const LIMITES = [
   },
   {
     titulo: 'Spam e golpe existem',
-    texto: 'Rede aberta e sem cadastro significa que qualquer um cria mil identidades em minutos. Falsos sorteios e perfis clonados pedindo chave privada são comuns. Curadoria aqui é responsabilidade sua, não de um moderador.',
+    texto: 'Rede aberta e sem cadastro significa que qualquer um cria mil identidades em minutos. Falso sorteio e perfil clonado pedindo chave privada são comuns. A curadoria aqui é responsabilidade sua, não de um moderador.',
   },
   {
     titulo: 'Descoberta ainda é fraca',
-    texto: 'Não existe algoritmo empurrando conteúdo novo pra você. Isso é bom pra atenção e ruim pro começo: sem seguir gente, sua timeline fica vazia e a sensação é de rede morta.',
+    texto: 'Não existe algoritmo empurrando conteúdo novo pra você. Isso é ótimo pra sua atenção e ruim no começo: sem seguir gente, a timeline fica vazia e a sensação é de rede morta.',
   },
   {
     titulo: 'Perder a nsec é definitivo',
-    texto: 'Não existe recuperar senha, não existe suporte, não existe verificação de identidade. Perdeu a chave privada, perdeu aquela identidade pra sempre, com seguidores e histórico junto.',
+    texto: 'Não existe recuperar senha, não existe suporte, não existe verificação de identidade. Perdeu a chave privada, perdeu aquela identidade para sempre, com seguidores e histórico junto.',
   },
 ];
 
 const COMPARATIVO = [
-  { criterio: 'Depende de uma empresa', nostr: 'Não', bluesky: 'Sim', mastodon: 'Não, mas federado' },
+  { criterio: 'Depende de uma empresa', nostr: 'Não', bluesky: 'Sim', mastodon: 'Não, mas é federado' },
   { criterio: 'Identidade portátil entre apps', nostr: 'Sim, total', bluesky: 'Parcial', mastodon: 'Limitada' },
-  { criterio: 'Pagamentos nativos embutidos', nostr: 'Sim, via Lightning', bluesky: 'Não', mastodon: 'Não' },
-  { criterio: 'Existe um centro que sofre pressão externa', nostr: 'Não', bluesky: 'Sim', mastodon: 'Por servidor' },
+  { criterio: 'Pagamento nativo embutido', nostr: 'Sim, via Lightning', bluesky: 'Não', mastodon: 'Não' },
+  { criterio: 'Existe um centro que sofre pressão', nostr: 'Não', bluesky: 'Sim', mastodon: 'Por servidor' },
 ];
 
 const TOC_ITEMS = [
   { id: 'cap-01', num: '01', label: 'Torneira e encanamento' },
   { id: 'cap-02', num: '02', label: 'O problema real' },
-  { id: 'cap-03', num: '03', label: 'Suas chaves' },
+  { id: 'cap-03', num: '03', label: 'Suas duas chaves' },
   { id: 'cap-04', num: '04', label: 'Os três pilares' },
   { id: 'cap-05', num: '05', label: 'As NIPs' },
   { id: 'cap-06', num: '06', label: 'Origem e comparativo' },
-  { id: 'cap-07', num: '07', label: 'Limites honestos' },
-  { id: 'cap-08', num: '08', label: 'Glossário' },
-  { id: 'cap-09', num: '09', label: 'Primeiro passo' },
-  { id: 'faq', num: '10', label: 'Dúvidas frequentes' },
+  { id: 'perfil', num: '07', label: 'Meu perfil no Nostr' },
+  { id: 'cap-08', num: '08', label: 'Limites honestos' },
+  { id: 'cap-09', num: '09', label: 'Glossário' },
+  { id: 'cap-10', num: '10', label: 'Primeiro passo hoje' },
+  { id: 'faq', num: '11', label: 'Dúvidas frequentes' },
 ];
 
-/** Preencher com o npub oficial para ativar o bloco de perfil com copiar e QR. */
-const NPUB: string | null = null;
+const NPUB = 'npub196keateffz8t0ph058nph2zutgtpkvl2y2ntzqapzcwxmtd9wm4stmm0yh';
+const NIP05 = 'lordjunnior@lordjunnior.com.br';
+
+function PerfilNostr() {
+  const [copiado, setCopiado] = useState<'npub' | 'nip05' | null>(null);
+
+  const copiar = (valor: string, tipo: 'npub' | 'nip05') => {
+    navigator.clipboard.writeText(valor);
+    setCopiado(tipo);
+    setTimeout(() => setCopiado(null), 2000);
+  };
+
+  const linhas = [
+    { rotulo: 'Chave pública (npub)', valor: NPUB, tipo: 'npub' as const },
+    { rotulo: 'Endereço verificado (NIP-05)', valor: NIP05, tipo: 'nip05' as const },
+  ];
+
+  return (
+    <section id="perfil" className="relative py-24 md:py-32 px-6 md:px-12 lg:px-20 scroll-mt-24" style={{ backgroundColor: '#ece2d3' }}>
+      <div className="max-w-[1200px] mx-auto">
+        <motion.div {...fade(0)} className="p-8 md:p-14 rounded-3xl" style={{ backgroundColor: '#0e3b3a', color: '#f4ede4' }}>
+          <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#c4a6ff' }}>Me siga na rede</span>
+          <h2 className="text-[clamp(2rem,4.5vw,3.75rem)] font-black leading-[1.05] tracking-tight">
+            Já estou lá dentro.{' '}
+            <span style={{ color: '#c4a6ff', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
+              Seu primeiro seguir pode ser este.
+            </span>
+          </h2>
+          <p className="mt-6 text-lg md:text-xl font-light leading-relaxed" style={{ color: 'rgba(244,237,228,0.82)' }}>
+            Copie o endereço abaixo, cole na busca do seu cliente e me siga. É a forma mais rápida de sair da timeline vazia e já começar acompanhando conteúdo de soberania.
+          </p>
+
+          <div className="mt-10 space-y-4">
+            {linhas.map((linha) => (
+              <div key={linha.tipo} className="p-5 md:p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-4 md:gap-6"
+                style={{ backgroundColor: 'rgba(244,237,228,0.07)', border: '1px solid rgba(244,237,228,0.16)' }}>
+                <div className="min-w-0 flex-1">
+                  <span className="block text-[11px] font-bold uppercase tracking-[0.22em] mb-2" style={{ color: 'rgba(244,237,228,0.6)' }}>
+                    {linha.rotulo}
+                  </span>
+                  <code className="block text-sm md:text-base font-mono break-all">{linha.valor}</code>
+                </div>
+                <button type="button" onClick={() => copiar(linha.valor, linha.tipo)}
+                  className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold uppercase tracking-[0.16em] transition-transform hover:scale-[1.03]"
+                  style={{ backgroundColor: '#8b5cf6', color: '#f4ede4' }}>
+                  {copiado === linha.tipo ? <Check size={16} /> : <Copy size={16} />}
+                  {copiado === linha.tipo ? 'Copiado' : 'Copiar'}
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a href={`https://primal.net/p/${NPUB}`} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-[0.16em] transition-transform hover:scale-[1.02]"
+              style={{ backgroundColor: '#f4ede4', color: '#0e3b3a' }}>
+              Abrir meu perfil no Primal <ExternalLink size={16} />
+            </a>
+            <a href={`https://njump.me/${NPUB}`} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-[0.16em] transition-transform hover:scale-[1.02]"
+              style={{ border: '2px solid rgba(244,237,228,0.5)', color: '#f4ede4' }}>
+              Ver sem instalar nada <ArrowRight size={16} />
+            </a>
+          </div>
+
+          <p className="mt-8 text-sm font-light leading-relaxed" style={{ color: 'rgba(244,237,228,0.6)' }}>
+            O NIP-05 é só uma verificação de nome ligada ao domínio, não é login e não dá acesso a nada. Sua chave privada continua sendo exclusivamente sua.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 function Hero() {
   const { scrollY } = useScroll();
@@ -308,7 +380,6 @@ export default function NostrRedeSemCensura() {
 
         <PageFloatingToc items={TOC_ITEMS} accentColor="stone" />
 
-        {/* Barra de contexto: tempo de leitura + compartilhar */}
         <div className="px-6 md:px-12 lg:px-20 pt-10">
           <div className="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-6 pb-8"
             style={{ borderBottom: '1px solid #d4c5ad' }}>
@@ -341,7 +412,7 @@ export default function NostrRedeSemCensura() {
                 Numa rede social comum, sua conta é a torneira. Se fecharem essa torneira, você perde tudo. No Nostr, se um aplicativo parar de funcionar, você simplesmente troca de torneira e continua com o mesmo encanamento: o mesmo histórico, os mesmos seguidores, a mesma identidade.
               </p>
               <div className="mt-8 p-6 md:p-8 rounded-2xl" style={{ backgroundColor: '#ece2d3', borderLeft: '4px solid #8b5cf6' }}>
-                <span className="block text-[11px] font-bold uppercase tracking-[0.3em] mb-2" style={{ color: '#8b5cf6' }}>Nota lateral</span>
+                <span className="block text-[11px] font-bold uppercase tracking-[0.3em] mb-2" style={{ color: '#7c3aed' }}>Nota lateral</span>
                 <p className="text-base md:text-lg leading-relaxed font-medium" style={{ color: '#0e3b3a' }}>
                   Em latim, "noster" significa "nosso". Uma rede que pertence a todo mundo, não a uma empresa.
                 </p>
@@ -363,13 +434,13 @@ export default function NostrRedeSemCensura() {
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
               <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#c4a6ff' }}>Capítulo 02 · O Problema</span>
               <h2 className="text-[clamp(2.25rem,5.5vw,5rem)] font-black leading-[1] tracking-tight">
-                Em 2024 uma rede inteira sumiu do ar{' '}
+                Uma rede inteira sumiu do ar{' '}
                 <span style={{ color: '#c4a6ff', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
                   por decisão de uma pessoa.
                 </span>
               </h2>
               <p className="mt-6 text-lg md:text-xl font-light leading-relaxed" style={{ color: 'rgba(244,237,228,0.8)' }}>
-                Foram cerca de 40 dias de bloqueio no Brasil, com dezenas de milhões de contas silenciadas de uma vez. Ninguém precisou invadir servidor, bastou uma ordem. Antes disso, e depois dela, quatro dores continuam se repetindo em toda rede social com dono.
+                Em 2024 foram cerca de 40 dias de bloqueio de uma rede social inteira no Brasil, com dezenas de milhões de contas silenciadas de uma vez. Ninguém precisou invadir servidor, bastou uma ordem. Antes disso, e depois dela, quatro dores continuam se repetindo em toda rede social que tem dono.
               </p>
             </motion.div>
 
@@ -442,8 +513,8 @@ export default function NostrRedeSemCensura() {
                 <ul className="space-y-2 text-base leading-relaxed font-light" style={{ color: '#2d3a37' }}>
                   <li>Nunca digite sua nsec em site, formulário, sorteio ou suporte. Nenhum serviço legítimo pede isso.</li>
                   <li>Anote em papel físico, longe de foto de celular, print e nuvem.</li>
-                  <li>No Android, assine pelo Amber. No computador, use uma extensão de assinatura como nos2x, para o app nunca ver sua chave.</li>
-                  <li>Não existe recuperar senha. Vazou a nsec, a identidade é de quem tiver ela.</li>
+                  <li>No Android, assine pelo Amber. No computador, use uma extensão como o nos2x, para o app nunca ver sua chave.</li>
+                  <li>Não existe recuperar senha. Vazou a nsec, a identidade passa a ser de quem tiver ela.</li>
                 </ul>
               </div>
             </motion.div>
@@ -540,7 +611,6 @@ export default function NostrRedeSemCensura() {
               O grande salto de visibilidade veio em dezembro de 2022, quando Jack Dorsey, ex-CEO do Twitter, doou o equivalente a cerca de 14 Bitcoin (na época, por volta de 250 mil dólares) pro desenvolvimento do protocolo. Isso atraiu desenvolvedores, jornalistas independentes e a própria comunidade Bitcoin, que reconheceu ali uma extensão natural dos mesmos valores de descentralização.
             </p>
 
-            {/* Comparativo em cartões (mobile) */}
             <div className="md:hidden space-y-4">
               {COMPARATIVO.map((c) => (
                 <div key={c.criterio} className="p-6 rounded-2xl"
@@ -596,6 +666,8 @@ export default function NostrRedeSemCensura() {
           </div>
         </section>
 
+        <PerfilNostr />
+
         {/* Captura de lead */}
         <section className="px-6 md:px-12 lg:px-20 py-20" style={{ backgroundColor: '#f4ede4' }}>
           <div className="max-w-[1100px] mx-auto">
@@ -607,11 +679,11 @@ export default function NostrRedeSemCensura() {
           </div>
         </section>
 
-        {/* CAPÍTULO 7 — Limites honestos */}
-        <section id="cap-07" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24" style={{ backgroundColor: '#ece2d3' }}>
+        {/* CAPÍTULO 8 — Limites honestos */}
+        <section id="cap-08" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24" style={{ backgroundColor: '#ece2d3' }}>
           <div className="max-w-[1400px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
-              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#c4632a' }}>Capítulo 07 · Limites</span>
+              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#c4632a' }}>Capítulo 08 · Limites</span>
               <h2 className="text-[clamp(2.25rem,5.5vw,5rem)] font-black leading-[1] tracking-tight" style={{ color: '#0e3b3a' }}>
                 O que ninguém te conta{' '}
                 <span style={{ color: '#c4632a', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
@@ -638,11 +710,11 @@ export default function NostrRedeSemCensura() {
           </div>
         </section>
 
-        {/* CAPÍTULO 8 — Glossário */}
-        <section id="cap-08" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24">
+        {/* CAPÍTULO 9 — Glossário */}
+        <section id="cap-09" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24">
           <div className="max-w-[1400px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
-              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#7c3aed' }}>Capítulo 08 · Vocabulário</span>
+              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#7c3aed' }}>Capítulo 09 · Vocabulário</span>
               <h2 className="text-[clamp(2.25rem,5.5vw,5rem)] font-black leading-[1] tracking-tight" style={{ color: '#0e3b3a' }}>
                 Seis palavras e você{' '}
                 <span style={{ color: '#7c3aed', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
@@ -655,7 +727,7 @@ export default function NostrRedeSemCensura() {
                 <motion.div key={g.termo} {...fade(i * 0.05)} className="p-7 rounded-2xl" style={{ backgroundColor: '#ece2d3' }}>
                   <div className="flex items-center gap-3 mb-3">
                     <BookOpen size={18} style={{ color: '#8b5cf6' }} />
-                    <h3 className="text-xl font-black" style={{ color: '#0e3b3a', fontFamily: "'Inter Tight', sans-serif" }}>{g.termo}</h3>
+                    <h3 className="text-xl font-black" style={{ color: '#0e3b3a' }}>{g.termo}</h3>
                   </div>
                   <p className="text-base leading-relaxed font-light" style={{ color: '#2d3a37' }}>{g.desc}</p>
                 </motion.div>
@@ -664,11 +736,11 @@ export default function NostrRedeSemCensura() {
           </div>
         </section>
 
-        {/* CAPÍTULO 9 — Checklist */}
-        <section id="cap-09" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24" style={{ backgroundColor: '#ece2d3' }}>
+        {/* CAPÍTULO 10 — Checklist */}
+        <section id="cap-10" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24" style={{ backgroundColor: '#ece2d3' }}>
           <div className="max-w-[1200px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
-              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#7c3aed' }}>Capítulo 09 · Prática</span>
+              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#7c3aed' }}>Capítulo 10 · Prática</span>
               <h2 className="text-[clamp(2.25rem,5.5vw,5rem)] font-black leading-[1] tracking-tight" style={{ color: '#0e3b3a' }}>
                 Como dar o primeiro{' '}
                 <span style={{ color: '#7c3aed', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
@@ -676,7 +748,7 @@ export default function NostrRedeSemCensura() {
                 </span>
               </h2>
               <p className="mt-6 text-lg md:text-xl font-light leading-relaxed" style={{ color: '#2d3a37' }}>
-                Sete etapas, cerca de 20 minutos no total. Ao final você tem identidade própria, chave protegida e o primeiro zap enviado.
+                Sete etapas, cerca de 20 minutos no total. No fim você tem identidade própria, chave protegida e o primeiro zap enviado.
               </p>
             </motion.div>
 
@@ -684,7 +756,7 @@ export default function NostrRedeSemCensura() {
               {CHECKLIST.map((item, i) => (
                 <motion.li key={i} {...fade(i * 0.04)}
                   className="flex items-start gap-6 p-6 md:p-7 rounded-2xl transition-all duration-500 hover:translate-x-2"
-                  style={{ backgroundColor: '#f4ede4' }}>
+                  style={{ backgroundColor: '#faf6f0' }}>
                   <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-xl md:text-2xl font-black"
                     style={{ backgroundColor: '#8b5cf6', color: '#f4ede4' }}>
                     {String(i + 1).padStart(2, '0')}
@@ -701,7 +773,7 @@ export default function NostrRedeSemCensura() {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24">
+        <section className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20" style={{ backgroundColor: '#ece2d3' }}>
           <div className="max-w-[1100px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
               <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#7c3aed' }}>Dúvidas frequentes</span>
