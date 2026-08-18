@@ -378,8 +378,20 @@ export default function NostrRedeSemCensura() {
 
         <Hero />
 
+        <PageFloatingToc items={TOC_ITEMS} accentColor="stone" />
+
+        <div className="px-6 md:px-12 lg:px-20 pt-10">
+          <div className="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-6 pb-8"
+            style={{ borderBottom: '1px solid #d4c5ad' }}>
+            <div style={{ color: '#0e3b3a' }}>
+              <ReadingTime minutes={12} />
+            </div>
+            <ShareButtons title="O que é Nostr? O protocolo que ninguém consegue desligar" />
+          </div>
+        </div>
+
         {/* CAPÍTULO 1 — Introdução e analogia da torneira */}
-        <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36">
+        <section id="cap-01" className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36 scroll-mt-24">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-[1600px] mx-auto">
             <motion.aside {...fade(0)} className="lg:col-span-4">
               <div className="sticky top-24">
@@ -400,8 +412,9 @@ export default function NostrRedeSemCensura() {
                 Numa rede social comum, sua conta é a torneira. Se fecharem essa torneira, você perde tudo. No Nostr, se um aplicativo parar de funcionar, você simplesmente troca de torneira e continua com o mesmo encanamento: o mesmo histórico, os mesmos seguidores, a mesma identidade.
               </p>
               <div className="mt-8 p-6 md:p-8 rounded-2xl" style={{ backgroundColor: '#ece2d3', borderLeft: '4px solid #8b5cf6' }}>
+                <span className="block text-[11px] font-bold uppercase tracking-[0.3em] mb-2" style={{ color: '#7c3aed' }}>Nota lateral</span>
                 <p className="text-base md:text-lg leading-relaxed font-medium" style={{ color: '#0e3b3a' }}>
-                  Curiosamente, em latim, "noster" também significa "nosso". Uma rede que pertence a todo mundo, não a uma empresa.
+                  Em latim, "noster" significa "nosso". Uma rede que pertence a todo mundo, não a uma empresa.
                 </p>
               </div>
             </motion.div>
