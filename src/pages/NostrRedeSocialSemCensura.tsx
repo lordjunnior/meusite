@@ -4,15 +4,20 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import {
   Radio, KeyRound, Zap, Network, ShieldOff, ChevronDown,
   ArrowRight, Ban, MessageSquareOff, Landmark, Megaphone, Compass, KeyRound as KeyIcon,
+  AlertTriangle, Copy, Check, ExternalLink, BookOpen,
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
+import PageFloatingToc from '@/components/PageFloatingToc';
+import ReadingTime from '@/components/ReadingTime';
+import ShareButtons from '@/components/ShareButtons';
+import InlineLeadCapture from '@/components/InlineLeadCapture';
 import heroImg from '@/assets/blockchain-rede-global.jpg';
-import imgChave from '@/assets/saida/defesa-digital-criptografia.jpg';
-import imgRelay from '@/assets/saida/comunicacao-segura-mesh.jpg';
-import imgZap from '@/assets/lightning-rede-global.jpg';
+import imgChave from '@/assets/nostr/nostr-chave-privada.jpg';
+import imgRelay from '@/assets/nostr/nostr-relays-malha.jpg';
+import imgZap from '@/assets/nostr/nostr-zap-lightning.jpg';
 import imgLivro from '@/assets/blockchain-livro-razao.jpg';
-import imgImpacto from '@/assets/alertas-confisco-digital.jpg';
+import imgImpacto from '@/assets/nostr/nostr-rede-desligada.jpg';
 
 /**
  * /nostr-rede-social-sem-censura
@@ -77,7 +82,7 @@ const PILARES: Pilar[] = [
     num: '01',
     nome: 'Clientes: as torneiras que você usa no dia a dia',
     icon: Radio,
-    analogia: 'Pensa numa torneira de casa: a água que sai não pertence a ela, ela é só o ponto de acesso a um encanamento inteiro.',
+    analogia: 'É como escolher o aparelho de rádio: trocar de aparelho não muda a estação que está no ar, só muda o som que chega na sua sala.',
     texto: 'Clientes são os aplicativos, como Primal, Damus e Amethyst. É ali que você lê, publica, responde e configura seu perfil. Qualquer desenvolvedor no mundo pode criar um novo cliente seguindo as mesmas regras abertas do protocolo, por isso existem tantas opções diferentes, cada uma com sua própria cara, todas conversando com o mesmo protocolo por trás.',
   },
   {
@@ -132,14 +137,137 @@ const FAQ = [
 ];
 
 const CHECKLIST = [
-  'Escolha um cliente pra começar: Primal ou Amethyst (Android) e Damus (iPhone) são os mais fáceis pra quem nunca usou.',
-  'Ao criar seu perfil, o aplicativo gera suas duas chaves. Anote a chave privada (nsec) num papel físico, do mesmo jeito que você guardaria a seed de uma carteira Bitcoin.',
-  'Nunca digite sua chave privada em nenhum site ou aplicativo que não seja o processo oficial de login do seu cliente.',
-  'Complete seu perfil (nome, foto, descrição) para facilitar que outras pessoas te encontrem e confiem no seu perfil.',
-  'Siga alguns perfis conhecidos da comunidade brasileira de Bitcoin pra começar a entender o tom e o funcionamento da rede.',
-  'Explore trocar de aplicativo pelo menos uma vez, só pra sentir na prática que sua identidade realmente te acompanha entre clientes diferentes.',
-  'Se quiser testar os zaps, conecte uma carteira Lightning ao seu perfil e envie um zap pequeno pra alguém como teste.',
+  { tempo: '2 min', texto: 'Instale um cliente. Primal (Android e iPhone) é o mais simples pra quem nunca usou. Damus é a opção clássica no iPhone, Amethyst a mais completa no Android.' },
+  { tempo: '3 min', texto: 'Crie o perfil. O aplicativo gera suas duas chaves na hora. Anote a chave privada (nsec) num papel físico, do mesmo jeito que você guardaria a seed de uma carteira Bitcoin.' },
+  { tempo: '1 min', texto: 'Blinde a chave. Nunca digite sua nsec em site nenhum. No Android, use o Amber para assinar. No computador, use uma extensão de assinatura como o nos2x.' },
+  { tempo: '3 min', texto: 'Complete nome, foto e descrição. Perfil vazio no Nostr é lido como robô, e quase ninguém segue de volta.' },
+  { tempo: '5 min', texto: 'Siga de 20 a 30 perfis da comunidade brasileira de Bitcoin. A timeline do Nostr é 100% quem você segue, então ela só ganha vida depois desse passo.' },
+  { tempo: '2 min', texto: 'Troque de cliente uma vez, só pra sentir na prática que perfil, seguidores e histórico vão junto com você.' },
+  { tempo: '4 min', texto: 'Conecte uma carteira Lightning ao perfil e mande um zap pequeno pra alguém. É o teste que prova que o dinheiro roda dentro da própria rede.' },
 ];
+
+const GLOSSARIO = [
+  { termo: 'npub', desc: 'Sua chave pública. É o endereço que você divulga pra qualquer pessoa te encontrar e te seguir. Pode publicar à vontade.' },
+  { termo: 'nsec', desc: 'Sua chave privada. É a senha mestra da sua identidade. Quem tiver ela vira você. Nunca compartilhe, nunca digite em site.' },
+  { termo: 'relay', desc: 'Servidor independente que guarda e repassa suas publicações. Você usa vários ao mesmo tempo e pode trocar quando quiser.' },
+  { termo: 'zap', desc: 'Gorjeta em Bitcoin enviada pela rede Lightning direto dentro do aplicativo, sem banco e sem intermediário.' },
+  { termo: 'NIP', desc: 'Padrão técnico que a comunidade adota de forma voluntária pra que apps e relays diferentes continuem se entendendo.' },
+  { termo: 'cliente', desc: 'O aplicativo que você usa pra ler e publicar. Primal, Damus e Amethyst são clientes diferentes do mesmo protocolo.' },
+];
+
+const LIMITES = [
+  {
+    titulo: 'Relay também filtra',
+    texto: 'Nenhum relay é obrigado a hospedar o que você publica. Um relay grande pode decidir não repassar seu conteúdo. A diferença é que isso não te apaga da rede: basta publicar em outros relays, ou subir o seu próprio.',
+  },
+  {
+    titulo: 'Spam e golpe existem',
+    texto: 'Rede aberta e sem cadastro significa que qualquer um cria mil identidades em minutos. Falso sorteio e perfil clonado pedindo chave privada são comuns. A curadoria aqui é responsabilidade sua, não de um moderador.',
+  },
+  {
+    titulo: 'Descoberta ainda é fraca',
+    texto: 'Não existe algoritmo empurrando conteúdo novo pra você. Isso é ótimo pra sua atenção e ruim no começo: sem seguir gente, a timeline fica vazia e a sensação é de rede morta.',
+  },
+  {
+    titulo: 'Perder a nsec é definitivo',
+    texto: 'Não existe recuperar senha, não existe suporte, não existe verificação de identidade. Perdeu a chave privada, perdeu aquela identidade para sempre, com seguidores e histórico junto.',
+  },
+];
+
+const COMPARATIVO = [
+  { criterio: 'Depende de uma empresa', nostr: 'Não', bluesky: 'Sim', mastodon: 'Não, mas é federado' },
+  { criterio: 'Identidade portátil entre apps', nostr: 'Sim, total', bluesky: 'Parcial', mastodon: 'Limitada' },
+  { criterio: 'Pagamento nativo embutido', nostr: 'Sim, via Lightning', bluesky: 'Não', mastodon: 'Não' },
+  { criterio: 'Existe um centro que sofre pressão', nostr: 'Não', bluesky: 'Sim', mastodon: 'Por servidor' },
+];
+
+const TOC_ITEMS = [
+  { id: 'cap-01', num: '01', label: 'Torneira e encanamento' },
+  { id: 'cap-02', num: '02', label: 'O problema real' },
+  { id: 'cap-03', num: '03', label: 'Suas duas chaves' },
+  { id: 'cap-04', num: '04', label: 'Os três pilares' },
+  { id: 'cap-05', num: '05', label: 'As NIPs' },
+  { id: 'cap-06', num: '06', label: 'Origem e comparativo' },
+  { id: 'perfil', num: '07', label: 'Meu perfil no Nostr' },
+  { id: 'cap-08', num: '08', label: 'Limites honestos' },
+  { id: 'cap-09', num: '09', label: 'Glossário' },
+  { id: 'cap-10', num: '10', label: 'Primeiro passo hoje' },
+  { id: 'faq', num: '11', label: 'Dúvidas frequentes' },
+];
+
+const NPUB = 'npub196keateffz8t0ph058nph2zutgtpkvl2y2ntzqapzcwxmtd9wm4stmm0yh';
+const NIP05 = 'lordjunnior@lordjunnior.com.br';
+
+function PerfilNostr() {
+  const [copiado, setCopiado] = useState<'npub' | 'nip05' | null>(null);
+
+  const copiar = (valor: string, tipo: 'npub' | 'nip05') => {
+    navigator.clipboard.writeText(valor);
+    setCopiado(tipo);
+    setTimeout(() => setCopiado(null), 2000);
+  };
+
+  const linhas = [
+    { rotulo: 'Chave pública (npub)', valor: NPUB, tipo: 'npub' as const },
+    { rotulo: 'Endereço verificado (NIP-05)', valor: NIP05, tipo: 'nip05' as const },
+  ];
+
+  return (
+    <section id="perfil" className="relative py-24 md:py-32 px-6 md:px-12 lg:px-20 scroll-mt-24" style={{ backgroundColor: '#ece2d3' }}>
+      <div className="max-w-[1200px] mx-auto">
+        <motion.div {...fade(0)} className="p-8 md:p-14 rounded-3xl" style={{ backgroundColor: '#0e3b3a', color: '#f4ede4' }}>
+          <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#c4a6ff' }}>Me siga na rede</span>
+          <h2 className="text-[clamp(2rem,4.5vw,3.75rem)] font-black leading-[1.05] tracking-tight">
+            Já estou lá dentro.{' '}
+            <span style={{ color: '#c4a6ff', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
+              Seu primeiro seguir pode ser este.
+            </span>
+          </h2>
+          <p className="mt-6 text-lg md:text-xl font-light leading-relaxed" style={{ color: 'rgba(244,237,228,0.82)' }}>
+            Copie o endereço abaixo, cole na busca do seu cliente e me siga. É a forma mais rápida de sair da timeline vazia e já começar acompanhando conteúdo de soberania.
+          </p>
+
+          <div className="mt-10 space-y-4">
+            {linhas.map((linha) => (
+              <div key={linha.tipo} className="p-5 md:p-6 rounded-2xl flex flex-col md:flex-row md:items-center gap-4 md:gap-6"
+                style={{ backgroundColor: 'rgba(244,237,228,0.07)', border: '1px solid rgba(244,237,228,0.16)' }}>
+                <div className="min-w-0 flex-1">
+                  <span className="block text-[11px] font-bold uppercase tracking-[0.22em] mb-2" style={{ color: 'rgba(244,237,228,0.6)' }}>
+                    {linha.rotulo}
+                  </span>
+                  <code className="block text-sm md:text-base font-mono break-all">{linha.valor}</code>
+                </div>
+                <button type="button" onClick={() => copiar(linha.valor, linha.tipo)}
+                  className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold uppercase tracking-[0.16em] transition-transform hover:scale-[1.03]"
+                  style={{ backgroundColor: '#8b5cf6', color: '#f4ede4' }}>
+                  {copiado === linha.tipo ? <Check size={16} /> : <Copy size={16} />}
+                  {copiado === linha.tipo ? 'Copiado' : 'Copiar'}
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a href={`https://primal.net/p/${NPUB}`} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-[0.16em] transition-transform hover:scale-[1.02]"
+              style={{ backgroundColor: '#f4ede4', color: '#0e3b3a' }}>
+              Abrir meu perfil no Primal <ExternalLink size={16} />
+            </a>
+            <a href={`https://njump.me/${NPUB}`} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-[0.16em] transition-transform hover:scale-[1.02]"
+              style={{ border: '2px solid rgba(244,237,228,0.5)', color: '#f4ede4' }}>
+              Ver sem instalar nada <ArrowRight size={16} />
+            </a>
+          </div>
+
+          <p className="mt-8 text-sm font-light leading-relaxed" style={{ color: 'rgba(244,237,228,0.6)' }}>
+            O NIP-05 é só uma verificação de nome ligada ao domínio, não é login e não dá acesso a nada. Sua chave privada continua sendo exclusivamente sua.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 function Hero() {
   const { scrollY } = useScroll();
