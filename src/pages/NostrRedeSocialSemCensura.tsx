@@ -479,7 +479,7 @@ export default function NostrRedeSemCensura() {
         </motion.section>
 
         {/* CAPÍTULO 3 — Chave pública e privada */}
-        <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36">
+        <section id="cap-03" className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36 scroll-mt-24">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-[1600px] mx-auto items-center">
             <motion.div {...fade(0)} className="lg:col-span-6 rounded-3xl overflow-hidden order-2 lg:order-1" style={{ height: '560px' }}>
               <img src={imgChave} alt="Duas chaves criptográficas representando a chave pública e a chave privada que formam a identidade de um usuário no Nostr" className="w-full h-full object-cover" loading="lazy" />
@@ -504,12 +504,25 @@ export default function NostrRedeSemCensura() {
                   Como sua identidade não pertence a nenhum app, você troca de aplicativo e continua com o mesmo perfil, seguidores e histórico.
                 </p>
               </div>
+
+              <div className="mt-5 p-6 rounded-xl" style={{ backgroundColor: '#fff4ec', border: '1px solid #e8a36b' }}>
+                <div className="flex items-center gap-3 mb-3">
+                  <AlertTriangle size={20} style={{ color: '#c4632a' }} />
+                  <span className="text-sm font-black uppercase tracking-[0.2em]" style={{ color: '#c4632a' }}>Blindagem da chave privada</span>
+                </div>
+                <ul className="space-y-2 text-base leading-relaxed font-light" style={{ color: '#2d3a37' }}>
+                  <li>Nunca digite sua nsec em site, formulário, sorteio ou suporte. Nenhum serviço legítimo pede isso.</li>
+                  <li>Anote em papel físico, longe de foto de celular, print e nuvem.</li>
+                  <li>No Android, assine pelo Amber. No computador, use uma extensão como o nos2x, para o app nunca ver sua chave.</li>
+                  <li>Não existe recuperar senha. Vazou a nsec, a identidade passa a ser de quem tiver ela.</li>
+                </ul>
+              </div>
             </motion.div>
           </div>
         </section>
 
         {/* CAPÍTULO 4 — Os três pilares */}
-        <section className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20" style={{ backgroundColor: '#ece2d3' }}>
+        <section id="cap-04" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24" style={{ backgroundColor: '#ece2d3' }}>
           <div className="max-w-[1600px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
               <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#7c3aed' }}>Capítulo 04 · Arquitetura</span>
@@ -556,7 +569,7 @@ export default function NostrRedeSemCensura() {
         </motion.div>
 
         {/* CAPÍTULO 5 — As NIPs (regras de trânsito) */}
-        <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36">
+        <section id="cap-05" className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36 scroll-mt-24">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-[1600px] mx-auto items-center">
             <motion.div {...fade(0)} className="lg:col-span-6">
               <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#8b5cf6' }}>Capítulo 05 · As Regras</span>
@@ -580,7 +593,7 @@ export default function NostrRedeSemCensura() {
         </section>
 
         {/* CAPÍTULO 6 — Origem e comparativo */}
-        <section className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20" style={{ backgroundColor: '#0e3b3a', color: '#f4ede4' }}>
+        <section id="cap-06" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24" style={{ backgroundColor: '#0e3b3a', color: '#f4ede4' }}>
           <div className="max-w-[1200px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
               <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#c4a6ff' }}>Capítulo 06 · Contexto</span>
