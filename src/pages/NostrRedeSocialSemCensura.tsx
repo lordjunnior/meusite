@@ -275,12 +275,12 @@ function Hero() {
   const opacityContent = useTransform(scrollY, [0, 500], [1, 0]);
 
   return (
-    <section className="relative h-[88vh] min-h-[640px] w-full overflow-hidden" style={{ backgroundColor: '#0e3b3a' }}>
+    <section className="relative h-[88vh] min-h-[640px] w-full overflow-hidden" style={{ backgroundColor: '#1a1025' }}>
       <motion.div className="absolute inset-0" style={{ y: yBg }}>
-        <img src={heroImg} alt="Rede descentralizada de nós espalhados pelo mundo, representando a arquitetura sem centro do protocolo Nostr" className="w-full h-full object-cover scale-110"
+        <img src={heroAsset.url} alt="Mascote Nostr, um avestruz roxo em retrato cinematográfico contra fundo escuro, representando o protocolo descentralizado que ninguém consegue desligar" className="w-full h-full object-cover scale-110"
           style={{ filter: 'saturate(1.05) contrast(1.02)' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(14,59,58,0.6) 0%, rgba(30,20,50,0.4) 40%, rgba(244,237,228,0.05) 70%, #f4ede4 100%)',
+          background: 'linear-gradient(180deg, rgba(26,16,37,0.72) 0%, rgba(26,16,37,0.35) 45%, rgba(244,237,228,0.08) 75%, #f4ede4 100%)',
         }} />
       </motion.div>
 
