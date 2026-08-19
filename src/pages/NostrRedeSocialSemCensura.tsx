@@ -277,7 +277,7 @@ function Hero() {
   return (
     <section className="relative h-[88vh] min-h-[640px] w-full overflow-hidden" style={{ backgroundColor: '#1a1025' }}>
       <motion.div className="absolute inset-0" style={{ y: yBg }}>
-        <img src={heroAsset.url} alt="Mascote Nostr, um avestruz roxo em retrato cinematográfico contra fundo escuro, representando o protocolo descentralizado que ninguém consegue desligar" className="w-full h-full object-cover scale-110"
+        <img src="/nostr-hero.png" alt="Mascote Nostr, um avestruz roxo em retrato cinematográfico contra fundo escuro, representando o protocolo descentralizado que ninguém consegue desligar" className="w-full h-full object-cover scale-110"
           style={{ filter: 'saturate(1.05) contrast(1.02)', objectPosition: 'right center' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0" style={{
           background: 'linear-gradient(180deg, rgba(26,16,37,0.72) 0%, rgba(26,16,37,0.35) 45%, rgba(244,237,228,0.08) 75%, #f4ede4 100%)',
