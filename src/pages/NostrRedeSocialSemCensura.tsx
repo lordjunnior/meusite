@@ -790,7 +790,7 @@ export default function NostrRedeSemCensura() {
         </section>
 
         {/* FAQ */}
-        <section className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20" style={{ backgroundColor: '#ece2d3' }}>
+        <section id="faq" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24" style={{ backgroundColor: '#f4ede4' }}>
           <div className="max-w-[1100px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
               <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#7c3aed' }}>Dúvidas frequentes</span>
