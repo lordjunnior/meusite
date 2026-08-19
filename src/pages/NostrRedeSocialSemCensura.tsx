@@ -370,6 +370,23 @@ export default function NostrRedeSemCensura() {
         }}
         faqItems={FAQ.map((f) => ({ question: f.q, answer: f.a }))}
       />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'HowTo',
+          name: 'Como começar no Nostr em 7 passos',
+          description: 'Guia passo a passo para criar perfil, proteger a chave privada e enviar o primeiro zap na rede Nostr.',
+          url: 'https://lordjunnior.com.br/o-que-e-nostr',
+          author: { '@type': 'Person', name: 'Lord Junnior' },
+          inLanguage: 'pt-BR',
+          step: CHECKLIST.map((item, i) => ({
+            '@type': 'HowToStep',
+            position: i + 1,
+            name: `Passo ${i + 1}`,
+            text: `${item.texto} (tempo estimado: ${item.tempo})`,
+          })),
+        })}
+      </script>
 
       <div className="relative min-h-screen" style={{ backgroundColor: '#f4ede4', color: '#1c2624', fontFamily: "'Inter Tight', sans-serif" }}>
         <div className="absolute top-0 left-0 right-0 z-30 px-6 md:px-12 lg:px-20 pt-[52px]">
