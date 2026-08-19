@@ -278,11 +278,11 @@ function Hero() {
     <section className="relative h-[88vh] min-h-[640px] w-full overflow-hidden" style={{ backgroundColor: '#1a1025' }}>
       <motion.div className="absolute inset-0" style={{ y: yBg }}>
         <img src="/nostr-hero.png" alt="Mascote Nostr, um avestruz roxo em retrato cinematográfico contra fundo escuro, representando o protocolo descentralizado que ninguém consegue desligar" className="w-full h-full object-cover scale-110"
-          style={{ filter: 'saturate(1.05) contrast(1.02)', objectPosition: '70% center' }} loading="eager" fetchPriority="high" decoding="async" />
+          style={{ filter: 'saturate(1.05) contrast(1.02)', objectPosition: '58% center' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0" style={{
           background: `
-            linear-gradient(90deg, rgba(26,16,37,0.88) 0%, rgba(26,16,37,0.55) 35%, rgba(26,16,37,0.15) 55%, transparent 72%),
-            linear-gradient(180deg, rgba(26,16,37,0.55) 0%, rgba(26,16,37,0.2) 45%, rgba(244,237,228,0.05) 75%, #f4ede4 100%)
+            linear-gradient(90deg, rgba(26,16,37,0.92) 0%, rgba(26,16,37,0.72) 28%, rgba(26,16,37,0.35) 50%, transparent 68%),
+            linear-gradient(180deg, rgba(26,16,37,0.6) 0%, rgba(26,16,37,0.15) 45%, rgba(244,237,228,0.05) 75%, #f4ede4 100%)
           `,
         }} />
       </motion.div>
