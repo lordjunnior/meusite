@@ -322,7 +322,7 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.65, ease: APPLE_EASE }}
           className="mt-5 max-w-2xl text-base md:text-lg font-light leading-relaxed"
-          style={{ color: '#c4a6ff' }}>
+          style={{ color: '#f4ede4', textShadow: '0 2px 16px rgba(26,16,37,0.7)' }}>
           Em poucos minutos de leitura você entende exatamente o que é o Nostr, sem economês e sem termo técnico difícil.
         </motion.p>
 
