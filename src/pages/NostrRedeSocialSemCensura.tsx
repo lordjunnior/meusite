@@ -370,6 +370,23 @@ export default function NostrRedeSemCensura() {
         }}
         faqItems={FAQ.map((f) => ({ question: f.q, answer: f.a }))}
       />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'HowTo',
+          name: 'Como começar no Nostr em 7 passos',
+          description: 'Guia passo a passo para criar perfil, proteger a chave privada e enviar o primeiro zap na rede Nostr.',
+          url: 'https://lordjunnior.com.br/o-que-e-nostr',
+          author: { '@type': 'Person', name: 'Lord Junnior' },
+          inLanguage: 'pt-BR',
+          step: CHECKLIST.map((item, i) => ({
+            '@type': 'HowToStep',
+            position: i + 1,
+            name: `Passo ${i + 1}`,
+            text: `${item.texto} (tempo estimado: ${item.tempo})`,
+          })),
+        })}
+      </script>
 
       <div className="relative min-h-screen" style={{ backgroundColor: '#f4ede4', color: '#1c2624', fontFamily: "'Inter Tight', sans-serif" }}>
         <div className="absolute top-0 left-0 right-0 z-30 px-6 md:px-12 lg:px-20 pt-[52px]">
@@ -773,7 +790,7 @@ export default function NostrRedeSemCensura() {
         </section>
 
         {/* FAQ */}
-        <section className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20" style={{ backgroundColor: '#ece2d3' }}>
+        <section id="faq" className="relative py-24 md:py-36 px-6 md:px-12 lg:px-20 scroll-mt-24" style={{ backgroundColor: '#f4ede4' }}>
           <div className="max-w-[1100px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
               <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#7c3aed' }}>Dúvidas frequentes</span>
@@ -820,7 +837,7 @@ export default function NostrRedeSemCensura() {
             <ShieldOff size={40} className="mx-auto mb-8" style={{ color: '#c4a6ff' }} />
             <p className="text-2xl md:text-4xl leading-[1.4] font-light mb-12"
               style={{ color: '#f4ede4', fontFamily: "'Playfair Display', serif", fontStyle: 'italic' }}>
-              [Espaço reservado para sua frase de impacto de fechamento, no seu estilo autoral]
+              A soberania digital não começa quando você compra Bitcoin. Começa quando você para de depender de plataformas que podem ser desligadas.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link to="/infraestrutura"
