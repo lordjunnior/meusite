@@ -12,7 +12,7 @@ import PageFloatingToc from '@/components/PageFloatingToc';
 import ReadingTime from '@/components/ReadingTime';
 import ShareButtons from '@/components/ShareButtons';
 import InlineLeadCapture from '@/components/InlineLeadCapture';
-import heroImg from '@/assets/blockchain-rede-global.jpg';
+
 import imgChave from '@/assets/nostr/nostr-chave-privada.jpg';
 import imgRelay from '@/assets/nostr/nostr-relays-malha.jpg';
 import imgZap from '@/assets/nostr/nostr-zap-lightning.jpg';
@@ -275,12 +275,15 @@ function Hero() {
   const opacityContent = useTransform(scrollY, [0, 500], [1, 0]);
 
   return (
-    <section className="relative h-[88vh] min-h-[640px] w-full overflow-hidden" style={{ backgroundColor: '#0e3b3a' }}>
+    <section className="relative h-[88vh] min-h-[640px] w-full overflow-hidden" style={{ backgroundColor: '#1a1025' }}>
       <motion.div className="absolute inset-0" style={{ y: yBg }}>
-        <img src={heroImg} alt="Rede descentralizada de nós espalhados pelo mundo, representando a arquitetura sem centro do protocolo Nostr" className="w-full h-full object-cover scale-110"
-          style={{ filter: 'saturate(1.05) contrast(1.02)' }} loading="eager" fetchPriority="high" decoding="async" />
+        <img src="/nostr-hero.png" alt="Mascote Nostr, um avestruz roxo em retrato cinematográfico contra fundo escuro, representando o protocolo descentralizado que ninguém consegue desligar" className="w-full h-full object-cover scale-110"
+          style={{ filter: 'saturate(1.05) contrast(1.02)', objectPosition: '58% center' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(14,59,58,0.6) 0%, rgba(30,20,50,0.4) 40%, rgba(244,237,228,0.05) 70%, #f4ede4 100%)',
+          background: `
+            linear-gradient(90deg, rgba(26,16,37,0.92) 0%, rgba(26,16,37,0.72) 28%, rgba(26,16,37,0.35) 50%, transparent 68%),
+            linear-gradient(180deg, rgba(26,16,37,0.6) 0%, rgba(26,16,37,0.15) 45%, rgba(244,237,228,0.05) 75%, #f4ede4 100%)
+          `,
         }} />
       </motion.div>
 
@@ -319,7 +322,7 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.65, ease: APPLE_EASE }}
           className="mt-5 max-w-2xl text-base md:text-lg font-light leading-relaxed"
-          style={{ color: '#c4a6ff' }}>
+          style={{ color: '#f4ede4', textShadow: '0 2px 16px rgba(26,16,37,0.7)' }}>
           Em poucos minutos de leitura você entende exatamente o que é o Nostr, sem economês e sem termo técnico difícil.
         </motion.p>
 
@@ -333,9 +336,9 @@ function Hero() {
             { k: 'Zero', v: 'donos e botões de desligar' },
           ].map((s) => (
             <div key={s.k} className="px-5 py-3 rounded-2xl backdrop-blur-md"
-              style={{ backgroundColor: 'rgba(244,237,228,0.12)', border: '1px solid rgba(244,237,228,0.22)' }}>
+              style={{ backgroundColor: 'rgba(26,16,37,0.55)', border: '1px solid rgba(244,237,228,0.18)' }}>
               <span className="block text-lg md:text-xl font-black" style={{ color: '#f4ede4' }}>{s.k}</span>
-              <span className="block text-[11px] uppercase tracking-[0.18em]" style={{ color: 'rgba(244,237,228,0.7)' }}>{s.v}</span>
+              <span className="block text-[11px] uppercase tracking-[0.18em]" style={{ color: 'rgba(244,237,228,0.75)' }}>{s.v}</span>
             </div>
           ))}
         </motion.div>
