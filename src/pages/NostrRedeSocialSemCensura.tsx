@@ -837,7 +837,7 @@ export default function NostrRedeSemCensura() {
             <ShieldOff size={40} className="mx-auto mb-8" style={{ color: '#c4a6ff' }} />
             <p className="text-2xl md:text-4xl leading-[1.4] font-light mb-12"
               style={{ color: '#f4ede4', fontFamily: "'Playfair Display', serif", fontStyle: 'italic' }}>
-              [Espaço reservado para sua frase de impacto de fechamento, no seu estilo autoral]
+              A soberania digital não começa quando você compra Bitcoin. Começa quando você para de depender de plataformas que podem ser desligadas.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link to="/infraestrutura"
