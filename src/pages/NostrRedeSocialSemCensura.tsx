@@ -12,7 +12,7 @@ import PageFloatingToc from '@/components/PageFloatingToc';
 import ReadingTime from '@/components/ReadingTime';
 import ShareButtons from '@/components/ShareButtons';
 import InlineLeadCapture from '@/components/InlineLeadCapture';
-import heroImg from '@/assets/blockchain-rede-global.jpg';
+import heroAsset from '@/assets/nostr.png.asset.json';
 import imgChave from '@/assets/nostr/nostr-chave-privada.jpg';
 import imgRelay from '@/assets/nostr/nostr-relays-malha.jpg';
 import imgZap from '@/assets/nostr/nostr-zap-lightning.jpg';
