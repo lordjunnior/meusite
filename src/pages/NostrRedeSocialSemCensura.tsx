@@ -336,9 +336,9 @@ function Hero() {
             { k: 'Zero', v: 'donos e botões de desligar' },
           ].map((s) => (
             <div key={s.k} className="px-5 py-3 rounded-2xl backdrop-blur-md"
-              style={{ backgroundColor: 'rgba(244,237,228,0.12)', border: '1px solid rgba(244,237,228,0.22)' }}>
+              style={{ backgroundColor: 'rgba(26,16,37,0.55)', border: '1px solid rgba(244,237,228,0.18)' }}>
               <span className="block text-lg md:text-xl font-black" style={{ color: '#f4ede4' }}>{s.k}</span>
-              <span className="block text-[11px] uppercase tracking-[0.18em]" style={{ color: 'rgba(244,237,228,0.7)' }}>{s.v}</span>
+              <span className="block text-[11px] uppercase tracking-[0.18em]" style={{ color: 'rgba(244,237,228,0.75)' }}>{s.v}</span>
             </div>
           ))}
         </motion.div>
