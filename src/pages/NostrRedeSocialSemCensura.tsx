@@ -277,12 +277,12 @@ function Hero() {
   return (
     <section className="relative h-[88vh] min-h-[640px] w-full overflow-hidden" style={{ backgroundColor: '#1a1025' }}>
       <motion.div className="absolute inset-0" style={{ y: yBg }}>
-        <img src="/nostr-hero.png" alt="Mascote Nostr, um avestruz roxo em retrato cinematográfico contra fundo escuro, representando o protocolo descentralizado que ninguém consegue desligar" className="w-full h-full object-cover scale-110"
-          style={{ filter: 'saturate(1.05) contrast(1.02)', objectPosition: '58% center' }} loading="eager" fetchPriority="high" decoding="async" />
+        <img src="/nostr-hero.png" alt="Mascote Nostr, um avestruz roxo em retrato cinematográfico contra fundo escuro, representando o protocolo descentralizado que ninguém consegue desligar" className="w-full h-full object-cover"
+          style={{ filter: 'saturate(1.05) contrast(1.02)', objectPosition: '65% center' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="absolute inset-0" style={{
           background: `
-            linear-gradient(90deg, rgba(26,16,37,0.92) 0%, rgba(26,16,37,0.72) 28%, rgba(26,16,37,0.35) 50%, transparent 68%),
-            linear-gradient(180deg, rgba(26,16,37,0.6) 0%, rgba(26,16,37,0.15) 45%, rgba(244,237,228,0.05) 75%, #f4ede4 100%)
+            linear-gradient(90deg, rgba(26,16,37,0.97) 0%, rgba(26,16,37,0.9) 28%, rgba(26,16,37,0.72) 42%, rgba(26,16,37,0.38) 52%, rgba(26,16,37,0.12) 60%, transparent 68%),
+            linear-gradient(180deg, transparent 0%, transparent 75%, rgba(26,16,37,0.45) 90%, #f4ede4 100%)
           `,
         }} />
       </motion.div>
@@ -302,8 +302,8 @@ function Hero() {
           initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 1, delay: 0.15, ease: APPLE_EASE }}
-          className="text-[clamp(2.75rem,8.5vw,7.5rem)] font-black leading-[0.95] tracking-tight max-w-[20ch]"
-          style={{ fontFamily: "'Inter Tight', sans-serif", color: '#f4ede4' }}>
+          className="text-[clamp(2.75rem,8.5vw,7.5rem)] font-black leading-[0.95] tracking-tight max-w-[16ch]"
+          style={{ fontFamily: "'Inter Tight', sans-serif", color: '#f4ede4', textShadow: '0 4px 30px rgba(26,16,37,0.9), 0 2px 12px rgba(0,0,0,0.5)' }}>
           O protocolo que{'\u00A0'}
           <span style={{ color: '#c4a6ff', fontStyle: 'italic', fontWeight: 400, fontFamily: "'Playfair Display', serif", textShadow: '0 0 40px rgba(139,92,246,0.45), 0 0 80px rgba(139,92,246,0.25)' }}>
             ninguém consegue desligar.
@@ -313,8 +313,8 @@ function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: APPLE_EASE }}
-          className="mt-8 max-w-2xl text-lg md:text-2xl leading-relaxed font-light"
-          style={{ color: 'rgba(244,237,228,0.85)', fontFamily: "'Inter Tight', sans-serif" }}>
+          className="mt-8 max-w-xl text-lg md:text-2xl leading-relaxed font-light"
+          style={{ color: 'rgba(244,237,228,0.92)', fontFamily: "'Inter Tight', sans-serif", textShadow: '0 3px 24px rgba(26,16,37,0.85)' }}>
           Em 2024, uma rede social inteira saiu do ar no Brasil por semanas, por decisão de uma única autoridade. O Nostr nasceu pra tornar isso impossível: um protocolo aberto, sem dono, sem servidor central, sem botão de desligar.
         </motion.p>
 
