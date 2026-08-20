@@ -302,7 +302,7 @@ function Hero() {
           initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 1, delay: 0.15, ease: APPLE_EASE }}
-          className="text-[clamp(2.75rem,8.5vw,7.5rem)] font-black leading-[0.95] tracking-tight max-w-[18ch]"
+          className="text-[clamp(2.75rem,8.5vw,7.5rem)] font-black leading-[0.95] tracking-tight max-w-[16ch]"
           style={{ fontFamily: "'Inter Tight', sans-serif", color: '#f4ede4', textShadow: '0 4px 30px rgba(26,16,37,0.9), 0 2px 12px rgba(0,0,0,0.5)' }}>
           O protocolo que{'\u00A0'}
           <span style={{ color: '#c4a6ff', fontStyle: 'italic', fontWeight: 400, fontFamily: "'Playfair Display', serif", textShadow: '0 0 40px rgba(139,92,246,0.45), 0 0 80px rgba(139,92,246,0.25)' }}>
