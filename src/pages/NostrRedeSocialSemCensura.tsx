@@ -275,22 +275,35 @@ function Hero() {
   const opacityContent = useTransform(scrollY, [0, 500], [1, 0]);
 
   return (
-    <section className="relative h-[88vh] min-h-[640px] w-full overflow-hidden" style={{ backgroundColor: '#1a1025' }}>
+    <section className="relative h-[92vh] md:h-[88vh] min-h-[640px] md:min-h-[640px] w-full overflow-hidden" style={{ backgroundColor: '#1a1025' }}>
+      <style>{`
+        .nostr-hero-img { object-position: 58% center; }
+        @media (max-width: 768px) {
+          .nostr-hero-img { object-position: 75% center; }
+        }
+        .nostr-hero-overlay {
+          background:
+            linear-gradient(90deg, rgba(26,16,37,0.97) 0%, rgba(26,16,37,0.9) 30%, rgba(26,16,37,0.72) 44%, rgba(26,16,37,0.38) 54%, rgba(26,16,37,0.12) 64%, transparent 74%),
+            linear-gradient(180deg, transparent 0%, transparent 75%, rgba(26,16,37,0.45) 90%, #f4ede4 100%);
+        }
+        @media (max-width: 768px) {
+          .nostr-hero-overlay {
+            background:
+              linear-gradient(90deg, rgba(26,16,37,0.98) 0%, rgba(26,16,37,0.94) 35%, rgba(26,16,37,0.78) 55%, rgba(26,16,37,0.4) 72%, transparent 86%),
+              linear-gradient(180deg, rgba(26,16,37,0.75) 0%, rgba(26,16,37,0.25) 35%, rgba(26,16,37,0.55) 80%, #f4ede4 100%);
+          }
+        }
+      `}</style>
       <motion.div className="absolute inset-0" style={{ y: yBg }}>
-        <img src="/nostr-hero.png" alt="Mascote Nostr, um avestruz roxo em retrato cinematográfico contra fundo escuro, representando o protocolo descentralizado que ninguém consegue desligar" className="w-full h-full object-cover"
-          style={{ filter: 'saturate(1.05) contrast(1.02)', objectPosition: '65% center' }} loading="eager" fetchPriority="high" decoding="async" />
-        <div className="absolute inset-0" style={{
-          background: `
-            linear-gradient(90deg, rgba(26,16,37,0.97) 0%, rgba(26,16,37,0.9) 28%, rgba(26,16,37,0.72) 42%, rgba(26,16,37,0.38) 52%, rgba(26,16,37,0.12) 60%, transparent 68%),
-            linear-gradient(180deg, transparent 0%, transparent 75%, rgba(26,16,37,0.45) 90%, #f4ede4 100%)
-          `,
-        }} />
+        <img src="/nostr-hero.png" alt="Mascote Nostr, um avestruz roxo em retrato cinematográfico contra fundo escuro, representando o protocolo descentralizado que ninguém consegue desligar" className="nostr-hero-img w-full h-full object-cover"
+          style={{ filter: 'saturate(1.05) contrast(1.02)' }} loading="eager" fetchPriority="high" decoding="async" />
+        <div className="nostr-hero-overlay absolute inset-0" />
       </motion.div>
 
-      <motion.div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-20 md:pb-28"
+      <motion.div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-16 md:pb-28"
         style={{ opacity: opacityContent }}>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: APPLE_EASE }}
-          className="inline-flex items-center gap-3 mb-6 self-start px-4 py-2 rounded-full backdrop-blur-md"
+          className="inline-flex items-center gap-3 mb-4 md:mb-6 self-start px-4 py-2 rounded-full backdrop-blur-md"
           style={{ backgroundColor: 'rgba(244,237,228,0.15)', border: '1px solid rgba(244,237,228,0.25)' }}>
           <Radio size={16} style={{ color: '#f4ede4' }} />
           <span className="text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase" style={{ color: '#f4ede4' }}>
@@ -302,7 +315,7 @@ function Hero() {
           initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 1, delay: 0.15, ease: APPLE_EASE }}
-          className="text-[clamp(2.75rem,8.5vw,7.5rem)] font-black leading-[0.95] tracking-tight max-w-[16ch]"
+          className="text-[clamp(1.75rem,9vw,4.5rem)] md:text-[clamp(2.75rem,8.5vw,7.5rem)] font-black leading-[0.95] tracking-tight max-w-[16ch]"
           style={{ fontFamily: "'Inter Tight', sans-serif", color: '#f4ede4', textShadow: '0 4px 30px rgba(26,16,37,0.9), 0 2px 12px rgba(0,0,0,0.5)' }}>
           O protocolo que{'\u00A0'}
           <span style={{ color: '#c4a6ff', fontStyle: 'italic', fontWeight: 400, fontFamily: "'Playfair Display', serif", textShadow: '0 0 40px rgba(139,92,246,0.45), 0 0 80px rgba(139,92,246,0.25)' }}>
@@ -313,7 +326,7 @@ function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: APPLE_EASE }}
-          className="mt-8 max-w-xl text-lg md:text-2xl leading-relaxed font-light"
+          className="mt-6 md:mt-8 max-w-xl text-base md:text-2xl leading-relaxed font-light"
           style={{ color: 'rgba(244,237,228,0.92)', fontFamily: "'Inter Tight', sans-serif", textShadow: '0 3px 24px rgba(26,16,37,0.85)' }}>
           Em 2024, uma rede social inteira saiu do ar no Brasil por semanas, por decisão de uma única autoridade. O Nostr nasceu pra tornar isso impossível: um protocolo aberto, sem dono, sem servidor central, sem botão de desligar.
         </motion.p>
@@ -321,24 +334,24 @@ function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.65, ease: APPLE_EASE }}
-          className="mt-5 max-w-2xl text-base md:text-lg font-light leading-relaxed"
-          style={{ color: '#f4ede4', textShadow: '0 2px 16px rgba(26,16,37,0.7)' }}>
+          className="hidden md:block mt-3 md:mt-4 max-w-xl text-sm md:text-xl leading-relaxed font-light"
+          style={{ color: 'rgba(244,237,228,0.8)', fontFamily: "'Inter Tight', sans-serif", textShadow: '0 2px 18px rgba(26,16,37,0.8)' }}>
           Em poucos minutos de leitura você entende exatamente o que é o Nostr, sem economês e sem termo técnico difícil.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8, ease: APPLE_EASE }}
-          className="mt-8 flex flex-wrap gap-3">
+          className="mt-6 md:mt-8 flex flex-wrap gap-2 md:gap-3">
           {[
             { k: '2020', v: 'ano de lançamento' },
             { k: 'Milhares', v: 'de relays independentes' },
             { k: 'Zero', v: 'donos e botões de desligar' },
           ].map((s) => (
-            <div key={s.k} className="px-5 py-3 rounded-2xl backdrop-blur-md"
+            <div key={s.k} className="px-4 py-2 md:px-5 md:py-3 rounded-xl md:rounded-2xl backdrop-blur-md"
               style={{ backgroundColor: 'rgba(26,16,37,0.55)', border: '1px solid rgba(244,237,228,0.18)' }}>
-              <span className="block text-lg md:text-xl font-black" style={{ color: '#f4ede4' }}>{s.k}</span>
-              <span className="block text-[11px] uppercase tracking-[0.18em]" style={{ color: 'rgba(244,237,228,0.75)' }}>{s.v}</span>
+              <span className="block text-base md:text-xl font-black" style={{ color: '#f4ede4' }}>{s.k}</span>
+              <span className="block text-[10px] md:text-[11px] uppercase tracking-[0.18em]" style={{ color: 'rgba(244,237,228,0.75)' }}>{s.v}</span>
             </div>
           ))}
         </motion.div>
