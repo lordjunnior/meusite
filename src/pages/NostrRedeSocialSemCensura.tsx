@@ -277,13 +277,13 @@ function Hero() {
   return (
     <section className="relative h-[92vh] md:h-[88vh] min-h-[640px] md:min-h-[640px] w-full overflow-hidden" style={{ backgroundColor: '#1a1025' }}>
       <style>{`
-        .nostr-hero-img { object-position: 62% center; }
+        .nostr-hero-img { object-position: 58% center; filter: brightness(1.15) contrast(1.12) saturate(1.05); }
         @media (max-width: 768px) {
-          .nostr-hero-img { object-position: 78% center; }
+          .nostr-hero-img { object-position: 78% center; filter: brightness(1.12) contrast(1.1) saturate(1.05); }
         }
         .nostr-hero-overlay {
           background:
-            linear-gradient(90deg, rgba(26,16,37,0.98) 0%, rgba(26,16,37,0.92) 28%, rgba(26,16,37,0.74) 42%, rgba(26,16,37,0.42) 52%, rgba(26,16,37,0.14) 62%, transparent 76%),
+            linear-gradient(90deg, rgba(26,16,37,0.98) 0%, rgba(26,16,37,0.94) 20%, rgba(26,16,37,0.76) 35%, rgba(26,16,37,0.42) 45%, rgba(26,16,37,0.18) 52%, rgba(26,16,37,0.05) 58%, transparent 64%),
             linear-gradient(180deg, transparent 0%, transparent 75%, rgba(26,16,37,0.45) 90%, #f4ede4 100%);
         }
         @media (max-width: 768px) {
@@ -296,7 +296,7 @@ function Hero() {
       `}</style>
       <motion.div className="absolute inset-0" style={{ y: yBg }}>
         <img src="/nostr-hero.png" alt="Mascote Nostr, um avestruz roxo em retrato cinematográfico contra fundo escuro, representando o protocolo descentralizado que ninguém consegue desligar" className="nostr-hero-img w-full h-full object-cover"
-          style={{ filter: 'saturate(1.05) contrast(1.02)' }} loading="eager" fetchPriority="high" decoding="async" />
+          style={{ filter: 'brightness(1.15) contrast(1.12) saturate(1.05)' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="nostr-hero-overlay absolute inset-0" />
       </motion.div>
 
