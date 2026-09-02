@@ -277,13 +277,13 @@ function Hero() {
   return (
     <section className="relative h-[92vh] md:h-[88vh] min-h-[640px] md:min-h-[640px] w-full overflow-hidden" style={{ backgroundColor: '#1a1025' }}>
       <style>{`
-        .nostr-hero-img { object-position: 62% center; }
+        .nostr-hero-img { object-position: 68% center; }
         @media (max-width: 768px) {
           .nostr-hero-img { object-position: 78% center; }
         }
         .nostr-hero-overlay {
           background:
-            linear-gradient(90deg, rgba(26,16,37,0.98) 0%, rgba(26,16,37,0.92) 28%, rgba(26,16,37,0.74) 42%, rgba(26,16,37,0.42) 52%, rgba(26,16,37,0.14) 62%, transparent 76%),
+            linear-gradient(90deg, rgba(26,16,37,0.98) 0%, rgba(26,16,37,0.94) 25%, rgba(26,16,37,0.78) 40%, rgba(26,16,37,0.45) 50%, rgba(26,16,37,0.18) 58%, rgba(26,16,37,0.05) 66%, transparent 78%),
             linear-gradient(180deg, transparent 0%, transparent 75%, rgba(26,16,37,0.45) 90%, #f4ede4 100%);
         }
         @media (max-width: 768px) {
