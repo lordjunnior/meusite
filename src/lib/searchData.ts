@@ -125,7 +125,71 @@ export const SEARCH_ENTRIES: SearchEntry[] = [
   { title: "Manipulação Informacional", description: "Propaganda e controle narrativo", path: "/soberania-organica/toxicos-ocultos/manipulacao-informacional", tags: ["manipulação", "informação", "propaganda", "narrativa"], category: "Tóxicos Ocultos" },
   { title: "Dependência Tecnológica", description: "O vício em tecnologia como ferramenta de controle", path: "/soberania-organica/toxicos-ocultos/dependencia-tecnologica", tags: ["dependência", "tecnologia", "vício", "controle"], category: "Tóxicos Ocultos" },
   { title: "Toxinas Ambientais", description: "Poluentes e contaminantes no ambiente", path: "/soberania-organica/toxicos-ocultos/toxinas-ambientais", tags: ["toxinas", "ambiental", "poluição", "contaminante"], category: "Tóxicos Ocultos" },
+
+  // Rede & Comunicação Soberana
+  { title: "O que é Nostr?", description: "O protocolo de rede social que ninguém consegue desligar: chaves, relays, NIP-05 e censura zero", path: "/o-que-e-nostr", tags: ["nostr", "rede social", "censura", "relay", "npub", "nip-05", "protocolo", "descentralizado", "damus", "amethyst", "primal", "zaps", "lightning"], category: "Infraestrutura" },
+  { title: "Comunicação Segura", description: "Mensageria criptografada e comunicação fora do controle estatal", path: "/soberania-organica/comunicacao-segura", tags: ["comunicação", "criptografia", "signal", "privacidade", "mensagem"], category: "Infraestrutura" },
+  { title: "Defesa Digital", description: "Higiene digital, OPSEC e blindagem de dispositivos", path: "/soberania-organica/defesa-digital", tags: ["defesa digital", "opsec", "privacidade", "segurança", "dados"], category: "Infraestrutura" },
+  { title: "Vazamento de Dados", description: "Como seus dados vazam e o que fazer sobre isso", path: "/vazamento-dados", tags: ["vazamento", "dados", "privacidade", "leak"], category: "Alertas" },
+
+  // Bitcoin & Autocustódia (novos)
+  { title: "Jade Core — Review", description: "A hardware wallet que te tira da gaiola fiat em menos de 5 minutos", path: "/autocustodia/jade-core-review", tags: ["jade", "jade core", "hardware wallet", "blockstream", "review", "ledger", "trezor", "coldcard", "autocustódia"], category: "Autocustódia" },
+  { title: "Seed Phrase em Aço", description: "Backup indestrutível da sua seed contra fogo, água e tempo", path: "/autocustodia/seed-phrase-em-aco", tags: ["seed", "aço", "backup", "steel", "24 palavras"], category: "Autocustódia" },
+  { title: "Herança Bitcoin", description: "Plano de sucessão para seus sats sem expor chaves", path: "/autocustodia/heranca-bitcoin", tags: ["herança", "sucessão", "morte", "família", "multisig"], category: "Autocustódia" },
+  { title: "CoinJoin e Privacidade", description: "Quebra de rastreabilidade on-chain na prática", path: "/autocustodia/coinjoin-privacidade", tags: ["coinjoin", "privacidade", "utxo", "rastreio", "chain analysis"], category: "Autocustódia" },
+  { title: "Multisig Bitcoin", description: "Custódia distribuída com múltiplas assinaturas", path: "/multisig-bitcoin", tags: ["multisig", "2 de 3", "custódia", "segurança"], category: "Autocustódia" },
+  { title: "Krux, Passphrase e BlueWallet", description: "Setup avançado de autocustódia com airgap", path: "/autocustodia/krux-passphrase-bluewallet", tags: ["krux", "passphrase", "bluewallet", "airgap", "diy"], category: "Autocustódia" },
+  { title: "Comprar Bitcoin Anônimo", description: "Rotas P2P e não-KYC para acumular sem rastro", path: "/comprar-bitcoin-anonimo", tags: ["anônimo", "sem kyc", "p2p", "privacidade", "comprar bitcoin"], category: "Autocustódia" },
+
+  // Soberania Financeira (novos)
+  { title: "Cartões Cripto sem Reporte", description: "Sacar dinheiro vivo com cartões cripto e mínima exposição", path: "/soberania-financeira/cartoes-cripto-sem-reporte", tags: ["cartão cripto", "sem reporte", "redotpay", "saque", "atm", "privacidade", "kyc"], category: "Soberania Financeira" },
+  { title: "Exchanges sem KYC", description: "Hub de corretoras que não pedem identidade", path: "/soberania-financeira/exchanges-sem-kyc", tags: ["exchange", "sem kyc", "anônimo", "corretora"], category: "Soberania Financeira" },
+  { title: "KYCnot.me", description: "Diretório de serviços sem verificação de identidade", path: "/soberania-financeira/exchanges-sem-kyc/kycnot-me", tags: ["kycnotme", "sem kyc", "diretório", "privacidade"], category: "Soberania Financeira" },
+  { title: "Optima Exchange", description: "Análise da corretora sem KYC", path: "/soberania-financeira/exchanges-sem-kyc/optima-exchange", tags: ["optima", "exchange", "sem kyc"], category: "Soberania Financeira" },
+  { title: "Pegasus Swap", description: "Swap sem cadastro e sem rastro", path: "/soberania-financeira/exchanges-sem-kyc/pegasus-swap", tags: ["pegasus", "swap", "sem kyc"], category: "Soberania Financeira" },
+  { title: "Bybit e Binance Reportam Brasileiros", description: "O fim do sigilo nas exchanges centralizadas", path: "/soberania-financeira/exchanges-privacidade-e-kyc/bybit-binance-reportam-brasileiros", tags: ["bybit", "binance", "reporte", "receita federal", "kyc"], category: "Alertas" },
+  { title: "PIX sem Banco", description: "Receber e pagar PIX fora do sistema bancário tradicional", path: "/soberania-financeira/pix-sem-banco", tags: ["pix", "sem banco", "depix", "lightning"], category: "Soberania Financeira" },
+  { title: "PIX Anônimo", description: "Limites e riscos reais de privacidade no PIX", path: "/pix-anonimo", tags: ["pix", "anônimo", "privacidade", "banco central"], category: "Soberania Financeira" },
+  { title: "BitPark — Cartão Bitcoin", description: "Cartão lastreado em Bitcoin para gasto diário", path: "/bitpark-cartao-bitcoin", tags: ["bitpark", "cartão", "bitcoin", "gasto"], category: "Soberania Financeira" },
+  { title: "Polymarket e Rede Neural BTC", description: "Mercados de previsão como termômetro do Bitcoin", path: "/polymarket-rede-neural-btc", tags: ["polymarket", "previsão", "mercado", "btc"], category: "Soberania Financeira" },
+
+  // Saída & Jurisdições
+  { title: "Cédula e Residência no Chile", description: "Como iniciar residência chilena 100% online: documentos, custos e cidadania", path: "/saida/cedula-residencia-chile", tags: ["chile", "residência", "cédula", "imigração", "segundo passaporte", "plano b", "saída"], category: "Saída" },
+  { title: "Jurisdições Amigáveis", description: "Países que respeitam capital e privacidade", path: "/saida/jurisdicoes-amigaveis", tags: ["jurisdição", "país", "offshore", "residência"], category: "Saída" },
+  { title: "Residência Fiscal", description: "Como mudar sua residência fiscal legalmente", path: "/saida/residencia-fiscal", tags: ["residência fiscal", "imposto", "saída fiscal", "domicílio"], category: "Saída" },
+  { title: "Segundo Passaporte", description: "Rotas realistas para a segunda cidadania", path: "/saida/segundo-passaporte", tags: ["passaporte", "cidadania", "plano b", "imigração"], category: "Saída" },
+  { title: "Palau Digital Residency", description: "Residência digital e ID internacional", path: "/palau-digital-residency", tags: ["palau", "residência digital", "id", "identidade"], category: "Saída" },
+
+  // Alertas
+  { title: "Nova Lei da Conta Corrente", description: "O que muda no monitoramento das suas movimentações", path: "/alertas/nova-lei-conta-corrente", tags: ["lei", "conta corrente", "receita", "monitoramento", "alerta"], category: "Alertas" },
+  { title: "O Governo Pode Tomar Seus Bitcoins?", description: "Vetores reais de confisco e como blindar", path: "/alertas/governo-tomar-bitcoins", tags: ["confisco", "governo", "bitcoin", "apreensão"], category: "Alertas" },
+  { title: "Fim do Dinheiro Vivo", description: "A guerra contra o papel-moeda e o avanço do controle", path: "/alertas/fim-do-dinheiro-vivo", tags: ["dinheiro vivo", "cash", "cbdc", "controle"], category: "Alertas" },
+  { title: "Proteção Patrimonial com Bitcoin", description: "Estruturas de blindagem do patrimônio", path: "/alertas/protecao-patrimonial-bitcoin", tags: ["patrimônio", "proteção", "blindagem", "bitcoin"], category: "Alertas" },
+  { title: "Novilíngua", description: "A linguagem como ferramenta de controle", path: "/novilingua", tags: ["novilíngua", "linguagem", "orwell", "controle"], category: "Filosofia" },
+
+  // Entrada / Institucional
+  { title: "Por Onde Começar", description: "Trilha inicial para sair do zero na soberania", path: "/por-onde-comecar", tags: ["começar", "iniciante", "trilha", "primeiros passos", "guia"], category: "Educação" },
+  { title: "Sobre Mim", description: "Dossiê do operador: trajetória, capacidades e diretrizes", path: "/sobre-mim", tags: ["sobre", "lord junnior", "quem sou", "dossiê", "autor", "contato"], category: "Educação" },
+  { title: "Arsenal", description: "Coleção de ferramentas e recursos operacionais", path: "/arsenal", tags: ["arsenal", "ferramentas", "recursos", "kit"], category: "Ferramentas" },
+  { title: "Índice do Despertar", description: "Medidor de progresso na saída do sistema", path: "/indice-do-despertar", tags: ["índice", "despertar", "progresso", "nível"], category: "Ferramentas" },
+
+  // Soberania Orgânica (novos)
+  { title: "EDC — Every Day Carry", description: "O que carregar todo dia para autonomia real", path: "/soberania-organica/edc", tags: ["edc", "kit", "carregar", "sobrevivência"], category: "Soberania Orgânica" },
+  { title: "Defesa Pessoal", description: "Princípios de defesa e consciência situacional", path: "/soberania-organica/defesa-pessoal", tags: ["defesa pessoal", "segurança", "autodefesa"], category: "Soberania Orgânica" },
+  { title: "Defesa Domiciliar", description: "Camadas de proteção da sua casa", path: "/soberania-organica/defesa-domiciliar", tags: ["defesa", "casa", "domicílio", "perímetro"], category: "Soberania Orgânica" },
+  { title: "Primeiros Socorros Táticos", description: "Protocolos de trauma e estabilização", path: "/soberania-organica/primeiros-socorros-taticos", tags: ["primeiros socorros", "trauma", "tático", "emergência"], category: "Soberania Orgânica" },
+  { title: "Protocolo do Fogo", description: "Ignição confiável em qualquer condição", path: "/soberania-organica/protocolo-fogo", tags: ["fogo", "ignição", "sobrevivência", "calor"], category: "Soberania Orgânica" },
+  { title: "Autonomia Veicular", description: "Manutenção e independência sobre rodas", path: "/soberania-organica/autonomia-veicular", tags: ["veículo", "carro", "manutenção", "mobilidade"], category: "Soberania Orgânica" },
+  { title: "Higiene Mental", description: "Blindagem cognitiva contra ruído e manipulação", path: "/soberania-organica/higiene-mental", tags: ["mental", "foco", "dopamina", "atenção"], category: "Soberania Orgânica" },
+  { title: "Conservação de Alimentos", description: "Estoque estratégico e conservação prática", path: "/soberania-organica/conservacao-alimentos", tags: ["conservação", "alimentos", "estoque", "despensa"], category: "Soberania Orgânica" },
+  { title: "Plantas Subutilizadas", description: "Farmacopeia brasileira esquecida", path: "/soberania-organica/plantas-subutilizadas", tags: ["plantas", "pancs", "fitoterapia", "medicinal"], category: "Soberania Orgânica" },
+  { title: "Própolis", description: "Uso terapêutico e critérios de qualidade", path: "/soberania-organica/propolis", tags: ["própolis", "abelha", "imunidade", "natural"], category: "Soberania Orgânica" },
+  { title: "Óleo de Rícino Biohacker", description: "Aplicações práticas e limites de segurança", path: "/soberania-organica/oleo-ricino-biohacker", tags: ["rícino", "óleo", "biohacker", "protocolo"], category: "Soberania Orgânica" },
+  { title: "Avaliação de Sinais", description: "Leitura de sinais fisiológicos do corpo", path: "/soberania-organica/avaliacao-sinais", tags: ["sinais", "fisiologia", "saúde", "diagnóstico"], category: "Soberania Orgânica" },
+  { title: "Receitas Funcionais", description: "Cozinha funcional com propósito terapêutico", path: "/receitas-funcionais", tags: ["receitas", "funcional", "cozinha", "chá", "garrafada"], category: "Soberania Orgânica" },
+  { title: "Ricos Não Investem em FIIs", description: "Por que o dinheiro grande ignora fundos imobiliários", path: "/mercado-tradicional/ricos-nao-investem-fiis", tags: ["fii", "fundos imobiliários", "investimento", "mercado tradicional"], category: "Economia" },
 ];
+
 
 // Simple fuzzy match
 export function fuzzySearch(query: string, entries: SearchEntry[]): SearchEntry[] {
