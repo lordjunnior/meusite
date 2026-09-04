@@ -65,6 +65,9 @@ const PROS = [
   'Trezor Suite funciona também via navegador e é relativamente simples de usar no dia a dia, mesmo para quem não é técnico.',
   'Marca com mais de dez anos de mercado, ampla documentação, comunidade grande e compatibilidade testada com praticamente toda carteira coordenadora relevante.',
   'Preço de entrada mais baixo que concorrentes focados só em Bitcoin, facilitando o primeiro passo para quem está começando.',
+  'Compatibilidade extensa com carteiras de terceiros como Sparrow, Electrum e BlueWallet, dando liberdade para trocar de coordenador sem perder o hardware.',
+  'Verificação de autenticidade integrada ao Trezor Suite, reduzindo o risco de usar um clone sem perceber.',
+  'Atualizações de firmware frequentes e bem documentadas, com changelog público auditável por qualquer pessoa.',
 ];
 
 const CONTRAS = [
@@ -74,6 +77,8 @@ const CONTRAS = [
   'Sem air-gap nativo: a comunicação padrão depende de cabo USB conectado a computador, ainda que a assinatura em si aconteça dentro do chip seguro.',
   'Tela dos modelos Safe 3 ainda é pequena e monocromática, dificultando conferência cuidadosa de endereços longos.',
   'Reputação da marca carrega o peso do vazamento de 2017 mesmo anos depois, o que pesa psicologicamente para quem pesquisa antes de comprar.',
+  'Curva de confiança mais difícil de reconstruir para quem pesquisou o histórico da marca antes de decidir comprar.',
+  'Bateria e conectividade sem fio do Safe 5 aumentam levemente a superfície de ataque em comparação com um dispositivo totalmente cabeado.',
 ];
 
 const NAO_SERVE = [
@@ -388,6 +393,44 @@ export default function TrezorReview() {
                 decoding="async"
               />
             </motion.div>
+          </div>
+        </section>
+
+
+        {/* CAPÍTULO 6B — Trezor vs concorrentes diretos */}
+        <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36">
+          <div className="max-w-[1600px] mx-auto">
+            <motion.div {...fade(0)} className="mb-14 max-w-3xl">
+              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#c97a3d' }}>Capítulo 06.1</span>
+              <div className="h-[2px] w-16 mb-6" style={{ backgroundColor: '#c97a3d' }} />
+              <h2 className="text-[clamp(2.25rem,5.5vw,5rem)] font-black leading-[1] tracking-tight" style={{ color: '#0e3b3a' }}>
+                Trezor frente a{' '}
+                <span style={{ color: '#c97a3d', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>Ledger e Coldcard.</span>
+              </h2>
+            </motion.div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <motion.div {...fade(0.05)} className="p-8 rounded-2xl" style={{ backgroundColor: '#ece2d3' }}>
+                <Cpu size={28} style={{ color: '#c97a3d' }} className="mb-5" />
+                <h3 className="text-xl font-black mb-3" style={{ color: '#0e3b3a' }}>Frente à Ledger</h3>
+                <p className="text-base leading-relaxed font-light" style={{ color: '#2d3a37' }}>
+                  A Ledger usa firmware parcialmente fechado no elemento seguro, alegando que isso protege a certificação do chip. A Trezor mantém tudo aberto, inclusive nos modelos Safe com secure element, entregando menos opacidade em troca de uma superfície tecnicamente maior para revisão pública.
+                </p>
+              </motion.div>
+              <motion.div {...fade(0.1)} className="p-8 rounded-2xl" style={{ backgroundColor: '#ece2d3' }}>
+                <ShieldCheck size={28} style={{ color: '#c97a3d' }} className="mb-5" />
+                <h3 className="text-xl font-black mb-3" style={{ color: '#0e3b3a' }}>Frente à Coldcard</h3>
+                <p className="text-base leading-relaxed font-light" style={{ color: '#2d3a37' }}>
+                  A Coldcard prioriza air-gap absoluto e é só-Bitcoin, com curva de aprendizado mais dura. A Trezor prioriza usabilidade e suporte multi-moeda, aceitando cabo USB como meio padrão de comunicação em troca de uma experiência de uso mais simples no dia a dia.
+                </p>
+              </motion.div>
+              <motion.div {...fade(0.15)} className="p-8 rounded-2xl" style={{ backgroundColor: '#ece2d3' }}>
+                <DollarSign size={28} style={{ color: '#c97a3d' }} className="mb-5" />
+                <h3 className="text-xl font-black mb-3" style={{ color: '#0e3b3a' }}>No custo-benefício</h3>
+                <p className="text-base leading-relaxed font-light" style={{ color: '#2d3a37' }}>
+                  Para quem está começando com capital modesto, o Safe 3 costuma custar menos que uma Coldcard e menos que muitas Ledgers, entregando secure element certificado e código aberto por um preço de entrada competitivo no mercado brasileiro.
+                </p>
+              </motion.div>
+            </div>
           </div>
         </section>
 
