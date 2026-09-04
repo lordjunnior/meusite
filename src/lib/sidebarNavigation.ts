@@ -118,6 +118,10 @@ export const navGroups: NavGroup[] = [
       { label: "PIX Sem Expor Dados", route: "/pix-privacidade", badge: "Novo" },
       { label: "Teoria das Bandeiras", route: "/teoria-das-bandeiras" },
       { label: "Palau Digital Residency", route: "/palau-digital-residency", badge: "Novo" },
+      { label: "Vender Bitcoin P2P", route: "/p2p/como-vender-bitcoin-p2p", badge: "Novo" },
+      { label: "Bisq: Guia Completo", route: "/p2p/bisq-guia-completo", badge: "Novo" },
+      { label: "Declarar Bitcoin no IR 2026", route: "/imposto-renda/declarar-bitcoin-2026", badge: "Novo" },
+      { label: "Isenção de 35 Mil", route: "/imposto-renda/isencao-35-mil", badge: "Novo" },
     ],
   },
   {
