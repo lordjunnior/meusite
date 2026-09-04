@@ -567,6 +567,36 @@ export default function BackupSeedPhraseGuia() {
           </div>
         </section>
 
+        {/* CAPÍTULO 12.5 — Ambiente de gravação seguro */}
+        <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36" style={{ backgroundColor: '#ece2d3' }}>
+          <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
+            <motion.aside {...fade(0)} className="lg:col-span-4">
+              <div className="sticky top-24">
+                <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#c97a3d' }}>Capítulo extra</span>
+                <div className="h-[2px] w-16 mb-6" style={{ backgroundColor: '#c97a3d' }} />
+                <p className="text-sm uppercase tracking-[0.2em] font-semibold" style={{ color: '#5a6664' }}>Ambiente de gravação</p>
+              </div>
+            </motion.aside>
+            <motion.div {...fade(0.1)} className="lg:col-span-8">
+              <h2 className="text-[clamp(2rem,4.5vw,4rem)] font-black leading-[1.05] tracking-tight mb-10" style={{ color: '#0e3b3a' }}>
+                Onde e como gerar e gravar{' '}
+                <span style={{ color: '#c97a3d', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>a seed, na prática.</span>
+              </h2>
+              <div className="space-y-7 text-lg leading-[1.7] font-light" style={{ color: '#2d3a37' }}>
+                <p>
+                  A seed deve ser gerada sempre dentro do próprio hardware wallet, nunca em um site, aplicativo de celular conectado à internet ou gerador online, por mais confiável que pareça. Qualquer geração fora de um dispositivo air-gap dedicado introduz risco de captura por malware ou de comprometimento da fonte de aleatoriedade.
+                </p>
+                <p>
+                  No momento da gravação em aço, escolha um ambiente sem câmeras próximas, sem assistentes de voz ligados no cômodo e sem outras pessoas presentes além de quem realmente precisa participar do processo. Fotografar a seed, mesmo que "só para conferir depois", é um dos erros mais comuns e mais graves: qualquer foto sincronizada com nuvem se torna uma cópia digital permanente e exposta.
+                </p>
+                <p>
+                  Depois de concluída a gravação, confira palavra por palavra comparando com a tela do dispositivo, de preferência duas vezes, em momentos diferentes. Só então guarde a placa definitivamente e prossiga para o teste de restauração, descrito no capítulo anterior.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* CAPÍTULO 13 — FAQ */}
         <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36">
           <div className="max-w-[1100px] mx-auto">
