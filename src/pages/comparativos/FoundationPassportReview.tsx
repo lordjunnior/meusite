@@ -308,6 +308,63 @@ export default function FoundationPassportReview() {
           </div>
         </section>
 
+        {/* CAPÍTULO 4.5 — Somente Bitcoin e tabela comparativa rápida */}
+        <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-[1600px] mx-auto">
+            <motion.aside {...fade(0)} className="lg:col-span-4">
+              <div className="sticky top-24">
+                <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#c97a3d' }}>Capítulo extra</span>
+                <div className="h-[2px] w-16 mb-6" style={{ backgroundColor: '#c97a3d' }} />
+                <p className="text-sm uppercase tracking-[0.2em] font-semibold" style={{ color: '#5a6664' }}>Somente Bitcoin, de propósito</p>
+              </div>
+            </motion.aside>
+            <motion.div {...fade(0.1)} className="lg:col-span-8">
+              <h2 className="text-[clamp(2rem,5vw,4.5rem)] font-black leading-[1.05] tracking-tight mb-10" style={{ color: '#0e3b3a' }}>
+                Nenhum suporte a outras moedas.{' '}
+                <span style={{ color: '#c97a3d', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>É decisão, não limitação.</span>
+              </h2>
+              <div className="space-y-7 text-lg md:text-xl leading-[1.7] font-light mb-12" style={{ color: '#2d3a37' }}>
+                <p>
+                  O firmware do Passport não reconhece nem processa transações de outras redes além de Bitcoin. Isso reduz drasticamente a superfície de ataque do dispositivo, porque cada moeda adicional suportada por uma hardware wallet multi-ativo é código extra rodando dentro de um ambiente que deveria ser o mais enxuto possível.
+                </p>
+                <p>
+                  Para quem já decidiu que patrimônio de longo prazo em cripto significa Bitcoin e nada além disso, essa limitação intencional é, na prática, uma vantagem de segurança. Para quem ainda especula com dezenas de tokens diferentes, o Passport simplesmente não é a ferramenta certa, e problema nenhum nisso: existe carteira de software e hardware multi-moeda para esse outro perfil de uso.
+                </p>
+              </div>
+              <div className="overflow-x-auto rounded-2xl" style={{ backgroundColor: '#ece2d3' }}>
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr style={{ borderBottom: '2px solid #0e3b3a' }}>
+                      <th className="p-5 text-sm font-black uppercase tracking-wider" style={{ color: '#0e3b3a' }}>Critério</th>
+                      <th className="p-5 text-sm font-black uppercase tracking-wider" style={{ color: '#0e3b3a' }}>Foundation Passport</th>
+                      <th className="p-5 text-sm font-black uppercase tracking-wider" style={{ color: '#0e3b3a' }}>Coldcard</th>
+                      <th className="p-5 text-sm font-black uppercase tracking-wider" style={{ color: '#0e3b3a' }}>Trezor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      ['Air-gap principal', 'QR Code + microSD', 'microSD (QR Code no Q)', 'Não é air-gap por padrão'],
+                      ['Teclado físico', 'Sim, numérico completo', 'Sim, nos modelos mais recentes', 'Não, tela sensível ao toque'],
+                      ['Só Bitcoin', 'Sim', 'Sim', 'Não, multi-moeda'],
+                      ['Fabricação declarada', 'Estados Unidos', 'Diversos, terceirizada', 'República Tcheca'],
+                      ['Perfil de usuário', 'Intermediário a avançado', 'Avançado', 'Iniciante a intermediário'],
+                    ].map((row, i) => (
+                      <tr key={i} style={{ borderBottom: i < 4 ? '1px solid rgba(14,59,58,0.12)' : 'none' }}>
+                        {row.map((cell, j) => (
+                          <td key={j} className="p-5 text-base font-light" style={{ color: j === 0 ? '#0e3b3a' : '#2d3a37', fontWeight: j === 0 ? 700 : 300 }}>{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-6 text-sm font-light" style={{ color: '#5a6664' }}>
+                Tabela com posicionamento geral de mercado. Especificações técnicas variam por versão de firmware e por modelo específico de cada fabricante, sempre confira a documentação oficial atualizada antes de decidir.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
         {/* CAPÍTULO 5 — Prós e contras */}
         <section className="relative py-24 md:py-32 px-6 md:px-12 lg:px-20" style={{ backgroundColor: '#0e3b3a', color: '#f4ede4' }}>
           <div className="max-w-[1600px] mx-auto">
