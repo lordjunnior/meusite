@@ -152,6 +152,9 @@ const JadeCoreReview = lazy(() => import("./pages/JadeCoreReview"));
 const MelhoresHardwareWallets = lazy(() => import("./pages/comparativos/MelhoresHardwareWallets"));
 const ColdcardReview = lazy(() => import("./pages/comparativos/ColdcardReview"));
 const TrezorReview = lazy(() => import("./pages/comparativos/TrezorReview"));
+const BackupSeedPhraseGuia = lazy(() => import("./pages/autocustodia/BackupSeedPhraseGuia"));
+const UtxoConsolidacao = lazy(() => import("./pages/autocustodia/UtxoConsolidacao"));
+const OrganicaComeceAqui = lazy(() => import("./pages/soberania-organica/ComeceAqui"));
 const DeclararBitcoin2026 = lazy(() => import("./pages/imposto-renda/DeclararBitcoin2026"));
 const Isencao35Mil = lazy(() => import("./pages/imposto-renda/Isencao35Mil"));
 const MelhoresPaisesBrasileiros = lazy(() => import("./pages/saida/MelhoresPaisesBrasileiros"));
@@ -370,6 +373,9 @@ const App = () => (
             <Route path="/comparativos/melhores-hardware-wallets" element={<MelhoresHardwareWallets />} />
             <Route path="/comparativos/coldcard-review" element={<ColdcardReview />} />
             <Route path="/comparativos/trezor-review" element={<TrezorReview />} />
+            <Route path="/autocustodia/backup-seed-phrase-guia" element={<BackupSeedPhraseGuia />} />
+            <Route path="/autocustodia/utxo-consolidacao" element={<UtxoConsolidacao />} />
+            <Route path="/soberania-organica/comece-aqui" element={<OrganicaComeceAqui />} />
             <Route path="/imposto-renda/declarar-bitcoin-2026" element={<DeclararBitcoin2026 />} />
             <Route path="/imposto-renda/isencao-35-mil" element={<Isencao35Mil />} />
             <Route path="/saida/melhores-paises-brasileiros" element={<MelhoresPaisesBrasileiros />} />

@@ -73,6 +73,8 @@ export const navGroups: NavGroup[] = [
       { label: "Melhores Hardware Wallets", route: "/comparativos/melhores-hardware-wallets", badge: "Novo" },
       { label: "Coldcard Review", route: "/comparativos/coldcard-review", badge: "Novo" },
       { label: "Trezor Review", route: "/comparativos/trezor-review", badge: "Novo" },
+      { label: "Backup da Seed Phrase", route: "/autocustodia/backup-seed-phrase-guia", badge: "Novo" },
+      { label: "UTXO e Consolidação", route: "/autocustodia/utxo-consolidacao", badge: "Novo" },
       { label: "Krux + Passphrase", route: "/autocustodia/krux-passphrase-bluewallet", badge: "Novo" },
       { label: "Multisig Bitcoin", route: "/multisig-bitcoin", badge: "Novo" },
       { label: "Comprar BTC Anônimo", route: "/comprar-bitcoin-com-privacidade" },
@@ -133,6 +135,7 @@ export const navGroups: NavGroup[] = [
     color: undefined,
     items: [
       { label: "Hub Soberania Orgânica", route: "/soberania-organica" },
+      { label: "Comece Aqui", route: "/soberania-organica/comece-aqui", badge: "Novo" },
     ],
   },
   {
