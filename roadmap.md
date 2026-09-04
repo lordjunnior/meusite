@@ -12,3 +12,10 @@
 - [x] /autocustodia/verificar-firmware-origem
 - [x] /comparativos/foundation-passport-review
 - [x] registrar rotas, sidebar e busca
+
+## Saúde Autônoma — guias práticos (aplicação diária)
+- [x] /soberania-organica/farmacia-caseira-essencial
+- [x] /soberania-organica/tinturas-xaropes-preparos
+- [x] /soberania-organica/protocolos-gripe-resfriado
+- [x] /soberania-organica/rotina-diaria-imunidade
+- [x] registrar rotas, sidebar e busca

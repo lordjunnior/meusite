@@ -147,6 +147,10 @@ export const navGroups: NavGroup[] = [
     icon: Heart,
     color: undefined,
     items: [
+      { label: "Farmácia Caseira Essencial", route: "/soberania-organica/farmacia-caseira-essencial", badge: "Novo" },
+      { label: "Tinturas, Xaropes e Preparos", route: "/soberania-organica/tinturas-xaropes-preparos", badge: "Novo" },
+      { label: "Protocolos Gripe e Resfriado", route: "/soberania-organica/protocolos-gripe-resfriado", badge: "Novo" },
+      { label: "Rotina Diária de Imunidade", route: "/soberania-organica/rotina-diaria-imunidade", badge: "Novo" },
       { label: "Saúde Preventiva", route: "/soberania-organica/saude-preventiva" },
       { label: "Autonomia Biológica", route: "/soberania-organica/autonomia-biologica" },
       { label: "Fitoterapia Aplicada", route: "/soberania-organica/fitoterapia-aplicada" },
