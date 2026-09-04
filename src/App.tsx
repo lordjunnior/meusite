@@ -366,6 +366,14 @@ const App = () => (
             <Route path="/saida/cedula-residencia-chile" element={<CedulaResidenciaChile />} />
             <Route path="/soberania-financeira/cartoes-cripto-sem-reporte" element={<CartoesCriptoSemReporte />} />
             <Route path="/autocustodia/jade-core-review" element={<JadeCoreReview />} />
+            <Route path="/comparativos/melhores-hardware-wallets" element={<MelhoresHardwareWallets />} />
+            <Route path="/comparativos/coldcard-review" element={<ColdcardReview />} />
+            <Route path="/imposto-renda/declarar-bitcoin-2026" element={<DeclararBitcoin2026 />} />
+            <Route path="/imposto-renda/isencao-35-mil" element={<Isencao35Mil />} />
+            <Route path="/saida/melhores-paises-brasileiros" element={<MelhoresPaisesBrasileiros />} />
+            <Route path="/saida/residencia-paraguai" element={<ResidenciaParaguai />} />
+            <Route path="/p2p/como-vender-bitcoin-p2p" element={<ComoVenderBitcoinP2P />} />
+            <Route path="/p2p/bisq-guia-completo" element={<BisqGuiaCompleto />} />
             <Route path="/jade-core" element={<Navigate to="/autocustodia/jade-core-review" replace />} />
             <Route path="/soberania-organica/sementes-crioulas" element={<SementesCrioulas />} />
             <Route path="/soberania-organica/conservas-fermentadas" element={<ConservasFermentadas />} />
