@@ -88,7 +88,7 @@ export const SEARCH_ENTRIES: SearchEntry[] = [
   { title: "Protocolo Inicial", description: "Por onde começar na soberania", path: "/protocolo-inicial", tags: ["protocolo", "início", "começo", "primeiro"], category: "Educação" },
   { title: "Audiobooks", description: "Biblioteca de áudio sobre soberania", path: "/audiobooks", tags: ["audiobook", "áudio", "livro", "podcast"], category: "Educação" },
   { title: "E-books", description: "Biblioteca digital de textos", path: "/ebooks", tags: ["ebook", "livro", "digital", "pdf"], category: "Educação" },
-  { title: "Dicionário Cripto", description: "Glossário de termos do ecossistema", path: "/dicionario-cripto", tags: ["dicionário", "glossário", "termos", "definições"], category: "Educação" },
+  { title: "Dicionário Cripto", description: "Glossário de termos do ecossistema, soberania, offshore e tributação", path: "/dicionario-cripto", tags: ["dicionário", "glossário", "termos", "definições", "utxo", "seed phrase", "passphrase", "multisig", "offshore", "residência fiscal", "saída definitiva", "domicílio fiscal", "jurisdição", "não-kyc", "p2p", "carnê-leão", "isenção", "alienação", "crs", "fatca", "soberania"], category: "Educação" },
   { title: "Ferramentas", description: "Arsenal de ferramentas práticas", path: "/ferramentas", tags: ["ferramentas", "calculadora", "tools", "prática"], category: "Ferramentas" },
   { title: "Arsenal", description: "Kit completo de soberania", path: "/recursos-e-ferramentas", tags: ["arsenal", "kit", "completo", "recursos"], category: "Ferramentas" },
   { title: "Mapa da Soberania", description: "Visualize sua jornada completa", path: "/mapa-da-soberania", tags: ["mapa", "jornada", "progresso", "trilha"], category: "Ferramentas" },
