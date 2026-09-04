@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/saida/pais-paraguai.jpg';
+import heroImg from '@/assets/saida/paraguai-hero.jpg';
 import cidadeImg from '@/assets/saida/jurisdicoes-paraguai.jpg';
 import documentosImg from '@/assets/offshore-brasil-paraguai.jpg';
 import bancoImg from '@/assets/saida/residencia-fiscal-hero.jpg';
