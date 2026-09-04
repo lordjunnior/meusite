@@ -149,6 +149,14 @@ const JurisdicoesAmigaveis = lazy(() => import("./pages/saida/JurisdicoesAmigave
 const CedulaResidenciaChile = lazy(() => import("./pages/saida/CedulaResidenciaChile"));
 const CartoesCriptoSemReporte = lazy(() => import("./pages/CartoesCriptoSemReporte"));
 const JadeCoreReview = lazy(() => import("./pages/JadeCoreReview"));
+const MelhoresHardwareWallets = lazy(() => import("./pages/comparativos/MelhoresHardwareWallets"));
+const ColdcardReview = lazy(() => import("./pages/comparativos/ColdcardReview"));
+const DeclararBitcoin2026 = lazy(() => import("./pages/imposto-renda/DeclararBitcoin2026"));
+const Isencao35Mil = lazy(() => import("./pages/imposto-renda/Isencao35Mil"));
+const MelhoresPaisesBrasileiros = lazy(() => import("./pages/saida/MelhoresPaisesBrasileiros"));
+const ResidenciaParaguai = lazy(() => import("./pages/saida/ResidenciaParaguai"));
+const ComoVenderBitcoinP2P = lazy(() => import("./pages/p2p/ComoVenderBitcoinP2P"));
+const BisqGuiaCompleto = lazy(() => import("./pages/p2p/BisqGuiaCompleto"));
 const SementesCrioulas = lazy(() => import("./pages/alimentar/SementesCrioulas"));
 const ConservasFermentadas = lazy(() => import("./pages/alimentar/ConservasFermentadas"));
 const AquaponiaResidencial = lazy(() => import("./pages/alimentar/AquaponiaResidencial"));
