@@ -149,6 +149,15 @@ const JurisdicoesAmigaveis = lazy(() => import("./pages/saida/JurisdicoesAmigave
 const CedulaResidenciaChile = lazy(() => import("./pages/saida/CedulaResidenciaChile"));
 const CartoesCriptoSemReporte = lazy(() => import("./pages/CartoesCriptoSemReporte"));
 const JadeCoreReview = lazy(() => import("./pages/JadeCoreReview"));
+const MelhoresHardwareWallets = lazy(() => import("./pages/comparativos/MelhoresHardwareWallets"));
+const ColdcardReview = lazy(() => import("./pages/comparativos/ColdcardReview"));
+const TrezorReview = lazy(() => import("./pages/comparativos/TrezorReview"));
+const DeclararBitcoin2026 = lazy(() => import("./pages/imposto-renda/DeclararBitcoin2026"));
+const Isencao35Mil = lazy(() => import("./pages/imposto-renda/Isencao35Mil"));
+const MelhoresPaisesBrasileiros = lazy(() => import("./pages/saida/MelhoresPaisesBrasileiros"));
+const ResidenciaParaguai = lazy(() => import("./pages/saida/ResidenciaParaguai"));
+const ComoVenderBitcoinP2P = lazy(() => import("./pages/p2p/ComoVenderBitcoinP2P"));
+const BisqGuiaCompleto = lazy(() => import("./pages/p2p/BisqGuiaCompleto"));
 const SementesCrioulas = lazy(() => import("./pages/alimentar/SementesCrioulas"));
 const ConservasFermentadas = lazy(() => import("./pages/alimentar/ConservasFermentadas"));
 const AquaponiaResidencial = lazy(() => import("./pages/alimentar/AquaponiaResidencial"));
@@ -358,6 +367,15 @@ const App = () => (
             <Route path="/saida/cedula-residencia-chile" element={<CedulaResidenciaChile />} />
             <Route path="/soberania-financeira/cartoes-cripto-sem-reporte" element={<CartoesCriptoSemReporte />} />
             <Route path="/autocustodia/jade-core-review" element={<JadeCoreReview />} />
+            <Route path="/comparativos/melhores-hardware-wallets" element={<MelhoresHardwareWallets />} />
+            <Route path="/comparativos/coldcard-review" element={<ColdcardReview />} />
+            <Route path="/comparativos/trezor-review" element={<TrezorReview />} />
+            <Route path="/imposto-renda/declarar-bitcoin-2026" element={<DeclararBitcoin2026 />} />
+            <Route path="/imposto-renda/isencao-35-mil" element={<Isencao35Mil />} />
+            <Route path="/saida/melhores-paises-brasileiros" element={<MelhoresPaisesBrasileiros />} />
+            <Route path="/saida/residencia-paraguai" element={<ResidenciaParaguai />} />
+            <Route path="/p2p/como-vender-bitcoin-p2p" element={<ComoVenderBitcoinP2P />} />
+            <Route path="/p2p/bisq-guia-completo" element={<BisqGuiaCompleto />} />
             <Route path="/jade-core" element={<Navigate to="/autocustodia/jade-core-review" replace />} />
             <Route path="/soberania-organica/sementes-crioulas" element={<SementesCrioulas />} />
             <Route path="/soberania-organica/conservas-fermentadas" element={<ConservasFermentadas />} />
