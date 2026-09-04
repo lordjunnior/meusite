@@ -5,3 +5,10 @@
 - [ ] Hub /saida/melhores-paises-brasileiros + /saida/residencia-paraguai
 - [ ] /p2p/como-vender-bitcoin-p2p + /p2p/bisq-guia-completo
 - [ ] Rotas em App.tsx, sidebar, searchData, sitemap
+
+## Custódia fria (em andamento)
+- [ ] /autocustodia/o-que-e-custodia-fria (pilar)
+- [ ] /autocustodia/tirar-da-exchange-para-hardware-wallet
+- [ ] /autocustodia/verificar-firmware-origem
+- [ ] /comparativos/foundation-passport-review
+- [ ] registrar rotas, sidebar e busca
