@@ -529,6 +529,7 @@ export default function MelhoresPaisesBrasileiros() {
                 { to: '/saida/segundo-passaporte', titulo: 'Segundo passaporte: estratégia real', texto: 'Como transformar residência em nacionalidade sem depender de investimento milionário.' },
                 { to: '/saida/residencia-fiscal', titulo: 'Residência fiscal: o que muda de verdade', texto: 'A diferença entre morar em outro país e deixar de ser tributado como residente brasileiro.' },
                 { to: '/teoria-das-bandeiras', titulo: 'Teoria das Bandeiras', texto: 'O framework que sustenta qualquer plano de soberania com múltiplas jurisdições.' },
+                { to: '/dicionario-cripto', titulo: 'Glossario de soberania', texto: 'Do UTXO ao domicilio fiscal: todos os termos tecnicos deste site explicados em uma pagina.' },
               ].map((c) => (
                 <Link key={c.to} to={c.to} className="group p-8 rounded-2xl transition-all hover:-translate-y-1" style={{ backgroundColor: 'rgba(244,237,228,0.06)', border: '1px solid rgba(232,168,107,0.18)' }}>
                   <h3 className="text-xl md:text-2xl font-black leading-tight mb-3" style={{ color: '#f4ede4' }}>{c.titulo}</h3>

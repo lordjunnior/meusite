@@ -676,6 +676,7 @@ export default function ComoVenderBitcoinP2P() {
                 { to: '/soberania-financeira/exchanges-privacidade-e-kyc', titulo: 'Exchanges sem KYC', texto: 'Panorama de exchanges que preservam sua privacidade financeira.' },
                 { to: '/comprar-bitcoin-com-privacidade', titulo: 'Comprar Bitcoin com privacidade', texto: 'Métodos de aquisição fora do circuito de identificação obrigatória.' },
                 { to: '/autocustodia', titulo: 'Autocustódia', texto: 'Depois de comprar ou vender, seja seu próprio banco de verdade.' },
+                { to: '/dicionario-cripto', titulo: 'Glossario de soberania', texto: 'Do UTXO ao domicilio fiscal: todos os termos tecnicos deste site explicados em uma pagina.' },
               ].map((c) => (
                 <Link key={c.to} to={c.to} className="group p-8 rounded-2xl transition-all hover:-translate-y-1" style={{ backgroundColor: 'rgba(244,237,228,0.06)', border: '1px solid rgba(255,179,122,0.18)' }}>
                   <h3 className="text-xl font-black leading-tight mb-3" style={{ color: '#f4ede4' }}>{c.titulo}</h3>

@@ -730,6 +730,7 @@ export default function MelhoresHardwareWallets() {
                 { to: '/autocustodia/hardware-wallet-diy-bitcoin', titulo: 'Hardware Wallet DIY', texto: 'Construa a sua com Krux e elimine risco de supply chain.' },
                 { to: '/autocustodia/seed-phrase-em-aco', titulo: 'Seed Phrase em Aço', texto: 'Backup indestrutível contra fogo, água e tempo.' },
                 { to: '/autocustodia/krux-passphrase-bluewallet', titulo: 'Krux + Passphrase + BlueWallet', texto: 'Setup avançado de autocustódia com air-gap completo.' },
+                { to: '/dicionario-cripto', titulo: 'Glossario de soberania', texto: 'Do UTXO ao domicilio fiscal: todos os termos tecnicos deste site explicados em uma pagina.' },
               ].map((c) => (
                 <Link
                   key={c.to}
