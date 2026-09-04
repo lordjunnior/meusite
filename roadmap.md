@@ -14,8 +14,8 @@
 - [x] registrar rotas, sidebar e busca
 
 ## Saúde Autônoma — guias práticos (aplicação diária)
-- [ ] /soberania-organica/farmacia-caseira-essencial
-- [ ] /soberania-organica/tinturas-xaropes-preparos
-- [ ] /soberania-organica/protocolos-gripe-resfriado
-- [ ] /soberania-organica/rotina-diaria-imunidade
-- [ ] registrar rotas, sidebar e busca
+- [x] /soberania-organica/farmacia-caseira-essencial
+- [x] /soberania-organica/tinturas-xaropes-preparos
+- [x] /soberania-organica/protocolos-gripe-resfriado
+- [x] /soberania-organica/rotina-diaria-imunidade
+- [x] registrar rotas, sidebar e busca

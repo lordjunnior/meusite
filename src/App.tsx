@@ -159,6 +159,10 @@ const OQueECustodiaFria = lazy(() => import("./pages/autocustodia/OQueECustodiaF
 const TirarDaExchange = lazy(() => import("./pages/autocustodia/TirarDaExchange"));
 const VerificarFirmwareOrigem = lazy(() => import("./pages/autocustodia/VerificarFirmwareOrigem"));
 const FoundationPassportReview = lazy(() => import("./pages/comparativos/FoundationPassportReview"));
+const FarmaciaCaseiraEssencial = lazy(() => import("./pages/soberania-organica/FarmaciaCaseiraEssencial"));
+const TinturasXaroposPreparos = lazy(() => import("./pages/soberania-organica/TinturasXaroposPreparos"));
+const ProtocolosGripeResfriado = lazy(() => import("./pages/soberania-organica/ProtocolosGripeResfriado"));
+const RotinaDiariaImunidade = lazy(() => import("./pages/soberania-organica/RotinaDiariaImunidade"));
 const DeclararBitcoin2026 = lazy(() => import("./pages/imposto-renda/DeclararBitcoin2026"));
 const Isencao35Mil = lazy(() => import("./pages/imposto-renda/Isencao35Mil"));
 const MelhoresPaisesBrasileiros = lazy(() => import("./pages/saida/MelhoresPaisesBrasileiros"));
@@ -384,6 +388,10 @@ const App = () => (
             <Route path="/autocustodia/tirar-da-exchange-para-hardware-wallet" element={<TirarDaExchange />} />
             <Route path="/autocustodia/verificar-firmware-origem" element={<VerificarFirmwareOrigem />} />
             <Route path="/comparativos/foundation-passport-review" element={<FoundationPassportReview />} />
+            <Route path="/soberania-organica/farmacia-caseira-essencial" element={<FarmaciaCaseiraEssencial />} />
+            <Route path="/soberania-organica/tinturas-xaropes-preparos" element={<TinturasXaroposPreparos />} />
+            <Route path="/soberania-organica/protocolos-gripe-resfriado" element={<ProtocolosGripeResfriado />} />
+            <Route path="/soberania-organica/rotina-diaria-imunidade" element={<RotinaDiariaImunidade />} />
             <Route path="/imposto-renda/declarar-bitcoin-2026" element={<DeclararBitcoin2026 />} />
             <Route path="/imposto-renda/isencao-35-mil" element={<Isencao35Mil />} />
             <Route path="/saida/melhores-paises-brasileiros" element={<MelhoresPaisesBrasileiros />} />
