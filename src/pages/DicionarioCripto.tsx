@@ -40,6 +40,7 @@ interface Term {
   term: string;
   definition: string;
   tags?: string[];
+  link?: { label: string; to: string };
 }
 
 interface LetterGroup {
@@ -51,6 +52,10 @@ const dictionary: LetterGroup[] = [
   {
     letter: 'A',
     terms: [
+      { term: 'Alienação', definition: 'Termo fiscal para qualquer venda, troca, permuta ou uso de bitcoin como pagamento. É a alienação, e não a valorização, que gera o fato gerador do imposto no Brasil.', tags: ['fiscal'], link: { label: 'Como declarar bitcoin', to: '/imposto-renda/declarar-bitcoin-2026' } },
+      { term: 'Air-gapped', definition: 'Dispositivo que nunca toca a internet. A assinatura da transação acontece offline e viaja por cartão SD ou QR Code, eliminando a superfície de ataque remota.', tags: ['autocustódia', 'segurança'], link: { label: 'Melhores hardware wallets', to: '/comparativos/melhores-hardware-wallets' } },
+      { term: 'Ágio', definition: 'Prêmio pago acima da cotação de mercado em negociações P2P. É o preço da privacidade e da liquidez imediata fora do sistema bancário.', tags: ['p2p'], link: { label: 'Como vender bitcoin P2P', to: '/p2p/como-vender-bitcoin-p2p' } },
+      { term: 'Arbitragem fiscal', definition: 'Estratégia legal de organizar residência, empresa e ativos entre jurisdições diferentes para reduzir carga tributária dentro da lei.', tags: ['fiscal', 'offshore'] },
       { term: 'Addy', definition: 'Endereço de uma carteira de criptomoeda.', tags: ['carteira'] },
       { term: 'Altcoin', definition: 'Nome dado às moedas alternativas ao Bitcoin. Exemplo: Litecoin, Dogecoin, Dash, etc.', tags: ['moeda'] },
       { term: 'AML', definition: 'Sigla de Anti-Money Laundering, em português: Anti-Lavagem de Dinheiro. São técnicas utilizadas para barrar a lavagem de dinheiro, como receber dinheiro apenas via transferência bancária e do próprio titular da conta, como as exchanges brasileiras já fazem.', tags: ['regulação'] },
@@ -63,6 +68,9 @@ const dictionary: LetterGroup[] = [
   {
     letter: 'B',
     terms: [
+      { term: 'Bisq', definition: 'Rede descentralizada de troca P2P que roda sobre Tor, sem empresa, sem cadastro e sem custódia de terceiros sobre suas moedas.', tags: ['p2p', 'privacidade'], link: { label: 'Guia completo do Bisq', to: '/p2p/bisq-guia-completo' } },
+      { term: 'BIP39', definition: 'Padrão que transforma a chave mestra da carteira em 12 ou 24 palavras legíveis. É o que permite restaurar seus bitcoins em qualquer aparelho compatível.', tags: ['autocustódia'], link: { label: 'Backup da seed phrase', to: '/autocustodia/backup-seed-phrase-guia' } },
+      { term: 'Beneficiário final', definition: 'Pessoa física que realmente controla uma empresa ou estrutura, mesmo quando o nome no papel é de outro. Base dos registros de transparência exigidos por bancos.', tags: ['offshore', 'regulação'] },
       { term: 'Baleia', definition: 'Detentor de grande parte de uma determinada moeda, a baleia é um usuário que centraliza a moeda controlando o preço dela.', tags: ['mercado'] },
       { term: 'Bear', definition: 'Do inglês, "Urso". O "Bear" é o investidor que crê na queda do preço da criptomoeda a qualquer momento. Com isso, o Bear vende seus ativos antes que desvalorizem demais. Quando dizemos que um mercado é "Bearish", quer dizer que naquele momento há mais ordens de venda do que de compra.', tags: ['mercado'] },
       { term: 'Bearish', definition: 'É um comportamento agressivo do gráfico de cima para baixo (caracterizado por uma descida grande e uma subida curta).', tags: ['mercado'] },
@@ -81,6 +89,10 @@ const dictionary: LetterGroup[] = [
   {
     letter: 'C',
     terms: [
+      { term: 'Cidadania por investimento', definition: 'Programa em que um país concede passaporte ou residência em troca de investimento imobiliário, doação ou aporte produtivo.', tags: ['imigração', 'soberania'], link: { label: 'Melhores países para brasileiros', to: '/saida/melhores-paises-brasileiros' } },
+      { term: 'Coin control', definition: 'Recurso da carteira que permite escolher exatamente quais moedas serão gastas em cada transação, protegendo o histórico dos demais fundos.', tags: ['privacidade', 'autocustódia'], link: { label: 'UTXO e consolidação', to: '/autocustodia/utxo-consolidacao' } },
+      { term: 'CRS', definition: 'Common Reporting Standard: acordo global de troca automática de informações financeiras entre países. É por ele que contas no exterior chegam ao fisco brasileiro.', tags: ['fiscal', 'offshore'] },
+      { term: 'Carné-leão', definition: 'Recolhimento mensal obrigatório do imposto sobre ganhos que ultrapassam a faixa isenta, pago até o último dia útil do mês seguinte à venda.', tags: ['fiscal'], link: { label: 'Isenção de 35 mil', to: '/imposto-renda/isencao-35-mil' } },
       { term: 'Candlestick', definition: 'Candlestick é uma representação gráfica do preço de um ativo. Isso permite que seja possível visualizar os preços de abertura, alta, baixa e fechamento dentro de um período de tempo no gráfico.', tags: ['trading'] },
       { term: 'Carteira', definition: 'Em inglês "wallet" é onde o investidor pode guardar suas moedas digitais de forma mais segura até o momento de venda e/ou troca.', tags: ['carteira'] },
       { term: 'Cold Storage', definition: 'Movimentação de criptomoedas offline, ou seja, armazenar as criptos em carteiras de papel.', tags: ['segurança', 'carteira'] },
@@ -94,6 +106,8 @@ const dictionary: LetterGroup[] = [
   {
     letter: 'D',
     terms: [
+      { term: 'Domicílio fiscal', definition: 'País que considera você contribuinte. Sair do Brasil sem comunicar a saída definitiva mantém a obrigação de declarar renda mundial.', tags: ['fiscal', 'imigração'], link: { label: 'Melhores países para brasileiros', to: '/saida/melhores-paises-brasileiros' } },
+      { term: 'Descentralização', definition: 'Ausência de ponto único de controle ou de falha. Nenhuma empresa, servidor ou governo pode desligar, censurar ou reescrever a rede.', tags: ['filosofia', 'soberania'] },
       { term: 'Day Trader', definition: 'Trader que faz movimentações diárias, comprando e vendendo.', tags: ['trading'] },
       { term: 'DDoS', definition: 'Distributed Denial of Service, em português: Ataque Distribuído de Negação de Serviços. Este ataque utiliza um grande número de computadores sob o controle de um atacante para enviar pequenas quantidades de tráfegos pela internet com o objetivo de congestionar o acesso e drenar recursos de um servidor alvo.', tags: ['segurança'] },
       { term: 'Dump', definition: 'Quando o preço de uma criptomoeda desce inesperadamente.', tags: ['mercado'] },
@@ -113,6 +127,8 @@ const dictionary: LetterGroup[] = [
   {
     letter: 'F',
     terms: [
+      { term: 'FATCA', definition: 'Lei americana que obriga instituições financeiras do mundo inteiro a reportar contas ligadas a pessoas com vínculo fiscal nos Estados Unidos.', tags: ['fiscal', 'offshore'] },
+      { term: 'Ficha de bens e direitos', definition: 'Seção da declaração anual onde o bitcoin é informado pelo custo de aquisição, e não pela cotação do dia.', tags: ['fiscal'], link: { label: 'Como declarar bitcoin', to: '/imposto-renda/declarar-bitcoin-2026' } },
       { term: 'Faucet', definition: 'Sites que oferecem recompensas em bitcoin a partir de cliques em propagandas ou realizar pequenas tarefas. Exemplo: responder pesquisas.', tags: ['bitcoin'] },
       { term: 'Fee', definition: 'Refere-se a taxas, que pode ser taxa de conversão, transferência ou de saque, etc.', tags: ['finanças'] },
       { term: 'Fiat', definition: 'É o dinheiro fiduciário, ou seja, aquele que não é criptomoeda, como o Real, Dólar, Euro, Iene, etc.', tags: ['finanças'] },
@@ -131,6 +147,8 @@ const dictionary: LetterGroup[] = [
   {
     letter: 'H',
     terms: [
+      { term: 'Hardware wallet', definition: 'Aparelho dedicado a guardar chaves privadas fora do computador e do celular, assinando transações em ambiente isolado.', tags: ['autocustódia', 'hardware'], link: { label: 'Melhores hardware wallets', to: '/comparativos/melhores-hardware-wallets' } },
+      { term: 'Herança digital', definition: 'Plano documentado que permite à família acessar os fundos sem expor a seed enquanto você está vivo.', tags: ['autocustódia', 'soberania'], link: { label: 'Backup da seed phrase', to: '/autocustodia/backup-seed-phrase-guia' } },
       { term: 'Halving', definition: 'O halving do Bitcoin, é uma característica que está encravada dentro do código da criptomoeda. Diferente dos sistemas monetários atuais nos quais os governos imprimem dinheiro sem parar, o bitcoin reduz sua emissão a cada 4 anos.', tags: ['bitcoin'] },
       { term: 'Hash', definition: 'É um algoritmo utilizado pelo protocolo do bitcoin e de outras criptomoedas para transformar um grande número de informações em uma sequência numérica hexadecimal de tamanho fixo.', tags: ['tecnologia'] },
       { term: 'Hash Rate', definition: 'Número de hashes processados por um minerador em um determinado período de tempo.', tags: ['mineração'] },
@@ -142,8 +160,16 @@ const dictionary: LetterGroup[] = [
   {
     letter: 'I',
     terms: [
+      { term: 'IN 1888', definition: 'Obrigação acessória que exige informar operações com criptoativos feitas fora de exchanges brasileiras quando o mês ultrapassa o limite estabelecido.', tags: ['fiscal', 'regulação'], link: { label: 'Como declarar bitcoin', to: '/imposto-renda/declarar-bitcoin-2026' } },
+      { term: 'Isenção mensal', definition: 'Faixa de alienação mensal sem imposto sobre o ganho. Contada por mês-calendário e somando todas as vendas, em qualquer plataforma.', tags: ['fiscal'], link: { label: 'Isenção de 35 mil', to: '/imposto-renda/isencao-35-mil' } },
       { term: 'ICO', definition: 'Initial Coin Offering, em português, Oferta Inicial de Moeda. É um sistema criado para arrecadar fundos para uma start-up ou empresa. Normalmente elas surgem com "ideias revolucionárias ou únicas" que são aplicadas em cima de uma blockchain. Atenção: ICOs também podem ser Scams.', tags: ['mercado'] },
       { term: 'Input', definition: 'Endereço de origem de uma transação bitcoin. Uma única transação pode ter múltiplos endereços de origem.', tags: ['bitcoin'] },
+    ],
+  },
+  {
+    letter: 'J',
+    terms: [
+      { term: 'Jurisdição', definition: 'Conjunto de leis, tribunais e bancos de um território. Escolher jurisdição é escolher quem tem poder sobre seu patrimônio.', tags: ['offshore', 'soberania'], link: { label: 'Melhores países para brasileiros', to: '/saida/melhores-paises-brasileiros' } },
     ],
   },
   {
@@ -164,6 +190,7 @@ const dictionary: LetterGroup[] = [
   {
     letter: 'M',
     terms: [
+      { term: 'Multisig', definition: 'Esquema em que a movimentação exige várias assinaturas independentes, eliminando o ponto único de falha de uma única seed.', tags: ['autocustódia', 'segurança'], link: { label: 'Melhores hardware wallets', to: '/comparativos/melhores-hardware-wallets' } },
       { term: 'Maleabilidade', definition: 'Habilidade de modificar transações não confirmadas sem fazê-las inválidas.', tags: ['tecnologia'] },
       { term: 'Maker', definition: 'Maker é um termo usado quando inclui uma ordem e ela não é negociada imediatamente. Onde ela permanece no livro de ofertas e aguarda que outra pessoa envie uma ordem contrária para que ela seja executada.', tags: ['trading'] },
       { term: 'Marketcap', definition: 'Em português: capitalização de mercado. Quantidade de criptomoeda circulante × preço da cripto.', tags: ['mercado'] },
@@ -177,12 +204,15 @@ const dictionary: LetterGroup[] = [
   {
     letter: 'N',
     terms: [
+      { term: 'Não-KYC', definition: 'Aquisição de bitcoin sem entregar documentos e biometria a intermediários. Reduz vazamentos de dados e rastreabilidade permanente.', tags: ['privacidade', 'p2p'], link: { label: 'Como vender bitcoin P2P', to: '/p2p/como-vender-bitcoin-p2p' } },
+      { term: 'Nômade fiscal', definition: 'Pessoa que organiza residência, renda e ativos em países distintos para minimizar dependência de um único Estado.', tags: ['imigração', 'offshore'] },
       { term: 'Nó', definition: 'Dispositivo conectado à rede Bitcoin que utiliza um programa de computador para retransmitir transações para outros nós, criando uma rede descentralizada.', tags: ['infraestrutura'] },
     ],
   },
   {
     letter: 'O',
     terms: [
+      { term: 'Offshore', definition: 'Estrutura ou conta situada fora do país de residência. É legal quando declarada, e serve à diversificação de risco jurisdicional.', tags: ['offshore'] },
       { term: 'Ordem MARKET', definition: 'Ordem de mercado que realizará aquela compra independente do preço que estiver.', tags: ['trading'] },
       { term: 'Ordem STOP-LIMIT', definition: 'Funciona assim: você escolhe um preço e diz pro sistema "no momento em que a moeda atingir X dólares você colocará uma ordem LIMITADA de Y dólares".', tags: ['trading'] },
       { term: 'Output', definition: 'Endereço destino de uma transação bitcoin. É possível que uma transação tenha múltiplos outputs.', tags: ['bitcoin'] },
@@ -191,6 +221,8 @@ const dictionary: LetterGroup[] = [
   {
     letter: 'P',
     terms: [
+      { term: 'Passaporte fiscal', definition: 'Combinação de residência legal e comprovante de tributação em outro país, exigida por bancos para abrir contas sem retenções.', tags: ['imigração', 'offshore'], link: { label: 'Residência no Chile', to: '/saida/cedula-residencia-chile' } },
+      { term: 'Passphrase', definition: 'Palavra extra somada à seed que cria uma carteira totalmente separada. Sem ela, as 24 palavras não abrem nada.', tags: ['autocustódia', 'segurança'], link: { label: 'Backup da seed phrase', to: '/autocustodia/backup-seed-phrase-guia' } },
       { term: 'P2P', definition: 'P2P significa peer-to-peer, em português: ponto-a-ponto. O Bitcoin foi projetado como um sistema peer-to-peer, ou seja, que não precisa de intermediários, como bancos centrais, para intermediar uma transação entre duas pessoas.', tags: ['bitcoin'] },
       { term: 'Paper Wallet', definition: 'É considerado um meio muito seguro de guardar suas criptomoedas, pois não correm tanto risco, justamente por ser offline. É basicamente um pedaço de papel contendo suas chaves privadas e públicas.', tags: ['carteira', 'segurança'] },
       { term: 'Phishing', definition: 'O phishing acontece quando o usuário clica ou baixa um arquivo falso que rouba algum tipo de informação. Devido à popularização das criptomoedas, é cada vez mais comum a circulação de e-mails falsos e anúncios fraudulentos.', tags: ['segurança'] },
@@ -210,6 +242,8 @@ const dictionary: LetterGroup[] = [
   {
     letter: 'R',
     terms: [
+      { term: 'Residência fiscal', definition: 'Status que define em qual país você paga imposto sobre renda mundial. Depende de dias de permanência, vínculos e comunicação de saída.', tags: ['fiscal', 'imigração'], link: { label: 'Melhores países para brasileiros', to: '/saida/melhores-paises-brasileiros' } },
+      { term: 'RoboSats', definition: 'Plataforma P2P sobre Lightning e Tor, sem cadastro, com garantia por depósito temporário e liquidação em segundos.', tags: ['p2p', 'privacidade'], link: { label: 'Como vender bitcoin P2P', to: '/p2p/como-vender-bitcoin-p2p' } },
       { term: 'Rekt', definition: 'Não queira ser um Rekt! O Rekt é uma palavra em inglês escrito com erros de ortografia – o correto seria "Wrecked", que significa "Naufragado/náufrago". É o investidor que perdeu tudo com a queda de um preço, arruinando seu patrimônio.', tags: ['mercado'] },
       { term: 'ROI', definition: 'O retorno que se tem baseado no quanto você investiu.', tags: ['finanças'] },
     ],
@@ -217,6 +251,10 @@ const dictionary: LetterGroup[] = [
   {
     letter: 'S',
     terms: [
+      { term: 'Saída definitiva', definition: 'Comunicação e declaração que encerram formalmente sua residência fiscal no Brasil. Sem ela, o país continua cobrando sobre renda mundial.', tags: ['fiscal', 'imigração'], link: { label: 'Melhores países para brasileiros', to: '/saida/melhores-paises-brasileiros' } },
+      { term: 'Seed phrase', definition: 'As 12 ou 24 palavras que representam todas as suas chaves. Quem as tem, tem o dinheiro. Nunca em foto, nuvem ou aplicativo de notas.', tags: ['autocustódia', 'segurança'], link: { label: 'Backup da seed phrase', to: '/autocustodia/backup-seed-phrase-guia' } },
+      { term: 'Soberania financeira', definition: 'Capacidade de guardar, mover e receber valor sem depender de autorização de banco, empresa ou governo.', tags: ['filosofia', 'soberania'] },
+      { term: 'Shamir Backup', definition: 'Divisão da chave em várias partes, exigindo um número mínimo delas para restaurar. Reduz o risco de um único esconderijo comprometido.', tags: ['autocustódia'], link: { label: 'Backup da seed phrase', to: '/autocustodia/backup-seed-phrase-guia' } },
       { term: 'Satoshi', definition: 'Menor divisão de um Bitcoin = 0,00000001 BTC. Quando alguém fala que tem 10 Satoshis, significa que possui 0,00000010 BTC.', tags: ['bitcoin'] },
       { term: 'Satoshi Nakamoto', definition: 'Pseudônimo usado para o criador do Bitcoin.', tags: ['bitcoin'] },
       { term: 'Scam', definition: 'Gíria para golpe ou sites fraudulentos. São sites que surgem na internet prometendo altos rendimentos com investimentos em várias tipos de plataformas. Normalmente duram dias, meses ou, quando muito, anos até que sumam com o dinheiro de seus investidores.', tags: ['segurança'] },
@@ -234,6 +272,8 @@ const dictionary: LetterGroup[] = [
   {
     letter: 'T',
     terms: [
+      { term: 'Tributação na fonte', definition: 'Retenção feita pelo pagador antes de o dinheiro chegar até você. Varia conforme o tratado entre o país de origem e o de residência.', tags: ['fiscal', 'offshore'] },
+      { term: 'Territorial', definition: 'Regime em que o país tributa apenas a renda gerada dentro dele, deixando a renda estrangeira livre de imposto local.', tags: ['fiscal', 'offshore'], link: { label: 'Melhores países para brasileiros', to: '/saida/melhores-paises-brasileiros' } },
       { term: 'Taker', definition: 'Taker é o investidor que possui uma ordem que é instantaneamente executada pois encontra outra ordem contrária.', tags: ['trading'] },
       { term: 'Tag Destination', definition: 'A tag destination é um código atribuído a cada conta do XRP. É usada para identificar o destinatário da transação, como se fosse o número da sua residência quando é entregue uma encomenda.', tags: ['tecnologia'] },
       { term: 'Tempo de Confirmação', definition: 'É o tempo percorrido entre o momento em que uma transação é enviada à rede e o tempo em que é registrada em um bloco. Basicamente, é o tempo que um usuário precisa esperar até que sua transação seja confirmada na rede.', tags: ['bitcoin'] },
@@ -247,8 +287,15 @@ const dictionary: LetterGroup[] = [
     ],
   },
   {
+    letter: 'U',
+    terms: [
+      { term: 'UTXO', definition: 'Cada pedaço de bitcoin recebido é uma moeda inteira e indivisível na contabilidade da rede. Entender isso é entender taxas e privacidade.', tags: ['bitcoin', 'privacidade'], link: { label: 'UTXO e consolidação', to: '/autocustodia/utxo-consolidacao' } },
+    ],
+  },
+  {
     letter: 'V',
     terms: [
+      { term: 'Vbyte', definition: 'Unidade de tamanho de uma transação. A taxa é paga por vbyte, e não pelo valor enviado: mil reais e um milhão custam o mesmo.', tags: ['bitcoin'], link: { label: 'UTXO e consolidação', to: '/autocustodia/utxo-consolidacao' } },
       { term: 'Volatilidade', definition: 'Movimentos dos preços de um ativo. Se o valor do ativo sobe e desce com muita frequência, às vezes até de diferenças de preço grandes, diz-se que o ativo tem alta volatilidade.', tags: ['mercado'] },
     ],
   },
@@ -287,6 +334,12 @@ const tagColors: Record<string, string> = {
   filosofia: 'bg-purple-500/15 text-purple-400 border-purple-500/25',
   privacidade: 'bg-fuchsia-500/15 text-fuchsia-400 border-fuchsia-500/25',
   ethereum: 'bg-sky-500/15 text-sky-400 border-sky-500/25',
+  soberania: 'bg-yellow-600/15 text-yellow-300 border-yellow-600/25',
+  offshore: 'bg-emerald-600/15 text-emerald-300 border-emerald-600/25',
+  fiscal: 'bg-orange-600/15 text-orange-300 border-orange-600/25',
+  imigração: 'bg-blue-600/15 text-blue-300 border-blue-600/25',
+  p2p: 'bg-pink-500/15 text-pink-400 border-pink-500/25',
+  autocustódia: 'bg-teal-600/15 text-teal-300 border-teal-600/25',
 };
 
 /* ─── FLOATING PARTICLES ─── */
@@ -376,6 +429,15 @@ const TermCard = ({ term, index }: { term: Term; index: number }) => {
                 </span>
               ))}
             </div>
+          )}
+          {term.link && (
+            <Link
+              to={term.link.to}
+              className="inline-flex items-center gap-1.5 mt-4 text-[11px] font-bold uppercase tracking-widest text-yellow-500/80 hover:text-yellow-400 transition-colors"
+            >
+              {term.link.label}
+              <ArrowRight className="w-3 h-3" />
+            </Link>
           )}
         </div>
       </div>

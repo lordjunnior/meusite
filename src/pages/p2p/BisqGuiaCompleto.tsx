@@ -413,6 +413,7 @@ export default function BisqGuiaCompleto() {
                 { to: '/p2p/como-vender-bitcoin-p2p', titulo: 'Como vender Bitcoin P2P', texto: 'Volte ao hub: riscos, OpSec e visão geral de todas as plataformas P2P.' },
                 { to: '/soberania-financeira/exchanges-privacidade-e-kyc', titulo: 'Exchanges sem KYC', texto: 'Outras opções para operar Bitcoin sem expor identidade.' },
                 { to: '/autocustodia', titulo: 'Autocustódia', texto: 'Depois de comprar no Bisq, retire e seja seu próprio banco.' },
+                { to: '/dicionario-cripto', titulo: 'Glossario de soberania', texto: 'Do UTXO ao domicilio fiscal: todos os termos tecnicos deste site explicados em uma pagina.' },
               ].map((c) => (
                 <Link key={c.to} to={c.to} className="group p-8 rounded-2xl transition-all hover:-translate-y-1" style={{ backgroundColor: 'rgba(244,237,228,0.06)', border: '1px solid rgba(255,179,122,0.18)' }}>
                   <h3 className="text-xl font-black leading-tight mb-3" style={{ color: '#f4ede4' }}>{c.titulo}</h3>

@@ -536,6 +536,7 @@ export default function Isencao35Mil() {
                   titulo: 'Residência fiscal e planejamento de saída',
                   texto: 'Quando faz sentido considerar mudança de domicílio fiscal para reduzir carga tributária sobre patrimônio em bitcoin.',
                 },
+                { to: '/dicionario-cripto', titulo: 'Glossario de soberania', texto: 'Do UTXO ao domicilio fiscal: todos os termos tecnicos deste site explicados em uma pagina.' },
               ].map((c) => (
                 <Link key={c.to} to={c.to} className="group p-8 rounded-2xl transition-all hover:-translate-y-1" style={{ backgroundColor: 'rgba(244,237,228,0.06)', border: '1px solid rgba(232,163,107,0.18)' }}>
                   <h3 className="text-xl md:text-2xl font-black leading-tight mb-3" style={{ color: '#f4ede4' }}>{c.titulo}</h3>
