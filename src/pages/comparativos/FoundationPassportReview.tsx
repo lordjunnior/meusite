@@ -174,6 +174,15 @@ export default function FoundationPassportReview() {
 
         <Hero />
 
+        {/* Nota editorial */}
+        <section className="relative px-6 md:px-12 lg:px-20 pt-16">
+          <div className="max-w-[1600px] mx-auto">
+            <p className="text-sm md:text-base font-light max-w-3xl" style={{ color: '#5a6664' }}>
+              Esta review foi escrita a partir de documentação pública, especificações oficiais e experiência de configuração de dispositivos da mesma categoria. Preços e prazos citados variam com o tempo e devem ser confirmados diretamente no canal oficial antes da compra.
+            </p>
+          </div>
+        </section>
+
         {/* CAPÍTULO 1 — O que é o Passport */}
         <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-[1600px] mx-auto">
@@ -400,6 +409,44 @@ export default function FoundationPassportReview() {
                 </div>
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* CAPÍTULO 5.5 — Preço, envio e impostos no Brasil */}
+        <section className="relative py-24 md:py-32 px-6 md:px-12 lg:px-20" style={{ backgroundColor: '#ece2d3' }}>
+          <div className="max-w-[1600px] mx-auto grid lg:grid-cols-2 gap-14 items-center">
+            <motion.div {...fade(0)}>
+              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#c97a3d' }}>Capítulo extra</span>
+              <div className="h-[2px] w-16 mb-6" style={{ backgroundColor: '#c97a3d' }} />
+              <h2 className="text-[clamp(2rem,4.5vw,4rem)] font-black leading-[1.05] tracking-tight mb-8" style={{ color: '#0e3b3a' }}>
+                O preço no site é só{' '}
+                <span style={{ color: '#c97a3d', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>metade da conta real.</span>
+              </h2>
+              <div className="space-y-6 text-lg leading-[1.7] font-light" style={{ color: '#2d3a37' }}>
+                <p>
+                  O valor anunciado em dólar no site da Foundation Devices não inclui frete internacional nem os tributos que a Receita Federal pode aplicar na chegada do pacote ao Brasil. Dependendo da modalidade de envio, do valor declarado e da sorte na fiscalização alfandegária, o custo final pode ficar bem acima do que aparece na conversão simples de moeda.
+                </p>
+                <p>
+                  Isso não é peculiaridade do Passport, é regra para praticamente qualquer hardware wallet importada diretamente dos Estados Unidos ou da Europa. A diferença é que, por já ser um produto posicionado como premium, o Passport sofre mais no cálculo final do que concorrentes com preço de tabela mais baixo. Antes de comprar, vale simular o custo com frete e impostos, não só o preço de vitrine.
+                </p>
+                <p>
+                  Prazos de envio também variam bastante, e retenção alfandegária de dias ou semanas não é cenário incomum. Quem precisa da hardware wallet com urgência deve considerar essa variável antes de fechar a compra.
+                </p>
+              </div>
+            </motion.div>
+            <motion.div {...fade(0.15)} className="space-y-4">
+              {[
+                'Frete internacional cobrado à parte, com prazo que varia conforme a transportadora e a época do ano.',
+                'Imposto de importação e ICMS podem incidir sobre o valor declarado, elevando o custo final de forma relevante.',
+                'Retenção alfandegária é um risco real, não uma exceção rara, especialmente em períodos de maior volume de encomendas internacionais.',
+                'Revendedores locais, quando existem, podem cobrar ágio, mas eliminam a incerteza do desembaraço aduaneiro.',
+              ].map((t, i) => (
+                <div key={i} className="p-6 rounded-2xl flex gap-4" style={{ backgroundColor: '#fff' }}>
+                  <AlertTriangle size={20} className="shrink-0 mt-1" style={{ color: '#b45836' }} />
+                  <p className="text-base leading-relaxed font-light" style={{ color: '#2d3a37' }}>{t}</p>
+                </div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
