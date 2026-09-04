@@ -7,8 +7,8 @@
 - [ ] Rotas em App.tsx, sidebar, searchData, sitemap
 
 ## Custódia fria (em andamento)
-- [ ] /autocustodia/o-que-e-custodia-fria (pilar)
-- [ ] /autocustodia/tirar-da-exchange-para-hardware-wallet
-- [ ] /autocustodia/verificar-firmware-origem
-- [ ] /comparativos/foundation-passport-review
-- [ ] registrar rotas, sidebar e busca
+- [x] /autocustodia/o-que-e-custodia-fria (pilar)
+- [x] /autocustodia/tirar-da-exchange-para-hardware-wallet
+- [x] /autocustodia/verificar-firmware-origem
+- [x] /comparativos/foundation-passport-review
+- [x] registrar rotas, sidebar e busca
