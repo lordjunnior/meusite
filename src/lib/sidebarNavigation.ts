@@ -243,6 +243,8 @@ export const navGroups: NavGroup[] = [
       { label: "Residência Fiscal", route: "/saida/residencia-fiscal", badge: "Novo" },
       { label: "Jurisdições Amigáveis", route: "/saida/jurisdicoes-amigaveis", badge: "Novo" },
       { label: "Cédula & Residência Chile", route: "/saida/cedula-residencia-chile", badge: "Novo" },
+      { label: "Melhores Países p/ Brasileiros", route: "/saida/melhores-paises-brasileiros", badge: "Novo" },
+      { label: "Residência no Paraguai", route: "/saida/residencia-paraguai", badge: "Novo" },
       { label: "PIX Cripto", route: "/pix-cripto" },
       { label: "Infraestrutura", route: "/infraestrutura" },
       { label: "Economia Paralela", route: "/economia-paralela" },
