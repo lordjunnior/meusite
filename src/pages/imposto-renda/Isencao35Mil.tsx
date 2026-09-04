@@ -7,9 +7,9 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/card-bitcoin.jpg';
-import mesImg from '@/assets/bitcoin-p2p-exchange.jpg';
-import autocustodiaImg from '@/assets/autocustodia-hero.jpg';
+import heroImg from '@/assets/imposto-renda/isencao-hero.jpg';
+import mesImg from '@/assets/imposto-renda/isencao-mes.jpg';
+import autocustodiaImg from '@/assets/imposto-renda/isencao-autocustodia.jpg';
 
 /**
  * /imposto-renda/isencao-35-mil
