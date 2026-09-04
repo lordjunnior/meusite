@@ -72,6 +72,7 @@ export const navGroups: NavGroup[] = [
       { label: "Jade Core Review", route: "/autocustodia/jade-core-review", badge: "Novo" },
       { label: "Melhores Hardware Wallets", route: "/comparativos/melhores-hardware-wallets", badge: "Novo" },
       { label: "Coldcard Review", route: "/comparativos/coldcard-review", badge: "Novo" },
+      { label: "Trezor Review", route: "/comparativos/trezor-review", badge: "Novo" },
       { label: "Krux + Passphrase", route: "/autocustodia/krux-passphrase-bluewallet", badge: "Novo" },
       { label: "Multisig Bitcoin", route: "/multisig-bitcoin", badge: "Novo" },
       { label: "Comprar BTC Anônimo", route: "/comprar-bitcoin-com-privacidade" },
