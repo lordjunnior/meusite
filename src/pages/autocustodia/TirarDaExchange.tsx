@@ -697,6 +697,16 @@ export default function TirarDaExchange() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
+                  to: '/autocustodia/guia-migracao-corretora',
+                  titulo: 'Guia da migração: como sair da corretora',
+                  texto: 'A página pilar da travessia: risco de contraparte, checklist de sete passos e saque de teste.',
+                },
+                {
+                  to: '/autocustodia/erros-fatais-saque-corretora',
+                  titulo: 'Erros fatais no saque de corretoras',
+                  texto: 'Rede errada, endereço trocado, taxa mal calculada e transações travadas.',
+                },
+                {
                   to: '/comparativos/melhores-hardware-wallets',
                   titulo: 'Melhores hardware wallets em 2026',
                   texto: 'O comparativo completo antes de escolher onde suas chaves privadas vão morar.',

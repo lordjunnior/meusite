@@ -158,6 +158,10 @@ const OrganicaComeceAqui = lazy(() => import("./pages/soberania-organica/ComeceA
 const OQueECustodiaFria = lazy(() => import("./pages/autocustodia/OQueECustodiaFria"));
 const TirarDaExchange = lazy(() => import("./pages/autocustodia/TirarDaExchange"));
 const VerificarFirmwareOrigem = lazy(() => import("./pages/autocustodia/VerificarFirmwareOrigem"));
+const GuiaMigracaoCorretora = lazy(() => import("./pages/autocustodia/GuiaMigracaoCorretora"));
+const HotWalletVsColdWallet = lazy(() => import("./pages/autocustodia/HotWalletVsColdWallet"));
+const PrimeiroSaqueHardwareWallet = lazy(() => import("./pages/autocustodia/PrimeiroSaqueHardwareWallet"));
+const ErrosFataisSaqueCorretora = lazy(() => import("./pages/autocustodia/ErrosFataisSaqueCorretora"));
 const FoundationPassportReview = lazy(() => import("./pages/comparativos/FoundationPassportReview"));
 const FarmaciaCaseiraEssencial = lazy(() => import("./pages/soberania-organica/FarmaciaCaseiraEssencial"));
 const TinturasXaroposPreparos = lazy(() => import("./pages/soberania-organica/TinturasXaroposPreparos"));
@@ -231,6 +235,10 @@ const App = () => (
           <Route path="/autocustodia/coinjoin-privacidade" element={<CoinjoinPrivacidade />} />
           <Route path="/autocustodia/heranca-bitcoin" element={<HerancaBitcoin />} />
           <Route path="/autocustodia/krux-passphrase-bluewallet" element={<KruxPassphraseBluewallet />} />
+          <Route path="/autocustodia/guia-migracao-corretora" element={<GuiaMigracaoCorretora />} />
+          <Route path="/autocustodia/hot-wallet-vs-cold-wallet" element={<HotWalletVsColdWallet />} />
+          <Route path="/autocustodia/primeiro-saque-hardware-wallet" element={<PrimeiroSaqueHardwareWallet />} />
+          <Route path="/autocustodia/erros-fatais-saque-corretora" element={<ErrosFataisSaqueCorretora />} />
           <Route path="/economia-paralela" element={<EconomiaParalela />} />
           <Route path="/infraestrutura" element={<Infraestrutura />} />
           <Route path="/lightning" element={<LightningPage />} />
