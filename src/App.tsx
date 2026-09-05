@@ -158,6 +158,10 @@ const OrganicaComeceAqui = lazy(() => import("./pages/soberania-organica/ComeceA
 const OQueECustodiaFria = lazy(() => import("./pages/autocustodia/OQueECustodiaFria"));
 const TirarDaExchange = lazy(() => import("./pages/autocustodia/TirarDaExchange"));
 const VerificarFirmwareOrigem = lazy(() => import("./pages/autocustodia/VerificarFirmwareOrigem"));
+const GuiaMigracaoCorretora = lazy(() => import("./pages/autocustodia/GuiaMigracaoCorretora"));
+const HotWalletVsColdWallet = lazy(() => import("./pages/autocustodia/HotWalletVsColdWallet"));
+const PrimeiroSaqueHardwareWallet = lazy(() => import("./pages/autocustodia/PrimeiroSaqueHardwareWallet"));
+const ErrosFataisSaqueCorretora = lazy(() => import("./pages/autocustodia/ErrosFataisSaqueCorretora"));
 const FoundationPassportReview = lazy(() => import("./pages/comparativos/FoundationPassportReview"));
 const FarmaciaCaseiraEssencial = lazy(() => import("./pages/soberania-organica/FarmaciaCaseiraEssencial"));
 const TinturasXaroposPreparos = lazy(() => import("./pages/soberania-organica/TinturasXaroposPreparos"));
