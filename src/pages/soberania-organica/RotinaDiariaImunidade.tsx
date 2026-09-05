@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  Sun, Droplet, Wind, Dumbbell, Snowflake, Moon, BedDouble,
+  Sun, Wind, Dumbbell, Snowflake, Moon, BedDouble,
   ChevronDown, ArrowRight, AlertTriangle, CheckCircle2, Activity,
   Utensils, Thermometer, ShieldCheck, FlaskConical, Leaf, Scroll,
 } from 'lucide-react';
