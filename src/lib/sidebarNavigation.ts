@@ -62,6 +62,10 @@ export const navGroups: NavGroup[] = [
     items: [
       { label: "Bitcoin Seguro", route: "/bitcoin-seguro" },
       { label: "Autocustódia", route: "/autocustodia" },
+      { label: "Guia de Migração da Corretora", route: "/autocustodia/guia-migracao-corretora", badge: "Novo" },
+      { label: "Carteira Quente x Fria", route: "/autocustodia/hot-wallet-vs-cold-wallet", badge: "Novo" },
+      { label: "Primeiro Saque na Hardware Wallet", route: "/autocustodia/primeiro-saque-hardware-wallet", badge: "Novo" },
+      { label: "Erros Fatais no Saque", route: "/autocustodia/erros-fatais-saque-corretora", badge: "Novo" },
       { label: "Blindagem Golpes", route: "/blindagem-golpes" },
       { label: "Lightning Network", route: "/lightning" },
       { label: "Mobilidade de Chaves", route: "/mobilidade-de-chaves" },

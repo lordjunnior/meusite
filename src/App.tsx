@@ -235,6 +235,10 @@ const App = () => (
           <Route path="/autocustodia/coinjoin-privacidade" element={<CoinjoinPrivacidade />} />
           <Route path="/autocustodia/heranca-bitcoin" element={<HerancaBitcoin />} />
           <Route path="/autocustodia/krux-passphrase-bluewallet" element={<KruxPassphraseBluewallet />} />
+          <Route path="/autocustodia/guia-migracao-corretora" element={<GuiaMigracaoCorretora />} />
+          <Route path="/autocustodia/hot-wallet-vs-cold-wallet" element={<HotWalletVsColdWallet />} />
+          <Route path="/autocustodia/primeiro-saque-hardware-wallet" element={<PrimeiroSaqueHardwareWallet />} />
+          <Route path="/autocustodia/erros-fatais-saque-corretora" element={<ErrosFataisSaqueCorretora />} />
           <Route path="/economia-paralela" element={<EconomiaParalela />} />
           <Route path="/infraestrutura" element={<Infraestrutura />} />
           <Route path="/lightning" element={<LightningPage />} />
