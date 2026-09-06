@@ -90,23 +90,37 @@ export default function SovereignDisclaimer({ variant = 'exchange' }: SovereignD
             <Shield className="w-5 h-5 text-amber-500 mt-0.5 shrink-0" />
             <p className="text-sm text-foreground/90 leading-relaxed">
               <span className="font-bold text-amber-500">A tese deste site é uma só:</span>{' '}
-              seu dinheiro só é seu quando está sob sua custódia direta — sem intermediários, 
-              sem permissão de terceiros, sem risco de confisco. Tudo que sai dessa premissa é 
+              seu dinheiro só é seu quando está sob sua custódia direta, sem intermediários,
+              sem permissão de terceiros, sem risco de confisco. Tudo que sai dessa premissa é
               ferramenta tática, não destino final.
             </p>
           </div>
 
           {/* CTA */}
-          <Link
-            to="/autocustodia"
-            className="group inline-flex items-center gap-3 py-3 px-6 rounded-sm border border-amber-500/30 
-              bg-amber-500/[0.06] hover:bg-amber-500/[0.15] hover:border-amber-500/50 
-              text-amber-500 font-semibold text-sm tracking-wide transition-all duration-300"
-          >
-            <Shield className="w-4 h-4" />
-            Entenda a Autocustódia — a verdadeira solução
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1.5" />
-          </Link>
+          <p className="text-sm text-foreground/80 leading-relaxed mb-4">
+            Se você quer parar de se expor ao risco de confisco e vigilância, saia agora desta página
+            e vá para o guia da migração.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link
+              to="/autocustodia/guia-migracao-corretora"
+              className="group inline-flex items-center gap-3 py-3 px-6 rounded-sm border border-amber-500/40
+                bg-amber-500/[0.12] hover:bg-amber-500/[0.22] hover:border-amber-500/60
+                text-amber-500 font-semibold text-sm tracking-wide transition-all duration-300"
+            >
+              <Shield className="w-4 h-4" />
+              Guia da Migração: sair da corretora
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1.5" />
+            </Link>
+            <Link
+              to="/autocustodia"
+              className="inline-flex items-center gap-2 py-3 px-6 rounded-sm border border-amber-500/20
+                text-amber-500/80 hover:text-amber-500 hover:border-amber-500/40 font-medium text-sm transition-all duration-300"
+            >
+              Entenda a autocustódia
+            </Link>
+          </div>
+
         </div>
 
         {/* Bottom accent line */}
