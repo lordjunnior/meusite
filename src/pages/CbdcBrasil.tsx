@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ContraAtaquePratico from '@/components/ContraAtaquePratico';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Cpu, Globe, ShieldAlert, AlertTriangle, Lock, ChevronDown, ChevronRight, Play, BookOpen, HelpCircle, Clock, Code, Landmark, Zap, GraduationCap } from 'lucide-react';
@@ -283,6 +284,8 @@ export default function CbdcBrasil() {
             </div>
           </div>
         </motion.section>
+
+        <ContraAtaquePratico theme="dark" />
 
         {/* LEIA TAMBÉM */}
         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="mb-20">

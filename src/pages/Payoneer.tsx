@@ -269,7 +269,7 @@ export default function Payoneer() {
         </div>
 
         {/* CH01 — FICHA TÉCNICA */}
-        <ChapterKickoff number="01" title="Ficha Técnica" image={appImg} id="ficha-tecnica" isOdd={true} />
+        <ChapterKickoff number="01" title="Payoneer sob a ótica da privacidade financeira" image={appImg} id="ficha-tecnica" isOdd={true} />
         <ScrollSection className="max-w-5xl mx-auto px-6 py-16 md:py-20" isOdd={true}>
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -285,7 +285,7 @@ export default function Payoneer() {
         </ScrollSection>
 
         {/* CH02 — FUNCIONALIDADES */}
-        <ChapterKickoff number="02" title="O que a Payoneer Oferece" image={heroImg} id="funcionalidades" isOdd={false} />
+        <ChapterKickoff number="02" title="O que a Payoneer entrega, e o rastro que ela cria" image={heroImg} id="funcionalidades" isOdd={false} />
         <ScrollSection className="max-w-5xl mx-auto px-6 py-16 md:py-20" isOdd={false}>
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -304,7 +304,7 @@ export default function Payoneer() {
         </ScrollSection>
 
         {/* CH03 — COMPARATIVO */}
-        <ChapterKickoff number="03" title="Payoneer vs Wise vs Bancos" image={heroImg} id="comparativo" isOdd={true} />
+        <ChapterKickoff number="03" title="Payoneer, Wise ou banco: quem expõe mais os seus dados" image={heroImg} id="comparativo" isOdd={true} />
         <ScrollSection className="max-w-5xl mx-auto px-6 py-16 md:py-20" isOdd={true}>
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
             <div className="overflow-x-auto">
@@ -333,7 +333,7 @@ export default function Payoneer() {
         </ScrollSection>
 
         {/* CH04 — PRÓS E CONTRAS */}
-        <ChapterKickoff number="04" title="Prós e Contras" image={appImg} id="pros-contras" isOdd={false} />
+        <ChapterKickoff number="04" title="Conveniência de fintech e o custo em vigilância" image={appImg} id="pros-contras" isOdd={false} />
         <ScrollSection className="max-w-5xl mx-auto px-6 py-16 md:py-20" isOdd={false}>
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -361,7 +361,7 @@ export default function Payoneer() {
         </ScrollSection>
 
         {/* CH05 — VEREDICTO */}
-        <ChapterKickoff number="05" title="Veredicto Final" image={heroImg} id="veredicto" isOdd={true} />
+        <ChapterKickoff number="05" title="Veredicto: recebimento sim, reserva de valor não" image={heroImg} id="veredicto" isOdd={true} />
         <ScrollSection className="max-w-5xl mx-auto px-6 py-16 md:py-20" isOdd={true}>
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
@@ -404,7 +404,7 @@ export default function Payoneer() {
         </ScrollSection>
 
         {/* CH06 — FAQ */}
-        <ChapterKickoff number="06" title="Perguntas Frequentes" image={appImg} id="faq" isOdd={false} />
+        <ChapterKickoff number="06" title="Reporte, bloqueio e KYC: perguntas frequentes" image={appImg} id="faq" isOdd={false} />
         <ScrollSection className="max-w-3xl mx-auto px-6 py-16 md:py-20 pb-32" isOdd={false}>
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
             <motion.div variants={staggerChild}>

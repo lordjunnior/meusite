@@ -13,30 +13,31 @@ interface SovereignDisclaimerProps {
 const contextCopy: Record<string, { badge: string; title: string; body: string }> = {
   exchange: {
     badge: 'AVISO DE SOBERANIA',
-    title: 'Este conteúdo existe por um único motivo.',
-    body: 'Dezenas de seguidores no Instagram relataram que suas contas em exchanges tradicionais foram comprometidas, bloqueadas ou confiscadas — e pediram ajuda para criar uma alternativa sigilosa, fora do radar. Este tutorial não é uma recomendação de uso. É uma resposta direta a quem já perdeu o acesso ao próprio dinheiro e precisa de uma rota de contingência.',
+    title: 'Eu não apoio e não uso corretoras centralizadas.',
+    body: 'Este conteúdo só existe porque foi exaustivamente pedido nas redes por quem já teve conta bloqueada, valor retido ou acesso cortado ao próprio dinheiro. Não é recomendação de uso. É rota de contingência para quem já está dentro e precisa sair.',
   },
   bank: {
     badge: 'AVISO DE SOBERANIA',
     title: 'Conta internacional não substitui autocustódia.',
-    body: 'Este guia foi criado porque dezenas de seguidores no Instagram pediram ajuda para diversificar jurisdições após terem contas bloqueadas ou valores retidos. Nenhuma conta bancária — nacional ou internacional — te dá posse real do seu dinheiro. Isso aqui é um plano B tático, não a solução final.',
+    body: 'Este guia foi criado porque a comunidade pediu ajuda para diversificar jurisdições depois de contas bloqueadas e valores retidos. Nenhuma conta bancária, nacional ou internacional, te dá posse real do seu dinheiro. Isso aqui é plano B tático, não destino final.',
   },
   payment: {
     badge: 'AVISO DE SOBERANIA',
     title: 'Pagar com cripto via Pix não é autocustódia.',
-    body: 'Vários seguidores no Instagram pediram este tutorial porque já estão com contas comprometidas e querem criar uma rota alternativa — totalmente sigilosa — para movimentar valores sem depender de bancos tradicionais. Não estamos recomendando que você mantenha fundos em exchanges. Estamos ensinando uma saída tática para quem já precisa.',
+    body: 'Este tutorial existe por pedido exaustivo de quem já tem conta comprometida e precisa de uma rota alternativa para movimentar valor sem depender de banco. Manter fundos em corretora continua sendo risco de contraparte, não solução.',
   },
   offshore: {
     badge: 'AVISO DE SOBERANIA',
     title: 'Offshore é blindagem. Não é soberania.',
-    body: 'Pedidos da comunidade no Instagram motivaram este material: pessoas com patrimônio retido, contas bloqueadas sem justificativa e medo real de confisco. Uma conta offshore diversifica jurisdição, mas não te dá controle absoluto. Para isso, você precisa de autocustódia.',
+    body: 'Pedidos da comunidade motivaram este material: patrimônio retido, contas bloqueadas sem justificativa e medo real de confisco. Uma conta offshore diversifica jurisdição, mas não te dá controle absoluto. Para isso, você precisa de autocustódia.',
   },
   surveillance: {
     badge: 'ALERTA DE SOBERANIA',
     title: 'Vigilância financeira é real. Este conteúdo é defesa.',
-    body: 'A comunidade no Instagram pediu este material após enfrentar bloqueios, monitoramento e restrições reais em suas contas. Este conteúdo documenta ameaças e oferece protocolos práticos de proteção — não é teoria conspiratória, é preparação baseada em fatos.',
+    body: 'A comunidade pediu este material após enfrentar bloqueios, monitoramento e restrições reais. Aqui estão as ameaças documentadas e os protocolos práticos de proteção, sem teoria conspiratória.',
   },
 };
+
 
 export default function SovereignDisclaimer({ variant = 'exchange' }: SovereignDisclaimerProps) {
   const ref = useRef(null);
@@ -89,23 +90,37 @@ export default function SovereignDisclaimer({ variant = 'exchange' }: SovereignD
             <Shield className="w-5 h-5 text-amber-500 mt-0.5 shrink-0" />
             <p className="text-sm text-foreground/90 leading-relaxed">
               <span className="font-bold text-amber-500">A tese deste site é uma só:</span>{' '}
-              seu dinheiro só é seu quando está sob sua custódia direta — sem intermediários, 
-              sem permissão de terceiros, sem risco de confisco. Tudo que sai dessa premissa é 
+              seu dinheiro só é seu quando está sob sua custódia direta, sem intermediários,
+              sem permissão de terceiros, sem risco de confisco. Tudo que sai dessa premissa é
               ferramenta tática, não destino final.
             </p>
           </div>
 
           {/* CTA */}
-          <Link
-            to="/autocustodia"
-            className="group inline-flex items-center gap-3 py-3 px-6 rounded-sm border border-amber-500/30 
-              bg-amber-500/[0.06] hover:bg-amber-500/[0.15] hover:border-amber-500/50 
-              text-amber-500 font-semibold text-sm tracking-wide transition-all duration-300"
-          >
-            <Shield className="w-4 h-4" />
-            Entenda a Autocustódia — a verdadeira solução
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1.5" />
-          </Link>
+          <p className="text-sm text-foreground/80 leading-relaxed mb-4">
+            Se você quer parar de se expor ao risco de confisco e vigilância, saia agora desta página
+            e vá para o guia da migração.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link
+              to="/autocustodia/guia-migracao-corretora"
+              className="group inline-flex items-center gap-3 py-3 px-6 rounded-sm border border-amber-500/40
+                bg-amber-500/[0.12] hover:bg-amber-500/[0.22] hover:border-amber-500/60
+                text-amber-500 font-semibold text-sm tracking-wide transition-all duration-300"
+            >
+              <Shield className="w-4 h-4" />
+              Guia da Migração: sair da corretora
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1.5" />
+            </Link>
+            <Link
+              to="/autocustodia"
+              className="inline-flex items-center gap-2 py-3 px-6 rounded-sm border border-amber-500/20
+                text-amber-500/80 hover:text-amber-500 hover:border-amber-500/40 font-medium text-sm transition-all duration-300"
+            >
+              Entenda a autocustódia
+            </Link>
+          </div>
+
         </div>
 
         {/* Bottom accent line */}

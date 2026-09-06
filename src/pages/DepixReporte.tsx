@@ -1,4 +1,5 @@
 import PageFloatingToc from "@/components/PageFloatingToc";
+import ContraAtaquePratico from '@/components/ContraAtaquePratico';
 import { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -474,6 +475,8 @@ export default function DepixReporte() {
             </Accordion>
           </motion.div>
         </ScrollSection>
+
+        <div className="px-6"><ContraAtaquePratico theme="dark" /></div>
 
         {/* ═══ FOOTER ═══ */}
         <div style={{ background: '#050808' }} className="border-t border-white/[0.04]">

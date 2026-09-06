@@ -298,6 +298,41 @@ const Novilingua: React.FC = () => {
         </div>
       </section>
 
+
+      {/* NOVILÍNGUA APLICADA AO DINHEIRO */}
+      <section className="relative z-10 py-20 md:py-28 px-6 md:px-12 lg:px-20">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            A Novilíngua aplicada ao seu dinheiro, hoje
+          </h2>
+          <p className="text-stone-300 text-lg leading-relaxed max-w-3xl mb-10">
+            Não é teoria de romance. O vocabulário oficial já opera nas suas contas. Repare no padrão: toda palavra
+            que descreve controle é substituída por uma palavra que descreve conforto.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3 mb-10">
+            {[
+              { termo: 'Moeda digital de banco central (CBDC)', vende: 'modernização e inclusão', significa: 'dinheiro programável, com regra de gasto definida por terceiros' },
+              { termo: 'Rastreabilidade do PIX', vende: 'segurança contra fraude', significa: 'registro permanente de com quem, quando e quanto você transaciona' },
+              { termo: 'Conformidade regulatória', vende: 'proteção do usuário', significa: 'entrega automática dos seus dados sem que você seja avisado' },
+            ].map((t) => (
+              <div key={t.termo} className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
+                <p className="text-white font-bold text-base mb-3 leading-snug">{t.termo}</p>
+                <p className="text-stone-400 text-sm leading-relaxed mb-2">
+                  <span className="text-rose-400 font-semibold">Vendem como:</span> {t.vende}
+                </p>
+                <p className="text-stone-300 text-sm leading-relaxed">
+                  <span className="text-rose-400 font-semibold">Significa:</span> {t.significa}
+                </p>
+              </div>
+            ))}
+          </div>
+          <Link to="/alertas/cbdc-brasil" className="group inline-flex items-center gap-3 bg-white/5 border border-rose-500/30 text-white px-8 py-4 font-semibold text-sm tracking-wide rounded-2xl hover:bg-rose-500/10 transition-all duration-500">
+            Veja o exemplo prático definitivo: CBDC no Brasil
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </section>
+
       {/* CTA FINAL */}
       <section className="relative z-10 py-20 md:py-32 px-6 md:px-12 lg:px-20">
         <div className="max-w-5xl mx-auto">

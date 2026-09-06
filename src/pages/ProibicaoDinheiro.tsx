@@ -1,4 +1,5 @@
 import PageFloatingToc from "@/components/PageFloatingToc";
+import ContraAtaquePratico from '@/components/ContraAtaquePratico';
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -865,6 +866,8 @@ export default function ProibicaoDinheiro() {
                 <p><span className="text-muted-foreground">Temas abordados:</span> limite de dinheiro vivo no Brasil, PL 3951/2019, governo proibir dinheiro em espécie, como comprar Bitcoin sem KYC, privacidade financeira, comprar Bitcoin P2P, teoria das bandeiras, exchanges descentralizadas, autocustódia Bitcoin, como proteger dinheiro do governo.</p>
               </div>
             </NobelSection>
+
+            <ContraAtaquePratico theme="dark" />
 
             {/* ── FOOTER ── */}
             <footer className="pt-16 border-t border-border/20">
