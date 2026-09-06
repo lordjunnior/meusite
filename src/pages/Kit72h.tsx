@@ -1,4 +1,5 @@
 import React from 'react';
+import ContraAtaquePratico from '@/components/ContraAtaquePratico';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Package, Droplets, UtensilsCrossed, FileText, Radio, Pill, AlertTriangle, CheckCircle2, XCircle, Clock, Layers, Shield, RefreshCw } from 'lucide-react';
@@ -519,6 +520,17 @@ export default function Kit72h() {
           </div>
         </motion.div>
 
+
+      <ContraAtaquePratico
+        theme="dark"
+        title="O estoque médico que não vence na prateleira"
+        intro="Kit pronto de farmácia industrial é o elo mais frágil do seu módulo de 72 horas: prazo curto, dependência de indústria e nada que você saiba repor. A base médica de verdade é feita de plantas puras, preparos de boticário e técnica sua."
+        links={[
+          { to: '/soberania-organica/farmacia-caseira-essencial', kicker: 'Base médica', label: 'Farmácia caseira essencial: os 15 itens' },
+          { to: '/soberania-organica/tinturas-xaropes-preparos', kicker: 'Técnica de preparo', label: 'Tinturas, xaropes e preparos passo a passo' },
+          { to: '/soberania-organica/protocolos-gripe-resfriado', kicker: 'Protocolo agudo', label: 'O que fazer nas primeiras 48 horas' },
+        ]}
+      />
       </div>
     </div>
     </>

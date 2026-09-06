@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import ContraAtaquePratico from '@/components/ContraAtaquePratico';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Backpack } from 'lucide-react';
@@ -587,6 +588,17 @@ export default function EDC() {
             </div>
           </motion.div>
         </section>
+
+        <ContraAtaquePratico
+          theme="dark"
+          title="O suprimento médico do EDC não vem de farmácia"
+          intro="Curativo e analgésico resolvem o primeiro minuto. Depois disso você depende do que sabe preparar. O estoque médico mais confiável é o de plantas puras e preparos próprios, com validade longa e reposição na sua mão."
+          links={[
+            { to: '/soberania-organica/farmacia-caseira-essencial', kicker: 'Base médica', label: 'Farmácia caseira essencial' },
+            { to: '/soberania-organica/tinturas-xaropes-preparos', kicker: 'Preparo', label: 'Tinturas, xaropes e extrações' },
+            { to: '/soberania-organica/rotina-diaria-imunidade', kicker: 'Prevenção', label: 'Rotina diária de imunidade' },
+          ]}
+        />
       </div>
     </>
   );
