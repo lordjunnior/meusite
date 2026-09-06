@@ -13,30 +13,31 @@ interface SovereignDisclaimerProps {
 const contextCopy: Record<string, { badge: string; title: string; body: string }> = {
   exchange: {
     badge: 'AVISO DE SOBERANIA',
-    title: 'Este conteúdo existe por um único motivo.',
-    body: 'Dezenas de seguidores no Instagram relataram que suas contas em exchanges tradicionais foram comprometidas, bloqueadas ou confiscadas — e pediram ajuda para criar uma alternativa sigilosa, fora do radar. Este tutorial não é uma recomendação de uso. É uma resposta direta a quem já perdeu o acesso ao próprio dinheiro e precisa de uma rota de contingência.',
+    title: 'Eu não apoio e não uso corretoras centralizadas.',
+    body: 'Este conteúdo só existe porque foi exaustivamente pedido nas redes por quem já teve conta bloqueada, valor retido ou acesso cortado ao próprio dinheiro. Não é recomendação de uso. É rota de contingência para quem já está dentro e precisa sair.',
   },
   bank: {
     badge: 'AVISO DE SOBERANIA',
     title: 'Conta internacional não substitui autocustódia.',
-    body: 'Este guia foi criado porque dezenas de seguidores no Instagram pediram ajuda para diversificar jurisdições após terem contas bloqueadas ou valores retidos. Nenhuma conta bancária — nacional ou internacional — te dá posse real do seu dinheiro. Isso aqui é um plano B tático, não a solução final.',
+    body: 'Este guia foi criado porque a comunidade pediu ajuda para diversificar jurisdições depois de contas bloqueadas e valores retidos. Nenhuma conta bancária, nacional ou internacional, te dá posse real do seu dinheiro. Isso aqui é plano B tático, não destino final.',
   },
   payment: {
     badge: 'AVISO DE SOBERANIA',
     title: 'Pagar com cripto via Pix não é autocustódia.',
-    body: 'Vários seguidores no Instagram pediram este tutorial porque já estão com contas comprometidas e querem criar uma rota alternativa — totalmente sigilosa — para movimentar valores sem depender de bancos tradicionais. Não estamos recomendando que você mantenha fundos em exchanges. Estamos ensinando uma saída tática para quem já precisa.',
+    body: 'Este tutorial existe por pedido exaustivo de quem já tem conta comprometida e precisa de uma rota alternativa para movimentar valor sem depender de banco. Manter fundos em corretora continua sendo risco de contraparte, não solução.',
   },
   offshore: {
     badge: 'AVISO DE SOBERANIA',
     title: 'Offshore é blindagem. Não é soberania.',
-    body: 'Pedidos da comunidade no Instagram motivaram este material: pessoas com patrimônio retido, contas bloqueadas sem justificativa e medo real de confisco. Uma conta offshore diversifica jurisdição, mas não te dá controle absoluto. Para isso, você precisa de autocustódia.',
+    body: 'Pedidos da comunidade motivaram este material: patrimônio retido, contas bloqueadas sem justificativa e medo real de confisco. Uma conta offshore diversifica jurisdição, mas não te dá controle absoluto. Para isso, você precisa de autocustódia.',
   },
   surveillance: {
     badge: 'ALERTA DE SOBERANIA',
     title: 'Vigilância financeira é real. Este conteúdo é defesa.',
-    body: 'A comunidade no Instagram pediu este material após enfrentar bloqueios, monitoramento e restrições reais em suas contas. Este conteúdo documenta ameaças e oferece protocolos práticos de proteção — não é teoria conspiratória, é preparação baseada em fatos.',
+    body: 'A comunidade pediu este material após enfrentar bloqueios, monitoramento e restrições reais. Aqui estão as ameaças documentadas e os protocolos práticos de proteção, sem teoria conspiratória.',
   },
 };
+
 
 export default function SovereignDisclaimer({ variant = 'exchange' }: SovereignDisclaimerProps) {
   const ref = useRef(null);
