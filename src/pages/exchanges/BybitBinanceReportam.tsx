@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import SovereignDisclaimer from '@/components/SovereignDisclaimer';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import {
@@ -216,6 +217,8 @@ export default function BybitBinanceReportam() {
             </motion.div>
           </div>
         </section>
+
+        <div className="px-6 md:px-12 lg:px-20"><SovereignDisclaimer variant="exchange" /></div>
 
         {/* CAPÍTULO 2 — Imagem cofre + analogia */}
         <section className="relative" style={{ backgroundColor: '#0e3b3a', color: '#f4ede4' }}>
