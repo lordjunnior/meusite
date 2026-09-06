@@ -225,7 +225,7 @@ const GrabrFi = () => {
       </div>
 
       {/* ── CH01: HERO ── */}
-      <ChapterKickoff number="01" title="A Conta Americana que Fala Cripto" image={heroImg} id="hero" isOdd />
+      <ChapterKickoff number="01" title="Conta americana com trilho cripto: onde fica a sua privacidade" image={heroImg} id="hero" isOdd />
 
       <ScrollSection isOdd className="max-w-4xl mx-auto px-6 pb-20 pt-12">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
@@ -253,7 +253,7 @@ const GrabrFi = () => {
       </ScrollSection>
 
       {/* ── CH02: FICHA TÉCNICA ── */}
-      <ChapterKickoff number="02" title="Ficha Técnica" image={appImg} id="specs" isOdd={false} />
+      <ChapterKickoff number="02" title="Ficha técnica e o que fica registrado sobre você" image={appImg} id="specs" isOdd={false} />
 
       <ScrollSection isOdd={false} className="max-w-4xl mx-auto px-6 pb-20 pt-12">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
@@ -272,7 +272,7 @@ const GrabrFi = () => {
       </ScrollSection>
 
       {/* ── CH03: DIFERENCIAIS ── */}
-      <ChapterKickoff number="03" title="O Que a Concorrência Não Faz" image={heroImg} id="diferenciais" isOdd />
+      <ChapterKickoff number="03" title="O que a concorrência não faz, e o que nenhuma delas protege" image={heroImg} id="diferenciais" isOdd />
 
       <ScrollSection isOdd className="max-w-4xl mx-auto px-6 pb-20 pt-12">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
@@ -295,7 +295,7 @@ const GrabrFi = () => {
       </ScrollSection>
 
       {/* ── CH04: TAXAS ── */}
-      <ChapterKickoff number="04" title="Tabela de Taxas" image={appImg} id="taxas" isOdd={false} />
+      <ChapterKickoff number="04" title="Taxas reais e o custo invisível: o rastro dos seus dados" image={appImg} id="taxas" isOdd={false} />
 
       <ScrollSection isOdd={false} className="max-w-4xl mx-auto px-6 pb-20 pt-12">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
@@ -321,7 +321,7 @@ const GrabrFi = () => {
       </ScrollSection>
 
       {/* ── CH05: PRÓS & CONTRAS ── */}
-      <ChapterKickoff number="05" title="Prós & Contras" image={brasilParaguaiImg} id="pros-contras" isOdd />
+      <ChapterKickoff number="05" title="Vantagem operacional contra risco de contraparte" image={brasilParaguaiImg} id="pros-contras" isOdd />
 
       <ScrollSection isOdd className="max-w-4xl mx-auto px-6 pb-20 pt-12">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
@@ -358,7 +358,7 @@ const GrabrFi = () => {
       </ScrollSection>
 
       {/* ── CH06: VEREDICTO ── */}
-      <ChapterKickoff number="06" title="Veredicto Editorial" image={heroImg} id="veredicto" isOdd={false} />
+      <ChapterKickoff number="06" title="Veredicto: ponte de saída, nunca cofre final" image={heroImg} id="veredicto" isOdd={false} />
 
       <ScrollSection isOdd={false} className="max-w-4xl mx-auto px-6 pb-20 pt-12">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
@@ -413,7 +413,7 @@ const GrabrFi = () => {
       </ScrollSection>
 
       {/* ── CH08: FAQ ── */}
-      <ChapterKickoff number="08" title="Perguntas Frequentes" image={appImg} id="faq" isOdd={false} />
+      <ChapterKickoff number="08" title="Privacidade, reporte e bloqueios: perguntas frequentes" image={appImg} id="faq" isOdd={false} />
 
       <ScrollSection isOdd={false} className="max-w-4xl mx-auto px-6 pb-20 pt-12">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>

@@ -269,7 +269,7 @@ export default function Wise() {
         </div>
 
         {/* CH01 — FICHA TÉCNICA */}
-        <ChapterKickoff number="01" title="Ficha Técnica" image={appImg} id="ficha-tecnica" isOdd={true} />
+        <ChapterKickoff number="01" title="Wise e contas internacionais: até onde vai a privacidade" image={appImg} id="ficha-tecnica" isOdd={true} />
         <ScrollSection className="max-w-5xl mx-auto px-6 py-16 md:py-20" isOdd={true}>
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -285,7 +285,7 @@ export default function Wise() {
         </ScrollSection>
 
         {/* CH02 — FUNCIONALIDADES */}
-        <ChapterKickoff number="02" title="O que a Wise Oferece" image={heroImg} id="funcionalidades" isOdd={false} />
+        <ChapterKickoff number="02" title="O que a Wise entrega, e quais dados ela guarda de você" image={heroImg} id="funcionalidades" isOdd={false} />
         <ScrollSection className="max-w-5xl mx-auto px-6 py-16 md:py-20" isOdd={false}>
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -304,7 +304,7 @@ export default function Wise() {
         </ScrollSection>
 
         {/* CH03 — COMPARATIVO */}
-        <ChapterKickoff number="03" title="Wise vs Bancos Tradicionais" image={heroImg} id="comparativo" isOdd={true} />
+        <ChapterKickoff number="03" title="Wise ou banco tradicional: quem rastreia menos o seu dinheiro" image={heroImg} id="comparativo" isOdd={true} />
         <ScrollSection className="max-w-5xl mx-auto px-6 py-16 md:py-20" isOdd={true}>
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -322,7 +322,7 @@ export default function Wise() {
         </ScrollSection>
 
         {/* CH04 — PRÓS E CONTRAS */}
-        <ChapterKickoff number="04" title="Prós e Contras" image={appImg} id="pros-contras" isOdd={false} />
+        <ChapterKickoff number="04" title="Ganhos de eficiência e o preço em exposição de dados" image={appImg} id="pros-contras" isOdd={false} />
         <ScrollSection className="max-w-5xl mx-auto px-6 py-16 md:py-20" isOdd={false}>
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -349,7 +349,7 @@ export default function Wise() {
         </ScrollSection>
 
         {/* CH05 — VEREDICTO */}
-        <ChapterKickoff number="05" title="Veredicto Final" image={heroImg} id="veredicto" isOdd={true} />
+        <ChapterKickoff number="05" title="Veredicto: ferramenta tática, custódia de terceiro" image={heroImg} id="veredicto" isOdd={true} />
         <ScrollSection className="max-w-5xl mx-auto px-6 py-16 md:py-20" isOdd={true}>
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
@@ -392,7 +392,7 @@ export default function Wise() {
         </ScrollSection>
 
         {/* CH06 — FAQ */}
-        <ChapterKickoff number="06" title="Perguntas Frequentes" image={appImg} id="faq" isOdd={false} />
+        <ChapterKickoff number="06" title="Privacidade, reporte e limites: perguntas frequentes" image={appImg} id="faq" isOdd={false} />
         <ScrollSection className="max-w-3xl mx-auto px-6 py-16 md:py-20 pb-32" isOdd={false}>
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}>
             <motion.div variants={staggerChild}>
