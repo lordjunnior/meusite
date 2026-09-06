@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ContraAtaquePratico from '@/components/ContraAtaquePratico';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowRight, Package, Flame, Droplets, Wheat, Snowflake, Wind, Egg, Leaf, ShieldCheck, Clock, ChevronDown, ChevronUp, AlertTriangle, Beaker, Warehouse, Thermometer, Tag, Box, BookOpen } from 'lucide-react';
@@ -881,6 +882,18 @@ export default function ConservacaoArmazenamento() {
             </div>
           </div>
         </motion.section>
+
+        <ContraAtaquePratico
+          theme="dark"
+          title="A única conservação que sobrevive a um apagão longo"
+          intro="Freezer e enlatado industrial dependem de energia e de indústria. Fermentação selvagem, cura e secagem são tecnologia ancestral de preservação calórica: funcionam por meses sem tomada, sem embalagem comprada e sem depender de ninguém."
+          links={[
+            { to: '/soberania-organica/conservas-fermentadas', kicker: 'Despensa viva', label: 'Conservas fermentadas: fermentação selvagem' },
+            { to: '/soberania-organica/preservacao-ancestral', kicker: 'Cura e secagem', label: 'Preservação ancestral de alimentos' },
+            { to: '/soberania-organica/sementes-crioulas', kicker: 'Reposição', label: 'Sementes crioulas: recomeçar o ciclo' },
+          ]}
+        />
+
         <MicroCtaResistencia variant="alimentar" />
 
       </div>
