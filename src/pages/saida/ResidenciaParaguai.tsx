@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import RegraZeroMobilidade from '@/components/RegraZeroMobilidade';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -298,6 +299,10 @@ export default function ResidenciaParaguai() {
         </div>
 
         <Hero />
+
+        <div className="px-6 md:px-12 lg:px-20">
+          <RegraZeroMobilidade theme="light" />
+        </div>
 
         {/* CAPÍTULO 1 */}
         <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36">

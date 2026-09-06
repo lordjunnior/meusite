@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import RegraZeroMobilidade from '@/components/RegraZeroMobilidade';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -262,6 +263,10 @@ export default function SegundoPassaporte() {
           backLink="/saida"
           backLabel="Saída & Infraestrutura"
         />
+
+        <div className="px-5 md:px-8">
+          <RegraZeroMobilidade theme="dark" />
+        </div>
 
         {/* CAPÍTULO 1 — POR QUE */}
         <section className="relative max-w-5xl mx-auto px-5 md:px-8 py-24 md:py-32">
