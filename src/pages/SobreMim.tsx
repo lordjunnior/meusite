@@ -254,6 +254,15 @@ export default function SobreMim() {
           0%, 100% { opacity: 0.3; }
           50% { opacity: 0.6; }
         }
+        html { scrollbar-color: ${ORANGE} rgba(255,255,255,0.04); scrollbar-width: thin; }
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); border-left: 1px solid rgba(255,255,255,0.06); }
+        ::-webkit-scrollbar-thumb {
+          background: linear-gradient(180deg, ${AMBER}, ${ORANGE});
+          border: 2px solid ${BG};
+          border-radius: 999px;
+        }
+        ::-webkit-scrollbar-thumb:hover { box-shadow: inset 0 0 12px rgba(0,0,0,0.35); }
         @keyframes grain {
           0%, 100% { transform: translate(0, 0); }
           10% { transform: translate(-5%, -5%); }
