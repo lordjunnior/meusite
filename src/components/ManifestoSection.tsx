@@ -1,6 +1,16 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from "recharts";
+import { useRef, useState, useEffect } from "react";
+import {
+  ComposedChart,
+  Area,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  ReferenceLine,
+} from "recharts";
 import { fadeUp, stagger, staggerChild, viewportOnce, ease } from "@/lib/motion";
 
 const purchasingPowerData = [
@@ -20,21 +30,51 @@ const purchasingPowerData = [
   { year: "2026", value: 8 },
 ];
 
+const useCountUp = (target: number, active: boolean, duration = 1800, delay = 0) => {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    if (!active) return;
+    let raf = 0;
+    let start = 0;
+    const timer = window.setTimeout(() => {
+      const tick = (t: number) => {
+        if (!start) start = t;
+        const p = Math.min((t - start) / duration, 1);
+        setValue(target * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+    }, delay * 1000);
+    return () => {
+      window.clearTimeout(timer);
+      cancelAnimationFrame(raf);
+    };
+  }, [target, active, duration, delay]);
+  return value;
+};
+
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
+    const v = payload[0].value as number;
     return (
-      <div className="bg-card border border-border rounded-md px-3 py-2 text-sm">
-        <p className="text-muted-foreground font-mono text-xs">{label}</p>
-        <p className="text-chart-red font-mono font-semibold">{payload[0].value}% do poder de compra</p>
+      <div className="rounded-lg border border-chart-red/30 bg-background/85 backdrop-blur-md px-4 py-3 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.9)]">
+        <p className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase mb-1">{label}</p>
+        <p className="text-chart-red font-mono text-xl font-bold leading-none">{v}%</p>
+        <p className="text-[11px] text-muted-foreground mt-1">
+          do poder de compra original · perda de {100 - v}%
+        </p>
       </div>
     );
   }
   return null;
 };
 
+
 const ManifestoSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, viewportOnce);
+  const loss = useCountUp(92, isInView, 2000, 0.6);
+
 
   return (
     <section className="section-padding" ref={ref}>
@@ -75,28 +115,57 @@ const ManifestoSection = () => {
 
         {/* Chart */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4, ease: ease.sovereign }}
-          className="card-wealth p-4 md:p-8"
+          transition={{ duration: 0.8, delay: 0.4, ease: ease.sovereign }}
+          className="relative overflow-hidden rounded-3xl border border-chart-red/20 bg-[#0a0a0c] p-4 md:p-8 shadow-[0_40px_120px_-40px_hsl(0_72%_51%/0.35)]"
         >
-          <div className="mb-6">
-            <div className="flex items-center justify-between mb-4">
+          {/* top line + ambient */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-chart-red/60 to-transparent" />
+          <div className="pointer-events-none absolute -bottom-40 -left-32 h-[440px] w-[440px] bg-[radial-gradient(circle,hsl(0_72%_51%/0.13)_0%,transparent_70%)]" />
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.06]"
+            style={{
+              backgroundImage:
+                "linear-gradient(hsl(0 72% 51%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 72% 51%) 1px, transparent 1px)",
+              backgroundSize: "44px 44px",
+              maskImage: "radial-gradient(ellipse at 50% 50%, black 15%, transparent 78%)",
+            }}
+          />
+          <motion.div
+            initial={{ x: "-120%" }}
+            animate={isInView ? { x: "150%" } : {}}
+            transition={{ duration: 2.6, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="pointer-events-none absolute inset-y-0 w-1/3 skew-x-12 bg-gradient-to-r from-transparent via-chart-red/10 to-transparent"
+          />
+
+          <div className="relative mb-6">
+            <div className="flex items-start justify-between gap-4 mb-4">
               <div>
                 <p className="pre-title mb-1">VISUALIZAÇÃO DE DADOS</p>
                 <h3 className="font-display text-lg md:text-xl font-semibold tracking-tight">
-                  DESTRUIÇÃO DO PODER DE COMPRA <span className="text-muted-foreground">(BRL/USD vs. TEMPO)</span>
+                  DESTRUIÇÃO DO PODER DE COMPRA{" "}
+                  <span className="text-muted-foreground">(BRL/USD vs. TEMPO)</span>
                 </h3>
               </div>
-              <span className="text-chart-red font-mono text-sm font-semibold">-92%</span>
+              <div className="text-right shrink-0">
+                <p
+                  className="font-mono text-3xl md:text-5xl font-bold text-chart-red leading-none tabular-nums"
+                  style={{ textShadow: "0 0 40px hsl(0 72% 51% / 0.5)" }}
+                >
+                  -{Math.round(loss)}%
+                </p>
+                <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/50 mt-1">
+                  1994 — 2026
+                </p>
+              </div>
             </div>
 
             {/* Frase-anzol — PNL */}
-            <div className="relative border-l-2 border-chart-red/40 pl-4 py-2 bg-chart-red/[0.03] rounded-r-sm">
-              <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
-                <span className="text-chart-red font-bold">R$ 100 em 1994</span> comprava o que hoje custa{' '}
-                <span className="text-chart-red font-bold">R$ 1.250</span>.
-                Seu salário subiu na mesma proporção?
+            <div className="relative border-l-2 border-chart-red/50 pl-4 py-2 bg-chart-red/[0.05] rounded-r-md">
+              <p className="text-sm md:text-base text-foreground/85 leading-relaxed">
+                <span className="text-chart-red font-bold">R$ 100 em 1994</span> comprava o que hoje custa{" "}
+                <span className="text-chart-red font-bold">R$ 1.250</span>. Seu salário subiu na mesma proporção?
               </p>
               <p className="text-xs text-muted-foreground mt-1 font-mono">
                 O gráfico abaixo mostra o que o Estado fez com cada real no seu bolso.
@@ -104,34 +173,74 @@ const ManifestoSection = () => {
             </div>
           </div>
 
-          <div className="h-[300px] md:h-[380px]">
+          <div className="relative h-[320px] md:h-[420px]">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={purchasingPowerData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(220 20% 16%)" />
+              <ComposedChart data={purchasingPowerData} margin={{ top: 16, right: 12, left: 0, bottom: 0 }}>
+                <defs>
+                  <linearGradient id="decayFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="hsl(0 72% 51%)" stopOpacity={0.55} />
+                    <stop offset="55%" stopColor="hsl(0 72% 51%)" stopOpacity={0.15} />
+                    <stop offset="100%" stopColor="hsl(0 72% 51%)" stopOpacity={0} />
+                  </linearGradient>
+                  <filter id="decayGlow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="6" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+                <CartesianGrid strokeDasharray="2 6" stroke="hsl(0 30% 30% / 0.25)" vertical={false} />
                 <XAxis
                   dataKey="year"
-                  stroke="hsl(215 15% 35%)"
-                  tick={{ fill: 'hsl(215 15% 55%)', fontSize: 12, fontFamily: 'JetBrains Mono' }}
+                  stroke="hsl(215 15% 25%)"
+                  tickLine={false}
+                  tick={{ fill: "hsl(215 15% 55%)", fontSize: 11, fontFamily: "JetBrains Mono" }}
                 />
                 <YAxis
-                  stroke="hsl(220 20% 16%)"
-                  tick={{ fill: 'hsl(215 15% 55%)', fontSize: 12, fontFamily: 'JetBrains Mono' }}
+                  stroke="hsl(215 15% 20%)"
+                  tickLine={false}
+                  axisLine={false}
+                  tick={{ fill: "hsl(215 15% 45%)", fontSize: 11, fontFamily: "JetBrains Mono" }}
                   tickFormatter={(v) => `${v}%`}
                 />
-                <Tooltip content={<CustomTooltip />} />
-                <ReferenceLine y={100} stroke="hsl(215 15% 25%)" strokeDasharray="6 4" />
+                <Tooltip content={<CustomTooltip />} cursor={{ stroke: "hsl(0 72% 51% / 0.4)", strokeWidth: 1 }} />
+                <ReferenceLine
+                  y={100}
+                  stroke="hsl(215 15% 40%)"
+                  strokeDasharray="6 6"
+                  label={{
+                    value: "PODER DE COMPRA ORIGINAL",
+                    position: "insideTopRight",
+                    fill: "hsl(215 15% 45%)",
+                    fontSize: 9,
+                    fontFamily: "JetBrains Mono",
+                  }}
+                />
+                <Area
+                  type="monotone"
+                  dataKey="value"
+                  stroke="none"
+                  fill="url(#decayFill)"
+                  animationDuration={2200}
+                  animationEasing="ease-out"
+                />
                 <Line
                   type="monotone"
                   dataKey="value"
-                  stroke="hsl(0 72% 51%)"
-                  strokeWidth={2.5}
-                  dot={{ fill: 'hsl(0 72% 51%)', r: 3, strokeWidth: 0 }}
-                  activeDot={{ fill: 'hsl(0 72% 51%)', r: 5, strokeWidth: 2, stroke: 'hsl(0 72% 65%)' }}
+                  stroke="hsl(0 72% 55%)"
+                  strokeWidth={3}
+                  filter="url(#decayGlow)"
+                  dot={{ fill: "hsl(0 72% 51%)", r: 3, strokeWidth: 0 }}
+                  activeDot={{ fill: "hsl(0 72% 60%)", r: 6, strokeWidth: 2, stroke: "hsl(0 72% 75%)" }}
+                  animationDuration={2200}
+                  animationEasing="ease-out"
                 />
-              </LineChart>
+              </ComposedChart>
             </ResponsiveContainer>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
