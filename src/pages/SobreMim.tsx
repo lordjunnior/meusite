@@ -566,7 +566,7 @@ export default function SobreMim() {
           <SectionMark n="06 · DOMÍNIO TÉCNICO" title="As Ferramentas Por Trás de Cada Entrega" />
 
           <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10">
-            <div className="border border-white/10 bg-[#0c0d10] p-8 relative overflow-hidden">
+            <GlassPanel padding="p-8">
               <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40 mb-6">// STATUS DO SISTEMA</div>
               <div
                 className="absolute inset-0 pointer-events-none opacity-20 z-0"
@@ -583,10 +583,10 @@ export default function SobreMim() {
                       key={n.code}
                       onMouseEnter={() => setActiveNode(n)}
                       onClick={() => setActiveNode(n)}
-                      className={`aspect-square flex items-center justify-center border font-mono text-sm font-bold tracking-wider transition-all ${
+                      className={`aspect-square flex items-center justify-center border font-mono text-sm font-bold tracking-wider backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 ${
                         active
                           ? "border-transparent text-[#08090a]"
-                          : "border-white/15 text-white/70 hover:border-white/40 hover:text-white"
+                          : "border-white/15 bg-white/[0.03] text-white/70 hover:border-white/40 hover:text-white hover:shadow-[0_0_22px_-6px_rgba(255,102,0,0.55)]"
                       }`}
                       style={active ? { background: `linear-gradient(135deg, ${AMBER}, ${ORANGE})`, boxShadow: `0 0 24px ${ORANGE}55` } : {}}
                     >
@@ -595,7 +595,7 @@ export default function SobreMim() {
                   );
                 })}
               </div>
-            </div>
+            </GlassPanel>
 
             <GlassPanel padding="p-8" className="flex flex-col justify-center">
               <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40 mb-4">// NÓ SELECIONADO</div>
