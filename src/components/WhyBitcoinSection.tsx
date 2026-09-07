@@ -137,43 +137,78 @@ const WhyBitcoinSection = () => {
 
         {/* CARD COMPARATIVO */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="rounded-2xl border border-gold/15 bg-card relative overflow-hidden mb-14"
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="rounded-3xl border border-gold/20 bg-[#0b0b0d] relative overflow-hidden mb-14 shadow-[0_40px_120px_-40px_hsl(var(--gold)/0.35)]"
         >
           {/* Top gold line */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-          {/* Glow */}
-          <div className="absolute bottom-[-80px] right-[-80px] w-[300px] h-[300px] bg-[radial-gradient(circle,hsl(var(--gold)/0.06)_0%,transparent_70%)] pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/70 to-transparent" />
+          {/* Ambient glows */}
+          <div className="absolute -bottom-40 -right-32 w-[460px] h-[460px] bg-[radial-gradient(circle,hsl(var(--gold)/0.14)_0%,transparent_70%)] pointer-events-none" />
+          <div className="absolute -top-32 -left-24 w-[380px] h-[380px] bg-[radial-gradient(circle,hsl(var(--gold)/0.07)_0%,transparent_70%)] pointer-events-none" />
+          {/* Technical grid */}
+          <div
+            className="absolute inset-0 opacity-[0.07] pointer-events-none"
+            style={{
+              backgroundImage:
+                "linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)",
+              backgroundSize: "48px 48px",
+              maskImage: "radial-gradient(ellipse at 50% 40%, black 20%, transparent 75%)",
+            }}
+          />
+          {/* Light sweep */}
+          <motion.div
+            initial={{ x: "-120%" }}
+            animate={isInView ? { x: "140%" } : {}}
+            transition={{ duration: 2.4, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-gold/10 to-transparent pointer-events-none skew-x-12"
+          />
+
+          <div className="relative px-6 md:px-10 pt-10">
+            <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-gold/60 mb-1">
+              Retorno médio anual · 2020 — 2025
+            </p>
+            <div className="h-px bg-gradient-to-r from-gold/30 to-transparent" />
+          </div>
 
           {/* Bars */}
-          <div className="flex items-end justify-center gap-6 h-[280px] px-10 pt-12 relative">
+          <div className="flex items-end justify-center gap-4 md:gap-8 h-[300px] px-6 md:px-10 pt-10 relative">
+            {/* baseline */}
+            <div className="absolute bottom-0 left-6 right-6 md:left-10 md:right-10 h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
             {bars.map((bar, i) => (
-              <BarItem key={i} bar={bar} isInView={isInView} delay={i * 0.15} />
+              <BarItem key={i} bar={bar} isInView={isInView} delay={0.3 + i * 0.18} />
             ))}
           </div>
 
           {/* Result */}
-          <div className="text-center border-t border-border/30 px-10 py-8">
-            <p className="font-bold text-4xl md:text-5xl text-gold leading-none tracking-tight" style={{ textShadow: "0 0 30px hsl(var(--gold) / 0.4)" }}>
-              +66% ao ano
-            </p>
-            <h3 className="text-lg font-bold text-foreground mt-2 mb-2">Crescimento médio anual do Bitcoin</h3>
+          <div className="text-center border-t border-gold/10 px-6 md:px-10 py-9 relative">
+            <motion.p
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.8, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
+              className="font-bold text-5xl md:text-7xl text-gold leading-none tracking-tighter"
+              style={{ textShadow: "0 0 60px hsl(var(--gold) / 0.5)" }}
+            >
+              +66% <span className="text-2xl md:text-3xl align-middle text-gold/70">ao ano</span>
+            </motion.p>
+            <h3 className="text-lg font-bold text-foreground mt-3 mb-2">Crescimento médio anual do Bitcoin</h3>
             <p className="text-sm text-muted-foreground max-w-md mx-auto mb-5">
               Mesmo uma pequena parte do seu dinheiro em Bitcoin teria mudado sua situação financeira. Ainda dá tempo.
             </p>
-            <p className="font-mono text-[10px] text-muted-foreground/40 tracking-widest mb-5">
+            <p className="font-mono text-[10px] text-muted-foreground/40 tracking-widest mb-6">
               Fonte: dados de Jan/2020 a Jan/2025
             </p>
             <Link
               to="/protocolo-inicial"
-              className="inline-flex items-center gap-2 bg-gold hover:bg-gold/90 text-background font-bold text-lg tracking-wider px-10 py-3.5 rounded-md transition-all hover:shadow-[0_12px_40px_hsl(var(--gold)/0.4)] hover:-translate-y-0.5"
+              className="group relative inline-flex items-center gap-2 bg-gradient-to-b from-[#FFC66B] to-gold text-background font-bold text-lg tracking-wider px-10 py-4 rounded-xl transition-all hover:shadow-[0_18px_60px_hsl(var(--gold)/0.5)] hover:-translate-y-0.5 overflow-hidden"
             >
-              <Zap className="w-5 h-5" /> Quero começar agora
+              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+              <Zap className="w-5 h-5 relative" /> <span className="relative">Quero começar agora</span>
             </Link>
           </div>
         </motion.div>
+
 
         {/* FAQ */}
         <motion.div
