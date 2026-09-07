@@ -437,10 +437,10 @@ export default function SobreMim() {
         <Reveal>
           <p className="text-white/60 mb-14 max-w-2xl text-lg">Quatro frentes técnicas que sustentam todas as entregas de soberania.</p>
         </Reveal>
-        <div className="grid md:grid-cols-2 gap-px bg-white/[0.06]">
+        <div className="grid md:grid-cols-2 gap-6">
           {PILLARS.map((p, i) => (
-            <Reveal key={p.n} delay={i * 0.08}>
-              <div className="bg-[#08090a] p-8 md:p-10 h-full group hover:bg-white/[0.02] transition-colors">
+            <Reveal key={p.n} delay={i * 0.08} className="h-full">
+              <GlassPanel padding="p-8 md:p-10" className="h-full">
                 <div className="flex items-baseline justify-between mb-6">
                   <span className="font-mono text-xs tracking-[0.3em] text-white/40">{p.n}</span>
                   <div className="h-px flex-1 mx-4 bg-white/10" />
@@ -453,7 +453,7 @@ export default function SobreMim() {
                     <span key={t} className="text-[10px] uppercase tracking-[0.2em] px-2.5 py-1 border border-white/15 text-white/60">{t}</span>
                   ))}
                 </div>
-              </div>
+              </GlassPanel>
             </Reveal>
           ))}
         </div>
