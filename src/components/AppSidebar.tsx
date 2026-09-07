@@ -3,7 +3,6 @@ import { ChevronRight, Zap } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import SovereignHeader from "@/components/Sidebar/SovereignHeader";
-import ReadingLevelIndicator from "@/components/ReadingLevelIndicator";
 import GlobalSearch from "@/components/GlobalSearch";
 import { topNavItems, navGroups, type NavItem } from "@/lib/sidebarNavigation";
 import { useSiloProgress } from "@/hooks/useSiloProgress";
@@ -93,8 +92,8 @@ const AppSidebar = () => {
         <GlobalSearch />
       </div>
 
-      {/* ── Reading Level ── */}
-      <ReadingLevelIndicator />
+
+
 
       {/* ── Scrollable Navigation ── */}
       <nav className="flex-1 overflow-y-auto px-2 py-3 space-y-0.5 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
