@@ -195,9 +195,36 @@ const ManifestoSection = () => {
                   -{Math.round(loss)}%
                 </p>
                 <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/50 mt-1">
-                  1994 — 2026
+                  {data[0].year} — {data[data.length - 1].year}
                 </p>
               </div>
+            </div>
+
+            {/* Filtros de período */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              {RANGES.map((r) => {
+                const activeRange = r.id === rangeId;
+                return (
+                  <button
+                    key={r.id}
+                    onClick={() => setRangeId(r.id)}
+                    className={`relative overflow-hidden rounded-full border px-3 py-1.5 font-mono text-[10px] tracking-[0.18em] uppercase transition-colors duration-300 ${
+                      activeRange
+                        ? "border-chart-red/50 text-chart-red"
+                        : "border-border/60 text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {activeRange && (
+                      <motion.span
+                        layoutId="manifesto-range-pill"
+                        className="absolute inset-0 bg-chart-red/10"
+                        transition={{ duration: 0.4, ease: ease.sovereign }}
+                      />
+                    )}
+                    <span className="relative">{r.label}</span>
+                  </button>
+                );
+              })}
             </div>
 
             {/* Frase-anzol — PNL */}
@@ -211,6 +238,7 @@ const ManifestoSection = () => {
               </p>
             </div>
           </div>
+
 
           <div className="relative h-[320px] md:h-[420px]">
             <ResponsiveContainer width="100%" height="100%">
