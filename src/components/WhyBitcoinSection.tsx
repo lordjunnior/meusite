@@ -73,16 +73,41 @@ const faqItems = [
 ];
 
 const bars = [
-  { label: "Ouro", value: "10%", height: 70, className: "bg-[#3A3A3A] text-muted-foreground" },
-  { label: "S&P 500", value: "12%", height: 84, className: "bg-[#2A2A3A] text-muted-foreground" },
+  { label: "Ouro", pct: 10, height: 62, className: "from-[#2f2f2f] to-[#1c1c1c] text-muted-foreground border-white/5" },
+  { label: "S&P 500", pct: 12, height: 78, className: "from-[#2a2a3c] to-[#191922] text-muted-foreground border-white/5" },
   {
     label: "Bitcoin",
-    value: "+66%",
-    height: 240,
-    className: "bg-gradient-to-b from-[#FFBE5C] via-gold to-[#C96A00] text-background shadow-[0_0_40px_hsl(var(--gold)/0.35)]",
+    pct: 66,
+    height: 244,
+    className: "from-[#FFD79A] via-[#FFA424] to-[#C96A00] text-background border-gold/40 shadow-[0_0_60px_hsl(var(--gold)/0.45)]",
     isHighlight: true,
   },
 ];
+
+const useCountUp = (target: number, active: boolean, duration = 1600, delay = 0) => {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    if (!active) return;
+    let raf = 0;
+    let start = 0;
+    const timer = window.setTimeout(() => {
+      const tick = (t: number) => {
+        if (!start) start = t;
+        const p = Math.min((t - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        setValue(target * eased);
+        if (p < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+    }, delay * 1000);
+    return () => {
+      window.clearTimeout(timer);
+      cancelAnimationFrame(raf);
+    };
+  }, [target, active, duration, delay]);
+  return value;
+};
+
 
 const WhyBitcoinSection = () => {
   const ref = useRef(null);
