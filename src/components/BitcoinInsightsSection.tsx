@@ -14,7 +14,15 @@ const BTC_BLOCK_TIME_MINUTES = 10;
 const BTC_MAX_SUPPLY = 21000000;
 const BTC_INITIAL_SUBSIDY = 50;
 
-async function fetchHalvingDate(): Promise<Date> {
+interface HalvingInfo {
+  date: Date;
+  blockHeight: number | null;
+  nextHalvingBlock: number | null;
+  blocksRemaining: number | null;
+  eraProgress: number; // 0-100
+}
+
+async function fetchHalvingDate(): Promise<HalvingInfo> {
   try {
     const res = await fetch('https://mempool.space/api/blocks/tip/height');
     const blockHeight = await res.json();
@@ -22,11 +30,42 @@ async function fetchHalvingDate(): Promise<Date> {
     const nextHalvingBlock = (currentEra + 1) * BTC_HALVING_INTERVAL;
     const blocksRemaining = nextHalvingBlock - blockHeight;
     const minutesRemaining = blocksRemaining * BTC_BLOCK_TIME_MINUTES;
-    return new Date(Date.now() + minutesRemaining * 60 * 1000);
+    return {
+      date: new Date(Date.now() + minutesRemaining * 60 * 1000),
+      blockHeight,
+      nextHalvingBlock,
+      blocksRemaining,
+      eraProgress: ((BTC_HALVING_INTERVAL - blocksRemaining) / BTC_HALVING_INTERVAL) * 100,
+    };
   } catch {
-    return new Date('2028-03-26T00:00:00Z');
+    return {
+      date: new Date('2028-03-26T00:00:00Z'),
+      blockHeight: null,
+      nextHalvingBlock: null,
+      blocksRemaining: null,
+      eraProgress: 0,
+    };
   }
 }
+
+/* ──────── Dígito animado (rolagem vertical) ──────── */
+const RollingDigit: React.FC<{ digit: string }> = ({ digit }) => (
+  <span className="relative inline-block overflow-hidden h-[1em] w-[0.62em] align-bottom">
+    <AnimatePresence initial={false} mode="popLayout">
+      <motion.span
+        key={digit}
+        initial={{ y: '-100%', opacity: 0 }}
+        animate={{ y: '0%', opacity: 1 }}
+        exit={{ y: '100%', opacity: 0 }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute inset-0 flex items-center justify-center"
+      >
+        {digit}
+      </motion.span>
+    </AnimatePresence>
+  </span>
+);
+
 
 /* ──────── CONSTANTS ──────── */
 
