@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion, useInView } from "framer-motion";
+import GlassPanel, { Parallax, ScrollRail } from "@/components/sobre/GlassPanel";
 import { Mail, ArrowRight, Instagram, Github, Youtube, Play } from "lucide-react";
 import BackToHome from "@/components/BackToHome";
 import heroProfile from "@/assets/sobre/lord-junnior-real.png";
