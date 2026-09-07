@@ -511,18 +511,18 @@ export default function SobreMim() {
           </p>
         </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-px bg-white/[0.06]">
+        <div className="grid md:grid-cols-3 gap-6">
           {[
             { v: 17, s: "", l: "Anos de Iteração" },
             { v: 0, s: "", l: "Vazamentos em IA" },
             { v: 100, s: "%", l: "Infraestrutura Autônoma" },
           ].map((c) => (
-            <div key={c.l} className="bg-[#08090a] p-8">
+            <GlassPanel key={c.l} padding="p-8">
               <div className="text-5xl font-bold tracking-tight mb-2" style={{ color: ORANGE }}>
                 <Counter target={c.v} suffix={c.s} />
               </div>
               <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/50">{c.l}</div>
-            </div>
+            </GlassPanel>
           ))}
         </div>
 
