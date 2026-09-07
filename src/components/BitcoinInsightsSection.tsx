@@ -193,7 +193,8 @@ const BitcoinInsightsSection: React.FC = () => {
 
   // --- BLOCK 3: Halving ---
   const [timeLeft, setTimeLeft] = useState<TimeRemaining>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const [halvingDate, setHalvingDate] = useState<Date | null>(null);
+  const [halving, setHalving] = useState<HalvingInfo | null>(null);
+  const halvingDate = halving?.date ?? null;
 
   // ═══ Fetch comparison data ═══
   useEffect(() => {
