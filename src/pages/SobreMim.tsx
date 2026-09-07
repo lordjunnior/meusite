@@ -273,6 +273,7 @@ export default function SobreMim() {
         }
       `}</style>
 
+      <ScrollRail accent={ORANGE} />
       <BackToHome />
 
       {/* Sticky top nav */}
