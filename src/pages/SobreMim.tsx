@@ -597,7 +597,7 @@ export default function SobreMim() {
               </div>
             </div>
 
-            <div className="border border-white/10 bg-[#0c0d10] p-8 flex flex-col justify-center relative overflow-hidden">
+            <GlassPanel padding="p-8" className="flex flex-col justify-center">
               <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40 mb-4">// NÓ SELECIONADO</div>
               <div className="min-h-[140px] relative z-10">
                 <div className="text-3xl font-bold tracking-tight mb-2 transition-all" style={{ color: activeNode ? ORANGE : "rgba(255,255,255,0.4)" }}>
@@ -615,7 +615,7 @@ export default function SobreMim() {
                   backgroundSize: "100% 4px",
                 }}
               />
-            </div>
+            </GlassPanel>
           </div>
         </div>
       </section>
