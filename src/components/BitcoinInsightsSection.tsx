@@ -324,10 +324,11 @@ const BitcoinInsightsSection: React.FC = () => {
 
   // ═══ Halving ═══
   useEffect(() => {
-    fetchHalvingDate()
-      .then(date => setHalvingDate(date))
-      .catch(() => setHalvingDate(new Date('2028-03-26T00:00:00Z')));
+    fetchHalvingDate().then(setHalving);
+    const id = setInterval(() => { fetchHalvingDate().then(setHalving); }, 120000);
+    return () => clearInterval(id);
   }, []);
+
 
   useEffect(() => {
     if (!halvingDate) return;
