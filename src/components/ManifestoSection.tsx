@@ -242,7 +242,7 @@ const ManifestoSection = () => {
 
           <div className="relative h-[320px] md:h-[420px]">
             <ResponsiveContainer width="100%" height="100%">
-              <ComposedChart data={purchasingPowerData} margin={{ top: 16, right: 12, left: 0, bottom: 0 }}>
+              <ComposedChart data={data} margin={{ top: 16, right: 12, left: 0, bottom: 0 }}>
                 <defs>
                   <linearGradient id="decayFill" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="hsl(0 72% 51%)" stopOpacity={0.55} />
@@ -265,13 +265,18 @@ const ManifestoSection = () => {
                   tick={{ fill: "hsl(215 15% 55%)", fontSize: 11, fontFamily: "JetBrains Mono" }}
                 />
                 <YAxis
+                  domain={[0, 100]}
                   stroke="hsl(215 15% 20%)"
                   tickLine={false}
                   axisLine={false}
                   tick={{ fill: "hsl(215 15% 45%)", fontSize: 11, fontFamily: "JetBrains Mono" }}
                   tickFormatter={(v) => `${v}%`}
                 />
-                <Tooltip content={<CustomTooltip />} cursor={{ stroke: "hsl(0 72% 51% / 0.4)", strokeWidth: 1 }} />
+                <Tooltip
+                  content={<CustomTooltip />}
+                  animationDuration={200}
+                  cursor={{ stroke: "hsl(0 72% 51% / 0.55)", strokeWidth: 1.5, strokeDasharray: "4 4" }}
+                />
                 <ReferenceLine
                   y={100}
                   stroke="hsl(215 15% 40%)"
@@ -289,7 +294,9 @@ const ManifestoSection = () => {
                   dataKey="value"
                   stroke="none"
                   fill="url(#decayFill)"
-                  animationDuration={2200}
+                  isAnimationActive
+                  animationBegin={200}
+                  animationDuration={1800}
                   animationEasing="ease-out"
                 />
                 <Line
@@ -299,13 +306,16 @@ const ManifestoSection = () => {
                   strokeWidth={3}
                   filter="url(#decayGlow)"
                   dot={{ fill: "hsl(0 72% 51%)", r: 3, strokeWidth: 0 }}
-                  activeDot={{ fill: "hsl(0 72% 60%)", r: 6, strokeWidth: 2, stroke: "hsl(0 72% 75%)" }}
-                  animationDuration={2200}
+                  activeDot={<PulseDot />}
+                  isAnimationActive
+                  animationBegin={200}
+                  animationDuration={1800}
                   animationEasing="ease-out"
                 />
               </ComposedChart>
             </ResponsiveContainer>
           </div>
+
         </motion.div>
 
       </div>
