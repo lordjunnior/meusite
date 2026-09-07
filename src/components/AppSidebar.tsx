@@ -93,8 +93,8 @@ const AppSidebar = () => {
         <GlobalSearch />
       </div>
 
-      {/* ── Reading Level ── */}
-      <ReadingLevelIndicator />
+
+
 
       {/* ── Scrollable Navigation ── */}
       <nav className="flex-1 overflow-y-auto px-2 py-3 space-y-0.5 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
