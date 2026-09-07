@@ -6,6 +6,22 @@ import qrCodeImage from "@/assets/qrcode-lightning.jpeg";
 import SatCounter from "@/components/SatCounter";
 import SimboloOculto from '@/components/SimboloOculto';
 import HlsVideoBackground from "@/components/HlsVideoBackground";
+import GlassTiltCard from "@/components/GlassTiltCard";
+
+const staggerParent = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
+};
+
+const staggerChild = {
+  hidden: { opacity: 0, y: 28, filter: "blur(6px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
 
 const LIGHTNING_ADDRESS = "securecorn53@walletofsatoshi.com";
 
@@ -83,12 +99,12 @@ const FooterSection = () => {
 
           {/* 2. MÓDULO DE EXECUÇÃO */}
           <motion.div {...fadeUp(0.1)} className="flex flex-col items-center mb-16">
-            <div className="card-wealth inline-block p-8 mb-4">
+            <GlassTiltCard className="inline-block mb-4" tilt={8}>
               <img
                 src={qrCodeImage}
                 alt="QR Code Lightning"
                 className="w-52 h-52 rounded-lg block" loading="lazy" decoding="async" />
-            </div>
+            </GlassTiltCard>
 
             <div
               className="flex items-center justify-center gap-2 mb-3 cursor-pointer group"
@@ -111,80 +127,108 @@ const FooterSection = () => {
           </motion.div>
 
           {/* 3. O QUE É LIGHTNING + CARTEIRAS */}
-          <motion.div {...fadeUp(0.2)} className="grid md:grid-cols-2 gap-6 mb-16">
-            <div className="card-wealth">
-              <div className="flex items-center gap-2 mb-3">
-                <Zap className="w-4 h-4 text-gold" />
-                <h3 className="font-semibold text-sm tracking-wide uppercase text-foreground">
-                  O que é?
-                </h3>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                A camada de pagamentos do Bitcoin. Transferências quase instantâneas, com
-                taxas microscópicas, ideal para apoio direto sem intermediários estatais.
-              </p>
-            </div>
+          <motion.div
+            variants={staggerParent}
+            initial="hidden"
+            animate={isInView ? "show" : "hidden"}
+            className="grid md:grid-cols-2 gap-6 mb-16"
+          >
+            <motion.div variants={staggerChild}>
+              <GlassTiltCard className="h-full">
+                <div className="flex items-center gap-2 mb-3">
+                  <Zap className="w-4 h-4 text-gold" />
+                  <h3 className="font-semibold text-sm tracking-[0.18em] uppercase text-foreground">
+                    O que é?
+                  </h3>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  A camada de pagamentos do Bitcoin. Transferências quase instantâneas, com
+                  taxas microscópicas, ideal para apoio direto sem intermediários estatais.
+                </p>
+              </GlassTiltCard>
+            </motion.div>
 
-            <div className="card-wealth">
-              <div className="flex items-center gap-2 mb-3">
-                <Smartphone className="w-4 h-4 text-gold" />
-                <h3 className="font-semibold text-sm tracking-wide uppercase text-foreground">
-                  Equipamento Recomendado
-                </h3>
-              </div>
-              <ul className="space-y-3 text-sm text-muted-foreground">
-                <li>
-                  <span className="text-foreground font-medium">Wallet of Satoshi (WoS):</span>{" "}
-                  Custodial. Ideal para iniciantes operarem liquidez rápida.
-                </li>
-                <li>
-                  <span className="text-foreground font-medium">Phoenix Wallet:</span>{" "}
-                  Não-custodial. Equilíbrio entre praticidade e soberania real.
-                </li>
-              </ul>
-            </div>
+            <motion.div variants={staggerChild}>
+              <GlassTiltCard className="h-full">
+                <div className="flex items-center gap-2 mb-3">
+                  <Smartphone className="w-4 h-4 text-gold" />
+                  <h3 className="font-semibold text-sm tracking-[0.18em] uppercase text-foreground">
+                    Equipamento Recomendado
+                  </h3>
+                </div>
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li>
+                    <span className="text-foreground font-medium">Wallet of Satoshi (WoS):</span>{" "}
+                    Custodial. Ideal para iniciantes operarem liquidez rápida.
+                  </li>
+                  <li>
+                    <span className="text-foreground font-medium">Phoenix Wallet:</span>{" "}
+                    Não-custodial. Equilíbrio entre praticidade e soberania real.
+                  </li>
+                </ul>
+              </GlassTiltCard>
+            </motion.div>
           </motion.div>
 
           {/* 4. PROTOCOLO DE EXECUÇÃO */}
           <motion.div {...fadeUp(0.3)} className="mb-16">
-            <p className="pre-title text-center mb-6">PROTOCOLO DE EXECUÇÃO</p>
-            <div className="grid sm:grid-cols-3 gap-4">
+            <p className="pre-title text-center mb-6 tracking-[0.32em]">PROTOCOLO DE EXECUÇÃO</p>
+            <motion.div
+              variants={staggerParent}
+              initial="hidden"
+              animate={isInView ? "show" : "hidden"}
+              className="grid sm:grid-cols-3 gap-4"
+            >
               {steps.map((step) => (
-                <div key={step.num} className="card-wealth text-center">
-                  <span className="font-mono text-2xl font-bold text-gold block mb-2">
-                    {step.num}
-                  </span>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {step.text}
-                  </p>
-                </div>
+                <motion.div key={step.num} variants={staggerChild}>
+                  <GlassTiltCard className="h-full text-center">
+                    <span className="font-mono text-2xl font-bold tracking-[0.12em] text-muted-foreground/70 block mb-2 transition-colors duration-500 group-hover:text-gold">
+                      {step.num}
+                    </span>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {step.text}
+                    </p>
+                  </GlassTiltCard>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* 5. NÍVEIS DE FINANCIAMENTO */}
           <motion.div {...fadeUp(0.4)} className="mb-16 text-center">
-            <p className="pre-title mb-6">ESCOLHA COMO APOIAR</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
+            <p className="pre-title mb-6 tracking-[0.32em]">ESCOLHA COMO APOIAR</p>
+            <motion.div
+              variants={staggerParent}
+              initial="hidden"
+              animate={isInView ? "show" : "hidden"}
+              className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto"
+            >
               {fundingLevels.map((level, i) => (
-                <button
-                  key={i}
-                  onClick={() => setSelectedLevel(i === selectedLevel ? null : i)}
-                  className={`p-4 rounded-lg border text-sm font-medium transition-all duration-300 flex flex-col items-center gap-1 cursor-pointer ${
-                    selectedLevel === i
-                      ? "border-gold bg-gold/10 text-gold glow-gold"
-                      : "border-border bg-card hover:border-gold-dim text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  <span className="flex items-center gap-1">
-                    <Zap className="w-3 h-3" />
-                    {level.sats} Sats
-                  </span>
-                  <span className="text-xs opacity-70">{level.label}</span>
-                </button>
+                <motion.div key={i} variants={staggerChild}>
+                  <GlassTiltCard
+                    tilt={8}
+                    onClick={() => setSelectedLevel(i === selectedLevel ? null : i)}
+                    className={`h-full cursor-pointer ${
+                      selectedLevel === i ? "shadow-[0_18px_50px_-20px_hsl(var(--gold)/0.5)]" : ""
+                    }`}
+                  >
+                    <div
+                      className={`flex flex-col items-center gap-1 text-sm font-medium transition-colors duration-300 ${
+                        selectedLevel === i ? "text-gold" : "text-muted-foreground"
+                      }`}
+                    >
+                      <span className="flex items-center gap-1">
+                        <Zap className="w-3 h-3" />
+                        {level.sats} Sats
+                      </span>
+                      <span className="text-xs opacity-70 tracking-[0.12em] uppercase">{level.label}</span>
+                    </div>
+                  </GlassTiltCard>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
+
 
           {/* 6. BOTÕES DE AÇÃO */}
           <motion.div {...fadeUp(0.5)} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
