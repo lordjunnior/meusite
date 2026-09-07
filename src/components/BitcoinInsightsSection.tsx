@@ -461,50 +461,106 @@ const BitcoinInsightsSection: React.FC = () => {
             </div>
           ) : (
             <>
-              {/* Chart */}
+              {/* Chart cinematográfico */}
               {chartData.length > 0 && (
-                <div className="w-full h-[280px] md:h-[360px] mb-6">
+                <motion.div
+                  key={selectedPeriod}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative w-full h-[300px] md:h-[420px] mb-6 rounded-sm overflow-hidden"
+                >
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0"
+                    style={{ background: 'radial-gradient(ellipse at 50% 100%, rgba(247,147,26,0.10), transparent 70%)' }}
+                  />
                   <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={chartData} margin={{ top: 5, right: 10, left: 0, bottom: 5 }}>
+                    <ComposedChart data={chartData} margin={{ top: 10, right: 12, left: 0, bottom: 5 }}>
+                      <defs>
+                        <linearGradient id="btcFill" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stopColor="#f7931a" stopOpacity={0.45} />
+                          <stop offset="100%" stopColor="#f7931a" stopOpacity={0} />
+                        </linearGradient>
+                        <filter id="btcGlow" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="5" result="b" />
+                          <feMerge>
+                            <feMergeNode in="b" />
+                            <feMergeNode in="SourceGraphic" />
+                          </feMerge>
+                        </filter>
+                      </defs>
+
+                      <CartesianGrid stroke="hsl(220 20% 100% / 0.05)" vertical={false} />
                       <XAxis
                         dataKey="date"
                         tick={{ fontSize: 10, fill: 'hsl(215 15% 55%)' }}
                         tickLine={false}
                         axisLine={{ stroke: 'hsl(220 20% 12%)' }}
                         interval="preserveStartEnd"
+                        minTickGap={28}
                       />
                       <YAxis
                         tick={{ fontSize: 10, fill: 'hsl(215 15% 55%)' }}
                         tickLine={false}
-                        axisLine={{ stroke: 'hsl(220 20% 12%)' }}
+                        axisLine={false}
+                        width={48}
                         tickFormatter={(v) => `${v.toFixed(0)}%`}
                       />
+                      <ReferenceLine y={0} stroke="hsl(220 20% 100% / 0.15)" strokeDasharray="3 6" />
                       <Tooltip
-                        contentStyle={{
-                          backgroundColor: 'hsl(222 47% 6%)',
-                          border: '1px solid hsl(220 20% 16%)',
-                          borderRadius: '2px',
-                          fontSize: 11,
-                          fontFamily: 'JetBrains Mono, monospace',
-                        }}
-                        labelStyle={{ color: 'hsl(210 40% 98%)' }}
-                        formatter={(value: number, name: string) => [`${value.toFixed(2)}%`, name]}
+                        content={<CinemaTooltip />}
+                        cursor={{ stroke: '#f7931a', strokeWidth: 1, strokeDasharray: '4 4' }}
                       />
-                      <Legend wrapperStyle={{ fontSize: 10, fontFamily: 'JetBrains Mono, monospace' }} />
-                      {ASSETS.map((asset) => (
+
+                      {ASSETS.filter(a => a !== 'BTC').map((asset, i) => (
                         <Line
                           key={asset}
                           type="monotone"
                           dataKey={asset}
                           stroke={ASSET_COLORS[asset]}
+                          strokeOpacity={0.45}
                           dot={false}
-                          strokeWidth={asset === 'BTC' ? 2.5 : 1.5}
+                          strokeWidth={1.2}
                           connectNulls
+                          isAnimationActive
+                          animationDuration={1400}
+                          animationBegin={i * 120}
                         />
                       ))}
-                    </LineChart>
+
+                      <Area
+                        type="monotone"
+                        dataKey="BTC"
+                        stroke="#f7931a"
+                        strokeWidth={3}
+                        fill="url(#btcFill)"
+                        dot={false}
+                        activeDot={{ r: 5, fill: '#f7931a', stroke: '#000', strokeWidth: 2 }}
+                        connectNulls
+                        style={{ filter: 'url(#btcGlow)' }}
+                        isAnimationActive
+                        animationDuration={2000}
+                        animationBegin={200}
+                      />
+                    </ComposedChart>
                   </ResponsiveContainer>
-                </div>
+
+                  {/* Legenda em chips */}
+                  <div className="absolute top-2 left-2 flex flex-wrap gap-1.5">
+                    {ASSETS.map((asset) => (
+                      <span
+                        key={asset}
+                        className={`text-[9px] font-mono font-black px-2 py-0.5 rounded-full border ${
+                          asset === 'BTC' ? 'border-primary/50 bg-primary/10' : 'border-border bg-background/50'
+                        }`}
+                        style={{ color: ASSET_COLORS[asset] }}
+                      >
+                        {asset}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
               )}
 
               {/* Text with toggle */}
@@ -519,26 +575,58 @@ const BitcoinInsightsSection: React.FC = () => {
                 , hoje você teria:
               </p>
 
-              {/* Asset rows */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {ASSETS.map((asset) => {
-                  const val = comparisonValues[asset] ?? null;
-                  return (
-                    <div key={asset} className="flex items-center gap-3 border border-border rounded-sm p-3 bg-background">
-                      <span
-                        className="text-[10px] font-black font-mono px-2.5 py-1 rounded-sm text-background min-w-[48px] text-center"
-                        style={{ backgroundColor: ASSET_COLORS[asset] }}
+              {/* Ranking animado */}
+              {(() => {
+                const ranked = ASSETS
+                  .map((asset) => ({ asset, value: comparisonValues[asset] ?? null }))
+                  .sort((a, b) => (b.value ?? -Infinity) - (a.value ?? -Infinity));
+                const max = Math.max(...ranked.map(r => r.value ?? 0), 1);
+                return (
+                  <div className="space-y-2">
+                    {ranked.map((row, i) => (
+                      <motion.div
+                        key={row.asset}
+                        layout
+                        initial={{ opacity: 0, x: -24 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                        className={`relative overflow-hidden rounded-sm border bg-background p-3 ${
+                          row.asset === 'BTC'
+                            ? 'border-primary/40 shadow-[0_0_30px_rgba(247,147,26,0.12)]'
+                            : 'border-border'
+                        }`}
                       >
-                        {asset}
-                      </span>
-                      <span className="text-xs md:text-sm font-mono text-muted-foreground">
-                        R$ 1.000,00 em {asset} você teria{' '}
-                        <strong className="text-foreground">{formatBRL(val)}</strong>
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
+                        <motion.div
+                          aria-hidden
+                          className="absolute inset-y-0 left-0"
+                          style={{ backgroundColor: ASSET_COLORS[row.asset], opacity: row.asset === 'BTC' ? 0.18 : 0.08 }}
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${((row.value ?? 0) / max) * 100}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1.6, delay: 0.2 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                        />
+                        <div className="relative flex items-center gap-3">
+                          <span className="text-[10px] font-mono text-muted-foreground w-4 tabular-nums">{i + 1}</span>
+                          <span
+                            className="text-[10px] font-black font-mono px-2.5 py-1 rounded-sm text-background min-w-[48px] text-center"
+                            style={{ backgroundColor: ASSET_COLORS[row.asset] }}
+                          >
+                            {row.asset}
+                          </span>
+                          <CountUpBRL
+                            value={row.value}
+                            className={`ml-auto text-sm md:text-base font-mono font-black tabular-nums ${
+                              row.asset === 'BTC' ? 'text-primary' : 'text-foreground'
+                            }`}
+                          />
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                );
+              })()}
+
 
               {usingFallback && (
                 <p className="text-[10px] text-muted-foreground/50 font-mono text-center mt-4">
