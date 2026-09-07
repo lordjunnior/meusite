@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion, useInView } from "framer-motion";
+import GlassPanel, { Parallax, ScrollRail } from "@/components/sobre/GlassPanel";
 import { Mail, ArrowRight, Instagram, Github, Youtube, Play } from "lucide-react";
 import BackToHome from "@/components/BackToHome";
 import heroProfile from "@/assets/sobre/lord-junnior-real.png";
@@ -253,6 +254,15 @@ export default function SobreMim() {
           0%, 100% { opacity: 0.3; }
           50% { opacity: 0.6; }
         }
+        html { scrollbar-color: ${ORANGE} rgba(255,255,255,0.04); scrollbar-width: thin; }
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); border-left: 1px solid rgba(255,255,255,0.06); }
+        ::-webkit-scrollbar-thumb {
+          background: linear-gradient(180deg, ${AMBER}, ${ORANGE});
+          border: 2px solid ${BG};
+          border-radius: 999px;
+        }
+        ::-webkit-scrollbar-thumb:hover { box-shadow: inset 0 0 12px rgba(0,0,0,0.35); }
         @keyframes grain {
           0%, 100% { transform: translate(0, 0); }
           10% { transform: translate(-5%, -5%); }
@@ -263,6 +273,7 @@ export default function SobreMim() {
         }
       `}</style>
 
+      <ScrollRail accent={ORANGE} />
       <BackToHome />
 
       {/* Sticky top nav */}
@@ -361,19 +372,21 @@ export default function SobreMim() {
 
             {/* Hero portrait */}
             <Reveal delay={0.3} className="hidden lg:flex justify-center">
-              <div className="relative w-[420px] h-[520px]">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#08090a] via-transparent to-transparent z-10" />
-                <div className="absolute inset-0 border border-white/10 z-20" />
-                <div className="absolute -inset-3 border border-white/5 z-0" />
-                <div
-                  className="absolute -right-8 -bottom-8 w-48 h-48 z-0 opacity-40"
-                  style={{ background: `radial-gradient(circle, ${ORANGE} 0%, transparent 70%)`, filter: "blur(60px)" }}
-                />
-                <img
-                  src={heroProfile}
-                  alt="Lord Junnior, arquiteto de sistemas de soberania"
-                  className="w-full h-full object-cover grayscale contrast-110" loading="eager" fetchPriority="high" decoding="async" />
-              </div>
+              <Parallax distance={40}>
+                <GlassPanel padding="p-0" className="w-[420px] h-[520px]">
+                  <div className="relative w-full h-full">
+                    <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#08090a] via-transparent to-transparent pointer-events-none" />
+                    <div
+                      className="absolute -right-8 -bottom-8 w-48 h-48 z-0 opacity-40 pointer-events-none"
+                      style={{ background: `radial-gradient(circle, ${ORANGE} 0%, transparent 70%)`, filter: "blur(60px)" }}
+                    />
+                    <img
+                      src={heroProfile}
+                      alt="Lord Junnior, arquiteto de sistemas de soberania"
+                      className="w-full h-full object-cover grayscale contrast-110 transition-all duration-[900ms] group-hover/glass:grayscale-0 group-hover/glass:scale-[1.03]" loading="eager" fetchPriority="high" decoding="async" />
+                  </div>
+                </GlassPanel>
+              </Parallax>
             </Reveal>
           </div>
         </div>
@@ -426,10 +439,10 @@ export default function SobreMim() {
         <Reveal>
           <p className="text-white/60 mb-14 max-w-2xl text-lg">Quatro frentes técnicas que sustentam todas as entregas de soberania.</p>
         </Reveal>
-        <div className="grid md:grid-cols-2 gap-px bg-white/[0.06]">
+        <div className="grid md:grid-cols-2 gap-6">
           {PILLARS.map((p, i) => (
-            <Reveal key={p.n} delay={i * 0.08}>
-              <div className="bg-[#08090a] p-8 md:p-10 h-full group hover:bg-white/[0.02] transition-colors">
+            <Reveal key={p.n} delay={i * 0.08} className="h-full">
+              <GlassPanel padding="p-8 md:p-10" className="h-full">
                 <div className="flex items-baseline justify-between mb-6">
                   <span className="font-mono text-xs tracking-[0.3em] text-white/40">{p.n}</span>
                   <div className="h-px flex-1 mx-4 bg-white/10" />
@@ -442,7 +455,7 @@ export default function SobreMim() {
                     <span key={t} className="text-[10px] uppercase tracking-[0.2em] px-2.5 py-1 border border-white/15 text-white/60">{t}</span>
                   ))}
                 </div>
-              </div>
+              </GlassPanel>
             </Reveal>
           ))}
         </div>
@@ -455,7 +468,7 @@ export default function SobreMim() {
 
           <div className="grid lg:grid-cols-[1fr_1.4fr] gap-14">
             <Reveal>
-              <div className="border border-white/10 p-8 md:p-10 bg-[#0c0d10]">
+              <GlassPanel padding="p-8 md:p-10" className="lg:sticky lg:top-24">
                 <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40 mb-2">OPERADOR</div>
                 <h3 className="font-bold text-3xl tracking-tight mb-2">Lord Junnior</h3>
                 <p className="text-white/60 mb-6">Arquiteto de Sistemas & Engenharia Reversa</p>
@@ -468,7 +481,7 @@ export default function SobreMim() {
                     <SkillBar key={s.label} label={s.label} percent={s.percent} delay={i * 120} />
                   ))}
                 </div>
-              </div>
+              </GlassPanel>
             </Reveal>
 
             <div>
@@ -500,33 +513,37 @@ export default function SobreMim() {
           </p>
         </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-px bg-white/[0.06]">
+        <div className="grid md:grid-cols-3 gap-6">
           {[
             { v: 17, s: "", l: "Anos de Iteração" },
             { v: 0, s: "", l: "Vazamentos em IA" },
             { v: 100, s: "%", l: "Infraestrutura Autônoma" },
           ].map((c) => (
-            <div key={c.l} className="bg-[#08090a] p-8">
+            <GlassPanel key={c.l} padding="p-8">
               <div className="text-5xl font-bold tracking-tight mb-2" style={{ color: ORANGE }}>
                 <Counter target={c.v} suffix={c.s} />
               </div>
               <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/50">{c.l}</div>
-            </div>
+            </GlassPanel>
           ))}
         </div>
 
         <div className="mt-16 space-y-16">
           {CASES.map((c, i) => (
             <Reveal key={c.n} delay={i * 0.1}>
-              <div className={`grid lg:grid-cols-2 gap-0 border border-white/10 bg-[#0c0d10] overflow-hidden ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
+              <GlassPanel padding="p-0">
+                <div className={`grid lg:grid-cols-2 gap-0 ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
                 <div className={`relative h-[320px] lg:h-[420px] overflow-hidden ${i % 2 === 1 ? "lg:order-2" : ""}`}>
-                  <img
-                    src={c.image}
-                    alt={c.alt}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d10] via-transparent to-transparent opacity-60" />
+                  <Parallax distance={28} className="absolute inset-0">
+                    <img
+                      src={c.image}
+                      alt={c.alt}
+                      className="h-[calc(100%+80px)] w-full -mt-10 object-cover transition-transform duration-[900ms] ease-out group-hover/glass:scale-[1.06]"
+                      loading="lazy"
+                    />
+                  </Parallax>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d10] via-transparent to-transparent opacity-60 pointer-events-none" />
+                  <div className="absolute inset-0 pointer-events-none opacity-[0.18] mix-blend-overlay" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E\")" }} />
                 </div>
                 <div className={`p-8 md:p-12 flex flex-col justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
                   <div className="flex items-baseline justify-between mb-6">
@@ -543,7 +560,8 @@ export default function SobreMim() {
                     {c.cta} <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
-              </div>
+                </div>
+              </GlassPanel>
             </Reveal>
           ))}
         </div>
@@ -555,7 +573,7 @@ export default function SobreMim() {
           <SectionMark n="06 · DOMÍNIO TÉCNICO" title="As Ferramentas Por Trás de Cada Entrega" />
 
           <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10">
-            <div className="border border-white/10 bg-[#0c0d10] p-8 relative overflow-hidden">
+            <GlassPanel padding="p-8">
               <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40 mb-6">// STATUS DO SISTEMA</div>
               <div
                 className="absolute inset-0 pointer-events-none opacity-20 z-0"
@@ -572,10 +590,10 @@ export default function SobreMim() {
                       key={n.code}
                       onMouseEnter={() => setActiveNode(n)}
                       onClick={() => setActiveNode(n)}
-                      className={`aspect-square flex items-center justify-center border font-mono text-sm font-bold tracking-wider transition-all ${
+                      className={`aspect-square flex items-center justify-center border font-mono text-sm font-bold tracking-wider backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 ${
                         active
                           ? "border-transparent text-[#08090a]"
-                          : "border-white/15 text-white/70 hover:border-white/40 hover:text-white"
+                          : "border-white/15 bg-white/[0.03] text-white/70 hover:border-white/40 hover:text-white hover:shadow-[0_0_22px_-6px_rgba(255,102,0,0.55)]"
                       }`}
                       style={active ? { background: `linear-gradient(135deg, ${AMBER}, ${ORANGE})`, boxShadow: `0 0 24px ${ORANGE}55` } : {}}
                     >
@@ -584,9 +602,9 @@ export default function SobreMim() {
                   );
                 })}
               </div>
-            </div>
+            </GlassPanel>
 
-            <div className="border border-white/10 bg-[#0c0d10] p-8 flex flex-col justify-center relative overflow-hidden">
+            <GlassPanel padding="p-8" className="flex flex-col justify-center">
               <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40 mb-4">// NÓ SELECIONADO</div>
               <div className="min-h-[140px] relative z-10">
                 <div className="text-3xl font-bold tracking-tight mb-2 transition-all" style={{ color: activeNode ? ORANGE : "rgba(255,255,255,0.4)" }}>
@@ -604,7 +622,7 @@ export default function SobreMim() {
                   backgroundSize: "100% 4px",
                 }}
               />
-            </div>
+            </GlassPanel>
           </div>
         </div>
       </section>
@@ -651,9 +669,10 @@ export default function SobreMim() {
           <Reveal>
             <h2 className="font-bold text-4xl md:text-5xl tracking-tight mb-14">Ferramentas para a sua independência.</h2>
           </Reveal>
-          <div className="grid md:grid-cols-2 gap-px bg-white/[0.06]">
+          <div className="grid md:grid-cols-2 gap-6">
             <Reveal>
-              <div className="bg-[#08090a] p-10 h-full flex flex-col">
+              <GlassPanel padding="p-10" className="h-full">
+                <div className="flex h-full flex-col">
                 <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40 mb-3">DISPONIBILIDADE</div>
                 <h3 className="font-bold text-2xl mb-4">CONSULTORIA TÉCNICA</h3>
                 <p className="text-white/70 leading-relaxed mb-8 flex-1">
@@ -665,10 +684,12 @@ export default function SobreMim() {
                 >
                   Iniciar Conversa <ArrowRight className="w-4 h-4" />
                 </a>
-              </div>
+                </div>
+              </GlassPanel>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="bg-[#08090a] p-10 h-full flex flex-col">
+              <GlassPanel padding="p-10" className="h-full">
+                <div className="flex h-full flex-col">
                 <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40 mb-3">ECOSSISTEMA</div>
                 <h3 className="font-bold text-2xl mb-4">THE FREEDOM CODE</h3>
                 <p className="text-white/70 leading-relaxed mb-8 flex-1">
@@ -680,7 +701,8 @@ export default function SobreMim() {
                 >
                   Ver Biblioteca <ArrowRight className="w-4 h-4" />
                 </a>
-              </div>
+                </div>
+              </GlassPanel>
             </Reveal>
           </div>
         </div>
