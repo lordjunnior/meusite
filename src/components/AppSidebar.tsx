@@ -3,7 +3,6 @@ import { ChevronRight, Zap } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import SovereignHeader from "@/components/Sidebar/SovereignHeader";
-import ReadingLevelIndicator from "@/components/ReadingLevelIndicator";
 import GlobalSearch from "@/components/GlobalSearch";
 import { topNavItems, navGroups, type NavItem } from "@/lib/sidebarNavigation";
 import { useSiloProgress } from "@/hooks/useSiloProgress";
