@@ -282,23 +282,60 @@ const WhyBitcoinSection = () => {
   );
 };
 
-const BarItem = ({ bar, isInView, delay }: { bar: typeof bars[0]; isInView: boolean; delay: number }) => (
-  <div className="flex flex-col items-center gap-2 flex-1 max-w-[160px]">
-    <div className="w-full flex flex-col items-center justify-end" style={{ height: 240 }}>
-      <motion.div
-        initial={{ scaleY: 0, opacity: 0 }}
-        animate={isInView ? { scaleY: 1, opacity: 1 } : {}}
-        transition={{ duration: 1.2, delay, ease: [0.16, 1, 0.3, 1] }}
-        style={{ height: bar.height, transformOrigin: "bottom" }}
-        className={`w-full rounded-t-lg flex items-start justify-center pt-3 font-bold text-xl tracking-wide ${bar.className}`}
+const BarItem = ({ bar, isInView, delay }: { bar: typeof bars[0]; isInView: boolean; delay: number }) => {
+  const count = useCountUp(bar.pct, isInView, 1400, delay);
+
+  return (
+    <div className="flex flex-col items-center gap-3 flex-1 max-w-[160px] relative">
+      <div className="w-full flex flex-col items-center justify-end" style={{ height: 244 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: delay + 0.8 }}
+          className={`mb-2 font-bold text-2xl md:text-3xl tabular-nums tracking-tight ${
+            bar.isHighlight ? "text-gold" : "text-muted-foreground/70"
+          }`}
+          style={bar.isHighlight ? { textShadow: "0 0 28px hsl(var(--gold) / 0.5)" } : undefined}
+        >
+          {bar.isHighlight ? "+" : ""}
+          {Math.round(count)}%
+        </motion.div>
+
+        <motion.div
+          initial={{ scaleY: 0 }}
+          animate={isInView ? { scaleY: 1 } : {}}
+          transition={{ duration: 1.4, delay, ease: [0.16, 1, 0.3, 1] }}
+          style={{ height: bar.height, transformOrigin: "bottom" }}
+          className={`relative w-full rounded-t-xl border-t border-x bg-gradient-to-b overflow-hidden ${bar.className}`}
+        >
+          {/* inner scanlines */}
+          <div
+            className="absolute inset-0 opacity-20 pointer-events-none"
+            style={{
+              backgroundImage: "repeating-linear-gradient(0deg, rgba(0,0,0,0.35) 0 1px, transparent 1px 6px)",
+            }}
+          />
+          {bar.isHighlight && (
+            <motion.div
+              initial={{ y: "110%" }}
+              animate={isInView ? { y: "-110%" } : {}}
+              transition={{ duration: 2, delay: delay + 0.4, repeat: Infinity, repeatDelay: 2.4, ease: "easeInOut" }}
+              className="absolute inset-x-0 h-1/3 bg-gradient-to-t from-transparent via-white/40 to-transparent pointer-events-none"
+            />
+          )}
+        </motion.div>
+      </div>
+
+      <span
+        className={`font-mono text-[11px] tracking-[0.2em] uppercase ${
+          bar.isHighlight ? "text-gold" : "text-muted-foreground/50"
+        }`}
       >
-        {bar.value}
-      </motion.div>
+        {bar.label}
+      </span>
     </div>
-    <span className={`font-mono text-[11px] tracking-widest uppercase ${bar.isHighlight ? "text-gold" : "text-muted-foreground/60"}`}>
-      {bar.label}
-    </span>
-  </div>
-);
+  );
+};
+
 
 export default WhyBitcoinSection;
