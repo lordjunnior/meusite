@@ -73,6 +73,8 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 const ManifestoSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, viewportOnce);
+  const loss = useCountUp(92, isInView, 2000, 0.6);
+
 
   return (
     <section className="section-padding" ref={ref}>
