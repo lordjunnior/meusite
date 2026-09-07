@@ -529,15 +529,19 @@ export default function SobreMim() {
         <div className="mt-16 space-y-16">
           {CASES.map((c, i) => (
             <Reveal key={c.n} delay={i * 0.1}>
-              <div className={`grid lg:grid-cols-2 gap-0 border border-white/10 bg-[#0c0d10] overflow-hidden ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
+              <GlassPanel padding="p-0">
+                <div className={`grid lg:grid-cols-2 gap-0 ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
                 <div className={`relative h-[320px] lg:h-[420px] overflow-hidden ${i % 2 === 1 ? "lg:order-2" : ""}`}>
-                  <img
-                    src={c.image}
-                    alt={c.alt}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d10] via-transparent to-transparent opacity-60" />
+                  <Parallax distance={28} className="absolute inset-0">
+                    <img
+                      src={c.image}
+                      alt={c.alt}
+                      className="h-[calc(100%+80px)] w-full -mt-10 object-cover transition-transform duration-[900ms] ease-out group-hover/glass:scale-[1.06]"
+                      loading="lazy"
+                    />
+                  </Parallax>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d10] via-transparent to-transparent opacity-60 pointer-events-none" />
+                  <div className="absolute inset-0 pointer-events-none opacity-[0.18] mix-blend-overlay" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E\")" }} />
                 </div>
                 <div className={`p-8 md:p-12 flex flex-col justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
                   <div className="flex items-baseline justify-between mb-6">
@@ -554,7 +558,8 @@ export default function SobreMim() {
                     {c.cta} <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
-              </div>
+                </div>
+              </GlassPanel>
             </Reveal>
           ))}
         </div>
