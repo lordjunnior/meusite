@@ -6,6 +6,22 @@ import qrCodeImage from "@/assets/qrcode-lightning.jpeg";
 import SatCounter from "@/components/SatCounter";
 import SimboloOculto from '@/components/SimboloOculto';
 import HlsVideoBackground from "@/components/HlsVideoBackground";
+import GlassTiltCard from "@/components/GlassTiltCard";
+
+const staggerParent = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
+};
+
+const staggerChild = {
+  hidden: { opacity: 0, y: 28, filter: "blur(6px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
 
 const LIGHTNING_ADDRESS = "securecorn53@walletofsatoshi.com";
 
