@@ -1,7 +1,8 @@
 import { motion, useMotionTemplate, useMotionValue, useSpring, type HTMLMotionProps } from "framer-motion";
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 
-type GlassTiltCardProps = HTMLMotionProps<"div"> & {
+type GlassTiltCardProps = Omit<HTMLMotionProps<"div">, "children"> & {
+  children?: ReactNode;
   /** intensidade máxima da inclinação em graus */
   tilt?: number;
   /** raio do brilho que segue o mouse */
