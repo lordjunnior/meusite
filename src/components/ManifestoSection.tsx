@@ -57,23 +57,62 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     const v = payload[0].value as number;
     return (
-      <div className="rounded-lg border border-chart-red/30 bg-background/85 backdrop-blur-md px-4 py-3 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.9)]">
+      <motion.div
+        initial={{ opacity: 0, y: 8, scale: 0.94 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.22, ease: ease.sovereign }}
+        className="rounded-xl border border-chart-red/40 bg-background/85 backdrop-blur-xl px-4 py-3 shadow-[0_24px_70px_-20px_hsl(0_72%_51%/0.45)]"
+      >
         <p className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase mb-1">{label}</p>
-        <p className="text-chart-red font-mono text-xl font-bold leading-none">{v}%</p>
-        <p className="text-[11px] text-muted-foreground mt-1">
+        <p className="text-chart-red font-mono text-2xl font-bold leading-none tabular-nums">{v}%</p>
+        <div className="mt-2 h-1 w-32 overflow-hidden rounded-full bg-chart-red/15">
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: `${v}%` }}
+            transition={{ duration: 0.5, ease: ease.sovereign }}
+            className="h-full rounded-full bg-chart-red"
+          />
+        </div>
+        <p className="text-[11px] text-muted-foreground mt-2">
           do poder de compra original · perda de {100 - v}%
         </p>
-      </div>
+      </motion.div>
     );
   }
   return null;
 };
 
+const PulseDot = (props: any) => {
+  const { cx, cy } = props;
+  if (cx == null || cy == null) return null;
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={10} fill="hsl(0 72% 51%)" opacity={0.18}>
+        <animate attributeName="r" values="6;13;6" dur="1.6s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.28;0;0.28" dur="1.6s" repeatCount="indefinite" />
+      </circle>
+      <circle cx={cx} cy={cy} r={5.5} fill="hsl(0 72% 60%)" stroke="hsl(0 72% 82%)" strokeWidth={2} />
+    </g>
+  );
+};
+
+const RANGES = [
+  { id: "all", label: "1994 — 2026", from: 0 },
+  { id: "20y", label: "ÚLTIMOS 20 ANOS", from: 3 },
+  { id: "10y", label: "ÚLTIMA DÉCADA", from: 8 },
+] as const;
 
 const ManifestoSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, viewportOnce);
-  const loss = useCountUp(92, isInView, 2000, 0.6);
+  const [rangeId, setRangeId] = useState<(typeof RANGES)[number]["id"]>("all");
+  const range = RANGES.find((r) => r.id === rangeId)!;
+  const data = purchasingPowerData.slice(range.from);
+  const first = data[0].value;
+  const last = data[data.length - 1].value;
+  const lossTarget = Math.round(((first - last) / first) * 100);
+  const loss = useCountUp(lossTarget, isInView, 1400, 0.2);
+
 
 
   return (
@@ -156,9 +195,36 @@ const ManifestoSection = () => {
                   -{Math.round(loss)}%
                 </p>
                 <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/50 mt-1">
-                  1994 — 2026
+                  {data[0].year} — {data[data.length - 1].year}
                 </p>
               </div>
+            </div>
+
+            {/* Filtros de período */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              {RANGES.map((r) => {
+                const activeRange = r.id === rangeId;
+                return (
+                  <button
+                    key={r.id}
+                    onClick={() => setRangeId(r.id)}
+                    className={`relative overflow-hidden rounded-full border px-3 py-1.5 font-mono text-[10px] tracking-[0.18em] uppercase transition-colors duration-300 ${
+                      activeRange
+                        ? "border-chart-red/50 text-chart-red"
+                        : "border-border/60 text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {activeRange && (
+                      <motion.span
+                        layoutId="manifesto-range-pill"
+                        className="absolute inset-0 bg-chart-red/10"
+                        transition={{ duration: 0.4, ease: ease.sovereign }}
+                      />
+                    )}
+                    <span className="relative">{r.label}</span>
+                  </button>
+                );
+              })}
             </div>
 
             {/* Frase-anzol — PNL */}
@@ -173,9 +239,10 @@ const ManifestoSection = () => {
             </div>
           </div>
 
+
           <div className="relative h-[320px] md:h-[420px]">
             <ResponsiveContainer width="100%" height="100%">
-              <ComposedChart data={purchasingPowerData} margin={{ top: 16, right: 12, left: 0, bottom: 0 }}>
+              <ComposedChart data={data} margin={{ top: 16, right: 12, left: 0, bottom: 0 }}>
                 <defs>
                   <linearGradient id="decayFill" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="hsl(0 72% 51%)" stopOpacity={0.55} />
@@ -198,13 +265,18 @@ const ManifestoSection = () => {
                   tick={{ fill: "hsl(215 15% 55%)", fontSize: 11, fontFamily: "JetBrains Mono" }}
                 />
                 <YAxis
+                  domain={[0, 100]}
                   stroke="hsl(215 15% 20%)"
                   tickLine={false}
                   axisLine={false}
                   tick={{ fill: "hsl(215 15% 45%)", fontSize: 11, fontFamily: "JetBrains Mono" }}
                   tickFormatter={(v) => `${v}%`}
                 />
-                <Tooltip content={<CustomTooltip />} cursor={{ stroke: "hsl(0 72% 51% / 0.4)", strokeWidth: 1 }} />
+                <Tooltip
+                  content={<CustomTooltip />}
+                  animationDuration={200}
+                  cursor={{ stroke: "hsl(0 72% 51% / 0.55)", strokeWidth: 1.5, strokeDasharray: "4 4" }}
+                />
                 <ReferenceLine
                   y={100}
                   stroke="hsl(215 15% 40%)"
@@ -222,7 +294,9 @@ const ManifestoSection = () => {
                   dataKey="value"
                   stroke="none"
                   fill="url(#decayFill)"
-                  animationDuration={2200}
+                  isAnimationActive
+                  animationBegin={200}
+                  animationDuration={1800}
                   animationEasing="ease-out"
                 />
                 <Line
@@ -232,13 +306,16 @@ const ManifestoSection = () => {
                   strokeWidth={3}
                   filter="url(#decayGlow)"
                   dot={{ fill: "hsl(0 72% 51%)", r: 3, strokeWidth: 0 }}
-                  activeDot={{ fill: "hsl(0 72% 60%)", r: 6, strokeWidth: 2, stroke: "hsl(0 72% 75%)" }}
-                  animationDuration={2200}
+                  activeDot={<PulseDot />}
+                  isAnimationActive
+                  animationBegin={200}
+                  animationDuration={1800}
                   animationEasing="ease-out"
                 />
               </ComposedChart>
             </ResponsiveContainer>
           </div>
+
         </motion.div>
 
       </div>
