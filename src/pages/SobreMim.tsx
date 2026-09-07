@@ -662,9 +662,10 @@ export default function SobreMim() {
           <Reveal>
             <h2 className="font-bold text-4xl md:text-5xl tracking-tight mb-14">Ferramentas para a sua independência.</h2>
           </Reveal>
-          <div className="grid md:grid-cols-2 gap-px bg-white/[0.06]">
+          <div className="grid md:grid-cols-2 gap-6">
             <Reveal>
-              <div className="bg-[#08090a] p-10 h-full flex flex-col">
+              <GlassPanel padding="p-10" className="h-full">
+                <div className="flex h-full flex-col">
                 <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40 mb-3">DISPONIBILIDADE</div>
                 <h3 className="font-bold text-2xl mb-4">CONSULTORIA TÉCNICA</h3>
                 <p className="text-white/70 leading-relaxed mb-8 flex-1">
@@ -676,10 +677,12 @@ export default function SobreMim() {
                 >
                   Iniciar Conversa <ArrowRight className="w-4 h-4" />
                 </a>
-              </div>
+                </div>
+              </GlassPanel>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="bg-[#08090a] p-10 h-full flex flex-col">
+              <GlassPanel padding="p-10" className="h-full">
+                <div className="flex h-full flex-col">
                 <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40 mb-3">ECOSSISTEMA</div>
                 <h3 className="font-bold text-2xl mb-4">THE FREEDOM CODE</h3>
                 <p className="text-white/70 leading-relaxed mb-8 flex-1">
@@ -691,7 +694,8 @@ export default function SobreMim() {
                 >
                   Ver Biblioteca <ArrowRight className="w-4 h-4" />
                 </a>
-              </div>
+                </div>
+              </GlassPanel>
             </Reveal>
           </div>
         </div>
