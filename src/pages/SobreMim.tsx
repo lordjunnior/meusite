@@ -466,7 +466,7 @@ export default function SobreMim() {
 
           <div className="grid lg:grid-cols-[1fr_1.4fr] gap-14">
             <Reveal>
-              <div className="border border-white/10 p-8 md:p-10 bg-[#0c0d10]">
+              <GlassPanel padding="p-8 md:p-10" className="lg:sticky lg:top-24">
                 <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40 mb-2">OPERADOR</div>
                 <h3 className="font-bold text-3xl tracking-tight mb-2">Lord Junnior</h3>
                 <p className="text-white/60 mb-6">Arquiteto de Sistemas & Engenharia Reversa</p>
@@ -479,7 +479,7 @@ export default function SobreMim() {
                     <SkillBar key={s.label} label={s.label} percent={s.percent} delay={i * 120} />
                   ))}
                 </div>
-              </div>
+              </GlassPanel>
             </Reveal>
 
             <div>
