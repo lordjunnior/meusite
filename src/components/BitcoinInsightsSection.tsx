@@ -402,10 +402,8 @@ const BitcoinInsightsSection: React.FC = () => {
   }, [halvingDate]);
 
   /* ──────── Helpers ──────── */
-  const formatBRL = (val: number | null) => {
-    if (val === null) return '—';
-    return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 });
-  };
+
+
 
   const getRoiColor = (val: number | null) => val === null ? 'text-muted-foreground' : val >= 0 ? 'text-green-500' : 'text-red-500';
   const getRoiBorderColor = (val: number | null) => val === null ? 'border-l-border' : val >= 0 ? 'border-l-green-500' : 'border-l-red-500';
