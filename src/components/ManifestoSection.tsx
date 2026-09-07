@@ -1,6 +1,16 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from "recharts";
+import { useRef, useState, useEffect } from "react";
+import {
+  ComposedChart,
+  Area,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  ReferenceLine,
+} from "recharts";
 import { fadeUp, stagger, staggerChild, viewportOnce, ease } from "@/lib/motion";
 
 const purchasingPowerData = [
@@ -20,17 +30,45 @@ const purchasingPowerData = [
   { year: "2026", value: 8 },
 ];
 
+const useCountUp = (target: number, active: boolean, duration = 1800, delay = 0) => {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    if (!active) return;
+    let raf = 0;
+    let start = 0;
+    const timer = window.setTimeout(() => {
+      const tick = (t: number) => {
+        if (!start) start = t;
+        const p = Math.min((t - start) / duration, 1);
+        setValue(target * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+    }, delay * 1000);
+    return () => {
+      window.clearTimeout(timer);
+      cancelAnimationFrame(raf);
+    };
+  }, [target, active, duration, delay]);
+  return value;
+};
+
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
+    const v = payload[0].value as number;
     return (
-      <div className="bg-card border border-border rounded-md px-3 py-2 text-sm">
-        <p className="text-muted-foreground font-mono text-xs">{label}</p>
-        <p className="text-chart-red font-mono font-semibold">{payload[0].value}% do poder de compra</p>
+      <div className="rounded-lg border border-chart-red/30 bg-background/85 backdrop-blur-md px-4 py-3 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.9)]">
+        <p className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase mb-1">{label}</p>
+        <p className="text-chart-red font-mono text-xl font-bold leading-none">{v}%</p>
+        <p className="text-[11px] text-muted-foreground mt-1">
+          do poder de compra original · perda de {100 - v}%
+        </p>
       </div>
     );
   }
   return null;
 };
+
 
 const ManifestoSection = () => {
   const ref = useRef(null);
