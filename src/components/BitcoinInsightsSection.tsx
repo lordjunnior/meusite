@@ -67,6 +67,58 @@ const RollingDigit: React.FC<{ digit: string }> = ({ digit }) => (
   </span>
 );
 
+/* ──────── Valor com contagem animada ──────── */
+const CountUpBRL: React.FC<{ value: number | null; className?: string }> = ({ value, className }) => {
+  const [display, setDisplay] = useState(0);
+  useEffect(() => {
+    if (value === null) return;
+    let raf = 0;
+    const start = performance.now();
+    const duration = 1400;
+    const tick = (now: number) => {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setDisplay(value * eased);
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [value]);
+  if (value === null) return <span className={className}>—</span>;
+  return (
+    <span className={className}>
+      {display.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 })}
+    </span>
+  );
+};
+
+/* ──────── Tooltip cinematográfico ──────── */
+const CinemaTooltip: React.FC<any> = ({ active, payload, label }) => {
+  if (!active || !payload?.length) return null;
+  const sorted = [...payload].sort((a, b) => (b.value ?? 0) - (a.value ?? 0));
+  return (
+    <div className="rounded-sm border border-primary/25 bg-background/90 backdrop-blur-xl px-4 py-3 shadow-[0_0_40px_rgba(247,147,26,0.15)]">
+      <p className="text-[10px] font-mono uppercase tracking-[0.25em] text-muted-foreground mb-2">{label}</p>
+      <div className="space-y-1">
+        {sorted.map((p: any) => (
+          <div key={p.dataKey} className="flex items-center justify-between gap-6 text-xs font-mono">
+            <span className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: p.color || p.stroke }} />
+              <span className={p.dataKey === 'BTC' ? 'text-foreground font-black' : 'text-muted-foreground'}>
+                {p.dataKey}
+              </span>
+            </span>
+            <span className={`tabular-nums font-bold ${(p.value ?? 0) >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+              {(p.value ?? 0) > 0 ? '+' : ''}{Number(p.value ?? 0).toFixed(2)}%
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+
 
 /* ──────── CONSTANTS ──────── */
 
