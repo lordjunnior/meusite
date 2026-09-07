@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { TrendingUp, ArrowRight } from 'lucide-react';
+import { TrendingUp, ArrowRight, Boxes, Timer } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 interface TimeRemaining {
   days: number;
@@ -14,7 +15,15 @@ const BTC_BLOCK_TIME_MINUTES = 10;
 const BTC_MAX_SUPPLY = 21000000;
 const BTC_INITIAL_SUBSIDY = 50;
 
-async function fetchHalvingDate(): Promise<Date> {
+interface HalvingInfo {
+  date: Date;
+  blockHeight: number | null;
+  nextHalvingBlock: number | null;
+  blocksRemaining: number | null;
+  eraProgress: number; // 0-100
+}
+
+async function fetchHalvingDate(): Promise<HalvingInfo> {
   try {
     const res = await fetch('https://mempool.space/api/blocks/tip/height');
     const blockHeight = await res.json();
@@ -22,11 +31,42 @@ async function fetchHalvingDate(): Promise<Date> {
     const nextHalvingBlock = (currentEra + 1) * BTC_HALVING_INTERVAL;
     const blocksRemaining = nextHalvingBlock - blockHeight;
     const minutesRemaining = blocksRemaining * BTC_BLOCK_TIME_MINUTES;
-    return new Date(Date.now() + minutesRemaining * 60 * 1000);
+    return {
+      date: new Date(Date.now() + minutesRemaining * 60 * 1000),
+      blockHeight,
+      nextHalvingBlock,
+      blocksRemaining,
+      eraProgress: ((BTC_HALVING_INTERVAL - blocksRemaining) / BTC_HALVING_INTERVAL) * 100,
+    };
   } catch {
-    return new Date('2028-03-26T00:00:00Z');
+    return {
+      date: new Date('2028-03-26T00:00:00Z'),
+      blockHeight: null,
+      nextHalvingBlock: null,
+      blocksRemaining: null,
+      eraProgress: 0,
+    };
   }
 }
+
+/* ──────── Dígito animado (rolagem vertical) ──────── */
+const RollingDigit: React.FC<{ digit: string }> = ({ digit }) => (
+  <span className="relative inline-block overflow-hidden h-[1em] w-[0.62em] align-bottom">
+    <AnimatePresence initial={false} mode="popLayout">
+      <motion.span
+        key={digit}
+        initial={{ y: '-100%', opacity: 0 }}
+        animate={{ y: '0%', opacity: 1 }}
+        exit={{ y: '100%', opacity: 0 }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute inset-0 flex items-center justify-center"
+      >
+        {digit}
+      </motion.span>
+    </AnimatePresence>
+  </span>
+);
+
 
 /* ──────── CONSTANTS ──────── */
 
@@ -153,7 +193,8 @@ const BitcoinInsightsSection: React.FC = () => {
 
   // --- BLOCK 3: Halving ---
   const [timeLeft, setTimeLeft] = useState<TimeRemaining>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const [halvingDate, setHalvingDate] = useState<Date | null>(null);
+  const [halving, setHalving] = useState<HalvingInfo | null>(null);
+  const halvingDate = halving?.date ?? null;
 
   // ═══ Fetch comparison data ═══
   useEffect(() => {
@@ -283,10 +324,11 @@ const BitcoinInsightsSection: React.FC = () => {
 
   // ═══ Halving ═══
   useEffect(() => {
-    fetchHalvingDate()
-      .then(date => setHalvingDate(date))
-      .catch(() => setHalvingDate(new Date('2028-03-26T00:00:00Z')));
+    fetchHalvingDate().then(setHalving);
+    const id = setInterval(() => { fetchHalvingDate().then(setHalving); }, 120000);
+    return () => clearInterval(id);
   }, []);
+
 
   useEffect(() => {
     if (!halvingDate) return;
@@ -494,8 +536,17 @@ const BitcoinInsightsSection: React.FC = () => {
         {/* ═══════════════════════════════════════════════
             BLOCO 3: CONTAGEM REGRESSIVA - HALVING
             ═══════════════════════════════════════════════ */}
-        <div className="card-wealth text-center space-y-8">
-          <div>
+        <div className="card-wealth text-center space-y-8 relative overflow-hidden">
+          {/* pulso de fundo */}
+          <motion.div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{ background: 'radial-gradient(circle at 50% 0%, hsl(var(--primary)/0.10), transparent 65%)' }}
+            animate={{ opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+          />
+
+          <div className="relative">
             <p className="text-muted-foreground text-xs uppercase tracking-[0.3em] font-mono font-black mb-2">
               Contagem regressiva para o
             </p>
@@ -504,22 +555,87 @@ const BitcoinInsightsSection: React.FC = () => {
             </h3>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-3xl mx-auto">
+          <div className="relative grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-3xl mx-auto">
             {units.map((u) => (
-              <div key={u.label} className="border border-primary/20 bg-card rounded-sm p-6 md:p-8">
-                <span className="text-5xl md:text-7xl font-black text-primary tabular-nums font-mono block">
-                  {u.value.toString().padStart(2, '0')}
+              <motion.div
+                key={u.label}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="relative border border-primary/20 bg-card rounded-sm p-6 md:p-8 overflow-hidden"
+              >
+                {u.label === 'Segundos' && (
+                  <motion.span
+                    aria-hidden
+                    className="absolute inset-0 bg-primary/5"
+                    animate={{ opacity: [0, 0.9, 0] }}
+                    transition={{ duration: 1, repeat: Infinity, ease: 'easeInOut' }}
+                  />
+                )}
+                <span className="relative text-5xl md:text-7xl font-black text-primary tabular-nums font-mono flex justify-center leading-none">
+                  {u.value.toString().padStart(2, '0').split('').map((d, i) => (
+                    <RollingDigit key={`${u.label}-${i}`} digit={d} />
+                  ))}
                 </span>
-                <span className="text-xs md:text-sm text-muted-foreground uppercase tracking-widest font-mono mt-2 block">
+                <span className="relative text-xs md:text-sm text-muted-foreground uppercase tracking-widest font-mono mt-2 block">
                   {u.label}
                 </span>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          <p className="text-muted-foreground text-sm font-mono">
+          {/* barra de progresso do ciclo atual */}
+          <div className="relative max-w-3xl mx-auto text-left">
+            <div className="flex items-center justify-between text-[10px] md:text-xs font-mono uppercase tracking-widest text-muted-foreground mb-2">
+              <span className="inline-flex items-center gap-2">
+                <Boxes className="w-3.5 h-3.5 text-primary" />
+                Ciclo atual minerado
+              </span>
+              <span className="text-foreground font-black tabular-nums">
+                {halving ? `${halving.eraProgress.toFixed(2)}%` : '—'}
+              </span>
+            </div>
+            <div className="h-2 w-full bg-muted rounded-full overflow-hidden">
+              <motion.div
+                className="h-full rounded-full bg-primary"
+                initial={{ width: 0 }}
+                animate={{ width: `${halving?.eraProgress ?? 0}%` }}
+                transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+              />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-5">
+              {[
+                { label: 'Bloco atual', value: halving?.blockHeight?.toLocaleString('pt-BR') ?? '—' },
+                { label: 'Bloco do halving', value: halving?.nextHalvingBlock?.toLocaleString('pt-BR') ?? '—' },
+                { label: 'Blocos restantes', value: halving?.blocksRemaining?.toLocaleString('pt-BR') ?? '—' },
+              ].map((item) => (
+                <div key={item.label} className="border border-border bg-background rounded-sm p-3">
+                  <AnimatePresence mode="popLayout">
+                    <motion.span
+                      key={item.value}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.4 }}
+                      className="block text-lg font-black font-mono tabular-nums text-foreground"
+                    >
+                      {item.value}
+                    </motion.span>
+                  </AnimatePresence>
+                  <span className="text-[10px] text-muted-foreground uppercase tracking-widest font-mono">
+                    {item.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <p className="relative text-muted-foreground text-sm font-mono inline-flex items-center gap-2 justify-center">
+            <Timer className="w-4 h-4 text-primary" />
             Data estimada: <strong className="text-foreground">{formattedDate}</strong>
           </p>
+
 
           <Link
             to="/halving-bitcoin"
