@@ -51,7 +51,22 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://lordjunnior.com.br/autocustodia/backup-seed-phrase-guia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lordjunnior.com.br/autocustodia/coinjoin-privacidade</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/autocustodia/erros-fatais-saque-corretora</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/autocustodia/guia-migracao-corretora</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -66,6 +81,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://lordjunnior.com.br/autocustodia/hot-wallet-vs-cold-wallet</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lordjunnior.com.br/autocustodia/jade-core-review</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -76,7 +96,32 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://lordjunnior.com.br/autocustodia/o-que-e-custodia-fria</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/autocustodia/primeiro-saque-hardware-wallet</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lordjunnior.com.br/autocustodia/seed-phrase-em-aco</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/autocustodia/tirar-da-exchange-para-hardware-wallet</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/autocustodia/utxo-consolidacao</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/autocustodia/verificar-firmware-origem</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -147,6 +192,11 @@
   </url>
   <url>
     <loc>https://lordjunnior.com.br/comparativos/coldcard-review</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/comparativos/foundation-passport-review</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -566,6 +616,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://lordjunnior.com.br/soberania-organica/comece-aqui</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lordjunnior.com.br/soberania-organica/comunicacao-offline</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -662,6 +717,11 @@
   </url>
   <url>
     <loc>https://lordjunnior.com.br/soberania-organica/engenharia-vicio-alimentar</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/soberania-organica/farmacia-caseira-essencial</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -871,12 +931,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://lordjunnior.com.br/soberania-organica/protocolos-gripe-resfriado</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lordjunnior.com.br/soberania-organica/purificacao-agua</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lordjunnior.com.br/soberania-organica/refugio-rural</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/soberania-organica/rotina-diaria-imunidade</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -897,6 +967,11 @@
   </url>
   <url>
     <loc>https://lordjunnior.com.br/soberania-organica/solo-fertilidade</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/soberania-organica/tinturas-xaropes-preparos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
