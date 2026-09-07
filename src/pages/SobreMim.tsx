@@ -372,19 +372,21 @@ export default function SobreMim() {
 
             {/* Hero portrait */}
             <Reveal delay={0.3} className="hidden lg:flex justify-center">
-              <div className="relative w-[420px] h-[520px]">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#08090a] via-transparent to-transparent z-10" />
-                <div className="absolute inset-0 border border-white/10 z-20" />
-                <div className="absolute -inset-3 border border-white/5 z-0" />
-                <div
-                  className="absolute -right-8 -bottom-8 w-48 h-48 z-0 opacity-40"
-                  style={{ background: `radial-gradient(circle, ${ORANGE} 0%, transparent 70%)`, filter: "blur(60px)" }}
-                />
-                <img
-                  src={heroProfile}
-                  alt="Lord Junnior, arquiteto de sistemas de soberania"
-                  className="w-full h-full object-cover grayscale contrast-110" loading="eager" fetchPriority="high" decoding="async" />
-              </div>
+              <Parallax distance={40}>
+                <GlassPanel padding="p-0" className="w-[420px] h-[520px]">
+                  <div className="relative w-full h-full">
+                    <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#08090a] via-transparent to-transparent pointer-events-none" />
+                    <div
+                      className="absolute -right-8 -bottom-8 w-48 h-48 z-0 opacity-40 pointer-events-none"
+                      style={{ background: `radial-gradient(circle, ${ORANGE} 0%, transparent 70%)`, filter: "blur(60px)" }}
+                    />
+                    <img
+                      src={heroProfile}
+                      alt="Lord Junnior, arquiteto de sistemas de soberania"
+                      className="w-full h-full object-cover grayscale contrast-110 transition-all duration-[900ms] group-hover/glass:grayscale-0 group-hover/glass:scale-[1.03]" loading="eager" fetchPriority="high" decoding="async" />
+                  </div>
+                </GlassPanel>
+              </Parallax>
             </Reveal>
           </div>
         </div>
