@@ -2,8 +2,8 @@
 
 ## Segurança Mobile (em andamento)
 - [x] /seguranca-mobile/calyxos
-- [ ] /seguranca-mobile/grapheneos
-- [ ] integrar GrapheneOS em rotas, sidebar, busca e sitemap
+- [x] /seguranca-mobile/grapheneos
+- [x] integrar GrapheneOS em rotas, sidebar, busca e sitemap
 - [ ] validar conteúdo, imagens, animações, botões e mobile da página GrapheneOS
 
 ## Tier 1 SEO (concluído)

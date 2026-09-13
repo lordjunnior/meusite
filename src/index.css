@@ -223,6 +223,40 @@
 }
 
 @layer components {
+  .graphene-page {
+    --graph-paper: 36 35% 95%;
+    --graph-paper-deep: 34 28% 89%;
+    --graph-ink: 168 28% 13%;
+    --graph-teal: 179 61% 14%;
+    --graph-copper: 22 61% 47%;
+    --graph-copper-soft: 25 82% 71%;
+    --graph-muted: 166 10% 36%;
+    background: hsl(var(--graph-paper));
+    color: hsl(var(--graph-ink));
+    font-family: 'Inter Tight', sans-serif;
+  }
+
+  .graphene-paper { background: hsl(var(--graph-paper)); }
+  .graphene-paper-deep { background: hsl(var(--graph-paper-deep)); }
+  .graphene-teal { background: hsl(var(--graph-teal)); color: hsl(var(--graph-paper)); }
+  .graphene-ink { color: hsl(var(--graph-ink)); }
+  .graphene-muted { color: hsl(var(--graph-muted)); }
+  .graphene-copper { color: hsl(var(--graph-copper)); }
+  .graphene-copper-soft { color: hsl(var(--graph-copper-soft)); }
+  .graphene-border { border-color: hsl(var(--graph-teal) / 0.14); }
+  .graphene-card { background: hsl(var(--graph-paper)); border-color: hsl(var(--graph-teal) / 0.14); }
+  .graphene-card-dark { background: hsl(var(--graph-paper) / 0.065); border-color: hsl(var(--graph-paper) / 0.14); }
+  .graphene-btn-primary { background: hsl(var(--graph-copper)); color: hsl(var(--graph-paper)); }
+  .graphene-btn-primary:hover { background: hsl(var(--graph-ink)); }
+  .graphene-btn-dark { background: hsl(var(--graph-paper)); color: hsl(var(--graph-teal)); }
+  .graphene-btn-dark:hover { background: hsl(var(--graph-copper-soft)); }
+  .graphene-editorial { color: hsl(var(--graph-copper)); font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; }
+  .graphene-rule { background: hsl(var(--graph-copper)); }
+  .graphene-soft-rule { border-color: hsl(var(--graph-paper) / 0.16); }
+  .graphene-hero-overlay { background: linear-gradient(90deg, hsl(var(--graph-teal) / 0.94) 0%, hsl(var(--graph-teal) / 0.76) 44%, hsl(var(--graph-teal) / 0.12) 77%, transparent 100%); }
+  .graphene-image-shadow { box-shadow: 0 28px 70px -30px hsl(var(--graph-teal) / 0.5); }
+  .graphene-focus:focus-visible { outline: 3px solid hsl(var(--graph-copper-soft)); outline-offset: 4px; }
+
   /* ─── O Novo Botão de Ação (Brutalista e Massivo) ─── */
   .btn-primary {
     @apply px-10 py-5 rounded-sm font-black tracking-widest uppercase text-sm ease-apple transition-all duration-500 flex items-center justify-center gap-3;
