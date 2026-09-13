@@ -7,6 +7,7 @@
 - [x] validar conteúdo, imagens, animações, botões e mobile da página GrapheneOS
 - [x] elevar a seção Comunidade e Suporte com fundo e cartões visuais
 - [x] elevar Aplicativos e Governança e aplicar fundo integral ao FAQ técnico
+- [x] aplicar panoramas contextuais e movimento sutil aos demais blocos do GrapheneOS
 
 ## Tier 1 SEO (concluído)
 - [x] Hub /comparativos/melhores-hardware-wallets + /comparativos/coldcard-review + /comparativos/trezor-review
