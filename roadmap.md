@@ -4,7 +4,7 @@
 - [x] /seguranca-mobile/calyxos
 - [x] /seguranca-mobile/grapheneos
 - [x] integrar GrapheneOS em rotas, sidebar, busca e sitemap
-- [ ] validar conteúdo, imagens, animações, botões e mobile da página GrapheneOS
+- [x] validar conteúdo, imagens, animações, botões e mobile da página GrapheneOS
 
 ## Tier 1 SEO (concluído)
 - [x] Hub /comparativos/melhores-hardware-wallets + /comparativos/coldcard-review + /comparativos/trezor-review

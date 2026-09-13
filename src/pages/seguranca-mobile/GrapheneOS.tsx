@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import {
   ArrowRight, BriefcaseBusiness, CheckCircle2, Cpu, Database, ExternalLink,
   Fingerprint, Layers3, LockKeyhole, MessageSquareText, Network, RadioTower,
@@ -12,9 +12,9 @@ import { Button } from '@/components/ui/button';
 import heroAsset from '@/assets/seguranca-mobile/grapheneos-hero.jpg.asset.json';
 import logoAsset from '@/assets/seguranca-mobile/grapheneos-logo.svg.asset.json';
 import bancadaAsset from '@/assets/seguranca-mobile/grapheneos-bancada.jpg.asset.json';
-import arquiteturaAsset from '@/assets/seguranca-mobile/grapheneos-arquitetura.jpg.asset.json';
-import pixelsAsset from '@/assets/seguranca-mobile/grapheneos-pixels.jpg.asset.json';
-import appsAsset from '@/assets/seguranca-mobile/grapheneos-apps.jpg.asset.json';
+import arquiteturaAsset from '@/assets/seguranca-mobile/grapheneos-isolamento-operacional.jpg.asset.json';
+import pixelsAsset from '@/assets/seguranca-mobile/grapheneos-pixels-compativeis.jpg.asset.json';
+import appsAsset from '@/assets/seguranca-mobile/grapheneos-governanca-aplicativos.jpg.asset.json';
 import instalacaoAsset from '@/assets/seguranca-mobile/grapheneos-instalacao.jpg.asset.json';
 import redeAsset from '@/assets/seguranca-mobile/grapheneos-rede.jpg.asset.json';
 import diagnosticoAsset from '@/assets/seguranca-mobile/grapheneos-diagnostico.jpg.asset.json';
@@ -72,7 +72,7 @@ const COMMUNITY_CHANNELS = [
 ];
 
 const INSTALL = [
-  { title: 'Inventarie e preserve', text: 'Registre aplicativos, contas, chaves de recuperação e autenticadores. Faça duas cópias verificadas dos dados essenciais. O desbloqueio do bootloader apaga completamente o aparelho.' },
+  { title: 'Faça o inventário e preserve os dados', text: 'Registre aplicativos, contas, chaves de recuperação e autenticadores. Faça duas cópias verificadas dos dados essenciais. O desbloqueio do bootloader apaga completamente o aparelho.' },
   { title: 'Valide aparelho, cabo e estação', text: 'Confirme o modelo suportado, o desbloqueio OEM e um cabo USB-C com dados estáveis. Use um computador confiável, energia contínua e navegador compatível com WebUSB.' },
   { title: 'Use somente o instalador oficial', text: 'O web installer do GrapheneOS é o método recomendado para a maioria dos usuários. Guias de terceiros envelhecem, podem omitir etapas e elevam o risco operacional.' },
   { title: 'Instale sem interromper', text: 'Siga a sequência exibida, não desconecte o cabo e não altere o estado do navegador. Se houver falha, preserve a tela e a mensagem antes de tentar novamente.' },
@@ -103,10 +103,23 @@ const FAQ = [
 ];
 
 function Figure({ asset, alt, caption }: { asset: { url: string }; alt: string; caption: string }) {
+  const reduceMotion = useReducedMotion();
   return (
-    <motion.figure {...reveal(0.08)} className="group relative my-12 overflow-hidden rounded-lg graphene-image-shadow">
-      <img src={asset.url} alt={alt} loading="lazy" decoding="async" width={1536} height={1024} className="h-[330px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.035] md:h-[520px]" />
-      <figcaption className="absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-foreground/85 to-transparent px-6 pb-5 pt-16 text-sm font-semibold text-background opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">{caption}</figcaption>
+    <motion.figure {...reveal(0.08)} className="group relative my-12 h-[62vh] min-h-[420px] max-h-[760px] w-full overflow-hidden rounded-lg graphene-image-shadow">
+      <motion.img
+        src={asset.url}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        width={1536}
+        height={1024}
+        animate={reduceMotion ? undefined : { scale: [1, 1.045, 1], x: ['0%', '-0.7%', '0%'] }}
+        transition={reduceMotion ? undefined : { duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute inset-0 h-full w-full object-cover transition-[filter] duration-700 group-hover:brightness-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/10 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 opacity-0 ring-1 ring-inset ring-background/35 transition-opacity duration-500 group-hover:opacity-100" />
+      <figcaption className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-24 text-base font-semibold leading-relaxed text-background md:px-9 md:pb-9 md:text-lg">{caption}</figcaption>
     </motion.figure>
   );
 }
@@ -189,7 +202,7 @@ export default function GrapheneOS() {
             <div className="grid gap-5 md:grid-cols-2">
               {ARCHITECTURE.map((item, i) => <motion.article key={item.title} {...reveal(i * .07)} className="graphene-card-dark group rounded-lg border p-8 transition-all duration-500 hover:-translate-y-1 md:p-10"><item.icon className="graphene-copper-soft mb-6 h-7 w-7 transition-transform duration-500 group-hover:scale-110"/><h3 className="text-2xl font-black tracking-normal text-background">{item.title}</h3><p className="mt-4 text-base leading-relaxed text-background/75 md:text-lg">{item.text}</p></motion.article>)}
             </div>
-            <Figure asset={arquiteturaAsset} alt="Representação física das camadas isoladas de aplicativos e perfis no GrapheneOS" caption="Isolamento útil é aquele que permanece verificável durante a operação." />
+            <Figure asset={arquiteturaAsset} alt="Google Pixel ligado exibindo perfis separados e controles de isolamento de aplicativos" caption="Isolamento útil é aquele que permanece verificável durante a operação." />
             <motion.div {...reveal(.1)} className="mt-10 flex gap-4 rounded-lg border border-background/15 bg-background/5 p-7"><TriangleAlert className="graphene-copper-soft mt-1 shrink-0"/><p className="text-lg leading-relaxed text-background/80"><strong className="text-background">Limite técnico:</strong> GrapheneOS dificulta exploração e reduz impacto. Não torna o aparelho invulnerável, não elimina zero-days e não substitui senha forte, atualização, treinamento e resposta a incidentes.</p></motion.div>
           </div>
         </section>
@@ -199,7 +212,7 @@ export default function GrapheneOS() {
             <Heading chapter="03 / Compatibilidade e aquisição" title="O aparelho correto é parte" accent="da política de segurança." />
             <p className="graphene-muted -mt-7 max-w-3xl text-lg leading-relaxed md:text-xl">A decisão não começa no instalador. Começa na procedência do Pixel, na possibilidade de bloquear novamente o bootloader e na janela restante de atualizações.</p>
             <div className="mt-12 grid gap-5 md:grid-cols-2">{DECISION.map((item, i) => <motion.article key={item.title} {...reveal(i * .07)} className="graphene-card group rounded-lg border p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"><span className="graphene-copper text-xs font-black tracking-[0.25em]">0{i + 1}</span><h3 className="graphene-ink mt-4 text-2xl font-black tracking-normal">{item.title}</h3><p className="mt-3 text-lg leading-relaxed">{item.text}</p></motion.article>)}</div>
-            <Figure asset={pixelsAsset} alt="Quatro smartphones Google Pixel completos com telas ligadas para avaliação de compatibilidade" caption="Modelo, procedência e suporte restante precisam entrar no inventário antes da compra." />
+            <Figure asset={pixelsAsset} alt="Quatro smartphones Google Pixel completos, ligados e alinhados para inspeção de compatibilidade" caption="Modelo, procedência e suporte restante precisam entrar no inventário antes da compra." />
             <motion.div {...reveal(.08)} className="graphene-card border p-7 md:p-10">
               <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><span className="graphene-copper text-xs font-black uppercase tracking-[0.25em]">Lista oficial atual</span><h3 className="graphene-ink mt-3 text-3xl font-black tracking-normal">Dispositivos suportados</h3></div><p className="graphene-muted max-w-xl leading-relaxed">A lista pode mudar conforme firmware, ciclo de suporte e requisitos de segurança. Confirme novamente antes da compra ou instalação.</p></div>
               <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-md border md:grid-cols-3 lg:grid-cols-4">{SUPPORTED_DEVICES.map(device => <div key={device} className="graphene-paper-deep flex min-h-16 items-center gap-3 p-4 text-sm font-bold transition-colors duration-300 hover:bg-background"><Smartphone className="graphene-copper h-4 w-4 shrink-0"/><span>{device}</span></div>)}</div>
@@ -215,7 +228,7 @@ export default function GrapheneOS() {
               <motion.div {...reveal()} className="space-y-7 text-lg leading-[1.75] lg:col-span-7 md:text-xl"><p>O GrapheneOS não inclui serviços Google. Quando uma necessidade corporativa exige essa dependência, o Sandboxed Google Play instala os componentes como aplicativos comuns, sem privilégios especiais no sistema.</p><p>Isso preserva compatibilidade com notificações, mapas e diversos aplicativos, mas não apaga o fornecedor da equação. Rede e permissões concedidas continuam permitindo coleta. A governança correta começa com necessidade documentada, perfil isolado e mínimo privilégio.</p><p>Apps bancários, governamentais e ferramentas com Play Integrity exigem piloto. Muitos funcionam, alguns recusam o ambiente e o comportamento pode mudar após uma atualização. Nenhuma implantação séria deve prometer compatibilidade universal.</p></motion.div>
               <motion.aside {...reveal(.12)} className="graphene-teal rounded-lg p-8 lg:col-span-5"><BriefcaseBusiness className="graphene-copper-soft h-8 w-8"/><h3 className="mt-6 text-2xl font-black tracking-normal text-background">Política mínima de aprovação</h3><ul className="mt-6 space-y-4 text-background/80">{['Finalidade e proprietário do aplicativo', 'Dados acessados e permissões necessárias', 'Dependência de Google Play e atestação', 'Perfil autorizado para instalação', 'Plano alternativo em caso de bloqueio'].map(item => <li key={item} className="flex gap-3"><CheckCircle2 className="graphene-copper-soft mt-0.5 h-5 w-5 shrink-0"/><span>{item}</span></li>)}</ul></motion.aside>
             </div>
-            <Figure asset={appsAsset} alt="Smartphone corporativo com aplicativos separados por camadas de isolamento" caption="Aplicativo aprovado é aquele cuja finalidade, permissão e dependência foram avaliadas." />
+            <Figure asset={appsAsset} alt="Analista avaliando permissões e dependências de aplicativos em um Google Pixel e computador" caption="Aplicativo aprovado é aquele cuja finalidade, permissão e dependência foram avaliadas." />
           </div>
         </section>
 
