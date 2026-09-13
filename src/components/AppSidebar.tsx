@@ -195,32 +195,39 @@ const AppSidebar = () => {
                       {group.items.map((item, idx) => {
                         const active = isActive(item.route);
                         return (
-                          <button
-                            key={item.label}
-                            onClick={() => handleNav(item)}
-                            className={`w-full flex items-center gap-2 pl-4 pr-2 py-[6px] rounded-md transition-all duration-200 text-[12.5px] relative group/item ${
-                              active
-                                ? "text-gold font-semibold"
-                                : "text-muted-foreground/70 hover:text-foreground hover:bg-secondary/30"
-                            }`}
-                          >
-                            {/* Dot connector */}
-                            <div className={`absolute left-[-2px] top-1/2 -translate-y-1/2 w-[5px] h-[5px] rounded-full border transition-all duration-300 ${
-                              active
-                                ? "bg-gold border-gold shadow-[0_0_6px_rgba(255,215,0,0.4)]"
-                                : "bg-[#0c0f17] border-border/50 group-hover/item:border-muted-foreground/50"
-                            }`} />
-                            <span className="flex-1 text-left truncate">{item.label}</span>
-                            {item.badge && (
-                              <span className={`text-[8px] font-mono px-1.5 py-0.5 rounded-full flex-shrink-0 ${
-                                item.badge === "Dossiê"
-                                  ? "bg-amber-500/15 text-amber-400 animate-pulse"
-                                  : "bg-primary/15 text-primary"
-                              }`}>
-                                {item.badge}
-                              </span>
+                          <div key={item.label}>
+                            {item.section && (
+                              <p className="mb-1 mt-3 px-4 text-[9px] font-bold uppercase tracking-[0.18em] text-muted-foreground/50 first:mt-1">
+                                {item.section}
+                              </p>
                             )}
-                          </button>
+                            <button
+                              onClick={() => handleNav(item)}
+                              className={`w-full flex items-center gap-2 pl-4 pr-2 py-[6px] rounded-md transition-all duration-200 text-[12.5px] relative group/item ${
+                                active
+                                  ? "text-gold font-semibold"
+                                  : "text-muted-foreground/70 hover:text-foreground hover:bg-secondary/30"
+                              }`}
+                            >
+                              <div className={`absolute left-[-2px] top-1/2 -translate-y-1/2 w-[5px] h-[5px] rounded-full border transition-all duration-300 ${
+                                active
+                                  ? "bg-gold border-gold shadow-[0_0_6px_rgba(255,215,0,0.4)]"
+                                  : "bg-card border-border/50 group-hover/item:border-muted-foreground/50"
+                              }`} />
+                              <span className="flex-1 text-left leading-tight">{item.label}</span>
+                              {item.badge && (
+                                <span className={`text-[8px] font-mono px-1.5 py-0.5 rounded-full flex-shrink-0 ${
+                                  item.badge === "Dossiê"
+                                    ? "bg-amber-500/15 text-amber-400 animate-pulse"
+                                    : item.badge === "Em breve"
+                                    ? "bg-secondary text-muted-foreground"
+                                    : "bg-primary/15 text-primary"
+                                }`}>
+                                  {item.badge}
+                                </span>
+                              )}
+                            </button>
+                          </div>
                         );
                       })}
                     </div>
