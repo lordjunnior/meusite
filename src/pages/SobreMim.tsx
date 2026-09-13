@@ -393,7 +393,7 @@ export default function SobreMim() {
       </section>
 
       {/* 01 IDENTIDADE + PONTE NARRATIVA */}
-      <section id="identidade" className="max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32">
+      <section id="identidade" className="scroll-mt-24 max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32">
         <SectionMark n="01 · IDENTIDADE" title="A Assinatura" />
         <div className="grid md:grid-cols-2 gap-12 md:gap-20">
           <Reveal>
@@ -462,7 +462,7 @@ export default function SobreMim() {
       </section>
 
       {/* 04 TRAJETÓRIA */}
-      <section id="trajetoria" className="border-y border-white/[0.06] bg-white/[0.02]">
+      <section id="trajetoria" className="scroll-mt-24 border-y border-white/[0.06] bg-white/[0.02]">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32">
           <SectionMark n="04 · TRAJETÓRIA" title="Competências & Experiência" />
 
@@ -505,7 +505,7 @@ export default function SobreMim() {
       </section>
 
       {/* 05 PROVA VIVA */}
-      <section id="prova" className="max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32">
+      <section id="prova" className="scroll-mt-24 max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32">
         <SectionMark n="05 · PROVA DE TRABALHO" title="Arquitetura Verificada" />
         <Reveal>
           <p className="text-white/60 max-w-2xl text-lg mb-14">
@@ -568,7 +568,7 @@ export default function SobreMim() {
       </section>
 
       {/* 06 DOMÍNIO */}
-      <section id="dominio" className="border-y border-white/[0.06] bg-white/[0.02] relative overflow-hidden">
+      <section id="dominio" className="scroll-mt-24 border-y border-white/[0.06] bg-white/[0.02] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32 relative z-10">
           <SectionMark n="06 · DOMÍNIO TÉCNICO" title="As Ferramentas Por Trás de Cada Entrega" />
 
@@ -663,7 +663,7 @@ export default function SobreMim() {
       </section>
 
       {/* CATÁLOGO / ARSENAL */}
-      <section id="catalogo" className="border-y border-white/[0.06] bg-white/[0.02]">
+      <section id="catalogo" className="scroll-mt-24 border-y border-white/[0.06] bg-white/[0.02]">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32">
           <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40 mb-6">// ARSENAL DE AUTONOMIA</div>
           <Reveal>
