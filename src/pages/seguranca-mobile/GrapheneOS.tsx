@@ -170,8 +170,8 @@ export default function GrapheneOS() {
 
         <section className="px-6 py-24 md:px-12 md:py-36 lg:px-20">
           <div className="mx-auto grid max-w-[1600px] gap-12 lg:grid-cols-12 lg:gap-20">
-            <motion.aside {...reveal()} className="lg:col-span-3"><div className="sticky top-24"><span className="graphene-copper text-xs font-bold uppercase tracking-[0.3em]">01 / Decisão executiva</span><div className="graphene-rule mt-5 h-0.5 w-16" /></div></motion.aside>
-            <div className="lg:col-span-9">
+            <motion.aside {...reveal()} className="min-w-0 lg:col-span-3"><div className="sticky top-24"><span className="graphene-copper text-xs font-bold uppercase tracking-[0.3em]">01 / Decisão executiva</span><div className="graphene-rule mt-5 h-0.5 w-16" /></div></motion.aside>
+            <div className="min-w-0 lg:col-span-9">
               <motion.h2 {...reveal(.08)} className="graphene-ink text-[clamp(2.5rem,6vw,5.8rem)] font-black leading-none tracking-normal">Segurança móvel começa pelo <span className="graphene-editorial">controle do ativo.</span></motion.h2>
               <motion.div {...reveal(.14)} className="mt-10 grid gap-8 text-lg leading-[1.75] md:grid-cols-2 md:text-xl">
                 <p>GrapheneOS é um sistema móvel de código aberto baseado no Android Open Source Project. Seu objetivo não é produzir aparência de segurança. É fortalecer isolamento, permissões, memória, inicialização e atualização contra adversários reais, preservando compatibilidade com aplicativos Android.</p>
