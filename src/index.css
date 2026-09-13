@@ -384,13 +384,14 @@
   .iphone-card { background: hsl(var(--iphone-paper) / .88); border-color: hsl(var(--iphone-deep) / .15); backdrop-filter: blur(14px); }
   .iphone-card-dark { background: hsl(var(--iphone-paper) / .065); border-color: hsl(var(--iphone-paper) / .16); }
   .iphone-card-future { background: hsl(var(--iphone-paper-deep) / .55); border-color: hsl(var(--iphone-deep) / .22); }
-  .iphone-glass { background: linear-gradient(150deg, hsl(var(--iphone-ink) / .84), hsl(var(--iphone-deep) / .7)); border-color: hsl(var(--iphone-paper) / .2); box-shadow: inset 0 1px 0 hsl(var(--iphone-paper) / .1), 0 30px 80px -48px hsl(var(--iphone-ink)); }
+  .iphone-glass { background: linear-gradient(150deg, hsl(var(--iphone-ink) / .94), hsl(var(--iphone-deep) / .9)); border-color: hsl(var(--iphone-paper) / .28); box-shadow: inset 0 1px 0 hsl(var(--iphone-paper) / .12), 0 30px 80px -48px hsl(var(--iphone-ink)); }
   .iphone-figure { box-shadow: 0 30px 80px -38px hsl(var(--iphone-deep) / .55); }
   .iphone-btn { background: hsl(var(--iphone-paper)); color: hsl(var(--iphone-deep)); }
   .iphone-btn:hover { background: hsl(var(--iphone-copper-soft)); color: hsl(var(--iphone-deep)); }
   .iphone-step { background: hsl(var(--iphone-copper)); color: hsl(var(--iphone-paper)); }
   .iphone-focus:focus-visible { outline: 3px solid hsl(var(--iphone-copper)); outline-offset: 4px; }
   .iphone-dark-shade { background: linear-gradient(90deg, hsl(var(--iphone-ink) / .96) 0%, hsl(var(--iphone-deep) / .86) 52%, hsl(var(--iphone-ink) / .8) 100%); }
+  .iphone-light-shade { background: linear-gradient(90deg, hsl(var(--iphone-paper) / .98) 0%, hsl(var(--iphone-paper) / .94) 48%, hsl(var(--iphone-paper-deep) / .86) 100%); }
   .iphone-soft-glow { background: radial-gradient(ellipse at 78% 22%, hsl(var(--iphone-copper-soft) / .12), transparent 43%), linear-gradient(180deg, hsl(var(--iphone-paper)), hsl(var(--iphone-paper-deep) / .74), hsl(var(--iphone-paper))); }
   .iphone-grid {
     opacity: .14;
