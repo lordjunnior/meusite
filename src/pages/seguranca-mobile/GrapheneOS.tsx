@@ -22,6 +22,13 @@ import sandboxedPlayImage from '@/assets/seguranca-mobile/grapheneos-sandboxed-p
 import appPermissionsImage from '@/assets/seguranca-mobile/grapheneos-app-permissions.jpg';
 import appPilotImage from '@/assets/seguranca-mobile/grapheneos-app-pilot.jpg';
 import faqBackground from '@/assets/seguranca-mobile/grapheneos-faq-background.jpg';
+import decisionBackground from '@/assets/seguranca-mobile/grapheneos-decision-background.jpg.asset.json';
+import architectureBackground from '@/assets/seguranca-mobile/grapheneos-architecture-background.jpg.asset.json';
+import acquisitionBackground from '@/assets/seguranca-mobile/grapheneos-acquisition-background.jpg.asset.json';
+import installationBackground from '@/assets/seguranca-mobile/grapheneos-installation-background.jpg.asset.json';
+import operationsBackground from '@/assets/seguranca-mobile/grapheneos-operations-background.jpg.asset.json';
+import verdictBackground from '@/assets/seguranca-mobile/grapheneos-verdict-background.jpg.asset.json';
+import learningPathBackground from '@/assets/seguranca-mobile/grapheneos-learning-path-background.jpg.asset.json';
 import communityBackgroundAsset from '@/assets/seguranca-mobile/grapheneos-community-background.jpg.asset.json';
 import discordImageAsset from '@/assets/seguranca-mobile/grapheneos-discord-support.jpg.asset.json';
 import matrixImageAsset from '@/assets/seguranca-mobile/grapheneos-matrix-support-v3.jpg.asset.json';
@@ -169,6 +176,27 @@ function Heading({ chapter, title, accent, dark = false }: { chapter: string; ti
   );
 }
 
+function PanoramicBackground({ asset, alt, tone = 'light' }: { asset: { url: string }; alt: string; tone?: 'light' | 'dark' }) {
+  const reduceMotion = useReducedMotion();
+  return (
+    <>
+      <motion.img
+        src={asset.url}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        width={1920}
+        height={1088}
+        animate={reduceMotion ? undefined : { scale: [1, 1.035, 1], x: ['0%', '-0.45%', '0%'] }}
+        transition={reduceMotion ? undefined : { duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute inset-0 -z-30 h-full w-full object-cover"
+      />
+      <div className={`absolute inset-0 -z-20 ${tone === 'dark' ? 'graphene-panorama-dark' : 'graphene-panorama-light'}`} />
+      <div className="graphene-panorama-grid absolute inset-0 -z-10" />
+    </>
+  );
+}
+
 function Hero() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 900], [0, 180]);
@@ -215,8 +243,9 @@ export default function GrapheneOS() {
         <div className="absolute inset-x-0 top-0 z-30 px-6 pt-[52px] md:px-12 lg:px-20"><BackToHome /></div>
         <Hero />
 
-        <section className="px-6 py-24 md:px-12 md:py-36 lg:px-20">
-          <div className="mx-auto grid max-w-[1600px] gap-12 lg:grid-cols-12 lg:gap-20">
+        <section className="relative isolate overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
+          <PanoramicBackground asset={decisionBackground} alt="Inspeção técnica de Google Pixel para inventário e decisão executiva" />
+          <div className="relative mx-auto grid max-w-[1600px] gap-12 lg:grid-cols-12 lg:gap-20">
             <motion.aside {...reveal()} className="min-w-0 lg:col-span-3"><div className="sticky top-24"><span className="graphene-copper text-xs font-bold uppercase tracking-[0.3em]">01 / Decisão executiva</span><div className="graphene-rule mt-5 h-0.5 w-16" /></div></motion.aside>
             <div className="min-w-0 lg:col-span-9">
               <motion.h2 {...reveal(.08)} className="graphene-ink text-[clamp(2.5rem,6vw,5.8rem)] font-black leading-none tracking-normal">Segurança móvel começa pelo <span className="graphene-editorial">controle do ativo.</span></motion.h2>
@@ -230,8 +259,9 @@ export default function GrapheneOS() {
           </div>
         </section>
 
-        <section className="graphene-teal px-6 py-24 md:px-12 md:py-36 lg:px-20">
-          <div className="mx-auto max-w-[1600px]">
+        <section className="graphene-teal relative isolate overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
+          <PanoramicBackground asset={architectureBackground} alt="Camadas físicas de hardware representando a arquitetura de segurança do GrapheneOS" tone="dark" />
+          <div className="relative mx-auto max-w-[1600px]">
             <Heading chapter="02 / Arquitetura de segurança" title="Defesas em camadas." accent="Sem promessas absolutas." dark />
             <div className="grid gap-5 md:grid-cols-2">
               {ARCHITECTURE.map((item, i) => <motion.article key={item.title} {...reveal(i * .07)} className="graphene-card-dark group rounded-lg border p-8 transition-all duration-500 hover:-translate-y-1 md:p-10"><item.icon className="graphene-copper-soft mb-6 h-7 w-7 transition-transform duration-500 group-hover:scale-110"/><h3 className="text-2xl font-black tracking-normal text-background">{item.title}</h3><p className="mt-4 text-base leading-relaxed text-background/75 md:text-lg">{item.text}</p></motion.article>)}
@@ -241,8 +271,9 @@ export default function GrapheneOS() {
           </div>
         </section>
 
-        <section id="decisao" className="scroll-mt-16 px-6 py-24 md:px-12 md:py-36 lg:px-20">
-          <div className="mx-auto max-w-[1600px]">
+        <section id="decisao" className="relative isolate scroll-mt-16 overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
+          <PanoramicBackground asset={acquisitionBackground} alt="Linha de aparelhos Google Pixel completos em inspeção de compatibilidade e procedência" />
+          <div className="relative mx-auto max-w-[1600px]">
             <Heading chapter="03 / Compatibilidade e aquisição" title="O aparelho correto é parte" accent="da política de segurança." />
             <p className="graphene-muted -mt-7 max-w-3xl text-lg leading-relaxed md:text-xl">A decisão não começa no instalador. Começa na procedência do Pixel, na possibilidade de bloquear novamente o bootloader e na janela restante de atualizações.</p>
             <div className="mt-12 grid gap-5 md:grid-cols-2">{DECISION.map((item, i) => <motion.article key={item.title} {...reveal(i * .07)} className="graphene-card group rounded-lg border p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"><span className="graphene-copper text-xs font-black tracking-[0.25em]">0{i + 1}</span><h3 className="graphene-ink mt-4 text-2xl font-black tracking-normal">{item.title}</h3><p className="mt-3 text-lg leading-relaxed">{item.text}</p></motion.article>)}</div>
@@ -288,8 +319,9 @@ export default function GrapheneOS() {
           </div>
         </section>
 
-        <section id="instalacao" className="graphene-teal scroll-mt-16 px-6 py-24 md:px-12 md:py-36 lg:px-20">
-          <div className="mx-auto max-w-[1400px]">
+        <section id="instalacao" className="graphene-teal relative isolate scroll-mt-16 overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
+          <PanoramicBackground asset={installationBackground} alt="Google Pixel conectado a computador durante o procedimento oficial de instalação" tone="dark" />
+          <div className="relative mx-auto max-w-[1400px]">
             <Heading chapter="05 / Implantação segura" title="Instalar é um procedimento." accent="Não uma tentativa." dark />
             <Figure asset={instalacaoAsset} alt="Pixel conectado por cabo de dados a computador executando instalador web" caption="Estação confiável, cabo estável e instalador oficial reduzem falhas evitáveis." />
             <motion.div {...reveal()} className="mb-10 border-l-4 border-background/30 pl-7 text-lg leading-relaxed text-background/80 md:text-xl"><p>O GrapheneOS oferece dois métodos de instalação oficialmente suportados. O próprio projeto recomenda seguir apenas a documentação oficial, porque tutoriais de terceiros podem estar desatualizados, omitir verificações ou orientar procedimentos incorretos.</p></motion.div>
@@ -299,8 +331,9 @@ export default function GrapheneOS() {
           </div>
         </section>
 
-        <section className="px-6 py-24 md:px-12 md:py-36 lg:px-20">
-          <div className="mx-auto max-w-[1600px]">
+        <section className="relative isolate overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
+          <PanoramicBackground asset={operationsBackground} alt="Estação profissional acompanhando atualizações, rede e resposta a incidentes em Google Pixel" />
+          <div className="relative mx-auto max-w-[1600px]">
             <Heading chapter="06 / Operação contínua" title="Segurança que não é mantida" accent="vira memória institucional." />
             <div className="grid gap-5 md:grid-cols-2">{OPERATIONS.map((item, i) => <motion.article key={item.title} {...reveal(i * .07)} className="graphene-card group rounded-lg border p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"><item.icon className="graphene-copper mb-5 h-7 w-7 transition-transform duration-500 group-hover:scale-110"/><h3 className="graphene-ink text-2xl font-black tracking-normal">{item.title}</h3><p className="mt-3 text-lg leading-relaxed">{item.text}</p></motion.article>)}</div>
             <Figure asset={redeAsset} alt="Configuração de rede celular em Pixel com 2G desativado e rede moderna ativa" caption="Desativar 2G reduz um vetor de downgrade, mas não torna a rede celular anônima." />
@@ -374,14 +407,15 @@ export default function GrapheneOS() {
           </div>
         </section>
 
-        <section className="graphene-teal px-6 py-24 md:px-12 md:py-32 lg:px-20">
-          <div className="mx-auto grid max-w-[1600px] gap-12 lg:grid-cols-2">
+        <section className="graphene-teal relative isolate overflow-hidden px-6 py-24 md:px-12 md:py-32 lg:px-20">
+          <PanoramicBackground asset={verdictBackground} alt="Google Pixel em ambiente operacional maduro representando o veredito técnico" tone="dark" />
+          <div className="relative mx-auto grid max-w-[1600px] gap-12 lg:grid-cols-2">
             <motion.div {...reveal()}><span className="graphene-copper-soft text-xs font-bold uppercase tracking-[0.3em]">Veredito técnico</span><h2 className="mt-5 text-[clamp(2.5rem,5vw,5rem)] font-black leading-none tracking-normal text-background">Proteção superior exige <span className="graphene-copper-soft font-editorial font-normal italic">operação madura.</span></h2></motion.div>
             <motion.div {...reveal(.12)} className="space-y-6 text-lg leading-[1.75] text-background/80 md:text-xl"><p>GrapheneOS é uma base excepcional para quem precisa reduzir privilégios, controlar dependências e elevar a resistência do endpoint móvel. Seu valor aparece quando hardware, perfis, aplicativos, rede e ciclo de suporte entram na mesma política.</p><p>Não é solução mágica para interceptação celular, comportamento inseguro ou aplicativo mal projetado. É uma plataforma que torna boas decisões mais eficazes e decisões ruins mais visíveis.</p><p className="font-black text-background">O ganho real não está em instalar outro Android. Está em recuperar autoridade sobre o ativo.</p></motion.div>
           </div>
         </section>
 
-        <section className="px-6 py-20 md:px-12 md:py-28 lg:px-20"><div className="mx-auto max-w-[1600px]"><h2 className="graphene-ink text-4xl font-black tracking-normal">Continue sua trilha</h2><div className="mt-9 grid gap-5 md:grid-cols-3">{[
+        <section className="relative isolate overflow-hidden px-6 py-20 md:px-12 md:py-28 lg:px-20"><PanoramicBackground asset={learningPathBackground} alt="Três estações conectadas representando privacidade móvel, comunicação segura e defesa digital" /><div className="relative mx-auto max-w-[1600px]"><h2 className="graphene-ink text-4xl font-black tracking-normal">Continue sua trilha</h2><div className="mt-9 grid gap-5 md:grid-cols-3">{[
           { to: '/seguranca-mobile/calyxos', title: 'CalyxOS', text: 'Compare uma abordagem orientada ao equilíbrio entre privacidade e uso cotidiano.', icon: Smartphone },
           { to: '/soberania-organica/comunicacao-segura', title: 'Comunicação Segura', text: 'Proteja o conteúdo e os metadados que continuam trafegando fora do sistema operacional.', icon: Network },
           { to: '/soberania-organica/defesa-digital-pessoal', title: 'Defesa Digital Pessoal', text: 'Amplie o controle para identidade, credenciais, comunicação e comportamento.', icon: LockKeyhole },

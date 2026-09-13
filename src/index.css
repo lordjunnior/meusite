@@ -302,6 +302,19 @@
     border-color: hsl(var(--graph-copper-soft) / .5);
     box-shadow: 0 34px 76px -44px hsl(var(--graph-ink)), inset 0 1px 0 hsl(var(--graph-paper) / .18);
   }
+  .graphene-panorama-light {
+    background: linear-gradient(180deg, hsl(var(--graph-paper) / .88) 0%, hsl(var(--graph-paper) / .79) 42%, hsl(var(--graph-paper) / .94) 100%);
+    backdrop-filter: saturate(.8);
+  }
+  .graphene-panorama-dark {
+    background: linear-gradient(180deg, hsl(var(--graph-ink) / .82) 0%, hsl(var(--graph-teal) / .76) 48%, hsl(var(--graph-ink) / .94) 100%);
+  }
+  .graphene-panorama-grid {
+    opacity: .12;
+    background-image: linear-gradient(hsl(var(--graph-teal) / .12) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--graph-teal) / .12) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  }
   .graphene-layer-title {
     position: relative;
     isolation: isolate;
