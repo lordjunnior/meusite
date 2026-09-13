@@ -293,63 +293,50 @@
     position: relative;
     isolation: isolate;
     color: hsl(var(--graph-paper));
-    font-family: 'Unbounded', sans-serif;
-    font-size: clamp(2.35rem, 5.4vw, 5.7rem);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: clamp(3.1rem, 6.8vw, 7.5rem);
     font-weight: 700;
-    line-height: .98;
+    line-height: .86;
     letter-spacing: 0;
     text-wrap: balance;
-    text-shadow:
-      0 1px 0 hsl(var(--graph-paper) / .45),
-      0 5px 0 hsl(var(--graph-ink) / .7),
-      0 18px 38px hsl(var(--graph-ink) / .65),
-      0 0 34px hsl(var(--graph-copper-soft) / .12);
+    text-shadow: 0 24px 80px hsl(var(--graph-ink) / .72);
   }
-  .graphene-layer-title::before,
-  .graphene-layer-title::after {
-    content: attr(data-text);
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    font: inherit;
-    letter-spacing: inherit;
-  }
-  .graphene-layer-title::before {
-    color: transparent;
-    -webkit-text-stroke: 1px hsl(var(--graph-copper-soft) / .72);
-    transform: translate(5px, 6px);
-    opacity: .7;
-    filter: blur(.15px);
-  }
-  .graphene-layer-title::after {
-    color: hsl(var(--graph-teal) / .65);
-    transform: translate(11px, 13px);
-    opacity: .72;
-    filter: blur(.4px);
-  }
-  .graphene-layer-title > span {
+  .graphene-layer-title-main,
+  .graphene-layer-title-accent {
     position: relative;
-    z-index: 1;
     display: block;
-    background: linear-gradient(115deg, hsl(var(--graph-paper)) 12%, hsl(var(--graph-paper-deep)) 42%, hsl(var(--graph-copper-soft)) 58%, hsl(var(--graph-paper)) 76%);
-    background-size: 220% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: graphene-title-light 7s ease-in-out infinite;
-    filter: drop-shadow(0 1px 0 hsl(var(--graph-paper) / .35));
+  }
+  .graphene-layer-title-main {
+    color: hsl(var(--graph-paper));
+  }
+  .graphene-layer-title-main::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -.12em;
+    width: clamp(4.5rem, 9vw, 9rem);
+    height: 2px;
+    background: hsl(var(--graph-copper-soft));
+    box-shadow: 0 0 22px hsl(var(--graph-copper-soft) / .55);
+    transform-origin: left;
+    animation: graphene-title-rule 4.8s cubic-bezier(.22, 1, .36, 1) infinite;
+  }
+  .graphene-layer-title-accent {
+    margin-top: .18em;
+    color: hsl(var(--graph-paper) / .38);
+    font-weight: 400;
   }
 
-  @keyframes graphene-title-light {
-    0%, 18% { background-position: 100% 50%; }
-    52%, 100% { background-position: -100% 50%; }
+  @keyframes graphene-title-rule {
+    0%, 18% { transform: scaleX(.15); opacity: .4; }
+    48%, 80% { transform: scaleX(1); opacity: 1; }
+    100% { transform: scaleX(.15); opacity: .4; }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .graphene-community-card::after { display: none; }
     .graphene-community-card img { transition: none; }
-    .graphene-layer-title > span { animation: none; background-position: 50% 50%; }
+    .graphene-layer-title-main::after { animation: none; transform: scaleX(1); }
   }
 
   /* ─── O Novo Botão de Ação (Brutalista e Massivo) ─── */
