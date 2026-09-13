@@ -235,7 +235,7 @@ const ComunicacaoSegura = () => {
           ],
           schemaType: 'Article',
           articleSection: 'Soberania Orgânica',
-          relatedPages: ['/soberania-organica/defesa-digital', '/soberania-organica/comunicacao-offline', '/soberania-organica/protocolos-apagao', '/soberania-organica/higiene-mental'],
+          relatedPages: ['/soberania-organica/defesa-digital-pessoal', '/soberania-organica/comunicacao-offline', '/soberania-organica/protocolos-apagao', '/soberania-organica/higiene-mental'],
         }}
         faqItems={FAQ.map((f) => ({ question: f.q, answer: f.a }))}
       />
@@ -437,7 +437,7 @@ const ComunicacaoSegura = () => {
               <p className="text-xs font-mono uppercase tracking-[0.3em] text-primary mb-6">Continue a jornada</p>
               <h2 className="text-3xl md:text-5xl font-display tracking-tight text-foreground mb-10">A comunicação é uma camada do refúgio total</h2>
               <div className="grid sm:grid-cols-3 gap-4">
-                <Link to="/soberania-organica/defesa-digital" className="border border-border/40 bg-card/40 rounded-xl p-6 hover:border-primary/60 hover:-translate-y-1 transition-all">
+                <Link to="/soberania-organica/defesa-digital-pessoal" className="border border-border/40 bg-card/40 rounded-xl p-6 hover:border-primary/60 hover:-translate-y-1 transition-all">
                   <p className="text-xs font-mono uppercase tracking-widest text-primary/80 mb-2">Defesa do dispositivo</p>
                   <p className="text-base text-foreground font-medium flex items-center justify-between">Defesa Digital Pessoal <ArrowRight className="w-4 h-4" /></p>
                 </Link>
