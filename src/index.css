@@ -262,6 +262,38 @@
   .graphene-hero-overlay { background: linear-gradient(90deg, hsl(var(--graph-teal) / 0.94) 0%, hsl(var(--graph-teal) / 0.76) 44%, hsl(var(--graph-teal) / 0.12) 77%, transparent 100%); }
   .graphene-image-shadow { box-shadow: 0 28px 70px -30px hsl(var(--graph-teal) / 0.5); }
   .graphene-focus:focus-visible { outline: 3px solid hsl(var(--graph-copper-soft)); outline-offset: 4px; }
+  .graphene-community { background: hsl(var(--graph-ink)); color: hsl(var(--graph-paper)); }
+  .graphene-community-shade { background: linear-gradient(180deg, hsl(var(--graph-ink) / 0.78) 0%, hsl(var(--graph-teal) / 0.9) 48%, hsl(var(--graph-ink) / 0.96) 100%); }
+  .graphene-community-grid {
+    opacity: .18;
+    background-image: linear-gradient(hsl(var(--graph-paper) / .08) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--graph-paper) / .08) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+  }
+  .graphene-community-card {
+    background: linear-gradient(155deg, hsl(var(--graph-ink) / .78), hsl(var(--graph-teal) / .9));
+    border-color: hsl(var(--graph-paper) / .2);
+    box-shadow: 0 30px 80px -45px hsl(var(--graph-ink)), inset 0 1px 0 hsl(var(--graph-paper) / .12);
+    backdrop-filter: blur(18px);
+  }
+  .graphene-community-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(115deg, transparent 28%, hsl(var(--graph-paper) / .12) 48%, transparent 66%);
+    transform: translateX(-130%);
+    transition: transform .9s cubic-bezier(.22, 1, .36, 1);
+  }
+  .graphene-community-card:hover::after { transform: translateX(130%); }
+  .graphene-community-card:hover { border-color: hsl(var(--graph-copper-soft) / .55); }
+  .graphene-community-image-shade { background: linear-gradient(180deg, transparent 35%, hsl(var(--graph-ink) / .9) 100%); }
+  .graphene-community-notes { background: hsl(var(--graph-ink) / .72); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .graphene-community-card::after { display: none; }
+    .graphene-community-card img { transition: none; }
+  }
 
   /* ─── O Novo Botão de Ação (Brutalista e Massivo) ─── */
   .btn-primary {
