@@ -10,6 +10,8 @@
 - [x] aplicar panoramas contextuais e movimento sutil aos demais blocos do GrapheneOS
 - [x] /seguranca-mobile/iPhone-e-seguro-mesmo
 - [x] integrar iPhone é seguro mesmo em rota, sidebar, busca e sitemap
+- [x] /seguranca-mobile/vpn-no-celular
+- [x] integrar VPN no celular em rota, sidebar, busca e sitemap
 
 ## Tier 1 SEO (concluído)
 - [x] Hub /comparativos/melhores-hardware-wallets + /comparativos/coldcard-review + /comparativos/trezor-review
