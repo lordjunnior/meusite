@@ -231,6 +231,12 @@
     --graph-copper: 22 61% 47%;
     --graph-copper-soft: 25 82% 71%;
     --graph-muted: 166 10% 36%;
+    --background: var(--graph-paper);
+    --foreground: var(--graph-ink);
+    --card: var(--graph-paper);
+    --card-foreground: var(--graph-ink);
+    --border: 179 24% 78%;
+    --ring: var(--graph-copper);
     background: hsl(var(--graph-paper));
     color: hsl(var(--graph-ink));
     font-family: 'Inter Tight', sans-serif;
