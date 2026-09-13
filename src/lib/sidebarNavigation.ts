@@ -96,6 +96,7 @@ export const navGroups: NavGroup[] = [
       { label: "CalyxOS", route: "/seguranca-mobile/calyxos", badge: "Novo" },
       { label: "GrapheneOS", route: "/seguranca-mobile/grapheneos", badge: "Novo" },
       { label: "iPhone é seguro mesmo?", route: "/seguranca-mobile/iPhone-e-seguro-mesmo", badge: "Novo" },
+      { label: "VPN no celular", route: "/seguranca-mobile/vpn-no-celular", badge: "Novo" },
     ],
   },
   {

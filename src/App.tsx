@@ -149,6 +149,7 @@ const JurisdicoesAmigaveis = lazy(() => import("./pages/saida/JurisdicoesAmigave
 const CalyxOS = lazy(() => import("./pages/seguranca-mobile/CalyxOS"));
 const GrapheneOS = lazy(() => import("./pages/seguranca-mobile/GrapheneOS"));
 const IPhoneESeguroMesmo = lazy(() => import("./pages/seguranca-mobile/IPhoneESeguroMesmo"));
+const VpnNoCelularQuandoAjuda = lazy(() => import("./pages/seguranca-mobile/VpnNoCelularQuandoAjuda"));
 const CedulaResidenciaChile = lazy(() => import("./pages/saida/CedulaResidenciaChile"));
 const CartoesCriptoSemReporte = lazy(() => import("./pages/CartoesCriptoSemReporte"));
 const JadeCoreReview = lazy(() => import("./pages/JadeCoreReview"));
@@ -389,6 +390,7 @@ const App = () => (
             <Route path="/seguranca-mobile/calyxos" element={<CalyxOS />} />
             <Route path="/seguranca-mobile/grapheneos" element={<GrapheneOS />} />
             <Route path="/seguranca-mobile/iPhone-e-seguro-mesmo" element={<IPhoneESeguroMesmo />} />
+            <Route path="/seguranca-mobile/vpn-no-celular" element={<VpnNoCelularQuandoAjuda />} />
             <Route path="/seguranca-mobile" element={<Navigate to="/seguranca-mobile/calyxos" replace />} />
             <Route path="/saida/cedula-residencia-chile" element={<CedulaResidenciaChile />} />
             <Route path="/soberania-financeira/cartoes-cripto-sem-reporte" element={<CartoesCriptoSemReporte />} />

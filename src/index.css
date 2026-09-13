@@ -408,6 +408,54 @@
     .iphone-page *, .iphone-page *::before, .iphone-page *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   }
 
+  .vpn-page {
+    --vpn-paper: 42 20% 95%;
+    --vpn-paper-deep: 40 15% 88%;
+    --vpn-ink: 174 16% 10%;
+    --vpn-deep: 174 26% 9%;
+    --vpn-copper: 25 58% 45%;
+    --vpn-copper-soft: 28 72% 69%;
+    --vpn-muted: 171 7% 39%;
+    --background: var(--vpn-paper);
+    --foreground: var(--vpn-ink);
+    --card: var(--vpn-paper);
+    --card-foreground: var(--vpn-ink);
+    --border: 170 12% 75%;
+    --ring: var(--vpn-copper);
+    overflow-x: clip;
+    background: hsl(var(--vpn-paper));
+    color: hsl(var(--vpn-ink));
+    font-family: 'Inter Tight', sans-serif;
+  }
+  .vpn-hero, .vpn-deep { background: hsl(var(--vpn-deep)); color: hsl(var(--vpn-paper)); }
+  .vpn-hero-shade { background: linear-gradient(90deg, hsl(var(--vpn-ink) / .98) 0%, hsl(var(--vpn-ink) / .91) 46%, hsl(var(--vpn-ink) / .32) 76%, hsl(var(--vpn-ink) / .48) 100%); }
+  .vpn-ink { color: hsl(var(--vpn-ink)); }
+  .vpn-muted { color: hsl(var(--vpn-muted)); }
+  .vpn-copper { color: hsl(var(--vpn-copper)); }
+  .vpn-copper-soft { color: hsl(var(--vpn-copper-soft)); }
+  .vpn-editorial { color: hsl(var(--vpn-copper)); font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; }
+  .vpn-rule { background: hsl(var(--vpn-copper)); }
+  .vpn-card { background: hsl(var(--vpn-paper) / .9); border-color: hsl(var(--vpn-deep) / .18); backdrop-filter: blur(16px); }
+  .vpn-card-dark { background: hsl(var(--vpn-paper) / .08); border-color: hsl(var(--vpn-paper) / .2); }
+  .vpn-card-future { background: hsl(var(--vpn-paper-deep) / .62); border-color: hsl(var(--vpn-deep) / .24); }
+  .vpn-glass { background: linear-gradient(150deg, hsl(var(--vpn-ink) / .95), hsl(var(--vpn-deep) / .91)); border-color: hsl(var(--vpn-paper) / .28); box-shadow: inset 0 1px 0 hsl(var(--vpn-paper) / .12), 0 30px 80px -48px hsl(var(--vpn-ink)); }
+  .vpn-figure { box-shadow: 0 30px 80px -38px hsl(var(--vpn-deep) / .6); }
+  .vpn-btn { background: hsl(var(--vpn-paper)); color: hsl(var(--vpn-deep)); }
+  .vpn-btn:hover { background: hsl(var(--vpn-copper-soft)); color: hsl(var(--vpn-deep)); }
+  .vpn-step { background: hsl(var(--vpn-copper)); color: hsl(var(--vpn-paper)); }
+  .vpn-focus:focus-visible { outline: 3px solid hsl(var(--vpn-copper)); outline-offset: 4px; }
+  .vpn-dark-shade { background: linear-gradient(90deg, hsl(var(--vpn-ink) / .97) 0%, hsl(var(--vpn-deep) / .89) 52%, hsl(var(--vpn-ink) / .83) 100%); }
+  .vpn-light-shade { background: linear-gradient(90deg, hsl(var(--vpn-paper) / .98) 0%, hsl(var(--vpn-paper) / .94) 52%, hsl(var(--vpn-paper-deep) / .88) 100%); }
+  .vpn-grid { opacity: .14; background-image: linear-gradient(hsl(var(--vpn-paper) / .09) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--vpn-paper) / .09) 1px, transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent); }
+
+  @media (max-width: 767px) {
+    .vpn-hero-shade { background: linear-gradient(180deg, hsl(var(--vpn-ink) / .58) 0%, hsl(var(--vpn-ink) / .95) 72%, hsl(var(--vpn-ink)) 100%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .vpn-page *, .vpn-page *::before, .vpn-page *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  }
+
   @keyframes graphene-title-rule {
     0%, 18% { transform: scaleX(.15); opacity: .4; }
     48%, 80% { transform: scaleX(1); opacity: 1; }
