@@ -219,18 +219,18 @@ const DefesaDigital = () => {
   return (
     <>
       <SeoHead
-        path="/soberania-organica/defesa-digital"
+        path="/soberania-organica/defesa-digital-pessoal"
         custom={{
           title: 'Defesa Digital Pessoal: Senhas, 2FA Hardware, VPN, Criptografia e Antiphishing',
           description: 'Manual tático completo de defesa digital pessoal para o brasileiro: senhas robustas, 2FA por hardware (YubiKey), VPN confiável (Mullvad), criptografia integral, navegação anônima e proteção contra phishing PIX/WhatsApp.',
-          canonical: 'https://lordjunnior.com.br/soberania-organica/defesa-digital',
+          canonical: 'https://lordjunnior.com.br/soberania-organica/defesa-digital-pessoal',
           primaryKeyword: 'defesa digital pessoal',
           lsiKeywords: ['gestor de senha offline', 'YubiKey 2FA hardware', 'Mullvad VPN', 'criptografia de dispositivo', 'antiphishing PIX', 'GrapheneOS'],
           longTailKeywords: ['como proteger PIX de golpe', 'qual gestor de senha mais seguro', 'YubiKey vale a pena', 'como configurar Mullvad VPN', 'GrapheneOS no Brasil', 'celular separado para banco'],
           breadcrumbs: [
             { name: 'Início', url: '/' },
             { name: 'Soberania Orgânica', url: '/soberania-organica' },
-            { name: 'Defesa Digital Pessoal', url: '/soberania-organica/defesa-digital' },
+            { name: 'Defesa Digital Pessoal', url: '/soberania-organica/defesa-digital-pessoal' },
           ],
           schemaType: 'Article',
           articleSection: 'Soberania Orgânica',

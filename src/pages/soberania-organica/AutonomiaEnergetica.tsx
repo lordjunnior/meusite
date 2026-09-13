@@ -263,7 +263,7 @@ const AutonomiaEnergetica = () => {
           ],
           schemaType: 'Article',
           articleSection: 'Soberania Orgânica',
-          relatedPages: ['/soberania-organica/protocolos-apagao', '/soberania-organica/comunicacao-segura', '/soberania-organica/defesa-digital', '/soberania-organica/kit-72h'],
+          relatedPages: ['/soberania-organica/protocolos-apagao', '/soberania-organica/comunicacao-segura', '/soberania-organica/defesa-digital-pessoal', '/soberania-organica/kit-72h'],
         }}
         faqItems={FAQ.map((f) => ({ question: f.q, answer: f.a }))}
       />

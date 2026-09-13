@@ -129,7 +129,7 @@ export const SEARCH_ENTRIES: SearchEntry[] = [
   // Rede & Comunicação Soberana
   { title: "O que é Nostr?", description: "O protocolo de rede social que ninguém consegue desligar: chaves, relays, NIP-05 e censura zero", path: "/o-que-e-nostr", tags: ["nostr", "rede social", "censura", "relay", "npub", "nip-05", "protocolo", "descentralizado", "damus", "amethyst", "primal", "zaps", "lightning"], category: "Infraestrutura" },
   { title: "Comunicação Segura", description: "Mensageria criptografada e comunicação fora do controle estatal", path: "/soberania-organica/comunicacao-segura", tags: ["comunicação", "criptografia", "signal", "privacidade", "mensagem"], category: "Infraestrutura" },
-  { title: "Defesa Digital", description: "Higiene digital, OPSEC e blindagem de dispositivos", path: "/soberania-organica/defesa-digital", tags: ["defesa digital", "opsec", "privacidade", "segurança", "dados"], category: "Infraestrutura" },
+  { title: "Defesa Digital", description: "Higiene digital, OPSEC e blindagem de dispositivos", path: "/soberania-organica/defesa-digital-pessoal", tags: ["defesa digital", "opsec", "privacidade", "segurança", "dados"], category: "Infraestrutura" },
   { title: "Vazamento de Dados", description: "Como seus dados vazam e o que fazer sobre isso", path: "/vazamento-dados", tags: ["vazamento", "dados", "privacidade", "leak"], category: "Alertas" },
 
   // Bitcoin & Autocustódia (novos)
