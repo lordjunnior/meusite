@@ -17,7 +17,7 @@ import imgAmeacas from '@/assets/seguranca-mobile/calyxos-ameacas.jpg';
 import imgTroubleshoot from '@/assets/seguranca-mobile/calyxos-troubleshoot.jpg';
 
 /**
- * /seguranca-mobile/calyxos — Página pillar do CalyxOS.
+ * /seguranca-mobile/calyxos - Página pillar do CalyxOS.
  * Padrão editorial claro: Sand + Teal profundo + Cobre.
  * Copy baseada na experiência real de 11 anos de bancada do autor.
  */
@@ -326,7 +326,7 @@ export default function CalyxOS() {
 
         <Hero />
 
-        {/* CAPÍTULO 1 — O que é */}
+        {/* CAPÍTULO 1 - O que é */}
         <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-[1600px] mx-auto">
             <motion.aside {...fade(0)} className="lg:col-span-4">
@@ -363,7 +363,7 @@ export default function CalyxOS() {
           </div>
         </section>
 
-        {/* CAPÍTULO 2 — Ameaças (bloco teal) */}
+        {/* CAPÍTULO 2 - Ameaças (bloco teal) */}
         <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36" style={{ backgroundColor: '#0e3b3a' }}>
           <div className="max-w-[1600px] mx-auto">
             <motion.div {...fade(0)} className="mb-16">
@@ -414,7 +414,7 @@ export default function CalyxOS() {
           </div>
         </section>
 
-        {/* CAPÍTULO 3 — Para quem é */}
+        {/* CAPÍTULO 3 - Para quem é */}
         <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-[1600px] mx-auto">
             <motion.aside {...fade(0)} className="lg:col-span-4">
@@ -449,7 +449,7 @@ export default function CalyxOS() {
           </div>
         </section>
 
-        {/* CAPÍTULO 4 — Trade-offs (bloco sand escuro) */}
+        {/* CAPÍTULO 4 - Trade-offs (bloco sand escuro) */}
         <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36" style={{ backgroundColor: '#ece2d3' }}>
           <div className="max-w-[1600px] mx-auto">
             <motion.div {...fade(0)} className="mb-14">
@@ -475,7 +475,7 @@ export default function CalyxOS() {
           </div>
         </section>
 
-        {/* CAPÍTULO 5 — Compatibilidade */}
+        {/* CAPÍTULO 5 - Compatibilidade */}
         <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36">
           <div className="max-w-[1600px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
@@ -545,7 +545,7 @@ export default function CalyxOS() {
           </div>
         </section>
 
-        {/* CAPÍTULO 6 — Instalação (bloco teal) */}
+        {/* CAPÍTULO 6 - Instalação (bloco teal) */}
         <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36" style={{ backgroundColor: '#0e3b3a' }}>
           <div className="max-w-[1200px] mx-auto">
             <motion.div {...fade(0)} className="mb-14">
@@ -580,7 +580,7 @@ export default function CalyxOS() {
           </div>
         </section>
 
-        {/* CAPÍTULO 7 — Troubleshooting */}
+        {/* CAPÍTULO 7 - Troubleshooting */}
         <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36">
           <div className="max-w-[1600px] mx-auto">
             <motion.div {...fade(0)} className="mb-14">
@@ -615,7 +615,7 @@ export default function CalyxOS() {
           </div>
         </section>
 
-        {/* CAPÍTULO 8 — Manutenção + Veredito */}
+        {/* CAPÍTULO 8 - Manutenção + Veredito */}
         <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36" style={{ backgroundColor: '#ece2d3' }}>
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-[1600px] mx-auto">
             <motion.div {...fade(0)} className="lg:col-span-6">
