@@ -11,10 +11,12 @@ Remove 'Arena Bitcoin' brand from all content.
 HOMEPAGE/CORE shell: dark theme (#07080c), Bebas Neue + Inter Tight. Full-width.
 PÁGINAS PESADAS/MANUAIS/HUBS/RECEITAS: PROIBIDO dark. Padrão editorial CLARO obrigatório (sand+teal+copper) — referência /saida/jurisdicoes-amigaveis. Inter Tight 900 + Playfair italic. Alternar blocos sand e teal.
 Toda página nova entrega: meta title<60, meta desc<160, H1, subtítulo, hero full-bleed 88vh+, alt text, FAQ 5+, CTA, JSON-LD, "Continue sua trilha" 3 links internos.
+MÍNIMO POR PÁGINA: 6+ imagens reais, hero full-bleed ponta a ponta, animações de entrada, hover em tudo, zero emoji, zero travessão/vícios de IA.
 Navigation icons must be strictly monochromatic.
 Mandatory "PIX NÃO É PRIVADO" warning on PIX guides.
 
 ## Memories
+- [Padrão mínimo de página](mem://design/page-minimum-standard) — 6+ imagens, hero full-bleed, animações, hover, sem emoji, sem vícios de IA
 - [PROIBIDO Páginas Dark - Padrão Editorial Universal](mem://constraints/design/no-dark-pages-mandate) — REGRA UNIVERSAL: nenhuma página pode ser dark, sempre paleta clara editorial sand+teal+copper, com checklist de 15 pontos
 - [PROIBIDO Álcool / Vícios](mem://constraints/content/no-alcohol-no-addiction) — Nenhuma receita pode usar cachaça, álcool ou substância viciante. Sempre infusão / lambedor com mel cru.
 - [PROIBIDO Travessão e "lambedor"](mem://constraints/content/no-em-dash-and-banned-words) - Nunca usar travessão (—) nem a palavra "lambedor". Usar "xarope" ou "infusão concentrada com mel cru".
