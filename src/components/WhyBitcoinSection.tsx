@@ -221,58 +221,83 @@ const WhyBitcoinSection = () => {
             As perguntas que todo mundo tem mas tem vergonha de fazer.
           </p>
 
-          <div className="flex flex-col gap-0.5">
-            {faqItems.map((item, i) => (
-              <div
-                key={i}
-                className={`rounded-lg border bg-card overflow-hidden transition-colors ${openIndex === i ? "border-gold/25" : "border-border/50 hover:border-gold/20"}`}
-              >
-                <button
-                  onClick={() => toggle(i)}
-                  className="w-full flex items-center justify-between p-5 gap-4 text-left"
-                >
-                  <h3 className={`text-sm font-bold leading-snug transition-colors ${openIndex === i ? "text-gold" : "text-foreground/80"}`}>
-                    {item.question}
-                  </h3>
-                  <div
-                    className={`w-7 h-7 rounded-full border flex items-center justify-center shrink-0 font-mono text-base transition-all ${openIndex === i ? "bg-gold/10 border-gold/30 text-gold rotate-45" : "border-border text-muted-foreground"}`}
+          <div className="flex flex-col">
+            {faqItems.map((item, i) => {
+              const isOpen = openIndex === i;
+              return (
+                <div key={i} className="group relative">
+                  <button
+                    onClick={() => toggle(i)}
+                    className="w-full flex items-center justify-between py-5 gap-4 text-left"
                   >
-                    +
-                  </div>
-                </button>
-                <div
-                  className="grid transition-all duration-400"
-                  style={{ gridTemplateRows: openIndex === i ? "1fr" : "0fr" }}
-                >
-                  <div className="overflow-hidden">
-                    <div className="px-5 pb-5 pt-0 border-t border-border/30 text-sm text-muted-foreground leading-relaxed pt-4">
-                      {item.answer}
+                    <h3 className={`text-sm md:text-base font-bold leading-snug transition-colors duration-300 ${isOpen ? "text-gold" : "text-foreground/75 group-hover:text-foreground"}`}>
+                      {item.question}
+                    </h3>
+                    <span
+                      className={`relative w-5 h-5 shrink-0 transition-transform duration-500 ease-out ${isOpen ? "rotate-[135deg] text-gold" : "text-muted-foreground group-hover:text-gold/70"}`}
+                    >
+                      <span className="absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-current" />
+                      <span className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-px bg-current" />
+                    </span>
+                  </button>
+                  <div
+                    className="grid transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                    style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+                  >
+                    <div className="overflow-hidden">
+                      <div
+                        className={`pb-6 pr-10 text-sm text-muted-foreground leading-relaxed transition-opacity duration-500 ${isOpen ? "opacity-100" : "opacity-0"}`}
+                        style={{ transitionDelay: isOpen ? "150ms" : "0ms" }}
+                      >
+                        {item.answer}
+                      </div>
                     </div>
                   </div>
+                  <span
+                    className={`absolute bottom-0 left-0 right-0 h-px transition-all duration-500 ${
+                      isOpen
+                        ? "bg-gradient-to-r from-gold/60 via-gold/25 to-transparent opacity-100"
+                        : "bg-gradient-to-r from-border/60 via-border/25 to-transparent opacity-60 group-hover:from-gold/50 group-hover:opacity-100"
+                    }`}
+                  />
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
-          {/* CTA FINAL */}
-          <div className="mt-12 rounded-2xl border border-gold/15 bg-card p-10 text-center relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-            <h3 className="font-bold text-2xl md:text-3xl tracking-tight mb-2">AINDA COM DÚVIDAS?</h3>
-            <p className="text-muted-foreground text-sm max-w-md mx-auto mb-6">
+          {/* CTA FINAL — Glassmorphism */}
+          <div
+            className="mt-14 rounded-2xl p-10 text-center relative overflow-hidden backdrop-blur-xl bg-foreground/[0.03]"
+            style={{
+              border: "1px solid transparent",
+              backgroundImage:
+                "linear-gradient(hsl(var(--background) / 0.35), hsl(var(--background) / 0.35)), linear-gradient(135deg, hsl(var(--gold) / 0.35), hsl(var(--gold) / 0.05) 40%, transparent 70%, hsl(var(--gold) / 0.15))",
+              backgroundOrigin: "border-box",
+              backgroundClip: "padding-box, border-box",
+              boxShadow: "0 24px 70px -24px hsl(var(--gold) / 0.18), inset 0 1px 0 hsl(0 0% 100% / 0.06)",
+            }}
+          >
+            <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-gold/10 blur-[80px] rounded-full pointer-events-none" />
+            <h3 className="font-bold text-2xl md:text-3xl tracking-tight mb-2 relative">AINDA COM DÚVIDAS?</h3>
+            <p className="text-muted-foreground text-sm max-w-md mx-auto mb-8 relative">
               Comece pelo Protocolo Inicial. É gratuito, direto ao ponto, e feito para quem nunca teve contato com Bitcoin.
             </p>
-            <div className="flex gap-3 justify-center flex-wrap">
+            <div className="flex gap-6 justify-center items-center flex-wrap relative">
               <Link
                 to="/protocolo-inicial"
-                className="inline-flex items-center gap-2 bg-gold hover:bg-gold/90 text-background font-bold tracking-wider px-8 py-3 rounded-md transition-all hover:shadow-[0_12px_40px_hsl(var(--gold)/0.4)] hover:-translate-y-0.5"
+                className="group relative inline-flex items-center gap-2 bg-gradient-to-b from-[#FFC66B] to-gold text-background font-bold tracking-wider px-8 py-3 rounded-lg transition-all hover:shadow-[0_14px_50px_hsl(var(--gold)/0.45)] hover:-translate-y-0.5 overflow-hidden"
               >
-                <Zap className="w-4 h-4" /> Acessar o Protocolo
+                <span className="absolute inset-0 -translate-x-full animate-[shimmer_3.5s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+                <span className="absolute inset-0 rounded-lg shadow-[inset_0_1px_8px_hsl(0_0%_100%/0.35)] pointer-events-none" />
+                <Zap className="w-4 h-4 relative" /> <span className="relative">Acessar o Protocolo</span>
               </Link>
               <Link
                 to="/#manifesto"
-                className="inline-flex items-center gap-2 font-bold text-foreground text-sm tracking-wide uppercase px-7 py-3 rounded-md border border-border hover:border-gold hover:text-gold transition-all"
+                className="group relative inline-flex items-center gap-2 font-bold text-foreground/80 hover:text-gold text-sm tracking-wide uppercase py-2 transition-colors duration-300"
               >
-                Explorar o Manifesto <ArrowRight className="w-4 h-4" />
+                Explorar o Manifesto
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                <span className="absolute bottom-0 left-0 h-px w-full bg-gold origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-out" />
               </Link>
             </div>
           </div>
