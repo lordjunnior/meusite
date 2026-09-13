@@ -437,6 +437,7 @@ const App = () => (
             <Route path="/soberania-organica/autonomia-veicular" element={<AutonomiaVeicular />} />
             <Route path="/soberania-organica/soberania-veicular" element={<Navigate to="/soberania-organica/autonomia-veicular" replace />} />
             <Route path="/soberania-organica/defesa-digital-pessoal" element={<DefesaDigital />} />
+            <Route path="/soberania-organica/defesa-digital" element={<Navigate to="/soberania-organica/defesa-digital-pessoal" replace />} />
             <Route path="/soberania-organica/comunicacao-segura" element={<ComunicacaoSegura />} />
             <Route path="/o-que-e-nostr" element={<NostrRedeSemCensura />} />
             <Route path="/nostr-rede-social-sem-censura" element={<LegacyRedirect to="/o-que-e-nostr" />} />
