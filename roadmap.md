@@ -1,5 +1,11 @@
 # Roadmap
 
+## Segurança Mobile (em andamento)
+- [x] /seguranca-mobile/calyxos
+- [ ] /seguranca-mobile/grapheneos
+- [ ] integrar GrapheneOS em rotas, sidebar, busca e sitemap
+- [ ] validar conteúdo, imagens, animações, botões e mobile da página GrapheneOS
+
 ## Tier 1 SEO (concluído)
 - [x] Hub /comparativos/melhores-hardware-wallets + /comparativos/coldcard-review + /comparativos/trezor-review
 - [x] /imposto-renda/declarar-bitcoin-2026 + /imposto-renda/isencao-35-mil
