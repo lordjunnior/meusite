@@ -14,10 +14,14 @@ import logoAsset from '@/assets/seguranca-mobile/grapheneos-logo.svg.asset.json'
 import bancadaAsset from '@/assets/seguranca-mobile/grapheneos-bancada.jpg.asset.json';
 import arquiteturaAsset from '@/assets/seguranca-mobile/grapheneos-isolamento-operacional.jpg.asset.json';
 import pixelsAsset from '@/assets/seguranca-mobile/grapheneos-pixels-compativeis.jpg.asset.json';
-import appsAsset from '@/assets/seguranca-mobile/grapheneos-governanca-aplicativos.jpg.asset.json';
 import instalacaoAsset from '@/assets/seguranca-mobile/grapheneos-instalacao.jpg.asset.json';
 import redeAsset from '@/assets/seguranca-mobile/grapheneos-rede.jpg.asset.json';
 import diagnosticoAsset from '@/assets/seguranca-mobile/grapheneos-diagnostico.jpg.asset.json';
+import appsGovernanceBackground from '@/assets/seguranca-mobile/grapheneos-apps-governance-background.jpg';
+import sandboxedPlayImage from '@/assets/seguranca-mobile/grapheneos-sandboxed-play.jpg';
+import appPermissionsImage from '@/assets/seguranca-mobile/grapheneos-app-permissions.jpg';
+import appPilotImage from '@/assets/seguranca-mobile/grapheneos-app-pilot.jpg';
+import faqBackground from '@/assets/seguranca-mobile/grapheneos-faq-background.jpg';
 import communityBackgroundAsset from '@/assets/seguranca-mobile/grapheneos-community-background.jpg.asset.json';
 import discordImageAsset from '@/assets/seguranca-mobile/grapheneos-discord-support.jpg.asset.json';
 import matrixImageAsset from '@/assets/seguranca-mobile/grapheneos-matrix-support-v3.jpg.asset.json';
@@ -75,6 +79,30 @@ const COMMUNITY_CHANNELS = [
   { title: 'Discord oficial', label: 'Resposta em tempo real', text: 'Canal mais ativo para suporte, dúvidas, testes e participação na comunidade.', href: 'https://discord.com/invite/grapheneos', action: 'Entrar no Discord', image: discordImageAsset, logo: discordLogoAsset, logoAlt: 'Discord' },
   { title: 'Matrix oficial', label: 'Rede federada', text: 'Salas separadas para comunidade, aplicativos, desenvolvimento, testes, lançamentos, infraestrutura e mídia.', href: 'https://matrix.to/#/%23community:grapheneos.org', action: 'Acessar o Matrix', image: matrixImageAsset, logo: matrixLogoAsset, logoAlt: 'Matrix' },
   { title: 'Fórum oficial', label: 'Conhecimento persistente', text: 'Discussões técnicas extensas, documentação comunitária e respostas que permanecem fáceis de pesquisar.', href: 'https://discuss.grapheneos.org/', action: 'Abrir o fórum', image: forumImageAsset, logo: logoAsset, logoAlt: 'GrapheneOS' },
+];
+
+const APP_GOVERNANCE = [
+  {
+    title: 'Sandboxed Google Play',
+    label: 'Compatibilidade sob controle',
+    text: 'Instale os serviços Google como aplicativos comuns, sem privilégios especiais no sistema, apenas quando uma dependência operacional estiver documentada.',
+    image: sandboxedPlayImage,
+    icon: Layers3,
+  },
+  {
+    title: 'Permissões por finalidade',
+    label: 'Mínimo privilégio',
+    text: 'Rede, sensores, câmera, microfone, localização e arquivos devem responder à finalidade aprovada para cada aplicativo e perfil de uso.',
+    image: appPermissionsImage,
+    icon: Database,
+  },
+  {
+    title: 'Piloto antes da escala',
+    label: 'Validação operacional',
+    text: 'Banco, governo, autenticação, MDM e assinatura digital precisam ser testados em um ativo piloto, com alternativa registrada para eventuais bloqueios.',
+    image: appPilotImage,
+    icon: BriefcaseBusiness,
+  },
 ];
 
 const INSTALL = [
@@ -227,14 +255,37 @@ export default function GrapheneOS() {
           </div>
         </section>
 
-        <section className="graphene-paper-deep px-6 py-24 md:px-12 md:py-36 lg:px-20">
+        <section className="graphene-governance relative isolate overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
+          <motion.img src={appsGovernanceBackground} alt="Central corporativa de governança de aplicativos em dispositivos móveis" loading="lazy" decoding="async" width={1920} height={1080} initial={{ scale: 1.04 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: .15 }} transition={{ duration: 2.4, ease: EASE }} className="absolute inset-0 -z-30 h-full w-full object-cover" />
+          <div className="graphene-governance-shade absolute inset-0 -z-20" />
+          <div className="graphene-community-grid absolute inset-0 -z-10" />
           <div className="mx-auto max-w-[1600px]">
-            <Heading chapter="04 / Aplicativos e governança" title="Compatibilidade controlada," accent="não privilégio invisível." />
-            <div className="grid items-start gap-12 lg:grid-cols-12">
-              <motion.div {...reveal()} className="space-y-7 text-lg leading-[1.75] lg:col-span-7 md:text-xl"><p>O GrapheneOS não inclui serviços Google. Quando uma necessidade corporativa exige essa dependência, o Sandboxed Google Play instala os componentes como aplicativos comuns, sem privilégios especiais no sistema.</p><p>Isso preserva compatibilidade com notificações, mapas e diversos aplicativos, mas não apaga o fornecedor da equação. Rede e permissões concedidas continuam permitindo coleta. A governança correta começa com necessidade documentada, perfil isolado e mínimo privilégio.</p><p>Apps bancários, governamentais e ferramentas com Play Integrity exigem piloto. Muitos funcionam, alguns recusam o ambiente e o comportamento pode mudar após uma atualização. Nenhuma implantação séria deve prometer compatibilidade universal.</p></motion.div>
-              <motion.aside {...reveal(.12)} className="graphene-teal rounded-lg p-8 lg:col-span-5"><BriefcaseBusiness className="graphene-copper-soft h-8 w-8"/><h3 className="mt-6 text-2xl font-black tracking-normal text-background">Política mínima de aprovação</h3><ul className="mt-6 space-y-4 text-background/80">{['Finalidade e proprietário do aplicativo', 'Dados acessados e permissões necessárias', 'Dependência de Google Play e atestação', 'Perfil autorizado para instalação', 'Plano alternativo em caso de bloqueio'].map(item => <li key={item} className="flex gap-3"><CheckCircle2 className="graphene-copper-soft mt-0.5 h-5 w-5 shrink-0"/><span>{item}</span></li>)}</ul></motion.aside>
+            <motion.div {...reveal()} className="mb-14 max-w-6xl">
+              <span className="graphene-copper-soft text-xs font-bold uppercase tracking-[0.3em]">04 / Aplicativos e governança</span>
+              <h2 className="graphene-layer-title mt-6 max-w-[16ch]"><span className="graphene-layer-title-main">Compatibilidade controlada.</span><span className="graphene-layer-title-accent">Privilégio nenhum é invisível.</span></h2>
+              <p className="mt-7 max-w-3xl text-lg leading-relaxed text-background/78 md:text-xl">O GrapheneOS não inclui serviços Google. Cada dependência deve existir por necessidade documentada, dentro do perfil correto e com o menor conjunto possível de permissões.</p>
+            </motion.div>
+            <div className="grid gap-6 lg:grid-cols-3">
+              {APP_GOVERNANCE.map((item, i) => (
+                <motion.article key={item.title} {...reveal(i * .09)} whileHover={{ y: -8 }} className="graphene-community-card group relative flex min-h-[590px] flex-col overflow-hidden rounded-lg border">
+                  <div className="relative h-72 overflow-hidden">
+                    <img src={item.image} alt={`Aplicação prática de ${item.title} no GrapheneOS`} loading="lazy" decoding="async" width={1200} height={900} className="h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.08]" />
+                    <div className="graphene-community-image-shade absolute inset-0" />
+                    <div className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-md border border-background/20 bg-foreground/75 backdrop-blur-md"><item.icon className="graphene-copper-soft h-7 w-7" /></div>
+                    <span className="absolute bottom-5 left-6 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-background/80">{item.label}</span>
+                  </div>
+                  <div className="relative flex flex-1 flex-col p-7 md:p-8">
+                    <ShieldCheck className="graphene-copper-soft h-6 w-6 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110" />
+                    <h3 className="mt-5 font-display text-3xl font-bold tracking-normal text-background">{item.title}</h3>
+                    <p className="mt-4 flex-1 text-base leading-relaxed text-background/72 md:text-lg">{item.text}</p>
+                  </div>
+                </motion.article>
+              ))}
             </div>
-            <Figure asset={appsAsset} alt="Analista avaliando permissões e dependências de aplicativos em um Google Pixel e computador" caption="Aplicativo aprovado é aquele cuja finalidade, permissão e dependência foram avaliadas." />
+            <motion.aside {...reveal(.12)} className="graphene-community-notes mt-10 grid overflow-hidden rounded-lg border border-background/15 backdrop-blur-xl lg:grid-cols-[0.8fr_1.2fr]">
+              <div className="p-7 md:p-9"><BriefcaseBusiness className="graphene-copper-soft h-7 w-7"/><h3 className="mt-5 text-2xl font-black tracking-normal text-background">Política mínima de aprovação</h3><p className="mt-4 leading-relaxed text-background/72">Aplicativo aprovado é aquele cuja finalidade, permissão, dependência e alternativa operacional foram avaliadas.</p></div>
+              <ul className="border-t border-background/15 p-7 text-background/80 md:p-9 lg:border-l lg:border-t-0">{['Finalidade e proprietário do aplicativo', 'Dados acessados e permissões necessárias', 'Dependência de Google Play e atestação', 'Perfil autorizado para instalação', 'Plano alternativo em caso de bloqueio'].map(item => <li key={item} className="flex gap-3 border-b border-background/10 py-3 first:pt-0 last:border-0 last:pb-0"><CheckCircle2 className="graphene-copper-soft mt-0.5 h-5 w-5 shrink-0"/><span>{item}</span></li>)}</ul>
+            </motion.aside>
           </div>
         </section>
 
@@ -314,11 +365,13 @@ export default function GrapheneOS() {
           </div>
         </section>
 
-        <section id="faq" className="graphene-paper-deep scroll-mt-16 px-6 py-24 md:px-12 md:py-36 lg:px-20">
+        <section id="faq" className="graphene-faq relative isolate scroll-mt-16 overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
+          <img src={faqBackground} alt="Google Pixel em ambiente editorial dedicado à documentação de segurança" loading="lazy" decoding="async" width={1920} height={1080} className="absolute inset-0 -z-30 h-full w-full object-cover" />
+          <div className="graphene-faq-shade absolute inset-0 -z-20" />
           <div className="mx-auto max-w-[1600px]">
-            <Heading chapter="08 / FAQ técnico" title="Objeções complexas," accent="respostas abertas." />
-            <p className="graphene-muted -mt-7 max-w-3xl text-lg leading-relaxed md:text-xl">Todas as respostas permanecem visíveis. Sem cliques adicionais, sem informação escondida e com profundidade suficiente para apoiar uma análise técnica.</p>
-            <div className="mt-14 grid items-start gap-5 md:grid-cols-2 xl:grid-cols-3">{FAQ.map((item, i) => <motion.article key={item.q} {...reveal((i % 3) * .06)} className={`graphene-card group rounded-lg border p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${i === 0 || i === 7 ? 'md:col-span-2' : ''}`}><div className="mb-5 flex items-center justify-between"><span className="graphene-copper text-xs font-black tracking-[0.25em]">FAQ {String(i + 1).padStart(2, '0')}</span><ShieldCheck className="graphene-copper h-5 w-5 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110"/></div><h3 className="graphene-ink text-xl font-black leading-tight tracking-normal md:text-2xl">{item.q}</h3><p className="mt-5 text-base leading-[1.75] md:text-lg">{item.a}</p></motion.article>)}</div>
+            <Heading chapter="08 / FAQ técnico" title="Objeções complexas," accent="respostas abertas." dark />
+            <p className="-mt-7 max-w-3xl text-lg leading-relaxed text-background/75 md:text-xl">Todas as respostas permanecem visíveis. Sem cliques adicionais, sem informação escondida e com profundidade suficiente para apoiar uma análise técnica.</p>
+            <div className="mt-14 grid items-start gap-5 md:grid-cols-2 xl:grid-cols-3">{FAQ.map((item, i) => <motion.article key={`${item.q}-${i}`} {...reveal((i % 3) * .06)} className={`graphene-faq-card group rounded-lg border p-7 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 md:p-8 ${i === 0 || i === 7 ? 'md:col-span-2' : ''}`}><div className="mb-5 flex items-center justify-between"><span className="graphene-copper-soft text-xs font-black tracking-[0.25em]">FAQ {String(i + 1).padStart(2, '0')}</span><ShieldCheck className="graphene-copper-soft h-5 w-5 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110"/></div><h3 className="text-xl font-black leading-tight tracking-normal text-background md:text-2xl">{item.q}</h3><p className="mt-5 text-base leading-[1.75] text-background/75 md:text-lg">{item.a}</p></motion.article>)}</div>
           </div>
         </section>
 

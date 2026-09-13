@@ -289,6 +289,19 @@
   .graphene-community-card:hover { border-color: hsl(var(--graph-copper-soft) / .55); }
   .graphene-community-image-shade { background: linear-gradient(180deg, transparent 35%, hsl(var(--graph-ink) / .9) 100%); }
   .graphene-community-notes { background: hsl(var(--graph-ink) / .72); }
+  .graphene-governance { background: hsl(var(--graph-ink)); color: hsl(var(--graph-paper)); }
+  .graphene-governance-shade { background: linear-gradient(180deg, hsl(var(--graph-ink) / .78) 0%, hsl(var(--graph-teal) / .9) 50%, hsl(var(--graph-ink) / .97) 100%); }
+  .graphene-faq { background: hsl(var(--graph-ink)); color: hsl(var(--graph-paper)); }
+  .graphene-faq-shade { background: linear-gradient(90deg, hsl(var(--graph-ink) / .97) 0%, hsl(var(--graph-teal) / .88) 52%, hsl(var(--graph-ink) / .76) 100%); }
+  .graphene-faq-card {
+    background: linear-gradient(155deg, hsl(var(--graph-ink) / .84), hsl(var(--graph-teal) / .72));
+    border-color: hsl(var(--graph-paper) / .17);
+    box-shadow: 0 28px 70px -46px hsl(var(--graph-ink)), inset 0 1px 0 hsl(var(--graph-paper) / .1);
+  }
+  .graphene-faq-card:hover {
+    border-color: hsl(var(--graph-copper-soft) / .5);
+    box-shadow: 0 34px 76px -44px hsl(var(--graph-ink)), inset 0 1px 0 hsl(var(--graph-paper) / .18);
+  }
   .graphene-layer-title {
     position: relative;
     isolation: isolate;

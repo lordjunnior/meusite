@@ -6,6 +6,7 @@
 - [x] integrar GrapheneOS em rotas, sidebar, busca e sitemap
 - [x] validar conteúdo, imagens, animações, botões e mobile da página GrapheneOS
 - [x] elevar a seção Comunidade e Suporte com fundo e cartões visuais
+- [x] elevar Aplicativos e Governança e aplicar fundo integral ao FAQ técnico
 
 ## Tier 1 SEO (concluído)
 - [x] Hub /comparativos/melhores-hardware-wallets + /comparativos/coldcard-review + /comparativos/trezor-review
