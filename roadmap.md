@@ -35,3 +35,4 @@
 - [x] Base 72 ligada à farmácia caseira e à despensa viva
 - [x] Títulos internos de Wise, Payoneer e GrabrFi no tom de privacidade
 - [x] Novilíngua ligada ao CBDC Brasil
+- [x] substituir a imagem do Matrix e aplicar título multicamada na comunidade GrapheneOS
