@@ -89,6 +89,14 @@ export const navGroups: NavGroup[] = [
     ],
   },
   {
+    label: "Segurança Mobile",
+    icon: Smartphone,
+    color: undefined,
+    items: [
+      { label: "CalyxOS", route: "/seguranca-mobile/calyxos", badge: "Novo" },
+    ],
+  },
+  {
     label: "Economia & Filosofia",
     icon: TrendingUp,
     color: undefined,
