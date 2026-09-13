@@ -9,6 +9,7 @@ import {
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import heroImg from '@/assets/seguranca-mobile/calyxos-hero.jpg';
+import logoCalyx from '@/assets/seguranca-mobile/calyxos-logo.png';
 import imgBancada from '@/assets/seguranca-mobile/calyxos-bancada.jpg';
 import imgInterface from '@/assets/seguranca-mobile/calyxos-interface.jpg';
 import imgInstalacao from '@/assets/seguranca-mobile/calyxos-instalacao.jpg';
@@ -247,6 +248,19 @@ function Hero() {
           <Smartphone size={16} style={{ color: '#f4ede4' }} />
           <span className="text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase" style={{ color: '#f4ede4' }}>
             Segurança Mobile · Guia de Bancada
+          </span>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.25, ease: APPLE_EASE }}
+          className="inline-flex items-center gap-4 mb-6 self-start px-5 py-3 rounded-2xl backdrop-blur-md transition-transform duration-500 hover:scale-[1.03]"
+          style={{ backgroundColor: 'rgba(244,237,228,0.12)', border: '1px solid rgba(244,237,228,0.22)' }}>
+          <img src={logoCalyx} alt="Logo oficial do CalyxOS" width={48} height={48}
+            className="w-10 h-10 md:w-12 md:h-12" loading="eager" decoding="async" />
+          <span className="text-xl md:text-2xl font-black tracking-tight"
+            style={{ fontFamily: "'Inter Tight', sans-serif", color: '#f4ede4' }}>
+            CalyxOS
           </span>
         </motion.div>
 
