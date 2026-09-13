@@ -83,23 +83,23 @@ const COMMUNITY_CHANNELS = [
 
 const APP_GOVERNANCE = [
   {
-    title: 'Sandboxed Google Play',
-    label: 'Compatibilidade sob controle',
-    text: 'Instale os serviços Google como aplicativos comuns, sem privilégios especiais no sistema, apenas quando uma dependência operacional estiver documentada.',
+    title: 'Serviços Google sem privilégios especiais',
+    label: 'Sandboxed Google Play',
+    text: 'O GrapheneOS não inclui serviços Google. Quando uma necessidade corporativa exige essa dependência, o Sandboxed Google Play instala os componentes como aplicativos comuns, sem privilégios especiais no sistema.',
     image: sandboxedPlayImage,
     icon: Layers3,
   },
   {
-    title: 'Permissões por finalidade',
-    label: 'Mínimo privilégio',
-    text: 'Rede, sensores, câmera, microfone, localização e arquivos devem responder à finalidade aprovada para cada aplicativo e perfil de uso.',
+    title: 'Necessidade documentada, perfil isolado e mínimo privilégio',
+    label: 'Governança correta',
+    text: 'Isso preserva compatibilidade com notificações, mapas e diversos aplicativos, mas não apaga o fornecedor da equação. Rede e permissões concedidas continuam permitindo coleta. A governança correta começa com necessidade documentada, perfil isolado e mínimo privilégio.',
     image: appPermissionsImage,
     icon: Database,
   },
   {
-    title: 'Piloto antes da escala',
-    label: 'Validação operacional',
-    text: 'Banco, governo, autenticação, MDM e assinatura digital precisam ser testados em um ativo piloto, com alternativa registrada para eventuais bloqueios.',
+    title: 'Apps bancários, governamentais e ferramentas com Play Integrity',
+    label: 'Compatibilidade exige piloto',
+    text: 'Apps bancários, governamentais e ferramentas com Play Integrity exigem piloto. Muitos funcionam, alguns recusam o ambiente e o comportamento pode mudar após uma atualização. Nenhuma implantação séria deve prometer compatibilidade universal.',
     image: appPilotImage,
     icon: BriefcaseBusiness,
   },
@@ -262,8 +262,7 @@ export default function GrapheneOS() {
           <div className="mx-auto max-w-[1600px]">
             <motion.div {...reveal()} className="mb-14 max-w-6xl">
               <span className="graphene-copper-soft text-xs font-bold uppercase tracking-[0.3em]">04 / Aplicativos e governança</span>
-              <h2 className="graphene-layer-title mt-6 max-w-[16ch]"><span className="graphene-layer-title-main">Compatibilidade controlada.</span><span className="graphene-layer-title-accent">Privilégio nenhum é invisível.</span></h2>
-              <p className="mt-7 max-w-3xl text-lg leading-relaxed text-background/78 md:text-xl">O GrapheneOS não inclui serviços Google. Cada dependência deve existir por necessidade documentada, dentro do perfil correto e com o menor conjunto possível de permissões.</p>
+              <h2 className="graphene-layer-title mt-6 max-w-[16ch]"><span className="graphene-layer-title-main">Compatibilidade controlada,</span><span className="graphene-layer-title-accent">não privilégio invisível.</span></h2>
             </motion.div>
             <div className="grid gap-6 lg:grid-cols-3">
               {APP_GOVERNANCE.map((item, i) => (
@@ -283,7 +282,7 @@ export default function GrapheneOS() {
               ))}
             </div>
             <motion.aside {...reveal(.12)} className="graphene-community-notes mt-10 grid overflow-hidden rounded-lg border border-background/15 backdrop-blur-xl lg:grid-cols-[0.8fr_1.2fr]">
-              <div className="p-7 md:p-9"><BriefcaseBusiness className="graphene-copper-soft h-7 w-7"/><h3 className="mt-5 text-2xl font-black tracking-normal text-background">Política mínima de aprovação</h3><p className="mt-4 leading-relaxed text-background/72">Aplicativo aprovado é aquele cuja finalidade, permissão, dependência e alternativa operacional foram avaliadas.</p></div>
+              <div className="p-7 md:p-9"><BriefcaseBusiness className="graphene-copper-soft h-7 w-7"/><h3 className="mt-5 text-2xl font-black tracking-normal text-background">Política mínima de aprovação</h3><p className="mt-4 leading-relaxed text-background/72">Aplicativo aprovado é aquele cuja finalidade, permissão e dependência foram avaliadas.</p></div>
               <ul className="border-t border-background/15 p-7 text-background/80 md:p-9 lg:border-l lg:border-t-0">{['Finalidade e proprietário do aplicativo', 'Dados acessados e permissões necessárias', 'Dependência de Google Play e atestação', 'Perfil autorizado para instalação', 'Plano alternativo em caso de bloqueio'].map(item => <li key={item} className="flex gap-3 border-b border-background/10 py-3 first:pt-0 last:border-0 last:pb-0"><CheckCircle2 className="graphene-copper-soft mt-0.5 h-5 w-5 shrink-0"/><span>{item}</span></li>)}</ul>
             </motion.aside>
           </div>
