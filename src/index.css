@@ -284,3 +284,9 @@
     background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.5), transparent);
   }
 }
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  55% { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}
