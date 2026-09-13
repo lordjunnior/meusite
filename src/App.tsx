@@ -146,6 +146,7 @@ const Propolis = lazy(() => import("./pages/Propolis"));
 const SegundoPassaporte = lazy(() => import("./pages/saida/SegundoPassaporte"));
 const ResidenciaFiscal = lazy(() => import("./pages/saida/ResidenciaFiscal"));
 const JurisdicoesAmigaveis = lazy(() => import("./pages/saida/JurisdicoesAmigaveis"));
+const CalyxOS = lazy(() => import("./pages/seguranca-mobile/CalyxOS"));
 const CedulaResidenciaChile = lazy(() => import("./pages/saida/CedulaResidenciaChile"));
 const CartoesCriptoSemReporte = lazy(() => import("./pages/CartoesCriptoSemReporte"));
 const JadeCoreReview = lazy(() => import("./pages/JadeCoreReview"));
@@ -383,6 +384,8 @@ const App = () => (
             <Route path="/saida/segundo-passaporte" element={<SegundoPassaporte />} />
             <Route path="/saida/residencia-fiscal" element={<ResidenciaFiscal />} />
             <Route path="/saida/jurisdicoes-amigaveis" element={<JurisdicoesAmigaveis />} />
+            <Route path="/seguranca-mobile/calyxos" element={<CalyxOS />} />
+            <Route path="/seguranca-mobile" element={<Navigate to="/seguranca-mobile/calyxos" replace />} />
             <Route path="/saida/cedula-residencia-chile" element={<CedulaResidenciaChile />} />
             <Route path="/soberania-financeira/cartoes-cripto-sem-reporte" element={<CartoesCriptoSemReporte />} />
             <Route path="/autocustodia/jade-core-review" element={<JadeCoreReview />} />
