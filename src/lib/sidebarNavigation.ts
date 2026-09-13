@@ -94,6 +94,7 @@ export const navGroups: NavGroup[] = [
     color: undefined,
     items: [
       { label: "CalyxOS", route: "/seguranca-mobile/calyxos", badge: "Novo" },
+      { label: "GrapheneOS", route: "/seguranca-mobile/grapheneos", badge: "Novo" },
     ],
   },
   {

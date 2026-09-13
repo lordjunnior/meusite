@@ -8,6 +8,7 @@ export interface SearchEntry {
 }
 
 export const SEARCH_ENTRIES: SearchEntry[] = [
+  { title: "GrapheneOS: Segurança Mobile", description: "Arquitetura, Pixels compatíveis, aplicativos corporativos, instalação segura, governança e limitações reais", path: "/seguranca-mobile/grapheneos", tags: ["grapheneos", "android seguro", "pixel", "privacidade", "segurança mobile", "sandboxed google play", "verified boot", "titan m2"], category: "Segurança Mobile" },
   { title: "CalyxOS: Guia Completo", description: "O que é, para quem serve, modelos Pixel compatíveis, instalação passo a passo e erros comuns, por quem passou 11 anos em bancada", path: "/seguranca-mobile/calyxos", tags: ["calyxos", "android", "privacidade", "pixel", "celular", "grapheneos", "microg", "degoogle", "segurança mobile", "bootloader"], category: "Segurança Mobile" },
   // Bitcoin fundamentals
   { title: "O que é Bitcoin?", description: "Fundamento zero — entenda o protocolo descentralizado", path: "/bitcoin/o-que-e", tags: ["bitcoin", "iniciante", "protocolo", "blockchain"], category: "Bitcoin" },
