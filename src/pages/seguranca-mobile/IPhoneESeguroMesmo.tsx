@@ -134,7 +134,7 @@ export default function IPhoneESeguroMesmo() {
       </section>
 
       <section className="iphone-deep relative isolate overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
-        <div className="iphone-grid absolute inset-0 -z-10"/>
+        <KenBurnsBackground asset={trackingAsset} alt="Permissão de rastreamento no iPhone em português" />
         <div className="mx-auto max-w-[1600px]">
           <Heading chapter="02 / O que a Apple realmente faz bem" dark>Crédito técnico, <span className="iphone-copper-soft font-editorial font-normal italic">onde ele é devido.</span></Heading>
           <motion.p {...reveal(.06)} className="max-w-3xl text-lg leading-relaxed text-background/80 md:text-xl">Vamos dar crédito onde é devido, porque conteúdo de segurança digital vira propaganda barata quando trata tudo como inimigo.</motion.p>
