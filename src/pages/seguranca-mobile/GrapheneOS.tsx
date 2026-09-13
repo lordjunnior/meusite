@@ -20,7 +20,7 @@ import redeAsset from '@/assets/seguranca-mobile/grapheneos-rede.jpg.asset.json'
 import diagnosticoAsset from '@/assets/seguranca-mobile/grapheneos-diagnostico.jpg.asset.json';
 import communityBackgroundAsset from '@/assets/seguranca-mobile/grapheneos-community-background.jpg.asset.json';
 import discordImageAsset from '@/assets/seguranca-mobile/grapheneos-discord-support.jpg.asset.json';
-import matrixImageAsset from '@/assets/seguranca-mobile/grapheneos-matrix-support.jpg.asset.json';
+import matrixImageAsset from '@/assets/seguranca-mobile/grapheneos-matrix-support-v2.jpg.asset.json';
 import forumImageAsset from '@/assets/seguranca-mobile/grapheneos-forum-support.jpg.asset.json';
 import discordLogoAsset from '@/assets/seguranca-mobile/discord-official.svg.asset.json';
 import matrixLogoAsset from '@/assets/seguranca-mobile/matrix-official.svg.asset.json';
@@ -277,7 +277,9 @@ export default function GrapheneOS() {
           <div className="mx-auto max-w-[1600px]">
             <motion.div {...reveal()} className="mb-14 max-w-6xl">
               <span className="graphene-copper-soft text-xs font-bold uppercase tracking-[0.3em]">07 / Comunidade e suporte</span>
-              <h2 className="mt-6 max-w-[14ch] font-display text-[clamp(2.8rem,6.4vw,6.6rem)] font-bold leading-[.94] tracking-normal text-background">O canal certo encurta o caminho até a resposta.</h2>
+              <h2 className="graphene-layer-title mt-6 max-w-[14ch]" data-text="O canal certo encurta o caminho até a resposta.">
+                <span>O canal certo encurta o caminho até a resposta.</span>
+              </h2>
               <p className="mt-7 max-w-2xl text-lg leading-relaxed text-background/75 md:text-xl">Escolha o ambiente pela natureza da demanda: conversa imediata, colaboração federada ou conhecimento técnico permanente.</p>
             </motion.div>
 
