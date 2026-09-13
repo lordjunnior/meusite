@@ -18,6 +18,12 @@ import appsAsset from '@/assets/seguranca-mobile/grapheneos-governanca-aplicativ
 import instalacaoAsset from '@/assets/seguranca-mobile/grapheneos-instalacao.jpg.asset.json';
 import redeAsset from '@/assets/seguranca-mobile/grapheneos-rede.jpg.asset.json';
 import diagnosticoAsset from '@/assets/seguranca-mobile/grapheneos-diagnostico.jpg.asset.json';
+import communityBackgroundAsset from '@/assets/seguranca-mobile/grapheneos-community-background.jpg.asset.json';
+import discordImageAsset from '@/assets/seguranca-mobile/grapheneos-discord-support.jpg.asset.json';
+import matrixImageAsset from '@/assets/seguranca-mobile/grapheneos-matrix-support.jpg.asset.json';
+import forumImageAsset from '@/assets/seguranca-mobile/grapheneos-forum-support.jpg.asset.json';
+import discordLogoAsset from '@/assets/seguranca-mobile/discord-official.svg.asset.json';
+import matrixLogoAsset from '@/assets/seguranca-mobile/matrix-official.svg.asset.json';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const reveal = (delay = 0) => ({
@@ -66,9 +72,9 @@ const INSTALL_METHODS = [
 ];
 
 const COMMUNITY_CHANNELS = [
-  { title: 'Discord oficial', text: 'Canal mais ativo para suporte, dúvidas, testes e participação na comunidade.', href: 'https://discord.com/invite/grapheneos', action: 'Entrar no Discord' },
-  { title: 'Matrix oficial', text: 'Espaço federado do projeto, com salas separadas para comunidade, aplicativos, desenvolvimento, testes, lançamentos, infraestrutura e mídia.', href: 'https://matrix.to/#/%23community:grapheneos.org', action: 'Acessar o Matrix' },
-  { title: 'Fórum oficial', text: 'Ambiente público para discussões mais extensas, documentação comunitária e conteúdo mais fácil de pesquisar.', href: 'https://discuss.grapheneos.org/', action: 'Abrir o fórum' },
+  { title: 'Discord oficial', label: 'Resposta em tempo real', text: 'Canal mais ativo para suporte, dúvidas, testes e participação na comunidade.', href: 'https://discord.com/invite/grapheneos', action: 'Entrar no Discord', image: discordImageAsset, logo: discordLogoAsset, logoAlt: 'Discord' },
+  { title: 'Matrix oficial', label: 'Rede federada', text: 'Salas separadas para comunidade, aplicativos, desenvolvimento, testes, lançamentos, infraestrutura e mídia.', href: 'https://matrix.to/#/%23community:grapheneos.org', action: 'Acessar o Matrix', image: matrixImageAsset, logo: matrixLogoAsset, logoAlt: 'Matrix' },
+  { title: 'Fórum oficial', label: 'Conhecimento persistente', text: 'Discussões técnicas extensas, documentação comunitária e respostas que permanecem fáceis de pesquisar.', href: 'https://discuss.grapheneos.org/', action: 'Abrir o fórum', image: forumImageAsset, logo: logoAsset, logoAlt: 'GrapheneOS' },
 ];
 
 const INSTALL = [
@@ -252,11 +258,56 @@ export default function GrapheneOS() {
           </div>
         </section>
 
-        <section className="graphene-teal px-6 py-24 md:px-12 md:py-36 lg:px-20">
+        <section className="graphene-community relative isolate overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
+          <motion.img
+            src={communityBackgroundAsset.url}
+            alt="Equipe internacional colaborando em uma central de suporte técnico"
+            loading="lazy"
+            decoding="async"
+            width={1920}
+            height={1080}
+            initial={{ scale: 1.04 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true, amount: .15 }}
+            transition={{ duration: 2.4, ease: EASE }}
+            className="absolute inset-0 -z-30 h-full w-full object-cover"
+          />
+          <div className="graphene-community-shade absolute inset-0 -z-20" />
+          <div className="graphene-community-grid absolute inset-0 -z-10" />
           <div className="mx-auto max-w-[1600px]">
-            <Heading chapter="07 / Comunidade e suporte" title="Ajuda oficial, no canal" accent="correto para cada assunto." dark />
-            <div className="grid gap-5 lg:grid-cols-3">{COMMUNITY_CHANNELS.map((channel, i) => <motion.article key={channel.title} {...reveal(i * .07)} className="graphene-card-dark group flex h-full flex-col rounded-lg border p-8 transition-all duration-500 hover:-translate-y-1 md:p-10"><MessageSquareText className="graphene-copper-soft h-7 w-7 transition-transform duration-500 group-hover:scale-110"/><h3 className="mt-6 text-2xl font-black tracking-normal text-background">{channel.title}</h3><p className="mt-4 flex-1 text-lg leading-relaxed text-background/75">{channel.text}</p><Button asChild size="lg" className="graphene-btn-dark graphene-focus mt-7 h-13 w-full px-6 font-bold"><a href={channel.href} target="_blank" rel="noreferrer">{channel.action} <ExternalLink /></a></Button></motion.article>)}</div>
-            <motion.div {...reveal(.12)} className="mt-10 grid gap-6 border-t border-background/20 pt-10 text-background/80 lg:grid-cols-2"><p className="text-lg leading-relaxed"><strong className="text-background">Suporte técnico:</strong> dificuldades de instalação, dúvidas, pedidos de recursos e relatos comuns devem seguir pela comunidade ou pelos sistemas públicos de rastreamento. Isso preserva o tempo dos desenvolvedores para o projeto.</p><p className="text-lg leading-relaxed"><strong className="text-background">Contato institucional:</strong> o endereço contact@grapheneos.org é reservado a assuntos relacionados ao projeto. Relatórios de segurança de alta prioridade usam security@grapheneos.org. O canal de segurança não deve ser usado para acelerar solicitações comuns.</p></motion.div>
+            <motion.div {...reveal()} className="mb-14 max-w-6xl">
+              <span className="graphene-copper-soft text-xs font-bold uppercase tracking-[0.3em]">07 / Comunidade e suporte</span>
+              <h2 className="mt-6 max-w-[14ch] font-display text-[clamp(2.8rem,6.4vw,6.6rem)] font-bold leading-[.94] tracking-normal text-background">O canal certo encurta o caminho até a resposta.</h2>
+              <p className="mt-7 max-w-2xl text-lg leading-relaxed text-background/75 md:text-xl">Escolha o ambiente pela natureza da demanda: conversa imediata, colaboração federada ou conhecimento técnico permanente.</p>
+            </motion.div>
+
+            <div className="grid gap-6 lg:grid-cols-3">
+              {COMMUNITY_CHANNELS.map((channel, i) => (
+                <motion.article key={channel.title} {...reveal(i * .09)} whileHover={{ y: -8 }} className="graphene-community-card group relative flex min-h-[590px] flex-col overflow-hidden rounded-lg border">
+                  <div className="relative h-72 overflow-hidden">
+                    <img src={channel.image.url} alt={`Ambiente visual do ${channel.title}`} loading="lazy" decoding="async" width={1200} height={900} className="h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.08]" />
+                    <div className="graphene-community-image-shade absolute inset-0" />
+                    <div className="absolute left-6 top-6 flex h-14 min-w-14 items-center justify-center rounded-md border border-background/20 bg-foreground/75 px-3 backdrop-blur-md">
+                      <img src={channel.logo.url} alt={`Marca oficial ${channel.logoAlt}`} loading="lazy" width={38} height={38} className="h-8 max-w-24 object-contain" />
+                    </div>
+                    <span className="absolute bottom-5 left-6 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-background/80">{channel.label}</span>
+                  </div>
+                  <div className="relative flex flex-1 flex-col p-7 md:p-8">
+                    <MessageSquareText className="graphene-copper-soft h-6 w-6 transition-transform duration-500 group-hover:translate-x-1" />
+                    <h3 className="mt-5 font-display text-3xl font-bold tracking-normal text-background">{channel.title}</h3>
+                    <p className="mt-4 flex-1 text-base leading-relaxed text-background/72 md:text-lg">{channel.text}</p>
+                    <Button asChild size="lg" className="graphene-btn-dark graphene-focus mt-7 h-14 w-full px-6 font-bold">
+                      <a href={channel.href} target="_blank" rel="noreferrer">{channel.action} <ExternalLink className="transition-transform duration-300 group-hover:translate-x-1" /></a>
+                    </Button>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+
+            <motion.div {...reveal(.12)} className="graphene-community-notes mt-10 grid overflow-hidden rounded-lg border border-background/15 backdrop-blur-xl lg:grid-cols-2">
+              <div className="p-7 md:p-9"><span className="graphene-copper-soft font-mono text-xs font-bold uppercase tracking-[0.2em]">Solicitações operacionais</span><p className="mt-4 text-lg leading-relaxed text-background/80"><strong className="text-background">Suporte técnico:</strong> dificuldades de instalação, dúvidas, pedidos de recursos e relatos comuns devem seguir pela comunidade ou pelos sistemas públicos de rastreamento. Isso preserva o tempo dos desenvolvedores para o projeto.</p></div>
+              <div className="border-t border-background/15 p-7 md:p-9 lg:border-l lg:border-t-0"><span className="graphene-copper-soft font-mono text-xs font-bold uppercase tracking-[0.2em]">Assuntos institucionais</span><p className="mt-4 text-lg leading-relaxed text-background/80"><strong className="text-background">Contato institucional:</strong> contact@grapheneos.org atende assuntos relacionados ao projeto. Relatórios de segurança de alta prioridade usam security@grapheneos.org. Esse canal não deve ser usado para acelerar solicitações comuns.</p></div>
+            </motion.div>
           </div>
         </section>
 
