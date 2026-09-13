@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import {
   ArrowRight, BriefcaseBusiness, CheckCircle2, Cpu, Database, ExternalLink,
-  Fingerprint, HardDrive, Layers3, LockKeyhole, Network, RadioTower,
+  Fingerprint, Layers3, LockKeyhole, MessageSquareText, Network, RadioTower,
   RefreshCw, ShieldCheck, Smartphone, TriangleAlert, Users, Wrench,
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
@@ -35,10 +35,40 @@ const ARCHITECTURE = [
 ];
 
 const DECISION = [
-  { title: 'Hardware oficialmente suportado', text: 'Use somente um Google Pixel presente na lista oficial do projeto. Outros aparelhos não recebem builds oficiais porque não cumprem, em conjunto, os requisitos de firmware, elemento seguro, atualizações e relock com chave customizada.' },
+  { title: 'Hardware oficialmente suportado', text: 'Use somente um Google Pixel presente na lista oficial do projeto. Como referência para 2026, os modelos Pixel 8, 9 e 10 oferecem a melhor janela de suporte e segurança física com Titan M2/M3.' },
   { title: 'Bootloader desbloqueável', text: 'A opção de desbloqueio OEM precisa estar disponível. Unidades vinculadas a determinadas operadoras, especialmente importadas, podem ter bloqueio permanente. Confirme antes da compra.' },
   { title: 'Janela de suporte suficiente', text: 'A vida útil do projeto acompanha o suporte completo de segurança do fabricante. Para uso corporativo, compre a geração mais recente que o orçamento comportar e registre a data de fim de suporte.' },
   { title: 'Plano para aplicativos críticos', text: 'Mapeie banco, governo, autenticação, MDM, comunicação e assinatura digital antes da migração. Compatibilidade não deve ser presumida a partir de relatos isolados.' },
+];
+
+const SUPPORTED_DEVICES = [
+  'Pixel 10a', 'Pixel 10 Pro Fold', 'Pixel 10 Pro XL', 'Pixel 10 Pro', 'Pixel 10',
+  'Pixel 9a', 'Pixel 9 Pro Fold', 'Pixel 9 Pro XL', 'Pixel 9 Pro', 'Pixel 9',
+  'Pixel 8a', 'Pixel 8 Pro', 'Pixel 8', 'Pixel Fold', 'Pixel Tablet',
+  'Pixel 7a', 'Pixel 7 Pro', 'Pixel 7', 'Pixel 6a', 'Pixel 6 Pro', 'Pixel 6',
+];
+
+const INSTALL_METHODS = [
+  {
+    title: 'Instalador WebUSB',
+    label: 'Recomendado',
+    text: 'Método indicado pelo projeto para a maioria dos usuários. Exige apenas um navegador compatível com WebUSB, cabo de dados confiável e atenção à sequência apresentada na tela.',
+    href: 'https://grapheneos.org/install/web',
+    action: 'Usar instalador WebUSB',
+  },
+  {
+    title: 'Instalação por linha de comando',
+    label: 'Uso técnico',
+    text: 'Alternativa oficial para operadores experientes. Exige fastboot e OpenSSH corretamente instalados, ambiente compatível e capacidade para validar cada comando sem executar instruções de forma cega.',
+    href: 'https://grapheneos.org/install/cli',
+    action: 'Consultar guia CLI',
+  },
+];
+
+const COMMUNITY_CHANNELS = [
+  { title: 'Discord oficial', text: 'Canal mais ativo para suporte, dúvidas, testes e participação na comunidade.', href: 'https://discord.com/invite/grapheneos', action: 'Entrar no Discord' },
+  { title: 'Matrix oficial', text: 'Espaço federado do projeto, com salas separadas para comunidade, aplicativos, desenvolvimento, testes, lançamentos, infraestrutura e mídia.', href: 'https://matrix.to/#/%23community:grapheneos.org', action: 'Acessar o Matrix' },
+  { title: 'Fórum oficial', text: 'Ambiente público para discussões mais extensas, documentação comunitária e conteúdo mais fácil de pesquisar.', href: 'https://discuss.grapheneos.org/', action: 'Abrir o fórum' },
 ];
 
 const INSTALL = [
@@ -61,13 +91,15 @@ const FAQ = [
   { q: 'Como o GrapheneOS mantém compatibilidade com aplicativos corporativos sem conceder privilégios de sistema ao Google?', a: 'O Sandboxed Google Play instala Play Services, Play Store e Google Services Framework como aplicativos comuns. Eles ficam submetidos ao sandbox e às permissões do Android, sem o acesso privilegiado recebido no sistema de fábrica. A rede continua disponível por padrão, e qualquer permissão concedida continua produzindo exposição. Para maior separação, a organização pode manter esses serviços em um perfil dedicado.' },
   { q: 'O isolamento de memória impede exploits zero-day?', a: 'Não. hardened_malloc e outras mitigações tornam diversas classes de corrupção de memória mais difíceis de explorar e podem converter uma exploração em falha controlada. Nenhum sistema elimina zero-days. O resultado depende da combinação entre redução da superfície de ataque, isolamento, patches rápidos, senha forte e disciplina operacional.' },
   { q: 'Por que o GrapheneOS exige um Google Pixel?', a: 'O suporte oficial depende de um conjunto raro de propriedades: bootloader desbloqueável e novamente bloqueável com chave de Verified Boot customizada, atualizações completas de firmware, elemento seguro, segurança física moderna e ciclo de suporte previsível. O Pixel reúne esses requisitos. A lista muda ao longo do tempo e deve ser confirmada no site oficial antes da aquisição.' },
-  { q: 'Como Verified Boot e Titan M2 protegem o ativo?', a: 'Verified Boot valida criptograficamente cada estágio da inicialização e sinaliza alterações não autorizadas. O Titan M2 protege material criptográfico e apoia funções de atestação e resistência a ataques físicos. Essas camadas elevam a confiança no estado do dispositivo, mas dependem de firmware atualizado, configuração correta e uma cadeia de custódia controlada.' },
+  { q: 'Por que o GrapheneOS exige um Google Pixel?', a: 'O suporte depende de propriedades de hardware raras: bootloader bloqueável com chave customizada, atualizações completas de firmware e elemento seguro (Titan M2/M3). A série Pixel 8, 9 e 10 atende a esses requisitos com janelas de suporte prolongadas.' },
   { q: 'O GrapheneOS bloqueia IMSI catchers?', a: 'Não completamente. A opção de desativar 2G reduz ataques de downgrade para uma tecnologia mais fraca, mas interceptadores podem operar em gerações posteriores e a operadora continua conhecendo a localização aproximada do SIM. Eliminar essa exposição exige não usar a rede celular, não apenas trocar o sistema operacional.' },
   { q: 'Aplicativos bancários e governamentais funcionam?', a: 'Muitos funcionam, especialmente com Sandboxed Google Play, mas não existe garantia universal. Alguns exigem Play Integrity ou políticas de atestação que não reconhecem o GrapheneOS. Teste cada aplicativo crítico em um aparelho piloto antes de aprovar a migração e mantenha uma alternativa operacional documentada.' },
   { q: 'A randomização de MAC impede rastreamento por Wi-Fi?', a: 'Ela reduz a correlação entre redes ao apresentar identificadores diferentes do endereço físico. Por padrão, o Android moderno tende a manter um endereço aleatório persistente por rede salva. Fingerprinting, autenticação do portal e padrões de tráfego ainda podem correlacionar o dispositivo. É uma camada útil, não anonimato completo.' },
   { q: 'GrapheneOS substitui MDM, EDR ou política corporativa?', a: 'Não. O sistema fortalece o endpoint, mas governança exige inventário, identidade, política de acesso, gestão de aplicativos, logs compatíveis, resposta a incidentes e descarte seguro. Antes de adoção em escala, valide as funções exigidas pelo MDM ou EMM da organização em um piloto controlado.' },
   { q: 'É necessário instalar Google Play?', a: 'Não. O GrapheneOS funciona sem serviços Google. A instalação é opcional e deve responder a uma necessidade de compatibilidade identificada. Quanto menor o conjunto de aplicativos e permissões, menor a superfície operacional. A decisão deve ser tomada por perfil de uso, não por conveniência automática.' },
   { q: 'O que acontece quando um Pixel perde suporte?', a: 'Sem atualizações completas de firmware e segurança, o ativo deixa de atender ao objetivo de uma plataforma endurecida. A organização deve planejar substituição antes do fim de suporte, retirar credenciais, apagar o aparelho de forma segura e registrar o descarte ou a mudança de finalidade.' },
+  { q: 'Quais são os canais oficiais de comunidade e suporte?', a: 'O GrapheneOS utiliza o fórum oficial (discuss.grapheneos.org) e canais no Discord e Matrix (#community:grapheneos.org) para suporte comunitário. Não há suporte individual por e-mail para instalação ou uso.' },
+  { q: 'Como reportar vulnerabilidades ou entrar em contato oficial?', a: 'Questões de segurança devem ser enviadas para security@grapheneos.org. O contato administrativo e comercial é feito via contact@grapheneos.org. Detalhes e chaves PGP em grapheneos.org/contact.' },
 ];
 
 function Figure({ asset, alt, caption }: { asset: { url: string }; alt: string; caption: string }) {
@@ -168,7 +200,11 @@ export default function GrapheneOS() {
             <p className="graphene-muted -mt-7 max-w-3xl text-lg leading-relaxed md:text-xl">A decisão não começa no instalador. Começa na procedência do Pixel, na possibilidade de bloquear novamente o bootloader e na janela restante de atualizações.</p>
             <div className="mt-12 grid gap-5 md:grid-cols-2">{DECISION.map((item, i) => <motion.article key={item.title} {...reveal(i * .07)} className="graphene-card group rounded-lg border p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"><span className="graphene-copper text-xs font-black tracking-[0.25em]">0{i + 1}</span><h3 className="graphene-ink mt-4 text-2xl font-black tracking-normal">{item.title}</h3><p className="mt-3 text-lg leading-relaxed">{item.text}</p></motion.article>)}</div>
             <Figure asset={pixelsAsset} alt="Quatro smartphones Google Pixel completos com telas ligadas para avaliação de compatibilidade" caption="Modelo, procedência e suporte restante precisam entrar no inventário antes da compra." />
-            <Button asChild size="lg" className="graphene-btn-primary graphene-focus h-13 px-7 font-bold"><a href="https://grapheneos.org/faq#device-support" target="_blank" rel="noreferrer">Consultar dispositivos oficiais <ExternalLink /></a></Button>
+            <motion.div {...reveal(.08)} className="graphene-card border p-7 md:p-10">
+              <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><span className="graphene-copper text-xs font-black uppercase tracking-[0.25em]">Lista oficial atual</span><h3 className="graphene-ink mt-3 text-3xl font-black tracking-normal">Dispositivos suportados</h3></div><p className="graphene-muted max-w-xl leading-relaxed">A lista pode mudar conforme firmware, ciclo de suporte e requisitos de segurança. Confirme novamente antes da compra ou instalação.</p></div>
+              <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-md border md:grid-cols-3 lg:grid-cols-4">{SUPPORTED_DEVICES.map(device => <div key={device} className="graphene-paper-deep flex min-h-16 items-center gap-3 p-4 text-sm font-bold transition-colors duration-300 hover:bg-background"><Smartphone className="graphene-copper h-4 w-4 shrink-0"/><span>{device}</span></div>)}</div>
+              <Button asChild size="lg" className="graphene-btn-primary graphene-focus mt-8 h-13 px-7 font-bold"><a href="https://grapheneos.org/faq#supported-devices" target="_blank" rel="noreferrer">Validar lista no site oficial <ExternalLink /></a></Button>
+            </motion.div>
           </div>
         </section>
 
@@ -187,8 +223,10 @@ export default function GrapheneOS() {
           <div className="mx-auto max-w-[1400px]">
             <Heading chapter="05 / Implantação segura" title="Instalar é um procedimento." accent="Não uma tentativa." dark />
             <Figure asset={instalacaoAsset} alt="Pixel conectado por cabo de dados a computador executando instalador web" caption="Estação confiável, cabo estável e instalador oficial reduzem falhas evitáveis." />
+            <motion.div {...reveal()} className="mb-10 border-l-4 border-background/30 pl-7 text-lg leading-relaxed text-background/80 md:text-xl"><p>O GrapheneOS oferece dois métodos de instalação oficialmente suportados. O próprio projeto recomenda seguir apenas a documentação oficial, porque tutoriais de terceiros podem estar desatualizados, omitir verificações ou orientar procedimentos incorretos.</p></motion.div>
+            <div className="mb-12 grid gap-5 md:grid-cols-2">{INSTALL_METHODS.map((method, i) => <motion.article key={method.title} {...reveal(i * .08)} className="graphene-card-dark group flex h-full flex-col rounded-lg border p-8 transition-all duration-500 hover:-translate-y-1 md:p-10"><span className="graphene-copper-soft text-xs font-black uppercase tracking-[0.25em]">{method.label}</span><h3 className="mt-4 text-2xl font-black tracking-normal text-background">{method.title}</h3><p className="mt-4 flex-1 text-lg leading-relaxed text-background/75">{method.text}</p><Button asChild size="lg" className="graphene-btn-dark graphene-focus mt-7 h-13 w-full px-6 font-bold"><a href={method.href} target="_blank" rel="noreferrer">{method.action} <ExternalLink /></a></Button></motion.article>)}</div>
             <div className="space-y-4">{INSTALL.map((step, i) => <motion.article key={step.title} {...reveal(i * .05)} className="graphene-card-dark group grid gap-5 rounded-lg border p-7 transition-transform duration-500 hover:translate-x-1 md:grid-cols-[72px_1fr] md:p-9"><div className="graphene-btn-primary flex h-14 w-14 items-center justify-center rounded-full text-lg font-black transition-transform duration-500 group-hover:scale-110">{i + 1}</div><div><h3 className="text-2xl font-black tracking-normal text-background">{step.title}</h3><p className="mt-3 text-lg leading-relaxed text-background/75">{step.text}</p></div></motion.article>)}</div>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row"><Button asChild size="lg" className="graphene-btn-dark graphene-focus h-13 px-7 font-bold"><a href="https://grapheneos.org/install/web" target="_blank" rel="noreferrer">Abrir instalador oficial <ExternalLink /></a></Button><Button asChild size="lg" variant="outline" className="graphene-focus h-13 border-background/30 bg-transparent px-7 font-bold text-background hover:bg-background/10 hover:text-background"><a href="#faq">Revisar objeções técnicas</a></Button></div>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row"><Button asChild size="lg" className="graphene-btn-dark graphene-focus h-13 px-7 font-bold"><a href="https://grapheneos.org/install/" target="_blank" rel="noreferrer">Abrir página oficial de instalação <ExternalLink /></a></Button><Button asChild size="lg" variant="outline" className="graphene-focus h-13 border-background/30 bg-transparent px-7 font-bold text-background hover:bg-background/10 hover:text-background"><a href="#faq">Revisar objeções técnicas</a></Button></div>
           </div>
         </section>
 
@@ -201,9 +239,17 @@ export default function GrapheneOS() {
           </div>
         </section>
 
+        <section className="graphene-teal px-6 py-24 md:px-12 md:py-36 lg:px-20">
+          <div className="mx-auto max-w-[1600px]">
+            <Heading chapter="07 / Comunidade e suporte" title="Ajuda oficial, no canal" accent="correto para cada assunto." dark />
+            <div className="grid gap-5 lg:grid-cols-3">{COMMUNITY_CHANNELS.map((channel, i) => <motion.article key={channel.title} {...reveal(i * .07)} className="graphene-card-dark group flex h-full flex-col rounded-lg border p-8 transition-all duration-500 hover:-translate-y-1 md:p-10"><MessageSquareText className="graphene-copper-soft h-7 w-7 transition-transform duration-500 group-hover:scale-110"/><h3 className="mt-6 text-2xl font-black tracking-normal text-background">{channel.title}</h3><p className="mt-4 flex-1 text-lg leading-relaxed text-background/75">{channel.text}</p><Button asChild size="lg" className="graphene-btn-dark graphene-focus mt-7 h-13 w-full px-6 font-bold"><a href={channel.href} target="_blank" rel="noreferrer">{channel.action} <ExternalLink /></a></Button></motion.article>)}</div>
+            <motion.div {...reveal(.12)} className="mt-10 grid gap-6 border-t border-background/20 pt-10 text-background/80 lg:grid-cols-2"><p className="text-lg leading-relaxed"><strong className="text-background">Suporte técnico:</strong> dificuldades de instalação, dúvidas, pedidos de recursos e relatos comuns devem seguir pela comunidade ou pelos sistemas públicos de rastreamento. Isso preserva o tempo dos desenvolvedores para o projeto.</p><p className="text-lg leading-relaxed"><strong className="text-background">Contato institucional:</strong> o endereço contact@grapheneos.org é reservado a assuntos relacionados ao projeto. Relatórios de segurança de alta prioridade usam security@grapheneos.org. O canal de segurança não deve ser usado para acelerar solicitações comuns.</p></motion.div>
+          </div>
+        </section>
+
         <section id="faq" className="graphene-paper-deep scroll-mt-16 px-6 py-24 md:px-12 md:py-36 lg:px-20">
           <div className="mx-auto max-w-[1600px]">
-            <Heading chapter="07 / FAQ técnico" title="Objeções complexas," accent="respostas abertas." />
+            <Heading chapter="08 / FAQ técnico" title="Objeções complexas," accent="respostas abertas." />
             <p className="graphene-muted -mt-7 max-w-3xl text-lg leading-relaxed md:text-xl">Todas as respostas permanecem visíveis. Sem cliques adicionais, sem informação escondida e com profundidade suficiente para apoiar uma análise técnica.</p>
             <div className="mt-14 grid items-start gap-5 md:grid-cols-2 xl:grid-cols-3">{FAQ.map((item, i) => <motion.article key={item.q} {...reveal((i % 3) * .06)} className={`graphene-card group rounded-lg border p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${i === 0 || i === 7 ? 'md:col-span-2' : ''}`}><div className="mb-5 flex items-center justify-between"><span className="graphene-copper text-xs font-black tracking-[0.25em]">FAQ {String(i + 1).padStart(2, '0')}</span><ShieldCheck className="graphene-copper h-5 w-5 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110"/></div><h3 className="graphene-ink text-xl font-black leading-tight tracking-normal md:text-2xl">{item.q}</h3><p className="mt-5 text-base leading-[1.75] md:text-lg">{item.a}</p></motion.article>)}</div>
           </div>

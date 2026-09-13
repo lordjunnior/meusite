@@ -143,7 +143,7 @@ const PILARES: Pilar[] = [
     icon: Smartphone,
     contexto: 'Celular moderno é o dispositivo mais comprometido da vida digital: 200+ apps, cada um pedindo permissão de localização, microfone, contatos, fotos. Google e Apple coletam tudo, mesmo com configuração restrita. Solução em camadas: GrapheneOS (Android desgooglado) em Pixel para máximo controle, ou iOS com configuração paranoica e separação de contextos via perfis. Compartimentação: celular pessoal NUNCA é o mesmo do celular de trabalho. Celular para PIX/banco NUNCA é o mesmo do celular para redes sociais e games.',
     passos: [
-      'Tier máximo: Google Pixel 7 ou superior com GrapheneOS instalado (sistema desgooglado, sandbox restrito, anti-exploit avançado). Sem Google Play Services, sem coleta passiva. Use Aurora Store para baixar apps via proxy.',
+      'Tier máximo: Google Pixel 8 ou superior com GrapheneOS instalado (sistema desgooglado, sandbox restrito, anti-exploit avançado). Sem Google Play Services, sem coleta passiva. Use Aurora Store para baixar apps via proxy.',
       'Tier intermediário: iPhone com Lockdown Mode ativado, App Privacy Report monitorado semanalmente, Siri desabilitada, fotos sem geotag, microfone bloqueado para todos os apps exceto chamadas.',
       'Compartimentação dura: celular de PIX/banco/exchange separado do celular de uso geral. Linha telefônica do celular crítico nunca compartilhada publicamente, usada APENAS para 2FA bancário. Dois aparelhos, duas linhas, dois mundos.',
       'Apps de comunicação: Signal (mensagens, chamadas), SimpleX Chat (anonimato máximo, sem identificador), Briar (mesh local sem internet). Banir WhatsApp para conversas sensíveis (Meta lê metadados completos).',
