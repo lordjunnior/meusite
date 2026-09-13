@@ -289,10 +289,67 @@
   .graphene-community-card:hover { border-color: hsl(var(--graph-copper-soft) / .55); }
   .graphene-community-image-shade { background: linear-gradient(180deg, transparent 35%, hsl(var(--graph-ink) / .9) 100%); }
   .graphene-community-notes { background: hsl(var(--graph-ink) / .72); }
+  .graphene-layer-title {
+    position: relative;
+    isolation: isolate;
+    color: hsl(var(--graph-paper));
+    font-family: 'Unbounded', sans-serif;
+    font-size: clamp(2.35rem, 5.4vw, 5.7rem);
+    font-weight: 700;
+    line-height: .98;
+    letter-spacing: 0;
+    text-wrap: balance;
+    text-shadow:
+      0 1px 0 hsl(var(--graph-paper) / .45),
+      0 5px 0 hsl(var(--graph-ink) / .7),
+      0 18px 38px hsl(var(--graph-ink) / .65),
+      0 0 34px hsl(var(--graph-copper-soft) / .12);
+  }
+  .graphene-layer-title::before,
+  .graphene-layer-title::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    font: inherit;
+    letter-spacing: inherit;
+  }
+  .graphene-layer-title::before {
+    color: transparent;
+    -webkit-text-stroke: 1px hsl(var(--graph-copper-soft) / .72);
+    transform: translate(5px, 6px);
+    opacity: .7;
+    filter: blur(.15px);
+  }
+  .graphene-layer-title::after {
+    color: hsl(var(--graph-teal) / .65);
+    transform: translate(11px, 13px);
+    opacity: .72;
+    filter: blur(.4px);
+  }
+  .graphene-layer-title > span {
+    position: relative;
+    z-index: 1;
+    display: block;
+    background: linear-gradient(115deg, hsl(var(--graph-paper)) 12%, hsl(var(--graph-paper-deep)) 42%, hsl(var(--graph-copper-soft)) 58%, hsl(var(--graph-paper)) 76%);
+    background-size: 220% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: graphene-title-light 7s ease-in-out infinite;
+    filter: drop-shadow(0 1px 0 hsl(var(--graph-paper) / .35));
+  }
+
+  @keyframes graphene-title-light {
+    0%, 18% { background-position: 100% 50%; }
+    52%, 100% { background-position: -100% 50%; }
+  }
 
   @media (prefers-reduced-motion: reduce) {
     .graphene-community-card::after { display: none; }
     .graphene-community-card img { transition: none; }
+    .graphene-layer-title > span { animation: none; background-position: 50% 50%; }
   }
 
   /* ─── O Novo Botão de Ação (Brutalista e Massivo) ─── */
