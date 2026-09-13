@@ -353,6 +353,60 @@
     font-weight: 400;
   }
 
+  .iphone-page {
+    --iphone-paper: 38 24% 95%;
+    --iphone-paper-deep: 35 18% 89%;
+    --iphone-ink: 180 13% 12%;
+    --iphone-deep: 180 28% 11%;
+    --iphone-copper: 24 55% 47%;
+    --iphone-copper-soft: 25 73% 70%;
+    --iphone-muted: 175 7% 40%;
+    --background: var(--iphone-paper);
+    --foreground: var(--iphone-ink);
+    --card: var(--iphone-paper);
+    --card-foreground: var(--iphone-ink);
+    --border: 176 14% 77%;
+    --ring: var(--iphone-copper);
+    overflow-x: clip;
+    background: hsl(var(--iphone-paper));
+    color: hsl(var(--iphone-ink));
+    font-family: 'Inter Tight', sans-serif;
+  }
+  .iphone-hero,
+  .iphone-deep { background: hsl(var(--iphone-deep)); color: hsl(var(--iphone-paper)); }
+  .iphone-hero-shade { background: linear-gradient(90deg, hsl(var(--iphone-ink) / .97) 0%, hsl(var(--iphone-ink) / .84) 42%, hsl(var(--iphone-ink) / .24) 72%, hsl(var(--iphone-ink) / .48) 100%); }
+  .iphone-ink { color: hsl(var(--iphone-ink)); }
+  .iphone-muted { color: hsl(var(--iphone-muted)); }
+  .iphone-copper { color: hsl(var(--iphone-copper)); }
+  .iphone-copper-soft { color: hsl(var(--iphone-copper-soft)); }
+  .iphone-editorial { color: hsl(var(--iphone-copper)); font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; }
+  .iphone-rule { background: hsl(var(--iphone-copper)); }
+  .iphone-card { background: hsl(var(--iphone-paper) / .88); border-color: hsl(var(--iphone-deep) / .15); backdrop-filter: blur(14px); }
+  .iphone-card-dark { background: hsl(var(--iphone-paper) / .065); border-color: hsl(var(--iphone-paper) / .16); }
+  .iphone-card-future { background: hsl(var(--iphone-paper-deep) / .55); border-color: hsl(var(--iphone-deep) / .22); }
+  .iphone-glass { background: linear-gradient(150deg, hsl(var(--iphone-ink) / .84), hsl(var(--iphone-deep) / .7)); border-color: hsl(var(--iphone-paper) / .2); box-shadow: inset 0 1px 0 hsl(var(--iphone-paper) / .1), 0 30px 80px -48px hsl(var(--iphone-ink)); }
+  .iphone-figure { box-shadow: 0 30px 80px -38px hsl(var(--iphone-deep) / .55); }
+  .iphone-btn { background: hsl(var(--iphone-paper)); color: hsl(var(--iphone-deep)); }
+  .iphone-btn:hover { background: hsl(var(--iphone-copper-soft)); color: hsl(var(--iphone-deep)); }
+  .iphone-step { background: hsl(var(--iphone-copper)); color: hsl(var(--iphone-paper)); }
+  .iphone-focus:focus-visible { outline: 3px solid hsl(var(--iphone-copper)); outline-offset: 4px; }
+  .iphone-dark-shade { background: linear-gradient(90deg, hsl(var(--iphone-ink) / .96) 0%, hsl(var(--iphone-deep) / .86) 52%, hsl(var(--iphone-ink) / .8) 100%); }
+  .iphone-soft-glow { background: radial-gradient(ellipse at 78% 22%, hsl(var(--iphone-copper-soft) / .12), transparent 43%), linear-gradient(180deg, hsl(var(--iphone-paper)), hsl(var(--iphone-paper-deep) / .74), hsl(var(--iphone-paper))); }
+  .iphone-grid {
+    opacity: .14;
+    background-image: linear-gradient(hsl(var(--iphone-paper) / .09) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--iphone-paper) / .09) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  }
+
+  @media (max-width: 767px) {
+    .iphone-hero-shade { background: linear-gradient(180deg, hsl(var(--iphone-ink) / .54) 0%, hsl(var(--iphone-ink) / .94) 72%, hsl(var(--iphone-ink)) 100%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .iphone-page *, .iphone-page *::before, .iphone-page *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  }
+
   @keyframes graphene-title-rule {
     0%, 18% { transform: scaleX(.15); opacity: .4; }
     48%, 80% { transform: scaleX(1); opacity: 1; }
