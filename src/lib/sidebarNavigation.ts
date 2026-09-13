@@ -15,6 +15,7 @@ export interface NavItem {
   icon?: any;
   badge?: string;
   alert?: boolean;
+  section?: string;
 }
 
 export interface NavGroup {
@@ -93,10 +94,25 @@ export const navGroups: NavGroup[] = [
     icon: Smartphone,
     color: undefined,
     items: [
-      { label: "CalyxOS", route: "/seguranca-mobile/calyxos", badge: "Novo" },
+      { label: "CalyxOS", route: "/seguranca-mobile/calyxos", badge: "Novo", section: "Sistemas Operacionais" },
       { label: "GrapheneOS", route: "/seguranca-mobile/grapheneos", badge: "Novo" },
-      { label: "iPhone é seguro mesmo?", route: "/seguranca-mobile/iPhone-e-seguro-mesmo", badge: "Novo" },
+      { label: "GrapheneOS vs CalyxOS", route: "/seguranca-mobile/graphene-vs-calyx", badge: "Em breve" },
+      { label: "iPhone é seguro mesmo?", route: "/seguranca-mobile/iPhone-e-seguro-mesmo", badge: "Novo", section: "Curiosidades / Mitos" },
+      { label: "Android é mais inseguro que iPhone?", route: "/seguranca-mobile/android-mais-inseguro-que-iphone", badge: "Em breve" },
+      { label: "Modo avião desliga o rastreamento?", route: "/seguranca-mobile/modo-aviao-desliga-rastreamento", badge: "Em breve" },
+      { label: "Apagar o app encerra o rastreamento?", route: "/seguranca-mobile/apagar-app-rastreamento-continua", badge: "Em breve" },
+      { label: "Celular escuta conversas?", route: "/seguranca-mobile/celular-escuta-conversa-anuncio", badge: "Em breve" },
+      { label: "IMEI rastreia sem chip?", route: "/seguranca-mobile/imei-rastreia-sem-chip", badge: "Em breve" },
+      { label: "O que é IMSI Catcher", route: "/seguranca-mobile/imsi-catcher-como-funciona", badge: "Em breve", section: "Ameaças Específicas" },
+      { label: "SIM Swap", route: "/seguranca-mobile/sim-swap-como-funciona", badge: "Em breve" },
+      { label: "Stalkerware: apps espiões", route: "/seguranca-mobile/stalkerware-apps-espioes", badge: "Em breve" },
+      { label: "Operadora e dados de localização", route: "/seguranca-mobile/operadora-vende-dados-localizacao", badge: "Em breve" },
+      { label: "Rastreamento por Bluetooth e Wi-Fi", route: "/seguranca-mobile/bluetooth-wifi-rastreamento", badge: "Em breve" },
+      { label: "Checklist de permissões", route: "/seguranca-mobile/checklist-permissoes-celular", badge: "Em breve", section: "Guias Práticos de Hardening" },
+      { label: "Sair do Google sem trocar aparelho", route: "/seguranca-mobile/sair-do-google-sem-trocar-aparelho", badge: "Em breve" },
+      { label: "Signal vs WhatsApp vs Telegram", route: "/seguranca-mobile/signal-vs-whatsapp-vs-telegram", badge: "Em breve" },
       { label: "VPN no celular", route: "/seguranca-mobile/vpn-no-celular", badge: "Novo" },
+      { label: "2FA: authenticator vs SMS", route: "/seguranca-mobile/2fa-authenticator-vs-sms", badge: "Em breve" },
     ],
   },
   {
