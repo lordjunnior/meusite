@@ -481,7 +481,42 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/2fa-authenticator-vs-sms</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/android-mais-inseguro-que-iphone</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/apagar-app-rastreamento-continua</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/bluetooth-wifi-rastreamento</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lordjunnior.com.br/seguranca-mobile/calyxos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/celular-escuta-conversa-anuncio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/checklist-permissoes-celular</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/graphene-vs-calyx</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -491,7 +526,52 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/imei-rastreia-sem-chip</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/imsi-catcher-como-funciona</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lordjunnior.com.br/seguranca-mobile/iPhone-e-seguro-mesmo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/modo-aviao-desliga-rastreamento</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/operadora-vende-dados-localizacao</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/sair-do-google-sem-trocar-aparelho</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/signal-vs-whatsapp-vs-telegram</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/sim-swap-como-funciona</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/stalkerware-apps-espioes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunnior.com.br/seguranca-mobile/vpn-no-celular</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1049,10 +1129,5 @@
     <loc>https://lordjunnior.com.br/volatilidade</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lordjunnior.com.br/seguranca-mobile/vpn-no-celular</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 </urlset>
