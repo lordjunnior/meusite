@@ -143,7 +143,7 @@ const FAQ = [
   { q: 'Como reportar vulnerabilidades ou entrar em contato oficial?', a: 'Questões de segurança devem ser enviadas para security@grapheneos.org. O contato administrativo e comercial é feito via contact@grapheneos.org. Detalhes e chaves PGP em grapheneos.org/contact.' },
 ];
 
-function Figure({ asset, alt, caption }: { asset: { url: string }; alt: string; caption: string }) {
+function Figure({ asset, alt, caption }: { asset: string; alt: string; caption: string }) {
   const reduceMotion = useReducedMotion();
   return (
     <motion.figure {...reveal(0.08)} className="group relative my-12 h-[62vh] min-h-[420px] max-h-[760px] w-full overflow-hidden rounded-lg graphene-image-shadow">
@@ -176,7 +176,7 @@ function Heading({ chapter, title, accent, dark = false }: { chapter: string; ti
   );
 }
 
-function PanoramicBackground({ asset, alt, tone = 'light' }: { asset: { url: string }; alt: string; tone?: 'light' | 'dark' }) {
+function PanoramicBackground({ asset, alt, tone = 'light' }: { asset: string; alt: string; tone?: 'light' | 'dark' }) {
   const reduceMotion = useReducedMotion();
   return (
     <>
