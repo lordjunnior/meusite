@@ -60,7 +60,7 @@ const FAQ = [
   { q: 'Backup no iCloud é seguro?', a: 'Depende da configuração. Por padrão, não é criptografado de ponta a ponta, o que significa que a Apple consegue acessar em caso de ordem judicial. Ativando a Proteção Avançada de Dados, esse cenário muda.' },
 ];
 
-type Asset = { url: string };
+type Asset = string;
 
 function Hero() {
   const reduceMotion = useReducedMotion();

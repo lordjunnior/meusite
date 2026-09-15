@@ -20,7 +20,7 @@ const reveal = (delay = 0) => ({
   transition: { duration: 0.78, delay, ease: EASE },
 });
 
-type Asset = { url: string };
+type Asset = string;
 
 const HELPS = [
   'Em Wi-Fi público, cafeteria, aeroporto, hotel, hall de evento. Essas redes são o cenário clássico de interceptação de tráfego, e aqui a VPN cumpre exatamente o papel que promete.',
