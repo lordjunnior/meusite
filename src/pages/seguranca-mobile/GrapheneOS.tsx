@@ -9,32 +9,32 @@ import {
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import { Button } from '@/components/ui/button';
-import heroAsset from '@/assets/seguranca-mobile/grapheneos-hero.jpg.asset.json';
-import logoAsset from '@/assets/seguranca-mobile/grapheneos-logo.svg.asset.json';
-import bancadaAsset from '@/assets/seguranca-mobile/grapheneos-bancada.jpg.asset.json';
-import arquiteturaAsset from '@/assets/seguranca-mobile/grapheneos-isolamento-operacional.jpg.asset.json';
-import pixelsAsset from '@/assets/seguranca-mobile/grapheneos-pixels-compativeis.jpg.asset.json';
-import instalacaoAsset from '@/assets/seguranca-mobile/grapheneos-instalacao.jpg.asset.json';
-import redeAsset from '@/assets/seguranca-mobile/grapheneos-rede.jpg.asset.json';
-import diagnosticoAsset from '@/assets/seguranca-mobile/grapheneos-diagnostico.jpg.asset.json';
-import appsGovernanceBackground from '@/assets/seguranca-mobile/grapheneos-apps-governance-background.jpg.asset.json';
-import sandboxedPlayImage from '@/assets/seguranca-mobile/grapheneos-sandboxed-play.jpg.asset.json';
-import appPermissionsImage from '@/assets/seguranca-mobile/grapheneos-app-permissions.jpg.asset.json';
-import appPilotImage from '@/assets/seguranca-mobile/grapheneos-app-pilot.jpg.asset.json';
-import faqBackground from '@/assets/seguranca-mobile/grapheneos-faq-background.jpg.asset.json';
-import decisionBackground from '@/assets/seguranca-mobile/grapheneos-decision-background.jpg.asset.json';
-import architectureBackground from '@/assets/seguranca-mobile/grapheneos-architecture-background.jpg.asset.json';
-import acquisitionBackground from '@/assets/seguranca-mobile/grapheneos-acquisition-background.jpg.asset.json';
-import installationBackground from '@/assets/seguranca-mobile/grapheneos-installation-background.jpg.asset.json';
-import operationsBackground from '@/assets/seguranca-mobile/grapheneos-operations-background.jpg.asset.json';
-import verdictBackground from '@/assets/seguranca-mobile/grapheneos-verdict-background.jpg.asset.json';
-import learningPathBackground from '@/assets/seguranca-mobile/grapheneos-learning-path-background.jpg.asset.json';
-import communityBackgroundAsset from '@/assets/seguranca-mobile/grapheneos-community-background.jpg.asset.json';
-import discordImageAsset from '@/assets/seguranca-mobile/grapheneos-discord-support.jpg.asset.json';
-import matrixImageAsset from '@/assets/seguranca-mobile/grapheneos-matrix-support-v3.jpg.asset.json';
-import forumImageAsset from '@/assets/seguranca-mobile/grapheneos-forum-support.jpg.asset.json';
-import discordLogoAsset from '@/assets/seguranca-mobile/discord-official.svg.asset.json';
-import matrixLogoAsset from '@/assets/seguranca-mobile/matrix-official.svg.asset.json';
+import heroAsset from '@/assets/seguranca-mobile/grapheneos-hero.jpg';
+import logoAsset from '@/assets/seguranca-mobile/grapheneos-logo.svg';
+import bancadaAsset from '@/assets/seguranca-mobile/grapheneos-bancada.jpg';
+import arquiteturaAsset from '@/assets/seguranca-mobile/grapheneos-isolamento-operacional.jpg';
+import pixelsAsset from '@/assets/seguranca-mobile/grapheneos-pixels-compativeis.jpg';
+import instalacaoAsset from '@/assets/seguranca-mobile/grapheneos-instalacao.jpg';
+import redeAsset from '@/assets/seguranca-mobile/grapheneos-rede.jpg';
+import diagnosticoAsset from '@/assets/seguranca-mobile/grapheneos-diagnostico.jpg';
+import appsGovernanceBackground from '@/assets/seguranca-mobile/grapheneos-apps-governance-background.jpg';
+import sandboxedPlayImage from '@/assets/seguranca-mobile/grapheneos-sandboxed-play.jpg';
+import appPermissionsImage from '@/assets/seguranca-mobile/grapheneos-app-permissions.jpg';
+import appPilotImage from '@/assets/seguranca-mobile/grapheneos-app-pilot.jpg';
+import faqBackground from '@/assets/seguranca-mobile/grapheneos-faq-background.jpg';
+import decisionBackground from '@/assets/seguranca-mobile/grapheneos-decision-background.jpg';
+import architectureBackground from '@/assets/seguranca-mobile/grapheneos-architecture-background.jpg';
+import acquisitionBackground from '@/assets/seguranca-mobile/grapheneos-acquisition-background.jpg';
+import installationBackground from '@/assets/seguranca-mobile/grapheneos-installation-background.jpg';
+import operationsBackground from '@/assets/seguranca-mobile/grapheneos-operations-background.jpg';
+import verdictBackground from '@/assets/seguranca-mobile/grapheneos-verdict-background.jpg';
+import learningPathBackground from '@/assets/seguranca-mobile/grapheneos-learning-path-background.jpg';
+import communityBackgroundAsset from '@/assets/seguranca-mobile/grapheneos-community-background.jpg';
+import discordImageAsset from '@/assets/seguranca-mobile/grapheneos-discord-support.jpg';
+import matrixImageAsset from '@/assets/seguranca-mobile/grapheneos-matrix-support-v3.jpg';
+import forumImageAsset from '@/assets/seguranca-mobile/grapheneos-forum-support.jpg';
+import discordLogoAsset from '@/assets/seguranca-mobile/discord-official.svg';
+import matrixLogoAsset from '@/assets/seguranca-mobile/matrix-official.svg';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const reveal = (delay = 0) => ({
@@ -148,7 +148,7 @@ function Figure({ asset, alt, caption }: { asset: { url: string }; alt: string; 
   return (
     <motion.figure {...reveal(0.08)} className="group relative my-12 h-[62vh] min-h-[420px] max-h-[760px] w-full overflow-hidden rounded-lg graphene-image-shadow">
       <motion.img
-        src={asset.url}
+        src={asset}
         alt={alt}
         loading="lazy"
         decoding="async"
@@ -181,7 +181,7 @@ function PanoramicBackground({ asset, alt, tone = 'light' }: { asset: { url: str
   return (
     <>
       <motion.img
-        src={asset.url}
+        src={asset}
         alt={alt}
         loading="lazy"
         decoding="async"
@@ -202,11 +202,11 @@ function Hero() {
   const y = useTransform(scrollY, [0, 900], [0, 180]);
   return (
     <section className="relative min-h-[88vh] overflow-hidden graphene-teal">
-      <motion.img style={{ y }} src={heroAsset.url} alt="Google Pixel em bancada profissional preparado para implantação do GrapheneOS" width={1920} height={1088} fetchPriority="high" decoding="async" className="absolute inset-0 h-[110%] w-full object-cover" />
+      <motion.img style={{ y }} src={heroAsset} alt="Google Pixel em bancada profissional preparado para implantação do GrapheneOS" width={1920} height={1088} fetchPriority="high" decoding="async" className="absolute inset-0 h-[110%] w-full object-cover" />
       <div className="graphene-hero-overlay absolute inset-0" />
       <div className="relative z-10 flex min-h-[88vh] max-w-[1600px] flex-col justify-end px-6 pb-16 pt-36 md:px-12 md:pb-24 lg:px-20">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, ease: EASE }} className="mb-7 flex items-center gap-4">
-          <div className="flex h-14 w-14 items-center justify-center rounded-md bg-background/95 p-2.5 shadow-xl"><img src={logoAsset.url} alt="Marca oficial do GrapheneOS" width={48} height={48} /></div>
+          <div className="flex h-14 w-14 items-center justify-center rounded-md bg-background/95 p-2.5 shadow-xl"><img src={logoAsset} alt="Marca oficial do GrapheneOS" width={48} height={48} /></div>
           <div><p className="text-xs font-bold uppercase tracking-[0.3em] text-background/70">Segurança Mobile</p><p className="text-2xl font-black tracking-normal text-background">GrapheneOS</p></div>
         </motion.div>
         <motion.h1 initial={{ opacity: 0, y: 42, filter: 'blur(10px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 1, delay: .1, ease: EASE }} className="max-w-[15ch] text-[clamp(3rem,8vw,7.4rem)] font-black leading-[.92] tracking-normal text-background">
@@ -287,7 +287,7 @@ export default function GrapheneOS() {
         </section>
 
         <section className="graphene-governance relative isolate overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
-          <motion.img src={appsGovernanceBackground.url} alt="Central corporativa de governança de aplicativos em dispositivos móveis" loading="lazy" decoding="async" width={1920} height={1080} initial={{ scale: 1.04 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: .15 }} transition={{ duration: 2.4, ease: EASE }} className="absolute inset-0 -z-30 h-full w-full object-cover" />
+          <motion.img src={appsGovernanceBackground} alt="Central corporativa de governança de aplicativos em dispositivos móveis" loading="lazy" decoding="async" width={1920} height={1080} initial={{ scale: 1.04 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: .15 }} transition={{ duration: 2.4, ease: EASE }} className="absolute inset-0 -z-30 h-full w-full object-cover" />
           <div className="graphene-governance-shade absolute inset-0 -z-20" />
           <div className="graphene-community-grid absolute inset-0 -z-10" />
           <div className="mx-auto max-w-[1600px]">
@@ -299,7 +299,7 @@ export default function GrapheneOS() {
               {APP_GOVERNANCE.map((item, i) => (
                 <motion.article key={item.title} {...reveal(i * .09)} whileHover={{ y: -8 }} className="graphene-community-card group relative flex min-h-[590px] flex-col overflow-hidden rounded-lg border">
                   <div className="relative h-72 overflow-hidden">
-                    <img src={item.image.url} alt={`Aplicação prática de ${item.title} no GrapheneOS`} loading="lazy" decoding="async" width={1200} height={900} className="h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.08]" />
+                    <img src={item.image} alt={`Aplicação prática de ${item.title} no GrapheneOS`} loading="lazy" decoding="async" width={1200} height={900} className="h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.08]" />
                     <div className="graphene-community-image-shade absolute inset-0" />
                     <div className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-md border border-background/20 bg-foreground/75 backdrop-blur-md"><item.icon className="graphene-copper-soft h-7 w-7" /></div>
                     <span className="absolute bottom-5 left-6 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-background/80">{item.label}</span>
@@ -343,7 +343,7 @@ export default function GrapheneOS() {
 
         <section className="graphene-community relative isolate overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
           <motion.img
-            src={communityBackgroundAsset.url}
+            src={communityBackgroundAsset}
             alt="Equipe internacional colaborando em uma central de suporte técnico"
             loading="lazy"
             decoding="async"
@@ -371,10 +371,10 @@ export default function GrapheneOS() {
               {COMMUNITY_CHANNELS.map((channel, i) => (
                 <motion.article key={channel.title} {...reveal(i * .09)} whileHover={{ y: -8 }} className="graphene-community-card group relative flex min-h-[590px] flex-col overflow-hidden rounded-lg border">
                   <div className="relative h-72 overflow-hidden">
-                    <img src={channel.image.url} alt={`Ambiente visual do ${channel.title}`} loading="lazy" decoding="async" width={1200} height={900} className="h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.08]" />
+                    <img src={channel.image} alt={`Ambiente visual do ${channel.title}`} loading="lazy" decoding="async" width={1200} height={900} className="h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.08]" />
                     <div className="graphene-community-image-shade absolute inset-0" />
                     <div className="absolute left-6 top-6 flex h-14 min-w-14 items-center justify-center rounded-md border border-background/20 bg-foreground/75 px-3 backdrop-blur-md">
-                      <img src={channel.logo.url} alt={`Marca oficial ${channel.logoAlt}`} loading="lazy" width={38} height={38} className="h-8 max-w-24 object-contain" />
+                      <img src={channel.logo} alt={`Marca oficial ${channel.logoAlt}`} loading="lazy" width={38} height={38} className="h-8 max-w-24 object-contain" />
                     </div>
                     <span className="absolute bottom-5 left-6 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-background/80">{channel.label}</span>
                   </div>
@@ -398,7 +398,7 @@ export default function GrapheneOS() {
         </section>
 
         <section id="faq" className="graphene-faq relative isolate scroll-mt-16 overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
-          <img src={faqBackground.url} alt="Google Pixel em ambiente editorial dedicado à documentação de segurança" loading="lazy" decoding="async" width={1920} height={1080} className="absolute inset-0 -z-30 h-full w-full object-cover" />
+          <img src={faqBackground} alt="Google Pixel em ambiente editorial dedicado à documentação de segurança" loading="lazy" decoding="async" width={1920} height={1080} className="absolute inset-0 -z-30 h-full w-full object-cover" />
           <div className="graphene-faq-shade absolute inset-0 -z-20" />
           <div className="mx-auto max-w-[1600px]">
             <Heading chapter="08 / FAQ técnico" title="Objeções complexas," accent="respostas abertas." dark />

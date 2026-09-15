@@ -5,12 +5,12 @@ import { AlertTriangle, ArrowRight, CheckCircle2, Eye, Globe2, LockKeyhole, Netw
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import { Button } from '@/components/ui/button';
-import heroAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-hero.jpg.asset.json';
-import appAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-app-conectada.jpg.asset.json';
-import wifiAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-wifi-publico.jpg.asset.json';
-import infraAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-infraestrutura.jpg.asset.json';
-import permissoesAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-permissoes.jpg.asset.json';
-import configuracaoAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-configuracao.jpg.asset.json';
+import heroAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-hero.jpg';
+import appAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-app-conectada.jpg';
+import wifiAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-wifi-publico.jpg';
+import infraAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-infraestrutura.jpg';
+import permissoesAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-permissoes.jpg';
+import configuracaoAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-configuracao.jpg';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const reveal = (delay = 0) => ({
@@ -67,7 +67,7 @@ function Hero() {
   const y = useTransform(scrollY, [0, 900], [0, reduceMotion ? 0 : 180]);
   const opacity = useTransform(scrollY, [0, 650], [1, 0.22]);
   return <section className="vpn-hero relative min-h-[88vh] overflow-hidden">
-    <motion.img style={{ y }} src={heroAsset.url} alt="Celular com VPN ativada, ícone de cadeado na tela, simbolizando conexão criptografada" width={1920} height={1088} fetchPriority="high" decoding="async" className="absolute inset-0 h-[110%] w-full object-cover" />
+    <motion.img style={{ y }} src={heroAsset} alt="Celular com VPN ativada, ícone de cadeado na tela, simbolizando conexão criptografada" width={1920} height={1088} fetchPriority="high" decoding="async" className="absolute inset-0 h-[110%] w-full object-cover" />
     <div className="vpn-hero-shade absolute inset-0" />
     <motion.div style={{ opacity }} className="relative z-10 flex min-h-[88vh] max-w-[1600px] flex-col justify-end px-6 pb-16 pt-36 md:px-12 md:pb-24 lg:px-20">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, ease: EASE }} className="mb-7 flex items-center gap-4"><div className="vpn-brand-mark flex h-14 w-14 items-center justify-center rounded-md border border-background/25 bg-background/10 backdrop-blur-xl"><LockKeyhole className="h-7 w-7 text-background" /></div><div><p className="text-xs font-bold uppercase tracking-[0.3em] text-background/70">Segurança Mobile</p><p className="text-xl font-black uppercase tracking-normal text-background">Guias Práticos de Hardening</p></div></motion.div>
@@ -83,11 +83,11 @@ function Heading({ chapter, children, dark = false }: { chapter: string; childre
 
 function PanoramicBackground({ asset, alt, light = false }: { asset: Asset; alt: string; light?: boolean }) {
   const reduceMotion = useReducedMotion();
-  return <><motion.img src={asset.url} alt={alt} loading="lazy" decoding="async" width={1920} height={1088} animate={reduceMotion ? undefined : { scale: [1, 1.06, 1], x: ['0%', '-0.7%', '0%'] }} transition={reduceMotion ? undefined : { duration: 18, repeat: Infinity, ease: 'easeInOut' }} className="absolute inset-0 -z-30 h-full w-full object-cover"/><div className={light ? 'vpn-light-shade absolute inset-0 -z-20' : 'vpn-dark-shade absolute inset-0 -z-20'}/><div className="vpn-grid absolute inset-0 -z-10"/></>;
+  return <><motion.img src={asset} alt={alt} loading="lazy" decoding="async" width={1920} height={1088} animate={reduceMotion ? undefined : { scale: [1, 1.06, 1], x: ['0%', '-0.7%', '0%'] }} transition={reduceMotion ? undefined : { duration: 18, repeat: Infinity, ease: 'easeInOut' }} className="absolute inset-0 -z-30 h-full w-full object-cover"/><div className={light ? 'vpn-light-shade absolute inset-0 -z-20' : 'vpn-dark-shade absolute inset-0 -z-20'}/><div className="vpn-grid absolute inset-0 -z-10"/></>;
 }
 
 function EditorialFigure({ asset, alt, caption }: { asset: Asset; alt: string; caption: string }) {
-  return <motion.figure {...reveal(.1)} className="vpn-figure group relative mt-12 overflow-hidden rounded-lg"><img src={asset.url} alt={alt} loading="lazy" decoding="async" width={1536} height={1024} className="h-[50vh] min-h-[360px] w-full object-cover transition-transform duration-1000 group-hover:scale-[1.035]"/><div className="absolute inset-0 bg-gradient-to-t from-foreground/95 via-transparent to-transparent"/><figcaption className="absolute inset-x-0 bottom-0 p-6 text-base font-semibold leading-relaxed text-background md:p-9 md:text-lg">{caption}</figcaption></motion.figure>;
+  return <motion.figure {...reveal(.1)} className="vpn-figure group relative mt-12 overflow-hidden rounded-lg"><img src={asset} alt={alt} loading="lazy" decoding="async" width={1536} height={1024} className="h-[50vh] min-h-[360px] w-full object-cover transition-transform duration-1000 group-hover:scale-[1.035]"/><div className="absolute inset-0 bg-gradient-to-t from-foreground/95 via-transparent to-transparent"/><figcaption className="absolute inset-x-0 bottom-0 p-6 text-base font-semibold leading-relaxed text-background md:p-9 md:text-lg">{caption}</figcaption></motion.figure>;
 }
 
 export default function VpnNoCelularQuandoAjuda() {

@@ -5,14 +5,14 @@ import { ArrowRight, CheckCircle2, Cloud, Eye, LockKeyhole, Radar, ShieldCheck, 
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import { Button } from '@/components/ui/button';
-import heroAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-hero.jpg.asset.json';
-import trackingAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-tracking-pt.jpg.asset.json';
-import datacenterAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-datacenter.jpg.asset.json';
-import publicoAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-publico-pt.jpg.asset.json';
-import comparacaoAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-vs-graphene-clean.jpg.asset.json';
-import privacidadeAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-privacidade-pt.jpg.asset.json';
-import vereditoAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-veredito-pt.jpg.asset.json';
-import appleLogoAsset from '@/assets/seguranca-mobile/iphone-seguro/apple-logo.svg.asset.json';
+import heroAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-hero.jpg';
+import trackingAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-tracking-pt.jpg';
+import datacenterAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-datacenter.jpg';
+import publicoAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-publico-pt.jpg';
+import comparacaoAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-vs-graphene-clean.jpg';
+import privacidadeAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-privacidade-pt.jpg';
+import vereditoAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-veredito-pt.jpg';
+import appleLogoAsset from '@/assets/seguranca-mobile/iphone-seguro/apple-logo.svg';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const reveal = (delay = 0) => ({
@@ -70,11 +70,11 @@ function Hero() {
 
   return (
     <section className="iphone-hero relative min-h-[88vh] overflow-hidden">
-      <motion.img style={{ y }} src={heroAsset.url} alt="iPhone com Face ID ativo em ambiente escuro, simbolizando segurança e privacidade" width={1920} height={1088} fetchPriority="high" decoding="async" className="absolute inset-0 h-[110%] w-full object-cover" />
+      <motion.img style={{ y }} src={heroAsset} alt="iPhone com Face ID ativo em ambiente escuro, simbolizando segurança e privacidade" width={1920} height={1088} fetchPriority="high" decoding="async" className="absolute inset-0 h-[110%] w-full object-cover" />
       <div className="iphone-hero-shade absolute inset-0" />
       <motion.div style={{ opacity }} className="relative z-10 flex min-h-[88vh] max-w-[1600px] flex-col justify-end px-6 pb-16 pt-36 md:px-12 md:pb-24 lg:px-20">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, ease: EASE }} className="mb-7 flex items-center gap-4">
-          <div className="iphone-brand-mark flex h-14 w-14 items-center justify-center rounded-md border border-background/25 bg-background/10 p-3 backdrop-blur-xl"><img src={appleLogoAsset.url} alt="Logo oficial da Apple" width={28} height={34} className="h-8 w-auto brightness-0 invert" /></div>
+          <div className="iphone-brand-mark flex h-14 w-14 items-center justify-center rounded-md border border-background/25 bg-background/10 p-3 backdrop-blur-xl"><img src={appleLogoAsset} alt="Logo oficial da Apple" width={28} height={34} className="h-8 w-auto brightness-0 invert" /></div>
           <div><p className="text-xs font-bold uppercase tracking-[0.3em] text-background/70">Segurança Mobile</p><p className="text-xl font-black uppercase tracking-normal text-background">Curiosidades / Mitos</p></div>
         </motion.div>
         <motion.h1 initial={{ opacity: 0, y: 42, filter: 'blur(10px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 1, delay: .1, ease: EASE }} className="max-w-[17ch] text-[clamp(2.75rem,7.3vw,7rem)] font-black uppercase leading-[.92] tracking-normal text-background">
@@ -93,12 +93,12 @@ function Heading({ chapter, children, dark = false }: { chapter: string; childre
 }
 
 function EditorialFigure({ asset, alt, caption }: { asset: Asset; alt: string; caption: string }) {
-  return <motion.figure {...reveal(.08)} className="iphone-figure group relative my-12 h-[58vh] min-h-[390px] max-h-[720px] overflow-hidden rounded-lg"><img src={asset.url} alt={alt} loading="lazy" decoding="async" width={1536} height={1024} className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.045]"/><div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-transparent to-transparent"/><figcaption className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-24 text-base font-semibold leading-relaxed text-background md:px-9 md:pb-9 md:text-lg">{caption}</figcaption></motion.figure>;
+  return <motion.figure {...reveal(.08)} className="iphone-figure group relative my-12 h-[58vh] min-h-[390px] max-h-[720px] overflow-hidden rounded-lg"><img src={asset} alt={alt} loading="lazy" decoding="async" width={1536} height={1024} className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.045]"/><div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-transparent to-transparent"/><figcaption className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-24 text-base font-semibold leading-relaxed text-background md:px-9 md:pb-9 md:text-lg">{caption}</figcaption></motion.figure>;
 }
 
 function KenBurnsBackground({ asset, alt, light = false }: { asset: Asset; alt: string; light?: boolean }) {
   const reduceMotion = useReducedMotion();
-  return <><motion.img src={asset.url} alt={alt} loading="lazy" decoding="async" width={1920} height={1088} animate={reduceMotion ? undefined : { scale: [1, 1.06, 1], x: ['0%', '-0.7%', '0%'] }} transition={reduceMotion ? undefined : { duration: 18, repeat: Infinity, ease: 'easeInOut' }} className="absolute inset-0 -z-30 h-full w-full object-cover"/><div className={light ? 'iphone-light-shade absolute inset-0 -z-20' : 'iphone-dark-shade absolute inset-0 -z-20'}/><div className="iphone-grid absolute inset-0 -z-10"/></>;
+  return <><motion.img src={asset} alt={alt} loading="lazy" decoding="async" width={1920} height={1088} animate={reduceMotion ? undefined : { scale: [1, 1.06, 1], x: ['0%', '-0.7%', '0%'] }} transition={reduceMotion ? undefined : { duration: 18, repeat: Infinity, ease: 'easeInOut' }} className="absolute inset-0 -z-30 h-full w-full object-cover"/><div className={light ? 'iphone-light-shade absolute inset-0 -z-20' : 'iphone-dark-shade absolute inset-0 -z-20'}/><div className="iphone-grid absolute inset-0 -z-10"/></>;
 }
 
 export default function IPhoneESeguroMesmo() {
@@ -138,7 +138,7 @@ export default function IPhoneESeguroMesmo() {
         <div className="mx-auto max-w-[1600px]">
           <Heading chapter="02 / O que a Apple realmente faz bem" dark>Crédito técnico, <span className="iphone-copper-soft font-editorial font-normal italic">onde ele é devido.</span></Heading>
           <motion.p {...reveal(.06)} className="max-w-3xl text-lg leading-relaxed text-background/80 md:text-xl">Vamos dar crédito onde é devido, porque conteúdo de segurança digital vira propaganda barata quando trata tudo como inimigo.</motion.p>
-          <div className="mt-12 grid gap-5 md:grid-cols-2">{APPLE_STRENGTHS.map((text, i) => <motion.article key={text} {...reveal(i * .06)} className="iphone-card-dark group rounded-lg border p-8 transition-all duration-500 hover:-translate-y-1 md:p-10"><div className="mb-6 flex items-center justify-between"><span className="iphone-copper-soft text-xs font-black tracking-[0.25em]">0{i + 1}</span>{i === 3 ? <img src={appleLogoAsset.url} alt="Logo oficial da Apple" loading="lazy" width={28} height={34} className="h-8 w-auto opacity-90"/> : <ShieldCheck className="iphone-copper-soft h-6 w-6 transition-transform duration-500 group-hover:scale-110"/>}</div><p className="text-lg leading-[1.75] text-background/78">{text}</p></motion.article>)}</div>
+          <div className="mt-12 grid gap-5 md:grid-cols-2">{APPLE_STRENGTHS.map((text, i) => <motion.article key={text} {...reveal(i * .06)} className="iphone-card-dark group rounded-lg border p-8 transition-all duration-500 hover:-translate-y-1 md:p-10"><div className="mb-6 flex items-center justify-between"><span className="iphone-copper-soft text-xs font-black tracking-[0.25em]">0{i + 1}</span>{i === 3 ? <img src={appleLogoAsset} alt="Logo oficial da Apple" loading="lazy" width={28} height={34} className="h-8 w-auto opacity-90"/> : <ShieldCheck className="iphone-copper-soft h-6 w-6 transition-transform duration-500 group-hover:scale-110"/>}</div><p className="text-lg leading-[1.75] text-background/78">{text}</p></motion.article>)}</div>
           <EditorialFigure asset={trackingAsset} alt={'Tela de permissão de rastreamento entre apps no iOS, recurso de App Tracking Transparency'} caption="App Tracking Transparency transforma rastreamento entre aplicativos em uma decisão visível."/>
         </div>
       </section>
@@ -166,7 +166,7 @@ export default function IPhoneESeguroMesmo() {
           <Heading chapter="05 / Então, pra quem o iPhone é seguro o suficiente" dark>O risco muda. <span className="iphone-copper-soft font-editorial font-normal italic">A resposta também.</span></Heading>
           <motion.p {...reveal(.06)} className="max-w-3xl text-xl font-black leading-relaxed text-background md:text-3xl">Sejamos honestos sobre pra quem isso serve.</motion.p>
           <div className="mt-10 grid gap-6 lg:grid-cols-2"><motion.article {...reveal(.08)} className="iphone-card-dark rounded-lg border p-8 md:p-10"><span className="iphone-copper-soft text-xs font-black uppercase tracking-[0.25em]">Uso cotidiano</span><p className="mt-5 text-lg leading-[1.75] text-background/80">Se você é usuário comum, quer manter foto de família, conversa pessoal e conta bancária longe de ladrão oportunista e malware genérico, o iPhone, com as configurações certas, cumpre isso bem. Melhor que a maioria dos Android de fábrica, sem sombra de dúvida.</p></motion.article><motion.article {...reveal(.14)} className="iphone-card-dark rounded-lg border p-8 md:p-10"><span className="iphone-copper-soft text-xs font-black uppercase tracking-[0.25em]">Risco elevado</span><p className="mt-5 text-lg leading-[1.75] text-background/80">Se você é jornalista investigativo, ativista, alvo potencial de vigilância estatal, advogado com sigilo de cliente sensível, ou simplesmente alguém que trata privacidade como princípio inegociável, o iPhone é um ponto de partida razoável, mas não é o teto. Nesse caso, vale olhar pra sistemas como GrapheneOS, que é auditável e não depende de confiança cega numa empresa.</p></motion.article></div>
-          <motion.div {...reveal(.1)} className="group relative mt-12 overflow-hidden rounded-lg border border-background/20"><img src={comparacaoAsset.url} alt="Comparação visual entre iPhone e smartphone Pixel rodando GrapheneOS" loading="lazy" decoding="async" width={1536} height={1024} className="h-[52vh] min-h-[380px] w-full object-cover transition-transform duration-1000 group-hover:scale-[1.035]"/><div className="absolute inset-0 bg-gradient-to-t from-foreground/95 via-foreground/15 to-transparent"/><div className="absolute inset-x-0 bottom-0 flex flex-col gap-5 p-6 md:flex-row md:items-end md:justify-between md:p-10"><p className="max-w-xl text-lg font-semibold leading-relaxed text-background">Comparação visual entre iPhone e smartphone Pixel rodando GrapheneOS.</p><Button asChild size="lg" className="iphone-btn h-13 px-7 font-bold"><Link to="/seguranca-mobile/grapheneos">Analisar o GrapheneOS <ArrowRight/></Link></Button></div></motion.div>
+          <motion.div {...reveal(.1)} className="group relative mt-12 overflow-hidden rounded-lg border border-background/20"><img src={comparacaoAsset} alt="Comparação visual entre iPhone e smartphone Pixel rodando GrapheneOS" loading="lazy" decoding="async" width={1536} height={1024} className="h-[52vh] min-h-[380px] w-full object-cover transition-transform duration-1000 group-hover:scale-[1.035]"/><div className="absolute inset-0 bg-gradient-to-t from-foreground/95 via-foreground/15 to-transparent"/><div className="absolute inset-x-0 bottom-0 flex flex-col gap-5 p-6 md:flex-row md:items-end md:justify-between md:p-10"><p className="max-w-xl text-lg font-semibold leading-relaxed text-background">Comparação visual entre iPhone e smartphone Pixel rodando GrapheneOS.</p><Button asChild size="lg" className="iphone-btn h-13 px-7 font-bold"><Link to="/seguranca-mobile/grapheneos">Analisar o GrapheneOS <ArrowRight/></Link></Button></div></motion.div>
         </div>
       </section>
 
