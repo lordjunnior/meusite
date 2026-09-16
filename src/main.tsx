@@ -23,9 +23,13 @@ if (import.meta.env.PROD) {
     },
   });
 
+  // Na primeira visita a pagina ainda nao tem controlador. Quando o service
+  // worker recem instalado assume o controle, isso nao e uma atualizacao e nao
+  // deve recarregar a pagina.
+  const hadControllerAtStartup = Boolean(navigator.serviceWorker?.controller);
   let reloaded = false;
   navigator.serviceWorker?.addEventListener("controllerchange", () => {
-    if (reloaded) return;
+    if (!hadControllerAtStartup || reloaded) return;
     reloaded = true;
     window.location.reload();
   });
