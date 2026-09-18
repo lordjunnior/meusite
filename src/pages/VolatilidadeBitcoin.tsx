@@ -101,7 +101,7 @@ export default function VolatilidadeBitcoin() {
         <meta property="og:title" content="Volatilidade do Bitcoin — O Preço da Soberania" />
         <meta property="og:description" content="A volatilidade assusta quem quer ficar rico rápido, mas recompensa quem quer não ser pobre devagar." />
         <meta property="og:image" content="/heroes/volatilidade-bitcoin.webp" />
-        <link rel="canonical" href="https://despertarsoberano.com/volatilidade" />
+        <link rel="canonical" href="https://lordjunnior.com.br/volatilidade" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
