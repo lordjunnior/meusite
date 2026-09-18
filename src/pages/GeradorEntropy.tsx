@@ -127,11 +127,8 @@ const GeradorEntropy: React.FC = () => {
 
   const generate = () => {
     if (!ready) return;
-    const pool = Uint8Array.from(
-      new Float64Array(poolRef.current).buffer
-        ? new Uint8Array(new Float64Array(poolRef.current).buffer)
-        : [],
-    );
+    const samplesBuffer = new Float64Array(poolRef.current);
+    const pool = new Uint8Array(samplesBuffer.buffer.slice(0));
     setResult(deriveMnemonic(pool, wordCount === 24 ? 32 : 16));
     setRevealed(false);
   };
