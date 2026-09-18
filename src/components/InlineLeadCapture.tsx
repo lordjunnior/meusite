@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Zap, Loader2, CheckCircle, Shield } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { submitLead } from "@/lib/leadSubmission";
+import LeadConsentFields from "@/components/LeadConsentFields";
 import { z } from "zod";
 import BitcoinCoinRain from "@/components/BitcoinCoinRain";
 
@@ -30,6 +31,8 @@ const InlineLeadCapture = ({
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [consent, setConsent] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,19 +44,25 @@ const InlineLeadCapture = ({
       return;
     }
 
+    if (!consent) {
+      setError("Marque a autorização para entrar na lista.");
+      return;
+    }
+
     setLoading(true);
-    try {
-      const { error: dbError } = await supabase.from("leads" as any).insert({
-        nome: result.data.nome,
-        email: result.data.email,
-        interesse,
-      } as any);
-      if (dbError) throw dbError;
+    const outcome = await submitLead({
+      nome: result.data.nome,
+      email: result.data.email,
+      interesse,
+      consentimento: consent,
+      honeypot,
+    });
+    setLoading(false);
+
+    if (outcome.ok) {
       setSuccess(true);
-    } catch {
-      setError("Erro ao enviar. Tente novamente.");
-    } finally {
-      setLoading(false);
+    } else {
+      setError(outcome.message ?? "Erro ao enviar. Tente novamente.");
     }
   };
 
@@ -120,6 +129,17 @@ const InlineLeadCapture = ({
             {loading ? "Enviando..." : "Entrar"}
           </button>
         </form>
+
+        <div className="relative mt-4">
+          <LeadConsentFields
+            id="inline"
+            consent={consent}
+            onConsentChange={setConsent}
+            honeypot={honeypot}
+            onHoneypotChange={setHoneypot}
+            finalidade="Usamos seu nome e e-mail apenas para enviar os materiais desta lista. Sem repasse a terceiros e com cancelamento em um clique."
+          />
+        </div>
 
         {error && <p className="text-destructive text-xs mt-2">{error}</p>}
 

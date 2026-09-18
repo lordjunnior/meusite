@@ -743,13 +743,13 @@ export default function SobreMim() {
               <a href="mailto:contato@lordjunnior.com" className="flex items-center gap-3 hover:text-white transition-colors">
                 <Mail className="w-4 h-4" /> Email Direto
               </a>
-              <a href="https://instagram.com/lord.junnior" target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-white transition-colors">
+              <a href="https://instagram.com/lord.junnior" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-white transition-colors">
                 <Instagram className="w-4 h-4" /> Instagram
               </a>
-              <a href="https://youtube.com/@LordJunnior" target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-white transition-colors">
+              <a href="https://youtube.com/@LordJunnior" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-white transition-colors">
                 <Youtube className="w-4 h-4" /> YouTube
               </a>
-              <a href="https://github.com/lordjunnior" target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-white transition-colors">
+              <a href="https://github.com/lordjunnior" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-white transition-colors">
                 <Github className="w-4 h-4" /> GitHub
               </a>
             </div>

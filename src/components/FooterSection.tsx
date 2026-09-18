@@ -281,6 +281,14 @@ const FooterSection = () => {
               <Link to="/ebooks" className="text-muted-foreground hover:text-gold transition-colors tracking-wider uppercase">
                 E-books
               </Link>
+              <span className="text-muted-foreground/30">&middot;</span>
+              <Link to="/privacidade" className="text-muted-foreground hover:text-gold transition-colors tracking-wider uppercase">
+                Privacidade
+              </Link>
+              <span className="text-muted-foreground/30">&middot;</span>
+              <Link to="/termos" className="text-muted-foreground hover:text-gold transition-colors tracking-wider uppercase">
+                Termos
+              </Link>
             </div>
           </div>
         </div>
