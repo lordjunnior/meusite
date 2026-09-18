@@ -194,3 +194,9 @@ Pendente:
 - Uma acao por pagina: revisar os finais das paginas silo a silo e deixar um unico proximo passo.
 - Entregar de fato os materiais das ofertas (PDFs do checklist, calendario, mapa).
 - Fase 1 de distribuicao: Search Console, Bing Webmaster, Grupo A (metodologia + bloco de autor).
+
+## Inteligência Editorial da Biblioteca
+
+Especificação completa em docs/inteligencia-editorial/ESPECIFICACAO.md (versão 1.0, aguardando aprovação).
+Sete motores: Demand, Intent, Coverage, Gap, Editorial Guard, Opportunity, Learning Loop.
+Nada será codificado antes da aprovação das decisões pendentes da seção 16.
