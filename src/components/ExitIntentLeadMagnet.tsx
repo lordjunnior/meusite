@@ -198,6 +198,16 @@ const ExitIntentLeadMagnet = () => {
                         {errors.email && <p className="text-rose-400 text-xs mt-1">{errors.email}</p>}
                       </div>
 
+                      <LeadConsentFields
+                        id="exit-intent"
+                        consent={consent}
+                        onConsentChange={setConsent}
+                        honeypot={honeypot}
+                        onHoneypotChange={setHoneypot}
+                        finalidade="Usamos seu nome e e-mail apenas para enviar os materiais desta lista. Sem repasse a terceiros e com cancelamento em um clique."
+                        error={errors.consent}
+                      />
+
                       {errors.form && (
                         <div className="rounded-xl bg-rose-500/10 border border-rose-500/20 px-4 py-2.5">
                           <p className="text-rose-400 text-sm">{errors.form}</p>
