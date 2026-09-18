@@ -28,6 +28,8 @@ const SilencioQueda = lazy(() => import("./pages/SilencioQueda"));
 const ProtocoloInicial = lazy(() => import("./pages/ProtocoloInicial"));
 const Arsenal = lazy(() => import("./pages/Arsenal"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const Privacidade = lazy(() => import("./pages/Privacidade"));
+const Termos = lazy(() => import("./pages/Termos"));
 const BlindagemGolpes = lazy(() => import("./pages/BlindagemGolpes"));
 const ProibicaoDinheiro = lazy(() => import("./pages/ProibicaoDinheiro"));
 const AlertasHub = lazy(() => import("./pages/AlertasHub"));
@@ -469,6 +471,8 @@ const App = () => (
             <Route path="/soberania-organica/nostr-rede-social-sem-censura" element={<LegacyRedirect to="/o-que-e-nostr" />} />
             <Route path="/soberania-organica/autonomia-energetica" element={<AutonomiaEnergetica />} />
             <Route path="/soberania-organica/refugio-rural" element={<RefugioRural />} />
+            <Route path="/privacidade" element={<Privacidade />} />
+            <Route path="/termos" element={<Termos />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
