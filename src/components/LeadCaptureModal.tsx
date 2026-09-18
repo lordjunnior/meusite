@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Shield, Star, ExternalLink, CheckCircle, Loader2 } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client';
+import { submitLead } from '@/lib/leadSubmission';
+import LeadConsentFields from '@/components/LeadConsentFields';
 import { z } from 'zod';
 import BitcoinCoinRain from '@/components/BitcoinCoinRain';
 
@@ -26,6 +27,8 @@ const LeadCaptureModal = ({ isOpen, onClose, interesse = 'assessoria-offshore' }
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [consent, setConsent] = useState(false);
+  const [honeypot, setHoneypot] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,6 +72,8 @@ const LeadCaptureModal = ({ isOpen, onClose, interesse = 'assessoria-offshore' }
       setNome('');
       setEmail('');
       setWhatsapp('');
+      setConsent(false);
+      setHoneypot('');
       setErrors({});
       setSuccess(false);
       onClose();
@@ -175,6 +180,15 @@ const LeadCaptureModal = ({ isOpen, onClose, interesse = 'assessoria-offshore' }
                           maxLength={20}
                         />
                       </div>
+
+                      <LeadConsentFields
+                        id="assessoria"
+                        consent={consent}
+                        onConsentChange={setConsent}
+                        honeypot={honeypot}
+                        onHoneypotChange={setHoneypot}
+                        error={errors.consent}
+                      />
 
                       {errors.form && (
                         <div className="rounded-xl bg-rose-500/10 border border-rose-500/20 px-4 py-3">
