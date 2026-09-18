@@ -61,30 +61,33 @@ const NobelSection = ({
 
   useEffect(() => {
     if (!ref.current) return;
+    const section = ref.current;
+    const media = gsap.matchMedia();
 
-    gsap.fromTo(
-      ref.current,
-      { opacity: 0, y: 60, filter: "blur(10px)" },
-      {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        duration: 1.2,
-        delay,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      gsap.fromTo(
+        section,
+        { opacity: 0, y: 60, filter: "blur(10px)" },
+        {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 1.2,
+          delay,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+    media.add("(prefers-reduced-motion: reduce)", () => {
+      gsap.set(section, { opacity: 1, y: 0, filter: "none" });
+    });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => {
-        if (t.trigger === ref.current) t.kill();
-      });
-    };
+    return () => media.revert();
   }, [delay]);
 
   return (
