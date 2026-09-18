@@ -21,9 +21,11 @@ export interface SubmitLeadInput {
   honeypot?: string;
 }
 
-export type SubmitLeadResult =
-  | { ok: true; skipped?: boolean }
-  | { ok: false; message: string };
+export interface SubmitLeadResult {
+  ok: boolean;
+  skipped?: boolean;
+  message?: string;
+}
 
 export async function submitLead(input: SubmitLeadInput): Promise<SubmitLeadResult> {
   // Robôs preenchem todos os campos do formulário, inclusive o invisível.
