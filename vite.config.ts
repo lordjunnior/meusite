@@ -29,9 +29,8 @@ export default defineConfig(({ mode }) => ({
         navigateFallbackDenylist: [/^\/~oauth/],
         runtimeCaching: [
           {
-            urlPattern: ({ url }) =>
-              url.origin === self.location.origin &&
-              /^\/assets\/.*\.(?:avif|webp|jpe?g|png)$/i.test(url.pathname),
+            urlPattern: ({ url, sameOrigin }) =>
+              sameOrigin && /^\/assets\/.*\.(?:avif|webp|jpe?g|png)$/i.test(url.pathname),
             handler: "CacheFirst",
             options: {
               cacheName: "local-images-v1",
