@@ -79,7 +79,7 @@ const TrailNav = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.45, ease: EASE }}
-            className="fixed bottom-4 left-3 right-3 lg:left-[296px] lg:right-auto lg:w-[min(46rem,calc(100vw-340px))] z-[54]"
+            className="fixed bottom-4 left-3 right-[4.5rem] lg:left-[296px] lg:right-auto lg:w-[min(46rem,calc(100vw-340px))] z-[54]"
           >
             <div className="rounded-2xl border border-border/40 bg-background/90 backdrop-blur-xl shadow-2xl overflow-hidden">
               <div className="h-[3px] w-full bg-white/5">
