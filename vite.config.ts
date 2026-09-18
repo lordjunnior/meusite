@@ -91,6 +91,7 @@ export default defineConfig(({ mode }) => ({
           if (id.includes('/gsap/')) return 'vendor-gsap';
           if (id.includes('recharts') || id.includes('/d3-')) return 'vendor-charts';
           if (id.includes('hls.js')) return 'vendor-hls';
+          if (id.includes('lucide-react')) return 'vendor-icons';
           return 'vendor-core';
         },
       },
