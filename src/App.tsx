@@ -257,7 +257,7 @@ const App = () => (
           <Route path="/recursos-e-ferramentas" element={<Arsenal />} />
           <Route path="/arsenal" element={<LegacyRedirect to="/recursos-e-ferramentas" />} />
           <Route path="/blindagem-golpes" element={<BlindagemGolpes />} />
-          <Route path="/proibicao-dinheiro" element={<ProibicaoDinheiro />} />
+          <Route path="/proibicao-dinheiro" element={<LegacyRedirect to="/alertas/fim-do-dinheiro-vivo" />} />
           <Route path="/alertas" element={<AlertasHub />} />
           <Route path="/alertas/cbdc-brasil" element={<CbdcBrasil />} />
           <Route path="/alertas/fim-do-dinheiro-vivo" element={<ProibicaoDinheiro />} />
@@ -382,11 +382,11 @@ const App = () => (
           <Route path="/pix-privacidade" element={<PixAnonimo />} />
             <Route path="/pix-anonimo" element={<LegacyRedirect to="/pix-privacidade" />} />
             <Route path="/multisig-bitcoin" element={<MultisigBitcoin />} />
-            <Route path="/nova-lei-conta-corrente" element={<NovaLeiContaCorrente />} />
+            <Route path="/nova-lei-conta-corrente" element={<LegacyRedirect to="/alertas/nova-lei-conta-corrente" />} />
             <Route path="/alertas/nova-lei-conta-corrente" element={<NovaLeiContaCorrente />} />
             <Route path="/novilingua" element={<Novilingua />} />
             <Route path="/soberania-organica/propolis" element={<Propolis />} />
-            <Route path="/propolis" element={<Propolis />} />
+            <Route path="/propolis" element={<LegacyRedirect to="/soberania-organica/propolis" />} />
             <Route path="/saida/segundo-passaporte" element={<SegundoPassaporte />} />
             <Route path="/saida/residencia-fiscal" element={<ResidenciaFiscal />} />
             <Route path="/saida/jurisdicoes-amigaveis" element={<JurisdicoesAmigaveis />} />

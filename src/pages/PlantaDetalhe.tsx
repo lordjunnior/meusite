@@ -7,6 +7,7 @@ import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PLANTAS, getPlantaBySlug } from '@/lib/plantData';
 import BackToHome from '@/components/BackToHome';
+import { PLANTA_PAGINA_DEDICADA } from '@/lib/plantaCanonical';
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -371,11 +371,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lordjunnior.com.br/nova-lei-conta-corrente</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://lordjunnior.com.br/novilingua</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -422,16 +417,6 @@
   </url>
   <url>
     <loc>https://lordjunnior.com.br/privacidade</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lordjunnior.com.br/proibicao-dinheiro</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lordjunnior.com.br/propolis</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -876,11 +861,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lordjunnior.com.br/soberania-organica/planta/babosa-acemannan</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://lordjunnior.com.br/soberania-organica/planta/boldo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -911,27 +891,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lordjunnior.com.br/soberania-organica/planta/guaco</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://lordjunnior.com.br/soberania-organica/planta/hortela</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lordjunnior.com.br/soberania-organica/planta/oleo-ricino-biohacker</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lordjunnior.com.br/soberania-organica/planta/propolis</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lordjunnior.com.br/soberania-organica/planta/tanchagem</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
