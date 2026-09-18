@@ -87,18 +87,11 @@ export default defineConfig(({ mode }) => ({
         assetFileNames: 'assets/[name]-[hash][extname]',
         manualChunks(id) {
           if (!id.includes('node_modules')) return;
-          if (
-            id.includes('/react/') ||
-            id.includes('/react-dom/') ||
-            id.includes('/scheduler/') ||
-            id.includes('react-router')
-          ) return 'vendor-react';
           if (id.includes('framer-motion')) return 'vendor-motion';
           if (id.includes('/gsap/')) return 'vendor-gsap';
           if (id.includes('recharts') || id.includes('/d3-')) return 'vendor-charts';
           if (id.includes('hls.js')) return 'vendor-hls';
-          if (id.includes('@radix-ui')) return 'vendor-radix';
-          return 'vendor';
+          return 'vendor-core';
         },
       },
     },
