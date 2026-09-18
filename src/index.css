@@ -597,3 +597,52 @@
   55% { transform: translateX(100%); }
   100% { transform: translateX(100%); }
 }
+
+/* ─── Acessibilidade global ─── */
+
+/* Foco de teclado sempre visível, em qualquer elemento interativo */
+@layer base {
+  :where(a, button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
+    outline: 3px solid hsl(var(--editorial-terracotta, 14 62% 48%));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Alvos de toque mínimos no celular */
+  @media (pointer: coarse) {
+    button,
+    a[role="button"],
+    [role="tab"],
+    input[type="checkbox"],
+    input[type="radio"] {
+      min-height: 44px;
+    }
+  }
+}
+
+/* Contraste mínimo: texto branco muito transparente fica ilegível */
+@layer utilities {
+  .text-white\/30,
+  .text-white\/35,
+  .text-white\/40,
+  .text-white\/45,
+  .text-white\/50 {
+    color: rgb(255 255 255 / 0.72) !important;
+  }
+}
+
+/* Movimento reduzido: respeita quem sente mal-estar físico com animação */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+}

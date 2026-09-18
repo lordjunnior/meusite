@@ -143,7 +143,7 @@ const PolymarketRedeNeural = lazy(() => import("./pages/PolymarketRedeNeural"));
 const PixAnonimo = lazy(() => import("./pages/PixAnonimo"));
 const MultisigBitcoin = lazy(() => import("./pages/MultisigBitcoin"));
 const NovaLeiContaCorrente = lazy(() => import("./pages/NovaLeiContaCorrente"));
-import ExitIntentLeadMagnet from "./components/ExitIntentLeadMagnet";
+import ContextualLeadCapture from "./components/ContextualLeadCapture";
 import LegacyRedirect from "./components/LegacyRedirect";
 const Novilingua = lazy(() => import("./pages/Novilingua"));
 const Propolis = lazy(() => import("./pages/Propolis"));
@@ -222,7 +222,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <CodigoAutonomiaModal />
-        <ExitIntentLeadMagnet />
+        <ContextualLeadCapture />
         <ScrollToTop />
         <TrailNav />
 
