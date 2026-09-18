@@ -163,3 +163,18 @@
 - [x] Novilíngua ligada ao CBDC Brasil
 - [x] substituir a imagem do Matrix e aplicar título multicamada na comunidade GrapheneOS
 - [x] refazer imagem Matrix e título da comunidade em direção editorial minimalista
+
+## Espinha de navegação (concluído)
+- [x] `src/lib/trail.ts` deriva silo, posição, anterior e próximo a partir da barra lateral
+- [x] `src/components/TrailNav.tsx` com breadcrumb fixo, indicador "X de N" e anterior/próximo
+- [x] Montado globalmente em `App.tsx`, vale para todas as páginas da sidebar
+- [x] Busca global promovida a campo destacado no topo da barra lateral
+- [x] `public/robots.txt` liberando crawlers de IA e `public/llms.txt` com os hubs
+
+## Pendente (decidido com o usuário)
+- [ ] Prerender/SSR: descartado pelo usuário
+- [ ] Sumário fixo (PageFloatingToc) nas páginas longas que ainda não têm
+- [ ] Grupo A: /metodologia e bloco de autor com datas no schema
+- [ ] Grupo B: ferramentas (salário derretido, imposto BTC, diagnóstico, comparador, checklist)
+- [ ] Grupo C: portas de entrada (comprar Bitcoin, vs Selic, vs ouro, Drex, custo inicial, erros de iniciante)
+- [ ] Google Search Console e Bing Webmaster Tools
