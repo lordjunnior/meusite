@@ -80,14 +80,18 @@ const GlobalSearch = () => {
       {/* Trigger Button */}
       <button
         onClick={() => setOpen(true)}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary/50 border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-all text-sm group"
+        aria-label="Buscar em todo o site"
+        className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white/[0.04] border border-amber-300/25 text-muted-foreground hover:text-foreground hover:border-amber-300/50 hover:bg-white/[0.07] transition-all text-sm group shadow-[0_0_0_1px_rgba(255,255,255,0.02)]"
       >
-        <Search className="w-3.5 h-3.5" />
-        <span className="hidden sm:inline text-xs">Buscar...</span>
+        <Search className="w-4 h-4 text-amber-300/80 group-hover:text-amber-300 transition-colors" />
+        <span className="flex-1 text-left text-xs font-semibold tracking-wide">
+          Buscar em 220 páginas
+        </span>
         <kbd className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-secondary text-[9px] font-mono text-muted-foreground border border-border/50">
           ⌘K
         </kbd>
       </button>
+
 
       {/* Search Modal */}
       <AnimatePresence>
