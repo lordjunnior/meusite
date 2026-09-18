@@ -62,6 +62,8 @@
     --chart-red: 0 65% 50%;
     --chart-green: 145 60% 42%;
     --mono: 'JetBrains Mono', monospace;
+    --font-impact: 'Inter Tight', 'Inter', sans-serif;
+    --font-editorial: 'Playfair Display', Georgia, serif;
   }
 
   .dark {
@@ -97,15 +99,30 @@
 
   /* ─── Typography ─── */
   .font-editorial {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: var(--font-editorial);
   }
 
   .font-display {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: var(--font-impact);
   }
 
   .font-unbounded {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-impact);
+  }
+
+  .font-impact {
+    font-family: var(--font-impact);
+    letter-spacing: 0;
+  }
+
+  .theme-editorial {
+    --editorial-sand: 34 42% 93%;
+    --editorial-sand-deep: 34 32% 88%;
+    --editorial-teal: 179 62% 14%;
+    --editorial-teal-soft: 178 48% 20%;
+    --editorial-terracotta: 22 61% 47%;
+    --editorial-copper-light: 24 73% 66%;
+    --editorial-ink: 174 30% 12%;
   }
 
   /* Nobel Grayscale-to-Color Hover */

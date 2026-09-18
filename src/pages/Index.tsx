@@ -40,6 +40,7 @@ import RiskBlock from "@/components/RiskBlock";
 import AlertBanner from "@/components/AlertBanner";
 import SnippetBait from "@/components/SnippetBait";
 import RapeHookCard from "@/components/RapeHookCard";
+import FutureStateSection from "@/components/FutureStateSection";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -894,6 +895,10 @@ const Index = () => {
               ]}
             />
           </div>
+        </NobelSection>
+
+        <NobelSection className="section-divider" delay={0.1}>
+          <FutureStateSection />
         </NobelSection>
 
         <NobelSection className="section-alt section-divider" delay={0.1}>

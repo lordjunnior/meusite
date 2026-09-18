@@ -238,10 +238,10 @@ export default function ProtocoloItemLayout({ data }: { data: ProtocoloItemData 
 
           <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pb-16 md:pb-24">
             <Link
-              to="/protocolo-respiratorio"
+              to="/soberania-organica/protocolos-gripe-resfriado"
               className={`inline-flex items-center gap-2 text-stone-400 hover:${c.accent} text-xs font-bold uppercase tracking-[0.2em] transition-colors mb-8`}
             >
-              <ArrowLeft size={14} /> Protocolo Respiratório
+              <ArrowLeft size={14} /> Protocolos de Gripe e Resfriado
             </Link>
             <motion.div
               initial={{ opacity: 0, y: 30 }}

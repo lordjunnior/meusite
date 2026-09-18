@@ -209,6 +209,7 @@ const ComunicacaoSegura = lazy(() => import("./pages/soberania-organica/Comunica
 const NostrRedeSemCensura = lazy(() => import("./pages/NostrRedeSocialSemCensura"));
 const AutonomiaEnergetica = lazy(() => import("./pages/soberania-organica/AutonomiaEnergetica"));
 const RefugioRural = lazy(() => import("./pages/soberania-organica/RefugioRural"));
+const Cobre = lazy(() => import("./pages/protocolo-respiratorio/Cobre"));
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -471,6 +472,7 @@ const App = () => (
             <Route path="/soberania-organica/nostr-rede-social-sem-censura" element={<LegacyRedirect to="/o-que-e-nostr" />} />
             <Route path="/soberania-organica/autonomia-energetica" element={<AutonomiaEnergetica />} />
             <Route path="/soberania-organica/refugio-rural" element={<RefugioRural />} />
+            <Route path="/protocolo-respiratorio/cobre" element={<Cobre />} />
             <Route path="/privacidade" element={<Privacidade />} />
             <Route path="/termos" element={<Termos />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

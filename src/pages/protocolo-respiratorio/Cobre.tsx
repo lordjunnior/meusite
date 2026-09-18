@@ -161,17 +161,17 @@ const data: ProtocoloItemData = {
     {
       titulo: 'Guaco — o expansor respiratório',
       descricao: 'Mikania glomerata, broncodilatador natural por cumarina. Capítulo 02 do protocolo respiratório.',
-      href: '/protocolo-respiratorio/guaco',
+      href: '/soberania-organica/plantas-subutilizadas/guaco',
     },
     {
       titulo: 'Mel cru — o carreador biológico',
       descricao: 'Por que mel cru é veículo funcional e mel industrial é xarope. Capítulo 03 do protocolo respiratório.',
-      href: '/protocolo-respiratorio/mel-cru',
+      href: '/soberania-organica/farmacia-caseira-essencial',
     },
     {
       titulo: 'Própolis — guerra invisível e 3 tipos',
       descricao: 'Com álcool, sem álcool e diluído. Como identificar potência real. Capítulo 04 do protocolo respiratório.',
-      href: '/protocolo-respiratorio/propolis',
+      href: '/soberania-organica/propolis',
     },
   ],
 };
