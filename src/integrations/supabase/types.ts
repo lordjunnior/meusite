@@ -14,6 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
+      internal_search_events: {
+        Row: {
+          abandoned: boolean
+          clicked_path: string | null
+          created_at: string
+          device: string | null
+          id: string
+          intent_cluster: string | null
+          normalized_query: string
+          origin_path: string | null
+          query: string
+          refined: boolean
+          results_count: number
+          session_key: string
+        }
+        Insert: {
+          abandoned?: boolean
+          clicked_path?: string | null
+          created_at?: string
+          device?: string | null
+          id?: string
+          intent_cluster?: string | null
+          normalized_query: string
+          origin_path?: string | null
+          query: string
+          refined?: boolean
+          results_count?: number
+          session_key: string
+        }
+        Update: {
+          abandoned?: boolean
+          clicked_path?: string | null
+          created_at?: string
+          device?: string | null
+          id?: string
+          intent_cluster?: string | null
+          normalized_query?: string
+          origin_path?: string | null
+          query?: string
+          refined?: boolean
+          results_count?: number
+          session_key?: string
+        }
+        Relationships: []
+      }
       leads: {
         Row: {
           consentimento_em: string | null
