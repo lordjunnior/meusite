@@ -63,7 +63,7 @@ const LeadCaptureModal = ({ isOpen, onClose, interesse = 'assessoria-offshore' }
     if (outcome.ok) {
       setSuccess(true);
     } else {
-      setErrors({ form: outcome.message });
+      setErrors({ form: outcome.message ?? 'Erro ao enviar. Tente novamente.' });
     }
   };
 

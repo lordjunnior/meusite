@@ -62,7 +62,7 @@ const InlineLeadCapture = ({
     if (outcome.ok) {
       setSuccess(true);
     } else {
-      setError(outcome.message);
+      setError(outcome.message ?? "Erro ao enviar. Tente novamente.");
     }
   };
 

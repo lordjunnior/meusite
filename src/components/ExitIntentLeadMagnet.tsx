@@ -97,7 +97,7 @@ const ExitIntentLeadMagnet = () => {
       });
 
       if (!outcome.ok) {
-        setErrors({ form: outcome.message });
+        setErrors({ form: outcome.message ?? 'Erro ao enviar. Tente novamente.' });
         return;
       }
       setSuccess(true);
