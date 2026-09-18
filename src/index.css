@@ -125,6 +125,52 @@
     --editorial-ink: 174 30% 12%;
   }
 
+  .editorial-layout {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .editorial-layout h1,
+  .editorial-layout h2,
+  .editorial-layout h3 {
+    font-family: var(--font-impact) !important;
+    letter-spacing: 0 !important;
+  }
+
+  .editorial-layout figcaption,
+  .editorial-layout blockquote {
+    font-family: var(--font-editorial) !important;
+  }
+
+  .editorial-layout > section:not(:first-child) {
+    background: hsl(var(--editorial-sand)) !important;
+    border-color: hsl(var(--editorial-teal) / 0.15) !important;
+    color: hsl(var(--editorial-ink));
+  }
+
+  .editorial-layout > section:not(:first-child):nth-child(odd) {
+    background: hsl(var(--editorial-teal)) !important;
+    color: hsl(var(--editorial-sand));
+  }
+
+  .editorial-layout > section:not(:first-child):nth-child(even) .text-white,
+  .editorial-layout > section:not(:first-child):nth-child(even) .text-stone-200,
+  .editorial-layout > section:not(:first-child):nth-child(even) .text-stone-300,
+  .editorial-layout > section:not(:first-child):nth-child(even) .text-stone-400 {
+    color: hsl(var(--editorial-ink));
+  }
+
+  .editorial-layout > section:not(:first-child):nth-child(odd) .text-white,
+  .editorial-layout > section:not(:first-child):nth-child(odd) .text-stone-200,
+  .editorial-layout > section:not(:first-child):nth-child(odd) .text-stone-300,
+  .editorial-layout > section:not(:first-child):nth-child(odd) .text-stone-400 {
+    color: hsl(var(--editorial-sand));
+  }
+
+  .editorial-layout > section:not(:first-child) .text-emerald-400,
+  .editorial-layout > section:not(:first-child) .text-amber-400 {
+    color: hsl(var(--editorial-terracotta));
+  }
+
   /* Nobel Grayscale-to-Color Hover */
   .nobel-card {
     filter: grayscale(100%) contrast(1.1);

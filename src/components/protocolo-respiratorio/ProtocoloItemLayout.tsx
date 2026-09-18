@@ -220,7 +220,7 @@ export default function ProtocoloItemLayout({ data }: { data: ProtocoloItemData 
       <ScrollToTop />
       <BackToHome />
 
-      <div className="min-h-screen bg-[#07080c] text-stone-200">
+      <div className="theme-editorial editorial-layout min-h-screen bg-editorial-sand text-editorial-ink">
         {/* HERO */}
         <section className="relative h-screen min-h-[700px] w-full flex items-end overflow-hidden">
           <div
