@@ -645,8 +645,4 @@
   html {
     scroll-behavior: auto !important;
   }
-
-  video[autoplay] {
-    display: none;
-  }
 }
