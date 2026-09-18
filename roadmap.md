@@ -1,5 +1,16 @@
 # Roadmap
 
+## Auditoria de identidade e páginas órfãs (em andamento)
+- [ ] Confirmar e publicar a página de cobre em rota própria, com entrada de navegação, busca, mapa e sitemap.
+- [ ] Manter o gerador BIP-39 em `/ferramentas/entropy`, documentando que ele já é servido pela rota dinâmica de Ferramentas.
+- [ ] Promover sand, deep teal e terracota a tokens sem alterar involuntariamente a home e o shell escuro.
+- [ ] Consolidar os quatro papéis tipográficos: impacto, editorial, corpo e dados.
+- [ ] Remover Poppins após substituir seus usos restantes por Inter Tight.
+- [ ] Migrar os layouts editoriais compartilhados de plantas e protocolo respiratório para tokens e Inter Tight/Playfair.
+- [ ] Restringir monoespaçada a números, endereços, hashes, dados e rótulos curtos no primeiro grupo auditado.
+- [ ] Adicionar à home um fechamento de estado futuro desejado antes do manifesto final.
+- [ ] Validar rotas, sitemap, desktop, mobile, carregamento de fontes e movimento reduzido.
+
 ## Segurança Mobile (em andamento)
 
 ### 1. Sistemas Operacionais (pilares técnicos)
