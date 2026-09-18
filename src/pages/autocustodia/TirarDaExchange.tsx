@@ -7,10 +7,10 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/saque-exchange/hero-saque.jpg';
-import seedImg from '@/assets/saque-exchange/seed-backup.jpg';
-import mempoolImg from '@/assets/saque-exchange/mempool-rede.jpg';
-import vaultImg from '@/assets/saque-exchange/vault-seguranca.jpg';
+import heroImg from '@/assets/saque-exchange/hero-saque.webp';
+import seedImg from '@/assets/saque-exchange/seed-backup.webp';
+import mempoolImg from '@/assets/saque-exchange/mempool-rede.webp';
+import vaultImg from '@/assets/saque-exchange/vault-seguranca.webp';
 
 /**
  * /autocustodia/tirar-da-exchange-para-hardware-wallet

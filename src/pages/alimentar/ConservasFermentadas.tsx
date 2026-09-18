@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { ChevronDown, AlertTriangle, ShieldCheck, Beaker } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/alimentar/conservas-hero.jpg';
-import imgChucrute from '@/assets/alimentar/conservas-chucrute.jpg';
-import imgKombucha from '@/assets/alimentar/conservas-kombucha.jpg';
-import imgKimchi from '@/assets/alimentar/conservas-kimchi.jpg';
-import imgSal from '@/assets/alimentar/conservas-sal.jpg';
-import imgDespensa from '@/assets/alimentar/conservas-despensa.jpg';
-import imgAirlock from '@/assets/alimentar/conservas-airlock.jpg';
-import imgMesa from '@/assets/alimentar/conservas-mesa.jpg';
+import heroImg from '@/assets/alimentar/conservas-hero.webp';
+import imgChucrute from '@/assets/alimentar/conservas-chucrute.webp';
+import imgKombucha from '@/assets/alimentar/conservas-kombucha.webp';
+import imgKimchi from '@/assets/alimentar/conservas-kimchi.webp';
+import imgSal from '@/assets/alimentar/conservas-sal.webp';
+import imgDespensa from '@/assets/alimentar/conservas-despensa.webp';
+import imgAirlock from '@/assets/alimentar/conservas-airlock.webp';
+import imgMesa from '@/assets/alimentar/conservas-mesa.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

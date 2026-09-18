@@ -1,6 +1,6 @@
 import PlantaIndividualLayout, { PlantaIndividualData } from '@/components/plantas/PlantaIndividualLayout';
-import heroImg from '@/assets/plantas-individuais/artemisia-hero.jpg';
-import comparativoImg from '@/assets/plantas-individuais/artemisia-comparativo.jpg';
+import heroImg from '@/assets/plantas-individuais/artemisia-hero.webp';
+import comparativoImg from '@/assets/plantas-individuais/artemisia-comparativo.webp';
 
 const data: PlantaIndividualData = {
   slug: 'artemisia',

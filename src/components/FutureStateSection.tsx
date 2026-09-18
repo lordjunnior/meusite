@@ -1,8 +1,8 @@
 import { ArrowRight, KeyRound, Landmark, Sprout } from "lucide-react";
 import { Link } from "react-router-dom";
-import hardwareImage from "@/assets/bitcoin-hardware-wallet.jpg";
-import foodImage from "@/assets/alimentar/aquaponia-colheita.jpg";
-import autonomyImage from "@/assets/bitpark-banco-vs-bitcoin.jpg";
+import hardwareImage from "@/assets/bitcoin-hardware-wallet.webp";
+import foodImage from "@/assets/alimentar/aquaponia-colheita.webp";
+import autonomyImage from "@/assets/bitpark-banco-vs-bitcoin.webp";
 
 const outcomes = [
   {

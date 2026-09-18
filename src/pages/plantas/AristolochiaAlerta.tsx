@@ -6,8 +6,8 @@ import { ArrowLeft, ChevronDown, AlertTriangle, Skull, FileText, Microscope, Shi
 import BackToHome from '@/components/BackToHome';
 import ScrollToTop from '@/components/ScrollToTop';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
-import heroImg from '@/assets/plantas-individuais/aristolochia-hero.jpg';
-import toxicidadeImg from '@/assets/plantas-individuais/aristolochia-toxicidade.jpg';
+import heroImg from '@/assets/plantas-individuais/aristolochia-hero.webp';
+import toxicidadeImg from '@/assets/plantas-individuais/aristolochia-toxicidade.webp';
 
 const canonical = 'https://lordjunnior.com.br/soberania-organica/plantas-subutilizadas/aristolochia-alerta';
 

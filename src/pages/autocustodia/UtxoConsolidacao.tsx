@@ -7,9 +7,9 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/autocustodia/coinjoin-hero.jpg';
-import analogiaImg from '@/assets/autocustodia/coinjoin-analogia.jpg';
-import misturaImg from '@/assets/autocustodia/coinjoin-mistura.jpg';
+import heroImg from '@/assets/autocustodia/coinjoin-hero.webp';
+import analogiaImg from '@/assets/autocustodia/coinjoin-analogia.webp';
+import misturaImg from '@/assets/autocustodia/coinjoin-mistura.webp';
 
 /**
  * /autocustodia/utxo-consolidacao

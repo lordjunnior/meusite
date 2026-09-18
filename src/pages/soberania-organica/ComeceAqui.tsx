@@ -8,10 +8,10 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/organica-comece/hero.jpg';
-import aguaImg from '@/assets/organica-comece/agua.jpg';
-import hortaImg from '@/assets/organica-comece/horta.jpg';
-import conservasImg from '@/assets/organica-comece/conservas.jpg';
+import heroImg from '@/assets/organica-comece/hero.webp';
+import aguaImg from '@/assets/organica-comece/agua.webp';
+import hortaImg from '@/assets/organica-comece/horta.webp';
+import conservasImg from '@/assets/organica-comece/conservas.webp';
 
 /**
  * /soberania-organica/comece-aqui

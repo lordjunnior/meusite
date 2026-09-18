@@ -1,6 +1,6 @@
 import PlantaIndividualLayout, { PlantaIndividualData } from '@/components/plantas/PlantaIndividualLayout';
-import heroImg from '@/assets/plantas-individuais/jurubeba-hero.jpg';
-import comparativoImg from '@/assets/plantas-individuais/jurubeba-comparativo.jpg';
+import heroImg from '@/assets/plantas-individuais/jurubeba-hero.webp';
+import comparativoImg from '@/assets/plantas-individuais/jurubeba-comparativo.webp';
 
 const data: PlantaIndividualData = {
   slug: 'jurubeba',

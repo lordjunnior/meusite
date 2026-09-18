@@ -7,10 +7,10 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/migracao/migracao-hero.jpg';
-import riscoImg from '@/assets/migracao/migracao-risco-contraparte.jpg';
-import checklistImg from '@/assets/migracao/migracao-checklist.jpg';
-import testeImg from '@/assets/migracao/migracao-teste.jpg';
+import heroImg from '@/assets/migracao/migracao-hero.webp';
+import riscoImg from '@/assets/migracao/migracao-risco-contraparte.webp';
+import checklistImg from '@/assets/migracao/migracao-checklist.webp';
+import testeImg from '@/assets/migracao/migracao-teste.webp';
 
 /**
  * /autocustodia/guia-migracao-corretora

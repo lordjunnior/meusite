@@ -12,8 +12,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import ScrollToTop from '@/components/ScrollToTop';
 import NobelVFX from '@/components/NobelVFX';
 import SovereignDisclaimer from '@/components/SovereignDisclaimer';
-import heroImg from '@/assets/payoneer-hero.jpg';
-import appImg from '@/assets/payoneer-app.jpg';
+import heroImg from '@/assets/payoneer-hero.webp';
+import appImg from '@/assets/payoneer-app.webp';
 import BackToHome from '@/components/BackToHome';
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];

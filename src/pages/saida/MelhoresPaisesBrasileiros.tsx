@@ -7,11 +7,11 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/saida/melhores-paises-hero.jpg';
-import chileImg from '@/assets/chile/chile-hero.jpg';
-import paraguaiImg from '@/assets/saida/pais-paraguai.jpg';
-import uruguaiImg from '@/assets/saida/pais-uruguai.jpg';
-import georgiaImg from '@/assets/saida/pais-georgia.jpg';
+import heroImg from '@/assets/saida/melhores-paises-hero.webp';
+import chileImg from '@/assets/chile/chile-hero.webp';
+import paraguaiImg from '@/assets/saida/pais-paraguai.webp';
+import uruguaiImg from '@/assets/saida/pais-uruguai.webp';
+import georgiaImg from '@/assets/saida/pais-georgia.webp';
 
 /**
  * /saida/melhores-paises-brasileiros

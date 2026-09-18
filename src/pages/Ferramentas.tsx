@@ -7,7 +7,7 @@ import {
   BookA, ShieldCheck, Clock, Terminal, Hourglass, Search, Timer,
   ChevronDown, Radar, Crosshair
 } from 'lucide-react';
-import verificabrCover from '@/assets/verificabr-cover.png';
+import verificabrCover from '@/assets/verificabr-cover.webp';
 
 import BitcoinVsImovel from './BitcoinVsImovel';
 import TaxaDeFuga from './TaxaDeFuga';

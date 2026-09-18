@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { AlertTriangle } from "lucide-react";
-import imgRisco from "@/assets/risco-vulnerabilidade.jpg";
+import imgRisco from "@/assets/risco-vulnerabilidade.webp";
 
 interface RiskBlockProps {
   title: string;

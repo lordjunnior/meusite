@@ -9,11 +9,11 @@ import {
 import ScrollToTop from '@/components/ScrollToTop';
 import SnippetBait from '@/components/SnippetBait';
 
-import heroImg from '@/assets/soberania-hub-hero.jpg';
-import contasIntlImg from '@/assets/soberania-contas-intl.jpg';
-import offshoreImg from '@/assets/soberania-offshore.jpg';
-import nokycImg from '@/assets/soberania-nokyc.jpg';
-import sistemasImg from '@/assets/soberania-sistemas.jpg';
+import heroImg from '@/assets/soberania-hub-hero.webp';
+import contasIntlImg from '@/assets/soberania-contas-intl.webp';
+import offshoreImg from '@/assets/soberania-offshore.webp';
+import nokycImg from '@/assets/soberania-nokyc.webp';
+import sistemasImg from '@/assets/soberania-sistemas.webp';
 import BackToHome from '@/components/BackToHome';
 
 /* ── Motion ── */

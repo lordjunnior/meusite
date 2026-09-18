@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 import { FileWarning, ExternalLink, BookOpen, Beaker, Scale, TrendingUp, Factory, ShieldAlert, Quote } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import imgGlifosato from '@/assets/toxicos/dossie-glifosato.jpg';
-import imgUltra from '@/assets/toxicos/dossie-ultraprocessados.jpg';
-import imgAlgoritmo from '@/assets/toxicos/dossie-algoritmo.jpg';
-import imgBernays from '@/assets/toxicos/dossie-bernays.jpg';
-import imgAtencao from '@/assets/toxicos/dossie-atencao.jpg';
-import imgDarkPatterns from '@/assets/toxicos/dossie-darkpatterns.jpg';
-import imgMicroplasticos from '@/assets/toxicos/dossie-microplasticos.jpg';
-import imgArInterno from '@/assets/toxicos/dossie-arinterno.jpg';
+import imgGlifosato from '@/assets/toxicos/dossie-glifosato.webp';
+import imgUltra from '@/assets/toxicos/dossie-ultraprocessados.webp';
+import imgAlgoritmo from '@/assets/toxicos/dossie-algoritmo.webp';
+import imgBernays from '@/assets/toxicos/dossie-bernays.webp';
+import imgAtencao from '@/assets/toxicos/dossie-atencao.webp';
+import imgDarkPatterns from '@/assets/toxicos/dossie-darkpatterns.webp';
+import imgMicroplasticos from '@/assets/toxicos/dossie-microplasticos.webp';
+import imgArInterno from '@/assets/toxicos/dossie-arinterno.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 

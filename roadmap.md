@@ -1,5 +1,13 @@
 # Roadmap
 
+## Otimização de performance (concluída)
+- [x] Converter imagens editoriais JPG, JPEG e PNG para WebP e atualizar suas referências locais.
+- [x] Reduzir `src/assets` de aproximadamente 193 MB para 104 MB sem alterar a composição visual.
+- [x] Converter os três PNGs críticos: retrato Sobre, capa VerificaBR e hero Nostr.
+- [x] Separar React, animações, gráficos, vídeo e Radix em chunks estáveis e cacheáveis.
+- [x] Restaurar o alerta de chunks para 800 KB.
+- [x] Adicionar cache PWA `CacheFirst` com expiração para imagens locais.
+
 ## Auditoria de identidade e páginas órfãs (concluída)
 - [x] Confirmar e publicar a página de cobre em rota própria, com entrada de navegação, busca, mapa e sitemap.
 - [x] Manter o gerador BIP-39 em `/ferramentas/entropy`, documentando que ele já é servido pela rota dinâmica de Ferramentas.

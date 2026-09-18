@@ -5,12 +5,12 @@ import { AlertTriangle, ArrowRight, CheckCircle2, Eye, Globe2, LockKeyhole, Netw
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import { Button } from '@/components/ui/button';
-import heroAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-hero.jpg';
-import appAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-app-conectada.jpg';
-import wifiAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-wifi-publico.jpg';
-import infraAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-infraestrutura.jpg';
-import permissoesAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-permissoes.jpg';
-import configuracaoAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-configuracao.jpg';
+import heroAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-hero.webp';
+import appAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-app-conectada.webp';
+import wifiAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-wifi-publico.webp';
+import infraAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-infraestrutura.webp';
+import permissoesAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-permissoes.webp';
+import configuracaoAsset from '@/assets/seguranca-mobile/vpn-celular/vpn-configuracao.webp';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const reveal = (delay = 0) => ({

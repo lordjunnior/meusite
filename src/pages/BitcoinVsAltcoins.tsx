@@ -5,7 +5,7 @@ import { ArrowRight, Swords, AlertTriangle, ShieldCheck, Skull, Crown, ChevronDo
 import { Helmet } from 'react-helmet-async';
 import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
-import bitcoinVsAltcoinsImg from '@/assets/bitcoin-vs-altcoins-xadrez.jpg';
+import bitcoinVsAltcoinsImg from '@/assets/bitcoin-vs-altcoins-xadrez.webp';
 import BackToHome from '@/components/BackToHome';
 import { canonicalUrl } from '@/lib/site';
 

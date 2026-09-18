@@ -11,14 +11,14 @@ import ScrollToTop from "@/components/ScrollToTop";
 import BackToHome from "@/components/BackToHome";
 import SnippetBait from "@/components/SnippetBait";
 import { confiscoArticleSchema, confiscoFaqSchema, confiscoBreadcrumbSchema } from "@/lib/confiscoData";
-import presidenteImg from "@/assets/presidente-confisco-1990.jpg";
-import hiperinflacaoImg from "@/assets/confisco-hiperinflacao-1989.jpg";
-import decretoImg from "@/assets/confisco-decreto-noite.jpg";
-import filasImg from "@/assets/confisco-filas-banco.jpg";
-import consequenciasImg from "@/assets/confisco-consequencias.jpg";
-import dinheiroImg from "@/assets/confisco-dinheiro-perdido.jpg";
-import constituicaoImg from "@/assets/confisco-constituicao.jpg";
-import bitcoinImg from "@/assets/confisco-bitcoin-solucao.jpg";
+import presidenteImg from "@/assets/presidente-confisco-1990.webp";
+import hiperinflacaoImg from "@/assets/confisco-hiperinflacao-1989.webp";
+import decretoImg from "@/assets/confisco-decreto-noite.webp";
+import filasImg from "@/assets/confisco-filas-banco.webp";
+import consequenciasImg from "@/assets/confisco-consequencias.webp";
+import dinheiroImg from "@/assets/confisco-dinheiro-perdido.webp";
+import constituicaoImg from "@/assets/confisco-constituicao.webp";
+import bitcoinImg from "@/assets/confisco-bitcoin-solucao.webp";
 
 const chapters = [
   {

@@ -7,9 +7,9 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/bitcoin-hardware-wallet.jpg';
-import setupImg from '@/assets/infra-hardware-wallet.jpg';
-import seedImg from '@/assets/btc-seed-backup.jpg';
+import heroImg from '@/assets/bitcoin-hardware-wallet.webp';
+import setupImg from '@/assets/infra-hardware-wallet.webp';
+import seedImg from '@/assets/btc-seed-backup.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

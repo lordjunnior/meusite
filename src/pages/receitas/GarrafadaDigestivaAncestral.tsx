@@ -10,10 +10,10 @@ import {
 import BackNav from '@/components/BackNav';
 import ScrollToTop from '@/components/ScrollToTop';
 
-import imgHero from '@/assets/receitas/hero-garrafada-ancestral-light.jpg';
-import imgBoldo from '@/assets/receitas/ativo-boldo-folhas.jpg';
-import imgGuaco from '@/assets/receitas/ativo-guaco-folhas.jpg';
-import imgAroeira from '@/assets/receitas/ativo-aroeira-frutos.jpg';
+import imgHero from '@/assets/receitas/hero-garrafada-ancestral-light.webp';
+import imgBoldo from '@/assets/receitas/ativo-boldo-folhas.webp';
+import imgGuaco from '@/assets/receitas/ativo-guaco-folhas.webp';
+import imgAroeira from '@/assets/receitas/ativo-aroeira-frutos.webp';
 
 /**
  * /soberania-organica/cozinha-funcional/garrafada-digestiva-ancestral

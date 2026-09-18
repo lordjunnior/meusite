@@ -10,12 +10,12 @@ import BackToHome from '@/components/BackToHome';
 import ScrollToTop from '@/components/ScrollToTop';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 
-import imgHero from '@/assets/ps/hero-trauma-medic.jpg';
-import imgHemostasia from '@/assets/ps/hemostasia-pro.jpg';
-import imgTorniquete from '@/assets/ps/torniquete-cat.jpg';
-import imgImobilizacao from '@/assets/ps/imobilizacao-pro.jpg';
-import imgQueimaduras from '@/assets/ps/queimaduras-pro.jpg';
-import imgKit from '@/assets/ps/kit-ifak-knolling.jpg';
+import imgHero from '@/assets/ps/hero-trauma-medic.webp';
+import imgHemostasia from '@/assets/ps/hemostasia-pro.webp';
+import imgTorniquete from '@/assets/ps/torniquete-cat.webp';
+import imgImobilizacao from '@/assets/ps/imobilizacao-pro.webp';
+import imgQueimaduras from '@/assets/ps/queimaduras-pro.webp';
+import imgKit from '@/assets/ps/kit-ifak-knolling.webp';
 
 /**
  * /soberania-organica/primeiros-socorros

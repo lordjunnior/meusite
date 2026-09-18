@@ -9,12 +9,12 @@ import RapeHookCard from '@/components/RapeHookCard';
 import BackToHome from '@/components/BackToHome';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
 
-import bgHero from '@/assets/saude/bg-saude-hero.jpg';
-import imgSol from '@/assets/saude/hero-sol.jpg';
-import imgSono from '@/assets/saude/hero-sono.jpg';
-import imgMovimento from '@/assets/saude/hero-movimento.jpg';
-import imgAlimentacao from '@/assets/saude/hero-alimentacao.jpg';
-import imgCortisol from '@/assets/saude/hero-cortisol.jpg';
+import bgHero from '@/assets/saude/bg-saude-hero.webp';
+import imgSol from '@/assets/saude/hero-sol.webp';
+import imgSono from '@/assets/saude/hero-sono.webp';
+import imgMovimento from '@/assets/saude/hero-movimento.webp';
+import imgAlimentacao from '@/assets/saude/hero-alimentacao.webp';
+import imgCortisol from '@/assets/saude/hero-cortisol.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 

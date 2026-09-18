@@ -4,11 +4,11 @@ import { motion, useInView } from "framer-motion";
 import GlassPanel, { Parallax, ScrollRail } from "@/components/sobre/GlassPanel";
 import { Mail, ArrowRight, Instagram, Github, Youtube, Play } from "lucide-react";
 import BackToHome from "@/components/BackToHome";
-import heroProfile from "@/assets/sobre/lord-junnior-real.png";
-import heroBg from "@/assets/sobre/hero-bg-hardware.jpg";
-import provaChile from "@/assets/sobre/prova-chile.jpg";
-import provaJadeCore from "@/assets/sobre/prova-jade-core.jpg";
-import provaPlataforma from "@/assets/sobre/prova-plataforma.jpg";
+import heroProfile from "@/assets/sobre/lord-junnior-real.webp";
+import heroBg from "@/assets/sobre/hero-bg-hardware.webp";
+import provaChile from "@/assets/sobre/prova-chile.webp";
+import provaJadeCore from "@/assets/sobre/prova-jade-core.webp";
+import provaPlataforma from "@/assets/sobre/prova-plataforma.webp";
 import { canonicalUrl } from '@/lib/site';
 
 const ORANGE = "#FF6600";

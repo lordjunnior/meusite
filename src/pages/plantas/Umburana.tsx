@@ -1,6 +1,6 @@
 import PlantaIndividualLayout, { PlantaIndividualData } from '@/components/plantas/PlantaIndividualLayout';
-import heroImg from '@/assets/plantas-individuais/umburana-hero.jpg';
-import comparativoImg from '@/assets/plantas-individuais/umburana-comparativo.jpg';
+import heroImg from '@/assets/plantas-individuais/umburana-hero.webp';
+import comparativoImg from '@/assets/plantas-individuais/umburana-comparativo.webp';
 
 const data: PlantaIndividualData = {
   slug: 'umburana',

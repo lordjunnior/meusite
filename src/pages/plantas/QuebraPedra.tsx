@@ -1,6 +1,6 @@
 import PlantaIndividualLayout, { PlantaIndividualData } from '@/components/plantas/PlantaIndividualLayout';
-import heroImg from '@/assets/plantas-individuais/quebra-pedra-hero.jpg';
-import comparativoImg from '@/assets/plantas-individuais/quebra-pedra-comparativo.jpg';
+import heroImg from '@/assets/plantas-individuais/quebra-pedra-hero.webp';
+import comparativoImg from '@/assets/plantas-individuais/quebra-pedra-comparativo.webp';
 
 const data: PlantaIndividualData = {
   slug: 'quebra-pedra',

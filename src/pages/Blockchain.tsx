@@ -5,12 +5,12 @@ import { ArrowRight, Blocks, Lock, Database, Search, ShieldCheck, Network, Cpu, 
 import { Helmet } from 'react-helmet-async';
 import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
-import blockchainBlocosImg from '@/assets/blockchain-blocos.jpg';
-import blockchainMineracaoImg from '@/assets/blockchain-mineracao.jpg';
-import blockchainLivroImg from '@/assets/blockchain-livro-razao.jpg';
-import blockchainRedeImg from '@/assets/blockchain-rede-global.jpg';
-import blockchainCadeiaImg from '@/assets/blockchain-cadeia-blocos.jpg';
-import blockchainImutabilidadeImg from '@/assets/blockchain-imutabilidade.jpg';
+import blockchainBlocosImg from '@/assets/blockchain-blocos.webp';
+import blockchainMineracaoImg from '@/assets/blockchain-mineracao.webp';
+import blockchainLivroImg from '@/assets/blockchain-livro-razao.webp';
+import blockchainRedeImg from '@/assets/blockchain-rede-global.webp';
+import blockchainCadeiaImg from '@/assets/blockchain-cadeia-blocos.webp';
+import blockchainImutabilidadeImg from '@/assets/blockchain-imutabilidade.webp';
 import BackToHome from '@/components/BackToHome';
 import { canonicalUrl } from '@/lib/site';
 

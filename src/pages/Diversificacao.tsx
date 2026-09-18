@@ -5,10 +5,10 @@ import { ArrowRight, PieChart, AlertTriangle, TrendingDown, ShieldCheck, Flame, 
 import { Helmet } from 'react-helmet-async';
 import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
-import diversificacaoFalaciaImg from '@/assets/diversificacao-falacia.jpg';
-import diversificacaoBalancaImg from '@/assets/diversificacao-balanca.jpg';
-import diversificacaoCisneImg from '@/assets/diversificacao-cisne-negro.jpg';
-import diversificacaoPortfolioImg from '@/assets/diversificacao-portfolio.jpg';
+import diversificacaoFalaciaImg from '@/assets/diversificacao-falacia.webp';
+import diversificacaoBalancaImg from '@/assets/diversificacao-balanca.webp';
+import diversificacaoCisneImg from '@/assets/diversificacao-cisne-negro.webp';
+import diversificacaoPortfolioImg from '@/assets/diversificacao-portfolio.webp';
 import BackToHome from '@/components/BackToHome';
 import { canonicalUrl } from '@/lib/site';
 

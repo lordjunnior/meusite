@@ -1,6 +1,6 @@
 import PlantaIndividualLayout, { PlantaIndividualData } from '@/components/plantas/PlantaIndividualLayout';
-import heroImg from '@/assets/plantas-individuais/guaco-hero.jpg';
-import comparativoImg from '@/assets/plantas-individuais/guaco-comparativo.jpg';
+import heroImg from '@/assets/plantas-individuais/guaco-hero.webp';
+import comparativoImg from '@/assets/plantas-individuais/guaco-comparativo.webp';
 
 const data: PlantaIndividualData = {
   slug: 'guaco',

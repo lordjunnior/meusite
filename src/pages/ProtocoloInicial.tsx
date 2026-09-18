@@ -3,15 +3,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Download, ShieldCheck, ArrowRight, Zap, Lock, Globe, Coins, ShieldAlert, AlertTriangle, Key, Pickaxe, Scale, Database, HelpCircle, BookOpen, Shield, Send, Hourglass, Activity, TrendingUp } from 'lucide-react';
-import coverSilencioQueda from '@/assets/cover-silencio-queda.jpg';
+import coverSilencioQueda from '@/assets/cover-silencio-queda.webp';
 import BackToHome from '@/components/BackToHome';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
-import bgProtocoloInicial from '@/assets/backgrounds/bg-protocolo-inicial.jpg';
-import imgFimIlusao from '@/assets/proto-fim-ilusao.jpg';
-import imgEscassez from '@/assets/proto-escassez.jpg';
-import imgMecanica from '@/assets/proto-mecanica.jpg';
-import imgFortaleza from '@/assets/proto-fortaleza.jpg';
-import imgBlindagemMental from '@/assets/proto-blindagem-mental.jpg';
+import bgProtocoloInicial from '@/assets/backgrounds/bg-protocolo-inicial.webp';
+import imgFimIlusao from '@/assets/proto-fim-ilusao.webp';
+import imgEscassez from '@/assets/proto-escassez.webp';
+import imgMecanica from '@/assets/proto-mecanica.webp';
+import imgFortaleza from '@/assets/proto-fortaleza.webp';
+import imgBlindagemMental from '@/assets/proto-blindagem-mental.webp';
 
 const NAV_ITEMS = [
   { id: 'estagio-01', label: 'Estágio 01: O Fim da Ilusão' },

@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { Leaf, Shield, Heart, Brain, Flame, Wind, BookOpen, TreePine, Compass, ChevronRight, FlaskConical, Users, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-import imgHero from '@/assets/cp-hero-conhecimento.jpg';
+import imgHero from '@/assets/cp-hero-conhecimento.webp';
 import LinhaDoTempoOculta from '@/components/LinhaDoTempoOculta';
 import BackToHome from '@/components/BackToHome';
 import RapeHookCard from '@/components/RapeHookCard';

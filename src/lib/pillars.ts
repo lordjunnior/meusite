@@ -1,7 +1,7 @@
-import cardEconomia from "@/assets/card-economia.jpg";
-import cardBitcoin from "@/assets/card-bitcoin.jpg";
-import cardFilosofia from "@/assets/card-filosofia.jpg";
-import cardEstrategias from "@/assets/card-estrategias.jpg";
+import cardEconomia from "@/assets/card-economia.webp";
+import cardBitcoin from "@/assets/card-bitcoin.webp";
+import cardFilosofia from "@/assets/card-filosofia.webp";
+import cardEstrategias from "@/assets/card-estrategias.webp";
 
 export interface PillarResource {
   type: "ebook" | "audio" | "tool";

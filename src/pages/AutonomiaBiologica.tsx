@@ -8,8 +8,8 @@ import { PLANTAS } from '@/lib/plantData';
 import CinematicHero from '@/components/CinematicHero';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 
-import imgMetodosPreparo from '@/assets/bio-metodos-preparo.jpg';
-import imgArmazenamento from '@/assets/bio-armazenamento.jpg';
+import imgMetodosPreparo from '@/assets/bio-metodos-preparo.webp';
+import imgArmazenamento from '@/assets/bio-armazenamento.webp';
 import BackToHome from '@/components/BackToHome';
 
 gsap.registerPlugin(ScrollTrigger);

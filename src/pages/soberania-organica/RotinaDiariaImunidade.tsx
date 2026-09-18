@@ -8,11 +8,11 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/rotina-imunidade/boticario-manha.jpg';
-import solImg from '@/assets/rotina-imunidade/hero-sol-manha.jpg';
-import hidroImg from '@/assets/rotina-imunidade/hidroterapia-kneipp.jpg';
-import caldoImg from '@/assets/rotina-imunidade/caldo-fermentados.jpg';
-import trevasImg from '@/assets/rotina-imunidade/protocolo-trevas.jpg';
+import heroImg from '@/assets/rotina-imunidade/boticario-manha.webp';
+import solImg from '@/assets/rotina-imunidade/hero-sol-manha.webp';
+import hidroImg from '@/assets/rotina-imunidade/hidroterapia-kneipp.webp';
+import caldoImg from '@/assets/rotina-imunidade/caldo-fermentados.webp';
+import trevasImg from '@/assets/rotina-imunidade/protocolo-trevas.webp';
 
 /**
  * /soberania-organica/rotina-diaria-imunidade

@@ -6,11 +6,11 @@ import {
   ArrowRight, CheckCircle2, XCircle, Fingerprint, AlertTriangle,
 } from 'lucide-react';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/jade-core/hero-device.jpg';
-import setupImg from '@/assets/jade-core/setup-hands.jpg';
-import seedImg from '@/assets/jade-core/seed-backup.jpg';
-import compImg from '@/assets/jade-core/comparativo-hardware.jpg';
-import verifyImg from '@/assets/jade-core/verify-address.jpg';
+import heroImg from '@/assets/jade-core/hero-device.webp';
+import setupImg from '@/assets/jade-core/setup-hands.webp';
+import seedImg from '@/assets/jade-core/seed-backup.webp';
+import compImg from '@/assets/jade-core/comparativo-hardware.webp';
+import verifyImg from '@/assets/jade-core/verify-address.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

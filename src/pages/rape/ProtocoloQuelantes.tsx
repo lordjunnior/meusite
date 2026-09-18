@@ -6,18 +6,18 @@ import { FlaskConical, AlertTriangle, ArrowLeft, Leaf, ChevronDown } from "lucid
 import BackToHome from "@/components/BackToHome";
 import FixedThematicBackground from "@/components/backgrounds/FixedThematicBackground";
 import ScrollToTop from "@/components/ScrollToTop";
-import bgQuelantes from "@/assets/backgrounds/bg-quelantes.jpg";
-import imgLab from "@/assets/quelantes/fichas-laboratorio.jpg";
-import imgCoentro from "@/assets/quelantes/plantas/coentro.jpg";
-import imgChlorella from "@/assets/quelantes/plantas/chlorella.jpg";
-import imgIpe from "@/assets/quelantes/plantas/ipe-roxo.jpg";
-import imgSucupira from "@/assets/quelantes/plantas/sucupira.jpg";
-import imgCardo from "@/assets/quelantes/plantas/cardo-mariano.jpg";
-import imgEspirulina from "@/assets/quelantes/plantas/espirulina.jpg";
-import imgUnha from "@/assets/quelantes/plantas/unha-de-gato.jpg";
-import imgQuebra from "@/assets/quelantes/plantas/quebra-pedra.jpg";
-import imgCavalinha from "@/assets/quelantes/plantas/cavalinha.jpg";
-import imgCarvao from "@/assets/quelantes/plantas/carvao-ativado.jpg";
+import bgQuelantes from "@/assets/backgrounds/bg-quelantes.webp";
+import imgLab from "@/assets/quelantes/fichas-laboratorio.webp";
+import imgCoentro from "@/assets/quelantes/plantas/coentro.webp";
+import imgChlorella from "@/assets/quelantes/plantas/chlorella.webp";
+import imgIpe from "@/assets/quelantes/plantas/ipe-roxo.webp";
+import imgSucupira from "@/assets/quelantes/plantas/sucupira.webp";
+import imgCardo from "@/assets/quelantes/plantas/cardo-mariano.webp";
+import imgEspirulina from "@/assets/quelantes/plantas/espirulina.webp";
+import imgUnha from "@/assets/quelantes/plantas/unha-de-gato.webp";
+import imgQuebra from "@/assets/quelantes/plantas/quebra-pedra.webp";
+import imgCavalinha from "@/assets/quelantes/plantas/cavalinha.webp";
+import imgCarvao from "@/assets/quelantes/plantas/carvao-ativado.webp";
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 

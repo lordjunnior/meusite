@@ -7,9 +7,9 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/passport/passport-hero.jpg';
-import setupImg from '@/assets/passport/passport-airgap.jpg';
-import seedImg from '@/assets/passport/passport-microsd.jpg';
+import heroImg from '@/assets/passport/passport-hero.webp';
+import setupImg from '@/assets/passport/passport-airgap.webp';
+import seedImg from '@/assets/passport/passport-microsd.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

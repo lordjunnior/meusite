@@ -5,13 +5,13 @@ import { ArrowRight, CheckCircle2, Cloud, Eye, LockKeyhole, Radar, ShieldCheck, 
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import { Button } from '@/components/ui/button';
-import heroAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-hero.jpg';
-import trackingAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-tracking-pt.jpg';
-import datacenterAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-datacenter.jpg';
-import publicoAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-publico-pt.jpg';
-import comparacaoAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-vs-graphene-clean.jpg';
-import privacidadeAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-privacidade-pt.jpg';
-import vereditoAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-veredito-pt.jpg';
+import heroAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-hero.webp';
+import trackingAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-tracking-pt.webp';
+import datacenterAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-datacenter.webp';
+import publicoAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-publico-pt.webp';
+import comparacaoAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-vs-graphene-clean.webp';
+import privacidadeAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-privacidade-pt.webp';
+import vereditoAsset from '@/assets/seguranca-mobile/iphone-seguro/iphone-veredito-pt.webp';
 import appleLogoAsset from '@/assets/seguranca-mobile/iphone-seguro/apple-logo.svg';
 
 const EASE = [0.22, 1, 0.36, 1] as const;

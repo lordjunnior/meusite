@@ -19,15 +19,15 @@ import ScrollToTop from '@/components/ScrollToTop';
 import BackToHome from '@/components/BackToHome';
 import PageFloatingToc from '@/components/PageFloatingToc';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
-import bgBandeiras from '@/assets/backgrounds/bg-bandeiras.jpg';
+import bgBandeiras from '@/assets/backgrounds/bg-bandeiras.webp';
 
-import heroImg from '@/assets/bandeiras-hero-flatlay.jpg';
-import palauImg from '@/assets/bandeiras-palau-island.jpg';
-import imgPassport from '@/assets/bandeiras-passport-airport.jpg';
-import imgCard from '@/assets/bandeiras-card.jpg';
-import imgDoc from '@/assets/bandeiras-document.jpg';
-import imgSkyline from '@/assets/bandeiras-skyline.jpg';
-import imgBitcoinGold from '@/assets/bandeiras-bitcoin-gold.jpg';
+import heroImg from '@/assets/bandeiras-hero-flatlay.webp';
+import palauImg from '@/assets/bandeiras-palau-island.webp';
+import imgPassport from '@/assets/bandeiras-passport-airport.webp';
+import imgCard from '@/assets/bandeiras-card.webp';
+import imgDoc from '@/assets/bandeiras-document.webp';
+import imgSkyline from '@/assets/bandeiras-skyline.webp';
+import imgBitcoinGold from '@/assets/bandeiras-bitcoin-gold.webp';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 

@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import snippetImage from '@/assets/card-snippet-bait.jpg';
+import snippetImage from '@/assets/card-snippet-bait.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 

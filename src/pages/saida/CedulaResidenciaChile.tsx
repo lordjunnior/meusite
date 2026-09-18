@@ -9,10 +9,10 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/chile/chile-hero.jpg';
-import registroImg from '@/assets/chile/chile-registro-civil.jpg';
-import documentosImg from '@/assets/chile/chile-documentos.jpg';
-import vidaImg from '@/assets/chile/chile-vida.jpg';
+import heroImg from '@/assets/chile/chile-hero.webp';
+import registroImg from '@/assets/chile/chile-registro-civil.webp';
+import documentosImg from '@/assets/chile/chile-documentos.webp';
+import vidaImg from '@/assets/chile/chile-vida.webp';
 
 /**
  * /saida/cedula-residencia-chile

@@ -15,8 +15,8 @@ import {
 import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
-import bgBlindagem from '@/assets/backgrounds/bg-blindagem.jpg';
-import qrCodeImage from '@/assets/qrcode-lightning.jpeg';
+import bgBlindagem from '@/assets/backgrounds/bg-blindagem.webp';
+import qrCodeImage from '@/assets/qrcode-lightning.webp';
 import BackToHome from '@/components/BackToHome';
 import { canonicalUrl } from '@/lib/site';
 

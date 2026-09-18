@@ -8,10 +8,10 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/p2p/p2p-hero.jpg';
-import handshakeImg from '@/assets/p2p/p2p-handshake.jpg';
-import trocaImg from '@/assets/exchanges/p2p-troca.jpg';
-import kycImg from '@/assets/kycnot-hero.jpg';
+import heroImg from '@/assets/p2p/p2p-hero.webp';
+import handshakeImg from '@/assets/p2p/p2p-handshake.webp';
+import trocaImg from '@/assets/exchanges/p2p-troca.webp';
+import kycImg from '@/assets/kycnot-hero.webp';
 
 /**
  * /p2p/como-vender-bitcoin-p2p

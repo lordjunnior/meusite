@@ -6,10 +6,10 @@ import { motion } from 'framer-motion';
 import { fadeUp, stagger, staggerChild, viewportOnce } from '@/lib/motion';
 import CinematicHero from '@/components/CinematicHero';
 
-import imgFervura from '@/assets/agua-fervura.jpg';
-import imgCloracao from '@/assets/agua-cloracao.jpg';
-import imgFiltro from '@/assets/agua-filtro.jpg';
-import imgArmazenamento from '@/assets/agua-armazenamento.jpg';
+import imgFervura from '@/assets/agua-fervura.webp';
+import imgCloracao from '@/assets/agua-cloracao.webp';
+import imgFiltro from '@/assets/agua-filtro.webp';
+import imgArmazenamento from '@/assets/agua-armazenamento.webp';
 import BackToHome from '@/components/BackToHome';
 
 const RISCOS_SANITARIOS = [

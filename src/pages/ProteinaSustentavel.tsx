@@ -7,10 +7,10 @@ import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 
-import imgGalinheiro from '@/assets/proteina-galinheiro-movel.jpg';
-import imgCodornas from '@/assets/proteina-codornas-vertical.jpg';
-import imgAquaponia from '@/assets/proteina-aquaponia-tilapia.jpg';
-import imgManejo from '@/assets/proteina-manejo-sanitario.jpg';
+import imgGalinheiro from '@/assets/proteina-galinheiro-movel.webp';
+import imgCodornas from '@/assets/proteina-codornas-vertical.webp';
+import imgAquaponia from '@/assets/proteina-aquaponia-tilapia.webp';
+import imgManejo from '@/assets/proteina-manejo-sanitario.webp';
 import BackToHome from '@/components/BackToHome';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;

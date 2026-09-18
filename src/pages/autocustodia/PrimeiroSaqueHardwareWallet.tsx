@@ -7,10 +7,10 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/migracao/opsec-hero.jpg';
-import entregaImg from '@/assets/migracao/opsec-entrega.jpg';
-import telaImg from '@/assets/migracao/opsec-tela.jpg';
-import metalImg from '@/assets/migracao/opsec-metal.jpg';
+import heroImg from '@/assets/migracao/opsec-hero.webp';
+import entregaImg from '@/assets/migracao/opsec-entrega.webp';
+import telaImg from '@/assets/migracao/opsec-tela.webp';
+import metalImg from '@/assets/migracao/opsec-metal.webp';
 
 /**
  * /autocustodia/primeiro-saque-hardware-wallet

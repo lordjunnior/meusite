@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
-import qrCodeImage from '@/assets/qrcode-lightning.jpeg';
+import qrCodeImage from '@/assets/qrcode-lightning.webp';
 import BackToHome from '@/components/BackToHome';
 import { canonicalUrl } from '@/lib/site';
 

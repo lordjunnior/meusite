@@ -6,13 +6,13 @@ import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { ArrowLeft, Coins, Lock, Globe, Zap, ShieldCheck, Pickaxe, Layers, TrendingUp, TrendingDown, Key, AlertTriangle } from 'lucide-react';
 import { fadeUp, viewportOnce } from '@/lib/motion';
 
-import heroImg from "@/assets/bitcoin-hero-coin.jpg";
-import p2pImg from "@/assets/bitcoin-p2p-exchange.jpg";
-import miningImg from "@/assets/bitcoin-mining-farm.jpg";
-import walletImg from "@/assets/bitcoin-hardware-wallet.jpg";
-import fiatImg from "@/assets/bitcoin-fiat-burning.jpg";
-import vaultImg from "@/assets/bitcoin-vault-scarcity.jpg";
-import globeImg from "@/assets/bitcoin-decentralized-globe.jpg";
+import heroImg from "@/assets/bitcoin-hero-coin.webp";
+import p2pImg from "@/assets/bitcoin-p2p-exchange.webp";
+import miningImg from "@/assets/bitcoin-mining-farm.webp";
+import walletImg from "@/assets/bitcoin-hardware-wallet.webp";
+import fiatImg from "@/assets/bitcoin-fiat-burning.webp";
+import vaultImg from "@/assets/bitcoin-vault-scarcity.webp";
+import globeImg from "@/assets/bitcoin-decentralized-globe.webp";
 import BackToHome from '@/components/BackToHome';
 import { canonicalUrl } from '@/lib/site';
 

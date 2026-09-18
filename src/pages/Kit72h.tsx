@@ -7,11 +7,11 @@ import { motion } from 'framer-motion';
 import { fadeUp, stagger, staggerChild, viewportOnce } from '@/lib/motion';
 import CinematicHero from '@/components/CinematicHero';
 
-import imgAgua from '@/assets/kit72h-agua.jpg';
-import imgAlimento from '@/assets/kit72h-alimento.jpg';
-import imgDocumentos from '@/assets/kit72h-documentos.jpg';
-import imgRadio from '@/assets/kit72h-radio.jpg';
-import imgMedicamentos from '@/assets/kit72h-medicamentos.jpg';
+import imgAgua from '@/assets/kit72h-agua.webp';
+import imgAlimento from '@/assets/kit72h-alimento.webp';
+import imgDocumentos from '@/assets/kit72h-documentos.webp';
+import imgRadio from '@/assets/kit72h-radio.webp';
+import imgMedicamentos from '@/assets/kit72h-medicamentos.webp';
 import BackToHome from '@/components/BackToHome';
 
 const PILARES = [

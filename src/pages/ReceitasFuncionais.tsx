@@ -10,13 +10,13 @@ import {
 import BackToHome from '@/components/BackToHome';
 import ScrollToTop from '@/components/ScrollToTop';
 
-import imgHubHero from '@/assets/receitas/hub-cozinha-ancestral-light.jpg';
-import imgSobremesa from '@/assets/receitas/hero-sobremesa-light.jpg';
-import imgGelatinaAntipara from '@/assets/receitas/hero-gelatina-antiparasitaria-light.jpg';
-import imgGarrafada from '@/assets/receitas/hero-garrafada-ancestral-light.jpg';
-import imgPressao from '@/assets/receitas/hero-pressao-hibisco-light.jpg';
-import imgDor from '@/assets/receitas/hero-dor-inflamacao-light.jpg';
-import imgRefluxo from '@/assets/receitas/hero-refluxo-azia-light.jpg';
+import imgHubHero from '@/assets/receitas/hub-cozinha-ancestral-light.webp';
+import imgSobremesa from '@/assets/receitas/hero-sobremesa-light.webp';
+import imgGelatinaAntipara from '@/assets/receitas/hero-gelatina-antiparasitaria-light.webp';
+import imgGarrafada from '@/assets/receitas/hero-garrafada-ancestral-light.webp';
+import imgPressao from '@/assets/receitas/hero-pressao-hibisco-light.webp';
+import imgDor from '@/assets/receitas/hero-dor-inflamacao-light.webp';
+import imgRefluxo from '@/assets/receitas/hero-refluxo-azia-light.webp';
 
 /**
  * /soberania-organica/cozinha-funcional

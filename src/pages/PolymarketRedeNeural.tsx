@@ -10,11 +10,11 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/polymarket-neural-hero.jpg';
-import moedaImg from '@/assets/polymarket-moeda-probabilidade.jpg';
-import alertaImg from '@/assets/polymarket-alerta-risco.jpg';
-import custodiaImg from '@/assets/polymarket-autocustodia-saida.jpg';
-import tokensImg from '@/assets/polymarket-blockchain-tokens.jpg';
+import heroImg from '@/assets/polymarket-neural-hero.webp';
+import moedaImg from '@/assets/polymarket-moeda-probabilidade.webp';
+import alertaImg from '@/assets/polymarket-alerta-risco.webp';
+import custodiaImg from '@/assets/polymarket-autocustodia-saida.webp';
+import tokensImg from '@/assets/polymarket-blockchain-tokens.webp';
 
 /* ─── GSAP ScrollTrigger ─── */
 let gsapLoaded = false;

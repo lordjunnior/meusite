@@ -12,8 +12,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import ScrollToTop from '@/components/ScrollToTop';
 import NobelVFX from '@/components/NobelVFX';
 import SovereignDisclaimer from '@/components/SovereignDisclaimer';
-import heroImg from '@/assets/neobankless-hero.jpg';
-import appImg from '@/assets/neobankless-app.jpg';
+import heroImg from '@/assets/neobankless-hero.webp';
+import appImg from '@/assets/neobankless-app.webp';
 import BackToHome from '@/components/BackToHome';
 
 /* ═══════════════════════════════════════════════════════════

@@ -13,9 +13,9 @@ import {
 import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import SovereignDisclaimer from '@/components/SovereignDisclaimer';
-import qrCodeLightning from '@/assets/qrcode-lightning.jpeg';
-import pixCritoHero from '@/assets/pix-cripto-hero.jpg';
-import pixCritoTutorial from '@/assets/pix-cripto-tutorial.jpg';
+import qrCodeLightning from '@/assets/qrcode-lightning.webp';
+import pixCritoHero from '@/assets/pix-cripto-hero.webp';
+import pixCritoTutorial from '@/assets/pix-cripto-tutorial.webp';
 import BackToHome from '@/components/BackToHome';
 import { canonicalUrl } from '@/lib/site';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Eye, Heart, Sprout, PenTool, Calendar, BookOpen, Map, Apple, Wind, Layers, GitBranch, FlaskConical, ClipboardList } from 'lucide-react';
-import imgFamilia from '@/assets/cp-educacao-familiar.jpg';
+import imgFamilia from '@/assets/cp-educacao-familiar.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {

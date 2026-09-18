@@ -17,9 +17,9 @@ import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
 import CinematicHero from '@/components/CinematicHero';
-import heroImg from '@/assets/saida/defesa-hero.jpg';
-import imgMulher from '@/assets/saida/defesa-mulher.jpg';
-import imgUrbano from '@/assets/saida/defesa-urbano.jpg';
+import heroImg from '@/assets/saida/defesa-hero.webp';
+import imgMulher from '@/assets/saida/defesa-mulher.webp';
+import imgUrbano from '@/assets/saida/defesa-urbano.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

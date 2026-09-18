@@ -16,12 +16,12 @@ import ScrollToTop from '@/components/ScrollToTop';
 import FooterSection from '@/components/FooterSection';
 import PageFloatingToc from '@/components/PageFloatingToc';
 
-import imgEscambo from '@/assets/historia-escambo.jpg';
-import imgOuro from '@/assets/historia-ouro.jpg';
-import imgPapelMoeda from '@/assets/historia-papel-moeda.jpg';
-import imgBancoCentral from '@/assets/historia-banco-central.jpg';
-import imgNixonShock from '@/assets/historia-nixon-shock.jpg';
-import imgBitcoinSaida from '@/assets/historia-bitcoin-saida.jpg';
+import imgEscambo from '@/assets/historia-escambo.webp';
+import imgOuro from '@/assets/historia-ouro.webp';
+import imgPapelMoeda from '@/assets/historia-papel-moeda.webp';
+import imgBancoCentral from '@/assets/historia-banco-central.webp';
+import imgNixonShock from '@/assets/historia-nixon-shock.webp';
+import imgBitcoinSaida from '@/assets/historia-bitcoin-saida.webp';
 import BackToHome from '@/components/BackToHome';
 
 gsap.registerPlugin(ScrollTrigger);

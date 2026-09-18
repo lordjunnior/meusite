@@ -13,11 +13,11 @@ import NobelVFX from '@/components/NobelVFX';
 import SovereignDisclaimer from '@/components/SovereignDisclaimer';
 import BackToHome from '@/components/BackToHome';
 
-import heroImg from '@/assets/exchanges/hub-hero-cinematic.jpg';
-import layersImg from '@/assets/exchanges/hub-layers-defense.jpg';
-import p2pImg from '@/assets/exchanges/hub-p2p-handshake.jpg';
-import panelImg from '@/assets/exchanges/hub-command-panel.jpg';
-import mapImg from '@/assets/exchanges/hub-jurisdictions-map.jpg';
+import heroImg from '@/assets/exchanges/hub-hero-cinematic.webp';
+import layersImg from '@/assets/exchanges/hub-layers-defense.webp';
+import p2pImg from '@/assets/exchanges/hub-p2p-handshake.webp';
+import panelImg from '@/assets/exchanges/hub-command-panel.webp';
+import mapImg from '@/assets/exchanges/hub-jurisdictions-map.webp';
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 const fadeUp = {

@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, RotateCcw, Compass, Shield, Coins, Globe, BookOpen, Zap, Target } from "lucide-react";
 import FixedThematicBackground from "@/components/backgrounds/FixedThematicBackground";
-import bgPorOndeComecar from "@/assets/backgrounds/bg-por-onde-comecar.jpg";
+import bgPorOndeComecar from "@/assets/backgrounds/bg-por-onde-comecar.webp";
 import AppSidebar from "@/components/AppSidebar";
 import MobileNav from "@/components/MobileNav";
 import RightSidebar from "@/components/RightSidebar";

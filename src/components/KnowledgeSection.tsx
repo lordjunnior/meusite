@@ -8,11 +8,11 @@ import {
 } from "lucide-react";
 import { fadeUp, stagger, staggerChild, viewportOnce, ease } from "@/lib/motion";
 
-import bookSeisLicoes from "@/assets/book-seis-licoes.jpg";
-import bookDemocracia from "@/assets/book-democracia.jpg";
-import bookBancoCentral from "@/assets/book-banco-central.jpg";
-import bookWhitepaper from "@/assets/book-whitepaper.jpg";
-import bookRedpill from "@/assets/book-redpill.jpg";
+import bookSeisLicoes from "@/assets/book-seis-licoes.webp";
+import bookDemocracia from "@/assets/book-democracia.webp";
+import bookBancoCentral from "@/assets/book-banco-central.webp";
+import bookWhitepaper from "@/assets/book-whitepaper.webp";
+import bookRedpill from "@/assets/book-redpill.webp";
 
 const APPLE_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 

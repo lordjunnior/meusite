@@ -10,10 +10,10 @@ import {
 import BackNav from '@/components/BackNav';
 import ScrollToTop from '@/components/ScrollToTop';
 
-import imgHero from '@/assets/receitas/hero-pressao-hibisco-light.jpg';
-import imgHibisco from '@/assets/receitas/ativo-hibisco-calices.jpg';
-import imgAlho from '@/assets/receitas/ativo-alho-bulbos.jpg';
-import imgLimao from '@/assets/receitas/ativo-limao-taiti.jpg';
+import imgHero from '@/assets/receitas/hero-pressao-hibisco-light.webp';
+import imgHibisco from '@/assets/receitas/ativo-hibisco-calices.webp';
+import imgAlho from '@/assets/receitas/ativo-alho-bulbos.webp';
+import imgLimao from '@/assets/receitas/ativo-limao-taiti.webp';
 
 /**
  * /soberania-organica/cozinha-funcional/cha-pressao-hibisco

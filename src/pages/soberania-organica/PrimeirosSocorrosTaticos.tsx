@@ -9,9 +9,9 @@ import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
 import CinematicHero from '@/components/CinematicHero';
-import heroImg from '@/assets/saida/socorros-taticos-hero.jpg';
-import imgTorniquete from '@/assets/saida/socorros-taticos-torniquete.jpg';
-import imgMarch from '@/assets/saida/socorros-taticos-march.jpg';
+import heroImg from '@/assets/saida/socorros-taticos-hero.webp';
+import imgTorniquete from '@/assets/saida/socorros-taticos-torniquete.webp';
+import imgMarch from '@/assets/saida/socorros-taticos-march.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

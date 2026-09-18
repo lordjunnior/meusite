@@ -7,12 +7,12 @@ import CinematicHero from '@/components/CinematicHero';
 import BackToHome from '@/components/BackToHome';
 import SmokeBackground from '@/components/toxicos/SmokeBackground';
 
-import heroRotulo from '@/assets/toxinas-alimentares/hero-rotulo.jpg';
-import imgCorante from '@/assets/toxinas-alimentares/aditivo-corante.jpg';
-import imgAcucar from '@/assets/toxinas-alimentares/acucar-oculto.jpg';
-import imgAgrotoxicos from '@/assets/toxinas-alimentares/agrotoxicos.jpg';
-import imgUltraprocessados from '@/assets/toxinas-alimentares/ultraprocessados.jpg';
-import imgComidaReal from '@/assets/toxinas-alimentares/comida-real.jpg';
+import heroRotulo from '@/assets/toxinas-alimentares/hero-rotulo.webp';
+import imgCorante from '@/assets/toxinas-alimentares/aditivo-corante.webp';
+import imgAcucar from '@/assets/toxinas-alimentares/acucar-oculto.webp';
+import imgAgrotoxicos from '@/assets/toxinas-alimentares/agrotoxicos.webp';
+import imgUltraprocessados from '@/assets/toxinas-alimentares/ultraprocessados.webp';
+import imgComidaReal from '@/assets/toxinas-alimentares/comida-real.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {

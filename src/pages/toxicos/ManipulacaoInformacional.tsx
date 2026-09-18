@@ -6,13 +6,13 @@ import { ArrowRight, Brain, Eye, Radio, Filter, MessageSquare, Shield, AlertTria
 import CinematicHero from '@/components/CinematicHero';
 import BackToHome from '@/components/BackToHome';
 
-import bgManipulacao from '@/assets/toxicos/bg-manipulacao.jpg';
-import imgFraming from '@/assets/toxicos/manip-framing.jpg';
-import imgNovilingua from '@/assets/toxicos/manip-novilingua.jpg';
-import imgBolha from '@/assets/toxicos/manip-bolha.jpg';
-import imgBernays from '@/assets/toxicos/manip-bernays.jpg';
-import imgMedo from '@/assets/toxicos/manip-medo.jpg';
-import imgAstroturfing from '@/assets/toxicos/manip-astroturfing.jpg';
+import bgManipulacao from '@/assets/toxicos/bg-manipulacao.webp';
+import imgFraming from '@/assets/toxicos/manip-framing.webp';
+import imgNovilingua from '@/assets/toxicos/manip-novilingua.webp';
+import imgBolha from '@/assets/toxicos/manip-bolha.webp';
+import imgBernays from '@/assets/toxicos/manip-bernays.webp';
+import imgMedo from '@/assets/toxicos/manip-medo.webp';
+import imgAstroturfing from '@/assets/toxicos/manip-astroturfing.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {

@@ -8,10 +8,10 @@ import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 
-import imgRepelentes from '@/assets/vetores-repelentes.jpg';
-import imgCiclo from '@/assets/vetores-ciclo-mosquito.jpg';
-import imgBarreiras from '@/assets/vetores-barreiras.jpg';
-import imgJardim from '@/assets/vetores-jardim-repelente.jpg';
+import imgRepelentes from '@/assets/vetores-repelentes.webp';
+import imgCiclo from '@/assets/vetores-ciclo-mosquito.webp';
+import imgBarreiras from '@/assets/vetores-barreiras.webp';
+import imgJardim from '@/assets/vetores-jardim-repelente.webp';
 import BackToHome from '@/components/BackToHome';
 
 const OLEOS = [

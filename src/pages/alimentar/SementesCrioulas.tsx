@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { ChevronDown, AlertTriangle, ShieldCheck, Sprout } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/alimentar/sementes-hero.jpg';
-import imgBanco from '@/assets/alimentar/sementes-banco.jpg';
-import imgExtracao from '@/assets/alimentar/sementes-extracao.jpg';
-import imgSecagem from '@/assets/alimentar/sementes-secagem.jpg';
-import imgArmazenamento from '@/assets/alimentar/sementes-armazenamento.jpg';
-import imgGerminacao from '@/assets/alimentar/sementes-germinacao.jpg';
-import imgJardim from '@/assets/alimentar/sementes-jardim.jpg';
-import imgTroca from '@/assets/alimentar/sementes-troca.jpg';
+import heroImg from '@/assets/alimentar/sementes-hero.webp';
+import imgBanco from '@/assets/alimentar/sementes-banco.webp';
+import imgExtracao from '@/assets/alimentar/sementes-extracao.webp';
+import imgSecagem from '@/assets/alimentar/sementes-secagem.webp';
+import imgArmazenamento from '@/assets/alimentar/sementes-armazenamento.webp';
+import imgGerminacao from '@/assets/alimentar/sementes-germinacao.webp';
+import imgJardim from '@/assets/alimentar/sementes-jardim.webp';
+import imgTroca from '@/assets/alimentar/sementes-troca.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

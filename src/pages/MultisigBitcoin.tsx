@@ -7,12 +7,12 @@ import BackToHome from '@/components/BackToHome';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-import heroImg from '@/assets/multisig-hero.jpg';
-import keysImg from '@/assets/multisig-keys.jpg';
-import vaultImg from '@/assets/multisig-vault.jpg';
-import disasterImg from '@/assets/multisig-disaster.jpg';
-import casaImg from '@/assets/multisig-casa.jpg';
-import casaAppImg from '@/assets/multisig-casa-app.png';
+import heroImg from '@/assets/multisig-hero.webp';
+import keysImg from '@/assets/multisig-keys.webp';
+import vaultImg from '@/assets/multisig-vault.webp';
+import disasterImg from '@/assets/multisig-disaster.webp';
+import casaImg from '@/assets/multisig-casa.webp';
+import casaAppImg from '@/assets/multisig-casa-app.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = (i: number) => ({

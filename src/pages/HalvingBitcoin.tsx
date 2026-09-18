@@ -5,8 +5,8 @@ import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowLeft, Clock, TrendingUp, Shield, Coins, Target, Eye, ChevronDown } from 'lucide-react';
 import CinematicHero from '@/components/CinematicHero';
-import halvingHero from '@/assets/halving-hero.png';
-import halvingImpacto from '@/assets/halving-impacto.png';
+import halvingHero from '@/assets/halving-hero.webp';
+import halvingImpacto from '@/assets/halving-impacto.webp';
 import BackToHome from '@/components/BackToHome';
 
 const APPLE_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];

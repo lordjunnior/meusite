@@ -20,12 +20,12 @@ import FooterSection from '@/components/FooterSection';
 import BackToHome from '@/components/BackToHome';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 
-import imgHero from '@/assets/pix-anonimo-hero.jpg';
-import imgCodigo from '@/assets/pix-anonimo-codigo.jpg';
-import imgQrcode from '@/assets/pix-anonimo-qrcode.jpg';
-import imgServidor from '@/assets/pix-anonimo-servidor.jpg';
-import imgPronto from '@/assets/pix-anonimo-pronto.jpg';
-import imgPost from '@/assets/pix-anonimo-post.jpg';
+import imgHero from '@/assets/pix-anonimo-hero.webp';
+import imgCodigo from '@/assets/pix-anonimo-codigo.webp';
+import imgQrcode from '@/assets/pix-anonimo-qrcode.webp';
+import imgServidor from '@/assets/pix-anonimo-servidor.webp';
+import imgPronto from '@/assets/pix-anonimo-pronto.webp';
+import imgPost from '@/assets/pix-anonimo-post.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

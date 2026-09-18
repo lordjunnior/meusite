@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ArrowLeft, Building2, TrendingUp, Wallet, Scale, AlertTriangle, Quote } from "lucide-react";
-import heroImg from "@/assets/mercado-tradicional/hero-fiis-ricos.jpg";
-import baleiaImg from "@/assets/mercado-tradicional/baleia-cardume.jpg";
-import torresImg from "@/assets/mercado-tradicional/torres-comerciais.jpg";
-import banheiraImg from "@/assets/mercado-tradicional/banheira-oceano.jpg";
-import rendaImg from "@/assets/mercado-tradicional/renda-mensal-casal.jpg";
-import trocaImg from "@/assets/mercado-tradicional/troca-cota-imovel.jpg";
+import heroImg from "@/assets/mercado-tradicional/hero-fiis-ricos.webp";
+import baleiaImg from "@/assets/mercado-tradicional/baleia-cardume.webp";
+import torresImg from "@/assets/mercado-tradicional/torres-comerciais.webp";
+import banheiraImg from "@/assets/mercado-tradicional/banheira-oceano.webp";
+import rendaImg from "@/assets/mercado-tradicional/renda-mensal-casal.webp";
+import trocaImg from "@/assets/mercado-tradicional/troca-cota-imovel.webp";
 
 const SAND = "#faf6f0";
 const SAND_DEEP = "#ece2d3";

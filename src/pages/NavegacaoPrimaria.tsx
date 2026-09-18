@@ -6,10 +6,10 @@ import { motion } from 'framer-motion';
 import CinematicHero from '@/components/CinematicHero';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 
-import imgSombra from '@/assets/nav-metodo-sombra.jpg';
-import imgBussola from '@/assets/nav-bussola.jpg';
-import imgUrbana from '@/assets/nav-referencia-urbana.jpg';
-import imgNoturna from '@/assets/nav-noturna.jpg';
+import imgSombra from '@/assets/nav-metodo-sombra.webp';
+import imgBussola from '@/assets/nav-bussola.webp';
+import imgUrbana from '@/assets/nav-referencia-urbana.webp';
+import imgNoturna from '@/assets/nav-noturna.webp';
 import BackToHome from '@/components/BackToHome';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;

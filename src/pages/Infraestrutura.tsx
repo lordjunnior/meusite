@@ -10,10 +10,10 @@ import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import BackToHome from '@/components/BackToHome';
 
-import infraHardwareWallet from '@/assets/infra-hardware-wallet.jpg';
-import infraRaspberryNode from '@/assets/infra-raspberry-node.jpg';
-import infraSsdStorage from '@/assets/infra-ssd-storage.jpg';
-import infraTorNetwork from '@/assets/infra-tor-network.jpg';
+import infraHardwareWallet from '@/assets/infra-hardware-wallet.webp';
+import infraRaspberryNode from '@/assets/infra-raspberry-node.webp';
+import infraSsdStorage from '@/assets/infra-ssd-storage.webp';
+import infraTorNetwork from '@/assets/infra-tor-network.webp';
 import { canonicalUrl } from '@/lib/site';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;

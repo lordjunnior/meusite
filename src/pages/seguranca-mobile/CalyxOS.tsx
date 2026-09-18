@@ -8,14 +8,14 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/seguranca-mobile/calyxos-hero.jpg';
+import heroImg from '@/assets/seguranca-mobile/calyxos-hero.webp';
 import logoCalyx from '@/assets/seguranca-mobile/calyxos-logo.png';
-import imgBancada from '@/assets/seguranca-mobile/calyxos-bancada.jpg';
-import imgInterface from '@/assets/seguranca-mobile/calyxos-interface.jpg';
-import imgInstalacao from '@/assets/seguranca-mobile/calyxos-instalacao.jpg';
-import imgPixels from '@/assets/seguranca-mobile/calyxos-pixels.jpg';
-import imgAmeacas from '@/assets/seguranca-mobile/calyxos-ameacas.jpg';
-import imgTroubleshoot from '@/assets/seguranca-mobile/calyxos-troubleshoot.jpg';
+import imgBancada from '@/assets/seguranca-mobile/calyxos-bancada.webp';
+import imgInterface from '@/assets/seguranca-mobile/calyxos-interface.webp';
+import imgInstalacao from '@/assets/seguranca-mobile/calyxos-instalacao.webp';
+import imgPixels from '@/assets/seguranca-mobile/calyxos-pixels.webp';
+import imgAmeacas from '@/assets/seguranca-mobile/calyxos-ameacas.webp';
+import imgTroubleshoot from '@/assets/seguranca-mobile/calyxos-troubleshoot.webp';
 
 /**
  * /seguranca-mobile/calyxos - Página pillar do CalyxOS.

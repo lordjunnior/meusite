@@ -20,12 +20,12 @@ import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import FooterSection from '@/components/FooterSection';
 
-import imgDispositivo from '@/assets/krux-dispositivo-airgap.jpg';
-import imgSeedBackup from '@/assets/krux-seed-backup.jpg';
-import imgBluewallet from '@/assets/krux-bluewallet-observacao.jpg';
-import imgPassphrase from '@/assets/krux-passphrase-seguranca.jpg';
-import imgQrcode from '@/assets/krux-qrcode-airgap.jpg';
-import imgAssinatura from '@/assets/krux-assinatura-transacao.jpg';
+import imgDispositivo from '@/assets/krux-dispositivo-airgap.webp';
+import imgSeedBackup from '@/assets/krux-seed-backup.webp';
+import imgBluewallet from '@/assets/krux-bluewallet-observacao.webp';
+import imgPassphrase from '@/assets/krux-passphrase-seguranca.webp';
+import imgQrcode from '@/assets/krux-qrcode-airgap.webp';
+import imgAssinatura from '@/assets/krux-assinatura-transacao.webp';
 import BackToHome from '@/components/BackToHome';
 
 gsap.registerPlugin(ScrollTrigger);

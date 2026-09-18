@@ -17,9 +17,9 @@ import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
 import CinematicHero from '@/components/CinematicHero';
-import heroImg from '@/assets/saida/defesa-digital-hero.jpg';
-import img2fa from '@/assets/saida/defesa-digital-2fa.jpg';
-import imgCripto from '@/assets/saida/defesa-digital-criptografia.jpg';
+import heroImg from '@/assets/saida/defesa-digital-hero.webp';
+import img2fa from '@/assets/saida/defesa-digital-2fa.webp';
+import imgCripto from '@/assets/saida/defesa-digital-criptografia.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

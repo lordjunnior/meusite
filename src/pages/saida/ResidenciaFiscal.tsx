@@ -9,9 +9,9 @@ import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
 import CinematicHero from '@/components/CinematicHero';
-import heroImg from '@/assets/saida/residencia-fiscal-hero.jpg';
-import imgSaida from '@/assets/saida/residencia-fiscal-saida.jpg';
-import imgDomicilio from '@/assets/saida/residencia-fiscal-domicilio.jpg';
+import heroImg from '@/assets/saida/residencia-fiscal-hero.webp';
+import imgSaida from '@/assets/saida/residencia-fiscal-saida.webp';
+import imgDomicilio from '@/assets/saida/residencia-fiscal-domicilio.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

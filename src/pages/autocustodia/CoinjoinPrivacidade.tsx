@@ -5,13 +5,13 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/autocustodia/coinjoin-hero.jpg';
-import imgAnalogia from '@/assets/autocustodia/coinjoin-analogia.jpg';
-import imgInterface from '@/assets/autocustodia/coinjoin-interface.jpg';
-import imgMistura from '@/assets/autocustodia/coinjoin-mistura.jpg';
-import imgOpsec from '@/assets/autocustodia/coinjoin-opsec.jpg';
-import imgPlanejamento from '@/assets/autocustodia/coinjoin-planejamento.jpg';
-import imgPrivacidade from '@/assets/autocustodia/coinjoin-privacidade.jpg';
+import heroImg from '@/assets/autocustodia/coinjoin-hero.webp';
+import imgAnalogia from '@/assets/autocustodia/coinjoin-analogia.webp';
+import imgInterface from '@/assets/autocustodia/coinjoin-interface.webp';
+import imgMistura from '@/assets/autocustodia/coinjoin-mistura.webp';
+import imgOpsec from '@/assets/autocustodia/coinjoin-opsec.webp';
+import imgPlanejamento from '@/assets/autocustodia/coinjoin-planejamento.webp';
+import imgPrivacidade from '@/assets/autocustodia/coinjoin-privacidade.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

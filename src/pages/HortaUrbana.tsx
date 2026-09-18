@@ -7,13 +7,13 @@ import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 
-import imgLuzSolar from '@/assets/horta-luz-solar.jpg';
-import imgVasoAutoirrigavel from '@/assets/horta-vaso-autoirrigavel.jpg';
-import imgVertical from '@/assets/horta-vertical.jpg';
-import imgCalendario from '@/assets/horta-calendario-plantio.jpg';
-import imgEspecies from '@/assets/horta-especies-iniciantes.jpg';
-import imgErros from '@/assets/horta-erros-comuns.jpg';
-import imgSubstrato from '@/assets/solo-substrato-ideal.jpg';
+import imgLuzSolar from '@/assets/horta-luz-solar.webp';
+import imgVasoAutoirrigavel from '@/assets/horta-vaso-autoirrigavel.webp';
+import imgVertical from '@/assets/horta-vertical.webp';
+import imgCalendario from '@/assets/horta-calendario-plantio.webp';
+import imgEspecies from '@/assets/horta-especies-iniciantes.webp';
+import imgErros from '@/assets/horta-erros-comuns.webp';
+import imgSubstrato from '@/assets/solo-substrato-ideal.webp';
 import BackToHome from '@/components/BackToHome';
 
 const EASE = [0.22, 1, 0.36, 1] as const;

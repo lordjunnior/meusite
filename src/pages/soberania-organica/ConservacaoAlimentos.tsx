@@ -4,15 +4,15 @@ import { ChevronDown, AlertTriangle, ShieldCheck, Archive } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import RelatedHooks from '@/components/RelatedHooks';
-import heroImg from '@/assets/conservacao/conservacao-hero.jpg';
-import imgFermentacao from '@/assets/conservacao/conservacao-fermentacao.jpg';
-import imgSolar from '@/assets/conservacao/conservacao-solar.jpg';
-import imgEletrica from '@/assets/conservacao/conservacao-eletrica.jpg';
-import imgCura from '@/assets/conservacao/conservacao-cura.jpg';
-import imgDefumacao from '@/assets/conservacao/conservacao-defumacao.jpg';
-import imgCanning from '@/assets/conservacao/conservacao-canning.jpg';
-import imgVacuo from '@/assets/conservacao/conservacao-vacuo.jpg';
-import imgCongelamento from '@/assets/conservacao/conservacao-congelamento.jpg';
+import heroImg from '@/assets/conservacao/conservacao-hero.webp';
+import imgFermentacao from '@/assets/conservacao/conservacao-fermentacao.webp';
+import imgSolar from '@/assets/conservacao/conservacao-solar.webp';
+import imgEletrica from '@/assets/conservacao/conservacao-eletrica.webp';
+import imgCura from '@/assets/conservacao/conservacao-cura.webp';
+import imgDefumacao from '@/assets/conservacao/conservacao-defumacao.webp';
+import imgCanning from '@/assets/conservacao/conservacao-canning.webp';
+import imgVacuo from '@/assets/conservacao/conservacao-vacuo.webp';
+import imgCongelamento from '@/assets/conservacao/conservacao-congelamento.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

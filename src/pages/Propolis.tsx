@@ -19,8 +19,8 @@ import {
 } from "lucide-react";
 import BackToHome from "@/components/BackToHome";
 import PageFloatingToc from "@/components/PageFloatingToc";
-import bgPropolis from "@/assets/bg-propolis.jpg";
-import imgColmeia from "@/assets/propolis-colmeia.jpg";
+import bgPropolis from "@/assets/bg-propolis.webp";
+import imgColmeia from "@/assets/propolis-colmeia.webp";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 

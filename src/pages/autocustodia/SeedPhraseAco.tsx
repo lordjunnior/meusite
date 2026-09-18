@@ -5,12 +5,12 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/autocustodia/seed-aco-hero.jpg';
-import imgFogo from '@/assets/autocustodia/seed-aco-fogo.jpg';
-import imgComparativo from '@/assets/autocustodia/seed-aco-comparativo.jpg';
-import imgGravacao from '@/assets/autocustodia/seed-aco-gravacao.jpg';
-import imgResistencia from '@/assets/autocustodia/seed-aco-resistencia.jpg';
-import imgArmazenamento from '@/assets/autocustodia/seed-aco-armazenamento.jpg';
+import heroImg from '@/assets/autocustodia/seed-aco-hero.webp';
+import imgFogo from '@/assets/autocustodia/seed-aco-fogo.webp';
+import imgComparativo from '@/assets/autocustodia/seed-aco-comparativo.webp';
+import imgGravacao from '@/assets/autocustodia/seed-aco-gravacao.webp';
+import imgResistencia from '@/assets/autocustodia/seed-aco-resistencia.webp';
+import imgArmazenamento from '@/assets/autocustodia/seed-aco-armazenamento.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

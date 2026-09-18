@@ -11,20 +11,20 @@ import BackToHome from '@/components/BackToHome';
 import ScrollToTop from '@/components/ScrollToTop';
 import ChipDustBackground from '@/components/backgrounds/ChipDustBackground';
 
-import imgHero from '@/assets/eva/hero-lab-engenharia.jpg';
-import imgChip from '@/assets/eva/chip-macro-isolado.jpg';
-import imgKnolling from '@/assets/eva/knolling-analise.jpg';
-import imgHandMouth from '@/assets/eva/hand-to-mouth.jpg';
-import imgDopamina from '@/assets/eva/dopamina-molecula.jpg';
-import imgSlot from '@/assets/eva/slot-machine-vicio.jpg';
-import imgCrocancia from '@/assets/eva/crocancia-acustica.jpg';
-import imgCurva from '@/assets/eva/curva-gaussiana.jpg';
-import imgBliss from '@/assets/eva/bliss-point.jpg';
-import imgComidaReal from '@/assets/eva/comida-real-ancestral.jpg';
-import imgColor from '@/assets/eva/colorimetro-cor.jpg';
-import imgBiblioteca from '@/assets/eva/biblioteca-fontes.jpg';
-import imgInvestigacao from '@/assets/eva/investigacao-recorte.jpg';
-import imgEvidencias from '@/assets/eva/evidencias-knolling.jpg';
+import imgHero from '@/assets/eva/hero-lab-engenharia.webp';
+import imgChip from '@/assets/eva/chip-macro-isolado.webp';
+import imgKnolling from '@/assets/eva/knolling-analise.webp';
+import imgHandMouth from '@/assets/eva/hand-to-mouth.webp';
+import imgDopamina from '@/assets/eva/dopamina-molecula.webp';
+import imgSlot from '@/assets/eva/slot-machine-vicio.webp';
+import imgCrocancia from '@/assets/eva/crocancia-acustica.webp';
+import imgCurva from '@/assets/eva/curva-gaussiana.webp';
+import imgBliss from '@/assets/eva/bliss-point.webp';
+import imgComidaReal from '@/assets/eva/comida-real-ancestral.webp';
+import imgColor from '@/assets/eva/colorimetro-cor.webp';
+import imgBiblioteca from '@/assets/eva/biblioteca-fontes.webp';
+import imgInvestigacao from '@/assets/eva/investigacao-recorte.webp';
+import imgEvidencias from '@/assets/eva/evidencias-knolling.webp';
 
 /**
  * /soberania-organica/engenharia-vicio-alimentar
