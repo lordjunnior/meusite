@@ -41,22 +41,26 @@ const LeadCaptureModal = ({ isOpen, onClose, interesse = 'assessoria-offshore' }
       return;
     }
 
-    setLoading(true);
-    try {
-      const { error } = await supabase.from('leads' as any).insert({
-        nome: result.data.nome,
-        email: result.data.email,
-        whatsapp: result.data.whatsapp || null,
-        interesse,
-      } as any);
+    if (!consent) {
+      setErrors({ consent: 'Marque a autorização para enviar seus dados.' });
+      return;
+    }
 
-      if (error) throw error;
+    setLoading(true);
+    const outcome = await submitLead({
+      nome: result.data.nome,
+      email: result.data.email,
+      whatsapp: result.data.whatsapp,
+      interesse,
+      consentimento: consent,
+      honeypot,
+    });
+    setLoading(false);
+
+    if (outcome.ok) {
       setSuccess(true);
-    } catch (err) {
-      console.error('Lead submission error:', err);
-      setErrors({ form: 'Erro ao enviar. Tente novamente.' });
-    } finally {
-      setLoading(false);
+    } else {
+      setErrors({ form: outcome.message });
     }
   };
 
