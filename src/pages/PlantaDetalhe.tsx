@@ -68,6 +68,10 @@ export default function PlantaDetalhe() {
 
   if (!planta) return <Navigate to="/soberania-organica/autonomia-biologica" replace />;
 
+  // Plantas com ficha dedicada: a URL canonica e a do silo tematico.
+  const paginaDedicada = slug ? PLANTA_PAGINA_DEDICADA[slug] : undefined;
+  if (paginaDedicada) return <Navigate to={paginaDedicada} replace />;
+
   const setRef = (i: number) => (el: HTMLElement | null) => {
     sectionsRef.current[i] = el;
   };
