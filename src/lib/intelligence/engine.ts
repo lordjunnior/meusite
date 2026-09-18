@@ -36,6 +36,11 @@ const RAW = fingerprintData as { generatedAt: string; pages: PageFingerprint[] }
 export const PAGES: PageFingerprint[] = RAW.pages;
 export const FINGERPRINTS_GENERATED_AT = RAW.generatedAt;
 
+const STOPWORDS = new Set(
+  ("a o e de da do das dos em no na nos nas um uma para por com que se ao aos as os sua seu " +
+    "como qual quais mais menos sem sob sobre entre ou nao sim ja foi ser sao esta este isso pelo pela").split(" "),
+);
+
 function normalize(text: string): string {
   return text
     .toLowerCase()
@@ -295,7 +300,13 @@ export function diagnoseCluster(cluster: IntentCluster): GapDiagnosis {
     kind: cluster.kind,
     stage: cluster.stage,
     riskLevel: cluster.riskLevel,
-    terms: [...new Set(normalize(cluster.rootQuery).split(" ").filter((t) => t.length > 2))],
+    terms: [
+      ...new Set(
+        normalize(cluster.rootQuery)
+          .split(" ")
+          .filter((t) => t.length > 2 && !STOPWORDS.has(t)),
+      ),
+    ],
   };
   const rootMatches = coverageForIntent(rootIntent);
   const rootAnswers = rootMatches.filter((m) => m.verdict === "responde");
