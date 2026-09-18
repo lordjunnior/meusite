@@ -182,6 +182,7 @@ export const navGroups: NavGroup[] = [
       { label: "Tinturas, Xaropes e Preparos", route: "/soberania-organica/tinturas-xaropes-preparos", badge: "Novo" },
       { label: "Protocolos Gripe e Resfriado", route: "/soberania-organica/protocolos-gripe-resfriado", badge: "Novo" },
       { label: "Rotina Diária de Imunidade", route: "/soberania-organica/rotina-diaria-imunidade", badge: "Novo" },
+      { label: "Cobre: imunidade e uso seguro", route: "/protocolo-respiratorio/cobre", badge: "Novo" },
       { label: "Saúde Preventiva", route: "/soberania-organica/saude-preventiva" },
       { label: "Autonomia Biológica", route: "/soberania-organica/autonomia-biologica" },
       { label: "Fitoterapia Aplicada", route: "/soberania-organica/fitoterapia-aplicada" },

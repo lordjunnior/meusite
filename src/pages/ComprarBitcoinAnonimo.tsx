@@ -158,7 +158,7 @@ const ChapterBlock = ({
       </div>
 
       <div className="p-8 md:p-10 bg-card/60 backdrop-blur-sm border border-border/30 rounded-b-sm">
-        <motion.h3 custom={1} variants={fadeUp} className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-6 uppercase" style={{ fontFamily: "'Poppins', sans-serif" }}>
+        <motion.h3 custom={1} variants={fadeUp} className="font-impact text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-6 uppercase">
           {title}
         </motion.h3>
         <motion.div custom={2} variants={fadeUp} className="space-y-4 text-muted-foreground leading-relaxed">
@@ -338,7 +338,7 @@ export default function ComprarBitcoinAnonimo() {
             {/* Title */}
             <motion.h1
               custom={2} variants={fadeUp} initial="hidden" animate="visible"
-              className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-5 leading-[0.95] uppercase" style={{ fontFamily: "'Poppins', sans-serif" }}
+              className="font-impact text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-5 leading-[0.95] uppercase"
             >
               SEU PRIMEIRO CONTATO{" "}
               <br className="hidden md:block" />
@@ -733,7 +733,7 @@ export default function ComprarBitcoinAnonimo() {
                   </motion.div>
                 </div>
                 <div className="p-8 md:p-10 bg-card/60 backdrop-blur-sm border border-border/30 rounded-b-sm mb-8">
-                  <motion.h3 custom={1} variants={fadeUp} className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-3 uppercase" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  <motion.h3 custom={1} variants={fadeUp} className="font-impact text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-3 uppercase">
                     4 PASSOS PARA SUA PRIMEIRA COMPRA
                   </motion.h3>
                   <motion.p custom={2} variants={fadeUp} className="text-muted-foreground leading-relaxed">
@@ -968,7 +968,7 @@ export default function ComprarBitcoinAnonimo() {
             {/* ── FAQ ── */}
             <section id="faq" className="space-y-6">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                <motion.h3 custom={0} variants={fadeUp} className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-2 uppercase" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <motion.h3 custom={0} variants={fadeUp} className="font-impact text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-2 uppercase">
                   PERGUNTAS FREQUENTES
                 </motion.h3>
                 <motion.p custom={1} variants={fadeUp} className="text-muted-foreground text-sm mb-6">
@@ -990,7 +990,7 @@ export default function ComprarBitcoinAnonimo() {
               viewport={{ once: true }}
               className="text-center py-12 space-y-6"
             >
-              <p className="text-3xl md:text-4xl font-bold tracking-tight uppercase" style={{ fontFamily: "'Poppins', sans-serif" }}>
+              <p className="font-impact text-3xl md:text-4xl font-bold tracking-tight uppercase">
                 PRONTO PARA <span className="text-primary">ASSUMIR O CONTROLE</span>?
               </p>
               <p className="text-muted-foreground max-w-lg mx-auto leading-relaxed">

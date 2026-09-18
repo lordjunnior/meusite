@@ -309,6 +309,7 @@ const SILOS: Silo[] = [
       { title: 'Tinturas, Xaropes e Preparos', href: '/soberania-organica/tinturas-xaropes-preparos' },
       { title: 'Protocolos para Gripe e Resfriado', href: '/soberania-organica/protocolos-gripe-resfriado' },
       { title: 'Rotina Diária de Imunidade', href: '/soberania-organica/rotina-diaria-imunidade' },
+      { title: 'Cobre: Imunidade, Água e Solo', href: '/protocolo-respiratorio/cobre' },
       { title: 'Primeiros Socorros', href: '/soberania-organica/primeiros-socorros' },
       { title: 'Primeiros Socorros Táticos: MARCH + IFAK', href: '/soberania-organica/primeiros-socorros-taticos' },
       { title: 'Avaliação de Sinais Vitais', href: '/soberania-organica/avaliacao-sinais' },

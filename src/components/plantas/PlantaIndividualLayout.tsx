@@ -101,7 +101,7 @@ export default function PlantaIndividualLayout({ data }: { data: PlantaIndividua
       <ScrollToTop />
       <BackToHome />
 
-      <div className="min-h-screen bg-[#07080c] text-stone-200">
+      <div className="theme-editorial editorial-layout min-h-screen bg-editorial-sand text-editorial-ink">
         {/* HERO */}
         <section className="relative h-screen min-h-[680px] w-full flex items-end overflow-hidden">
           <div

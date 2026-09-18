@@ -3,6 +3,8 @@ import heroCobre from '@/assets/cobre-protocolo/cobre-hero-v2.jpg';
 import imgVaso from '@/assets/cobre-protocolo/cobre-vaso-agua.jpg';
 import imgSino from '@/assets/cobre-protocolo/cobre-sino-bronze.jpg';
 import imgSolo from '@/assets/cobre-protocolo/cobre-solo-plantas.jpg';
+import imgCofator from '@/assets/cobre-protocolo/cobre-cofator-imunologico.jpg';
+import imgEquilibrio from '@/assets/cobre-protocolo/cobre-equilibrio-mineral.jpg';
 
 const data: ProtocoloItemData = {
   slug: 'cobre',
@@ -54,6 +56,9 @@ const data: ProtocoloItemData = {
         'A <strong>ceruloplasmina</strong>, principal proteína transportadora de cobre no plasma, também é ferroxidase: converte ferro ferroso (Fe²⁺) em férrico (Fe³⁺), forma necessária para ligação à transferrina. Cobre baixo significa anemia funcional resistente à suplementação de ferro isolada.',
         'A <strong>citocromo c oxidase</strong> é a enzima terminal da cadeia respiratória mitocondrial. Sem cobre, a produção de ATP cai. Fadiga inexplicada, recuperação lenta de exercício e maior vulnerabilidade respiratória são sinais clínicos clássicos de cobre funcional baixo.',
       ],
+      imagem: imgCofator,
+      imagemAlt: 'Bancada de laboratório com modelo molecular em cobre, microscópio e lâmina de células sanguíneas',
+      imagemCaption: 'O cobre participa da defesa antioxidante, do transporte de ferro e da produção mitocondrial de energia.',
     },
     {
       numero: 'Capítulo 03',
@@ -65,6 +70,9 @@ const data: ProtocoloItemData = {
         '<strong>Absorção comprometida:</strong> uso crônico de inibidores de bomba de prótons (omeprazol, pantoprazol) reduz acidez gástrica necessária para liberação do cobre dos alimentos. Disbiose intestinal e dietas ricas em fitatos completam o estrago.',
         '<strong>Frutose alta:</strong> consumo elevado de frutose isolada (xarope de milho, refrigerante) acelera depleção hepática de cobre, conforme mostrado em estudos de Klevay e Saari.',
       ],
+      imagem: imgEquilibrio,
+      imagemAlt: 'Amostras minerais de cobre e zinco entre folhas verdes, cacau e utensílios de cobre',
+      imagemCaption: 'Equilíbrio mineral exige contexto alimentar: cobre e zinco competem, e o excesso isolado de um altera a disponibilidade do outro.',
     },
     {
       numero: 'Capítulo 04',
@@ -161,17 +169,17 @@ const data: ProtocoloItemData = {
     {
       titulo: 'Guaco — o expansor respiratório',
       descricao: 'Mikania glomerata, broncodilatador natural por cumarina. Capítulo 02 do protocolo respiratório.',
-      href: '/protocolo-respiratorio/guaco',
+      href: '/soberania-organica/plantas-subutilizadas/guaco',
     },
     {
       titulo: 'Mel cru — o carreador biológico',
       descricao: 'Por que mel cru é veículo funcional e mel industrial é xarope. Capítulo 03 do protocolo respiratório.',
-      href: '/protocolo-respiratorio/mel-cru',
+      href: '/soberania-organica/farmacia-caseira-essencial',
     },
     {
       titulo: 'Própolis — guerra invisível e 3 tipos',
       descricao: 'Com álcool, sem álcool e diluído. Como identificar potência real. Capítulo 04 do protocolo respiratório.',
-      href: '/protocolo-respiratorio/propolis',
+      href: '/soberania-organica/propolis',
     },
   ],
 };

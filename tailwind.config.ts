@@ -16,6 +16,8 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+        impact: ['Inter Tight', 'Inter', 'sans-serif'],
+        editorial: ['Playfair Display', 'Georgia', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -61,6 +63,13 @@ export default {
         "section-alt": "hsl(var(--section-alt))",
         "chart-red": "hsl(var(--chart-red))",
         "chart-green": "hsl(var(--chart-green))",
+        "editorial-sand": "hsl(var(--editorial-sand))",
+        "editorial-sand-deep": "hsl(var(--editorial-sand-deep))",
+        "editorial-teal": "hsl(var(--editorial-teal))",
+        "editorial-teal-soft": "hsl(var(--editorial-teal-soft))",
+        "editorial-terracotta": "hsl(var(--editorial-terracotta))",
+        "editorial-copper-light": "hsl(var(--editorial-copper-light))",
+        "editorial-ink": "hsl(var(--editorial-ink))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

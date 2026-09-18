@@ -309,7 +309,7 @@ export default function DolarVirtual() {
 
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease: APPLE_EASE }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-foreground leading-[1.05] uppercase"
-              style={{ fontFamily: "'Bebas Neue', 'Poppins', sans-serif" }}
+              style={{ fontFamily: "'Bebas Neue', 'Inter Tight', sans-serif" }}
             >
               COMO COMPRAR<br />
               <span className="text-primary">DÓLAR VIRTUAL</span>
@@ -361,7 +361,7 @@ export default function DolarVirtual() {
                 </div>
                 <div className="flex-1">
                   <p className="font-mono text-[9px] tracking-[0.3em] text-destructive uppercase mb-1 font-bold">[ALERTA DE TRANSPARÊNCIA]</p>
-                  <h3 className="text-foreground font-bold text-lg uppercase mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  <h3 className="font-impact text-foreground font-bold text-lg uppercase mb-2">
                     PIX NÃO É ANÔNIMO
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-3">
@@ -691,7 +691,7 @@ export default function DolarVirtual() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-2xl md:text-3xl font-black tracking-tight text-foreground uppercase mb-6"
-              style={{ fontFamily: "'Bebas Neue', 'Poppins', sans-serif" }}
+              style={{ fontFamily: "'Bebas Neue', 'Inter Tight', sans-serif" }}
             >
               PERGUNTAS FREQUENTES
             </motion.h2>
@@ -713,7 +713,7 @@ export default function DolarVirtual() {
             className="relative overflow-hidden rounded-sm border border-primary/30 bg-primary/[0.04] p-8 md:p-10 text-center"
           >
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
-            <h3 className="text-2xl md:text-3xl font-black tracking-tight text-foreground uppercase mb-4" style={{ fontFamily: "'Bebas Neue', 'Poppins', sans-serif" }}>
+            <h3 className="font-impact text-2xl md:text-3xl font-black tracking-tight text-foreground uppercase mb-4">
               NENHUMA SOLUÇÃO FÁCIL ENTREGA SOBERANIA
             </h3>
             <p className="text-sm text-muted-foreground max-w-xl mx-auto leading-relaxed mb-6">

@@ -40,6 +40,7 @@ import RiskBlock from "@/components/RiskBlock";
 import AlertBanner from "@/components/AlertBanner";
 import SnippetBait from "@/components/SnippetBait";
 import RapeHookCard from "@/components/RapeHookCard";
+import FutureStateSection from "@/components/FutureStateSection";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -60,30 +61,33 @@ const NobelSection = ({
 
   useEffect(() => {
     if (!ref.current) return;
+    const section = ref.current;
+    const media = gsap.matchMedia();
 
-    gsap.fromTo(
-      ref.current,
-      { opacity: 0, y: 60, filter: "blur(10px)" },
-      {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        duration: 1.2,
-        delay,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      gsap.fromTo(
+        section,
+        { opacity: 0, y: 60, filter: "blur(10px)" },
+        {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 1.2,
+          delay,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+    media.add("(prefers-reduced-motion: reduce)", () => {
+      gsap.set(section, { opacity: 1, y: 0, filter: "none" });
+    });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => {
-        if (t.trigger === ref.current) t.kill();
-      });
-    };
+    return () => media.revert();
   }, [delay]);
 
   return (
@@ -894,6 +898,10 @@ const Index = () => {
               ]}
             />
           </div>
+        </NobelSection>
+
+        <NobelSection className="section-divider" delay={0.1}>
+          <FutureStateSection />
         </NobelSection>
 
         <NobelSection className="section-alt section-divider" delay={0.1}>

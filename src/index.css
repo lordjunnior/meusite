@@ -62,6 +62,9 @@
     --chart-red: 0 65% 50%;
     --chart-green: 145 60% 42%;
     --mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-impact: 'Inter Tight', 'Inter', sans-serif;
+    --font-editorial: 'Playfair Display', Georgia, serif;
   }
 
   .dark {
@@ -76,7 +79,7 @@
   }
   body {
     @apply bg-background text-foreground antialiased selection:bg-primary selection:text-black;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
   
@@ -97,15 +100,76 @@
 
   /* ─── Typography ─── */
   .font-editorial {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: var(--font-editorial);
   }
 
   .font-display {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: var(--font-impact);
   }
 
   .font-unbounded {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-impact);
+  }
+
+  .font-impact {
+    font-family: var(--font-impact);
+    letter-spacing: 0;
+  }
+
+  .theme-editorial {
+    --editorial-sand: 34 42% 93%;
+    --editorial-sand-deep: 34 32% 88%;
+    --editorial-teal: 179 62% 14%;
+    --editorial-teal-soft: 178 48% 20%;
+    --editorial-terracotta: 22 61% 47%;
+    --editorial-copper-light: 24 73% 66%;
+    --editorial-ink: 174 30% 12%;
+  }
+
+  .editorial-layout {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .editorial-layout h1,
+  .editorial-layout h2,
+  .editorial-layout h3 {
+    font-family: var(--font-impact) !important;
+    letter-spacing: 0 !important;
+  }
+
+  .editorial-layout figcaption,
+  .editorial-layout blockquote {
+    font-family: var(--font-editorial) !important;
+  }
+
+  .editorial-layout > section:not(:first-child) {
+    background: hsl(var(--editorial-sand)) !important;
+    border-color: hsl(var(--editorial-teal) / 0.15) !important;
+    color: hsl(var(--editorial-ink));
+  }
+
+  .editorial-layout > section:not(:first-child):nth-child(odd) {
+    background: hsl(var(--editorial-teal)) !important;
+    color: hsl(var(--editorial-sand));
+  }
+
+  .editorial-layout > section:not(:first-child):nth-child(even) .text-white,
+  .editorial-layout > section:not(:first-child):nth-child(even) .text-stone-200,
+  .editorial-layout > section:not(:first-child):nth-child(even) .text-stone-300,
+  .editorial-layout > section:not(:first-child):nth-child(even) .text-stone-400 {
+    color: hsl(var(--editorial-ink));
+  }
+
+  .editorial-layout > section:not(:first-child):nth-child(odd) .text-white,
+  .editorial-layout > section:not(:first-child):nth-child(odd) .text-stone-200,
+  .editorial-layout > section:not(:first-child):nth-child(odd) .text-stone-300,
+  .editorial-layout > section:not(:first-child):nth-child(odd) .text-stone-400 {
+    color: hsl(var(--editorial-sand));
+  }
+
+  .editorial-layout > section:not(:first-child) .text-emerald-400,
+  .editorial-layout > section:not(:first-child) .text-amber-400 {
+    color: hsl(var(--editorial-terracotta));
   }
 
   /* Nobel Grayscale-to-Color Hover */

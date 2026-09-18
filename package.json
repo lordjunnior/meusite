@@ -12,7 +12,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "predev": "bunx tsx scripts/generate-sitemap.ts",
-    "prebuild": "bunx tsx scripts/generate-sitemap.ts && bunx tsx scripts/check-canonical.ts"
+    "prebuild": "bunx tsx scripts/generate-sitemap.ts && bunx tsx scripts/check-canonical.ts && bunx tsx scripts/check-editorial-tokens.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

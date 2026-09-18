@@ -209,8 +209,8 @@ export default function ProtocoloItemLayout({ data }: { data: ProtocoloItemData 
             {
               '@type': 'ListItem',
               position: 2,
-              name: 'Protocolo Respiratório',
-              item: 'https://lordjunnior.com.br/protocolo-respiratorio',
+               name: 'Protocolos de Gripe e Resfriado',
+               item: 'https://lordjunnior.com.br/soberania-organica/protocolos-gripe-resfriado',
             },
             { '@type': 'ListItem', position: 3, name: data.badgeTopo, item: canonical },
           ],
@@ -220,7 +220,7 @@ export default function ProtocoloItemLayout({ data }: { data: ProtocoloItemData 
       <ScrollToTop />
       <BackToHome />
 
-      <div className="min-h-screen bg-[#07080c] text-stone-200">
+      <div className="theme-editorial editorial-layout min-h-screen bg-editorial-sand text-editorial-ink">
         {/* HERO */}
         <section className="relative h-screen min-h-[700px] w-full flex items-end overflow-hidden">
           <div
@@ -238,10 +238,10 @@ export default function ProtocoloItemLayout({ data }: { data: ProtocoloItemData 
 
           <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pb-16 md:pb-24">
             <Link
-              to="/protocolo-respiratorio"
+              to="/soberania-organica/protocolos-gripe-resfriado"
               className={`inline-flex items-center gap-2 text-stone-400 hover:${c.accent} text-xs font-bold uppercase tracking-[0.2em] transition-colors mb-8`}
             >
-              <ArrowLeft size={14} /> Protocolo Respiratório
+              <ArrowLeft size={14} /> Protocolos de Gripe e Resfriado
             </Link>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
