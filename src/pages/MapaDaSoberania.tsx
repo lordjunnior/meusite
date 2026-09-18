@@ -379,6 +379,7 @@ const SILOS: Silo[] = [
       { title: 'Arsenal Completo', href: '/arsenal' },
       { title: 'Recursos e Ferramentas', href: '/recursos-e-ferramentas' },
       { title: 'Hub Educação', href: '/educacao' },
+      { title: 'Biblioteca Técnica', href: '/biblioteca-tecnica' },
       { title: 'Filosofia', href: '/filosofia' },
       { title: 'Novilíngua', href: '/novilingua' },
       { title: 'Projeto Autônomo', href: '/projeto-autonomo' },

@@ -308,6 +308,7 @@ export const navGroups: NavGroup[] = [
     color: undefined,
     items: [
       { label: "Educação", route: "/educacao" },
+      { label: "Biblioteca Técnica", route: "/biblioteca-tecnica", badge: "Novo" },
       { label: "Audiobooks", route: "/audiobooks" },
       { label: "E-books", route: "/ebooks" },
       { label: "Alfabeto Cripto", route: "/dicionario-cripto" },
