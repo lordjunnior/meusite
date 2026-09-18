@@ -252,7 +252,7 @@ export default function SementesCrioulas() {
         custom={{
           title: "Sementes Crioulas: Banco Pessoal | Autonomia Alimentar",
           description: "Manual completo de banco doméstico de sementes crioulas: extração, secagem, armazenamento e teste de germinação. Independência alimentar real, geração após geração.",
-          canonical: "https://soberania.app/soberania-organica/sementes-crioulas",
+          canonical: "https://lordjunnior.com.br/soberania-organica/sementes-crioulas",
         }}
       />
       <BackToHome />

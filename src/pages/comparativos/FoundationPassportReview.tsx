@@ -133,7 +133,7 @@ export default function FoundationPassportReview() {
         custom={{
           title: 'Foundation Passport Review 2026: Air-gap por QR Code e Código Aberto',
           description: 'Review completa e honesta do Foundation Passport: air-gap via QR Code, teclado físico, montagem nos EUA, firmware open source, prós, contras e para quem não serve.',
-          canonical: 'https://sovereign-arsenal.lovable.app/comparativos/foundation-passport-review',
+          canonical: 'https://lordjunnior.com.br/comparativos/foundation-passport-review',
           primaryKeyword: 'foundation passport review',
           lsiKeywords: [
             'foundation passport air-gap',

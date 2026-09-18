@@ -308,7 +308,7 @@ export default function ProtocolosGripeResfriado() {
           title: 'O Que Fazer nos Primeiros Sinais de Gripe: Protocolos Hora a Hora',
           description:
             'Protocolos práticos hora a hora para gripe, resfriado, dor de garganta, tosse, congestão nasal, febre, diarreia, indigestão, dor de cabeça, insônia e pequenos ferimentos. O que fazer, o que evitar e os sinais de alerta para pronto-socorro.',
-          canonical: 'https://sovereign-arsenal.lovable.app/soberania-organica/protocolos-gripe-resfriado',
+          canonical: 'https://lordjunnior.com.br/soberania-organica/protocolos-gripe-resfriado',
           primaryKeyword: 'o que fazer nos primeiros sinais de gripe',
           lsiKeywords: [
             'primeiros sintomas de gripe o que fazer',

@@ -329,7 +329,7 @@ export default function CartoesCriptoSemReporte() {
           title: 'Cartões Cripto para Sacar Dinheiro Vivo Sem Reporte (2026)',
           description:
             'Comparativo dos 10 melhores cartões cripto para sacar dinheiro vivo em ATM com privacidade: ChapoBank, Picnique, RedotPay, Mero, Bybit, Krak e mais. Taxas reais e estratégias sem KYC.',
-          canonical: 'https://sovereign-arsenal.lovable.app/soberania-financeira/cartoes-cripto-sem-reporte',
+          canonical: 'https://lordjunnior.com.br/soberania-financeira/cartoes-cripto-sem-reporte',
           primaryKeyword: 'cartões cripto sem reporte',
           lsiKeywords: [
             'sacar dinheiro vivo com cripto',

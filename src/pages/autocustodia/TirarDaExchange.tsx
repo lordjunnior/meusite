@@ -279,7 +279,7 @@ export default function TirarDaExchange() {
           title: 'Como Tirar Bitcoin da Corretora: Guia do Primeiro Saque Seguro',
           description:
             'Passo a passo completo de como tirar bitcoin da corretora para hardware wallet: seed phrase, endereço de recebimento, taxa de rede em vBytes, whitelist, 2FA e confirmação na blockchain.',
-          canonical: 'https://sovereign-arsenal.lovable.app/autocustodia/tirar-da-exchange-para-hardware-wallet',
+          canonical: 'https://lordjunnior.com.br/autocustodia/tirar-da-exchange-para-hardware-wallet',
           primaryKeyword: 'como tirar bitcoin da corretora',
           lsiKeywords: [
             'sacar bitcoin da exchange',

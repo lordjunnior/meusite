@@ -268,7 +268,7 @@ export default function TinturasXaroposPreparos() {
           title: 'Como Fazer Tintura de Plantas em Casa: Guia Completo 2026',
           description:
             'Guia prático dos 6 métodos de extração caseira: tintura alcoólica, glicerite, óleo infundido e xarope. Proporções exatas, graduação alcoólica, dose por gota e receitas passo a passo.',
-          canonical: 'https://sovereign-arsenal.lovable.app/soberania-organica/tinturas-xaropes-preparos',
+          canonical: 'https://lordjunnior.com.br/soberania-organica/tinturas-xaropes-preparos',
           primaryKeyword: 'como fazer tintura de plantas em casa',
           lsiKeywords: [
             'tintura alcoólica caseira',

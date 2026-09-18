@@ -234,7 +234,7 @@ export default function HerancaBitcoin() {
           title: 'Herança Bitcoin: Plano de Sucessão Soberano | Manual Completo',
           description:
             'Manual definitivo de herança bitcoin: carta selada, multisig 2 de 3, timelock, guardião técnico e ensaio anual. Garanta que sua família receba o que você acumulou.',
-          canonical: 'https://lordjunnior.com/autocustodia/heranca-bitcoin',
+          canonical: 'https://lordjunnior.com.br/autocustodia/heranca-bitcoin',
         }}
         faqItems={faq.map((f) => ({ question: f.q, answer: f.a }))}
       />

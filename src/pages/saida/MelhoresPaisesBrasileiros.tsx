@@ -267,7 +267,7 @@ export default function MelhoresPaisesBrasileiros() {
           title: 'Melhores Países para Brasileiros Morarem em 2026',
           description:
             'Comparativo objetivo entre Chile, Paraguai, Uruguai, Geórgia, Palau, Panamá, Portugal e El Salvador: custo de vida, residência, tributação sobre renda estrangeira e cripto, estabilidade e banking.',
-          canonical: 'https://sovereign-arsenal.lovable.app/saida/melhores-paises-brasileiros',
+          canonical: 'https://lordjunnior.com.br/saida/melhores-paises-brasileiros',
           primaryKeyword: 'melhores países para brasileiros morarem',
           lsiKeywords: [
             'onde morar fora do Brasil',

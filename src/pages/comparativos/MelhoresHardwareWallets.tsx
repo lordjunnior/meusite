@@ -316,7 +316,7 @@ export default function MelhoresHardwareWallets() {
           title: 'Melhor Hardware Wallet Bitcoin 2026: Coldcard vs Trezor vs Jade vs Krux',
           description:
             'Comparativo honesto entre Coldcard, Trezor, Jade Core, Krux DIY e Foundation Passport: código aberto, air-gap, PSBT, passphrase, supply chain e preço em reais.',
-          canonical: 'https://sovereign-arsenal.lovable.app/comparativos/melhores-hardware-wallets',
+          canonical: 'https://lordjunnior.com.br/comparativos/melhores-hardware-wallets',
           primaryKeyword: 'melhor hardware wallet bitcoin',
           lsiKeywords: [
             'coldcard vs trezor',

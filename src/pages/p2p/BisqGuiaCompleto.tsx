@@ -106,7 +106,7 @@ export default function BisqGuiaCompleto() {
           title: 'Bisq: Guia Completo 2026 — Instalação, Tor e Primeira Compra',
           description:
             'Guia completo do Bisq: instalação, rede Tor, depósito de segurança, contas de pagamento no Brasil, taxas, mediação e arbitragem, Bisq 2 com Bisq Easy e passo a passo da primeira compra.',
-          canonical: 'https://sovereign-arsenal.lovable.app/p2p/bisq-guia-completo',
+          canonical: 'https://lordjunnior.com.br/p2p/bisq-guia-completo',
           primaryKeyword: 'bisq guia completo',
           lsiKeywords: ['como usar bisq', 'bisq tor', 'bisq depósito de segurança', 'bisq easy', 'comprar bitcoin sem kyc bisq', 'mediação arbitragem bisq'],
           longTailKeywords: ['como instalar o bisq passo a passo', 'como funciona o depósito de segurança do bisq', 'diferença entre bisq e bisq easy', 'como comprar bitcoin no bisq pela primeira vez'],

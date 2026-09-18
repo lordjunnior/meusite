@@ -38,7 +38,7 @@ export const confiscoArticleSchema = {
   dateModified: "2026-03-07",
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": "https://lordjunnior.com/confisco-1990",
+    "@id": "https://lordjunnior.com.br/confisco-1990",
   },
   keywords: "plano collor confisco, confisco poupança 1990, confisco da poupança brasil, história plano collor",
 };
@@ -64,19 +64,19 @@ export const confiscoBreadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Início",
-      item: "https://lordjunnior.com/",
+      item: "https://lordjunnior.com.br/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Alertas de Soberania",
-      item: "https://lordjunnior.com/alertas",
+      item: "https://lordjunnior.com.br/alertas",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Confisco de 1990",
-      item: "https://lordjunnior.com/confisco-1990",
+      item: "https://lordjunnior.com.br/confisco-1990",
     },
   ],
 };

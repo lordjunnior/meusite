@@ -255,7 +255,7 @@ export default function ResidenciaParaguai() {
           title: 'Residência no Paraguai 2026: Cédula, RUC e Custos Reais',
           description:
             'Guia completo de residência temporária e permanente no Paraguai. Cédula paraguaia, RUC, prazos, custos reais em dólar, tributação territorial e armadilhas de despachante.',
-          canonical: 'https://sovereign-arsenal.lovable.app/saida/residencia-paraguai',
+          canonical: 'https://lordjunnior.com.br/saida/residencia-paraguai',
           primaryKeyword: 'residência no Paraguai',
           lsiKeywords: [
             'cédula paraguaia',

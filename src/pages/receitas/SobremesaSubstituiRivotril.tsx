@@ -218,10 +218,10 @@ export default function SobremesaSubstituiRivotril() {
       <Helmet>
         <title>A Sobremesa que Substitui o Rivotril: Receita com 8 Estudos</title>
         <meta name="description" content="Receita funcional com 4 ativos clínicos: glicina, Passiflora, camomila e chia. Mesmo receptor GABA-A do Rivotril, sem tarja preta. 8 estudos PubMed." />
-        <link rel="canonical" href="https://www.lordjunnior.com.br/soberania-organica/cozinha-funcional/sobremesa-substitui-rivotril" />
+        <link rel="canonical" href="https://lordjunnior.com.br/soberania-organica/cozinha-funcional/sobremesa-substitui-rivotril" />
         <meta property="og:title" content="A Sobremesa que Substitui o Rivotril" />
         <meta property="og:description" content="Glicina, Passiflora, camomila e chia. Quatro ativos. Oito ensaios clínicos. Uma receita." />
-        <meta property="og:image" content="https://www.lordjunnior.com.br/og/sobremesa-rivotril.jpg" />
+        <meta property="og:image" content="https://lordjunnior.com.br/og/sobremesa-rivotril.jpg" />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="pt_BR" />
         <html lang="pt-BR" />

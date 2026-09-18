@@ -391,7 +391,7 @@ export default function FarmaciaCaseiraEssencial() {
           title: 'Farmácia Caseira Natural: os 15 Itens Essenciais em Casa',
           description:
             'Guia prático de farmácia caseira natural: para que serve cada item, dose usual, validade, custo em reais, onde comprar sem fraude e checklist de organização do armário.',
-          canonical: 'https://sovereign-arsenal.lovable.app/soberania-organica/farmacia-caseira-essencial',
+          canonical: 'https://lordjunnior.com.br/soberania-organica/farmacia-caseira-essencial',
           primaryKeyword: 'farmácia caseira natural',
           lsiKeywords: [
             'remédios naturais em casa',

@@ -310,7 +310,7 @@ export default function OQueECustodiaFria() {
           title: 'O Que É Custódia Fria de Bitcoin? Guia Completo para Iniciantes',
           description:
             'Entenda o que é custódia fria, a diferença entre carteira quente e fria, por que tirar bitcoin da corretora, quando migrar e o passo a passo do primeiro cofre seguro.',
-          canonical: 'https://sovereign-arsenal.lovable.app/autocustodia/o-que-e-custodia-fria',
+          canonical: 'https://lordjunnior.com.br/autocustodia/o-que-e-custodia-fria',
           primaryKeyword: 'o que é custódia fria',
           lsiKeywords: [
             'custódia fria de bitcoin',

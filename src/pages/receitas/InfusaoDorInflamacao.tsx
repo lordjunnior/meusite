@@ -251,10 +251,10 @@ export default function InfusaoDorInflamacao() {
       <Helmet>
         <title>Chá de Gengibre, Cúrcuma e Cravo para Dor e Inflamação (sem álcool) | Lord Junnior</title>
         <meta name="description" content="Receita ancestral indígena, popular e quilombola para dor e inflamação: gengibre, cúrcuma e cravo. Mesmo mecanismo de COX-2 da dipirona e nimesulida, sem dependência, com meta-análises do PubMed." />
-        <link rel="canonical" href="https://www.lordjunnior.com.br/soberania-organica/cozinha-funcional/infusao-dor-inflamacao" />
+        <link rel="canonical" href="https://lordjunnior.com.br/soberania-organica/cozinha-funcional/infusao-dor-inflamacao" />
         <meta property="og:title" content="A infusão ancestral que apaga a dor sem viciar" />
         <meta property="og:description" content="Gengibre, cúrcuma e cravo. Tradição quilombola e indígena com PubMed do lado. Sem álcool, sem AINE, sem dependência." />
-        <meta property="og:image" content="https://www.lordjunnior.com.br/og/infusao-dor-inflamacao.jpg" />
+        <meta property="og:image" content="https://lordjunnior.com.br/og/infusao-dor-inflamacao.jpg" />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="pt_BR" />
         <meta name="robots" content="index, follow, max-image-preview:large" />

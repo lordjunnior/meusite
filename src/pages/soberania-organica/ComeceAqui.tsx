@@ -523,7 +523,7 @@ export default function ComeceAqui() {
           title: 'Comece Aqui: Como Começar Horta e Autonomia Alimentar em Casa',
           description:
             'Roteiro progressivo em 7 fases para sair da dependência de supermercado, farmácia e rede elétrica. Diagnóstico, água, horta, preservação, farmácia viva, cozinha funcional e autonomia total.',
-          canonical: 'https://sovereign-arsenal.lovable.app/soberania-organica/comece-aqui',
+          canonical: 'https://lordjunnior.com.br/soberania-organica/comece-aqui',
           primaryKeyword: 'como começar horta e autonomia alimentar em casa',
           lsiKeywords: [
             'autonomia alimentar em casa',

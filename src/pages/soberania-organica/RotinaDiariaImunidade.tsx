@@ -418,7 +418,7 @@ export default function RotinaDiariaImunidade() {
           title: 'Rotina Diária para Aumentar a Imunidade: Tratado Natural Completo',
           description:
             'Rotina diária para aumentar a imunidade no método dos antigos manuais de medicina doméstica: jejum de luz, raspagem da língua, banho de contraste Kneipp, caldo de ossos, fermentação selvagem e protocolo das trevas. Códice de 7 dias.',
-          canonical: 'https://sovereign-arsenal.lovable.app/soberania-organica/rotina-diaria-imunidade',
+          canonical: 'https://lordjunnior.com.br/soberania-organica/rotina-diaria-imunidade',
           primaryKeyword: 'rotina diária para aumentar a imunidade',
           lsiKeywords: [
             'como fortalecer o sistema imunológico naturalmente',

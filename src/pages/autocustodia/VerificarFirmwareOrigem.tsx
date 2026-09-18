@@ -257,7 +257,7 @@ export default function VerificarFirmwareOrigem() {
           title: 'Como Verificar se a Hardware Wallet É Original: Guia Completo',
           description:
             'Como verificar se a hardware wallet é original: ataque de cadeia de suprimentos, lacre holográfico, attestation em Coldcard, Trezor e Jade, hash SHA256, assinatura PGP e a alternativa DIY com Krux.',
-          canonical: 'https://sovereign-arsenal.lovable.app/autocustodia/verificar-firmware-origem',
+          canonical: 'https://lordjunnior.com.br/autocustodia/verificar-firmware-origem',
           primaryKeyword: 'como verificar se a hardware wallet é original',
           lsiKeywords: [
             'ataque de cadeia de suprimentos hardware wallet',

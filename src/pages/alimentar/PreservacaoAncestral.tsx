@@ -287,7 +287,7 @@ export default function PreservacaoAncestral() {
         custom={{
           title: 'Preservação Ancestral: Conservar Comida Sem Eletricidade | Soberania Alimentar',
           description: 'Manual prático dos 8 métodos ancestrais de conservação de alimentos: desidratação, salga, fermentação, defumação, confit, cera, adega de raízes e doces. Despensa autônoma sem geladeira para iniciantes.',
-          canonical: 'https://soberania.app/soberania-organica/preservacao-ancestral',
+          canonical: 'https://lordjunnior.com.br/soberania-organica/preservacao-ancestral',
         }}
       />
       <BackToHome />

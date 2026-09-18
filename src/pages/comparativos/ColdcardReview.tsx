@@ -129,7 +129,7 @@ export default function ColdcardReview() {
         custom={{
           title: 'Coldcard Review 2026: Air-gap Total, Duress PIN e Brick Me',
           description: 'Review completa e honesta da Coldcard: air-gap via microSD, PSBT, duress PIN, brick me, anti-phishing words, prós, contras e para quem não serve.',
-          canonical: 'https://sovereign-arsenal.lovable.app/comparativos/coldcard-review',
+          canonical: 'https://lordjunnior.com.br/comparativos/coldcard-review',
           primaryKeyword: 'coldcard review',
           lsiKeywords: ['coldcard air-gap', 'duress pin coldcard', 'brick me coldcard', 'coldcard mk4', 'coldcard q', 'hardware wallet só bitcoin'],
           longTailKeywords: ['vale a pena comprar coldcard', 'como configurar coldcard primeira vez', 'coldcard é segura mesmo'],

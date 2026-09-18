@@ -219,10 +219,10 @@ export default function GelatinaAntiparasitaria() {
       <Helmet>
         <title>Gelatina Antiparasitária: Receita com 3 Bioativos | Lord Junnior</title>
         <meta name="description" content="Receita funcional com sementes de mamão, abóbora e cravo. Evidência clínica contra Ascaris e Strongyloides. Protocolo de 7 a 10 dias, palatável e seguro." />
-        <link rel="canonical" href="https://www.lordjunnior.com.br/soberania-organica/cozinha-funcional/gelatina-antiparasitaria" />
+        <link rel="canonical" href="https://lordjunnior.com.br/soberania-organica/cozinha-funcional/gelatina-antiparasitaria" />
         <meta property="og:title" content="A Gelatina que Expulsa os Parasitas" />
         <meta property="og:description" content="Sementes de mamão, abóbora e cravo. Três bioativos. Sete estudos PubMed. Uma receita." />
-        <meta property="og:image" content="https://www.lordjunnior.com.br/og/gelatina-antiparasitaria.jpg" />
+        <meta property="og:image" content="https://lordjunnior.com.br/og/gelatina-antiparasitaria.jpg" />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="pt_BR" />
         <meta name="robots" content="index, follow, max-image-preview:large" />

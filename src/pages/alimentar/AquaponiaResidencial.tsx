@@ -285,7 +285,7 @@ export default function AquaponiaResidencial() {
         custom={{
           title: 'Aquaponia Residencial: Peixe e Verdura no Quintal | Soberania Alimentar',
           description: 'Manual prático de aquaponia para iniciantes absolutos: lista de compras, montagem passo a passo, ciclagem da água, escolha de peixes e plantio. Comida limpa do seu próprio quintal, ciclo fechado.',
-          canonical: 'https://soberania.app/soberania-organica/aquaponia-residencial',
+          canonical: 'https://lordjunnior.com.br/soberania-organica/aquaponia-residencial',
         }}
       />
       <BackToHome />

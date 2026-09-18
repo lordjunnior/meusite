@@ -210,7 +210,7 @@ export default function PrimeiroSaqueHardwareWallet() {
           title: 'Como Configurar Hardware Wallet e Receber o Primeiro Saque',
           description:
             'Passo a passo de OpSec para configurar a hardware wallet: compra segura, lacre, geração offline da seed, PIN, teste de restauração, verificação do endereço e backup em metal.',
-          canonical: 'https://lordjunnior.lovable.app/autocustodia/primeiro-saque-hardware-wallet',
+          canonical: 'https://lordjunnior.com.br/autocustodia/primeiro-saque-hardware-wallet',
           primaryKeyword: 'como configurar hardware wallet',
           lsiKeywords: [
             'primeiro saque hardware wallet',

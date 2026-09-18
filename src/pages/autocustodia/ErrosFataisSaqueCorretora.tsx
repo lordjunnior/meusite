@@ -217,7 +217,7 @@ export default function ErrosFataisSaqueCorretora() {
           title: '8 Erros Fatais ao Sacar Bitcoin da Corretora (e Como Evitar)',
           description:
             'Rede errada, endereço trocado, taxa mal calculada e saques fatiados: os erros mais caros ao tirar Bitcoin da corretora, por que acontecem e como evitar cada um deles.',
-          canonical: 'https://lordjunnior.lovable.app/autocustodia/erros-fatais-saque-corretora',
+          canonical: 'https://lordjunnior.com.br/autocustodia/erros-fatais-saque-corretora',
           primaryKeyword: 'erros ao sacar bitcoin da corretora',
           lsiKeywords: [
             'taxa de rede bitcoin',

@@ -12,7 +12,6 @@ import verificabrCover from '@/assets/verificabr-cover.png';
 import BitcoinVsImovel from './BitcoinVsImovel';
 import TaxaDeFuga from './TaxaDeFuga';
 import Novilingua from './Novilingua';
-import GeradorEntropy from './GeradorEntropy';
 import SupplyShock from './SupplyShock';
 import BackToHome from '@/components/BackToHome';
 
@@ -93,15 +92,14 @@ const TOOLS_LIST = [
   },
   {
     id: 'entropy',
-    title: 'Gere sua Seed',
-    badge: 'Crie sua Seed Offline',
-    desc: 'Gerador de Seed Phrase 100% Offline e Client-Side. Usa o caos dos seus movimentos do mouse para gerar chaves privadas com entropia real.',
-    cta: 'Gerar Seed',
-    accent: '#10b981',
+    title: 'Gerador de Seed',
+    badge: 'Retirado do ar',
+    desc: 'Esta ferramenta foi retirada do ar. A geração anterior não atendia ao padrão de aleatoriedade exigido para proteger fundos reais. Gere sua seed apenas em uma hardware wallet ou com dados físicos, nunca no navegador.',
+    cta: 'Indisponível',
+    accent: '#71717a',
     icon: ShieldCheck,
-    component: GeradorEntropy,
+    component: null,
     num: '04',
-    clientSide: true,
   },
   {
     id: 'supply-shock',

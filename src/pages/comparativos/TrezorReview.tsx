@@ -176,7 +176,7 @@ export default function TrezorReview() {
         custom={{
           title: 'Trezor Review 2026: Safe 3, Safe 5, Vulnerabilidade e o Vazamento de 2017',
           description: 'Review completa e honesta da Trezor: Safe 3, Safe 5, Model T e One, secure element, vulnerabilidade física legada, vazamento de dados, passphrase, multisig, prós e contras.',
-          canonical: 'https://sovereign-arsenal.lovable.app/comparativos/trezor-review',
+          canonical: 'https://lordjunnior.com.br/comparativos/trezor-review',
           primaryKeyword: 'trezor review',
           lsiKeywords: ['trezor safe 3', 'trezor safe 5', 'trezor model t', 'vazamento de dados trezor', 'secure element trezor', 'trezor suite', 'passphrase trezor'],
           longTailKeywords: ['vale a pena comprar trezor em 2026', 'trezor é segura mesmo', 'trezor model one tem vulnerabilidade', 'como configurar trezor pela primeira vez'],
