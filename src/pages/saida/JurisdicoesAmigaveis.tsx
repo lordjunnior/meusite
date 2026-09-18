@@ -7,17 +7,17 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/saida/jurisdicoes-hero-v2.jpg';
-import imgParaguai from '@/assets/saida/pais-paraguai.jpg';
-import imgDubai from '@/assets/saida/pais-dubai.jpg';
-import imgElSalvador from '@/assets/saida/pais-elsalvador.jpg';
-import imgUruguai from '@/assets/saida/pais-uruguai.jpg';
-import imgPanama from '@/assets/saida/pais-panama.jpg';
-import imgGeorgia from '@/assets/saida/pais-georgia.jpg';
-import imgPortugal from '@/assets/saida/pais-portugal.jpg';
-import imgMalasia from '@/assets/saida/pais-malasia.jpg';
-import imgSuica from '@/assets/saida/pais-suica.jpg';
-import imgSingapura from '@/assets/saida/pais-singapura.jpg';
+import heroImg from '@/assets/saida/jurisdicoes-hero-v2.webp';
+import imgParaguai from '@/assets/saida/pais-paraguai.webp';
+import imgDubai from '@/assets/saida/pais-dubai.webp';
+import imgElSalvador from '@/assets/saida/pais-elsalvador.webp';
+import imgUruguai from '@/assets/saida/pais-uruguai.webp';
+import imgPanama from '@/assets/saida/pais-panama.webp';
+import imgGeorgia from '@/assets/saida/pais-georgia.webp';
+import imgPortugal from '@/assets/saida/pais-portugal.webp';
+import imgMalasia from '@/assets/saida/pais-malasia.webp';
+import imgSuica from '@/assets/saida/pais-suica.webp';
+import imgSingapura from '@/assets/saida/pais-singapura.webp';
 
 /**
  * /saida/jurisdicoes-amigaveis — Refatoração padrão Apple editorial.

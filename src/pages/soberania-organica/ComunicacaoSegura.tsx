@@ -18,9 +18,9 @@ import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
 import CinematicHero from '@/components/CinematicHero';
-import heroImg from '@/assets/saida/comunicacao-segura-hero.jpg';
-import meshImg from '@/assets/saida/comunicacao-segura-mesh.jpg';
-import burnerImg from '@/assets/saida/comunicacao-segura-burner.jpg';
+import heroImg from '@/assets/saida/comunicacao-segura-hero.webp';
+import meshImg from '@/assets/saida/comunicacao-segura-mesh.webp';
+import burnerImg from '@/assets/saida/comunicacao-segura-burner.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

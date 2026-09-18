@@ -7,9 +7,9 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/migracao/anatomia-hero.jpg';
-import frioImg from '@/assets/migracao/anatomia-hot-cold.jpg';
-import seedImg from '@/assets/migracao/anatomia-seed.jpg';
+import heroImg from '@/assets/migracao/anatomia-hero.webp';
+import frioImg from '@/assets/migracao/anatomia-hot-cold.webp';
+import seedImg from '@/assets/migracao/anatomia-seed.webp';
 
 /**
  * /autocustodia/hot-wallet-vs-cold-wallet

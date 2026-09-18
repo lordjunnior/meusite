@@ -1,6 +1,6 @@
 import PlantaIndividualLayout, { PlantaIndividualData } from '@/components/plantas/PlantaIndividualLayout';
-import heroImg from '@/assets/plantas-individuais/pariparoba-hero.jpg';
-import comparativoImg from '@/assets/plantas-individuais/pariparoba-comparativo.jpg';
+import heroImg from '@/assets/plantas-individuais/pariparoba-hero.webp';
+import comparativoImg from '@/assets/plantas-individuais/pariparoba-comparativo.webp';
 
 const data: PlantaIndividualData = {
   slug: 'pariparoba',

@@ -8,11 +8,11 @@ import {
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
-import bgMapa from '@/assets/backgrounds/bg-mapa-soberania.jpg';
-import imgFaseDescobrir from '@/assets/mapa-fase-descobrir.jpg';
-import imgFaseBlindar from '@/assets/mapa-fase-blindar.jpg';
-import imgFaseAgir from '@/assets/mapa-fase-agir.jpg';
-import imgFaseExpandir from '@/assets/mapa-fase-expandir.jpg';
+import bgMapa from '@/assets/backgrounds/bg-mapa-soberania.webp';
+import imgFaseDescobrir from '@/assets/mapa-fase-descobrir.webp';
+import imgFaseBlindar from '@/assets/mapa-fase-blindar.webp';
+import imgFaseAgir from '@/assets/mapa-fase-agir.webp';
+import imgFaseExpandir from '@/assets/mapa-fase-expandir.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

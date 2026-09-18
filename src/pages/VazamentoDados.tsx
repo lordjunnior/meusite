@@ -6,11 +6,11 @@ import { ArrowLeft, ArrowRight, Database, Eye, Fingerprint, Radio, ServerCrash, 
 import { fadeUp, stagger, staggerChild, viewportOnce, ease } from "@/lib/motion";
 import BackToHome from "@/components/BackToHome";
 
-import vigilanciaHero from "@/assets/vigilancia-hero.jpg";
-import dadosVazadosPhone from "@/assets/dados-vazados-phone.jpg";
-import servidoresBreach from "@/assets/servidores-breach.jpg";
-import biometriaControle from "@/assets/biometria-controle.jpg";
-import pixMonitoramento from "@/assets/pix-monitoramento.jpg";
+import vigilanciaHero from "@/assets/vigilancia-hero.webp";
+import dadosVazadosPhone from "@/assets/dados-vazados-phone.webp";
+import servidoresBreach from "@/assets/servidores-breach.webp";
+import biometriaControle from "@/assets/biometria-controle.webp";
+import pixMonitoramento from "@/assets/pix-monitoramento.webp";
 
 const INCIDENTS = [
   { year: "2024", title: "Credink — 220 milhões de CPFs", desc: "Base completa de dados financeiros de praticamente todo brasileiro economicamente ativo foi sequestrada pelo grupo Blastois e oferecida no mercado negro." },

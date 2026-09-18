@@ -26,9 +26,9 @@ import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
 import CinematicHero from '@/components/CinematicHero';
-import heroImg from '@/assets/saida/edc-hero.jpg';
-import imgUrbano from '@/assets/saida/edc-urbano.jpg';
-import imgGridDown from '@/assets/saida/edc-griddown.jpg';
+import heroImg from '@/assets/saida/edc-hero.webp';
+import imgUrbano from '@/assets/saida/edc-urbano.webp';
+import imgGridDown from '@/assets/saida/edc-griddown.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

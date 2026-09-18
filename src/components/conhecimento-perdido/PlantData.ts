@@ -66,18 +66,18 @@ export interface PlantaFicha {
 }
 
 /* ─── Imports das imagens (referências) ─── */
-import imgBoldo from '@/assets/planta-boldo.jpg';
-import imgHortela from '@/assets/planta-hortela.jpg';
-import imgEspinheiraSanta from '@/assets/planta-espinheira-santa.jpg';
-import imgGuaco from '@/assets/planta-guaco.jpg';
-import imgEucalipto from '@/assets/planta-eucalipto.jpg';
-import imgCapimLimao from '@/assets/planta-capim-limao.jpg';
-import imgCamomila from '@/assets/planta-camomila.jpg';
-import imgMulungu from '@/assets/planta-mulungu.jpg';
-import imgAlho from '@/assets/planta-alho.jpg';
-import imgGengibre from '@/assets/planta-gengibre.jpg';
-import imgArnica from '@/assets/planta-arnica.jpg';
-import imgBabosa from '@/assets/planta-babosa.jpg';
+import imgBoldo from '@/assets/planta-boldo.webp';
+import imgHortela from '@/assets/planta-hortela.webp';
+import imgEspinheiraSanta from '@/assets/planta-espinheira-santa.webp';
+import imgGuaco from '@/assets/planta-guaco.webp';
+import imgEucalipto from '@/assets/planta-eucalipto.webp';
+import imgCapimLimao from '@/assets/planta-capim-limao.webp';
+import imgCamomila from '@/assets/planta-camomila.webp';
+import imgMulungu from '@/assets/planta-mulungu.webp';
+import imgAlho from '@/assets/planta-alho.webp';
+import imgGengibre from '@/assets/planta-gengibre.webp';
+import imgArnica from '@/assets/planta-arnica.webp';
+import imgBabosa from '@/assets/planta-babosa.webp';
 
 /* ═══════════════════════════════════════════
    SISTEMA DIGESTIVO

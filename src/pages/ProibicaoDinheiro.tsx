@@ -15,10 +15,10 @@ import {
 import { NAV_ITEMS, LIMITES_INTERNACIONAIS, FERRAMENTAS, CONSEQUENCIAS, FAQ_ITEMS, ESCADA_RESTRICAO, TIMELINE_ITEMS, PL_NAO_FAZ, PL_MAS_FAZ } from '@/lib/proibicaoDinheiroData';
 import RiskBlock from '@/components/RiskBlock';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
-import bgProibicao from '@/assets/backgrounds/bg-proibicao.jpg';
-import heroImg from '@/assets/proibicao-dinheiro-hero.jpg';
-import agendaImg from '@/assets/proibicao-agenda-global.jpg';
-import arsenalImg from '@/assets/proibicao-arsenal.jpg';
+import bgProibicao from '@/assets/backgrounds/bg-proibicao.webp';
+import heroImg from '@/assets/proibicao-dinheiro-hero.webp';
+import agendaImg from '@/assets/proibicao-agenda-global.webp';
+import arsenalImg from '@/assets/proibicao-arsenal.webp';
 import BackToHome from '@/components/BackToHome';
 
 gsap.registerPlugin(ScrollTrigger);

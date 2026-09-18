@@ -16,9 +16,9 @@ import ScrollToTop from '@/components/ScrollToTop';
 import LeadCaptureModal from '@/components/LeadCaptureModal';
 import NobelVFX from '@/components/NobelVFX';
 import SovereignDisclaimer from '@/components/SovereignDisclaimer';
-import heroImg from '@/assets/grabrfi-hero.jpg';
-import appImg from '@/assets/grabrfi-app.jpg';
-import brasilParaguaiImg from '@/assets/offshore-brasil-paraguai.jpg';
+import heroImg from '@/assets/grabrfi-hero.webp';
+import appImg from '@/assets/grabrfi-app.webp';
+import brasilParaguaiImg from '@/assets/offshore-brasil-paraguai.webp';
 import BackToHome from '@/components/BackToHome';
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];

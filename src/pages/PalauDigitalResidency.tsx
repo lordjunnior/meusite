@@ -19,25 +19,25 @@ import {
 } from "lucide-react";
 import BackToHome from "@/components/BackToHome";
 
-import heroImg from "@/assets/palau-v5-hero.jpg";
-import clarityImg from "@/assets/palau-v5-clarity.jpg";
-import exchangeImg from "@/assets/palau-v5-exchange.jpg";
-import neobankImg from "@/assets/palau-v5-neobank.jpg";
-import islandImg from "@/assets/palau-v5-island.jpg";
-import bankImg from "@/assets/palau-v5-bank.jpg";
-import ctaImg from "@/assets/palau-v5-cta.jpg";
-import carousel1 from "@/assets/palau-v6-carousel-1.jpg";
-import carousel2 from "@/assets/palau-v6-carousel-2.jpg";
-import carousel3 from "@/assets/palau-v6-carousel-3.jpg";
-import carousel4 from "@/assets/palau-v6-carousel-4.jpg";
-import textureBg from "@/assets/palau-v6-texture.jpg";
-import mapImg from "@/assets/palau-v6-map.jpg";
-import vigilanciaImg from "@/assets/palau-checkin-vigilancia.jpg";
-import cofreImg from "@/assets/palau-cofre-multiplo.jpg";
-import balaPrataImg from "@/assets/palau-nao-bala-prata.jpg";
-import passoImg from "@/assets/palau-passo-a-passo.jpg";
-import personasImg from "@/assets/palau-personas.jpg";
-import cebolaImg from "@/assets/palau-cebola-camadas.jpg";
+import heroImg from "@/assets/palau-v5-hero.webp";
+import clarityImg from "@/assets/palau-v5-clarity.webp";
+import exchangeImg from "@/assets/palau-v5-exchange.webp";
+import neobankImg from "@/assets/palau-v5-neobank.webp";
+import islandImg from "@/assets/palau-v5-island.webp";
+import bankImg from "@/assets/palau-v5-bank.webp";
+import ctaImg from "@/assets/palau-v5-cta.webp";
+import carousel1 from "@/assets/palau-v6-carousel-1.webp";
+import carousel2 from "@/assets/palau-v6-carousel-2.webp";
+import carousel3 from "@/assets/palau-v6-carousel-3.webp";
+import carousel4 from "@/assets/palau-v6-carousel-4.webp";
+import textureBg from "@/assets/palau-v6-texture.webp";
+import mapImg from "@/assets/palau-v6-map.webp";
+import vigilanciaImg from "@/assets/palau-checkin-vigilancia.webp";
+import cofreImg from "@/assets/palau-cofre-multiplo.webp";
+import balaPrataImg from "@/assets/palau-nao-bala-prata.webp";
+import passoImg from "@/assets/palau-passo-a-passo.webp";
+import personasImg from "@/assets/palau-personas.webp";
+import cebolaImg from "@/assets/palau-cebola-camadas.webp";
 
 /* ────────────────────────────────────────────────
    PALAU, EDITORIAL EDITION (v6)

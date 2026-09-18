@@ -12,13 +12,13 @@ import ScrollToTop from '@/components/ScrollToTop';
 import LeadCaptureModal from '@/components/LeadCaptureModal';
 import SovereignDisclaimer from '@/components/SovereignDisclaimer';
 
-import heroImg from '@/assets/abertura-remota-hero.jpg';
-import chapterDocImg from '@/assets/abertura-chapter-documentos.jpg';
-import chapterProcessoImg from '@/assets/abertura-chapter-processo.jpg';
-import chapterContasImg from '@/assets/abertura-chapter-contas.jpg';
-import chapterErrosImg from '@/assets/abertura-chapter-erros.jpg';
-import chapterFaqImg from '@/assets/abertura-chapter-faq.jpg';
-import brasilParaguaiImg from '@/assets/offshore-brasil-paraguai.jpg';
+import heroImg from '@/assets/abertura-remota-hero.webp';
+import chapterDocImg from '@/assets/abertura-chapter-documentos.webp';
+import chapterProcessoImg from '@/assets/abertura-chapter-processo.webp';
+import chapterContasImg from '@/assets/abertura-chapter-contas.webp';
+import chapterErrosImg from '@/assets/abertura-chapter-erros.webp';
+import chapterFaqImg from '@/assets/abertura-chapter-faq.webp';
+import brasilParaguaiImg from '@/assets/offshore-brasil-paraguai.webp';
 import BackToHome from '@/components/BackToHome';
 
 /* ═══════════════════════════════════════════════════════════

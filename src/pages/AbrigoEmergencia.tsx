@@ -6,14 +6,14 @@ import { motion } from 'framer-motion';
 import CinematicHero from '@/components/CinematicHero';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 
-import imgSoloIsolamento from '@/assets/abrigo-solo-isolamento.jpg';
-import imgReforcoJanela from '@/assets/abrigo-reforco-janela.jpg';
-import imgQuartoNucleo from '@/assets/abrigo-quarto-nucleo.jpg';
-import imgBanheiroImprovisado from '@/assets/abrigo-banheiro-improvisado.jpg';
-import imgResfriamentoPassivo from '@/assets/abrigo-resfriamento-passivo.jpg';
-import imgAFrame from '@/assets/abrigo-a-frame.jpg';
-import imgOrganizacao from '@/assets/abrigo-organizacao.jpg';
-import imgAquecedorVela from '@/assets/abrigo-aquecedor-vela.jpg';
+import imgSoloIsolamento from '@/assets/abrigo-solo-isolamento.webp';
+import imgReforcoJanela from '@/assets/abrigo-reforco-janela.webp';
+import imgQuartoNucleo from '@/assets/abrigo-quarto-nucleo.webp';
+import imgBanheiroImprovisado from '@/assets/abrigo-banheiro-improvisado.webp';
+import imgResfriamentoPassivo from '@/assets/abrigo-resfriamento-passivo.webp';
+import imgAFrame from '@/assets/abrigo-a-frame.webp';
+import imgOrganizacao from '@/assets/abrigo-organizacao.webp';
+import imgAquecedorVela from '@/assets/abrigo-aquecedor-vela.webp';
 import BackToHome from '@/components/BackToHome';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;

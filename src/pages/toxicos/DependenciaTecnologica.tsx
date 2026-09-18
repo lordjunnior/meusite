@@ -6,12 +6,12 @@ import { ArrowRight, Smartphone, Bell, Eye, Lock, Clock, Wifi, Shield, BellOff, 
 import CinematicHero from '@/components/CinematicHero';
 import BackToHome from '@/components/BackToHome';
 
-import bgDependencia from '@/assets/toxicos/bg-dependencia.jpg';
-import imgDopamina from '@/assets/toxicos/dep-dopamina.jpg';
-import imgAtencao from '@/assets/toxicos/dep-atencao.jpg';
-import imgDados from '@/assets/toxicos/dep-dados.jpg';
-import imgObsolescencia from '@/assets/toxicos/dep-obsolescencia.jpg';
-import imgEcosistema from '@/assets/toxicos/dep-ecosistema.jpg';
+import bgDependencia from '@/assets/toxicos/bg-dependencia.webp';
+import imgDopamina from '@/assets/toxicos/dep-dopamina.webp';
+import imgAtencao from '@/assets/toxicos/dep-atencao.webp';
+import imgDados from '@/assets/toxicos/dep-dados.webp';
+import imgObsolescencia from '@/assets/toxicos/dep-obsolescencia.webp';
+import imgEcosistema from '@/assets/toxicos/dep-ecosistema.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {

@@ -5,7 +5,7 @@ import { Search, BookOpen, ArrowRight, Brain, Eye, ShieldAlert } from 'lucide-re
 import { Link } from 'react-router-dom';
 import ScrollToTop from '@/components/ScrollToTop';
 import BackToHome from '@/components/BackToHome';
-import bgNovilingua from '@/assets/bg-novilingua.jpg';
+import bgNovilingua from '@/assets/bg-novilingua.webp';
 
 const TERMS = [
   { term: "Justiça Social", real: "Redistribuição forçada de riqueza produzida por terceiros, sem consentimento, sob ameaça de violência estatal." },

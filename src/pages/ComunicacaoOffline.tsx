@@ -6,10 +6,10 @@ import { motion } from 'framer-motion';
 import CinematicHero from '@/components/CinematicHero';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 
-import imgRadio from '@/assets/comms-radio-amfm.jpg';
-import imgMapa from '@/assets/comms-mapa-encontro.jpg';
-import imgSinal from '@/assets/comms-sinal-visual.jpg';
-import imgRecado from '@/assets/comms-recado-escrito.jpg';
+import imgRadio from '@/assets/comms-radio-amfm.webp';
+import imgMapa from '@/assets/comms-mapa-encontro.webp';
+import imgSinal from '@/assets/comms-sinal-visual.webp';
+import imgRecado from '@/assets/comms-recado-escrito.webp';
 import BackToHome from '@/components/BackToHome';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;

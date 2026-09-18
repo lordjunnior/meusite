@@ -9,9 +9,9 @@ import {
 } from "lucide-react";
 import { Area, AreaChart, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
 import SimboloOculto from '@/components/SimboloOculto';
-import imgCorrentesImpostos from '@/assets/economia-correntes-impostos.jpg';
-import imgAmpulhetaTempo from '@/assets/economia-ampulheta-tempo.jpg';
-import imgCarrinhoInflacao from '@/assets/economia-carrinho-inflacao.jpg';
+import imgCorrentesImpostos from '@/assets/economia-correntes-impostos.webp';
+import imgAmpulhetaTempo from '@/assets/economia-ampulheta-tempo.webp';
+import imgCarrinhoInflacao from '@/assets/economia-carrinho-inflacao.webp';
 import BackToHome from '@/components/BackToHome';
 
 const APPLE_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];

@@ -17,12 +17,12 @@ import {
 import ScrollToTop from '@/components/ScrollToTop';
 import FooterSection from '@/components/FooterSection';
 
-import imgVigilancia from '@/assets/alertas-vigilancia-estatal.jpg';
-import imgConfisco from '@/assets/alertas-confisco-digital.jpg';
-import imgSaida from '@/assets/alertas-saida-soberana.jpg';
-import imgHipocrisia from '@/assets/alertas-hipocrisia-estado.jpg';
-import imgMorteDinheiro from '@/assets/alertas-morte-dinheiro.jpg';
-import imgTimeline from '@/assets/alertas-timeline-confisco.jpg';
+import imgVigilancia from '@/assets/alertas-vigilancia-estatal.webp';
+import imgConfisco from '@/assets/alertas-confisco-digital.webp';
+import imgSaida from '@/assets/alertas-saida-soberana.webp';
+import imgHipocrisia from '@/assets/alertas-hipocrisia-estado.webp';
+import imgMorteDinheiro from '@/assets/alertas-morte-dinheiro.webp';
+import imgTimeline from '@/assets/alertas-timeline-confisco.webp';
 import BackToHome from '@/components/BackToHome';
 
 gsap.registerPlugin(ScrollTrigger);

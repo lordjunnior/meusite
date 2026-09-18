@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import CinematicHero from '@/components/CinematicHero';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
-import bgMobilidade from '@/assets/backgrounds/bg-mobilidade-chaves.jpg';
+import bgMobilidade from '@/assets/backgrounds/bg-mobilidade-chaves.webp';
 import DonationCTA from '@/components/DonationCTA';
 import BackToHome from '@/components/BackToHome';
 

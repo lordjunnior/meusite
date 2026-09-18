@@ -10,10 +10,10 @@ import {
 import BackNav from '@/components/BackNav';
 import ScrollToTop from '@/components/ScrollToTop';
 
-import imgHero from '@/assets/receitas/hero-dor-inflamacao-light.jpg';
-import imgGengibre from '@/assets/receitas/ativo-gengibre-rizoma.jpg';
-import imgCurcuma from '@/assets/receitas/ativo-curcuma-rizoma.jpg';
-import imgCravo from '@/assets/receitas/ativo-cravo-india.jpg';
+import imgHero from '@/assets/receitas/hero-dor-inflamacao-light.webp';
+import imgGengibre from '@/assets/receitas/ativo-gengibre-rizoma.webp';
+import imgCurcuma from '@/assets/receitas/ativo-curcuma-rizoma.webp';
+import imgCravo from '@/assets/receitas/ativo-cravo-india.webp';
 
 /**
  * /soberania-organica/cozinha-funcional/infusao-dor-inflamacao

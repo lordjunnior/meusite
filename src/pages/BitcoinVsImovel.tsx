@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import CinematicHero from '@/components/CinematicHero';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
-import bgBtcVsImovel from '@/assets/backgrounds/bg-btc-vs-imovel.jpg';
+import bgBtcVsImovel from '@/assets/backgrounds/bg-btc-vs-imovel.webp';
 import ScrollToTop from '@/components/ScrollToTop';
 import BackToHome from '@/components/BackToHome';
 

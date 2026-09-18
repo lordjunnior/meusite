@@ -14,11 +14,11 @@ import {
 import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
-import bgLightning from '@/assets/backgrounds/bg-lightning.jpg';
-import qrCodeImage from '@/assets/qrcode-lightning.jpeg';
-import lightningCircuitImg from '@/assets/lightning-bolt-circuit.jpg';
-import lightningMobileImg from '@/assets/lightning-pagamento-mobile.jpg';
-import lightningRedeImg from '@/assets/lightning-rede-global.jpg';
+import bgLightning from '@/assets/backgrounds/bg-lightning.webp';
+import qrCodeImage from '@/assets/qrcode-lightning.webp';
+import lightningCircuitImg from '@/assets/lightning-bolt-circuit.webp';
+import lightningMobileImg from '@/assets/lightning-pagamento-mobile.webp';
+import lightningRedeImg from '@/assets/lightning-rede-global.webp';
 import BackToHome from '@/components/BackToHome';
 
 /* ─── CONSTANTS ─── */

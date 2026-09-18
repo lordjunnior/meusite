@@ -16,9 +16,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import ScrollToTop from '@/components/ScrollToTop';
 import LeadCaptureModal from '@/components/LeadCaptureModal';
 import SovereignDisclaimer from '@/components/SovereignDisclaimer';
-import heroImg from '@/assets/depix-hero.jpg';
-import dinheiroVivoImg from '@/assets/depix-dinheiro-vivo.jpg';
-import brasilParaguaiImg from '@/assets/offshore-brasil-paraguai.jpg';
+import heroImg from '@/assets/depix-hero.webp';
+import dinheiroVivoImg from '@/assets/depix-dinheiro-vivo.webp';
+import brasilParaguaiImg from '@/assets/offshore-brasil-paraguai.webp';
 import BackToHome from '@/components/BackToHome';
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];

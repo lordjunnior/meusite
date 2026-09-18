@@ -1,10 +1,10 @@
 import ProtocoloItemLayout, { ProtocoloItemData } from '@/components/protocolo-respiratorio/ProtocoloItemLayout';
-import heroCobre from '@/assets/cobre-protocolo/cobre-hero-v2.jpg';
-import imgVaso from '@/assets/cobre-protocolo/cobre-vaso-agua.jpg';
-import imgSino from '@/assets/cobre-protocolo/cobre-sino-bronze.jpg';
-import imgSolo from '@/assets/cobre-protocolo/cobre-solo-plantas.jpg';
-import imgCofator from '@/assets/cobre-protocolo/cobre-cofator-imunologico.jpg';
-import imgEquilibrio from '@/assets/cobre-protocolo/cobre-equilibrio-mineral.jpg';
+import heroCobre from '@/assets/cobre-protocolo/cobre-hero-v2.webp';
+import imgVaso from '@/assets/cobre-protocolo/cobre-vaso-agua.webp';
+import imgSino from '@/assets/cobre-protocolo/cobre-sino-bronze.webp';
+import imgSolo from '@/assets/cobre-protocolo/cobre-solo-plantas.webp';
+import imgCofator from '@/assets/cobre-protocolo/cobre-cofator-imunologico.webp';
+import imgEquilibrio from '@/assets/cobre-protocolo/cobre-equilibrio-mineral.webp';
 
 const data: ProtocoloItemData = {
   slug: 'cobre',

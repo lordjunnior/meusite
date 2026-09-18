@@ -4,14 +4,14 @@ import { ChevronDown, AlertTriangle, ShieldCheck, Flame } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import RelatedHooks from '@/components/RelatedHooks';
-import heroImg from '@/assets/alimentar/preservacao-hero.jpg';
-import imgDesidratacao from '@/assets/alimentar/preservacao-desidratacao.jpg';
-import imgSalga from '@/assets/alimentar/preservacao-salga.jpg';
-import imgDefumacao from '@/assets/alimentar/preservacao-defumacao.jpg';
-import imgFermentacao from '@/assets/alimentar/preservacao-fermentacao.jpg';
-import imgArmazenamento from '@/assets/alimentar/preservacao-armazenamento.jpg';
-import imgCera from '@/assets/alimentar/preservacao-cera.jpg';
-import imgConservas from '@/assets/alimentar/preservacao-conservas.jpg';
+import heroImg from '@/assets/alimentar/preservacao-hero.webp';
+import imgDesidratacao from '@/assets/alimentar/preservacao-desidratacao.webp';
+import imgSalga from '@/assets/alimentar/preservacao-salga.webp';
+import imgDefumacao from '@/assets/alimentar/preservacao-defumacao.webp';
+import imgFermentacao from '@/assets/alimentar/preservacao-fermentacao.webp';
+import imgArmazenamento from '@/assets/alimentar/preservacao-armazenamento.webp';
+import imgCera from '@/assets/alimentar/preservacao-cera.webp';
+import imgConservas from '@/assets/alimentar/preservacao-conservas.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

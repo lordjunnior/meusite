@@ -12,10 +12,10 @@ import { Line, LineChart, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianG
 import SimboloOculto from '@/components/SimboloOculto';
 import SnippetBait from '@/components/SnippetBait';
 
-import hwWalletsImg from "@/assets/btc-hardware-wallets.jpg";
-import nodeImg from "@/assets/btc-node-raspberry.jpg";
-import chartImg from "@/assets/btc-vs-imovel-chart.jpg";
-import seedImg from "@/assets/btc-seed-backup.jpg";
+import hwWalletsImg from "@/assets/btc-hardware-wallets.webp";
+import nodeImg from "@/assets/btc-node-raspberry.webp";
+import chartImg from "@/assets/btc-vs-imovel-chart.webp";
+import seedImg from "@/assets/btc-seed-backup.webp";
 import BackToHome from '@/components/BackToHome';
 
 const APPLE_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];

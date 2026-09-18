@@ -7,10 +7,10 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/protocolos-saude/hero-gripe.jpg';
-import chaImg from '@/assets/protocolos-saude/cha-repouso.jpg';
-import lavagemImg from '@/assets/protocolos-saude/lavagem-nasal.jpg';
-import termometroImg from '@/assets/protocolos-saude/termometro-febre.jpg';
+import heroImg from '@/assets/protocolos-saude/hero-gripe.webp';
+import chaImg from '@/assets/protocolos-saude/cha-repouso.webp';
+import lavagemImg from '@/assets/protocolos-saude/lavagem-nasal.webp';
+import termometroImg from '@/assets/protocolos-saude/termometro-febre.webp';
 
 /**
  * /soberania-organica/protocolos-gripe-resfriado

@@ -7,9 +7,9 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/imposto-renda/isencao-hero.jpg';
-import mesImg from '@/assets/imposto-renda/isencao-mes.jpg';
-import autocustodiaImg from '@/assets/imposto-renda/isencao-autocustodia.jpg';
+import heroImg from '@/assets/imposto-renda/isencao-hero.webp';
+import mesImg from '@/assets/imposto-renda/isencao-mes.webp';
+import autocustodiaImg from '@/assets/imposto-renda/isencao-autocustodia.webp';
 
 /**
  * /imposto-renda/isencao-35-mil

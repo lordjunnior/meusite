@@ -8,10 +8,10 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/firmware-origem/firmware-hero.jpg';
-import lacreImg from '@/assets/firmware-origem/firmware-lacre-hash.jpg';
-import terminalImg from '@/assets/firmware-origem/firmware-terminal-verificacao.jpg';
-import kruxImg from '@/assets/firmware-origem/firmware-krux-diy.jpg';
+import heroImg from '@/assets/firmware-origem/firmware-hero.webp';
+import lacreImg from '@/assets/firmware-origem/firmware-lacre-hash.webp';
+import terminalImg from '@/assets/firmware-origem/firmware-terminal-verificacao.webp';
+import kruxImg from '@/assets/firmware-origem/firmware-krux-diy.webp';
 
 /**
  * /autocustodia/verificar-firmware-origem

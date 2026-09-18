@@ -5,8 +5,8 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { ArrowRight, Download, Key, BookOpen, Brain, Shield, CheckCircle2, Eye, Layers } from 'lucide-react';
 import ScrollToTop from '@/components/ScrollToTop';
 import BackToHome from '@/components/BackToHome';
-import coverImage from '@/assets/cover-silencio-queda.jpg';
-import bgSilencio from '@/assets/bg-silencio-queda.jpg';
+import coverImage from '@/assets/cover-silencio-queda.webp';
+import bgSilencio from '@/assets/bg-silencio-queda.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {

@@ -8,10 +8,10 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/preparos-caseiros/tinturas-hero.jpg';
-import calenduaImg from '@/assets/preparos-caseiros/oleo-calendula.jpg';
-import propolisImg from '@/assets/preparos-caseiros/tintura-propolis.jpg';
-import xaropeImg from '@/assets/preparos-caseiros/xarope-gengibre.jpg';
+import heroImg from '@/assets/preparos-caseiros/tinturas-hero.webp';
+import calenduaImg from '@/assets/preparos-caseiros/oleo-calendula.webp';
+import propolisImg from '@/assets/preparos-caseiros/tintura-propolis.webp';
+import xaropeImg from '@/assets/preparos-caseiros/xarope-gengibre.webp';
 
 /**
  * /soberania-organica/tinturas-xaropes-preparos

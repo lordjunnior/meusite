@@ -8,13 +8,13 @@ import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
-import bgConservacao from '@/assets/backgrounds/bg-conservacao.jpg';
+import bgConservacao from '@/assets/backgrounds/bg-conservacao.webp';
 
-import imgHeroEstoque from '@/assets/conserva-hero-estoque.jpg';
-import imgAlimentosEssenciais from '@/assets/conserva-alimentos-essenciais.jpg';
-import imgMetodosPreservacao from '@/assets/conserva-metodos-preservacao.jpg';
-import imgAlimentosDuradouros from '@/assets/conserva-alimentos-duradouros.jpg';
-import imgArsenalAuxiliar from '@/assets/conserva-arsenal-auxiliar.jpg';
+import imgHeroEstoque from '@/assets/conserva-hero-estoque.webp';
+import imgAlimentosEssenciais from '@/assets/conserva-alimentos-essenciais.webp';
+import imgMetodosPreservacao from '@/assets/conserva-metodos-preservacao.webp';
+import imgAlimentosDuradouros from '@/assets/conserva-alimentos-duradouros.webp';
+import imgArsenalAuxiliar from '@/assets/conserva-arsenal-auxiliar.webp';
 import BackToHome from '@/components/BackToHome';
 
 /* ─── SEO: meta keywords target ───

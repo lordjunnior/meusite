@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { Clock, Sun, Coffee, Utensils, MonitorSmartphone, Moon, AlertTriangle, ChevronRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import imgDespertar from '@/assets/toxicos/momento-despertar.jpg';
-import imgCafe from '@/assets/toxicos/momento-cafe.jpg';
-import imgAlmoco from '@/assets/toxicos/momento-almoco.jpg';
-import imgExpediente from '@/assets/toxicos/momento-expediente.jpg';
-import imgDormir from '@/assets/toxicos/momento-dormir.jpg';
+import imgDespertar from '@/assets/toxicos/momento-despertar.webp';
+import imgCafe from '@/assets/toxicos/momento-cafe.webp';
+import imgAlmoco from '@/assets/toxicos/momento-almoco.webp';
+import imgExpediente from '@/assets/toxicos/momento-expediente.webp';
+import imgDormir from '@/assets/toxicos/momento-dormir.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 

@@ -19,17 +19,17 @@ import AppSidebar from "@/components/AppSidebar";
 import MobileNav from "@/components/MobileNav";
 import RightSidebar from "@/components/RightSidebar";
 import FixedThematicBackground from "@/components/backgrounds/FixedThematicBackground";
-import bgComprarAnonimo from "@/assets/backgrounds/bg-comprar-anonimo.jpg";
+import bgComprarAnonimo from "@/assets/backgrounds/bg-comprar-anonimo.webp";
 
-import heroImg from "@/assets/robosats-hero.jpg";
-import anonimatoImg from "@/assets/robosats-anonimato.jpg";
-import prerequisitosImg from "@/assets/robosats-prerequisitos.jpg";
-import p2pImg from "@/assets/robosats-p2p.jpg";
-import plataformaImg from "@/assets/robosats-plataforma.jpg";
-import escrowImg from "@/assets/robosats-escrow.jpg";
-import segurancaImg from "@/assets/robosats-seguranca.jpg";
-import infograficoImg from "@/assets/robosats-infografico.jpg";
-import sucessoImg from "@/assets/robosats-sucesso.jpg";
+import heroImg from "@/assets/robosats-hero.webp";
+import anonimatoImg from "@/assets/robosats-anonimato.webp";
+import prerequisitosImg from "@/assets/robosats-prerequisitos.webp";
+import p2pImg from "@/assets/robosats-p2p.webp";
+import plataformaImg from "@/assets/robosats-plataforma.webp";
+import escrowImg from "@/assets/robosats-escrow.webp";
+import segurancaImg from "@/assets/robosats-seguranca.webp";
+import infograficoImg from "@/assets/robosats-infografico.webp";
+import sucessoImg from "@/assets/robosats-sucesso.webp";
 import BackToHome from '@/components/BackToHome';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;

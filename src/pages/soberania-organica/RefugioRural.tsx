@@ -9,17 +9,17 @@ import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
 import CinematicHero from '@/components/CinematicHero';
-import heroImg from '@/assets/saida/refugio-hero.jpg';
-import imgTerreno from '@/assets/saida/refugio-terreno.jpg';
-import imgConstrucao from '@/assets/saida/refugio-construcao.jpg';
-import imgAgua from '@/assets/saida/refugio-agua.jpg';
-import imgAlimentar from '@/assets/saida/refugio-alimentar.jpg';
-import imgPerimetro from '@/assets/saida/refugio-perimetro.jpg';
-import imgLogistica from '@/assets/saida/refugio-logistica.jpg';
-import imgEstoque from '@/assets/saida/refugio-estoque.jpg';
-import imgComunidade from '@/assets/saida/refugio-comunidade.jpg';
-import imgLegal from '@/assets/saida/refugio-legal.jpg';
-import imgCotidiano from '@/assets/saida/refugio-cotidiano.jpg';
+import heroImg from '@/assets/saida/refugio-hero.webp';
+import imgTerreno from '@/assets/saida/refugio-terreno.webp';
+import imgConstrucao from '@/assets/saida/refugio-construcao.webp';
+import imgAgua from '@/assets/saida/refugio-agua.webp';
+import imgAlimentar from '@/assets/saida/refugio-alimentar.webp';
+import imgPerimetro from '@/assets/saida/refugio-perimetro.webp';
+import imgLogistica from '@/assets/saida/refugio-logistica.webp';
+import imgEstoque from '@/assets/saida/refugio-estoque.webp';
+import imgComunidade from '@/assets/saida/refugio-comunidade.webp';
+import imgLegal from '@/assets/saida/refugio-legal.webp';
+import imgCotidiano from '@/assets/saida/refugio-cotidiano.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

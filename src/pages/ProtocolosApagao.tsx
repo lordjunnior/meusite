@@ -6,11 +6,11 @@ import { motion } from 'framer-motion';
 import { fadeUp, stagger, staggerChild, viewportOnce } from '@/lib/motion';
 import CinematicHero from '@/components/CinematicHero';
 
-import imgIluminacao from '@/assets/apagao-iluminacao.jpg';
-import imgCoccao from '@/assets/apagao-coccao.jpg';
-import imgConservacao from '@/assets/apagao-conservacao.jpg';
-import imgTermico from '@/assets/apagao-termico.jpg';
-import imgEnergia from '@/assets/apagao-energia.jpg';
+import imgIluminacao from '@/assets/apagao-iluminacao.webp';
+import imgCoccao from '@/assets/apagao-coccao.webp';
+import imgConservacao from '@/assets/apagao-conservacao.webp';
+import imgTermico from '@/assets/apagao-termico.webp';
+import imgEnergia from '@/assets/apagao-energia.webp';
 import BackToHome from '@/components/BackToHome';
 
 const IMPACTOS_4H = [

@@ -7,9 +7,9 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/migracao/erros-hero.jpg';
-import redeImg from '@/assets/migracao/erros-rede.jpg';
-import taxasImg from '@/assets/migracao/erros-taxas.jpg';
+import heroImg from '@/assets/migracao/erros-hero.webp';
+import redeImg from '@/assets/migracao/erros-rede.webp';
+import taxasImg from '@/assets/migracao/erros-taxas.webp';
 
 /**
  * /autocustodia/erros-fatais-saque-corretora

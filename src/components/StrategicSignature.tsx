@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Compass } from "lucide-react";
-import imgManifesto from "@/assets/manifesto-assinatura.jpg";
+import imgManifesto from "@/assets/manifesto-assinatura.webp";
 
 const StrategicSignature = () => {
   const ref = useRef(null);

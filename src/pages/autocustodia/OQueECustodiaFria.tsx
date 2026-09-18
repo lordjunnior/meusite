@@ -8,10 +8,10 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/custodia-fria/custodia-fria-hero.jpg';
-import cofreImg from '@/assets/custodia-fria/custodia-fria-cofre.jpg';
-import multisigImg from '@/assets/custodia-fria/custodia-fria-multisig.jpg';
-import hardwareImg from '@/assets/custodia-fria/custodia-fria-hardware.jpg';
+import heroImg from '@/assets/custodia-fria/custodia-fria-hero.webp';
+import cofreImg from '@/assets/custodia-fria/custodia-fria-cofre.webp';
+import multisigImg from '@/assets/custodia-fria/custodia-fria-multisig.webp';
+import hardwareImg from '@/assets/custodia-fria/custodia-fria-hardware.webp';
 
 /**
  * /autocustodia/o-que-e-custodia-fria

@@ -2,7 +2,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { Copy, Check, Zap, Smartphone, Shield, ArrowRight, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import qrCodeImage from "@/assets/qrcode-lightning.jpeg";
+import qrCodeImage from "@/assets/qrcode-lightning.webp";
 import SatCounter from "@/components/SatCounter";
 import SimboloOculto from '@/components/SimboloOculto';
 import HlsVideoBackground from "@/components/HlsVideoBackground";

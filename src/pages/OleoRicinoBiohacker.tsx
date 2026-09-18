@@ -10,14 +10,14 @@ import {
 import PageFloatingToc from '@/components/PageFloatingToc';
 import RealTestimonial from '@/components/RealTestimonial';
 
-import avatarBruna from '@/assets/avatar-bruna.jpg';
-import avatarEba from '@/assets/avatar-eba.jpg';
-import avatarAnaCarol from '@/assets/avatar-anacarol.jpg';
-import avatarRenata from '@/assets/avatar-renata.jpg';
-import avatarCarlos from '@/assets/avatar-carlos.jpg';
-import avatarPatricia from '@/assets/avatar-patricia.jpg';
-import avatarDiego from '@/assets/avatar-diego.jpg';
-import avatarMarcia from '@/assets/avatar-marcia.jpg';
+import avatarBruna from '@/assets/avatar-bruna.webp';
+import avatarEba from '@/assets/avatar-eba.webp';
+import avatarAnaCarol from '@/assets/avatar-anacarol.webp';
+import avatarRenata from '@/assets/avatar-renata.webp';
+import avatarCarlos from '@/assets/avatar-carlos.webp';
+import avatarPatricia from '@/assets/avatar-patricia.webp';
+import avatarDiego from '@/assets/avatar-diego.webp';
+import avatarMarcia from '@/assets/avatar-marcia.webp';
 import BackToHome from '@/components/BackToHome';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;

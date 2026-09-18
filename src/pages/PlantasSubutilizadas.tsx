@@ -7,17 +7,17 @@ import BackToHome from '@/components/BackToHome';
 import ScrollToTop from '@/components/ScrollToTop';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 
-import heroAltar from '@/assets/plantas-hub/hero-plantas-altar.jpg';
-import imgJurubeba from '@/assets/plantas-hub/jurubeba.jpg';
-import imgQuebraPedra from '@/assets/plantas-hub/quebra-pedra.jpg';
-import imgPariparoba from '@/assets/plantas-hub/pariparoba.jpg';
-import imgTanchagem from '@/assets/plantas-hub/tanchagem.jpg';
-import imgChapeu from '@/assets/plantas-hub/chapeu-de-couro.jpg';
-import imgArtemisia from '@/assets/plantas-hub/artemisia.jpg';
-import imgUmburana from '@/assets/plantas-hub/umburana.jpg';
-import imgEspinheira from '@/assets/plantas-hub/espinheira-santa.jpg';
-import imgAristolochia from '@/assets/plantas-hub/aristolochia.jpg';
-import imgGuaco from '@/assets/plantas-hub/guaco.jpg';
+import heroAltar from '@/assets/plantas-hub/hero-plantas-altar.webp';
+import imgJurubeba from '@/assets/plantas-hub/jurubeba.webp';
+import imgQuebraPedra from '@/assets/plantas-hub/quebra-pedra.webp';
+import imgPariparoba from '@/assets/plantas-hub/pariparoba.webp';
+import imgTanchagem from '@/assets/plantas-hub/tanchagem.webp';
+import imgChapeu from '@/assets/plantas-hub/chapeu-de-couro.webp';
+import imgArtemisia from '@/assets/plantas-hub/artemisia.webp';
+import imgUmburana from '@/assets/plantas-hub/umburana.webp';
+import imgEspinheira from '@/assets/plantas-hub/espinheira-santa.webp';
+import imgAristolochia from '@/assets/plantas-hub/aristolochia.webp';
+import imgGuaco from '@/assets/plantas-hub/guaco.webp';
 
 interface PlantaCard {
   slug: string;

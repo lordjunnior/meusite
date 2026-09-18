@@ -46,10 +46,10 @@ import FooterSection from '@/components/FooterSection';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-import blockchainBlocos from '@/assets/blockchain-blocos.jpg';
-import blockchainLivroRazao from '@/assets/blockchain-livro-razao.jpg';
-import blockchainRedeGlobal from '@/assets/blockchain-rede-global.jpg';
-import qrCodeImage from '@/assets/qrcode-lightning.jpeg';
+import blockchainBlocos from '@/assets/blockchain-blocos.webp';
+import blockchainLivroRazao from '@/assets/blockchain-livro-razao.webp';
+import blockchainRedeGlobal from '@/assets/blockchain-rede-global.webp';
+import qrCodeImage from '@/assets/qrcode-lightning.webp';
 import BackToHome from '@/components/BackToHome';
 
 /* ═══ CONSTANTS ═══ */

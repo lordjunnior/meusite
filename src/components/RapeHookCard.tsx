@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Wind } from "lucide-react";
-import cardImg from "@/assets/cards/card-rape-hook.jpg";
+import cardImg from "@/assets/cards/card-rape-hook.webp";
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 

@@ -10,11 +10,11 @@ import {
 import BackNav from '@/components/BackNav';
 import ScrollToTop from '@/components/ScrollToTop';
 
-import imgHero from '@/assets/receitas/hero-sobremesa-light.jpg';
-import imgGlicina from '@/assets/receitas/ativo-glicina-gelatina.jpg';
-import imgPassiflora from '@/assets/receitas/ativo-passiflora-maracuja.jpg';
-import imgCamomila from '@/assets/receitas/ativo-camomila-cha.jpg';
-import imgChia from '@/assets/receitas/ativo-chia-hidratada.jpg';
+import imgHero from '@/assets/receitas/hero-sobremesa-light.webp';
+import imgGlicina from '@/assets/receitas/ativo-glicina-gelatina.webp';
+import imgPassiflora from '@/assets/receitas/ativo-passiflora-maracuja.webp';
+import imgCamomila from '@/assets/receitas/ativo-camomila-cha.webp';
+import imgChia from '@/assets/receitas/ativo-chia-hidratada.webp';
 
 /**
  * /soberania-organica/cozinha-funcional/sobremesa-substitui-rivotril

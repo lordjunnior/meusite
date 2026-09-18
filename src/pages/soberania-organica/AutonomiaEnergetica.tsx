@@ -20,17 +20,17 @@ import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
 import CinematicHero from '@/components/CinematicHero';
-import heroImg from '@/assets/saida/energia-hero.jpg';
-import imgPainel from '@/assets/saida/energia-solar-painel.jpg';
-import imgBateria from '@/assets/saida/energia-bateria.jpg';
-import imgInversor from '@/assets/saida/energia-inversor.jpg';
-import imgGerador from '@/assets/saida/energia-gerador.jpg';
-import imgDimensionamento from '@/assets/saida/energia-dimensionamento.jpg';
-import imgTransferencia from '@/assets/saida/energia-transferencia.jpg';
-import imgBlackout from '@/assets/saida/energia-blackout.jpg';
-import imgPortatil from '@/assets/saida/energia-portatil.jpg';
-import imgEficiencia from '@/assets/saida/energia-eficiencia.jpg';
-import imgManutencao from '@/assets/saida/energia-manutencao.jpg';
+import heroImg from '@/assets/saida/energia-hero.webp';
+import imgPainel from '@/assets/saida/energia-solar-painel.webp';
+import imgBateria from '@/assets/saida/energia-bateria.webp';
+import imgInversor from '@/assets/saida/energia-inversor.webp';
+import imgGerador from '@/assets/saida/energia-gerador.webp';
+import imgDimensionamento from '@/assets/saida/energia-dimensionamento.webp';
+import imgTransferencia from '@/assets/saida/energia-transferencia.webp';
+import imgBlackout from '@/assets/saida/energia-blackout.webp';
+import imgPortatil from '@/assets/saida/energia-portatil.webp';
+import imgEficiencia from '@/assets/saida/energia-eficiencia.webp';
+import imgManutencao from '@/assets/saida/energia-manutencao.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

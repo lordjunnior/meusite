@@ -8,11 +8,11 @@ import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 
-import imgTemperatura from '@/assets/sinais-temperatura.jpg';
-import imgPerfusao from '@/assets/sinais-perfusao.jpg';
-import imgDesidratacao from '@/assets/sinais-desidratacao.jpg';
-import imgAvpu from '@/assets/sinais-avpu.jpg';
-import imgFicha from '@/assets/sinais-ficha.jpg';
+import imgTemperatura from '@/assets/sinais-temperatura.webp';
+import imgPerfusao from '@/assets/sinais-perfusao.webp';
+import imgDesidratacao from '@/assets/sinais-desidratacao.webp';
+import imgAvpu from '@/assets/sinais-avpu.webp';
+import imgFicha from '@/assets/sinais-ficha.webp';
 import BackToHome from '@/components/BackToHome';
 
 const AvaliacaoSinais = () => {

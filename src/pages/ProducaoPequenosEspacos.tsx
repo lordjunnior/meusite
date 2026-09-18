@@ -7,10 +7,10 @@ import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 
-import imgLayout from '@/assets/producao-layout-canteiros.jpg';
-import imgConsorcio from '@/assets/producao-consorcio-culturas.jpg';
-import imgRotacao from '@/assets/producao-rotacao-sazonal.jpg';
-import imgMicroclimas from '@/assets/producao-microclimas.jpg';
+import imgLayout from '@/assets/producao-layout-canteiros.webp';
+import imgConsorcio from '@/assets/producao-consorcio-culturas.webp';
+import imgRotacao from '@/assets/producao-rotacao-sazonal.webp';
+import imgMicroclimas from '@/assets/producao-microclimas.webp';
 import BackToHome from '@/components/BackToHome';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;

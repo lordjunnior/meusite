@@ -8,10 +8,10 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/imposto-renda/ir-hero.jpg';
-import fichaImg from '@/assets/imposto-renda/ir-ficha.jpg';
-import custodiaImg from '@/assets/imposto-renda/ir-custodia.jpg';
-import cruzamentoImg from '@/assets/imposto-renda/ir-cruzamento.jpg';
+import heroImg from '@/assets/imposto-renda/ir-hero.webp';
+import fichaImg from '@/assets/imposto-renda/ir-ficha.webp';
+import custodiaImg from '@/assets/imposto-renda/ir-custodia.webp';
+import cruzamentoImg from '@/assets/imposto-renda/ir-cruzamento.webp';
 
 /**
  * /imposto-renda/declarar-bitcoin-2026

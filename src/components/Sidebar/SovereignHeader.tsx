@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Instagram, Youtube, Twitter, Github } from "lucide-react";
 import { Link } from "react-router-dom";
-import profilePhoto from "@/assets/profile-photo.jpg";
+import profilePhoto from "@/assets/profile-photo.webp";
 import { useReadingProgress } from "@/hooks/useReadingProgress";
 
 

@@ -3,13 +3,13 @@ import { useRef, useState } from 'react';
 import { ChevronDown, Key, Users, FileText, AlertTriangle, ShieldCheck, Clock } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/autocustodia/heranca-hero.jpg';
-import imgSucessao from '@/assets/autocustodia/heranca-sucessao.jpg';
-import imgMultisig from '@/assets/autocustodia/heranca-multisig.jpg';
-import imgCarta from '@/assets/autocustodia/heranca-carta.jpg';
-import imgConfianca from '@/assets/autocustodia/heranca-confianca.jpg';
-import imgCofre from '@/assets/autocustodia/heranca-cofre.jpg';
-import imgArquivo from '@/assets/autocustodia/heranca-arquivo.jpg';
+import heroImg from '@/assets/autocustodia/heranca-hero.webp';
+import imgSucessao from '@/assets/autocustodia/heranca-sucessao.webp';
+import imgMultisig from '@/assets/autocustodia/heranca-multisig.webp';
+import imgCarta from '@/assets/autocustodia/heranca-carta.webp';
+import imgConfianca from '@/assets/autocustodia/heranca-confianca.webp';
+import imgCofre from '@/assets/autocustodia/heranca-cofre.webp';
+import imgArquivo from '@/assets/autocustodia/heranca-arquivo.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

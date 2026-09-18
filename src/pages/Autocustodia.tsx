@@ -13,10 +13,10 @@ import {
 } from 'lucide-react';
 import RiskBlock from '@/components/RiskBlock';
 import SnippetBait from '@/components/SnippetBait';
-import heroImg from '@/assets/autocustodia-hero.jpg';
-import imgPapelFogo from '@/assets/autocustodia-papel-fogo.jpg';
-import imgMetalPlaca from '@/assets/autocustodia-metal-placa.jpg';
-import imgMultisig from '@/assets/autocustodia-multisig.jpg';
+import heroImg from '@/assets/autocustodia-hero.webp';
+import imgPapelFogo from '@/assets/autocustodia-papel-fogo.webp';
+import imgMetalPlaca from '@/assets/autocustodia-metal-placa.webp';
+import imgMultisig from '@/assets/autocustodia-multisig.webp';
 import BackToHome from '@/components/BackToHome';
 
 gsap.registerPlugin(ScrollTrigger);

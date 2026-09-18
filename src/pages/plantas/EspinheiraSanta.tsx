@@ -1,6 +1,6 @@
 import PlantaIndividualLayout, { PlantaIndividualData } from '@/components/plantas/PlantaIndividualLayout';
-import heroImg from '@/assets/plantas-individuais/espinheira-santa-hero.jpg';
-import comparativoImg from '@/assets/plantas-individuais/espinheira-santa-comparativo.jpg';
+import heroImg from '@/assets/plantas-individuais/espinheira-santa-hero.webp';
+import comparativoImg from '@/assets/plantas-individuais/espinheira-santa-comparativo.webp';
 
 const data: PlantaIndividualData = {
   slug: 'espinheira-santa',

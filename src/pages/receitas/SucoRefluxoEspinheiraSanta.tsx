@@ -10,11 +10,11 @@ import {
 import BackNav from '@/components/BackNav';
 import ScrollToTop from '@/components/ScrollToTop';
 
-import imgHero from '@/assets/receitas/hero-refluxo-azia-light.jpg';
-import imgEspinheira from '@/assets/receitas/ativo-espinheira-santa.jpg';
-import imgBatata from '@/assets/receitas/ativo-batata-inglesa.jpg';
-import imgCamomila from '@/assets/receitas/ativo-camomila.jpg';
-import imgBabosa from '@/assets/receitas/ativo-babosa.jpg';
+import imgHero from '@/assets/receitas/hero-refluxo-azia-light.webp';
+import imgEspinheira from '@/assets/receitas/ativo-espinheira-santa.webp';
+import imgBatata from '@/assets/receitas/ativo-batata-inglesa.webp';
+import imgCamomila from '@/assets/receitas/ativo-camomila.webp';
+import imgBabosa from '@/assets/receitas/ativo-babosa.webp';
 
 /**
  * /soberania-organica/cozinha-funcional/suco-refluxo-espinheira-santa

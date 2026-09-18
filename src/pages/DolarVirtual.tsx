@@ -19,14 +19,14 @@ import MobileNav from "@/components/MobileNav";
 import RightSidebar from "@/components/RightSidebar";
 import SovereignDisclaimer from "@/components/SovereignDisclaimer";
 import FixedThematicBackground from "@/components/backgrounds/FixedThematicBackground";
-import bgDolarVirtual from "@/assets/backgrounds/bg-dolar-virtual.jpg";
+import bgDolarVirtual from "@/assets/backgrounds/bg-dolar-virtual.webp";
 
-import heroImg from "@/assets/dolar-virtual-hero.jpg";
-import stablecoinImg from "@/assets/dolar-virtual-stablecoin.jpg";
-import carteiraImg from "@/assets/dolar-virtual-carteira.jpg";
-import seedImg from "@/assets/dolar-virtual-seed.jpg";
-import alfredImg from "@/assets/dolar-virtual-alfred.jpg";
-import segurancaImg from "@/assets/dolar-virtual-seguranca.jpg";
+import heroImg from "@/assets/dolar-virtual-hero.webp";
+import stablecoinImg from "@/assets/dolar-virtual-stablecoin.webp";
+import carteiraImg from "@/assets/dolar-virtual-carteira.webp";
+import seedImg from "@/assets/dolar-virtual-seed.webp";
+import alfredImg from "@/assets/dolar-virtual-alfred.webp";
+import segurancaImg from "@/assets/dolar-virtual-seguranca.webp";
 import BackToHome from '@/components/BackToHome';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;

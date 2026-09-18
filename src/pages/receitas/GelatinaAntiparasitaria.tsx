@@ -10,11 +10,11 @@ import {
 import BackNav from '@/components/BackNav';
 import ScrollToTop from '@/components/ScrollToTop';
 
-import imgHero from '@/assets/receitas/hero-gelatina-antiparasitaria-light.jpg';
-import imgMamao from '@/assets/receitas/ativo-sementes-mamao.jpg';
-import imgAbobora from '@/assets/receitas/ativo-sementes-abobora.jpg';
-import imgCravo from '@/assets/receitas/ativo-cravo-cha.jpg';
-import imgGlicina from '@/assets/receitas/ativo-glicina-gelatina.jpg';
+import imgHero from '@/assets/receitas/hero-gelatina-antiparasitaria-light.webp';
+import imgMamao from '@/assets/receitas/ativo-sementes-mamao.webp';
+import imgAbobora from '@/assets/receitas/ativo-sementes-abobora.webp';
+import imgCravo from '@/assets/receitas/ativo-cravo-cha.webp';
+import imgGlicina from '@/assets/receitas/ativo-glicina-gelatina.webp';
 
 /**
  * /soberania-organica/cozinha-funcional/gelatina-antiparasitaria

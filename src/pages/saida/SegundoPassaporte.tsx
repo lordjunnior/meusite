@@ -10,9 +10,9 @@ import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
 import CinematicHero from '@/components/CinematicHero';
-import heroImg from '@/assets/saida/passaporte-hero.jpg';
-import imgNaturalizacao from '@/assets/saida/passaporte-naturalizacao.jpg';
-import imgInvestimento from '@/assets/saida/passaporte-investimento.jpg';
+import heroImg from '@/assets/saida/passaporte-hero.webp';
+import imgNaturalizacao from '@/assets/saida/passaporte-naturalizacao.webp';
+import imgInvestimento from '@/assets/saida/passaporte-investimento.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

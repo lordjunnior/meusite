@@ -17,10 +17,10 @@ import ScrollToTop from '@/components/ScrollToTop';
 import FooterSection from '@/components/FooterSection';
 import BackToHome from '@/components/BackToHome';
 
-import imgHero from '@/assets/bitpark-card-hero.jpg';
-import imgCuboGelo from '@/assets/bitpark-cubo-gelo.jpg';
-import imgRecompensa from '@/assets/bitpark-recompensa-diaria.jpg';
-import imgBancoVsBtc from '@/assets/bitpark-banco-vs-bitcoin.jpg';
+import imgHero from '@/assets/bitpark-card-hero.webp';
+import imgCuboGelo from '@/assets/bitpark-cubo-gelo.webp';
+import imgRecompensa from '@/assets/bitpark-recompensa-diaria.webp';
+import imgBancoVsBtc from '@/assets/bitpark-banco-vs-bitcoin.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

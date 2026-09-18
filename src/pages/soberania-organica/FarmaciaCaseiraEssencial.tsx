@@ -8,10 +8,10 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/farmacia-caseira/hero.jpg';
-import gengibreImg from '@/assets/farmacia-caseira/ginger.jpg';
-import carvaoImg from '@/assets/farmacia-caseira/carvao.jpg';
-import argilaImg from '@/assets/farmacia-caseira/argila.jpg';
+import heroImg from '@/assets/farmacia-caseira/hero.webp';
+import gengibreImg from '@/assets/farmacia-caseira/ginger.webp';
+import carvaoImg from '@/assets/farmacia-caseira/carvao.webp';
+import argilaImg from '@/assets/farmacia-caseira/argila.webp';
 
 /**
  * /soberania-organica/farmacia-caseira-essencial

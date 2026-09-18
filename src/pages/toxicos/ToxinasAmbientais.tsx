@@ -6,12 +6,12 @@ import { ArrowRight, Leaf, Droplets, Wind, Home, Beaker, Shield, AlertTriangle, 
 import CinematicHero from '@/components/CinematicHero';
 import BackToHome from '@/components/BackToHome';
 
-import bgAmbientais from '@/assets/toxicos/bg-ambientais.jpg';
-import imgPlastico from '@/assets/toxicos/amb-plastico.jpg';
-import imgLimpeza from '@/assets/toxicos/amb-limpeza.jpg';
-import imgAr from '@/assets/toxicos/amb-ar.jpg';
-import imgMobiliario from '@/assets/toxicos/amb-mobiliario.jpg';
-import imgCosmeticos from '@/assets/toxicos/amb-cosmeticos.jpg';
+import bgAmbientais from '@/assets/toxicos/bg-ambientais.webp';
+import imgPlastico from '@/assets/toxicos/amb-plastico.webp';
+import imgLimpeza from '@/assets/toxicos/amb-limpeza.webp';
+import imgAr from '@/assets/toxicos/amb-ar.webp';
+import imgMobiliario from '@/assets/toxicos/amb-mobiliario.webp';
+import imgCosmeticos from '@/assets/toxicos/amb-cosmeticos.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {

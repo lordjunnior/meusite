@@ -16,9 +16,9 @@ import ScrollToTop from '@/components/ScrollToTop';
 import LeadCaptureModal from '@/components/LeadCaptureModal';
 import SovereignDisclaimer from '@/components/SovereignDisclaimer';
 import NobelVFX from '@/components/NobelVFX';
-import heroImg from '@/assets/optima-hero.jpg';
-import telegramImg from '@/assets/optima-telegram.jpg';
-import brasilParaguaiImg from '@/assets/offshore-brasil-paraguai.jpg';
+import heroImg from '@/assets/optima-hero.webp';
+import telegramImg from '@/assets/optima-telegram.webp';
+import brasilParaguaiImg from '@/assets/offshore-brasil-paraguai.webp';
 import BackToHome from '@/components/BackToHome';
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];

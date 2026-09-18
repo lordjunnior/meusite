@@ -1,6 +1,6 @@
 import PlantaIndividualLayout, { PlantaIndividualData } from '@/components/plantas/PlantaIndividualLayout';
-import heroImg from '@/assets/plantas-individuais/chapeu-de-couro-hero.jpg';
-import comparativoImg from '@/assets/plantas-individuais/chapeu-de-couro-comparativo.jpg';
+import heroImg from '@/assets/plantas-individuais/chapeu-de-couro-hero.webp';
+import comparativoImg from '@/assets/plantas-individuais/chapeu-de-couro-comparativo.webp';
 
 const data: PlantaIndividualData = {
   slug: 'chapeu-de-couro',

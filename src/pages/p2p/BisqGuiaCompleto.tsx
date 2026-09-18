@@ -7,9 +7,9 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/p2p/bisq-hero.jpg';
-import contaImg from '@/assets/exchanges/hub-command-panel.jpg';
-import mediacaoImg from '@/assets/p2p/bisq-mediacao.jpg';
+import heroImg from '@/assets/p2p/bisq-hero.webp';
+import contaImg from '@/assets/exchanges/hub-command-panel.webp';
+import mediacaoImg from '@/assets/p2p/bisq-mediacao.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

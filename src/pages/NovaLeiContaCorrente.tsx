@@ -7,11 +7,11 @@ import BackToHome from '@/components/BackToHome';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-import heroImg from '@/assets/lei-conta-hero.jpg';
-import sequestroImg from '@/assets/lei-conta-sequestro.jpg';
-import openFinanceImg from '@/assets/lei-conta-openfinance.jpg';
-import armadilhaImg from '@/assets/lei-conta-armadilha.jpg';
-import escudoImg from '@/assets/lei-conta-escudo.jpg';
+import heroImg from '@/assets/lei-conta-hero.webp';
+import sequestroImg from '@/assets/lei-conta-sequestro.webp';
+import openFinanceImg from '@/assets/lei-conta-openfinance.webp';
+import armadilhaImg from '@/assets/lei-conta-armadilha.webp';
+import escudoImg from '@/assets/lei-conta-escudo.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = (i: number) => ({

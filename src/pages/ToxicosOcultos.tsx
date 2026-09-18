@@ -8,7 +8,7 @@ import LiquidText from '@/components/LiquidText';
 import DossieRealidade from '@/components/toxicos/DossieRealidade';
 import TimelineDia from '@/components/toxicos/TimelineDia';
 import BackToHome from '@/components/BackToHome';
-import bgToxic from '@/assets/toxicos/bg-toxic-atmosphere.jpg';
+import bgToxic from '@/assets/toxicos/bg-toxic-atmosphere.webp';
 import RapeHookCard from '@/components/RapeHookCard';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;

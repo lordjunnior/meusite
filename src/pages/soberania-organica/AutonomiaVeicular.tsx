@@ -18,9 +18,9 @@ import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
 import CinematicHero from '@/components/CinematicHero';
-import heroImg from '@/assets/saida/soberania-veicular-hero.jpg';
-import imgKit from '@/assets/saida/soberania-veicular-kit.jpg';
-import imgSemaforo from '@/assets/saida/soberania-veicular-semaforo.jpg';
+import heroImg from '@/assets/saida/soberania-veicular-hero.webp';
+import imgKit from '@/assets/saida/soberania-veicular-kit.webp';
+import imgSemaforo from '@/assets/saida/soberania-veicular-semaforo.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

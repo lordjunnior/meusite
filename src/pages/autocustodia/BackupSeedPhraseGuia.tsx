@@ -8,9 +8,9 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/seed-backup/seed-hero.jpg';
-import gravacaoImg from '@/assets/autocustodia/seed-aco-gravacao.jpg';
-import cofreImg from '@/assets/autocustodia/heranca-cofre.jpg';
+import heroImg from '@/assets/seed-backup/seed-hero.webp';
+import gravacaoImg from '@/assets/autocustodia/seed-aco-gravacao.webp';
+import cofreImg from '@/assets/autocustodia/heranca-cofre.webp';
 
 /**
  * /autocustodia/backup-seed-phrase-guia

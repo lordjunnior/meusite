@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import BackToHome from "@/components/BackToHome";
 import FixedThematicBackground from "@/components/backgrounds/FixedThematicBackground";
-import bgConfisco from "@/assets/backgrounds/bg-confisco.jpg";
+import bgConfisco from "@/assets/backgrounds/bg-confisco.webp";
 import AppSidebar from "@/components/AppSidebar";
 import MobileNav from "@/components/MobileNav";
 import FooterSection from "@/components/FooterSection";
@@ -17,7 +17,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
-import cardConfisco from "@/assets/card-confisco-bitcoin.jpg";
+import cardConfisco from "@/assets/card-confisco-bitcoin.webp";
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {

@@ -7,11 +7,11 @@ import {
   FastForward, Rewind, Radio
 } from 'lucide-react';
 
-import coverPaiRico from '@/assets/cover-pai-rico.jpg';
-import coverPadraoBitcoin from '@/assets/cover-padrao-bitcoin.jpg';
-import coverEticaLiberdade from '@/assets/cover-etica-liberdade.jpg';
-import coverAnatomiaEstado from '@/assets/cover-anatomia-estado.jpg';
-import coverRiquezaNacoes from '@/assets/cover-riqueza-nacoes.jpg';
+import coverPaiRico from '@/assets/cover-pai-rico.webp';
+import coverPadraoBitcoin from '@/assets/cover-padrao-bitcoin.webp';
+import coverEticaLiberdade from '@/assets/cover-etica-liberdade.webp';
+import coverAnatomiaEstado from '@/assets/cover-anatomia-estado.webp';
+import coverRiquezaNacoes from '@/assets/cover-riqueza-nacoes.webp';
 import BackToHome from '@/components/BackToHome';
 import { supabase } from '@/integrations/supabase/client';
 import { canonicalUrl } from '@/lib/site';

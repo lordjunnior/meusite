@@ -8,10 +8,10 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/cartoes-cripto/hero-atm-noturno.jpg';
-import cardsImg from '@/assets/cartoes-cripto/cards-comparativo.jpg';
-import atmImg from '@/assets/cartoes-cripto/atm-privacidade.jpg';
-import docImg from '@/assets/cartoes-cripto/documento-estrategia.jpg';
+import heroImg from '@/assets/cartoes-cripto/hero-atm-noturno.webp';
+import cardsImg from '@/assets/cartoes-cripto/cards-comparativo.webp';
+import atmImg from '@/assets/cartoes-cripto/atm-privacidade.webp';
+import docImg from '@/assets/cartoes-cripto/documento-estrategia.webp';
 
 /**
  * /soberania-financeira/cartoes-cripto-sem-reporte

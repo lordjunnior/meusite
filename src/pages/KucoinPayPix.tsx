@@ -13,10 +13,10 @@ import ScrollToTop from '@/components/ScrollToTop';
 import SovereignDisclaimer from '@/components/SovereignDisclaimer';
 import NobelVFX from '@/components/NobelVFX';
 
-import kucoinSupermercado from '@/assets/kucoin-supermercado.jpg';
-import kucoinPosto from '@/assets/kucoin-posto.jpg';
-import kucoinCafe from '@/assets/kucoin-cafe.jpg';
-import kucoinFarmacia from '@/assets/kucoin-farmacia.jpg';
+import kucoinSupermercado from '@/assets/kucoin-supermercado.webp';
+import kucoinPosto from '@/assets/kucoin-posto.webp';
+import kucoinCafe from '@/assets/kucoin-cafe.webp';
+import kucoinFarmacia from '@/assets/kucoin-farmacia.webp';
 import BackToHome from '@/components/BackToHome';
 
 const AFFILIATE_LINK = 'https://www.kucoin.com/r/rf/QBAPZG6X';

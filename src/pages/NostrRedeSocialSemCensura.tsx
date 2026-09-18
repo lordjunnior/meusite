@@ -13,11 +13,11 @@ import ReadingTime from '@/components/ReadingTime';
 import ShareButtons from '@/components/ShareButtons';
 import InlineLeadCapture from '@/components/InlineLeadCapture';
 
-import imgChave from '@/assets/nostr/nostr-chave-privada.jpg';
-import imgRelay from '@/assets/nostr/nostr-relays-malha.jpg';
-import imgZap from '@/assets/nostr/nostr-zap-lightning.jpg';
-import imgLivro from '@/assets/blockchain-livro-razao.jpg';
-import imgImpacto from '@/assets/nostr/nostr-rede-desligada.jpg';
+import imgChave from '@/assets/nostr/nostr-chave-privada.webp';
+import imgRelay from '@/assets/nostr/nostr-relays-malha.webp';
+import imgZap from '@/assets/nostr/nostr-zap-lightning.webp';
+import imgLivro from '@/assets/blockchain-livro-razao.webp';
+import imgImpacto from '@/assets/nostr/nostr-rede-desligada.webp';
 
 /**
  * /nostr-rede-social-sem-censura

@@ -7,8 +7,8 @@ import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 
-import imgSistemas from '@/assets/cp-sistemas-corpo.jpg';
-import imgPlantas from '@/assets/cp-plantas-pratica.jpg';
+import imgSistemas from '@/assets/cp-sistemas-corpo.webp';
+import imgPlantas from '@/assets/cp-plantas-pratica.webp';
 
 import { DIGESTIVO, RESPIRATORIO, NERVOSO, IMUNE, MUSCULAR } from '@/components/conhecimento-perdido/PlantData';
 import { SistemaSection } from '@/components/conhecimento-perdido/SistemaSection';

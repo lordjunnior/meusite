@@ -11,14 +11,14 @@ import ScrollToTop from '@/components/ScrollToTop';
 import LeadCaptureModal from '@/components/LeadCaptureModal';
 import SovereignDisclaimer from '@/components/SovereignDisclaimer';
 import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackground';
-import bgOffshore from '@/assets/backgrounds/bg-offshore.jpg';
+import bgOffshore from '@/assets/backgrounds/bg-offshore.webp';
 
-import heroImg from '@/assets/offshore-hero.jpg';
-import cardsImg from '@/assets/offshore-cards.jpg';
-import brasilParaguaiImg from '@/assets/offshore-brasil-paraguai.jpg';
-import chapterRankingImg from '@/assets/offshore-chapter-ranking.jpg';
-import chapterCompareImg from '@/assets/offshore-chapter-compare.jpg';
-import chapterFaqImg from '@/assets/offshore-chapter-faq.jpg';
+import heroImg from '@/assets/offshore-hero.webp';
+import cardsImg from '@/assets/offshore-cards.webp';
+import brasilParaguaiImg from '@/assets/offshore-brasil-paraguai.webp';
+import chapterRankingImg from '@/assets/offshore-chapter-ranking.webp';
+import chapterCompareImg from '@/assets/offshore-chapter-compare.webp';
+import chapterFaqImg from '@/assets/offshore-chapter-faq.webp';
 import BackToHome from '@/components/BackToHome';
 
 /* ═══════════════════════════════════════════════════════════

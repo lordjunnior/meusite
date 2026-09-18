@@ -4,14 +4,14 @@ import { ChevronDown, AlertTriangle, ShieldCheck, Droplets } from 'lucide-react'
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import RelatedHooks from '@/components/RelatedHooks';
-import heroImg from '@/assets/agua/agua-hero.jpg';
-import imgCaptacao from '@/assets/agua/agua-captacao.jpg';
-import imgFiltragem from '@/assets/agua/agua-filtragem.jpg';
-import imgCinzas from '@/assets/agua/agua-cinzas.jpg';
-import imgIrrigacao from '@/assets/agua/agua-irrigacao.jpg';
-import imgSodis from '@/assets/agua/agua-sodis.jpg';
-import imgSwale from '@/assets/agua/agua-swale.jpg';
-import imgAuditoria from '@/assets/agua/agua-auditoria.jpg';
+import heroImg from '@/assets/agua/agua-hero.webp';
+import imgCaptacao from '@/assets/agua/agua-captacao.webp';
+import imgFiltragem from '@/assets/agua/agua-filtragem.webp';
+import imgCinzas from '@/assets/agua/agua-cinzas.webp';
+import imgIrrigacao from '@/assets/agua/agua-irrigacao.webp';
+import imgSodis from '@/assets/agua/agua-sodis.webp';
+import imgSwale from '@/assets/agua/agua-swale.webp';
+import imgAuditoria from '@/assets/agua/agua-auditoria.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({

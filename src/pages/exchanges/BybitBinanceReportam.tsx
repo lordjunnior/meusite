@@ -8,12 +8,12 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/exchanges/bybit-binance-hero.jpg';
-import imgCofre from '@/assets/exchanges/regulacao-cofre.jpg';
-import imgHyperliquid from '@/assets/exchanges/hyperliquid-mesa.jpg';
-import imgP2P from '@/assets/exchanges/p2p-troca.jpg';
-import imgBlindagem from '@/assets/exchanges/blindagem-camadas.jpg';
-import imgPassaporte from '@/assets/exchanges/passaporte-plano-b.jpg';
+import heroImg from '@/assets/exchanges/bybit-binance-hero.webp';
+import imgCofre from '@/assets/exchanges/regulacao-cofre.webp';
+import imgHyperliquid from '@/assets/exchanges/hyperliquid-mesa.webp';
+import imgP2P from '@/assets/exchanges/p2p-troca.webp';
+import imgBlindagem from '@/assets/exchanges/blindagem-camadas.webp';
+import imgPassaporte from '@/assets/exchanges/passaporte-plano-b.webp';
 
 /**
  * /soberania-financeira/exchanges-privacidade-e-kyc/bybit-binance-reportam-brasileiros

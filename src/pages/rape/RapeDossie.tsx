@@ -13,16 +13,16 @@ import BackToHome from "@/components/BackToHome";
 import FixedThematicBackground from "@/components/backgrounds/FixedThematicBackground";
 import PageFloatingToc from "@/components/PageFloatingToc";
 import ScrollToTop from "@/components/ScrollToTop";
-import bgRape from "@/assets/backgrounds/bg-rape-hero.jpg";
-import imgPaje from "@/assets/rape/hero-pajé-kuripe.jpg";
-import imgFrasco from "@/assets/rape/po-frasco-kuripe.jpg";
-import imgVago from "@/assets/rape/nervo-vago-anatomia.jpg";
-import imgCerimonia from "@/assets/rape/cerimonia-noturna.jpg";
-import imgComercial from "@/assets/rape/vitrine-comercial-frascos.jpg";
-import imgCoentro from "@/assets/quelantes/plantas/coentro.jpg";
-import imgChlorella from "@/assets/quelantes/plantas/chlorella.jpg";
-import imgIpe from "@/assets/quelantes/plantas/ipe-roxo.jpg";
-import imgSucupira from "@/assets/quelantes/plantas/sucupira.jpg";
+import bgRape from "@/assets/backgrounds/bg-rape-hero.webp";
+import imgPaje from "@/assets/rape/hero-pajé-kuripe.webp";
+import imgFrasco from "@/assets/rape/po-frasco-kuripe.webp";
+import imgVago from "@/assets/rape/nervo-vago-anatomia.webp";
+import imgCerimonia from "@/assets/rape/cerimonia-noturna.webp";
+import imgComercial from "@/assets/rape/vitrine-comercial-frascos.webp";
+import imgCoentro from "@/assets/quelantes/plantas/coentro.webp";
+import imgChlorella from "@/assets/quelantes/plantas/chlorella.webp";
+import imgIpe from "@/assets/quelantes/plantas/ipe-roxo.webp";
+import imgSucupira from "@/assets/quelantes/plantas/sucupira.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 

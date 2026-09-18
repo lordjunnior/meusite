@@ -14,10 +14,10 @@ import {
 import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 
-import imgCadeia from '@/assets/hw-diy-cadeia-confianca.jpg';
-import imgAirgapped from '@/assets/hw-diy-airgapped.jpg';
-import imgComponentes from '@/assets/hw-diy-componentes.jpg';
-import imgSeguranca from '@/assets/hw-diy-seguranca.jpg';
+import imgCadeia from '@/assets/hw-diy-cadeia-confianca.webp';
+import imgAirgapped from '@/assets/hw-diy-airgapped.webp';
+import imgComponentes from '@/assets/hw-diy-componentes.webp';
+import imgSeguranca from '@/assets/hw-diy-seguranca.webp';
 import BackToHome from '@/components/BackToHome';
 
 gsap.registerPlugin(ScrollTrigger);

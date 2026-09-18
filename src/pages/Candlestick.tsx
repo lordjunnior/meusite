@@ -5,8 +5,8 @@ import { ArrowRight, CandlestickChart, TrendingUp, TrendingDown, Eye, Brain, Ale
 import { Helmet } from 'react-helmet-async';
 import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
-import candlestickAnatomiaImg from '@/assets/candlestick-anatomia.jpg';
-import candlestickPadroesImg from '@/assets/candlestick-padroes.jpg';
+import candlestickAnatomiaImg from '@/assets/candlestick-anatomia.webp';
+import candlestickPadroesImg from '@/assets/candlestick-padroes.webp';
 import BackToHome from '@/components/BackToHome';
 import { canonicalUrl } from '@/lib/site';
 

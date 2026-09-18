@@ -8,10 +8,10 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/btc-hardware-wallets.jpg';
-import criteriosImg from '@/assets/infra-hardware-wallet.jpg';
-import diyImg from '@/assets/krux-seed-backup.jpg';
-import multisigImg from '@/assets/multisig-vault.jpg';
+import heroImg from '@/assets/btc-hardware-wallets.webp';
+import criteriosImg from '@/assets/infra-hardware-wallet.webp';
+import diyImg from '@/assets/krux-seed-backup.webp';
+import multisigImg from '@/assets/multisig-vault.webp';
 
 /**
  * /comparativos/melhores-hardware-wallets

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { AlertTriangle, ArrowRight, ShieldAlert, Radio, Eye } from 'lucide-react';
-import alertImg from '@/assets/alerta-dinheiro-vivo.jpg';
+import alertImg from '@/assets/alerta-dinheiro-vivo.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 

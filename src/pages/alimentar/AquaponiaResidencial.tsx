@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { ChevronDown, AlertTriangle, ShieldCheck, Fish } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/alimentar/aquaponia-hero.jpg';
-import imgTilapia from '@/assets/alimentar/aquaponia-tilapia.jpg';
-import imgLeca from '@/assets/alimentar/aquaponia-leca.jpg';
-import imgBomba from '@/assets/alimentar/aquaponia-bomba.jpg';
-import imgTeste from '@/assets/alimentar/aquaponia-teste.jpg';
-import imgColheita from '@/assets/alimentar/aquaponia-colheita.jpg';
-import imgAlimentacao from '@/assets/alimentar/aquaponia-alimentacao.jpg';
-import imgSistema from '@/assets/alimentar/aquaponia-sistema.jpg';
+import heroImg from '@/assets/alimentar/aquaponia-hero.webp';
+import imgTilapia from '@/assets/alimentar/aquaponia-tilapia.webp';
+import imgLeca from '@/assets/alimentar/aquaponia-leca.webp';
+import imgBomba from '@/assets/alimentar/aquaponia-bomba.webp';
+import imgTeste from '@/assets/alimentar/aquaponia-teste.webp';
+import imgColheita from '@/assets/alimentar/aquaponia-colheita.webp';
+import imgAlimentacao from '@/assets/alimentar/aquaponia-alimentacao.webp';
+import imgSistema from '@/assets/alimentar/aquaponia-sistema.webp';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fade = (delay = 0) => ({
