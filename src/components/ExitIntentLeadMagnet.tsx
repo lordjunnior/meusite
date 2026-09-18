@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Shield, Zap, ArrowRight, Loader2, CheckCircle } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client';
+import { submitLead } from '@/lib/leadSubmission';
+import LeadConsentFields from '@/components/LeadConsentFields';
 import { z } from 'zod';
 import BitcoinCoinRain from '@/components/BitcoinCoinRain';
 
@@ -19,6 +20,8 @@ const ExitIntentLeadMagnet = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [consent, setConsent] = useState(false);
+  const [honeypot, setHoneypot] = useState('');
 
   const handleShow = useCallback(() => {
     const dismissed = sessionStorage.getItem('exit-intent-dismissed');
@@ -78,15 +81,25 @@ const ExitIntentLeadMagnet = () => {
       return;
     }
 
+    if (!consent) {
+      setErrors({ consent: 'Marque a autorização para entrar na lista.' });
+      return;
+    }
+
     setLoading(true);
     try {
-      const { error } = await supabase.from('leads' as any).insert({
+      const outcome = await submitLead({
         nome: result.data.nome,
         email: result.data.email,
         interesse: 'lista-transmissao-soberania',
-      } as any);
+        consentimento: consent,
+        honeypot,
+      });
 
-      if (error) throw error;
+      if (!outcome.ok) {
+        setErrors({ form: outcome.message });
+        return;
+      }
       setSuccess(true);
 
       // Track conversion
