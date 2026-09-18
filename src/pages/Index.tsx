@@ -680,7 +680,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             >
               <Link
-                to="/nova-lei-conta-corrente"
+                to="/alertas/nova-lei-conta-corrente"
                 className="group relative block rounded-2xl overflow-hidden transition-all duration-500"
               >
                 <div className="absolute -inset-[1px] rounded-2xl z-0 opacity-70 group-hover:opacity-100 transition-opacity duration-500"
