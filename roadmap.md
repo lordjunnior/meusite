@@ -200,3 +200,16 @@ Pendente:
 Especificação completa em docs/inteligencia-editorial/ESPECIFICACAO.md (versão 1.0, aguardando aprovação).
 Sete motores: Demand, Intent, Coverage, Gap, Editorial Guard, Opportunity, Learning Loop.
 Nada será codificado antes da aprovação das decisões pendentes da seção 16.
+
+### Fase 1 implementada (18/09)
+- scripts/generate-fingerprints.ts: inventário determinístico das 212 páginas, roda no prebuild/predev.
+- src/lib/intelligence/: tipos, árvores de intenção curadas, Coverage, Gap, Guard e Opportunity Engine.
+- Painel interno em /admin/inteligencia, noindex, fora do sitemap e da navegação pública.
+- Testes em src/lib/intelligence/engine.test.ts.
+
+### Próximas fases
+- Fase 2: registrar termos da busca interna (GlobalSearch.tsx) sem identificador de usuário.
+- Fase 3: decomposição de intenção assistida por modelo, com revisão humana obrigatória.
+- Fase 4: integração com o Search Console, substituindo estimativas por demanda real.
+- Fase 5: persistência dos briefings e fluxo aprovar/recusar.
+- Fase 6: medição 30/60/90 dias e recalibração dos pesos.

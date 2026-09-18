@@ -28,6 +28,7 @@ const SilencioQueda = lazy(() => import("./pages/SilencioQueda"));
 const ProtocoloInicial = lazy(() => import("./pages/ProtocoloInicial"));
 const Arsenal = lazy(() => import("./pages/Arsenal"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const InteligenciaBiblioteca = lazy(() => import("./pages/admin/InteligenciaBiblioteca"));
 const Privacidade = lazy(() => import("./pages/Privacidade"));
 const Termos = lazy(() => import("./pages/Termos"));
 const BlindagemGolpes = lazy(() => import("./pages/BlindagemGolpes"));
@@ -229,6 +230,7 @@ const App = () => (
         <Suspense fallback={<div className="min-h-screen" aria-busy="true" />}>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/admin/inteligencia" element={<InteligenciaBiblioteca />} />
           <Route path="/sobre-mim" element={<SobreMim />} />
           <Route path="/bitcoin-vs-imovel" element={<BitcoinVsImovel />} />
           <Route path="/taxa-de-fuga" element={<TaxaDeFuga />} />

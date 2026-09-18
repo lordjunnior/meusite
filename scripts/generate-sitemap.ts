@@ -19,6 +19,7 @@ for (const m of app.matchAll(routeRe)) {
   if (excludedComponents.has(component)) continue;
   if (excludedPaths.has(path)) continue;
   if (path.includes(":") || path.includes("*")) continue;
+  if (path.startsWith("/admin")) continue; // painel interno, noindex
   paths.add(path);
 }
 
