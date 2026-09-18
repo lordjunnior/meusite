@@ -213,3 +213,11 @@ Nada será codificado antes da aprovação das decisões pendentes da seção 16
 - Fase 4: integração com o Search Console, substituindo estimativas por demanda real.
 - Fase 5: persistência dos briefings e fluxo aprovar/recusar.
 - Fase 6: medição 30/60/90 dias e recalibração dos pesos.
+
+## Biblioteca Tecnica (concluido)
+
+- Politica de curadoria: docs/biblioteca-tecnica/CURADORIA.md
+- Modelo de dados: src/data/bibliotecaTecnica.ts (6 dimensoes, 20 fichas, 3 kits)
+- Pagina: src/pages/BibliotecaTecnica.tsx em /biblioteca-tecnica
+- Integrada a: App.tsx, sidebarNavigation.ts, searchData.ts, MapaDaSoberania.tsx, sitemap (222 URLs)
+- Pendente: ampliar fichas por dimensao, ligar ao Radar de mudancas (ChangeDetection) e ao painel /admin/inteligencia
