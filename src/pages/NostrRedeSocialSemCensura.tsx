@@ -295,7 +295,7 @@ function Hero() {
         }
       `}</style>
       <motion.div className="absolute inset-0" style={{ y: yBg }}>
-        <img src="/nostr-hero.png" alt="Mascote Nostr, um avestruz roxo em retrato cinematográfico contra fundo escuro, representando o protocolo descentralizado que ninguém consegue desligar" className="nostr-hero-img w-full h-full object-cover"
+        <img src="/nostr-hero.webp" alt="Mascote Nostr, um avestruz roxo em retrato cinematográfico contra fundo escuro, representando o protocolo descentralizado que ninguém consegue desligar" className="nostr-hero-img w-full h-full object-cover"
           style={{ filter: 'brightness(1.15) contrast(1.12) saturate(1.05)' }} loading="eager" fetchPriority="high" decoding="async" />
         <div className="nostr-hero-overlay absolute inset-0" />
       </motion.div>

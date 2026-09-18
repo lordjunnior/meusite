@@ -29,6 +29,17 @@ export default defineConfig(({ mode }) => ({
         navigateFallbackDenylist: [/^\/~oauth/],
         runtimeCaching: [
           {
+            urlPattern: ({ url }) =>
+              url.origin === self.location.origin &&
+              /^\/assets\/.*\.(?:avif|webp|jpe?g|png)$/i.test(url.pathname),
+            handler: "CacheFirst",
+            options: {
+              cacheName: "local-images-v1",
+              expiration: { maxEntries: 300, maxAgeSeconds: 60 * 60 * 24 * 30 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
             handler: "CacheFirst",
             options: {
@@ -69,11 +80,26 @@ export default defineConfig(({ mode }) => ({
     }),
   ].filter(Boolean),
   build: {
-    chunkSizeWarningLimit: 3000,
+    chunkSizeWarningLimit: 800,
     reportCompressedSize: false,
     rollupOptions: {
       output: {
         assetFileNames: 'assets/[name]-[hash][extname]',
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return;
+          if (
+            id.includes('/react/') ||
+            id.includes('/react-dom/') ||
+            id.includes('/scheduler/') ||
+            id.includes('react-router')
+          ) return 'vendor-react';
+          if (id.includes('framer-motion')) return 'vendor-motion';
+          if (id.includes('/gsap/')) return 'vendor-gsap';
+          if (id.includes('recharts') || id.includes('/d3-')) return 'vendor-charts';
+          if (id.includes('hls.js')) return 'vendor-hls';
+          if (id.includes('@radix-ui')) return 'vendor-radix';
+          return 'vendor';
+        },
       },
     },
   },
