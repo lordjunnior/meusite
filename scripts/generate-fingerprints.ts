@@ -120,11 +120,26 @@ function extractHeadings(src: string): string[] {
   return [...new Set(out)].slice(0, 220);
 }
 
-function countWords(src: string): number {
+function bodyText(src: string): string {
   const texts: string[] = [];
   for (const m of src.matchAll(/>([^<>{}]{12,})</g)) texts.push(m[1]);
   for (const m of src.matchAll(/"([^"\\]{25,})"/g)) texts.push(m[1]);
-  return texts.join(" ").split(/\s+/).filter(Boolean).length;
+  return texts.join(" ");
+}
+
+function countWords(src: string): number {
+  return bodyText(src).split(/\s+/).filter(Boolean).length;
+}
+
+/** Termos recorrentes do corpo, o que dá recall ao Coverage Engine sem confundir foco com menção. */
+function bodyTerms(src: string): string[] {
+  const freq = new Map<string, number>();
+  for (const w of tokens(bodyText(src))) freq.set(w, (freq.get(w) ?? 0) + 1);
+  return [...freq.entries()]
+    .filter(([, n]) => n >= 2)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 400)
+    .map(([w]) => w);
 }
 
 const fingerprints: PageFingerprint[] = [];
@@ -156,6 +171,7 @@ for (const { path, component } of routes) {
       ...tokens(seo?.primaryKeyword ?? ""),
       ...tokens(description ?? ""),
       ...tokens(path.replace(/[/-]/g, " ")),
+      ...bodyTerms(src),
     ]),
   ];
 
