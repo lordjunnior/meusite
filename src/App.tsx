@@ -129,6 +129,8 @@ const Artemisia = lazy(() => import("./pages/plantas/Artemisia"));
 const AristolochiaAlerta = lazy(() => import("./pages/plantas/AristolochiaAlerta"));
 import CodigoAutonomiaModal from "./components/CodigoAutonomiaModal";
 import ScrollToTop from "./components/ScrollToTop";
+import TrailNav from "./components/TrailNav";
+
 const MapaDaSoberania = lazy(() => import("./pages/MapaDaSoberania"));
 const BabosaAcemannan = lazy(() => import("./pages/BabosaAcemannan"));
 const PorOndeComecar = lazy(() => import("./pages/PorOndeComecar"));
@@ -222,6 +224,8 @@ const App = () => (
         <CodigoAutonomiaModal />
         <ExitIntentLeadMagnet />
         <ScrollToTop />
+        <TrailNav />
+
         <Suspense fallback={<div className="min-h-screen" aria-busy="true" />}>
         <Routes>
           <Route path="/" element={<Index />} />

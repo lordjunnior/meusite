@@ -1,0 +1,48 @@
+# Lord Junnior
+
+> Plataforma editorial em português sobre soberania individual: Bitcoin e autocustódia, privacidade digital, segurança mobile, saúde autônoma, produção de alimento e mobilidade internacional. Conteúdo técnico, verificável e escrito para aplicação prática.
+
+Autor: Lord Junnior. Idioma: português do Brasil. Domínio oficial: https://lordjunnior.com.br
+
+## Bitcoin e dinheiro
+- [O que é Bitcoin](https://lordjunnior.com.br/bitcoin/o-que-e): fundamentos da rede, escassez e emissão.
+- [Hub Bitcoin](https://lordjunnior.com.br/bitcoin): índice completo dos fundamentos.
+- [História do dinheiro](https://lordjunnior.com.br/historia-do-dinheiro): do escambo ao padrão fiduciário.
+- [Inflação, o imposto oculto](https://lordjunnior.com.br/inflacao-imposto-oculto): como o poder de compra é corroído.
+- [Confisco de 1990](https://lordjunnior.com.br/confisco-1990): o precedente brasileiro de bloqueio de poupança.
+- [CBDC no Brasil](https://lordjunnior.com.br/cbdc-brasil): arquitetura e riscos da moeda digital estatal.
+
+## Autocustódia
+- [Hub de autocustódia](https://lordjunnior.com.br/autocustodia): índice dos guias de custódia própria.
+- [O que é custódia fria](https://lordjunnior.com.br/autocustodia/o-que-e-custodia-fria): conceito e limites.
+- [Carteira quente x carteira fria](https://lordjunnior.com.br/autocustodia/hot-wallet-vs-cold-wallet): comparação de modelos de risco.
+- [Primeiro saque para hardware wallet](https://lordjunnior.com.br/autocustodia/primeiro-saque-hardware-wallet): procedimento passo a passo.
+- [Seed phrase em aço](https://lordjunnior.com.br/autocustodia/seed-phrase-em-aco): backup resistente a fogo e água.
+- [Melhores hardware wallets](https://lordjunnior.com.br/comparativos/melhores-hardware-wallets): comparativo técnico.
+
+## Privacidade e segurança mobile
+- [Hub de segurança mobile](https://lordjunnior.com.br/seguranca-mobile): sistemas, mitos, ameaças e hardening.
+- [GrapheneOS](https://lordjunnior.com.br/seguranca-mobile/grapheneos): instalação, compatibilidade e limitações.
+- [CalyxOS](https://lordjunnior.com.br/seguranca-mobile/calyxos): alternativa de sistema desgoogleado.
+- [iPhone é seguro mesmo](https://lordjunnior.com.br/seguranca-mobile/iPhone-e-seguro-mesmo): o que a Apple protege e o que não protege.
+- [VPN no celular](https://lordjunnior.com.br/seguranca-mobile/vpn-no-celular): quando ajuda e quando é teatro.
+
+## Saúde autônoma
+- [Autonomia biológica](https://lordjunnior.com.br/autonomia-biologica): princípios de saúde fora da dependência industrial.
+- [Conhecimento perdido](https://lordjunnior.com.br/conhecimento-perdido): fichas botânicas e uso tradicional.
+- [Fitoterapia aplicada](https://lordjunnior.com.br/fitoterapia-aplicada): preparos, doses e limites de segurança.
+- [Tóxicos ocultos](https://lordjunnior.com.br/toxicos-ocultos): exposições alimentares, ambientais e digitais.
+
+## Mobilidade e jurisdição
+- [Saída](https://lordjunnior.com.br/saida): estratégias de diversificação de jurisdição.
+- [Melhores países para brasileiros](https://lordjunnior.com.br/saida/melhores-paises-brasileiros): critérios comparativos.
+- [Residência fiscal](https://lordjunnior.com.br/saida/residencia-fiscal): conceitos e armadilhas.
+
+## Referência
+- [Mapa da soberania](https://lordjunnior.com.br/mapa-da-soberania): índice completo de todas as páginas.
+- [Por onde começar](https://lordjunnior.com.br/por-onde-comecar): trilha inicial recomendada.
+- [Sobre o autor](https://lordjunnior.com.br/sobre-mim): quem escreve e com que base.
+- [Sitemap](https://lordjunnior.com.br/sitemap.xml)
+
+## Uso do conteúdo
+Citação com atribuição e link para a página de origem é permitida. O conteúdo é educativo e não substitui aconselhamento financeiro, jurídico ou médico individualizado.
