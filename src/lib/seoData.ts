@@ -519,7 +519,7 @@ export const SEO_DATA: Record<string, SeoPageData> = {
     breadcrumbs: [{ name: 'Início', url: '/' }, { name: 'Alertas', url: '/alertas' }],
     schemaType: 'CollectionPage',
     articleSection: 'Alertas',
-    relatedPages: ['/alertas/cbdc-brasil', '/confisco-1990', '/proibicao-dinheiro'],
+    relatedPages: ['/alertas/cbdc-brasil', '/confisco-1990', '/alertas/fim-do-dinheiro-vivo'],
   },
   '/alertas/cbdc-brasil': {
     title: 'CBDC Brasil (DREX): O Dinheiro Programável Que Controla Sua Vida',
@@ -532,7 +532,7 @@ export const SEO_DATA: Record<string, SeoPageData> = {
     schemaType: 'Article',
     articleSection: 'Alertas',
     clusterParent: '/alertas',
-    relatedPages: ['/proibicao-dinheiro', '/confisco-1990', '/alertas/depix-reporte-2026'],
+    relatedPages: ['/alertas/fim-do-dinheiro-vivo', '/confisco-1990', '/alertas/depix-reporte-2026'],
   },
   '/alertas/depix-reporte-2026': {
     title: 'DePIX Reporte 2026: A Descentralização do PIX',
@@ -599,14 +599,14 @@ export const SEO_DATA: Record<string, SeoPageData> = {
     clusterParent: '/alertas',
     relatedPages: ['/inflacao-imposto-oculto', '/bitcoin-vs-fiat', '/lastro'],
   },
-  '/proibicao-dinheiro': {
+  '/alertas/fim-do-dinheiro-vivo': {
     title: 'Proibição do Dinheiro Vivo: O Plano Para Eliminar Sua Privacidade',
     description: 'Agenda global de eliminação do dinheiro físico: controle total de gastos, rastreamento e punição automatizada. O que vem por aí.',
     canonical: `${BASE}/proibicao-dinheiro`,
     primaryKeyword: 'proibição dinheiro vivo',
     lsiKeywords: ['fim do dinheiro físico', 'cashless society', 'sociedade sem dinheiro', 'controle digital', 'rastreamento financeiro', 'privacidade financeira'],
     longTailKeywords: ['vão proibir dinheiro vivo no brasil', 'fim do dinheiro de papel', 'sociedade sem dinheiro é perigoso'],
-    breadcrumbs: [{ name: 'Início', url: '/' }, { name: 'Alertas', url: '/alertas' }, { name: 'Proibição do Dinheiro', url: '/proibicao-dinheiro' }],
+    breadcrumbs: [{ name: 'Início', url: '/' }, { name: 'Alertas', url: '/alertas' }, { name: 'Proibição do Dinheiro', url: '/alertas/fim-do-dinheiro-vivo' }],
     schemaType: 'Article',
     articleSection: 'Alertas',
     clusterParent: '/alertas',
@@ -843,7 +843,7 @@ export const SEO_DATA: Record<string, SeoPageData> = {
     breadcrumbs: [{ name: 'Início', url: '/' }, { name: 'Educação', url: '/educacao' }, { name: 'Novilíngua', url: '/novilingua' }],
     schemaType: 'Article',
     articleSection: 'Educação',
-    relatedPages: ['/alertas', '/proibicao-dinheiro'],
+    relatedPages: ['/alertas', '/alertas/fim-do-dinheiro-vivo'],
   },
 };
 
