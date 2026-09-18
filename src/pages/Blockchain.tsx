@@ -12,6 +12,7 @@ import blockchainRedeImg from '@/assets/blockchain-rede-global.jpg';
 import blockchainCadeiaImg from '@/assets/blockchain-cadeia-blocos.jpg';
 import blockchainImutabilidadeImg from '@/assets/blockchain-imutabilidade.jpg';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {
@@ -116,6 +117,8 @@ export default function Blockchain() {
   return (
     <div className="min-h-screen text-stone-100 font-sans selection:bg-cyan-400/30 relative overflow-hidden" style={{ background: '#050808' }}>
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/blockchain')} />
+        <meta property="og:url" content={canonicalUrl('/blockchain')} />
         <title>O Que é Blockchain — Como Funciona a Tecnologia por Trás do Bitcoin | Arsenal Técnico</title>
         <meta name="description" content="Entenda o que é blockchain de verdade: como funciona, como os dados são armazenados em blocos, como a rede é formada por mineradores e como transações são validadas por consenso." />
         <meta name="keywords" content="blockchain, o que é blockchain, como funciona blockchain, bitcoin blockchain, proof of work, mineração bitcoin, hash SHA-256" />

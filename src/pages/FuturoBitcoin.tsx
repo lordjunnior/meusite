@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring, useInView }
 import { ArrowLeft, ArrowRight, Hourglass, ShieldCheck, Zap, Cpu, Lock, TrendingUp, Layers, Timer, Flame, Gauge, Activity, CircuitBoard, ChevronDown } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {
@@ -85,6 +86,8 @@ export default function FuturoBitcoin() {
   return (
     <div className="min-h-screen text-foreground font-sans selection:bg-primary/30 relative overflow-hidden" style={{ background: '#050808' }}>
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/futuro-bitcoin')} />
+        <meta property="og:url" content={canonicalUrl('/futuro-bitcoin')} />
         <title>O Futuro do Bitcoin — O Que Acontece Após 2140 | Arsenal Técnico</title>
         <meta name="description" content="Descubra o que acontece quando o último Bitcoin for minerado em 2140. Entenda o modelo de taxas, a fortaleza da mineração, deflação monetária e a Lightning Network como camada de escala." />
         <meta name="keywords" content="futuro do bitcoin, bitcoin 2140, último bitcoin minerado, deflação bitcoin, lightning network, mineração bitcoin futuro, taxas bitcoin, halving bitcoin" />

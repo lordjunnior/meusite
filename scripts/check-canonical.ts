@@ -51,3 +51,33 @@ if (offenders.length > 0) {
 }
 
 console.log('Canonical OK: todos os arquivos apontam para lordjunnior.com.br');
+
+/**
+ * Segunda guarda: toda pagina que define <title> precisa definir canonical.
+ * Sem isso, cada pagina nova e uma chance de reintroduzir conteudo orfao.
+ */
+const semCanonical: string[] = [];
+
+for (const file of FILES) {
+  if (!/^src\/(pages|components)\/.+\.tsx$/.test(file)) continue;
+  let content: string;
+  try {
+    content = readFileSync(file, 'utf8');
+  } catch {
+    continue;
+  }
+  if (!content.includes('<Helmet')) continue;
+  if (!content.includes('<title>')) continue;
+  if (content.includes('name="robots" content="noindex"')) continue;
+  if (content.includes('rel="canonical"')) continue;
+  semCanonical.push(file);
+}
+
+if (semCanonical.length > 0) {
+  console.error('\nPaginas com <title> e sem canonical. Use canonicalUrl() de src/lib/site.ts ou o componente SeoHead.\n');
+  semCanonical.forEach((f) => console.error('  ' + f));
+  console.error(`\nTotal: ${semCanonical.length} arquivo(s).\n`);
+  process.exit(1);
+}
+
+console.log('Canonical OK: toda pagina indexavel declara a propria URL');

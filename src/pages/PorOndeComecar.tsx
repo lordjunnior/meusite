@@ -10,6 +10,7 @@ import MobileNav from "@/components/MobileNav";
 import RightSidebar from "@/components/RightSidebar";
 import NetworkTicker from "@/components/NetworkTicker";
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -165,6 +166,8 @@ export default function PorOndeComecar() {
       </div>
 
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/por-onde-comecar')} />
+        <meta property="og:url" content={canonicalUrl('/por-onde-comecar')} />
         <title>Por Onde Começar? Encontre sua trilha | Lord Junnior</title>
         <meta name="description" content="Descubra por onde começar sua jornada de soberania individual. Um quiz rápido que direciona para o conteúdo certo pro seu nível." />
       </Helmet>

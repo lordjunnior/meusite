@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { ArrowLeft, Shield, ShieldCheck, Lock, Key, AlertTriangle, Smartphone, Monitor, Server, Eye, EyeOff, UserX, Bug, Fingerprint, HardDrive, Cpu } from 'lucide-react';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -66,6 +67,8 @@ export default function BitcoinSeguro() {
       </div>
 
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/bitcoin-seguro')} />
+        <meta property="og:url" content={canonicalUrl('/bitcoin-seguro')} />
         <title>O Bitcoin É Seguro? — Análise de Segurança Operacional | Lord Junnior</title>
         <meta name="description" content="Análise completa sobre a segurança do Bitcoin: blockchain inquebrável, vetores de ataque ao indivíduo, código de conduta e autocustódia como proteção definitiva." />
         <meta name="keywords" content="bitcoin segurança, blockchain hackeada, seed phrase, autocustódia, cold storage, engenharia social bitcoin" />

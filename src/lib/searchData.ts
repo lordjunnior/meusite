@@ -85,7 +85,7 @@ export const SEARCH_ENTRIES: SearchEntry[] = [
   // Alertas
   { title: "Central de Alertas", description: "Ameaças à soberania individual", path: "/alertas", tags: ["alertas", "ameaças", "vigilância", "governo"], category: "Alertas" },
   { title: "CBDC Brasil", description: "A moeda digital do banco central", path: "/alertas/cbdc-brasil", tags: ["cbdc", "drex", "banco central", "digital"], category: "Alertas" },
-  { title: "Proibição do Dinheiro", description: "O fim do dinheiro físico", path: "/proibicao-dinheiro", tags: ["proibição", "dinheiro", "físico", "cash"], category: "Alertas" },
+  { title: "Proibição do Dinheiro", description: "O fim do dinheiro físico", path: "/alertas/fim-do-dinheiro-vivo", tags: ["proibição", "dinheiro", "físico", "cash"], category: "Alertas" },
 
   // Educação & Conteúdo
   { title: "Educação", description: "Trilha de formação soberanista", path: "/educacao", tags: ["educação", "formação", "trilha", "estudo"], category: "Educação" },

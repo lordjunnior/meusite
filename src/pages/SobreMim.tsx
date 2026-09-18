@@ -9,6 +9,7 @@ import heroBg from "@/assets/sobre/hero-bg-hardware.jpg";
 import provaChile from "@/assets/sobre/prova-chile.jpg";
 import provaJadeCore from "@/assets/sobre/prova-jade-core.jpg";
 import provaPlataforma from "@/assets/sobre/prova-plataforma.jpg";
+import { canonicalUrl } from '@/lib/site';
 
 const ORANGE = "#FF6600";
 const AMBER = "#F59E0B";
@@ -231,6 +232,8 @@ export default function SobreMim() {
       style={{ background: BG, fontFamily: "'Inter Tight', system-ui, sans-serif" }}
     >
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/sobre-mim')} />
+        <meta property="og:url" content={canonicalUrl('/sobre-mim')} />
         <title>Sobre Mim | Lord Junnior · Arquiteto de Soberania</title>
         <meta name="description" content="Arquiteto de sistemas, engenharia reversa, IA local e design estratégico. 17 anos construindo infraestrutura autônoma, conteúdo e ferramentas de soberania." />
         <meta property="og:title" content="Sobre Mim | Lord Junnior · Arquiteto de Soberania" />

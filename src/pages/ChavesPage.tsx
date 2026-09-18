@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { ArrowLeft, Key, Lock, Unlock, Send, ShieldCheck, Eye, EyeOff, Fingerprint, HardDrive, Smartphone, ArrowRight, AlertTriangle } from 'lucide-react';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -73,6 +74,8 @@ export default function ChavesPage() {
       </div>
 
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/chaves')} />
+        <meta property="og:url" content={canonicalUrl('/chaves')} />
         <title>Chaves Públicas & Privadas — Criptografia Bitcoin | Lord Junnior</title>
         <meta name="description" content="Entenda chaves públicas e privadas do Bitcoin: como são geradas, assinaturas digitais, cold storage vs hot wallet e as regras de autocustódia." />
         <meta name="keywords" content="chave privada bitcoin, chave pública, seed phrase, cold storage, hot wallet, assinatura digital, autocustódia" />

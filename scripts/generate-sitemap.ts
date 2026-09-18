@@ -25,7 +25,12 @@ for (const m of app.matchAll(routeRe)) {
 // Rotas dinâmicas de plantas: /soberania-organica/planta/:slug
 try {
   const plantData = readFileSync(resolve("src/lib/plantData.ts"), "utf-8");
+  const canonicalMap = readFileSync(resolve("src/lib/plantaCanonical.ts"), "utf-8");
+  const comFichaDedicada = new Set(
+    [...canonicalMap.matchAll(/^\s*'?([a-z0-9-]+)'?:\s*'/gm)].map((m) => m[1]),
+  );
   for (const m of plantData.matchAll(/slug:\s*'([a-z0-9-]+)'/g)) {
+    if (comFichaDedicada.has(m[1])) continue; // duplicata da ficha dedicada
     paths.add(`/soberania-organica/planta/${m[1]}`);
   }
 } catch {

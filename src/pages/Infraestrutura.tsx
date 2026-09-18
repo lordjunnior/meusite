@@ -14,6 +14,7 @@ import infraHardwareWallet from '@/assets/infra-hardware-wallet.jpg';
 import infraRaspberryNode from '@/assets/infra-raspberry-node.jpg';
 import infraSsdStorage from '@/assets/infra-ssd-storage.jpg';
 import infraTorNetwork from '@/assets/infra-tor-network.jpg';
+import { canonicalUrl } from '@/lib/site';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {
@@ -39,6 +40,8 @@ export default function Infraestrutura() {
   return (
     <div className="min-h-screen text-stone-100 font-sans selection:bg-purple-300/50 relative overflow-hidden" style={{ background: '#050808' }}>
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/infraestrutura')} />
+        <meta property="og:url" content={canonicalUrl('/infraestrutura')} />
         <title>Infraestrutura — Rode seu Próprio Node Bitcoin | Lord Junnior</title>
         <meta name="description" content="Aprenda a montar seu próprio Node Bitcoin: hardware, software, validação soberana. Se você não roda seu próprio node, está confiando no computador de outra pessoa." />
       </Helmet>

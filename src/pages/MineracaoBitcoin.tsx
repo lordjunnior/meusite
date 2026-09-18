@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { ArrowLeft, Pickaxe, Zap, Cpu, ShieldCheck, ShieldAlert, Clock, Users, TrendingUp, TrendingDown, Thermometer, Server, Wifi, Factory, Scale, Landmark, FileCheck, HardDrive, Building2, Gauge } from 'lucide-react';
 import { fadeUp, viewportOnce } from '@/lib/motion';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 function AnimSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const ref = useRef(null);
@@ -73,6 +74,8 @@ export default function MineracaoBitcoin() {
       </div>
 
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/mineracao')} />
+        <meta property="og:url" content={canonicalUrl('/mineracao')} />
         <title>Mineração de Bitcoin — Guia Completo de Rentabilidade | Lord Junnior</title>
         <meta name="description" content="Mineração de Bitcoin é lucrativa? Análise completa: hardware ASIC, custo de eletricidade, pools, halving, estratégias bull vs bear e legalidade." />
         <meta name="keywords" content="mineração bitcoin, mining bitcoin, ASIC, pool mineração, halving, proof of work, rentabilidade mineração" />

@@ -14,6 +14,7 @@ import fiatImg from "@/assets/bitcoin-fiat-burning.jpg";
 import vaultImg from "@/assets/bitcoin-vault-scarcity.jpg";
 import globeImg from "@/assets/bitcoin-decentralized-globe.jpg";
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 function AnimSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const ref = useRef(null);
@@ -48,6 +49,8 @@ export default function OQueEBitcoin() {
       </div>
 
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/bitcoin/o-que-e')} />
+        <meta property="og:url" content={canonicalUrl('/bitcoin/o-que-e')} />
         <title>O que é Bitcoin? — Fundamento Zero | Lord Junnior</title>
         <meta name="description" content="Entenda o que é Bitcoin: protocolo descentralizado, escassez absoluta de 21 milhões, blockchain imutável e soberania financeira individual." />
         <meta name="keywords" content="o que é bitcoin, bitcoin explicado, blockchain, descentralização, 21 milhões, satoshi nakamoto" />

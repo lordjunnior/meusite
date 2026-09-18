@@ -18,6 +18,7 @@ import FixedThematicBackground from '@/components/backgrounds/FixedThematicBackg
 import bgBlindagem from '@/assets/backgrounds/bg-blindagem.jpg';
 import qrCodeImage from '@/assets/qrcode-lightning.jpeg';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 /* ─── CONSTANTS ─── */
 const LIGHTNING_ADDRESS = "securecorn53@walletofsatoshi.com";
@@ -264,6 +265,8 @@ export default function BlindagemGolpes() {
       style={{ background: BG_DARK }}>
       <FixedThematicBackground image={bgBlindagem} intensity="medium" />
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/blindagem-golpes')} />
+        <meta property="og:url" content={canonicalUrl('/blindagem-golpes')} />
         <title>Blindagem contra Golpes — Segurança Operacional Bitcoin | Lord Junnior</title>
         <meta name="description" content="Guia completo de proteção contra golpes em Bitcoin e criptomoedas. Phishing, deepfakes, Ponzi, SIM Swap, rug pulls e engenharia social. Histórico de fraudes e arsenal de defesa." />
         <meta name="keywords" content="blindagem golpes bitcoin, segurança bitcoin, phishing cripto, scam bitcoin, deepfake bitcoin, ponzi cripto, sim swap, rug pull, engenharia social, opsec cripto" />

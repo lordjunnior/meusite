@@ -236,7 +236,7 @@ const SILOS: Silo[] = [
       { title: 'Nova Lei da Conta Corrente', href: '/alertas/nova-lei-conta-corrente' },
       { title: 'Proteção Patrimonial com Bitcoin', href: '/alertas/protecao-patrimonial-bitcoin' },
       { title: 'Vazamento de Dados', href: '/vazamento-dados' },
-      { title: 'Proibição do Dinheiro Vivo', href: '/proibicao-dinheiro' },
+      { title: 'Proibição do Dinheiro Vivo', href: '/alertas/fim-do-dinheiro-vivo' },
       { title: 'Confisco de 1990', href: '/confisco-1990' },
       { title: 'Inflação: Imposto Oculto', href: '/inflacao-imposto-oculto' },
       { title: 'História do Dinheiro', href: '/historia-do-dinheiro' },

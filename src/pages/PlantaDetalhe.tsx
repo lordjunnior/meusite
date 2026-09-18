@@ -7,6 +7,7 @@ import MicroCtaResistencia from '@/components/MicroCtaResistencia';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PLANTAS, getPlantaBySlug } from '@/lib/plantData';
 import BackToHome from '@/components/BackToHome';
+import { PLANTA_PAGINA_DEDICADA } from '@/lib/plantaCanonical';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,6 +68,10 @@ export default function PlantaDetalhe() {
   }, [planta, slug]);
 
   if (!planta) return <Navigate to="/soberania-organica/autonomia-biologica" replace />;
+
+  // Plantas com ficha dedicada: a URL canonica e a do silo tematico.
+  const paginaDedicada = slug ? PLANTA_PAGINA_DEDICADA[slug] : undefined;
+  if (paginaDedicada) return <Navigate to={paginaDedicada} replace />;
 
   const setRef = (i: number) => (el: HTMLElement | null) => {
     sectionsRef.current[i] = el;

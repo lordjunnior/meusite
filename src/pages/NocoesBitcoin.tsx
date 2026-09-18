@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ShieldAlert, BookOpen, Coins, Lock, Globe, Zap, Eye, Users, Scale, Pickaxe, Hash, HelpCircle, AlertTriangle } from 'lucide-react';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -68,6 +69,8 @@ export default function NocoesBitcoin() {
       </div>
 
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/bitcoin/nocoes-basicas')} />
+        <meta property="og:url" content={canonicalUrl('/bitcoin/nocoes-basicas')} />
         <title>Noções Básicas sobre Bitcoin — Guia Completo para Iniciantes | Lord Junnior</title>
         <meta name="description" content="Tudo sobre Bitcoin para iniciantes: o que é, como comprar, chaves públicas e privadas, segurança, escalabilidade, comparação com ouro e moeda fiduciária." />
         <meta name="keywords" content="bitcoin iniciante, o que é bitcoin, como comprar bitcoin, satoshi nakamoto, chave privada, lightning network" />

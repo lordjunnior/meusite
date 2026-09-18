@@ -88,9 +88,9 @@ const NovaLeiContaCorrente = () => {
     publisher: { '@type': 'Organization', name: 'Arsenal de Soberania', url: 'https://lordjunnior.com.br' },
     datePublished: '2026-04-16',
     dateModified: '2026-04-16',
-    url: 'https://lordjunnior.com.br/nova-lei-conta-corrente',
+    url: 'https://lordjunnior.com.br/alertas/nova-lei-conta-corrente',
     image: 'https://lordjunnior.com.br/og-lei-conta.jpg',
-    mainEntityOfPage: 'https://lordjunnior.com.br/nova-lei-conta-corrente',
+    mainEntityOfPage: 'https://lordjunnior.com.br/alertas/nova-lei-conta-corrente',
     articleSection: 'Alertas de Soberania',
     keywords: 'nova lei conta corrente 2026, resolucao 8 2024, open finance brasil, penhora poupanca, impenhorabilidade 40 salarios minimos, debito em conta multibancario, juros reduzidos contrato, lei superendividamento, bancos brasil 2026, defesa endividado, antonio galvao, conta corrente bancos centralizacao',
   };
@@ -111,10 +111,10 @@ const NovaLeiContaCorrente = () => {
         <title>Nova Lei da Conta Corrente 2026: Banco Pode Sequestrar Seu Dinheiro | Lord Junnior</title>
         <meta name="description" content="Resolucao 8/2024 entra em vigor em maio 2026. Analise tecnica das 4 mudancas, riscos do Open Finance, perda da impenhorabilidade de 40 salarios minimos e estrategias de defesa patrimonial." />
         <meta name="keywords" content="nova lei conta corrente, resolucao conjunta 8 2024, open finance brasil 2026, penhora poupanca, impenhorabilidade 40 salarios minimos, debito em conta multibancario, juros reduzidos bancos, lei superendividamento, defesa do endividado, antonio galvao, bcb 4753, banco central, sequestro patrimonial, bloqueio judicial conta, sigilo bancario brasil, soberania financeira, bitcoin protecao patrimonial, autocustodia bitcoin defesa" />
-        <link rel="canonical" href="https://lordjunnior.com.br/nova-lei-conta-corrente" />
+        <link rel="canonical" href="https://lordjunnior.com.br/alertas/nova-lei-conta-corrente" />
         <meta property="og:title" content="ALERTA: Nova Lei da Conta Corrente Permite Banco Tomar Seu Dinheiro" />
         <meta property="og:description" content="A maior mudanca bancaria da decada entra em vigor em maio. Entenda o que voce esta perdendo sem saber e como se proteger." />
-        <meta property="og:url" content="https://lordjunnior.com.br/nova-lei-conta-corrente" />
+        <meta property="og:url" content="https://lordjunnior.com.br/alertas/nova-lei-conta-corrente" />
         <meta property="og:type" content="article" />
         <meta property="article:section" content="Alertas" />
         <meta property="article:author" content="Lord Junnior" />

@@ -11,6 +11,7 @@ import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import qrCodeImage from '@/assets/qrcode-lightning.jpeg';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 /* ─── CONSTANTS ─── */
 const LIGHTNING_ADDRESS = "securecorn53@walletofsatoshi.com";
@@ -543,6 +544,8 @@ const DicionarioCripto = () => {
   return (
     <div className="min-h-screen text-foreground relative overflow-hidden" style={{ background: BG_DARK }}>
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/dicionario-cripto')} />
+        <meta property="og:url" content={canonicalUrl('/dicionario-cripto')} />
         <title>Alfabeto Cripto – Dicionário Cripto Completo | Lord Junnior</title>
         <meta name="description" content="Dicionário cripto completo com mais de 100 termos, siglas e gírias do universo das criptomoedas. De HODL a Halving, de Satoshi a Smart Contract. O guia definitivo para decodificar o mundo cripto." />
         <meta name="keywords" content="alfabeto cripto, dicionário cripto, glossário bitcoin, termos criptomoedas, siglas cripto, HODL, halving, blockchain, satoshi, altcoin" />

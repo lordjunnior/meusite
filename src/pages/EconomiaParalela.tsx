@@ -10,6 +10,7 @@ import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import DonationCTA from '@/components/DonationCTA';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 /* ─── SEO: meta keywords target ───
    economia paralela bitcoin, P2P bitcoin sem KYC, bisq exchange,
@@ -77,6 +78,8 @@ export default function EconomiaParalela() {
 
 
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/economia-paralela')} />
+        <meta property="og:url" content={canonicalUrl('/economia-paralela')} />
         <title>Economia Paralela — Soberania P2P sem Intermediários | Lord Junnior</title>
         <meta name="description" content="Aprenda a operar uma economia paralela com Bitcoin: trocas P2P via BISQ, economia circular, protocolos de silêncio e compartimentação. Sem KYC, sem rastreamento." />
       </Helmet>
