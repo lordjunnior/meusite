@@ -6,7 +6,6 @@
  * oficial, o build para aqui em vez de entregar o sinal de SEO para fora.
  */
 import { readFileSync } from 'node:fs';
-import { globSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 
 const FORBIDDEN = [
