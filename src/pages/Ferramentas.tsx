@@ -13,6 +13,7 @@ import BitcoinVsImovel from './BitcoinVsImovel';
 import TaxaDeFuga from './TaxaDeFuga';
 import Novilingua from './Novilingua';
 import SupplyShock from './SupplyShock';
+import GeradorEntropy from './GeradorEntropy';
 import BackToHome from '@/components/BackToHome';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
@@ -92,14 +93,15 @@ const TOOLS_LIST = [
   },
   {
     id: 'entropy',
-    title: 'Gerador de Seed',
-    badge: 'Retirado do ar',
-    desc: 'Esta ferramenta foi retirada do ar. A geração anterior não atendia ao padrão de aleatoriedade exigido para proteger fundos reais. Gere sua seed apenas em uma hardware wallet ou com dados físicos, nunca no navegador.',
-    cta: 'Indisponível',
-    accent: '#71717a',
+    title: 'Gerador de Entropia BIP-39',
+    badge: 'Reescrito e Auditável',
+    desc: 'Mnemônico BIP-39 real: aleatoriedade do sistema operacional via crypto.getRandomValues, wordlist oficial de 2048 palavras, checksum válido e entropia extra do seu ponteiro. Nada sai do dispositivo.',
+    cta: 'Abrir Gerador',
+    accent: '#10b981',
     icon: ShieldCheck,
-    component: null,
+    component: GeradorEntropy,
     num: '04',
+    clientSide: true,
   },
   {
     id: 'supply-shock',
