@@ -330,15 +330,15 @@ export function diagnoseCluster(cluster: IntentCluster): GapDiagnosis {
     explanation.push(
       `o tema aparece em ${rootMentions.length} páginas, nenhuma com o assunto como foco principal.`,
     );
-  } else if (rootAnswers.length >= 1 && coverageRatio < 0.6) {
-    type = "lacuna_profundidade";
-    explanation.push(
-      `existe a página ${rootAnswers[0].path}, mas ela cobre apenas ${Math.round(coverageRatio * 100)}% das sub-intenções.`,
-    );
   } else if (coveredSilos.length >= 2 && coverageRatio >= 0.5) {
     type = "lacuna_ponte";
     explanation.push(
-      `as respostas existem, porém espalhadas entre ${coveredSilos.length} silos: ${coveredSilos.join(", ")}.`,
+      `as respostas existem, porém espalhadas entre ${coveredSilos.length} silos: ${coveredSilos.join(", ")}, sem página central que costure o percurso.`,
+    );
+  } else if (rootAnswers.length >= 1) {
+    type = "lacuna_profundidade";
+    explanation.push(
+      `existe a página ${rootAnswers[0].path}, mas ela cobre apenas ${Math.round(coverageRatio * 100)}% das sub-intenções monitoradas.`,
     );
   } else {
     type = "lacuna_disfarcada";
