@@ -178,3 +178,19 @@
 - [ ] Grupo B: ferramentas (salário derretido, imposto BTC, diagnóstico, comparador, checklist)
 - [ ] Grupo C: portas de entrada (comprar Bitcoin, vs Selic, vs ouro, Drex, custo inicial, erros de iniciante)
 - [ ] Google Search Console e Bing Webmaster Tools
+
+## Prioridade 3 e 4 (18/09)
+
+Feito:
+- Modal de saida removido (ExitIntentLeadMagnet excluido).
+- Captura contextual por silo: src/lib/siloOffers.ts + src/components/ContextualLeadCapture.tsx.
+  Aparece apos 60% de leitura, ancorada no terco inferior no celular, dispensavel por sessao.
+  Ofertas: autocustodia (checklist), soberania organica (calendario de plantio), seguranca mobile
+  (checklist de blindagem), saida (mapa de jurisdicoes), economia (radar semanal).
+- Acessibilidade global em src/index.css: prefers-reduced-motion, foco de teclado visivel,
+  alvo de toque minimo 44px em ponteiro grosso, piso de contraste para texto branco translucido.
+
+Pendente:
+- Uma acao por pagina: revisar os finais das paginas silo a silo e deixar um unico proximo passo.
+- Entregar de fato os materiais das ofertas (PDFs do checklist, calendario, mapa).
+- Fase 1 de distribuicao: Search Console, Bing Webmaster, Grupo A (metodologia + bloco de autor).
