@@ -209,8 +209,8 @@ export default function ProtocoloItemLayout({ data }: { data: ProtocoloItemData 
             {
               '@type': 'ListItem',
               position: 2,
-              name: 'Protocolo Respiratório',
-              item: 'https://lordjunnior.com.br/protocolo-respiratorio',
+               name: 'Protocolos de Gripe e Resfriado',
+               item: 'https://lordjunnior.com.br/soberania-organica/protocolos-gripe-resfriado',
             },
             { '@type': 'ListItem', position: 3, name: data.badgeTopo, item: canonical },
           ],

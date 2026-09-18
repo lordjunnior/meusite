@@ -2,7 +2,7 @@ import { ArrowRight, KeyRound, Landmark, Sprout } from "lucide-react";
 import { Link } from "react-router-dom";
 import hardwareImage from "@/assets/bitcoin-hardware-wallet.jpg";
 import foodImage from "@/assets/alimentar/aquaponia-colheita.jpg";
-import autonomyImage from "@/assets/organica-comece/horta.jpg";
+import autonomyImage from "@/assets/bitpark-banco-vs-bitcoin.jpg";
 
 const outcomes = [
   {
@@ -18,7 +18,7 @@ const outcomes = [
     description: "Sua rotina continua mesmo quando um banco limita, bloqueia ou simplesmente deixa de funcionar.",
     href: "/soberania-financeira",
     image: autonomyImage,
-    alt: "Estrutura doméstica autônoma integrada à rotina familiar",
+    alt: "Contraste entre a dependência bancária e uma rota financeira soberana com Bitcoin",
     icon: Landmark,
   },
   {
