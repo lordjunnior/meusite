@@ -13,6 +13,7 @@ import { Helmet } from 'react-helmet-async';
 import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 /* ─── SEO: meta keywords target ───
    supply shock bitcoin, escassez bitcoin, 21 milhões bitcoin,
@@ -92,6 +93,8 @@ export default function SupplyShock() {
 
 
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/supply-shock')} />
+        <meta property="og:url" content={canonicalUrl('/supply-shock')} />
         <title>Supply Shock — Escassez Absoluta do Bitcoin em Tempo Real | Lord Junnior</title>
         <meta name="description" content="Monitore em tempo real a escassez do Bitcoin: oferta circulante, percentual minerado, countdown para halving e estatísticas da blockchain. 21 milhões — nem um a mais." />
       </Helmet>

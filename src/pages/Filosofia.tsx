@@ -7,6 +7,7 @@ import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import { pillars } from '@/lib/pillars';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {
@@ -65,6 +66,8 @@ const Filosofia = () => {
       </div>
 
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/filosofia')} />
+        <meta property="og:url" content={canonicalUrl('/filosofia')} />
         <title>Filosofia — Ética, Propriedade e Discernimento | Lord Junnior</title>
         <meta name="description" content="Os fundamentos morais da soberania individual: ética da não-agressão, propriedade privada, mordomia cristã e a verdadeira riqueza além do gráfico de preço." />
       </Helmet>

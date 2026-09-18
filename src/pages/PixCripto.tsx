@@ -17,6 +17,7 @@ import qrCodeLightning from '@/assets/qrcode-lightning.jpeg';
 import pixCritoHero from '@/assets/pix-cripto-hero.jpg';
 import pixCritoTutorial from '@/assets/pix-cripto-tutorial.jpg';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 /* ─── CONSTANTS ─── */
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
@@ -109,6 +110,8 @@ const PixCripto: React.FC = () => {
 
 
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/pix-cripto')} />
+        <meta property="og:url" content={canonicalUrl('/pix-cripto')} />
         <title>PIX via Bitcoin — Guia Completo de Conversão Cripto→PIX | Lord Junnior</title>
         <meta name="description" content="Aprenda a pagar PIX com Bitcoin, USDT e Ethereum. Guia completo com passo a passo, riscos, segurança e simulador interativo." />
       </Helmet>

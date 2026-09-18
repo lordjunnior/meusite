@@ -14,6 +14,7 @@ import coverAnatomiaEstado from '@/assets/cover-anatomia-estado.jpg';
 import coverRiquezaNacoes from '@/assets/cover-riqueza-nacoes.jpg';
 import BackToHome from '@/components/BackToHome';
 import { supabase } from '@/integrations/supabase/client';
+import { canonicalUrl } from '@/lib/site';
 
 const APPLE_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -244,6 +245,8 @@ const Audiobooks: React.FC<AudiobooksProps> = ({ onPlay }) => {
       </div>
 
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/audiobooks')} />
+        <meta property="og:url" content={canonicalUrl('/audiobooks')} />
         <title>Audioteca Soberana | Audiobooks para Mentes Livres</title>
         <meta name="description" content="Acervo de audiobooks sobre Bitcoin, economia austríaca e filosofia da liberdade. Conhecimento enquanto você vive." />
       </Helmet>

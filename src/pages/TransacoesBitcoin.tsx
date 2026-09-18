@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Send, Wallet, FileText, Coins, Cpu, Clock, Shield, AlertTriangle, Zap } from 'lucide-react';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -73,6 +74,8 @@ export default function TransacoesBitcoin() {
       </div>
 
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/transacoes')} />
+        <meta property="og:url" content={canonicalUrl('/transacoes')} />
         <title>Como Funcionam as Transações Bitcoin — Mecânica de Valor | Lord Junnior</title>
         <meta name="description" content="Entenda transações Bitcoin: inputs, outputs, taxas, mempool, confirmações e regras de ouro para transferir valor sem intermediários." />
         <meta name="keywords" content="transação bitcoin, UTXO, mempool, taxa bitcoin, confirmação blockchain, inputs outputs" />

@@ -7,6 +7,7 @@ import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import bitcoinVsAltcoinsImg from '@/assets/bitcoin-vs-altcoins-xadrez.jpg';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {
@@ -96,6 +97,8 @@ export default function BitcoinVsAltcoins() {
   return (
     <div className="min-h-screen text-stone-100 font-sans selection:bg-amber-400/30 relative overflow-hidden" style={{ background: '#050808' }}>
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/bitcoin-vs-altcoins')} />
+        <meta property="og:url" content={canonicalUrl('/bitcoin-vs-altcoins')} />
         <title>Bitcoin vs Altcoins — Por Que Só Existe Um Bitcoin | Arsenal Técnico</title>
         <meta name="description" content="Análise técnica destruindo os argumentos de Ethereum, XRP, Litecoin e stablecoins. Por que o Bitcoin é a única solução para soberania financeira." />
       </Helmet>

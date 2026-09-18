@@ -10,6 +10,7 @@ import diversificacaoBalancaImg from '@/assets/diversificacao-balanca.jpg';
 import diversificacaoCisneImg from '@/assets/diversificacao-cisne-negro.jpg';
 import diversificacaoPortfolioImg from '@/assets/diversificacao-portfolio.jpg';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {
@@ -97,6 +98,8 @@ export default function Diversificacao() {
   return (
     <div className="min-h-screen text-stone-100 font-sans selection:bg-amber-400/30 relative overflow-hidden" style={{ background: '#050808' }}>
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/diversificacao')} />
+        <meta property="og:url" content={canonicalUrl('/diversificacao')} />
         <title>Diversificação de Portfólio — Guia Completo + Análise Estratégica Bitcoin | Arsenal Técnico</title>
         <meta name="description" content="Aprenda a diversificar seu portfólio de investimentos: classes de ativos, risco vs retorno, cisne negro e por que o Bitcoin muda a equação. Guia educacional completo com análise crítica." />
         <meta name="keywords" content="diversificação, portfólio, investimentos, risco retorno, classes de ativos, renda fixa, ações, bitcoin investimento, cisne negro, perfil de risco" />

@@ -8,6 +8,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import candlestickAnatomiaImg from '@/assets/candlestick-anatomia.jpg';
 import candlestickPadroesImg from '@/assets/candlestick-padroes.jpg';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {
@@ -70,6 +71,8 @@ export default function Candlestick() {
   return (
     <div className="min-h-screen text-stone-100 font-sans selection:bg-emerald-400/30 relative overflow-hidden" style={{ background: '#050808' }}>
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/candlestick')} />
+        <meta property="og:url" content={canonicalUrl('/candlestick')} />
         <title>Candlestick — Como Ler Gráficos de Vela para Bitcoin e Criptomoedas | Arsenal Técnico</title>
         <meta name="description" content="Tutorial completo de candlestick: o que são as barrinhas, como ler velas, padrões de reversão, média móvel, RSI, tendências e erros fatais. Guia para análise gráfica de Bitcoin." />
         <meta name="keywords" content="candlestick, gráfico de vela, análise técnica, bitcoin trading, padrões candlestick, média móvel, RSI, IFR, como ler gráficos" />

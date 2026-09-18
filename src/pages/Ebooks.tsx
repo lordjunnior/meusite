@@ -28,6 +28,7 @@ import coverInternetDinheiro from '@/assets/cover-internet-dinheiro.jpg';
 import coverPadraoBtc from '@/assets/cover-padrao-bitcoin.jpg';
 import coverMicroeconomia from '@/assets/cover-microeconomia.jpg';
 import BackToHome from '@/components/BackToHome';
+import { canonicalUrl } from '@/lib/site';
 
 const APPLE_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -179,6 +180,8 @@ const Ebooks: React.FC = () => {
       </div>
 
       <Helmet>
+        <link rel="canonical" href={canonicalUrl('/ebooks')} />
+        <meta property="og:url" content={canonicalUrl('/ebooks')} />
         <title>Biblioteca Soberana | E-books e PDFs sobre Liberdade Financeira</title>
         <meta name="description" content="Acervo de e-books sobre Bitcoin, economia austríaca, filosofia libertária e inteligência financeira. Downloads gratuitos." />
       </Helmet>
