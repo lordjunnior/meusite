@@ -403,7 +403,36 @@ const SILOS: Silo[] = [
       { title: 'Infraestrutura', href: '/infraestrutura' },
     ],
   },
+  {
+    title: 'Segurança Mobile',
+    description: 'O celular é o maior vetor de exposição. Sistemas, mitos, ameaças reais e hardening prático.',
+    icon: Shield,
+    accent: 'cyan',
+    links: [
+      { title: 'Hub Segurança Mobile', href: '/seguranca-mobile' },
+      { title: 'CalyxOS', href: '/seguranca-mobile/calyxos' },
+      { title: 'GrapheneOS', href: '/seguranca-mobile/grapheneos' },
+      { title: 'GrapheneOS vs CalyxOS', href: '/seguranca-mobile/graphene-vs-calyx' },
+      { title: 'iPhone é seguro mesmo?', href: '/seguranca-mobile/iPhone-e-seguro-mesmo' },
+      { title: 'Android é mais inseguro que iPhone?', href: '/seguranca-mobile/android-mais-inseguro-que-iphone' },
+      { title: 'Modo avião desliga o rastreamento?', href: '/seguranca-mobile/modo-aviao-desliga-rastreamento' },
+      { title: 'Apagar o app encerra o rastreamento?', href: '/seguranca-mobile/apagar-app-rastreamento-continua' },
+      { title: 'Celular escuta conversas?', href: '/seguranca-mobile/celular-escuta-conversa-anuncio' },
+      { title: 'IMEI rastreia sem chip?', href: '/seguranca-mobile/imei-rastreia-sem-chip' },
+      { title: 'O que é IMSI Catcher', href: '/seguranca-mobile/imsi-catcher-como-funciona' },
+      { title: 'SIM Swap', href: '/seguranca-mobile/sim-swap-como-funciona' },
+      { title: 'Stalkerware: apps espiões', href: '/seguranca-mobile/stalkerware-apps-espioes' },
+      { title: 'Operadora e dados de localização', href: '/seguranca-mobile/operadora-vende-dados-localizacao' },
+      { title: 'Rastreamento por Bluetooth e Wi-Fi', href: '/seguranca-mobile/bluetooth-wifi-rastreamento' },
+      { title: 'Checklist de permissões', href: '/seguranca-mobile/checklist-permissoes-celular' },
+      { title: 'Sair do Google sem trocar aparelho', href: '/seguranca-mobile/sair-do-google-sem-trocar-aparelho' },
+      { title: 'Signal vs WhatsApp vs Telegram', href: '/seguranca-mobile/signal-vs-whatsapp-vs-telegram' },
+      { title: 'VPN no celular', href: '/seguranca-mobile/vpn-no-celular' },
+      { title: '2FA: authenticator vs SMS', href: '/seguranca-mobile/2fa-authenticator-vs-sms' },
+    ],
+  },
 ];
+
 
 // Map accent to actual tailwind classes (avoid runtime composition)
 const ACCENT: Record<string, { text: string; bg: string; border: string; glow: string }> = {
