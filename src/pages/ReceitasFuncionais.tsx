@@ -210,10 +210,10 @@ export default function ReceitasFuncionais() {
       <Helmet>
         <title>Cozinha Funcional: Receitas Ancestrais Brasileiras | Lord Junnior</title>
         <meta name="description" content="Resgate do conhecimento indígena, popular e quilombola: garrafadas, chás, gelatinas funcionais validados pela RENISUS e Farmácias Vivas do SUS. 12 mil anos de tradição." />
-        <link rel="canonical" href="https://www.lordjunnior.com.br/soberania-organica/cozinha-funcional" />
+        <link rel="canonical" href="https://lordjunnior.com.br/soberania-organica/cozinha-funcional" />
         <meta property="og:title" content="Cozinha Funcional: Sabedoria Ancestral Brasileira" />
         <meta property="og:description" content="Receitas indígenas, populares e quilombolas validadas pelo SUS. Boldo, guaco, aroeira, sementes de mamão, Passiflora. Tradição com PubMed do lado." />
-        <meta property="og:image" content="https://www.lordjunnior.com.br/og/cozinha-funcional.jpg" />
+        <meta property="og:image" content="https://lordjunnior.com.br/og/cozinha-funcional.jpg" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="pt_BR" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -224,14 +224,14 @@ export default function ReceitasFuncionais() {
             '@type': 'CollectionPage',
             name: 'Cozinha Funcional, Receitas ancestrais brasileiras validadas pelo SUS',
             description: 'Coleção de receitas indígenas, populares e quilombolas para cuidar da saúde sem dependência da indústria farmacêutica. Cruzada com RENISUS, Farmácias Vivas e literatura etnofarmacológica.',
-            url: 'https://www.lordjunnior.com.br/soberania-organica/cozinha-funcional',
-            isPartOf: { '@type': 'WebSite', name: 'Lord Junnior', url: 'https://www.lordjunnior.com.br' },
+            url: 'https://lordjunnior.com.br/soberania-organica/cozinha-funcional',
+            isPartOf: { '@type': 'WebSite', name: 'Lord Junnior', url: 'https://lordjunnior.com.br' },
             breadcrumb: {
               '@type': 'BreadcrumbList',
               itemListElement: [
-                { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://www.lordjunnior.com.br' },
-                { '@type': 'ListItem', position: 2, name: 'Soberania Orgânica', item: 'https://www.lordjunnior.com.br/soberania-organica' },
-                { '@type': 'ListItem', position: 3, name: 'Cozinha Funcional', item: 'https://www.lordjunnior.com.br/soberania-organica/cozinha-funcional' },
+                { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://lordjunnior.com.br' },
+                { '@type': 'ListItem', position: 2, name: 'Soberania Orgânica', item: 'https://lordjunnior.com.br/soberania-organica' },
+                { '@type': 'ListItem', position: 3, name: 'Cozinha Funcional', item: 'https://lordjunnior.com.br/soberania-organica/cozinha-funcional' },
               ],
             },
           })}

@@ -206,7 +206,7 @@ export default function UtxoConsolidacao() {
         custom={{
           title: 'O que é UTXO: Guia Completo de Consolidação e Coin Control',
           description: 'O que é UTXO no Bitcoin, como funciona troco e dust, cálculo real de vbytes e taxa, quando consolidar UTXOs, riscos de privacidade e coin control em Sparrow e Electrum.',
-          canonical: 'https://sovereign-arsenal.lovable.app/autocustodia/utxo-consolidacao',
+          canonical: 'https://lordjunnior.com.br/autocustodia/utxo-consolidacao',
           primaryKeyword: 'o que é UTXO',
           lsiKeywords: [
             'consolidação de UTXO bitcoin',

@@ -285,7 +285,7 @@ export default function GestaoAguaMicro() {
         custom={{
           title: 'Gestão de Água em Escala Micro: Captação, Filtragem e Reuso | Soberania Hídrica',
           description: 'Manual prático para captação de chuva, filtro biológico de areia, reuso de águas cinzas, desinfecção solar (SODIS), swales e irrigação por gravidade. Sistema doméstico de água autônomo da rede elétrica para iniciantes.',
-          canonical: 'https://soberania.app/soberania-organica/gestao-agua-micro',
+          canonical: 'https://lordjunnior.com.br/soberania-organica/gestao-agua-micro',
         }}
       />
       <BackToHome />

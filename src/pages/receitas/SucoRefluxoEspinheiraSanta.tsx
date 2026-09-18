@@ -260,10 +260,10 @@ export default function SucoRefluxoEspinheiraSanta() {
       <Helmet>
         <title>Suco de Batata e Espinheira-santa para Refluxo e Azia (sem álcool) | Lord Junnior</title>
         <meta name="description" content="Receita ancestral indígena, popular e benzedeira para refluxo gastroesofágico e azia: espinheira-santa, batata crua, camomila e babosa. Mesmo terreno do omeprazol, sem rebote, com ensaios clínicos brasileiros." />
-        <link rel="canonical" href="https://www.lordjunnior.com.br/soberania-organica/cozinha-funcional/suco-refluxo-espinheira-santa" />
+        <link rel="canonical" href="https://lordjunnior.com.br/soberania-organica/cozinha-funcional/suco-refluxo-espinheira-santa" />
         <meta property="og:title" content="O suco ancestral que apaga a queimação sem rebote" />
         <meta property="og:description" content="Espinheira-santa, batata, camomila e babosa. Tradição brasileira com CEME e PubMed do lado. Sem álcool, sem IBP, sem dependência." />
-        <meta property="og:image" content="https://www.lordjunnior.com.br/og/suco-refluxo-espinheira-santa.jpg" />
+        <meta property="og:image" content="https://lordjunnior.com.br/og/suco-refluxo-espinheira-santa.jpg" />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="pt_BR" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -275,7 +275,7 @@ export default function SucoRefluxoEspinheiraSanta() {
             name: 'Suco ancestral de Espinheira-santa, Batata, Camomila e Babosa para refluxo e azia',
             author: { '@type': 'Person', name: 'Lord Junnior' },
             description: 'Receita ancestral brasileira validada pelo SUS para refluxo gastroesofágico, azia e dispepsia funcional. Sem álcool.',
-            image: 'https://www.lordjunnior.com.br/og/suco-refluxo-espinheira-santa.jpg',
+            image: 'https://lordjunnior.com.br/og/suco-refluxo-espinheira-santa.jpg',
             prepTime: 'PT10M', cookTime: 'PT15M', totalTime: 'PT25M',
             recipeCategory: 'Fitoterápico ancestral gastroprotetor',
             recipeCuisine: 'Indígena, popular, benzedeira e quilombola brasileira',

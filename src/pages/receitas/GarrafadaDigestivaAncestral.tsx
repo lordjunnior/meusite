@@ -209,10 +209,10 @@ export default function GarrafadaDigestivaAncestral() {
       <Helmet>
         <title>Xarope Ancestral de Boldo, Guaco e Aroeira (sem álcool) | Lord Junnior</title>
         <meta name="description" content="Receita ancestral indígena e popular brasileira sem álcool, com mel cru, para fígado, digestão, tosse e imunidade. Plantas listadas na RENISUS e dispensadas pelas Farmácias Vivas do SUS." />
-        <link rel="canonical" href="https://www.lordjunnior.com.br/soberania-organica/cozinha-funcional/garrafada-digestiva-ancestral" />
+        <link rel="canonical" href="https://lordjunnior.com.br/soberania-organica/cozinha-funcional/garrafada-digestiva-ancestral" />
         <meta property="og:title" content="O Xarope Ancestral de Boldo, Guaco e Aroeira (sem álcool)" />
         <meta property="og:description" content="Boldo, guaco e aroeira em infusão com mel cru. Três plantas RENISUS, zero álcool, fórmula segura para a família." />
-        <meta property="og:image" content="https://www.lordjunnior.com.br/og/garrafada-ancestral.jpg" />
+        <meta property="og:image" content="https://lordjunnior.com.br/og/garrafada-ancestral.jpg" />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="pt_BR" />
         <meta name="robots" content="index, follow, max-image-preview:large" />

@@ -238,7 +238,7 @@ export default function GuiaMigracaoCorretora() {
           title: 'Como Tirar Bitcoin da Corretora com Segurança: Guia 2026',
           description:
             'Guia completo para sair da corretora e assumir a custódia do seu Bitcoin: risco de contraparte, checklist de 7 passos, saque de teste, taxas de rede e os erros mais caros.',
-          canonical: 'https://lordjunnior.lovable.app/autocustodia/guia-migracao-corretora',
+          canonical: 'https://lordjunnior.com.br/autocustodia/guia-migracao-corretora',
           primaryKeyword: 'como tirar bitcoin da corretora',
           lsiKeywords: [
             'sair da exchange bitcoin',

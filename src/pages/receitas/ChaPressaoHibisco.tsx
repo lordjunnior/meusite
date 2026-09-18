@@ -235,10 +235,10 @@ export default function ChaPressaoHibisco() {
       <Helmet>
         <title>Chá de Hibisco, Alho e Limão para Pressão Alta (sem álcool) | Lord Junnior</title>
         <meta name="description" content="Receita ancestral brasileira para apoio natural à hipertensão leve-moderada: hibisco, alho fresco e limão taiti. Plantas listadas na RENISUS, com evidência clínica em meta-análises do PubMed." />
-        <link rel="canonical" href="https://www.lordjunnior.com.br/soberania-organica/cozinha-funcional/cha-pressao-hibisco" />
+        <link rel="canonical" href="https://lordjunnior.com.br/soberania-organica/cozinha-funcional/cha-pressao-hibisco" />
         <meta property="og:title" content="O chá ancestral que apoia a pressão arterial, sem tarja preta" />
         <meta property="og:description" content="Hibisco + alho + limão. Mesmo mecanismo dos inibidores da ECA, sem dependência. Tradição com PubMed do lado." />
-        <meta property="og:image" content="https://www.lordjunnior.com.br/og/cha-pressao-hibisco.jpg" />
+        <meta property="og:image" content="https://lordjunnior.com.br/og/cha-pressao-hibisco.jpg" />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="pt_BR" />
         <meta name="robots" content="index, follow, max-image-preview:large" />

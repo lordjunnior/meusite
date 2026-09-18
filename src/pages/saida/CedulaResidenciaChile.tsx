@@ -255,7 +255,7 @@ export default function CedulaResidenciaChile() {
           title: 'Cédula e Residência no Chile 2026: Guia 100% Online',
           description:
             'Como tirar cédula chilena (RUN) e residência temporária em 2026 começando online no portal oficial. Custos reais, prazo de 30 dias, categorias de visto e isenção fiscal.',
-          canonical: 'https://sovereign-arsenal.lovable.app/saida/cedula-residencia-chile',
+          canonical: 'https://lordjunnior.com.br/saida/cedula-residencia-chile',
           primaryKeyword: 'cédula e residência no Chile',
           lsiKeywords: [
             'residência temporária Chile',

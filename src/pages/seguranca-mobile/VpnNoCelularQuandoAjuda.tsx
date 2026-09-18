@@ -96,7 +96,7 @@ export default function VpnNoCelularQuandoAjuda() {
     <SeoHead custom={{
       title: 'VPN no Celular, Quando Ajuda e Quando é Teatro',
       description: 'VPN promete anonimato total, mas a maior parte disso é marketing. Descubra o que ela realmente protege, quando vale a pena, e onde ela vira só teatro de segurança.',
-      canonical: 'https://lordjunnior.lovable.app/seguranca-mobile/vpn-no-celular',
+      canonical: 'https://lordjunnior.com.br/seguranca-mobile/vpn-no-celular',
       primaryKeyword: 'vpn no celular',
       lsiKeywords: ['vpn protege privacidade', 'vpn celular vale a pena', 'melhor vpn para celular', 'vpn grátis é segura', 'vpn não protege contra', 'quando usar vpn', 'vpn wifi público', 'vpn não é anônimo', 'política de logs vpn'],
       longTailKeywords: ['quando usar vpn no celular', 'vpn grátis é segura no celular', 'vpn protege privacidade em wifi público', 'o que vpn não protege contra'],

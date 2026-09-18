@@ -179,7 +179,7 @@ export default function HotWalletVsColdWallet() {
           title: 'Carteira Quente x Carteira Fria de Bitcoin: Guia para Iniciantes',
           description:
             'Hot wallet ou cold wallet? Entenda onde fica a chave privada, os quatro níveis de custódia, o que é seed phrase e qual carteira usar para cada valor de Bitcoin.',
-          canonical: 'https://lordjunnior.lovable.app/autocustodia/hot-wallet-vs-cold-wallet',
+          canonical: 'https://lordjunnior.com.br/autocustodia/hot-wallet-vs-cold-wallet',
           primaryKeyword: 'carteira quente e carteira fria',
           lsiKeywords: [
             'hot wallet vs cold wallet',

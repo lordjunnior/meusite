@@ -288,7 +288,7 @@ export default function ComoVenderBitcoinP2P() {
           title: 'Como Vender Bitcoin P2P com Segurança: Guia Completo 2026',
           description:
             'Como vender Bitcoin P2P sem cair em golpe: escrow, reputação, riscos reais de estorno e bloqueio de conta, boas práticas de OpSec e comparativo de plataformas Bisq, RoboSats, Hodl Hodl e Peach.',
-          canonical: 'https://sovereign-arsenal.lovable.app/p2p/como-vender-bitcoin-p2p',
+          canonical: 'https://lordjunnior.com.br/p2p/como-vender-bitcoin-p2p',
           primaryKeyword: 'como vender bitcoin p2p',
           lsiKeywords: [
             'venda peer to peer bitcoin',

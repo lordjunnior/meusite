@@ -99,7 +99,7 @@ export default function SegurancaMobileEmPreparacao() {
       <SeoHead custom={{
         title: `${page.title} | Segurança Mobile`,
         description: page.description,
-        canonical: `https://lordjunnior.lovable.app${pathname}`,
+        canonical: `https://lordjunnior.com.br${pathname}`,
         primaryKeyword: page.title,
         lsiKeywords: ["segurança mobile", "privacidade no celular", page.category],
         longTailKeywords: [page.title],

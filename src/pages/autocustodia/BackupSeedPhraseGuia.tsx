@@ -142,7 +142,7 @@ export default function BackupSeedPhraseGuia() {
         custom={{
           title: 'Como Fazer Backup de Seed Phrase: Guia Completo 2026',
           description: 'Como fazer backup de seed phrase de forma correta: aço vs papel, esquema 3-2-1, o erro de dividir a seed em pedaços, SLIP39, passphrase e teste de restauração.',
-          canonical: 'https://sovereign-arsenal.lovable.app/autocustodia/backup-seed-phrase-guia',
+          canonical: 'https://lordjunnior.com.br/autocustodia/backup-seed-phrase-guia',
           primaryKeyword: 'como fazer backup de seed phrase',
           lsiKeywords: [
             'backup seed phrase bitcoin',
