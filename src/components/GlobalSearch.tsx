@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Search, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SEARCH_ENTRIES, fuzzySearch, type SearchEntry } from "@/lib/searchData";
+import { trackQuerySettled, trackResultClick, trackSearchClosed } from "@/lib/intelligence/searchTelemetry";
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -27,6 +28,7 @@ const GlobalSearch = () => {
   const [results, setResults] = useState<SearchEntry[]>([]);
   const [selectedIdx, setSelectedIdx] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const settleTimer = useRef<ReturnType<typeof setTimeout>>();
   const navigate = useNavigate();
 
   // Keyboard shortcut
@@ -46,19 +48,30 @@ const GlobalSearch = () => {
     if (open) {
       setTimeout(() => inputRef.current?.focus(), 100);
     } else {
+      trackSearchClosed();
       setQuery("");
       setResults([]);
       setSelectedIdx(0);
     }
   }, [open]);
 
+  useEffect(() => () => clearTimeout(settleTimer.current), []);
+
   const handleSearch = useCallback((q: string) => {
     setQuery(q);
     setSelectedIdx(0);
-    setResults(fuzzySearch(q, SEARCH_ENTRIES));
+    const found = fuzzySearch(q, SEARCH_ENTRIES);
+    setResults(found);
+
+    // Sinal de demanda: só registra quando a digitação para, nunca fragmento por fragmento.
+    clearTimeout(settleTimer.current);
+    settleTimer.current = setTimeout(() => trackQuerySettled(q, found.length), 900);
   }, []);
 
   const handleSelect = (entry: SearchEntry) => {
+    clearTimeout(settleTimer.current);
+    trackQuerySettled(query, results.length);
+    trackResultClick(entry.path);
     setOpen(false);
     navigate(entry.path);
   };
