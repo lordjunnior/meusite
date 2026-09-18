@@ -224,6 +224,8 @@ const App = () => (
         <CodigoAutonomiaModal />
         <ExitIntentLeadMagnet />
         <ScrollToTop />
+        <TrailNav />
+
         <Suspense fallback={<div className="min-h-screen" aria-busy="true" />}>
         <Routes>
           <Route path="/" element={<Index />} />
