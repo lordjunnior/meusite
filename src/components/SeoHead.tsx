@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { SEO_DATA, ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, generateSchemas, getLsiMetaKeywords } from '@/lib/seoData';
 import type { SeoPageData } from '@/lib/seoData';
+import { canonicalUrl, absoluteUrl } from '@/lib/site';
 
 interface SeoHeadProps {
   /** Route path e.g. '/bitcoin' — will lookup from SEO_DATA */
@@ -72,7 +73,9 @@ export default function SeoHead({
     });
   }
 
-  const ogImage = data.ogImage || 'https://lordjunnior.com.br/og-image.png';
+  // Canonical e og:url sempre normalizados para o dominio oficial (src/lib/site.ts)
+  const canonical = canonicalUrl(data.canonical);
+  const ogImage = absoluteUrl(data.ogImage || '/og-image.png');
 
   return (
     <Helmet>
@@ -86,7 +89,7 @@ export default function SeoHead({
       <meta name="keywords" content={getLsiMetaKeywords(data)} />
       
       {/* Canonical */}
-      <link rel="canonical" href={data.canonical} />
+      <link rel="canonical" href={canonical} />
       
       {/* Language */}
       <html lang="pt-BR" />
@@ -94,7 +97,7 @@ export default function SeoHead({
       {/* Open Graph */}
       <meta property="og:title" content={data.title} />
       <meta property="og:description" content={data.description} />
-      <meta property="og:url" content={data.canonical} />
+      <meta property="og:url" content={canonical} />
       <meta property="og:type" content={data.schemaType === 'Article' || data.schemaType === 'TechArticle' ? 'article' : 'website'} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1200" />
