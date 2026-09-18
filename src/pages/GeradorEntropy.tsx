@@ -8,8 +8,8 @@ import {
 } from 'lucide-react';
 import { entropyToMnemonic, validateMnemonic } from '@scure/bip39';
 import { wordlist } from '@scure/bip39/wordlists/english.js';
-import { sha256 } from '@noble/hashes/sha2';
-import { hmac } from '@noble/hashes/hmac';
+import { sha256 } from '@noble/hashes/sha2.js';
+import { hmac } from '@noble/hashes/hmac.js';
 import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import BackToHome from '@/components/BackToHome';
