@@ -30,6 +30,7 @@ const ProtocoloInicial = lazy(() => import("./pages/ProtocoloInicial"));
 const Arsenal = lazy(() => import("./pages/Arsenal"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const InteligenciaBiblioteca = lazy(() => import("./pages/admin/InteligenciaBiblioteca"));
+const DemandaInterna = lazy(() => import("./pages/admin/DemandaInterna"));
 const Privacidade = lazy(() => import("./pages/Privacidade"));
 const Termos = lazy(() => import("./pages/Termos"));
 const BlindagemGolpes = lazy(() => import("./pages/BlindagemGolpes"));
@@ -232,6 +233,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/admin/inteligencia" element={<InteligenciaBiblioteca />} />
+          <Route path="/admin/demanda" element={<DemandaInterna />} />
           <Route path="/sobre-mim" element={<SobreMim />} />
           <Route path="/bitcoin-vs-imovel" element={<BitcoinVsImovel />} />
           <Route path="/taxa-de-fuga" element={<TaxaDeFuga />} />
