@@ -221,3 +221,13 @@ Nada será codificado antes da aprovação das decisões pendentes da seção 16
 - Pagina: src/pages/BibliotecaTecnica.tsx em /biblioteca-tecnica
 - Integrada a: App.tsx, sidebarNavigation.ts, searchData.ts, MapaDaSoberania.tsx, sitemap (222 URLs)
 - Pendente: ampliar fichas por dimensao, ligar ao Radar de mudancas (ChangeDetection) e ao painel /admin/inteligencia
+
+## Inteligencia de Demanda, fase 2 (em andamento)
+
+- [x] Tabela internal_search_events com RLS: insercao anonima limitada, leitura apenas para admin.
+- [x] Registro de comportamento da busca interna (consulta, resultados, clique, refinamento, abandono, cluster), sem identificacao de pessoas.
+- [x] Painel /admin/demanda: resumo por janela (7/30/90 dias), demanda por cluster de intencao, fila de classificacao humana, todas as consultas.
+- [x] Cruzamento com a Inteligencia Editorial: cada cluster mostra o diagnostico, a recomendacao e os guardrails.
+- [ ] Alimentar cluster.demand.internalSearches com os numeros reais (hoje o engine usa estimativa declarada).
+- [ ] Perguntas humanas como terceira fonte de demanda.
+- [ ] Google Search Console como quarta fonte (decisao do usuario: depois).
