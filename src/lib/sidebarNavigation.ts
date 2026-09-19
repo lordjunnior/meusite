@@ -314,7 +314,7 @@ export const navGroups: NavGroup[] = [
       { label: "Alfabeto Cripto", route: "/dicionario-cripto" },
       { label: "Ferramentas", route: "/ferramentas" },
       { label: "Arsenal", route: "/recursos-e-ferramentas" },
-      { label: "Mapa da Soberania", route: "/mapa-da-soberania" },
+
     ],
   },
 ];
