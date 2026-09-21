@@ -447,7 +447,7 @@ export default function VolatilidadeBitcoin() {
                   Entendeu a volatilidade? Agora entenda o <span className="text-amber-400">mecanismo</span>.
                 </h3>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Link to="/halving"
+                  <Link to="/halving-bitcoin"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-amber-500/10 border border-amber-500/25 text-amber-400 rounded-xl font-bold text-sm tracking-wide hover:bg-amber-500/20 transition-all">
                     Supply Shock & Halving <ArrowRight size={16} />
                   </Link>

@@ -10,7 +10,7 @@ Autor: Lord Junnior. Idioma: português do Brasil. Domínio oficial: https://lor
 - [História do dinheiro](https://lordjunnior.com.br/historia-do-dinheiro): do escambo ao padrão fiduciário.
 - [Inflação, o imposto oculto](https://lordjunnior.com.br/inflacao-imposto-oculto): como o poder de compra é corroído.
 - [Confisco de 1990](https://lordjunnior.com.br/confisco-1990): o precedente brasileiro de bloqueio de poupança.
-- [CBDC no Brasil](https://lordjunnior.com.br/cbdc-brasil): arquitetura e riscos da moeda digital estatal.
+- [CBDC no Brasil](https://lordjunnior.com.br/alertas/cbdc-brasil): arquitetura e riscos da moeda digital estatal.
 
 ## Autocustódia
 - [Hub de autocustódia](https://lordjunnior.com.br/autocustodia): índice dos guias de custódia própria.
@@ -28,10 +28,10 @@ Autor: Lord Junnior. Idioma: português do Brasil. Domínio oficial: https://lor
 - [VPN no celular](https://lordjunnior.com.br/seguranca-mobile/vpn-no-celular): quando ajuda e quando é teatro.
 
 ## Saúde autônoma
-- [Autonomia biológica](https://lordjunnior.com.br/autonomia-biologica): princípios de saúde fora da dependência industrial.
-- [Conhecimento perdido](https://lordjunnior.com.br/conhecimento-perdido): fichas botânicas e uso tradicional.
-- [Fitoterapia aplicada](https://lordjunnior.com.br/fitoterapia-aplicada): preparos, doses e limites de segurança.
-- [Tóxicos ocultos](https://lordjunnior.com.br/toxicos-ocultos): exposições alimentares, ambientais e digitais.
+- [Autonomia biológica](https://lordjunnior.com.br/soberania-organica/autonomia-biologica): princípios de saúde fora da dependência industrial.
+- [Conhecimento perdido](https://lordjunnior.com.br/soberania-organica/conhecimento-perdido): fichas botânicas e uso tradicional.
+- [Fitoterapia aplicada](https://lordjunnior.com.br/soberania-organica/fitoterapia-aplicada): preparos, doses e limites de segurança.
+- [Tóxicos ocultos](https://lordjunnior.com.br/soberania-organica/toxicos-ocultos): exposições alimentares, ambientais e digitais.
 
 ## Mobilidade e jurisdição
 - [Saída](https://lordjunnior.com.br/saida): estratégias de diversificação de jurisdição.

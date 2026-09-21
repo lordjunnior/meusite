@@ -4,7 +4,18 @@
 
 @layer base {
   :root {
+    /* Paleta editorial disponivel em todo o site, e nao apenas em .theme-editorial,
+       para que componentes globais (oferta contextual) nunca fiquem transparentes. */
+    --editorial-sand: 34 42% 93%;
+    --editorial-sand-deep: 34 32% 88%;
+    --editorial-teal: 179 62% 14%;
+    --editorial-teal-soft: 178 48% 20%;
+    --editorial-terracotta: 22 61% 47%;
+    --editorial-copper-light: 24 73% 66%;
+    --editorial-ink: 174 30% 12%;
+
     /* ─── PALETA GRAFITE SOBERANO + ÂMBAR ELEGANTE ─── */
+
     
     /* Fundo Absoluto, Grafite Neutro (clareado mais 3 pontos p/ legibilidade) */
     --background: 220 10% 16%;
