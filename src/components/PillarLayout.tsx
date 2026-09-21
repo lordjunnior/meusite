@@ -22,6 +22,14 @@ const resourceAccent = {
   tool: { bg: "bg-sky-500/10", text: "text-sky-400", border: "border-sky-500/20" },
 };
 
+// Todo recurso precisa de um destino real. Quando a ficha nao declara rota,
+// o card leva para o acervo correspondente ao tipo, nunca para lugar nenhum.
+const resourceFallbackRoute = {
+  ebook: "/ebooks",
+  audio: "/audiobooks",
+  tool: "/ferramentas",
+};
+
 const resourceLabel = {
   ebook: "EBOOK",
   audio: "AUDIOBOOK",
@@ -154,7 +162,7 @@ const PillarLayout = ({ pillar }: { pillar: Pillar }) => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.6 + i * 0.15 }}
                     whileHover={{ y: -8, scale: 1.03 }}
-                    onClick={() => resource.route && navigate(resource.route)}
+                    onClick={() => navigate(resource.route ?? resourceFallbackRoute[resource.type])}
                     className="relative card-wealth flex flex-col group cursor-pointer overflow-hidden"
                   >
                     {/* Animated glow border */}
@@ -193,7 +201,12 @@ const PillarLayout = ({ pillar }: { pillar: Pillar }) => {
 
                       {/* Action button */}
                       <button
-                        className={`w-full py-3.5 rounded-lg border ${accent.border} ${accent.text} font-semibold text-sm flex items-center justify-center gap-2 transition-all duration-500 group-hover:gap-3 group-hover:bg-gold/10 group-hover:border-gold/40 group-hover:text-gold group-hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]`}
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          navigate(resource.route ?? resourceFallbackRoute[resource.type]);
+                        }}
+                        className={`w-full min-h-[44px] py-3.5 rounded-lg border ${accent.border} ${accent.text} font-semibold text-sm flex items-center justify-center gap-2 transition-all duration-500 group-hover:gap-3 group-hover:bg-gold/10 group-hover:border-gold/40 group-hover:text-gold group-hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]`}
                       >
                         {resource.type === "ebook" && <Download className="w-4 h-4" />}
                         {resource.type === "audio" && <Play className="w-4 h-4" />}

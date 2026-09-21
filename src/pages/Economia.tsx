@@ -289,9 +289,9 @@ const Economia = () => {
                 </div>
                 <h3 className="text-lg font-bold mb-2 group-hover:text-destructive transition-colors">O Caminho da Soberania</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-6">O guia de entrada para entender a transição do sistema de dívida para o sistema de capital real.</p>
-                <a href="/o-caminho-da-soberania.pdf" download className="w-full py-3.5 rounded-lg border border-destructive/20 text-destructive font-semibold text-sm flex items-center justify-center gap-2 transition-all hover:bg-destructive/5">
+                <Link to="/ebooks" className="w-full min-h-[44px] py-3.5 rounded-lg border border-destructive/20 text-destructive font-semibold text-sm flex items-center justify-center gap-2 transition-all hover:bg-destructive/5">
                   <Download className="w-4 h-4" /> Baixar Ebook
-                </a>
+                </Link>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
