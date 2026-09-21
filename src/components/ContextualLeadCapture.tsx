@@ -127,9 +127,10 @@ const ContextualLeadCapture = () => {
           key={offer.id}
           {...motionProps}
           aria-label={`Material sugerido: ${offer.titulo}`}
-          className="fixed z-40 bottom-[18vh] left-3 right-3 sm:bottom-6 sm:left-auto sm:right-6 sm:w-[24rem] lg:bottom-24"
+          className="fixed z-[70] bottom-[18vh] left-3 right-3 sm:bottom-6 sm:left-auto sm:right-6 sm:w-[24rem] lg:bottom-24"
         >
-          <div className="relative rounded-2xl border border-editorial-teal/25 bg-editorial-sand shadow-[0_24px_60px_-28px_rgba(0,0,0,0.55)]">
+          <div className="relative isolate overflow-hidden rounded-2xl border border-editorial-teal/25 bg-editorial-sand shadow-[0_24px_60px_-28px_rgba(0,0,0,0.55)]">
+
             <button
               type="button"
               onClick={handleDismiss}
