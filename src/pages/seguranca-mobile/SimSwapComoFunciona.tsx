@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { PhoneOff, ArrowRight, BatteryWarning, FileWarning, Landmark, RadioTower, Smartphone, KeyRound, MessageSquareOff } from 'lucide-react';
+import { PhoneOff, ArrowRight, BatteryWarning, FileWarning, Landmark, RadioTower, KeyRound, MessageSquareOff } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SeoHead from '@/components/SeoHead';
@@ -164,7 +164,6 @@ export default function SimSwapComoFunciona() {
           { to: '/seguranca-mobile', title: 'Segurança Mobile', desc: 'Volte ao hub e escolha a próxima frente de proteção móvel.', icon: FileWarning },
         ]} />
       </main>
-      <span className="hidden"><Smartphone /></span>
     </>
   );
 }
