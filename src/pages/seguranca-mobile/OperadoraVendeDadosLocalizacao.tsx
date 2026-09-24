@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Radio, ArrowRight, BatteryWarning, FileWarning, MapPin, Database, Server, Receipt, Plane } from 'lucide-react';
+import { Radio, RadioTower, ArrowRight, BatteryWarning, FileWarning, MapPin, Database, Server, Receipt, Plane } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SeoHead from '@/components/SeoHead';
@@ -98,7 +98,7 @@ export default function OperadoraVendeDadosLocalizacao() {
             <div className="grid gap-5">
               {PORQUE.map((text, i) => (
                 <motion.article key={text} {...reveal(i * .06)} className="smx-card group grid gap-5 rounded-lg border p-6 transition-all duration-500 hover:translate-x-1 md:grid-cols-[64px_1fr] md:p-8">
-                  <div className="smx-step flex h-12 w-12 items-center justify-center rounded-full"><i className={i === 0 ? Server : i === 1 ? Receipt : MapPin} /></div>
+                  <div className="smx-step flex h-12 w-12 items-center justify-center rounded-full">{(() => { const Icon = i === 0 ? Server : i === 1 ? Receipt : MapPin; return <Icon className="h-6 w-6" />; })()}</div>
                   <p className="self-center text-lg leading-[1.75]">{text}</p>
                 </motion.article>
               ))}
