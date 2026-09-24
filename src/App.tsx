@@ -157,6 +157,11 @@ const CalyxOS = lazy(() => import("./pages/seguranca-mobile/CalyxOS"));
 const GrapheneOS = lazy(() => import("./pages/seguranca-mobile/GrapheneOS"));
 const IPhoneESeguroMesmo = lazy(() => import("./pages/seguranca-mobile/IPhoneESeguroMesmo"));
 const VpnNoCelularQuandoAjuda = lazy(() => import("./pages/seguranca-mobile/VpnNoCelularQuandoAjuda"));
+const ImsiCatcherComoFunciona = lazy(() => import("./pages/seguranca-mobile/ImsiCatcherComoFunciona"));
+const SimSwapComoFunciona = lazy(() => import("./pages/seguranca-mobile/SimSwapComoFunciona"));
+const StalkerwareAppsEspioes = lazy(() => import("./pages/seguranca-mobile/StalkerwareAppsEspioes"));
+const OperadoraVendeDadosLocalizacao = lazy(() => import("./pages/seguranca-mobile/OperadoraVendeDadosLocalizacao"));
+const BluetoothWifiRastreamento = lazy(() => import("./pages/seguranca-mobile/BluetoothWifiRastreamento"));
 const SegurancaMobileEmPreparacao = lazy(() => import("./pages/seguranca-mobile/SegurancaMobileEmPreparacao"));
 const CedulaResidenciaChile = lazy(() => import("./pages/saida/CedulaResidenciaChile"));
 const CartoesCriptoSemReporte = lazy(() => import("./pages/CartoesCriptoSemReporte"));
@@ -411,11 +416,11 @@ const App = () => (
             <Route path="/seguranca-mobile/apagar-app-rastreamento-continua" element={<SegurancaMobileEmPreparacao />} />
             <Route path="/seguranca-mobile/celular-escuta-conversa-anuncio" element={<SegurancaMobileEmPreparacao />} />
             <Route path="/seguranca-mobile/imei-rastreia-sem-chip" element={<SegurancaMobileEmPreparacao />} />
-            <Route path="/seguranca-mobile/imsi-catcher-como-funciona" element={<SegurancaMobileEmPreparacao />} />
-            <Route path="/seguranca-mobile/sim-swap-como-funciona" element={<SegurancaMobileEmPreparacao />} />
-            <Route path="/seguranca-mobile/stalkerware-apps-espioes" element={<SegurancaMobileEmPreparacao />} />
-            <Route path="/seguranca-mobile/operadora-vende-dados-localizacao" element={<SegurancaMobileEmPreparacao />} />
-            <Route path="/seguranca-mobile/bluetooth-wifi-rastreamento" element={<SegurancaMobileEmPreparacao />} />
+            <Route path="/seguranca-mobile/imsi-catcher-como-funciona" element={<ImsiCatcherComoFunciona />} />
+            <Route path="/seguranca-mobile/sim-swap-como-funciona" element={<SimSwapComoFunciona />} />
+            <Route path="/seguranca-mobile/stalkerware-apps-espioes" element={<StalkerwareAppsEspioes />} />
+            <Route path="/seguranca-mobile/operadora-vende-dados-localizacao" element={<OperadoraVendeDadosLocalizacao />} />
+            <Route path="/seguranca-mobile/bluetooth-wifi-rastreamento" element={<BluetoothWifiRastreamento />} />
             <Route path="/seguranca-mobile/checklist-permissoes-celular" element={<SegurancaMobileEmPreparacao />} />
             <Route path="/seguranca-mobile/sair-do-google-sem-trocar-aparelho" element={<SegurancaMobileEmPreparacao />} />
             <Route path="/seguranca-mobile/signal-vs-whatsapp-vs-telegram" element={<SegurancaMobileEmPreparacao />} />
