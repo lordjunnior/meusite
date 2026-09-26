@@ -120,7 +120,7 @@ export default function CelularEscutaConversaAnuncio() {
             <div className="grid gap-4">
               {NAO_PROVA.map((text, i) => (
                 <motion.article key={text} {...reveal(i * .05)} className="smx-card-dark group grid gap-5 rounded-lg border p-6 backdrop-blur-xl transition-all duration-500 hover:translate-x-1 md:grid-cols-[64px_1fr] md:p-8">
-                  <div className="smx-step flex h-12 w-12 items-center justify-center rounded-full"><XIcon /></div>
+                  <div className="smx-step flex h-12 w-12 items-center justify-center rounded-full"><MicOff className="h-6 w-6" /></div>
                   <p className="self-center text-lg leading-[1.75] text-background/90">{text}</p>
                 </motion.article>
               ))}
