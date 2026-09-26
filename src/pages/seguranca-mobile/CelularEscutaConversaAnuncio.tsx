@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Mic, ArrowRight, ShieldCheck, Volume2, Users, BarChart3, Ear, Lock } from 'lucide-react';
+import { Mic, MicOff, ArrowRight, ShieldCheck, Volume2, Users, BarChart3, Ear, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SeoHead from '@/components/SeoHead';
@@ -167,8 +167,3 @@ export default function CelularEscutaConversaAnuncio() {
   );
 }
 
-function XIcon() {
-  return <EarOff className="h-6 w-6" />;
-}
-
-import { EarOff } from 'lucide-react';
