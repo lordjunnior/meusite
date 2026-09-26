@@ -162,6 +162,11 @@ const SimSwapComoFunciona = lazy(() => import("./pages/seguranca-mobile/SimSwapC
 const StalkerwareAppsEspioes = lazy(() => import("./pages/seguranca-mobile/StalkerwareAppsEspioes"));
 const OperadoraVendeDadosLocalizacao = lazy(() => import("./pages/seguranca-mobile/OperadoraVendeDadosLocalizacao"));
 const BluetoothWifiRastreamento = lazy(() => import("./pages/seguranca-mobile/BluetoothWifiRastreamento"));
+const AndroidMaisInseguroQueIphone = lazy(() => import("./pages/seguranca-mobile/AndroidMaisInseguroQueIphone"));
+const ModoAviaoDesligaRastreamento = lazy(() => import("./pages/seguranca-mobile/ModoAviaoDesligaRastreamento"));
+const ApagarAppRastreamentoContinua = lazy(() => import("./pages/seguranca-mobile/ApagarAppRastreamentoContinua"));
+const CelularEscutaConversaAnuncio = lazy(() => import("./pages/seguranca-mobile/CelularEscutaConversaAnuncio"));
+const ImeiRastreiaSemChip = lazy(() => import("./pages/seguranca-mobile/ImeiRastreiaSemChip"));
 const SegurancaMobileEmPreparacao = lazy(() => import("./pages/seguranca-mobile/SegurancaMobileEmPreparacao"));
 const CedulaResidenciaChile = lazy(() => import("./pages/saida/CedulaResidenciaChile"));
 const CartoesCriptoSemReporte = lazy(() => import("./pages/CartoesCriptoSemReporte"));
@@ -411,11 +416,11 @@ const App = () => (
             <Route path="/seguranca-mobile/iPhone-e-seguro-mesmo" element={<IPhoneESeguroMesmo />} />
             <Route path="/seguranca-mobile/vpn-no-celular" element={<VpnNoCelularQuandoAjuda />} />
             <Route path="/seguranca-mobile/graphene-vs-calyx" element={<SegurancaMobileEmPreparacao />} />
-            <Route path="/seguranca-mobile/android-mais-inseguro-que-iphone" element={<SegurancaMobileEmPreparacao />} />
-            <Route path="/seguranca-mobile/modo-aviao-desliga-rastreamento" element={<SegurancaMobileEmPreparacao />} />
-            <Route path="/seguranca-mobile/apagar-app-rastreamento-continua" element={<SegurancaMobileEmPreparacao />} />
-            <Route path="/seguranca-mobile/celular-escuta-conversa-anuncio" element={<SegurancaMobileEmPreparacao />} />
-            <Route path="/seguranca-mobile/imei-rastreia-sem-chip" element={<SegurancaMobileEmPreparacao />} />
+            <Route path="/seguranca-mobile/android-mais-inseguro-que-iphone" element={<AndroidMaisInseguroQueIphone />} />
+            <Route path="/seguranca-mobile/modo-aviao-desliga-rastreamento" element={<ModoAviaoDesligaRastreamento />} />
+            <Route path="/seguranca-mobile/apagar-app-rastreamento-continua" element={<ApagarAppRastreamentoContinua />} />
+            <Route path="/seguranca-mobile/celular-escuta-conversa-anuncio" element={<CelularEscutaConversaAnuncio />} />
+            <Route path="/seguranca-mobile/imei-rastreia-sem-chip" element={<ImeiRastreiaSemChip />} />
             <Route path="/seguranca-mobile/imsi-catcher-como-funciona" element={<ImsiCatcherComoFunciona />} />
             <Route path="/seguranca-mobile/sim-swap-como-funciona" element={<SimSwapComoFunciona />} />
             <Route path="/seguranca-mobile/stalkerware-apps-espioes" element={<StalkerwareAppsEspioes />} />
