@@ -1,57 +1,45 @@
-**Use your preferred IDE**
+# 🛡️ Lord Junnior · Soberania Individual
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+> Plataforma e centro de comando para soberania financeira, segurança digital, resposta a crises e autonomia biológica.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+[![Production](https://img.shields.io/badge/status-production-success.svg)](#)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-18.x-61dafb.svg)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.x-38bdf8.svg)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-5.x-646cff.svg)](https://vitejs.dev/)
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 📌 Visão Geral
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Aplicação web estática orientada a alta performance e baixa latência, estruturada como um arsenal tático com mais de 200 diretórios temáticos:
+* **Soberania Financeira:** Autocustódia de Bitcoin, transações P2P sem KYC e blindagem patrimonial.
+* **Privacidade & Segurança Mobile:** Dispositivos desvinculados, sistemas operacionais focados em privacidade e tráfego seguro.
+* **Resposta a Crises & Infraestrutura:** Gestão hídrica, kits de emergência, protocolos térmicos e autonomia de energia.
+* **Autonomia Biológica:** Fitoterapia, farmacopeia natural, bancos de sementes crioulas e conservação de alimentos.
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 🛠️ Stack Tecnológica
 
-**Edit a file directly in GitHub**
+* **Core:** [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+* **Build Tool:** [Vite](https://vitejs.dev/)
+* **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
+* **Componentes UI:** [shadcn/ui](https://ui.shadcn.com/) + [Radix UI](https://www.radix-ui.com/)
+* **Ícones:** [Lucide Icons](https://lucide.dev/)
+* **Animações & Interatividade:** [Framer Motion](https://www.framer.com/motion/) / Canvas API
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 🚀 Ambiente de Desenvolvimento
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Pré-requisitos
+* Node.js (versão 18.x ou superior)
+* Gestor de pacotes npm, pnpm ou yarn
 
-## What technologies are used for this project?
+### Instalação e Execução
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+1. Clone o repositório:
+```bash
+git clone [https://github.com/SEU_USUARIO/meusite.git](https://github.com/SEU_USUARIO/meusite.git)
+cd meusite
