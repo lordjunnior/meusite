@@ -167,7 +167,11 @@ const ModoAviaoDesligaRastreamento = lazy(() => import("./pages/seguranca-mobile
 const ApagarAppRastreamentoContinua = lazy(() => import("./pages/seguranca-mobile/ApagarAppRastreamentoContinua"));
 const CelularEscutaConversaAnuncio = lazy(() => import("./pages/seguranca-mobile/CelularEscutaConversaAnuncio"));
 const ImeiRastreiaSemChip = lazy(() => import("./pages/seguranca-mobile/ImeiRastreiaSemChip"));
-const SegurancaMobileEmPreparacao = lazy(() => import("./pages/seguranca-mobile/SegurancaMobileEmPreparacao"));
+const ChecklistPermissoesCelular = lazy(() => import("./pages/seguranca-mobile/ChecklistPermissoesCelular"));
+const SairDoGoogleSemTrocarAparelho = lazy(() => import("./pages/seguranca-mobile/SairDoGoogleSemTrocarAparelho"));
+const SignalVsWhatsAppVsTelegram = lazy(() => import("./pages/seguranca-mobile/SignalVsWhatsAppVsTelegram"));
+const AutenticadorVsSms = lazy(() => import("./pages/seguranca-mobile/AutenticadorVsSms"));
+const GrapheneVsCalyx = lazy(() => import("./pages/seguranca-mobile/GrapheneVsCalyx"));
 const CedulaResidenciaChile = lazy(() => import("./pages/saida/CedulaResidenciaChile"));
 const CartoesCriptoSemReporte = lazy(() => import("./pages/CartoesCriptoSemReporte"));
 const JadeCoreReview = lazy(() => import("./pages/JadeCoreReview"));
@@ -415,7 +419,7 @@ const App = () => (
             <Route path="/seguranca-mobile/grapheneos" element={<GrapheneOS />} />
             <Route path="/seguranca-mobile/iPhone-e-seguro-mesmo" element={<IPhoneESeguroMesmo />} />
             <Route path="/seguranca-mobile/vpn-no-celular" element={<VpnNoCelularQuandoAjuda />} />
-            <Route path="/seguranca-mobile/graphene-vs-calyx" element={<SegurancaMobileEmPreparacao />} />
+            <Route path="/seguranca-mobile/graphene-vs-calyx" element={<GrapheneVsCalyx />} />
             <Route path="/seguranca-mobile/android-mais-inseguro-que-iphone" element={<AndroidMaisInseguroQueIphone />} />
             <Route path="/seguranca-mobile/modo-aviao-desliga-rastreamento" element={<ModoAviaoDesligaRastreamento />} />
             <Route path="/seguranca-mobile/apagar-app-rastreamento-continua" element={<ApagarAppRastreamentoContinua />} />
@@ -426,10 +430,10 @@ const App = () => (
             <Route path="/seguranca-mobile/stalkerware-apps-espioes" element={<StalkerwareAppsEspioes />} />
             <Route path="/seguranca-mobile/operadora-vende-dados-localizacao" element={<OperadoraVendeDadosLocalizacao />} />
             <Route path="/seguranca-mobile/bluetooth-wifi-rastreamento" element={<BluetoothWifiRastreamento />} />
-            <Route path="/seguranca-mobile/checklist-permissoes-celular" element={<SegurancaMobileEmPreparacao />} />
-            <Route path="/seguranca-mobile/sair-do-google-sem-trocar-aparelho" element={<SegurancaMobileEmPreparacao />} />
-            <Route path="/seguranca-mobile/signal-vs-whatsapp-vs-telegram" element={<SegurancaMobileEmPreparacao />} />
-            <Route path="/seguranca-mobile/2fa-authenticator-vs-sms" element={<SegurancaMobileEmPreparacao />} />
+            <Route path="/seguranca-mobile/checklist-permissoes-celular" element={<ChecklistPermissoesCelular />} />
+            <Route path="/seguranca-mobile/sair-do-google-sem-trocar-aparelho" element={<SairDoGoogleSemTrocarAparelho />} />
+            <Route path="/seguranca-mobile/signal-vs-whatsapp-vs-telegram" element={<SignalVsWhatsAppVsTelegram />} />
+            <Route path="/seguranca-mobile/2fa-authenticator-vs-sms" element={<AutenticadorVsSms />} />
             <Route path="/seguranca-mobile" element={<Navigate to="/seguranca-mobile/calyxos" replace />} />
             <Route path="/saida/cedula-residencia-chile" element={<CedulaResidenciaChile />} />
             <Route path="/soberania-financeira/cartoes-cripto-sem-reporte" element={<CartoesCriptoSemReporte />} />
