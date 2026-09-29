@@ -102,7 +102,7 @@ export default function ChecklistPermissoesCelular() {
                 <p className="text-lg leading-[1.75]">"Somente em uso" ainda permite acesso enquanto o aplicativo tem serviço ativo, e alguns aplicativos mantêm esse serviço vivo por conveniência, não por necessidade. A verificação real está no painel de uso de dados em segundo plano, não no seletor de permissão.</p>
               </motion.article>
             </div>
-            <Figure asset={micAsset} alt="Macro de smartphone com ícone de microfone em interface escura" caption="Microfone concedido "com exceção" não é exceção se o aplicativo mantém serviço vivo. O painel de segundo plano é o juiz real." />
+            <Figure asset={micAsset} alt="Macro de smartphone com ícone de microfone em interface escura" caption="Microfone concedido “com exceção” não é exceção se o aplicativo mantém serviço vivo. O painel de segundo plano é o juiz real." />
           </div>
         </section>
 
