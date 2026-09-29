@@ -125,13 +125,13 @@
   - Imagens: `src/assets/seguranca-mobile/2fa/`
 
 ### Integração obrigatória ao concluir cada página
-- [ ] Adicionar rota em `src/App.tsx`.
-- [ ] Adicionar chamada na categoria correta do hub `/seguranca-mobile`.
-- [ ] Adicionar entrada na sidebar sem alterar contadores existentes.
-- [ ] Adicionar título, descrição, palavras-chave e categoria à busca.
-- [ ] Adicionar URL canônica ao sitemap.
-- [ ] Conectar páginas relacionadas por links internos.
-- [ ] Validar desktop, mobile, imagens, movimento reduzido, SEO e Schema Markup.
+- [x] Adicionar rota em `src/App.tsx`.
+- [x] Adicionar chamada na categoria correta do hub `/seguranca-mobile`. (a estrutura de categorias vive no menu lateral e no Mapa da Soberania; a rota `/seguranca-mobile` redireciona para `/seguranca-mobile/calyxos`)
+- [x] Adicionar entrada na sidebar sem alterar contadores existentes.
+- [x] Adicionar título, descrição, palavras-chave e categoria à busca.
+- [x] Adicionar URL canônica ao sitemap.
+- [x] Conectar páginas relacionadas por links internos.
+- [x] Validar desktop, mobile, imagens, movimento reduzido, SEO e Schema Markup.
 
 ## Tier 1 SEO (concluído)
 - [x] Hub /comparativos/melhores-hardware-wallets + /comparativos/coldcard-review + /comparativos/trezor-review
