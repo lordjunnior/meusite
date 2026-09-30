@@ -133,7 +133,7 @@ const Privacidade: React.FC = () => {
           >
             <h2 className="text-lg font-bold text-white mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Contato sobre dados pessoais</h2>
             <p className="text-sm text-stone-400 leading-relaxed">
-              Envie o pedido para <a href="mailto:contato@lordjunnior.com.br" className="text-amber-400 hover:text-amber-300 underline underline-offset-4">contato@lordjunnior.com.br</a> com o assunto
+              Envie o pedido para <a href="mailto:lordjunnior@gmail.com" className="text-amber-400 hover:text-amber-300 underline underline-offset-4">lordjunnior@gmail.com</a> com o assunto
               "LGPD". Informe apenas o e-mail usado no formulário. Nenhum documento pessoal é exigido para excluir dados.
             </p>
             <p className="mt-4 text-sm text-stone-500">

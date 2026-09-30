@@ -6,6 +6,7 @@ import { useReadingProgress } from "@/hooks/useReadingProgress";
 import { useSiloProgress } from "@/hooks/useSiloProgress";
 import GlobalSearch from "@/components/GlobalSearch";
 import { topNavItems, navGroups, type NavItem } from "@/lib/sidebarNavigation";
+import { resolveBadge } from "@/lib/sidebarNavigation";
 
 const MobileNav = () => {
   const [open, setOpen] = useState(false);
@@ -161,15 +162,15 @@ const MobileNav = () => {
                                       : "bg-card border-border/50"
                                   }`} />
                                   <span className="flex-1 text-left leading-tight">{item.label}</span>
-                                  {item.badge && (
+                                  {resolveBadge(item) && (
                                     <span className={`shrink-0 rounded-full px-1.5 py-0.5 font-mono text-[8px] ${
-                                      item.badge === "Dossiê"
+                                      resolveBadge(item) === "Dossiê"
                                         ? "bg-amber-500/15 text-amber-400 animate-pulse"
-                                        : item.badge === "Em breve"
+                                        : resolveBadge(item) === "Em breve"
                                         ? "bg-secondary text-muted-foreground"
                                         : "bg-primary/15 text-primary"
                                     }`}>
-                                      {item.badge}
+                                      {resolveBadge(item)}
                                     </span>
                                   )}
                                 </button>
