@@ -295,7 +295,7 @@ export default function SobreMim() {
             ))}
           </nav>
           <a
-            href="mailto:contato@lordjunnior.com"
+            href="mailto:lordjunnior@gmail.com"
             className="hidden md:inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-bold px-4 py-2 border border-white/20 hover:bg-white hover:text-[#08090a] transition-colors"
           >
             Contato
@@ -647,7 +647,7 @@ export default function SobreMim() {
         <Reveal delay={0.2}>
           <div className="flex flex-col sm:flex-wrap sm:flex-row gap-4 mt-10">
             <a
-              href="mailto:contato@lordjunnior.com"
+              href="mailto:lordjunnior@gmail.com"
               className="inline-flex items-center justify-center gap-3 px-8 py-5 font-bold uppercase tracking-[0.2em] text-sm transition-colors"
               style={{ background: ORANGE, color: "#08090a" }}
             >
@@ -682,7 +682,7 @@ export default function SobreMim() {
                   Parceria estratégica para automação por IA, arquitetura web, design systems e estratégia de conteúdo de soberania.
                 </p>
                 <a
-                  href="mailto:contato@lordjunnior.com"
+                  href="mailto:lordjunnior@gmail.com"
                   className="flex items-center justify-center gap-2 w-full py-5 bg-white text-[#08090a] font-bold hover:opacity-90 uppercase tracking-[0.2em] text-sm transition-colors"
                 >
                   Iniciar Conversa <ArrowRight className="w-4 h-4" />
@@ -743,7 +743,7 @@ export default function SobreMim() {
           <div>
             <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40 mb-4">CONEXÃO</div>
             <div className="flex flex-col gap-3 text-white/70">
-              <a href="mailto:contato@lordjunnior.com" className="flex items-center gap-3 hover:text-white transition-colors">
+              <a href="mailto:lordjunnior@gmail.com" className="flex items-center gap-3 hover:text-white transition-colors">
                 <Mail className="w-4 h-4" /> Email Direto
               </a>
               <a href="https://instagram.com/lord.junnior" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-white transition-colors">

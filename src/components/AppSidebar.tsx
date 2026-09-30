@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SovereignHeader from "@/components/Sidebar/SovereignHeader";
 import GlobalSearch from "@/components/GlobalSearch";
 import { topNavItems, navGroups, type NavItem } from "@/lib/sidebarNavigation";
+import { resolveBadge } from "@/lib/sidebarNavigation";
 import { useSiloProgress } from "@/hooks/useSiloProgress";
 
 const SIDEBAR_STATE_KEY = "bp_sidebar_open_groups";
@@ -215,15 +216,15 @@ const AppSidebar = () => {
                                   : "bg-card border-border/50 group-hover/item:border-muted-foreground/50"
                               }`} />
                               <span className="flex-1 text-left leading-tight">{item.label}</span>
-                              {item.badge && (
+                              {resolveBadge(item) && (
                                 <span className={`text-[8px] font-mono px-1.5 py-0.5 rounded-full flex-shrink-0 ${
-                                  item.badge === "Dossiê"
+                                  resolveBadge(item) === "Dossiê"
                                     ? "bg-amber-500/15 text-amber-400 animate-pulse"
-                                    : item.badge === "Em breve"
+                                    : resolveBadge(item) === "Em breve"
                                     ? "bg-secondary text-muted-foreground"
                                     : "bg-primary/15 text-primary"
                                 }`}>
-                                  {item.badge}
+                                  {resolveBadge(item)}
                                 </span>
                               )}
                             </button>
