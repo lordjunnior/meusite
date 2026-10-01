@@ -320,10 +320,11 @@ export const navGroups: NavGroup[] = [
     ],
   },
   {
-    label: "Biblioteca & Educação",
+    label: "Centro de Conhecimento",
     icon: GraduationCap,
     color: undefined,
     items: [
+      { label: "Visão geral", route: "/centro-de-conhecimento", addedAt: "2026-09-29" },
       { label: "Educação", route: "/educacao" },
       { label: "Biblioteca Técnica", route: "/biblioteca-tecnica" },
       { label: "Audiobooks", route: "/audiobooks" },

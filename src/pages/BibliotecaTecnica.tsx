@@ -267,7 +267,7 @@ export default function BibliotecaTecnica() {
           longTailKeywords: ['ferramentas gratuitas de privacidade e segurança', 'como escolher ferramenta de segurança digital'],
           breadcrumbs: [
             { name: 'Início', url: '/' },
-            { name: 'Biblioteca & Educação', url: '/educacao' },
+            { name: 'Centro de Conhecimento', url: '/centro-de-conhecimento' },
             { name: 'Biblioteca Técnica', url: '/biblioteca-tecnica' },
           ],
           schemaType: 'WebPage',
