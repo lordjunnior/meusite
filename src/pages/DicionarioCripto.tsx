@@ -1,42 +1,20 @@
-import React, { useState, useMemo, useRef, useCallback, useEffect } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
-import {
-  Search, BookOpen, ArrowRight, Zap, Copy, Check, X,
-  QrCode, Hash, Shield, Lock, Globe, Cpu, TrendingUp,
-  AlertTriangle, Eye, Layers, ChevronDown, ChevronUp
-} from 'lucide-react';
-import CinematicHero from '@/components/CinematicHero';
-import ScrollToTop from '@/components/ScrollToTop';
-import qrCodeImage from '@/assets/qrcode-lightning.webp';
+import { Search, BookOpen, ArrowRight, Copy, Check, X, ChevronDown, ChevronUp } from 'lucide-react';
+import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import { canonicalUrl } from '@/lib/site';
+import { Button } from '@/components/ui/button';
+import { Hero, Heading, Figure, Veredito } from '@/components/seguranca-mobile/EditorialKit';
+import qrCodeImage from '@/assets/qrcode-lightning.webp';
+import heroAsset from '@/assets/biblioteca-tecnica/hero-biblioteca-tecnica.jpg';
+import referenceAsset from '@/assets/biblioteca-tecnica/curadoria-fonte-primaria.jpg';
+import documentAsset from '@/assets/book-whitepaper.webp';
+import backupAsset from '@/assets/biblioteca-tecnica/dados-backup.jpg';
+import hardwareAsset from '@/assets/biblioteca-tecnica/kits-autonomia.jpg';
+import researchAsset from '@/assets/biblioteca-tecnica/pesquisa-verificacao.jpg';
 
-/* ─── CONSTANTS ─── */
-const LIGHTNING_ADDRESS = "securecorn53@walletofsatoshi.com";
-const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
-const BG_DARK = '#050808';
-const BG_ALT = '#070b0b';
+const LIGHTNING_ADDRESS = 'securecorn53@walletofsatoshi.com';
 
-/* ─── ANIMATIONS ─── */
-const fadeUp = {
-  hidden: { opacity: 0, y: 30, filter: 'blur(6px)' },
-  visible: (i: number) => ({
-    opacity: 1, y: 0, filter: 'blur(0px)',
-    transition: { duration: 0.7, ease: APPLE_EASE, delay: i * 0.08 },
-  }),
-};
-
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.92, filter: 'blur(8px)' },
-  visible: (i: number) => ({
-    opacity: 1, scale: 1, filter: 'blur(0px)',
-    transition: { duration: 0.8, ease: APPLE_EASE, delay: i * 0.1 },
-  }),
-};
-
-/* ─── DICTIONARY DATA ─── */
 interface Term {
   term: string;
   definition: string;
@@ -316,655 +294,86 @@ const dictionary: LetterGroup[] = [
   },
 ];
 
+
 const ALL_TAGS = Array.from(new Set(dictionary.flatMap(g => g.terms.flatMap(t => t.tags || [])))).sort();
 const TOTAL_TERMS = dictionary.reduce((acc, g) => acc + g.terms.length, 0);
+const INTERLUDES = [
+  { asset: referenceAsset, alt: 'Documentos técnicos organizados para consulta', caption: 'Palavras têm origem. Procure a fonte antes de repetir uma promessa.' },
+  { asset: documentAsset, alt: 'Cópia impressa do documento original do Bitcoin', caption: 'O protocolo deve ser entendido pelo que faz, não pelo que prometem sobre ele.' },
+  { asset: backupAsset, alt: 'Dispositivos e mídia de backup organizados sobre bancada', caption: 'Custódia começa quando o vocabulário vira prática verificável.' },
+  { asset: hardwareAsset, alt: 'Equipamentos e cabos de segurança digital em bancada', caption: 'Cada escolha técnica tem um modelo de ameaça e um limite.' },
+  { asset: researchAsset, alt: 'Pessoa conferindo documentos com lupa e anotações', caption: 'O que você entende pode conferir. O que não entende merece pausa.' },
+];
 
-const tagColors: Record<string, string> = {
-  bitcoin: 'bg-yellow-500/15 text-yellow-400 border-yellow-500/25',
-  mercado: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/25',
-  trading: 'bg-blue-500/15 text-blue-400 border-blue-500/25',
-  tecnologia: 'bg-violet-500/15 text-violet-400 border-violet-500/25',
-  segurança: 'bg-red-500/15 text-red-400 border-red-500/25',
-  mineração: 'bg-orange-500/15 text-orange-400 border-orange-500/25',
-  carteira: 'bg-teal-500/15 text-teal-400 border-teal-500/25',
-  hardware: 'bg-cyan-500/15 text-cyan-400 border-cyan-500/25',
-  infraestrutura: 'bg-indigo-500/15 text-indigo-400 border-indigo-500/25',
-  regulação: 'bg-rose-500/15 text-rose-400 border-rose-500/25',
-  finanças: 'bg-amber-500/15 text-amber-400 border-amber-500/25',
-  moeda: 'bg-lime-500/15 text-lime-400 border-lime-500/25',
-  filosofia: 'bg-purple-500/15 text-purple-400 border-purple-500/25',
-  privacidade: 'bg-fuchsia-500/15 text-fuchsia-400 border-fuchsia-500/25',
-  ethereum: 'bg-sky-500/15 text-sky-400 border-sky-500/25',
-  soberania: 'bg-yellow-600/15 text-yellow-300 border-yellow-600/25',
-  offshore: 'bg-emerald-600/15 text-emerald-300 border-emerald-600/25',
-  fiscal: 'bg-orange-600/15 text-orange-300 border-orange-600/25',
-  imigração: 'bg-blue-600/15 text-blue-300 border-blue-600/25',
-  p2p: 'bg-pink-500/15 text-pink-400 border-pink-500/25',
-  autocustódia: 'bg-teal-600/15 text-teal-300 border-teal-600/25',
-};
-
-/* ─── FLOATING PARTICLES ─── */
-const CryptoParticles = () => (
-  <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-    {Array.from({ length: 30 }).map((_, i) => (
-      <motion.div
-        key={i}
-        className="absolute w-px h-px rounded-full"
-        style={{
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          background: i % 3 === 0 ? 'rgba(234,179,8,0.3)' : i % 3 === 1 ? 'rgba(16,185,129,0.2)' : 'rgba(139,92,246,0.2)',
-          boxShadow: `0 0 ${4 + Math.random() * 8}px ${i % 3 === 0 ? 'rgba(234,179,8,0.15)' : 'rgba(16,185,129,0.1)'}`,
-        }}
-        animate={{
-          y: [0, -80 - Math.random() * 120, 0],
-          x: [0, (Math.random() - 0.5) * 60, 0],
-          opacity: [0, 0.6, 0],
-          scale: [0.5, 1.5, 0.5],
-        }}
-        transition={{
-          duration: 8 + Math.random() * 12,
-          repeat: Infinity,
-          delay: Math.random() * 8,
-          ease: 'easeInOut',
-        }}
-      />
-    ))}
-  </div>
-);
-
-/* ─── ALPHABET NAV ─── */
-const AlphabetNav = ({ letters, activeLetter, onSelect }: { letters: string[]; activeLetter: string; onSelect: (l: string) => void }) => (
-  <div className="flex flex-wrap justify-center gap-1.5">
-    {letters.map((l) => (
-      <button
-        key={l}
-        onClick={() => onSelect(l)}
-        className={`w-9 h-9 rounded-lg text-xs font-bold tracking-wider transition-all duration-300
-          ${activeLetter === l
-            ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/40 shadow-[0_0_15px_rgba(234,179,8,0.15)]'
-            : 'bg-white/[0.03] text-stone-500 border border-white/[0.06] hover:bg-white/[0.06] hover:text-stone-300'
-          }`}
-      >
-        {l}
-      </button>
-    ))}
-  </div>
-);
-
-/* ─── TERM CARD ─── */
-const TermCard = ({ term, index }: { term: Term; index: number }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-40px' });
-
-  return (
-    <motion.div
-      ref={ref}
-      custom={index}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      variants={fadeUp}
-      className="group relative"
-    >
-      <div className="relative bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6 
-                      hover:bg-white/[0.04] hover:border-yellow-500/15 
-                      transition-all duration-500 hover:shadow-[0_0_30px_rgba(234,179,8,0.04)]">
-        {/* Glow on hover */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-yellow-500/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        
-        <div className="relative z-10">
-          <h3 className="font-['Bebas_Neue'] text-xl text-yellow-400/90 tracking-wide mb-2">
-            {term.term}
-          </h3>
-          <p className="text-stone-400 text-sm leading-relaxed font-['Space_Grotesk']">
-            {term.definition}
-          </p>
-          {term.tags && term.tags.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 mt-3">
-              {term.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${tagColors[tag] || 'bg-white/5 text-stone-500 border-white/10'}`}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-          {term.link && (
-            <Link
-              to={term.link.to}
-              className="inline-flex items-center gap-1.5 mt-4 text-[11px] font-bold uppercase tracking-widest text-yellow-500/80 hover:text-yellow-400 transition-colors"
-            >
-              {term.link.label}
-              <ArrowRight className="w-3 h-3" />
-            </Link>
-          )}
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
-/* ─── LETTER SECTION ─── */
-const LetterSection = ({ group, sectionIndex }: { group: LetterGroup; sectionIndex: number }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-60px' });
-
-  return (
-    <motion.div
-      ref={ref}
-      id={`letter-${group.letter}`}
-      custom={0}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      variants={scaleIn}
-      className="scroll-mt-32"
-    >
-      {/* Letter Header */}
-      <div className="flex items-center gap-4 mb-6">
-        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-600/5 
-                        border border-yellow-500/20 flex items-center justify-center
-                        shadow-[0_0_30px_rgba(234,179,8,0.08)]">
-          <span className="font-['Bebas_Neue'] text-3xl text-yellow-400">{group.letter}</span>
-        </div>
-        <div className="flex-1 h-px bg-gradient-to-r from-yellow-500/20 via-yellow-500/5 to-transparent" />
-        <span className="text-stone-600 text-[10px] font-bold tracking-widest uppercase">
-          {group.terms.length} {group.terms.length === 1 ? 'termo' : 'termos'}
-        </span>
-      </div>
-
-      {/* Terms Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {group.terms.map((term, i) => (
-          <TermCard key={term.term} term={term} index={i} />
-        ))}
-      </div>
-    </motion.div>
-  );
-};
-
-/* ─── MAIN PAGE ─── */
-const DicionarioCripto = () => {
+export default function DicionarioCripto() {
   const [search, setSearch] = useState('');
   const [activeTag, setActiveTag] = useState<string | null>(null);
-  const [activeLetter, setActiveLetter] = useState('');
+  const [showFilters, setShowFilters] = useState(false);
   const [showQrModal, setShowQrModal] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [showFilters, setShowFilters] = useState(false);
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+  useEffect(() => {
+    if (!showQrModal) return;
+    const onKey = (event: KeyboardEvent) => { if (event.key === 'Escape') setShowQrModal(false); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [showQrModal]);
 
-  const allLetters = dictionary.map(g => g.letter);
-
-  const filteredDictionary = useMemo(() => {
-    return dictionary
-      .map((group) => ({
-        ...group,
-        terms: group.terms.filter((t) => {
-          const matchSearch = search === '' ||
-            t.term.toLowerCase().includes(search.toLowerCase()) ||
-            t.definition.toLowerCase().includes(search.toLowerCase());
-          const matchTag = !activeTag || (t.tags && t.tags.includes(activeTag));
-          return matchSearch && matchTag;
-        }),
-      }))
-      .filter((group) => group.terms.length > 0);
-  }, [search, activeTag]);
-
-  const filteredCount = filteredDictionary.reduce((acc, g) => acc + g.terms.length, 0);
-
-  const handleLetterSelect = useCallback((letter: string) => {
-    setActiveLetter(letter);
-    setSearch('');
-    setActiveTag(null);
-    const el = document.getElementById(`letter-${letter}`);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, []);
-
-  const handleCopy = useCallback(() => {
-    navigator.clipboard.writeText(LIGHTNING_ADDRESS);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  }, []);
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": dictionary.flatMap(g =>
-      g.terms.slice(0, 3).map(t => ({
-        "@type": "Question",
-        "name": `O que significa ${t.term} no mundo cripto?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": t.definition,
-        },
-      }))
-    ).slice(0, 20),
+  const filtered = useMemo(() => dictionary.map(group => ({
+    ...group,
+    terms: group.terms.filter(t =>
+      (!search || `${t.term} ${t.definition}`.toLocaleLowerCase('pt-BR').includes(search.trim().toLocaleLowerCase('pt-BR'))) &&
+      (!activeTag || t.tags?.includes(activeTag))
+    ),
+  })).filter(group => group.terms.length), [search, activeTag]);
+  const count = filtered.reduce((sum, group) => sum + group.terms.length, 0);
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(LIGHTNING_ADDRESS); setCopied(true); window.setTimeout(() => setCopied(false), 2000); } catch { setCopied(false); }
+  };
+  const jump = (letter: string) => {
+    setSearch(''); setActiveTag(null);
+    window.setTimeout(() => document.getElementById(`letter-${letter}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 0);
   };
 
-  return (
-    <div className="min-h-screen text-foreground relative overflow-hidden" style={{ background: BG_DARK }}>
-      <Helmet>
-        <link rel="canonical" href={canonicalUrl('/dicionario-cripto')} />
-        <meta property="og:url" content={canonicalUrl('/dicionario-cripto')} />
-        <title>Alfabeto Cripto – Dicionário Cripto Completo | Lord Junnior</title>
-        <meta name="description" content="Dicionário cripto completo com mais de 100 termos, siglas e gírias do universo das criptomoedas. De HODL a Halving, de Satoshi a Smart Contract. O guia definitivo para decodificar o mundo cripto." />
-        <meta name="keywords" content="alfabeto cripto, dicionário cripto, glossário bitcoin, termos criptomoedas, siglas cripto, HODL, halving, blockchain, satoshi, altcoin" />
-        <meta property="og:title" content="Alfabeto Cripto – Dicionário Cripto Completo" />
-        <meta property="og:description" content="Mais de 100 termos, siglas e gírias do universo cripto explicados de forma direta e sem enrolação." />
-        <meta property="og:type" content="article" />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+  return <>
+    <SeoHead custom={{
+      title: 'Alfabeto Cripto: glossário de Bitcoin e autocustódia | Lord Junnior',
+      description: `Consulte ${TOTAL_TERMS} termos de Bitcoin, custódia, privacidade, mercado e tributação. Busque por palavra, navegue por letra e aprofunde os conceitos nos guias.`,
+      canonical: 'https://lordjunnior.com.br/dicionario-cripto',
+      primaryKeyword: 'alfabeto cripto', lsiKeywords: ['glossário bitcoin', 'termos de autocustódia', 'dicionário de bitcoin'],
+      longTailKeywords: ['o que significa seed phrase', 'o que é UTXO', 'termos de Bitcoin explicados'],
+      breadcrumbs: [{ name: 'Início', url: '/' }, { name: 'Centro de Conhecimento', url: '/centro-de-conhecimento' }, { name: 'Alfabeto Cripto', url: '/dicionario-cripto' }],
+      schemaType: 'Article', articleSection: 'Educação Bitcoin', relatedPages: ['/bitcoin/o-que-e', '/autocustodia', '/centro-de-conhecimento'],
+    }} />
+    <main className="smx-page min-h-screen">
+      <div className="absolute inset-x-0 top-0 z-30 px-6 pt-[52px] md:px-12 lg:px-20"><BackToHome /></div>
+      <Hero asset={heroAsset} heroAlt="Livros e documentação técnica em estante iluminada" eyebrow="Centro de Conhecimento / Referência" category="Bitcoin em linguagem clara" title="Alfabeto Cripto" lede="Da primeira pergunta à decisão de guardar suas próprias chaves. Um vocabulário para ler com clareza, sem precisar confiar em quem fala mais alto." icon={BookOpen} />
+      <section className="px-6 py-20 md:px-12 md:py-28 lg:px-20"><div className="mx-auto grid max-w-[1600px] gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-20"><div><span className="smx-copper text-xs font-bold uppercase">00 / O que há aqui</span><div className="smx-rule mt-5 h-0.5 w-16" /></div><div><Heading chapter="Antes do primeiro termo">Entender muda a próxima decisão.</Heading><p className="max-w-3xl text-lg leading-[1.75] md:text-xl">Este alfabeto reúne termos de Bitcoin, autocustódia, finanças e legislação. Algumas palavras descrevem outros ativos apenas para que você reconheça o contexto. Nenhuma definição substitui documentação técnica, orientação profissional ou a conferência da regra vigente.</p><p className="smx-muted mt-6 text-sm font-semibold">{TOTAL_TERMS} verbetes · {dictionary.length} letras · {ALL_TAGS.length} assuntos</p></div></div></section>
 
-      <ScrollToTop />
-      <div className="relative z-20 px-6 md:px-12 lg:px-20 pt-[52px]">
-        <BackToHome />
-      </div>
-      <CryptoParticles />
-
-      {/* ─── FILM GRAIN + LIGHT BEAMS ─── */}
-      <div className="fixed inset-0 pointer-events-none z-[1]">
-        <div className="absolute inset-0 opacity-[0.035]"
-          style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=\"0 0 256 256\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"n\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.9\" numOctaves=\"4\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100%25\" height=\"100%25\" filter=\"url(%23n)\"/%3E%3C/svg%3E')", backgroundSize: '128px 128px' }} />
-        <div className="absolute inset-0 opacity-[0.03]"
-          style={{ background: 'linear-gradient(125deg, transparent 25%, rgba(234,179,8,0.08) 50%, transparent 75%)' }} />
-      </div>
-
-      {/* ─── BREATHING ORBS ─── */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <motion.div
-          className="absolute top-[15%] left-[10%] w-[600px] h-[600px] rounded-full"
-          animate={{ scale: [1, 1.15, 1], opacity: [0.03, 0.06, 0.03] }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}>
-          <div className="w-full h-full rounded-full bg-gradient-radial from-yellow-500/30 to-transparent blur-3xl" />
-        </motion.div>
-        <motion.div
-          className="absolute top-[50%] right-[5%] w-[500px] h-[500px] rounded-full"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.02, 0.05, 0.02] }}
-          transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut', delay: 3 }}>
-          <div className="w-full h-full rounded-full bg-gradient-radial from-emerald-500/25 to-transparent blur-3xl" />
-        </motion.div>
-        <motion.div
-          className="absolute bottom-[10%] left-[30%] w-[400px] h-[400px] rounded-full"
-          animate={{ scale: [1, 1.1, 1], opacity: [0.02, 0.04, 0.02] }}
-          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 6 }}>
-          <div className="w-full h-full rounded-full bg-gradient-radial from-violet-500/20 to-transparent blur-3xl" />
-        </motion.div>
-      </div>
-
-      {/* ─── HERO ─── */}
-      <CinematicHero
-        image="/heroes/dicionario-cripto.webp"
-        phase="ALFABETO CRIPTO"
-        title="ALFABETO CRIPTO"
-        subtitle="O dicionário definitivo do universo cripto"
-        icon={BookOpen}
-        accentColor="yellow"
-        backLink="/educacao"
-        backLabel="Educação"
-      />
-
-      {/* ─── INTRO ─── */}
-      <section className="relative py-20 lg:py-28" style={{ background: BG_ALT }}>
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <p className="text-stone-600 text-[10px] font-bold tracking-[0.4em] uppercase mb-4">
-              PREPARAMOS UM DICIONÁRIO CRIPTO PARA VOCÊ
-            </p>
-          </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}>
-            <h2 className="font-['Bebas_Neue'] text-3xl lg:text-5xl text-foreground leading-tight mb-6">
-              Entenda todos os termos e gírias<br />
-              <span className="text-yellow-400">utilizadas no mundo cripto</span>
-            </h2>
-          </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2}>
-            <p className="text-stone-400 text-base lg:text-lg leading-relaxed font-['Space_Grotesk'] max-w-3xl mx-auto">
-              Ao longo dos 10 anos de existência dos ativos digitais, surgiram diversas criptomoedas e com elas 
-              centenas de termos técnicos e gírias utilizadas para embasar uma comunicação mais específica no mundo 
-              da criptoeconomia. Este é o seu guia definitivo.
-            </p>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3}
-            className="flex flex-wrap justify-center gap-8 mt-12"
-          >
-            {[
-              { value: `${TOTAL_TERMS}+`, label: 'Termos' },
-              { value: `${allLetters.length}`, label: 'Letras' },
-              { value: `${ALL_TAGS.length}`, label: 'Categorias' },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="font-['Bebas_Neue'] text-4xl text-yellow-400">{stat.value}</div>
-                <div className="text-stone-600 text-[9px] font-bold tracking-[0.3em] uppercase mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Section glow */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-yellow-500/[0.03] rounded-full blur-3xl" />
-      </section>
-
-      {/* ─── SEARCH & FILTERS ─── */}
-      <section className="relative py-12 sticky top-0 z-40 backdrop-blur-2xl border-b border-white/[0.05]" 
-               style={{ background: `${BG_DARK}ee` }}>
-        <div className="max-w-6xl mx-auto px-6">
-          {/* Search Bar */}
-          <div className="relative max-w-2xl mx-auto mb-6">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-600" size={18} />
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Buscar termo, sigla ou conceito..."
-              className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl py-3.5 pl-12 pr-4
-                         text-foreground text-sm font-['Space_Grotesk'] placeholder:text-stone-600
-                         focus:outline-none focus:border-yellow-500/30 focus:shadow-[0_0_20px_rgba(234,179,8,0.06)]
-                         transition-all duration-300"
-            />
-            {search && (
-              <button onClick={() => setSearch('')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-600 hover:text-stone-400 transition-colors">
-                <X size={14} />
-              </button>
-            )}
-          </div>
-
-          {/* Alphabet Nav */}
-          <AlphabetNav letters={allLetters} activeLetter={activeLetter} onSelect={handleLetterSelect} />
-
-          {/* Filter Toggle */}
-          <div className="flex justify-center mt-4">
-            <button
-              onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center gap-2 text-stone-500 text-xs hover:text-stone-300 transition-colors"
-            >
-              <Layers size={12} />
-              Filtrar por categoria
-              {showFilters ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
-            </button>
-          </div>
-
-          {/* Tags */}
-          <AnimatePresence>
-            {showFilters && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
-                className="flex flex-wrap justify-center gap-2 mt-4 overflow-hidden"
-              >
-                <button
-                  onClick={() => setActiveTag(null)}
-                  className={`text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border transition-all duration-300
-                    ${!activeTag ? 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30' : 'bg-white/[0.03] text-stone-500 border-white/[0.06] hover:bg-white/[0.06]'}`}
-                >
-                  Todos
-                </button>
-                {ALL_TAGS.map((tag) => (
-                  <button
-                    key={tag}
-                    onClick={() => setActiveTag(activeTag === tag ? null : tag)}
-                    className={`text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border transition-all duration-300
-                      ${activeTag === tag
-                        ? tagColors[tag] || 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
-                        : 'bg-white/[0.03] text-stone-500 border-white/[0.06] hover:bg-white/[0.06]'
-                      }`}
-                  >
-                    {tag}
-                  </button>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Count */}
-          {(search || activeTag) && (
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-              className="text-center text-stone-600 text-xs mt-4">
-              {filteredCount} {filteredCount === 1 ? 'termo encontrado' : 'termos encontrados'}
-            </motion.p>
-          )}
+      <section id="consulta" className="sticky top-0 z-40 border-b border-border bg-background/95 px-6 py-4 backdrop-blur-xl md:px-12 lg:px-20" aria-label="Busca no alfabeto">
+        <div className="mx-auto max-w-[1600px]">
+          <div className="relative max-w-2xl"><Search className="smx-muted pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2" aria-hidden /><label htmlFor="dictionary-search" className="sr-only">Buscar termo, sigla ou definição</label><input id="dictionary-search" value={search} onChange={e => setSearch(e.target.value)} placeholder="Buscar termo, sigla ou definição" className="smx-focus min-h-[48px] w-full rounded-md border border-border bg-card py-3 pl-12 pr-14 text-base text-foreground placeholder:text-muted-foreground" />{search && <Button variant="ghost" size="icon" className="smx-focus absolute right-1 top-1/2 min-h-[44px] min-w-[44px] -translate-y-1/2" aria-label="Limpar busca" onClick={() => setSearch('')}><X className="h-5 w-5" /></Button>}</div>
+          <div className="mt-4 flex gap-1 overflow-x-auto pb-2" aria-label="Ir para letra">{dictionary.map(group => <Button key={group.letter} variant="ghost" size="icon" className="smx-focus min-h-[44px] min-w-[44px] shrink-0 border border-border font-black" onClick={() => jump(group.letter)} aria-label={`Ir para letra ${group.letter}`}>{group.letter}</Button>)}</div>
+          <Button variant="ghost" className="smx-focus mt-2 min-h-[44px] gap-2" onClick={() => setShowFilters(!showFilters)} aria-expanded={showFilters} aria-controls="dictionary-filters">Filtrar por assunto {showFilters ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}</Button>
+          {showFilters && <div id="dictionary-filters" className="mt-2 flex max-h-40 flex-wrap gap-2 overflow-y-auto pb-2"><Button size="sm" variant={activeTag === null ? 'default' : 'outline'} className="smx-focus min-h-[44px]" onClick={() => setActiveTag(null)}>Todos</Button>{ALL_TAGS.map(tag => <Button key={tag} size="sm" variant={activeTag === tag ? 'default' : 'outline'} className="smx-focus min-h-[44px]" onClick={() => setActiveTag(activeTag === tag ? null : tag)}>{tag}</Button>)}</div>}
+          <p className="smx-muted mt-2 text-sm" aria-live="polite">{count} {count === 1 ? 'verbete encontrado' : 'verbetes encontrados'}</p>
         </div>
       </section>
 
-      {/* ─── DICTIONARY CONTENT ─── */}
-      <section className="relative py-16 lg:py-24" style={{ background: BG_DARK }}>
-        <div className="max-w-6xl mx-auto px-6 space-y-16">
-          {filteredDictionary.length === 0 ? (
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}
-              className="text-center py-20">
-              <Search size={48} className="mx-auto text-stone-700 mb-4" />
-              <p className="text-stone-500 text-lg font-['Space_Grotesk']">
-                Nenhum termo encontrado para "<span className="text-yellow-400">{search}</span>"
-              </p>
-              <p className="text-stone-600 text-sm mt-2">Tente outro termo ou limpe os filtros</p>
-            </motion.div>
-          ) : (
-            filteredDictionary.map((group, i) => (
-              <LetterSection key={group.letter} group={group} sectionIndex={i} />
-            ))
-          )}
-        </div>
-
-        {/* Background glow effects */}
-        <div className="absolute top-1/4 left-0 w-64 h-64 bg-yellow-500/[0.02] rounded-full blur-3xl" />
-        <div className="absolute top-2/3 right-0 w-64 h-64 bg-emerald-500/[0.02] rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/3 w-48 h-48 bg-violet-500/[0.015] rounded-full blur-3xl" />
-      </section>
-
-      {/* ─── TRIO DA BLINDAGEM — SEO + PNL + CTA ─── */}
-      <section className="relative py-20 lg:py-28" style={{ background: BG_ALT }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
-            className="text-center mb-16">
-            <p className="text-stone-600 text-[10px] font-bold tracking-[0.4em] uppercase mb-4">
-              POR QUE ESTE DICIONÁRIO EXISTE
-            </p>
-            <h2 className="font-['Bebas_Neue'] text-3xl lg:text-5xl text-foreground leading-tight">
-              Conhecimento é a primeira<br />
-              <span className="text-yellow-400">camada de proteção</span>
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: Shield,
-                title: 'Blindagem Cognitiva',
-                desc: 'Dominar o vocabulário cripto é a primeira linha de defesa contra golpistas, scams e a desinformação estatal que busca afastar você da soberania financeira.',
-                accent: 'yellow',
-              },
-              {
-                icon: Eye,
-                title: 'Decodificação de Mercado',
-                desc: 'Quando você entende o que significa HODL, Bearish, Pump e Dump, deixa de ser manipulado pelas emoções do mercado e passa a operar com inteligência tática.',
-                accent: 'emerald',
-              },
-              {
-                icon: Lock,
-                title: 'Soberania Linguística',
-                desc: 'Cada termo que você domina é um passo a menos na dependência de "especialistas" que lucram com a sua ignorância. A linguagem é poder.',
-                accent: 'violet',
-              },
-            ].map((pillar, i) => (
-              <motion.div
-                key={pillar.title}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={scaleIn}
-                className="group"
-              >
-                <div className={`relative bg-white/[0.02] border border-white/[0.06] rounded-2xl p-8
-                                hover:border-${pillar.accent}-500/20 transition-all duration-500
-                                hover:shadow-[0_0_40px_rgba(234,179,8,0.04)]`}>
-                  <div className={`w-14 h-14 rounded-xl bg-${pillar.accent}-500/10 border border-${pillar.accent}-500/20
-                                  flex items-center justify-center mb-5`}>
-                    <pillar.icon size={24} className={`text-${pillar.accent}-400`} />
-                  </div>
-                  <h3 className="font-['Bebas_Neue'] text-xl text-foreground tracking-wide mb-3">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-stone-400 text-sm leading-relaxed font-['Space_Grotesk']">
-                    {pillar.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* PNL Warning */}
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={4}
-            className="mt-16 max-w-4xl mx-auto"
-          >
-            <div className="relative bg-yellow-500/[0.03] border border-yellow-500/15 rounded-2xl p-8 text-center
-                            shadow-[0_0_60px_rgba(234,179,8,0.04)]">
-              <AlertTriangle size={24} className="mx-auto text-yellow-500/60 mb-4" />
-              <p className="text-stone-300 text-sm lg:text-base leading-relaxed font-['Space_Grotesk'] italic">
-                "Quem não domina a linguagem do dinheiro será sempre dominado por quem a domina. 
-                O sistema foi projetado para que você não entenda as regras do jogo. 
-                Este dicionário é a sua arma de decodificação."
-              </p>
-              <p className="text-yellow-500/50 text-[10px] font-bold tracking-[0.3em] uppercase mt-4">
-                LORD JUNNIOR
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ─── CTA LINKS ─── */}
-      <section className="relative py-16 lg:py-20" style={{ background: BG_DARK }}>
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
-            className="text-center mb-10">
-            <h2 className="font-['Bebas_Neue'] text-2xl lg:text-4xl text-foreground">
-              Continue sua <span className="text-yellow-400">jornada soberana</span>
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              { to: '/blockchain', label: 'Entenda a Blockchain', icon: Layers },
-              { to: '/bitcoin/o-que-e', label: 'O Que é o Bitcoin?', icon: Hash },
-              { to: '/lightning', label: 'Lightning Network', icon: Zap },
-              { to: '/blindagem-golpes', label: 'Blindagem contra Golpes', icon: Shield },
-            ].map((link, i) => (
-              <motion.div key={link.to} custom={i + 1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <Link to={link.to}
-                  className="flex items-center gap-4 bg-white/[0.03] border border-white/[0.06] rounded-xl px-6 py-4
-                             hover:bg-white/[0.06] hover:border-yellow-500/15 transition-all duration-500 group">
-                  <link.icon size={20} className="text-yellow-500/60 group-hover:text-yellow-400 transition-colors" />
-                  <span className="text-stone-300 text-sm font-bold uppercase tracking-wider group-hover:text-foreground transition-colors">
-                    {link.label}
-                  </span>
-                  <ArrowRight size={14} className="ml-auto text-stone-600 group-hover:text-yellow-400 group-hover:translate-x-1 transition-all" />
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── DOAÇÃO LIGHTNING ─── */}
-      <section className="relative py-20 lg:py-28" style={{ background: BG_ALT }}>
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn} custom={0}>
-            <div className="relative bg-gradient-to-b from-yellow-500/[0.04] to-transparent border border-yellow-500/10 rounded-3xl p-10 lg:p-14
-                            shadow-[0_0_80px_rgba(234,179,8,0.05)]">
-              {/* Glow ring */}
-              <div className="absolute -top-px -left-px -right-px -bottom-px rounded-3xl bg-gradient-to-b from-yellow-500/10 to-transparent opacity-50 blur-sm" />
-              
-              <div className="relative z-10">
-                <Zap size={40} className="mx-auto text-yellow-500/60 mb-6" />
-                <p className="text-stone-600 text-[10px] font-bold tracking-[0.4em] uppercase mb-4">
-                  APOIE ESTE PROJETO
-                </p>
-                <h2 className="font-['Bebas_Neue'] text-3xl lg:text-4xl text-foreground leading-tight mb-4">
-                  Este conteúdo é gratuito.<br />
-                  <span className="text-yellow-400">Sua contribuição o mantém vivo.</span>
-                </h2>
-                <p className="text-stone-400 text-sm leading-relaxed font-['Space_Grotesk'] mb-8 max-w-xl mx-auto">
-                  Se este dicionário te ajudou a entender melhor o universo cripto, considere enviar alguns satoshis 
-                  via Lightning Network. Cada contribuição fortalece a produção de conteúdo livre e soberano. 
-                  Sugestão: de 1.000 a 10.000 sats.
-                </p>
-
-                {/* QR Code */}
-                <div className="inline-block mb-6">
-                  <button
-                    onClick={() => setShowQrModal(true)}
-                    className="group relative"
-                  >
-                    <div className="w-48 h-48 rounded-2xl overflow-hidden border-2 border-yellow-500/20 
-                                    group-hover:border-yellow-500/40 transition-all duration-500
-                                    shadow-[0_0_40px_rgba(234,179,8,0.08)] group-hover:shadow-[0_0_60px_rgba(234,179,8,0.12)]">
-                      <img src={qrCodeImage} alt="QR Code Lightning" className="w-full h-full object-cover" loading="lazy" />
-                    </div>
-                    <div className="absolute inset-0 bg-yellow-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                      <QrCode size={32} className="text-yellow-400" />
-                    </div>
-                  </button>
-                </div>
-
-                {/* Address */}
-                <div className="flex items-center justify-center gap-2 mb-6">
-                  <button
-                    onClick={handleCopy}
-                    className="flex items-center gap-2 bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-2
-                               hover:bg-white/[0.06] hover:border-yellow-500/20 transition-all duration-300"
-                  >
-                    {copied ? <Check size={12} className="text-emerald-400" /> : <Copy size={12} className="text-stone-500" />}
-                    <span className="text-stone-400 text-xs font-mono">{LIGHTNING_ADDRESS}</span>
-                  </button>
-                </div>
-
-                <p className="text-stone-600 text-[9px] font-bold tracking-[0.3em] uppercase">
-                  ⚡ LIGHTNING NETWORK · INSTANTÂNEO · SEM INTERMEDIÁRIOS
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ─── FOOTER ─── */}
-      <footer className="border-t border-white/[0.05] py-12 text-center" style={{ background: BG_DARK }}>
-        <p className="text-stone-700 text-[9px] font-bold tracking-[0.5em] uppercase">Lord Junnior © 2026</p>
-      </footer>
-
-      {/* ─── QR MODAL ─── */}
-      <AnimatePresence>
-        {showQrModal && (
-          <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-6"
-            onClick={() => setShowQrModal(false)}>
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-stone-950 border border-yellow-500/20 rounded-2xl p-8 max-w-sm w-full text-center relative
-                         shadow-[0_0_60px_rgba(234,179,8,0.08)]">
-              <button onClick={() => setShowQrModal(false)}
-                className="absolute top-4 right-4 text-stone-600 hover:text-white transition-colors">
-                <X size={18} />
-              </button>
-              <img src={qrCodeImage} alt="QR Code Lightning Network" className="w-64 h-64 mx-auto rounded-xl mb-4" loading="lazy" />
-              <p className="text-white text-sm font-bold mb-2">Escaneie com sua carteira Lightning</p>
-              <button onClick={handleCopy}
-                className="flex items-center gap-2 mx-auto text-yellow-500/70 text-xs hover:text-yellow-400 transition-colors">
-                {copied ? <Check size={12} /> : <Copy size={12} />}
-                <span className="font-mono">{LIGHTNING_ADDRESS}</span>
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
-
-export default DicionarioCripto;
+      <section className="px-6 py-16 md:px-12 md:py-24 lg:px-20" aria-label="Verbetes"><div className="mx-auto max-w-[1600px]">
+        {filtered.length === 0 && <div className="py-20 text-center"><h2 className="text-2xl font-black">Nenhum verbete encontrado</h2><p className="smx-muted mt-3">Tente outra palavra ou retire o filtro.</p><Button variant="outline" className="smx-focus mt-6 min-h-[44px]" onClick={() => { setSearch(''); setActiveTag(null); }}>Limpar filtros</Button></div>}
+        {filtered.map((group, index) => <div key={group.letter}>
+          <section id={`letter-${group.letter}`} className="scroll-mt-64 border-t border-border py-12 md:py-16" aria-labelledby={`heading-${group.letter}`}>
+            <div className="mb-9 flex items-baseline justify-between gap-4"><h2 id={`heading-${group.letter}`} className="smx-ink text-6xl font-black uppercase md:text-8xl">{group.letter}<span className="smx-copper">.</span></h2><span className="smx-muted text-sm">{group.terms.length} {group.terms.length === 1 ? 'verbete' : 'verbetes'}</span></div>
+            <div className="grid gap-x-12 md:grid-cols-2">{group.terms.map(term => <article key={term.term} className="border-t border-border py-6"><h3 className="text-xl font-black leading-tight md:text-2xl">{term.term}</h3><p className="mt-3 text-base leading-[1.7]">{term.definition}</p>{term.tags && <div className="mt-4 flex flex-wrap gap-2">{term.tags.map(tag => <span key={tag} className="smx-muted border-l border-border pl-2 text-xs font-semibold uppercase">{tag}</span>)}</div>}{term.link && <Link className="smx-focus smx-copper mt-4 inline-flex min-h-[44px] items-center gap-2 font-bold underline underline-offset-4" to={term.link.to}>{term.link.label}<ArrowRight className="h-4 w-4" aria-hidden /></Link>}</article>)}</div>
+          </section>
+          {!search && !activeTag && [3, 7, 11, 15, 19].includes(index) && <div className="pb-16"><Figure asset={INTERLUDES[[3, 7, 11, 15, 19].indexOf(index)].asset} alt={INTERLUDES[[3, 7, 11, 15, 19].indexOf(index)].alt} caption={INTERLUDES[[3, 7, 11, 15, 19].indexOf(index)].caption} /></div>}
+        </div>)}
+      </div></section>
+      <Veredito headline={<>O termo certo abre <span className="smx-editorial">a pergunta certa.</span></>} paragraphs={['Conhecer a palavra não encerra a investigação. Confira documentação, riscos e limites antes de usar qualquer ferramenta ou tomar uma decisão financeira.', 'Comece pela base de Bitcoin e volte a este alfabeto sempre que um conceito pedir clareza.']} />
+      <section className="px-6 py-20 md:px-12 lg:px-20"><div className="mx-auto max-w-[1600px]"><Heading chapter="Continue a leitura">Da palavra à prática.</Heading><div className="grid gap-4 md:grid-cols-2">{[{ to: '/bitcoin/o-que-e', title: 'O que é Bitcoin?', desc: 'Entenda o protocolo antes de avaliar promessas.' }, { to: '/autocustodia', title: 'Autocustódia', desc: 'O que muda quando você controla suas próprias chaves.' }].map(item => <Link key={item.to} to={item.to} className="smx-focus block min-h-[120px] border-t border-border py-6"><h3 className="text-2xl font-black">{item.title} <ArrowRight className="smx-copper inline h-5 w-5" /></h3><p className="mt-2 text-base">{item.desc}</p></Link>)}</div></div></section>
+      <section className="smx-deep px-6 py-20 md:px-12 lg:px-20"><div className="mx-auto max-w-[800px] text-center"><h2 className="text-3xl font-black uppercase md:text-5xl">Apoie este acervo</h2><p className="mt-5 text-lg leading-relaxed text-background/90">O conteúdo é gratuito. Se esta consulta ajudou você, pode contribuir via Lightning.</p><Button variant="outline" className="smx-focus mt-8 min-h-[44px]" onClick={() => setShowQrModal(true)}>Mostrar QR Lightning</Button></div></section>
+      {showQrModal && <div role="presentation" className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/90 px-6" onClick={() => setShowQrModal(false)}><div role="dialog" aria-modal="true" aria-label="Apoio Lightning" onClick={e => e.stopPropagation()} className="smx-page relative w-full max-w-sm border border-border bg-background p-6 text-center"><Button variant="ghost" size="icon" className="smx-focus absolute right-2 top-2 min-h-[44px] min-w-[44px]" onClick={() => setShowQrModal(false)} aria-label="Fechar"><X /></Button><h2 className="mt-8 text-2xl font-black">Apoio Lightning</h2><img src={qrCodeImage} alt="Código QR para pagamento Lightning" className="mx-auto my-6 aspect-square w-56 object-contain" /><Button variant="outline" className="smx-focus min-h-[44px] max-w-full gap-2 text-xs" onClick={copy}>{copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}<span className="truncate">{LIGHTNING_ADDRESS}</span></Button></div></div>}
+    </main>
+  </>;
+}
