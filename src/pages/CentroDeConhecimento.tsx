@@ -46,7 +46,7 @@ const AREAS: Area[] = [
     icon: Search, label: '04 / Pesquisa', title: 'Fontes e método de checagem',
     desc: 'Como verificar uma informação antes de agir sobre ela: fonte primária, data, quem publicou e com qual interesse. A habilidade que protege todas as outras.',
     asset: pesquisaAsset, alt: 'Pessoa conferindo documentos e anotações com lupa sobre a mesa',
-    links: [{ to: '/biblioteca-tecnica', label: 'Curadoria por fonte primária' }, { to: '/indice-da-soberania', label: 'Índice do Despertar' }],
+    links: [{ to: '/centro-de-conhecimento/como-checar-fontes', label: 'Como checar fontes' }, { to: '/biblioteca-tecnica', label: 'Curadoria por fonte primária' }],
   },
 ];
 
