@@ -231,3 +231,9 @@ Nada será codificado antes da aprovação das decisões pendentes da seção 16
 - [ ] Alimentar cluster.demand.internalSearches com os numeros reais (hoje o engine usa estimativa declarada).
 - [ ] Perguntas humanas como terceira fonte de demanda.
 - [ ] Google Search Console como quarta fonte (decisao do usuario: depois).
+
+## Centro de Conhecimento, Pesquisa e Alfabeto Cripto (concluído)
+- [x] Publicar `/centro-de-conhecimento/como-checar-fontes` e integrar no Centro, menu, busca, Mapa e sitemap.
+- [x] Auditar a contagem do Mapa: links repetidos e redirecionamentos impedem tratá-la como total de páginas; remover número inexato da interface.
+- [x] Repaginar `/dicionario-cripto` no padrão editorial existente, preservando verbetes, busca, filtros, links e apoio Lightning.
+- [x] Conferir as três páginas em desktop e celular, inclusive interações e imagens.

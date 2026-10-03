@@ -327,6 +327,7 @@ export const navGroups: NavGroup[] = [
       { label: "Visão geral", route: "/centro-de-conhecimento", addedAt: "2026-09-29" },
       { label: "Educação", route: "/educacao" },
       { label: "Biblioteca Técnica", route: "/biblioteca-tecnica" },
+      { label: "Como checar fontes", route: "/centro-de-conhecimento/como-checar-fontes", addedAt: "2026-10-02" },
       { label: "Audiobooks", route: "/audiobooks" },
       { label: "E-books", route: "/ebooks" },
       { label: "Alfabeto Cripto", route: "/dicionario-cripto" },

@@ -196,6 +196,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://lordjunnior.com.br/centro-de-conhecimento/como-checar-fontes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lordjunnior.com.br/chaves</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

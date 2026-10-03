@@ -17,6 +17,7 @@ const Ferramentas = lazy(() => import("./pages/Ferramentas"));
 const Educacao = lazy(() => import("./pages/Educacao"));
 const BibliotecaTecnica = lazy(() => import("./pages/BibliotecaTecnica"));
 const CentroDeConhecimento = lazy(() => import("./pages/CentroDeConhecimento"));
+const ComoChecarFontes = lazy(() => import("./pages/ComoChecarFontes"));
 
 const Autocustodia = lazy(() => import("./pages/Autocustodia"));
 const EconomiaParalela = lazy(() => import("./pages/EconomiaParalela"));
@@ -262,6 +263,7 @@ const App = () => (
           <Route path="/educacao" element={<Educacao />} />
           <Route path="/biblioteca-tecnica" element={<BibliotecaTecnica />} />
           <Route path="/centro-de-conhecimento" element={<CentroDeConhecimento />} />
+          <Route path="/centro-de-conhecimento/como-checar-fontes" element={<ComoChecarFontes />} />
           <Route path="/entenda-bitcoin" element={<LegacyRedirect to="/bitcoin/o-que-e" />} />
           <Route path="/autocustodia" element={<Autocustodia />} />
           <Route path="/autocustodia/hardware-wallet-diy-bitcoin" element={<HardwareWalletDiy />} />

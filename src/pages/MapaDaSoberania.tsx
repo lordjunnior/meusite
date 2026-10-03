@@ -379,6 +379,7 @@ const SILOS: Silo[] = [
       { title: 'Arsenal Completo', href: '/arsenal' },
       { title: 'Recursos e Ferramentas', href: '/recursos-e-ferramentas' },
       { title: 'Centro de Conhecimento', href: '/centro-de-conhecimento' },
+      { title: 'Como checar fontes', href: '/centro-de-conhecimento/como-checar-fontes' },
       { title: 'Hub Educação', href: '/educacao' },
       { title: 'Biblioteca Técnica', href: '/biblioteca-tecnica' },
       { title: 'Filosofia', href: '/filosofia' },
@@ -455,8 +456,6 @@ export default function MapaDaSoberania() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const [query, setQuery] = useState('');
 
-  const totalPages = useMemo(() => SILOS.reduce((sum, s) => sum + s.links.length, 0), []);
-
   const filteredSilos = useMemo(() => {
     if (!query.trim()) return SILOS;
     const q = query.toLowerCase();
@@ -490,13 +489,13 @@ export default function MapaDaSoberania() {
             </h1>
 
             <p className="text-stone-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-light mb-10">
-              Não é uma trilha linear. É uma arquitetura de <strong className="text-stone-100 font-semibold">{totalPages} páginas</strong> distribuídas em 4 fases de jornada e {SILOS.length} silos estratégicos. Você decide por onde entra.
+              Não é uma trilha linear. É uma arquitetura de leitura distribuída em 4 fases de jornada e {SILOS.length} silos estratégicos. Você decide por onde entra.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[11px] font-mono uppercase tracking-[0.25em] text-stone-500">
               <span className="flex items-center gap-2"><Eye size={12} className="text-amber-400" /> 4 Fases de Jornada</span>
               <span className="flex items-center gap-2"><Library size={12} className="text-amber-400" /> {SILOS.length} Silos</span>
-              <span className="flex items-center gap-2"><Zap size={12} className="text-amber-400" /> {totalPages} Páginas</span>
+              <span className="flex items-center gap-2"><Zap size={12} className="text-amber-400" /> Índice de leitura</span>
             </div>
 
             <a href="#fases" className="inline-flex items-center gap-2 mt-12 text-stone-400 hover:text-amber-400 transition-colors text-xs font-mono uppercase tracking-[0.3em] group">
@@ -621,7 +620,7 @@ export default function MapaDaSoberania() {
             </h2>
 
             <p className="text-stone-300 max-w-2xl mx-auto text-base md:text-lg font-light leading-relaxed">
-              Todas as <strong className="text-amber-400 font-semibold">{totalPages} páginas</strong>, organizadas em {SILOS.length} silos estratégicos.
+              Os caminhos de leitura organizados em <strong className="text-amber-400 font-semibold">{SILOS.length} silos estratégicos</strong>.
               <br className="hidden md:block" />
               Para quem já conhece o terreno e quer atalho cirúrgico.
             </p>
