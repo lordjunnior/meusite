@@ -1,5 +1,10 @@
 # Roadmap
 
+## Como checar fontes, aprofundamento editorial
+- [ ] Integrar o texto enviado com exemplos, procedimentos, limitações e fontes verificáveis.
+- [ ] Acrescentar imagens contextuais, fundos dinâmicos e checklist interativo sem pontuação de verdade.
+- [ ] Verificar leitura, imagens, navegação e checklist em computador e celular.
+
 ## Otimização de performance (concluída)
 - [x] Converter imagens editoriais JPG, JPEG e PNG para WebP e atualizar suas referências locais.
 - [x] Reduzir `src/assets` de aproximadamente 193 MB para 104 MB sem alterar a composição visual.

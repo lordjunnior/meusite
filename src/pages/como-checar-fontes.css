@@ -1,0 +1,34 @@
+.fontes-page {
+  --fontes-surface: var(--smx-paper-deep);
+  --fontes-line: var(--border);
+  --fontes-space: 1.5rem;
+}
+.fontes-page .fontes-band { position: relative; isolation: isolate; overflow: hidden; padding: 5rem 1.5rem; scroll-margin-top: 6rem; }
+.fontes-page .fontes-inner { max-width: 1440px; margin: 0 auto; }
+.fontes-page .fontes-copy { font-size: 1.125rem; line-height: 1.85; }
+.fontes-page .fontes-copy p + p { margin-top: var(--fontes-space); }
+.fontes-page .fontes-copy h3 { font-size: 1.5rem; line-height: 1.25; font-weight: 900; margin: 2.5rem 0 1rem; }
+.fontes-page .fontes-copy strong { font-weight: 800; }
+.fontes-page .fontes-alt { background: hsl(var(--fontes-surface)); }
+.fontes-page .fontes-note { border-left: 3px solid hsl(var(--smx-copper)); padding: 1.5rem; background: hsl(var(--smx-paper-deep) / .65); margin-top: 2rem; }
+.fontes-page .smx-deep .fontes-note { background: hsl(var(--smx-paper) / .07); border-color: hsl(var(--smx-copper-soft)); }
+.fontes-page .fontes-link { color: hsl(var(--smx-ink)); text-decoration: underline; text-underline-offset: .3em; text-decoration-color: hsl(var(--smx-copper)); transition: color .2s; }
+.fontes-page .fontes-link:hover { color: hsl(var(--smx-muted)); }
+.fontes-page .fontes-nav { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; border-bottom: 1px solid hsl(var(--fontes-line)); padding: 1.5rem 0; }
+.fontes-page .fontes-nav a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 800; }
+.fontes-page .fontes-row { border-top: 1px solid hsl(var(--fontes-line)); padding: 1.5rem 0; }
+.fontes-page .fontes-row h3 { margin-top: 0; }
+.fontes-page .fontes-progress { height: .5rem; background: hsl(var(--smx-paper-deep)); overflow: hidden; }
+.fontes-page .fontes-progress span { display: block; height: 100%; background: hsl(var(--smx-deep)); transform-origin: left; transition: transform .3s; }
+.fontes-page .fontes-domain { overflow-wrap: anywhere; background: hsl(var(--smx-paper-deep)); border: 1px solid hsl(var(--fontes-line)); padding: 1.25rem; font-size: 1rem; }
+.fontes-page .fontes-motion-rule { height: 2px; background: hsl(var(--smx-copper)); transform-origin: left; animation: fontes-scan 12s ease-in-out infinite; }
+@keyframes fontes-scan { 0%, 100% { transform: scaleX(.25); } 50% { transform: scaleX(1); } }
+@media (min-width: 768px) {
+  .fontes-page .fontes-band { padding: 7rem 3rem; }
+  .fontes-page .fontes-copy { font-size: 1.25rem; }
+}
+@media (min-width: 1024px) { .fontes-page .fontes-band { padding-left: 5rem; padding-right: 5rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .fontes-page .fontes-motion-rule { animation: none; transform: none; }
+  .fontes-page .fontes-progress span { transition: none; }
+}
