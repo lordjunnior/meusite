@@ -17,6 +17,7 @@ Navigation icons must be strictly monochromatic.
 HEAVY PAGES: hero full-screen apple-like, max-w-7xl centralizado, FixedThematicBackground, várias imagens cinematográficas reais intercaladas, FAQ obrigatório, hover lift+glow, mobile-first 30+. Botanical/medical images MUST be species-accurate (peer-reviewable) so connoisseurs trust the page.
 
 ## Memories
+- [Como checar fontes](mem://design/checagem-fontes-editorial) - Texto enviado como base, aprofundamento, exemplos, fontes e fundos dinâmicos.
 - [Pagina Pesada Padrão](mem://design/padrao-pagina-pesada) — Padrão obrigatório completo para páginas pesadas
 - [Proibido Travessão Longo](mem://constraints/content/proibido-travessao-longo) — Banimento absoluto do em-dash em UI
 - [Proibido Soberano](mem://constraints/content/proibido-soberano) — Banimento de "soberano/soberania" como adjetivo casual
