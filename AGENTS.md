@@ -4,3 +4,8 @@
 - Reuse the existing `smx-page` token scope and EditorialKit for editorial page art direction; shared visual rules should stay consistent without changing the site's global shell.
 - Keep source-verification editorial data separate from the page layout and scope its additional styles to that page; this keeps detailed content maintainable without changing other articles.
 - Keep the tactical editorial page pattern as an unrouted reference module in `src/components/editorial/` documented in `docs/PADRAO_PAGINAS_TATICAS.md`; it travels with the repo without being exposed to visitors.
+- Long pages without their own table of contents get one automatically from `AutoFloatingToc` (built from h2 headings); hand-made TOCs mark themselves with `data-page-toc` so they are never duplicated.
+- Keep `/por-onde-comecar` profile definitions in data separate from its interactive layout; this makes entry routes testable without coupling them to presentation state.
+- Keep Stalkerware inspection definitions in `src/data/` and its interactions in a page-specific module; this preserves editorial copy while keeping the technical scan testable.
+- Keep the Soberania Organica hub background as a dedicated, unfiltered video component with no overlay or replacement poster; this preserves the exact media the user supplied.
+- On pages with a dynamic video background, cards and content blocks must be solid obsidian plates (opaque dark surface, backdrop blur, strong shadow, high-contrast text); transparent cards become illegible over moving video.

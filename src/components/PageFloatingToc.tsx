@@ -13,9 +13,11 @@ export interface TocItem {
 interface PageFloatingTocProps {
   items: TocItem[];
   accentColor?: string;
+  /** true quando gerado automaticamente; o marcador evita sumário duplicado. */
+  auto?: boolean;
 }
 
-const PageFloatingToc = ({ items, accentColor = "orange" }: PageFloatingTocProps) => {
+const PageFloatingToc = ({ items, accentColor = "orange", auto = false }: PageFloatingTocProps) => {
   const [active, setActive] = useState("");
   const [show, setShow] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -56,6 +58,7 @@ const PageFloatingToc = ({ items, accentColor = "orange" }: PageFloatingTocProps
 
   return (
     <>
+      {!auto && <span data-page-toc hidden />}
       {/* Desktop */}
       <AnimatePresence>
         {show && (

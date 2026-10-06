@@ -12,6 +12,8 @@ import callcenterAsset from '@/assets/seguranca-mobile/sim-swap/sim-callcenter.w
 import sinalAsset from '@/assets/seguranca-mobile/sim-swap/sim-sinal.webp';
 import documentosAsset from '@/assets/seguranca-mobile/sim-swap/sim-documentos.webp';
 import bancoAsset from '@/assets/seguranca-mobile/sim-swap/sim-banco.webp';
+import { RotaSimSwap } from '@/components/seguranca-mobile/SimSwapModules';
+import { PilhaPassos, ChecklistDefesas } from '@/components/seguranca-mobile/ImsiModules';
 
 const GOLPE = [
   'Coleta: o criminoso junta dados seus de vazamentos, redes sociais e phishing. Nome, CPF, endereço, às vezes a foto de um documento que você mesmo publicou.',
@@ -75,18 +77,18 @@ export default function SimSwapComoFunciona() {
           </div>
         </section>
 
+        <section className="relative isolate overflow-hidden px-6 pb-24 md:px-12 md:pb-36 lg:px-20">
+          <div className="mx-auto max-w-[1600px]">
+            <Heading chapter="Simulação / O mesmo número, dois desfechos">Avance etapa por etapa e <span className="smx-editorial">veja onde a defesa corta.</span></Heading>
+            <RotaSimSwap />
+          </div>
+        </section>
+
         <section className="smx-deep relative isolate overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
           <Backdrop asset={callcenterAsset} alt="Central de atendimento à noite com operadores ao telefone" />
           <div className="mx-auto max-w-[1600px]">
             <Heading chapter="02 / Como o golpe funciona" dark>Quatro passos contra <span className="smx-copper-soft font-editorial font-normal italic">o balcão, não contra você.</span></Heading>
-            <div className="grid gap-4">
-              {GOLPE.map((text, i) => (
-                <motion.article key={text} {...reveal(i * .05)} className="smx-card-dark group grid gap-5 rounded-lg border p-6 backdrop-blur-xl transition-all duration-500 hover:translate-x-1 md:grid-cols-[64px_1fr] md:p-8">
-                  <div className="smx-step flex h-12 w-12 items-center justify-center rounded-full text-sm font-black">{String(i + 1).padStart(2, '0')}</div>
-                  <p className="self-center text-lg leading-[1.75] text-background/90">{text}</p>
-                </motion.article>
-              ))}
-            </div>
+            <PilhaPassos passos={GOLPE} />
             <Figure asset={callcenterAsset} alt="Operadores de central telefônica trabalhando sob luzes quentes à noite" caption="A batalha inteira acontece no atendimento da operadora. O seu aparelho é apenas o último a saber." />
           </div>
         </section>
@@ -128,20 +130,13 @@ export default function SimSwapComoFunciona() {
           <Backdrop asset={documentosAsset} alt="Documentos pessoais sobre mesa de madeira sob luz de abajur" light />
           <div className="mx-auto max-w-[1600px]">
             <Heading chapter="05 / Blindagem antes do golpe">Trave a porta <span className="smx-editorial">enquanto está intacta.</span></Heading>
-            <div className="grid gap-4">
-              {[
-                'Peça à operadora para cadastrar senha de atendimento e bloqueio de portabilidade no seu CPF. Sem essa senha, nenhuma troca de SIM deveria acontecer, nem presencialmente. Confirme que a trava está ativa com uma ligação de teste.',
-                'Migre o 2FA das contas críticas para aplicativo autenticador. Cada conta que sai do SMS é uma conta que o SIM Swap não abre sozinho.',
-                'Remova o número como método de recuperação do e-mail principal e do banco sempre que houver alternativa. O número deveria ser um meio de contato, não uma chave mestra.',
-                'No banco, use biometria ou PIN forte, mantenha limite de PIX compatível com a sua rotina e desconfie de qualquer ligação que peça "confirmação de código".',
-                'Reduza a exposição de documentos e dados pessoais: o material do golpe começa no que vazou de você. Foto de documento publicada, currículo completo, formulários duvidosos.',
-              ].map((text, i) => (
-                <motion.article key={text} {...reveal(i * .05)} className="smx-card group grid gap-5 rounded-lg border p-6 transition-all duration-500 hover:translate-x-1 md:grid-cols-[64px_1fr] md:p-8">
-                  <div className="smx-step flex h-12 w-12 items-center justify-center rounded-full text-sm font-black">{String(i + 1).padStart(2, '0')}</div>
-                  <p className="self-center text-lg leading-[1.75]">{text}</p>
-                </motion.article>
-              ))}
-            </div>
+            <ChecklistDefesas itens={[
+              'Peça à operadora para cadastrar senha de atendimento e bloqueio de portabilidade no seu CPF. Sem essa senha, nenhuma troca de SIM deveria acontecer, nem presencialmente. Confirme que a trava está ativa com uma ligação de teste.',
+              'Migre o 2FA das contas críticas para aplicativo autenticador. Cada conta que sai do SMS é uma conta que o SIM Swap não abre sozinho.',
+              'Remova o número como método de recuperação do e-mail principal e do banco sempre que houver alternativa. O número deveria ser um meio de contato, não uma chave mestra.',
+              'No banco, use biometria ou PIN forte, mantenha limite de PIX compatível com a sua rotina e desconfie de qualquer ligação que peça "confirmação de código".',
+              'Reduza a exposição de documentos e dados pessoais: o material do golpe começa no que vazou de você. Foto de documento publicada, currículo completo, formulários duvidosos.',
+            ]} />
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               <Button asChild size="lg" className="smx-btn h-14 justify-between px-6 font-bold"><Link to="/seguranca-mobile/2fa-authenticator-vs-sms">Autenticador ou SMS, o comparativo <ArrowRight /></Link></Button>
               <Button asChild size="lg" className="smx-btn h-14 justify-between px-6 font-bold"><Link to="/autocustodia">Agora leve isso para a autocustódia <ArrowRight /></Link></Button>

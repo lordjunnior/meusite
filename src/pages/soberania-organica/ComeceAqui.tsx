@@ -8,10 +8,37 @@ import {
 } from 'lucide-react';
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
-import heroImg from '@/assets/organica-comece/hero.webp';
-import aguaImg from '@/assets/organica-comece/agua.webp';
-import hortaImg from '@/assets/organica-comece/horta.webp';
-import conservasImg from '@/assets/organica-comece/conservas.webp';
+import OrganicVideoBackground from '@/components/backgrounds/OrganicVideoBackground';
+import comeceVideo from '@/assets/soberania-organica-background-20260815.mp4.asset.json';
+import semAgua from '@/assets/agua-filtro.webp';
+import semHorta from '@/assets/horta-vertical.webp';
+import semConserva from '@/assets/conserva-metodos-preservacao.webp';
+import semKit from '@/assets/kit72h-agua.webp';
+import fImg01 from '@/assets/toxicos/bg-ambientais.webp';
+import fImg02 from '@/assets/agua-armazenamento.webp';
+import fImg03 from '@/assets/horta-especies-iniciantes.webp';
+import fImg04 from '@/assets/conserva-hero-estoque.webp';
+import fImg05 from '@/assets/bg-fitoterapia.webp';
+import fImg06 from '@/assets/receitas/hub-cozinha-funcional-light.webp';
+import fImg07 from '@/assets/bg-fase02-autonomia.webp';
+import introImg from '@/assets/cp-plantas-pratica.webp';
+import ctaImg from '@/assets/bg-fase03-alimentar.webp';
+const SEMANA_IMGS = [semAgua, semHorta, semConserva, semKit];
+const FASE_IMGS = [fImg01, fImg02, fImg03, fImg04, fImg05, fImg06, fImg07];
+
+function AsidePhoto({ src, alt, caption }: { src: string; alt: string; caption: string }) {
+  return (
+    <figure className="comece-aside-photo group hidden lg:block mt-8">
+      <div className="relative overflow-hidden rounded-2xl aspect-[4/5]">
+        <img src={src} alt={alt} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(28,16,10,.85), rgba(28,16,10,0) 55%)' }} />
+        <figcaption className="absolute bottom-0 left-0 right-0 p-5 text-xs uppercase tracking-[0.25em] font-bold" style={{ color: '#ffd2ad' }}>
+          {caption}
+        </figcaption>
+      </div>
+    </figure>
+  );
+}
 
 /**
  * /soberania-organica/comece-aqui
@@ -307,22 +334,9 @@ const FAQ = [
 function Hero() {
   return (
     <section className="relative w-full" style={{ height: '92vh', minHeight: 720 }}>
-      <img
-        src={heroImg}
-        alt="Mãos cultivando terra fértil ao amanhecer, símbolo do início da trilha de soberania orgânica"
-        width={1920}
-        height={1280}
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="eager"
-        fetchPriority="high"
-        decoding="async"
-      />
       <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'linear-gradient(180deg, rgba(14,59,58,0.55) 0%, rgba(14,59,58,0.35) 40%, rgba(14,59,58,0.9) 100%)',
-        }}
+        className="absolute inset-x-0 bottom-0 h-1/2"
+        style={{ background: 'linear-gradient(180deg, rgba(7,11,10,0) 0%, rgba(7,11,10,0.55) 100%)' }}
       />
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -385,18 +399,19 @@ function Hero() {
 
 function FaseCard({ fase, index }: { fase: Fase; index: number }) {
   const Icon = fase.icon;
-  const escura = index % 2 === 1;
+  const escura = true;
+  const alt = index % 2 === 1;
   return (
     <section
-      className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32"
-      style={{ backgroundColor: escura ? '#0e3b3a' : '#f4ede4' }}
+      id={`fase-${fase.n}`}
+      className={`relative px-4 md:px-12 lg:px-20 py-10 md:py-16 ${alt ? 'comece-band-b' : ''}`}
     >
-      <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div className="comece-plate max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16 p-7 md:p-12 lg:p-16">
         <motion.aside {...fade(0)} className="lg:col-span-4">
           <div className="sticky top-24">
             <span
               className="text-xs font-bold tracking-[0.4em] uppercase block mb-4"
-              style={{ color: '#b45836' }}
+              style={{ color: '#e08a5f' }}
             >
               Fase {fase.n}
             </span>
@@ -408,7 +423,7 @@ function FaseCard({ fase, index }: { fase: Fase; index: number }) {
                 border: '1px solid rgba(180,88,54,0.35)',
               }}
             >
-              <Icon size={24} color="#b45836" />
+              <Icon size={24} color="#e08a5f" />
             </div>
             <p
               className="text-sm uppercase tracking-[0.2em] font-semibold"
@@ -416,6 +431,7 @@ function FaseCard({ fase, index }: { fase: Fase; index: number }) {
             >
               {fase.titulo}
             </p>
+            <AsidePhoto src={FASE_IMGS[index]} alt={fase.titulo} caption={`Fase ${fase.n} na prática`} />
           </div>
         </motion.aside>
 
@@ -437,10 +453,10 @@ function FaseCard({ fase, index }: { fase: Fase; index: number }) {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div>
+            <div className="comece-card comece-card-sage p-6">
               <h3
                 className="flex items-center gap-2 text-sm font-bold tracking-[0.2em] uppercase mb-4"
-                style={{ color: '#b45836' }}
+                style={{ color: '#a9c49a' }}
               >
                 <CalendarCheck size={16} /> O que fazer nesta semana
               </h3>
@@ -451,16 +467,16 @@ function FaseCard({ fase, index }: { fase: Fase; index: number }) {
                     className="flex gap-3 text-base leading-relaxed font-light"
                     style={{ color: escura ? 'rgba(244,237,228,0.82)' : '#2d3a37' }}
                   >
-                    <span style={{ color: '#b45836' }}>›</span>
+                    <span style={{ color: '#e08a5f' }}>›</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div>
+            <div className="comece-card comece-card-clay p-6">
               <h3
                 className="flex items-center gap-2 text-sm font-bold tracking-[0.2em] uppercase mb-4"
-                style={{ color: '#b45836' }}
+                style={{ color: '#e08a5f' }}
               >
                 <AlertTriangle size={16} /> Erros comuns
               </h3>
@@ -471,7 +487,7 @@ function FaseCard({ fase, index }: { fase: Fase; index: number }) {
                     className="flex gap-3 text-base leading-relaxed font-light"
                     style={{ color: escura ? 'rgba(244,237,228,0.7)' : '#5a6664' }}
                   >
-                    <span style={{ color: '#b45836' }}>×</span>
+                    <span style={{ color: '#e08a5f' }}>×</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -491,9 +507,9 @@ function FaseCard({ fase, index }: { fase: Fase; index: number }) {
                 <Link
                   key={l.to}
                   to={l.to}
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold transition-all hover:gap-3"
+                  className="comece-pill inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold"
                   style={{
-                    backgroundColor: escura ? 'rgba(244,237,228,0.08)' : '#ffffff',
+                    backgroundColor: 'rgba(244,237,228,0.06)',
                     color: escura ? '#f4ede4' : '#0e3b3a',
                     border: `1px solid ${escura ? 'rgba(244,237,228,0.25)' : 'rgba(14,59,58,0.15)'}`,
                   }}
@@ -562,37 +578,40 @@ export default function ComeceAqui() {
 
       <div
         className="relative min-h-screen"
-        style={{ backgroundColor: '#f4ede4', color: '#1c2624', fontFamily: "'Inter Tight', sans-serif" }}
+        style={{ backgroundColor: '#2a160c', color: '#f4ede4', fontFamily: "'Inter Tight', sans-serif" }}
       >
         <div className="absolute top-0 left-0 right-0 z-30 px-6 md:px-12 lg:px-20 pt-[52px]">
           <BackToHome />
         </div>
 
+        <OrganicVideoBackground src={comeceVideo.url} position="fixed" />
+        <div className="relative z-10">
         <Hero />
 
         {/* CAPÍTULO 1 — Por que um roteiro e não uma lista de tarefas */}
-        <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-[1600px] mx-auto">
+        <section className="relative px-4 md:px-12 lg:px-20 py-10 md:py-16">
+          <div className="comece-plate grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-[1600px] mx-auto p-7 md:p-12 lg:p-16">
             <motion.aside {...fade(0)} className="lg:col-span-4">
               <div className="sticky top-24">
-                <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#b45836' }}>
+                <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#e08a5f' }}>
                   Antes de começar
                 </span>
                 <div className="h-[2px] w-16 mb-6" style={{ backgroundColor: '#b45836' }} />
-                <p className="text-sm uppercase tracking-[0.2em] font-semibold" style={{ color: '#5a6664' }}>
+                <p className="text-sm uppercase tracking-[0.2em] font-semibold" style={{ color: 'rgba(244,237,228,0.62)' }}>
                   Por que fase, não lista
                 </p>
+                <AsidePhoto src={introImg} alt="Mãos cuidando de plantas em vasos" caption="Mão na terra, toda semana" />
               </div>
             </motion.aside>
             <motion.div {...fade(0.1)} className="lg:col-span-8">
               <h2
                 className="text-[clamp(2.25rem,5.5vw,5rem)] font-black leading-[1] tracking-tight mb-10"
-                style={{ color: '#0e3b3a' }}
+                style={{ color: '#f4ede4' }}
               >
                 Não é uma lista de tarefas.{' '}
                 <span
                   style={{
-                    color: '#b45836',
+                    color: '#e08a5f',
                     fontStyle: 'italic',
                     fontWeight: 300,
                     fontFamily: "'Playfair Display', serif",
@@ -601,7 +620,7 @@ export default function ComeceAqui() {
                   É uma sequência que sustenta a próxima.
                 </span>
               </h2>
-              <div className="space-y-7 text-lg md:text-xl leading-[1.7] font-light" style={{ color: '#2d3a37' }}>
+              <div className="space-y-7 text-lg md:text-xl leading-[1.7] font-light" style={{ color: 'rgba(244,237,228,0.84)' }}>
                 <p>
                   A maioria das pessoas que tenta soberania orgânica começa pela parte mais visível e vistosa: a horta bonita, o painel solar, a despensa cheia de conserva artesanal. O problema é que nenhuma dessas coisas se sustenta sem os alicerces invisíveis por trás: diagnóstico do que já está entrando em casa, água segura para regar e beber, solo que não vai matar a planta em três semanas.
                 </p>
@@ -612,7 +631,7 @@ export default function ComeceAqui() {
                   className="pl-8 py-2 my-10 text-2xl md:text-3xl leading-[1.4] font-light"
                   style={{
                     borderLeft: '3px solid #b45836',
-                    color: '#0e3b3a',
+                    color: '#f4ede4',
                     fontFamily: "'Playfair Display', serif",
                     fontStyle: 'italic',
                   }}
@@ -627,42 +646,16 @@ export default function ComeceAqui() {
           </div>
         </section>
 
-        {/* Imagem editorial 1 — água */}
-        <section className="relative w-full" style={{ height: '60vh', minHeight: 420 }}>
-          <img
-            src={aguaImg}
-            alt="Água corrente clara sobre pedras, representando a fase de purificação e reserva hídrica"
-            width={1400}
-            height={933}
-            className="absolute inset-0 w-full h-full object-cover"
-            loading="lazy"
-            decoding="async"
-          />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(0deg, rgba(14,59,58,0.55) 0%, transparent 60%)' }} />
-        </section>
 
         {/* As 7 fases */}
         {FASES.map((fase, i) => (
           <FaseCard key={fase.n} fase={fase} index={i} />
         ))}
 
-        {/* Imagem editorial 2 — horta */}
-        <section className="relative w-full" style={{ height: '60vh', minHeight: 420 }}>
-          <img
-            src={hortaImg}
-            alt="Canteiro de horta orgânica com hortaliças em fileiras, luz natural de fim de tarde"
-            width={1400}
-            height={985}
-            className="absolute inset-0 w-full h-full object-cover"
-            loading="lazy"
-            decoding="async"
-          />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(0deg, rgba(14,59,58,0.55) 0%, transparent 60%)' }} />
-        </section>
 
         {/* Quanto custa começar */}
-        <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32" style={{ backgroundColor: '#0e3b3a' }}>
-          <div className="max-w-[1600px] mx-auto">
+        <section className="relative px-4 md:px-12 lg:px-20 py-10 md:py-16">
+          <div className="comece-plate p-7 md:p-12 lg:p-16 max-w-[1600px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
               <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#ffb37a' }}>
                 Investimento real
@@ -701,72 +694,62 @@ export default function ComeceAqui() {
         </section>
 
         {/* Mínimo viável em 30 dias */}
-        <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32" style={{ backgroundColor: '#f4ede4' }}>
-          <div className="max-w-[1600px] mx-auto">
+        <section className="relative px-4 md:px-12 lg:px-20 py-10 md:py-16 comece-band-b">
+          <div className="comece-plate p-7 md:p-12 lg:p-16 max-w-[1600px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
-              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#b45836' }}>
+              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#e08a5f' }}>
                 Roteiro de execução
               </span>
               <h2
                 className="text-[clamp(2rem,4.5vw,4rem)] font-black leading-[1.05] tracking-tight mb-6"
-                style={{ color: '#0e3b3a' }}
+                style={{ color: '#f4ede4' }}
               >
                 O mínimo viável{' '}
-                <span style={{ color: '#b45836', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
+                <span style={{ color: '#e08a5f', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
                   em 30 dias.
                 </span>
               </h2>
-              <p className="text-lg md:text-xl leading-relaxed font-light" style={{ color: '#2d3a37' }}>
+              <p className="text-lg md:text-xl leading-relaxed font-light" style={{ color: 'rgba(244,237,228,0.84)' }}>
                 Se você só tem um mês para provar a si mesmo que a trilha funciona, siga este roteiro semana a semana. Não é o caminho completo, é o suficiente para sair da teoria.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="comece-expand flex flex-col lg:flex-row gap-5 lg:h-[480px]">
               {MINIMO_30_DIAS.map((s, i) => (
                 <motion.div
                   key={s.semana}
                   {...fade(i * 0.08)}
-                  className="p-8 rounded-2xl"
-                  style={{ backgroundColor: '#ffffff', border: '1px solid rgba(14,59,58,0.1)' }}
+                  className="comece-card comece-panel group relative overflow-hidden p-8 flex flex-col justify-end min-h-[280px]"
+                  tabIndex={0}
                 >
-                  <span className="text-xs font-bold tracking-[0.3em] uppercase block mb-2" style={{ color: '#b45836' }}>
+                  <img src={SEMANA_IMGS[i]} alt="" aria-hidden="true" loading="lazy" className="comece-panel-img absolute inset-0 w-full h-full object-cover" />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(0deg, rgba(26,14,8,0.96) 0%, rgba(26,14,8,0.7) 50%, rgba(26,14,8,0.25) 100%)' }} />
+                  <div className="relative z-10">
+                  <span className="text-xs font-bold tracking-[0.3em] uppercase block mb-2" style={{ color: '#e08a5f' }}>
                     {s.semana}
                   </span>
-                  <h3 className="text-xl font-black mb-4" style={{ color: '#0e3b3a' }}>
+                  <h3 className="text-xl font-black mb-4" style={{ color: '#f4ede4' }}>
                     {s.foco}
                   </h3>
                   <ul className="space-y-2">
                     {s.acoes.map((a, j) => (
-                      <li key={j} className="flex gap-2 text-sm leading-relaxed font-light" style={{ color: '#2d3a37' }}>
-                        <span style={{ color: '#b45836' }}>›</span>
+                      <li key={j} className="flex gap-2 text-sm leading-relaxed font-light" style={{ color: 'rgba(244,237,228,0.84)' }}>
+                        <span style={{ color: '#e08a5f' }}>›</span>
                         <span>{a}</span>
                       </li>
                     ))}
                   </ul>
+                  </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Imagem editorial 3 — conservas */}
-        <section className="relative w-full" style={{ height: '60vh', minHeight: 420 }}>
-          <img
-            src={conservasImg}
-            alt="Potes de conserva e fermentado alinhados em prateleira de despensa, luz natural lateral"
-            width={1400}
-            height={2114}
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: 'center 30%' }}
-            loading="lazy"
-            decoding="async"
-          />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(0deg, rgba(14,59,58,0.6) 0%, transparent 60%)' }} />
-        </section>
 
         {/* Mapa completo da trilha */}
-        <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32" style={{ backgroundColor: '#0e3b3a' }}>
-          <div className="max-w-[1600px] mx-auto">
+        <section className="relative px-4 md:px-12 lg:px-20 py-10 md:py-16">
+          <div className="comece-plate p-7 md:p-12 lg:p-16 max-w-[1600px] mx-auto">
             <motion.div {...fade(0)} className="mb-14 max-w-3xl">
               <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#ffb37a' }}>
                 Visão geral
@@ -802,7 +785,7 @@ export default function ComeceAqui() {
                   <Link
                     key={l.to}
                     to={l.to}
-                    className="flex items-center gap-3 p-5 rounded-xl transition-all hover:translate-x-1"
+                    className="comece-card comece-lift flex items-center gap-3 p-5"
                     style={{
                       backgroundColor: 'rgba(244,237,228,0.05)',
                       border: '1px solid rgba(244,237,228,0.15)',
@@ -819,15 +802,15 @@ export default function ComeceAqui() {
         </section>
 
         {/* FAQ */}
-        <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-36" style={{ backgroundColor: '#f4ede4' }}>
-          <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
+        <section className="relative px-4 md:px-12 lg:px-20 py-10 md:py-16 comece-band-b">
+          <div className="comece-plate p-7 md:p-12 lg:p-16 max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
             <motion.aside {...fade(0)} className="lg:col-span-4">
               <div className="sticky top-24">
-                <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#b45836' }}>
+                <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#e08a5f' }}>
                   Perguntas frequentes
                 </span>
                 <div className="h-[2px] w-16 mb-6" style={{ backgroundColor: '#b45836' }} />
-                <h2 className="text-3xl md:text-4xl font-black leading-tight" style={{ color: '#0e3b3a' }}>
+                <h2 className="text-3xl md:text-4xl font-black leading-tight" style={{ color: '#f4ede4' }}>
                   Dúvidas antes de começar.
                 </h2>
               </div>
@@ -837,19 +820,18 @@ export default function ComeceAqui() {
                 <motion.div
                   key={i}
                   {...fade(i * 0.05)}
-                  className="rounded-2xl overflow-hidden"
-                  style={{ backgroundColor: '#ffffff', border: '1px solid rgba(14,59,58,0.1)' }}
+                  className="comece-card overflow-hidden"
                 >
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full flex items-center justify-between gap-4 px-7 py-6 text-left"
+                    className="w-full flex items-center justify-between gap-4 px-7 py-6 text-left transition-colors hover:bg-white/[0.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/50 rounded-2xl"
                   >
-                    <span className="text-lg md:text-xl font-bold" style={{ color: '#0e3b3a' }}>
+                    <span className="text-lg md:text-xl font-bold" style={{ color: '#f4ede4' }}>
                       {f.q}
                     </span>
                     <ChevronDown
                       size={22}
-                      color="#b45836"
+                      color="#e08a5f"
                       style={{
                         transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)',
                         transition: 'transform 0.3s ease',
@@ -864,7 +846,7 @@ export default function ComeceAqui() {
                       transition={{ duration: 0.3 }}
                       className="px-7 pb-7"
                     >
-                      <p className="text-base md:text-lg leading-relaxed font-light" style={{ color: '#2d3a37' }}>
+                      <p className="text-base md:text-lg leading-relaxed font-light" style={{ color: 'rgba(244,237,228,0.84)' }}>
                         {f.a}
                       </p>
                     </motion.div>
@@ -876,32 +858,47 @@ export default function ComeceAqui() {
         </section>
 
         {/* CTA final */}
-        <section className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32" style={{ backgroundColor: '#0e3b3a' }}>
-          <div className="max-w-[1600px] mx-auto text-center">
-            <motion.div {...fade(0)}>
-              <Wallet size={36} color="#ffb37a" className="mx-auto mb-6" />
-              <h2
-                className="text-[clamp(2rem,5vw,4.5rem)] font-black leading-[1.05] tracking-tight mb-8 max-w-4xl mx-auto"
-                style={{ color: '#f4ede4' }}
-              >
+        <section className="relative px-4 md:px-12 lg:px-20 py-10 md:py-16">
+          <motion.div {...fade(0)} className="comece-plate comece-final max-w-[1600px] mx-auto grid lg:grid-cols-12 overflow-hidden p-0">
+            <div className="relative lg:col-span-5 min-h-[260px] lg:min-h-[520px] overflow-hidden group">
+              <img src={ctaImg} alt="Horta sob luz do sol" loading="lazy" className="comece-final-img absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(28,16,10,0) 40%, rgba(28,16,10,.9))' }} />
+              <span className="absolute top-6 left-6 text-[11px] font-bold uppercase tracking-[0.3em] px-3 py-1.5 rounded-full" style={{ color: '#fff3e6', background: 'rgba(28,16,10,.6)', border: '1px solid rgba(255,190,135,.35)' }}>
+                Semana 1
+              </span>
+            </div>
+            <div className="lg:col-span-7 p-8 md:p-14 lg:p-16 flex flex-col justify-center">
+              <span className="text-xs font-bold tracking-[0.4em] uppercase block mb-4" style={{ color: '#e08a5f' }}>
+                Seu primeiro passo
+              </span>
+              <div className="h-[2px] w-16 mb-8" style={{ backgroundColor: '#b45836' }} />
+              <h2 className="text-[clamp(2.25rem,4.4vw,4.25rem)] font-black leading-[1.02] tracking-tight mb-8" style={{ color: '#fbf6ee' }}>
                 A trilha inteira começa com{' '}
-                <span style={{ color: '#ffb37a', fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
+                <span style={{ color: '#ffb37a', fontStyle: 'italic', fontWeight: 400, fontFamily: "'Playfair Display', serif" }}>
                   um vaso e um filtro de água.
                 </span>
               </h2>
-              <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light" style={{ color: 'rgba(244,237,228,0.8)' }}>
-                Escolha a fase 1 agora e volte a este hub sempre que precisar de direção. Autonomia real é construída em semanas, não em um único fim de semana de entusiasmo.
+              <p className="text-xl md:text-2xl leading-[1.5] mb-4" style={{ color: '#fbf6ee', fontFamily: "'Playfair Display', serif", fontStyle: 'italic' }}>
+                Escolha a fase 1 agora e volte a este hub sempre que precisar de direção.
               </p>
-              <Link
-                to="/soberania-organica"
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-bold transition-all hover:gap-4"
-                style={{ backgroundColor: '#b45836', color: '#f4ede4' }}
-              >
-                Voltar ao hub Soberania Orgânica <ArrowRight size={18} />
-              </Link>
-            </motion.div>
-          </div>
+              <p className="text-base md:text-lg leading-relaxed mb-10 max-w-xl" style={{ color: 'rgba(244,237,228,0.78)' }}>
+                Autonomia real é construída em semanas, não em um único fim de semana de entusiasmo.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a href="#fase-01" className="comece-cta inline-flex items-center gap-3 pl-7 pr-2 py-2 rounded-full text-base font-bold">
+                  Começar pela fase 01
+                  <span className="w-11 h-11 rounded-full flex items-center justify-center" style={{ background: 'rgba(28,16,10,.35)' }}>
+                    <ArrowRight size={18} />
+                  </span>
+                </a>
+                <Link to="/soberania-organica" className="comece-pill inline-flex items-center gap-2 px-7 py-4 rounded-full text-base font-semibold" style={{ color: '#fbf6ee', border: '1px solid rgba(255,190,135,.35)' }}>
+                  Voltar ao hub Soberania Orgânica
+                </Link>
+              </div>
+            </div>
+          </motion.div>
         </section>
+        </div>
       </div>
     </>
   );

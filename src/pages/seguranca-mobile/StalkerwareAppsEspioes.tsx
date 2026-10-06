@@ -12,6 +12,8 @@ import permissoesAsset from '@/assets/seguranca-mobile/stalkerware/stk-permissoe
 import bateriaAsset from '@/assets/seguranca-mobile/stalkerware/stk-bateria.webp';
 import noiteAsset from '@/assets/seguranca-mobile/stalkerware/stk-noite.webp';
 import rastreadorAsset from '@/assets/seguranca-mobile/stalkerware/stk-rastreador.webp';
+import { RaioXStalkerware, ChecklistVarredura } from '@/components/seguranca-mobile/StalkerwareModules';
+import { STALKERWARE_SCAN_STEPS } from '@/data/stalkerwareInspection';
 
 const COMO_ENTRA = [
   'Acesso físico de poucos minutos. A instalação clássica acontece quando alguém fica sozinho com o seu celular desbloqueado: parceiro, familiar, colega, alguém com quem você dorme ou convive.',
@@ -110,10 +112,25 @@ export default function StalkerwareAppsEspioes() {
           </div>
         </section>
 
+        <section className="relative isolate overflow-hidden px-6 pb-24 md:px-12 md:pb-36 lg:px-20">
+          <div className="mx-auto max-w-[1600px]">
+            <Heading chapter="Raio-X / Um aparelho comprometido">Toque nos pontos e revele <span className="smx-editorial">os vetores silenciosos.</span></Heading>
+            <RaioXStalkerware imageSrc={permissoesAsset} />
+          </div>
+        </section>
+
         <section className="smx-deep relative isolate overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
           <Backdrop asset={noiteAsset} alt="Pessoa deitada no escuro olhando a tela do celular" />
           <div className="mx-auto max-w-[1600px]">
             <Heading chapter="04 / Detecção e remoção, na ordem certa" dark>Segurança da pessoa <span className="smx-copper-soft font-editorial font-normal italic">antes da segurança do aparelho.</span></Heading>
+            <div className="mb-16 rounded-lg bg-background p-5 text-foreground md:p-8 lg:p-10">
+              <div className="mb-8 max-w-3xl">
+                <span className="smx-copper text-xs font-black uppercase tracking-[0.24em]">Checklist operacional</span>
+                <h3 className="mt-3 text-2xl font-black leading-tight md:text-4xl">Varredura manual de certificados e permissões especiais.</h3>
+                <p className="smx-muted mt-4 text-lg leading-[1.7]">Marque cada etapa somente depois de conferir a área indicada no aparelho.</p>
+              </div>
+              <ChecklistVarredura steps={STALKERWARE_SCAN_STEPS} />
+            </div>
             <div className="grid gap-4">
               {REMOCAO.map((text, i) => (
                 <motion.article key={text} {...reveal(i * .05)} className="smx-card-dark group grid gap-5 rounded-lg border p-6 backdrop-blur-xl transition-all duration-500 hover:translate-x-1 md:grid-cols-[64px_1fr] md:p-8">

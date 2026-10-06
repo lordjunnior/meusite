@@ -32,3 +32,39 @@
   .fontes-page .fontes-motion-rule { animation: none; transform: none; }
   .fontes-page .fontes-progress span { transition: none; }
 }
+/* Faixas taticas (ruptura escura dentro da pagina clara) */
+.fontes-page .tatica-band { background: #07080c; color: #e8e4dc; }
+.fontes-page .tatica-inset { background: #07080c; color: #e8e4dc; border-radius: 1rem; padding: 1.5rem; margin-top: 2rem; }
+.fontes-page .tatica-kicker { font-size: .75rem; text-transform: uppercase; letter-spacing: .3em; color: #e0a64a; margin-bottom: 1rem; }
+.fontes-page .tatica-title { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; line-height: 1.05; margin-bottom: 2.5rem; max-width: 60rem; }
+.fontes-page .tatica-title span { color: #4fb3a9; }
+
+/* Mapa de triagem: comparador por etapas */
+.fontes-page .triagem { margin-top: 3rem; }
+.fontes-page .triagem-steps { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .75rem; }
+.fontes-page .triagem-rail { position: absolute; left: 12.5%; right: 12.5%; top: 1.75rem; height: 2px; background: hsl(var(--fontes-line)); }
+.fontes-page .triagem-rail span { display: block; height: 100%; background: hsl(var(--smx-copper)); transform-origin: left; transition: transform .45s ease; }
+.fontes-page .triagem-step { position: relative; display: flex; flex-direction: column; align-items: center; gap: .75rem; min-height: 44px; padding: .25rem; text-align: center; cursor: pointer; background: none; border: 0; }
+.fontes-page .triagem-dot { display: grid; place-items: center; width: 3.5rem; height: 3.5rem; border-radius: 999px; font-weight: 900; font-size: 1rem; background: hsl(var(--smx-paper)); color: hsl(var(--smx-muted)); border: 2px solid hsl(var(--fontes-line)); transition: background .25s, color .25s, border-color .25s, transform .25s; }
+.fontes-page .triagem-step:hover .triagem-dot { border-color: hsl(var(--smx-copper)); transform: translateY(-2px); }
+.fontes-page .triagem-step.is-past .triagem-dot { border-color: hsl(var(--smx-copper)); color: hsl(var(--smx-copper)); }
+.fontes-page .triagem-step.is-on .triagem-dot { background: hsl(var(--smx-deep)); color: hsl(var(--smx-paper)); border-color: hsl(var(--smx-deep)); transform: scale(1.08); }
+.fontes-page .triagem-step-label { font-weight: 800; font-size: .95rem; line-height: 1.3; color: hsl(var(--smx-muted)); }
+.fontes-page .triagem-step-label em { font-family: 'Playfair Display', serif; font-weight: 400; }
+.fontes-page .triagem-step.is-on .triagem-step-label { color: hsl(var(--smx-ink)); }
+.fontes-page .triagem-grid { display: grid; gap: 1.25rem; margin-top: 2.5rem; }
+.fontes-page .triagem-card { padding: 2rem; border: 1px solid hsl(var(--fontes-line)); min-height: 15rem; }
+.fontes-page .triagem-card h3 { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 900; line-height: 1.05; margin: .5rem 0 1rem; }
+.fontes-page .triagem-card p:last-child { font-size: 1.125rem; line-height: 1.75; }
+.fontes-page .triagem-tag { font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .2em; }
+.fontes-page .triagem-panico { background: hsl(var(--smx-paper)); border-top: 4px solid hsl(var(--smx-copper)); }
+.fontes-page .triagem-panico .triagem-tag { color: hsl(var(--smx-copper)); }
+.fontes-page .triagem-barreira { background: hsl(var(--smx-deep)); color: hsl(var(--smx-paper)); border-color: hsl(var(--smx-deep)); border-top: 4px solid hsl(var(--smx-copper-soft)); }
+.fontes-page .triagem-barreira .triagem-tag { color: hsl(var(--smx-copper-soft)); }
+.fontes-page .triagem-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; }
+.fontes-page .triagem-btn { min-height: 44px; padding: 0 1.25rem; font-weight: 800; border: 1px solid hsl(var(--smx-ink)); color: hsl(var(--smx-ink)); background: transparent; transition: background .2s, color .2s; }
+.fontes-page .triagem-btn:hover:not(:disabled) { background: hsl(var(--smx-ink)); color: hsl(var(--smx-paper)); }
+.fontes-page .triagem-btn:disabled { opacity: .35; cursor: not-allowed; }
+@media (min-width: 768px) { .fontes-page .triagem-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .fontes-page .triagem-step-label { font-size: .75rem; } .fontes-page .triagem-dot { width: 2.75rem; height: 2.75rem; } .fontes-page .triagem-rail { top: 1.375rem; } }
+@media (prefers-reduced-motion: reduce) { .fontes-page .triagem-rail span, .fontes-page .triagem-dot { transition: none; } }

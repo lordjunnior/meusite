@@ -28,7 +28,7 @@ const TrailNav = () => {
     setShowTrail(v > 0.55);
   });
 
-  if (!trail) return null;
+  if (!trail || ['/soberania-organica', '/soberania-organica/comece-aqui'].includes(location.pathname.replace(/\/+$/, ''))) return null;
 
   const pct = trail.total > 1 ? (trail.index / trail.total) * 100 : 100;
   const hasSiblings = Boolean(trail.prev || trail.next);

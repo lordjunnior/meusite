@@ -14,9 +14,12 @@ Toda página nova entrega: meta title<60, meta desc<160, H1, subtítulo, hero fu
 MÍNIMO POR PÁGINA: 6+ imagens reais, hero full-bleed ponta a ponta, animações de entrada, hover em tudo, zero emoji, zero travessão/vícios de IA.
 Navigation icons must be strictly monochromatic.
 Mandatory "PIX NÃO É PRIVADO" warning on PIX guides.
+Toda imagem criada com texto visível deve estar em português do Brasil.
 
 ## Memories
 - [Padrão mínimo de página](mem://design/page-minimum-standard) — 6+ imagens, hero full-bleed, animações, hover, sem emoji, sem vícios de IA
+- [Painéis de Mente Blindada](mem://design/mente-blindada-paineis) — Os quatro atalhos usam expansão fluida no conceito Arquivo vertical.
+- [Imagens em pt-BR](mem://constraints/design/imagens-em-portugues) — Texto em qualquer imagem criada sempre em português do Brasil; padrão Comece Aqui aprovado
 - [PROIBIDO Páginas Dark - Padrão Editorial Universal](mem://constraints/design/no-dark-pages-mandate) — REGRA UNIVERSAL: nenhuma página pode ser dark, sempre paleta clara editorial sand+teal+copper, com checklist de 15 pontos
 - [PROIBIDO Álcool / Vícios](mem://constraints/content/no-alcohol-no-addiction) — Nenhuma receita pode usar cachaça, álcool ou substância viciante. Sempre infusão / lambedor com mel cru.
 - [PROIBIDO Travessão e "lambedor"](mem://constraints/content/no-em-dash-and-banned-words) - Nunca usar travessão (—) nem a palavra "lambedor". Usar "xarope" ou "infusão concentrada com mel cru".

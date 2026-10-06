@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight, RotateCcw, Compass, Shield, Coins, Globe, BookOpen, Zap, Target } from "lucide-react";
+import { ArrowLeft, ArrowRight, RotateCcw, Compass, Shield, Coins, Globe, BookOpen, Zap, Target, ListChecks } from "lucide-react";
 import FixedThematicBackground from "@/components/backgrounds/FixedThematicBackground";
 import bgPorOndeComecar from "@/assets/backgrounds/bg-por-onde-comecar.webp";
 import AppSidebar from "@/components/AppSidebar";
@@ -11,6 +11,8 @@ import RightSidebar from "@/components/RightSidebar";
 import NetworkTicker from "@/components/NetworkTicker";
 import BackToHome from '@/components/BackToHome';
 import { canonicalUrl } from '@/lib/site';
+import { Button } from "@/components/ui/button";
+import { START_PROFILES, type StartProfile } from "@/data/startProfiles";
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -132,6 +134,8 @@ function getRecommendations(answers: Record<string, string>): Recommendation[] {
 }
 
 export default function PorOndeComecar() {
+  const [mode, setMode] = useState<"profiles" | "quiz">("profiles");
+  const [selectedProfileId, setSelectedProfileId] = useState<StartProfile["id"] | null>(null);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
@@ -158,6 +162,24 @@ export default function PorOndeComecar() {
   };
 
   const recommendations = showResults ? getRecommendations(answers) : [];
+  const selectedProfile = START_PROFILES.find((profile) => profile.id === selectedProfileId);
+
+  const selectProfile = (id: StartProfile["id"]) => {
+    setSelectedProfileId(id);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const openQuiz = () => {
+    setMode("quiz");
+    setSelectedProfileId(null);
+    handleRestart();
+  };
+
+  const openProfiles = () => {
+    setMode("profiles");
+    setSelectedProfileId(null);
+    handleRestart();
+  };
 
   return (
     <>
@@ -168,8 +190,8 @@ export default function PorOndeComecar() {
       <Helmet>
         <link rel="canonical" href={canonicalUrl('/por-onde-comecar')} />
         <meta property="og:url" content={canonicalUrl('/por-onde-comecar')} />
-        <title>Por Onde Começar? Encontre sua trilha | Lord Junnior</title>
-        <meta name="description" content="Descubra por onde começar sua jornada de soberania individual. Um quiz rápido que direciona para o conteúdo certo pro seu nível." />
+        <title>Por Onde Começar? Escolha sua trilha | Lord Junnior</title>
+        <meta name="description" content="Escolha seu perfil ou faça um diagnóstico rápido para começar sua jornada de soberania, privacidade mobile e Bitcoin sem KYC." />
       </Helmet>
 
       <div className="min-h-screen text-foreground">
@@ -188,34 +210,127 @@ export default function PorOndeComecar() {
           </div>
 
           {/* HERO CINEMATOGRÁFICO */}
-          {!showResults && step === 0 && (
+          {mode === "profiles" && !selectedProfile && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: EASE }}
               className="px-5 md:px-8 pt-10 pb-6 max-w-4xl mx-auto w-full text-center"
             >
-              <p className="font-mono text-[10px] tracking-[0.4em] text-primary uppercase mb-5">Diagnóstico Operacional</p>
-              <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-black uppercase leading-[0.92] tracking-tighter text-foreground mb-6" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
-                Toda jornada começa<br />
-                <span className="italic font-serif text-primary normal-case tracking-tight">com a pergunta certa.</span>
+              <p className="font-mono text-[10px] tracking-[0.4em] text-primary uppercase mb-5">Ponto de entrada</p>
+              <h1 className="font-impact text-[clamp(2.5rem,6vw,5rem)] font-black uppercase leading-[0.92] text-foreground mb-6">
+                Comece pelo risco<br />
+                <span className="font-editorial italic text-primary normal-case">que você quer reduzir.</span>
               </h1>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto font-light">
-                Você não precisa ler 97 páginas pra começar. Responda 3 perguntas e o sistema constrói uma trilha cirúrgica para o seu nível, seu objetivo e o seu tempo de reação.
+                Escolha o cenário mais próximo da sua realidade. Você recebe três leituras em ordem, sem precisar percorrer o site inteiro.
               </p>
               <div className="flex items-center justify-center gap-6 mt-8 text-[10px] font-mono uppercase tracking-[0.25em] text-muted-foreground/60">
-                <span className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-primary animate-pulse" /> 60 segundos</span>
-                <span className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-primary animate-pulse" /> 3 perguntas</span>
-                <span className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-primary animate-pulse" /> Trilha cirúrgica</span>
+                <span className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-primary animate-pulse" /> 3 perfis</span>
+                <span className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-primary animate-pulse" /> 3 passos</span>
+                <span className="hidden sm:flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-primary animate-pulse" /> Ordem prática</span>
               </div>
             </motion.div>
           )}
 
           {/* Content */}
-          <div className="flex-1 flex items-center justify-center px-5 md:px-8 py-12">
-            <div className="w-full max-w-2xl">
+          <div className="flex-1 flex items-center justify-center px-5 md:px-8 py-8 md:py-12">
+            <div className={mode === "profiles" && !selectedProfile ? "w-full max-w-5xl" : "w-full max-w-2xl"}>
               <AnimatePresence mode="wait">
-                {!showResults ? (
+                {mode === "profiles" && !selectedProfile ? (
+                  <motion.section
+                    key="profile-picker"
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: EASE }}
+                    aria-labelledby="profile-heading"
+                  >
+                    <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                      <div>
+                        <p className="font-mono text-[10px] tracking-[0.3em] text-primary uppercase mb-2">Escolha direta</p>
+                        <h2 id="profile-heading" className="text-2xl md:text-3xl font-bold text-foreground">Qual situação descreve você hoje?</h2>
+                      </div>
+                      <p className="max-w-xs text-sm text-muted-foreground sm:text-right">Você pode trocar de perfil a qualquer momento.</p>
+                    </div>
+
+                    <div className="grid gap-3 md:grid-cols-3" role="list">
+                      {START_PROFILES.map((profile, index) => (
+                        <motion.div key={profile.id} role="listitem" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12 + index * 0.08, ease: EASE }}>
+                          <Button
+                            variant="ghost"
+                            onClick={() => selectProfile(profile.id)}
+                            className="group h-full min-h-[255px] w-full whitespace-normal rounded-lg border border-border/70 bg-card/70 p-6 text-left backdrop-blur-md hover:border-primary/50 hover:bg-card focus-visible:ring-offset-0"
+                            aria-label={`Escolher perfil: ${profile.title}`}
+                          >
+                            <span className="flex h-full w-full flex-col items-start">
+                              <span className="mb-7 flex w-full items-center justify-between">
+                                <span className="flex h-11 w-11 items-center justify-center rounded-md border border-primary/20 bg-primary/10 text-primary">
+                                  <profile.icon className="h-5 w-5" />
+                                </span>
+                                <span className="font-mono text-[9px] uppercase tracking-[0.24em] text-muted-foreground">{profile.eyebrow}</span>
+                              </span>
+                              <span className="mb-3 block text-lg font-bold leading-tight text-foreground">{profile.title}</span>
+                              <span className="block text-sm font-normal leading-relaxed text-muted-foreground">{profile.description}</span>
+                              <span className="mt-auto flex w-full items-center justify-between border-t border-border/60 pt-5 text-xs text-primary">
+                                Ver minha trilha
+                                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                              </span>
+                            </span>
+                          </Button>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    <div className="mt-7 flex flex-col items-center justify-center gap-3 border-t border-border/50 pt-7 sm:flex-row">
+                      <span className="text-sm text-muted-foreground">Nenhum perfil encaixa?</span>
+                      <Button variant="outline" onClick={openQuiz} className="gap-2 bg-background/50">
+                        <ListChecks className="h-4 w-4" /> Fazer diagnóstico de 3 perguntas
+                      </Button>
+                    </div>
+                  </motion.section>
+                ) : mode === "profiles" && selectedProfile ? (
+                  <motion.section
+                    key={selectedProfile.id}
+                    initial={{ opacity: 0, x: 35 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -35 }}
+                    transition={{ duration: 0.45, ease: EASE }}
+                    aria-labelledby="selected-profile-title"
+                  >
+                    <div className="mb-8 border-b border-border/60 pb-7">
+                      <div className="mb-5 flex items-center gap-3">
+                        <span className="flex h-11 w-11 items-center justify-center rounded-md bg-primary/10 text-primary"><selectedProfile.icon className="h-5 w-5" /></span>
+                        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">Trilha recomendada</p>
+                      </div>
+                      <h1 id="selected-profile-title" className="font-impact text-3xl font-black uppercase leading-none text-foreground md:text-5xl">{selectedProfile.title}</h1>
+                      <p className="mt-4 text-base leading-relaxed text-muted-foreground">{selectedProfile.outcome}</p>
+                    </div>
+
+                    <ol className="space-y-3">
+                      {selectedProfile.steps.map((item, index) => (
+                        <motion.li key={item.path} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12 + index * 0.08 }}>
+                          <Button asChild variant="ghost" className="group h-auto min-h-[96px] w-full justify-start whitespace-normal rounded-lg border border-border/60 bg-card/60 p-5 text-left hover:border-primary/40 hover:bg-card">
+                            <Link to={item.path}>
+                              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-primary/25 bg-primary/10 font-mono text-xs font-bold text-primary">0{index + 1}</span>
+                              <span className="min-w-0 flex-1">
+                                <span className="mb-1 block font-mono text-[9px] uppercase tracking-[0.22em] text-primary">{item.tag}</span>
+                                <span className="block text-sm font-bold text-foreground">{item.title}</span>
+                                <span className="mt-1 block text-xs font-normal leading-relaxed text-muted-foreground">{item.description}</span>
+                              </span>
+                              <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:text-primary" />
+                            </Link>
+                          </Button>
+                        </motion.li>
+                      ))}
+                    </ol>
+
+                    <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-between">
+                      <Button variant="ghost" onClick={openProfiles} className="gap-2 text-muted-foreground"><ArrowLeft className="h-4 w-4" /> Trocar perfil</Button>
+                      <Button variant="outline" onClick={openQuiz} className="gap-2 bg-background/50"><ListChecks className="h-4 w-4" /> Fazer diagnóstico completo</Button>
+                    </div>
+                  </motion.section>
+                ) : !showResults ? (
                   <motion.div
                     key={`step-${step}`}
                     initial={{ opacity: 0, x: 40 }}
@@ -250,31 +365,25 @@ export default function PorOndeComecar() {
                     {/* Options */}
                     <div className="space-y-3">
                       {currentStep.options.map((opt) => (
-                        <motion.button
+                        <motion.div
                           key={opt.value}
                           whileHover={{ x: 4 }}
                           whileTap={{ scale: 0.98 }}
-                          onClick={() => handleAnswer(opt.value)}
-                          className="w-full flex items-center gap-4 p-5 rounded-xl border border-border/50 bg-card/50 hover:border-primary/30 hover:bg-primary/[0.04] transition-all duration-300 text-left group"
                         >
-                          <div className="p-2.5 rounded-lg bg-secondary/50 group-hover:bg-primary/10 transition-colors">
-                            <opt.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                          </div>
-                          <div className="flex-1">
-                            <p className="font-semibold text-sm text-foreground">{opt.label}</p>
-                            <p className="text-xs text-muted-foreground">{opt.description}</p>
-                          </div>
-                          <ArrowRight className="w-4 h-4 text-muted-foreground/30 group-hover:text-primary transition-all" />
-                        </motion.button>
+                          <Button variant="ghost" onClick={() => handleAnswer(opt.value)} className="group h-auto min-h-[76px] w-full justify-start whitespace-normal rounded-lg border border-border/50 bg-card/50 p-5 text-left hover:border-primary/30 hover:bg-primary/[0.04]">
+                            <span className="p-2.5 rounded-lg bg-secondary/50 group-hover:bg-primary/10 transition-colors"><opt.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" /></span>
+                            <span className="flex-1"><span className="block font-semibold text-sm text-foreground">{opt.label}</span><span className="block text-xs font-normal text-muted-foreground">{opt.description}</span></span>
+                            <ArrowRight className="w-4 h-4 text-muted-foreground/30 group-hover:text-primary transition-all" />
+                          </Button>
+                        </motion.div>
                       ))}
                     </div>
 
                     {/* Back step */}
                     {step > 0 && (
-                      <button onClick={() => setStep(step - 1)} className="mt-6 text-xs text-muted-foreground hover:text-foreground transition-colors font-mono tracking-wider">
-                        ← VOLTAR
-                      </button>
+                      <Button variant="ghost" onClick={() => setStep(step - 1)} className="mt-6 px-0 text-xs text-muted-foreground font-mono tracking-wider">← VOLTAR</Button>
                     )}
+                    {step === 0 && <Button variant="ghost" onClick={openProfiles} className="mt-6 px-0 text-xs text-muted-foreground font-mono tracking-wider">← ESCOLHER UM PERFIL</Button>}
                   </motion.div>
                 ) : (
                   <motion.div
@@ -306,10 +415,7 @@ export default function PorOndeComecar() {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.4, delay: 0.3 + i * 0.1, ease: EASE }}
                         >
-                          <button
-                            onClick={() => navigate(rec.path)}
-                            className="w-full flex items-center gap-4 p-5 rounded-xl border border-border/50 bg-card/50 hover:border-primary/30 hover:bg-primary/[0.04] transition-all duration-300 text-left group"
-                          >
+                          <Button variant="ghost" onClick={() => navigate(rec.path)} className="group h-auto min-h-[82px] w-full justify-start whitespace-normal rounded-lg border border-border/50 bg-card/50 p-5 text-left hover:border-primary/30 hover:bg-primary/[0.04]">
                             <div className="relative">
                               <span className="absolute -top-2 -left-2 font-mono text-[9px] font-bold text-primary bg-primary/10 border border-primary/20 px-1.5 py-0.5 rounded-full">
                                 {i + 1}
@@ -326,17 +432,18 @@ export default function PorOndeComecar() {
                               <p className="text-xs text-muted-foreground">{rec.description}</p>
                             </div>
                             <ArrowRight className="w-4 h-4 text-muted-foreground/30 group-hover:text-primary transition-all group-hover:translate-x-1" />
-                          </button>
+                          </Button>
                         </motion.div>
                       ))}
                     </div>
 
                     {/* Restart */}
                     <div className="mt-8 text-center">
-                      <button onClick={handleRestart} className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors font-mono tracking-wider">
+                      <Button variant="ghost" onClick={handleRestart} className="gap-2 text-xs text-muted-foreground font-mono tracking-wider">
                         <RotateCcw className="w-3.5 h-3.5" />
                         REFAZER DIAGNÓSTICO
-                      </button>
+                      </Button>
+                      <Button variant="ghost" onClick={openProfiles} className="ml-2 text-xs text-muted-foreground font-mono tracking-wider">ESCOLHER PERFIL</Button>
                     </div>
                   </motion.div>
                 )}

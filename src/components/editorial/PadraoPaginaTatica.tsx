@@ -162,7 +162,7 @@ export function PaineisExpansiveis({ paineis }: { paineis: PainelExpansivel[] })
             className={`min-h-[44px] overflow-hidden rounded-2xl border p-6 text-left transition-[flex] duration-500 motion-reduce:transition-none ${focus}`}
             style={{ flex: on ? 3 : 1, background: on ? C.panel2 : C.panel, borderColor: on ? C.amber : C.line }}>
             <span className="text-3xl font-black" style={{ color: on ? C.amber : C.muted }}>{p.sigla}</span>
-            <h4 className="mt-2 font-bold" style={{ color: C.text }}>{p.titulo}</h4>
+            <h4 className={`mt-2 font-bold ${on ? "" : "md:[writing-mode:vertical-rl]"}`} style={{ color: C.text }}>{p.titulo}</h4>
             {on && <div className="mt-3 text-sm" style={{ color: C.muted }}>{p.conteudo}</div>}
           </button>
         );

@@ -1,5 +1,23 @@
 # Roadmap
 
+## Publicação
+- [x] Forçar novo envio ao repositório para disparar a publicação (06/10/2026).
+
+## Soberania Orgânica, fundo cinematográfico
+- [x] Hospedar o vídeo enviado no armazenamento do projeto.
+- [x] Aplicar o vídeo enviado como fundo persistente, sem filtro, sobreposição ou imagem substituta.
+- [x] Substituir pelo vídeo imersivo de 15/08, otimizado e pausado quando o visitante reduz movimentos.
+- [x] Revalidar a ausência de filtros e sobreposições no computador e no celular.
+- [x] Remover as imagens ambientais dos sete blocos internos e validar a continuidade do vídeo.
+- [x] Aplicar direção de arte nos cards: placas obsidianas sólidas (fundo escuro opaco, blur, sombra) com contraste tipográfico corrigido.
+- [x] Transformar os quatro cards de Mente Blindada em painéis expansíveis acessíveis, preservando leitura e destinos.
+- [x] Aplicar imagens editoriais nos painéis de Mente Blindada com gradiente de leitura e micro-zoom no painel ativo.
+
+## Por Onde Começar, seleção por perfil
+- [x] Exibir três perfis estratégicos com trilhas curtas e destinos existentes.
+- [x] Preservar o diagnóstico atual como alternativa.
+- [x] Validar perfis, teclado, desktop e celular no preview.
+
 ## Como checar fontes, aprofundamento editorial
 - [x] Integrar o texto enviado com exemplos, procedimentos, limitações e fontes verificáveis.
 - [x] Acrescentar imagens contextuais, fundos dinâmicos e checklist interativo sem pontuação de verdade.
@@ -25,6 +43,11 @@
 - [x] Validar rotas, sitemap, desktop, mobile, carregamento de fontes e movimento reduzido.
 
 ## Segurança Mobile (em andamento)
+
+### Stalkerware, módulos táticos
+- [x] Criar o Raio-X do aparelho comprometido com três vetores silenciosos.
+- [x] Criar o checklist operacional de certificados e permissões especiais.
+- [x] Validar hotspots, checklist, desktop e celular no preview.
 
 ### 1. Sistemas Operacionais (pilares técnicos)
 - [x] **CalyxOS: Guia Completo**
@@ -178,7 +201,8 @@
 
 ## Pendente (decidido com o usuário)
 - [ ] Prerender/SSR: descartado pelo usuário
-- [ ] Sumário fixo (PageFloatingToc) nas páginas longas que ainda não têm
+- [x] Sumário fixo automático nas páginas longas sem sumário próprio
+- [ ] Google Search Console (aguarda publicar o site)
 - [ ] Grupo A: /metodologia e bloco de autor com datas no schema
 - [ ] Grupo B: ferramentas (salário derretido, imposto BTC, diagnóstico, comparador, checklist)
 - [ ] Grupo C: portas de entrada (comprar Bitcoin, vs Selic, vs ouro, Drex, custo inicial, erros de iniciante)
@@ -242,3 +266,7 @@ Nada será codificado antes da aprovação das decisões pendentes da seção 16
 - [x] Auditar a contagem do Mapa: links repetidos e redirecionamentos impedem tratá-la como total de páginas; remover número inexato da interface.
 - [x] Repaginar `/dicionario-cripto` no padrão editorial existente, preservando verbetes, busca, filtros, links e apoio Lightning.
 - [x] Conferir as três páginas em desktop e celular, inclusive interações e imagens.
+
+## Hub Soberania Orgânica, cards com imagem editorial (concluído)
+- [x] Aplicar o padrão dos painéis de Mente Blindada (imagem editorial full-bleed + gradiente de leitura + micro-zoom no hover) em todos os cards das fases 01, 02, 03, 04, 05 e 07.
+- [x] Validado em desktop e celular: 28 cards com imagem, sem overflow horizontal, sem erros de página.

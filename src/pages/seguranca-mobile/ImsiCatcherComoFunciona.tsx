@@ -12,6 +12,7 @@ import vanAsset from '@/assets/seguranca-mobile/imsi-catcher/imsi-van.webp';
 import sinalAsset from '@/assets/seguranca-mobile/imsi-catcher/imsi-sinal.webp';
 import antenasAsset from '@/assets/seguranca-mobile/imsi-catcher/imsi-antenas.webp';
 import maosAsset from '@/assets/seguranca-mobile/imsi-catcher/imsi-maos.webp';
+import { RotaImsi, PilhaPassos, ChecklistDefesas } from '@/components/seguranca-mobile/ImsiModules';
 
 const CAN = [
   'Identificar quem está na área. Todo aparelho que conecta à antena falsa expõe o IMSI, que amarra o chip à sua linha, e o IMEI, que identifica o aparelho em si. Sem você digitar nada, sem você errar nada.',
@@ -83,22 +84,22 @@ export default function ImsiCatcherComoFunciona() {
           </div>
         </section>
 
-        <section className="smx-deep relative isolate overflow-hidden px-6 py-24 md:px-12 md:py-36 lg:px-20">
+        <section className="relative isolate overflow-hidden px-6 pb-24 md:px-12 md:pb-36 lg:px-20">
+          <div className="mx-auto max-w-[1600px]">
+            <Heading chapter="Simulação / O mesmo sinal, dois desfechos">Avance etapa por etapa e <span className="smx-editorial">veja onde a defesa corta.</span></Heading>
+            <RotaImsi />
+          </div>
+        </section>
+
+        <section className="smx-deep relative isolate px-6 py-24 md:px-12 md:py-36 lg:px-20">
           <Backdrop asset={cartaoAsset} alt="Macro de chip de cartão SIM sobre superfície escura" />
           <div className="mx-auto max-w-[1600px]">
             <Heading chapter="02 / Como o ataque funciona" dark>Três passos, <span className="smx-copper-soft font-editorial font-normal italic">zero cliques seus.</span></Heading>
-            <div className="grid gap-4">
-              {[
-                'Finge ser a sua operadora: emite sinal mais forte que as torres reais, e o celular conecta automaticamente, porque foi projetado para isso.',
-                'Cataloga a área: registra IMSI e IMEI de todo aparelho que conecta, montando em tempo real a lista de quem está ali.',
-                'Rebaixa a conexão quando interessa: empurra o aparelho de 4G ou 5G para 2G, onde a criptografia da rede é antiga e quebrada, para inspecionar chamadas e SMS.',
-              ].map((text, i) => (
-                <motion.article key={text} {...reveal(i * .05)} className="smx-card-dark group grid gap-5 rounded-lg border p-6 backdrop-blur-xl transition-all duration-500 hover:translate-x-1 md:grid-cols-[64px_1fr] md:p-8">
-                  <div className="smx-step flex h-12 w-12 items-center justify-center rounded-full text-sm font-black">{String(i + 1).padStart(2, '0')}</div>
-                  <p className="self-center text-lg leading-[1.75] text-background/90">{text}</p>
-                </motion.article>
-              ))}
-            </div>
+            <PilhaPassos passos={[
+              'Finge ser a sua operadora: emite sinal mais forte que as torres reais, e o celular conecta automaticamente, porque foi projetado para isso.',
+              'Cataloga a área: registra IMSI e IMEI de todo aparelho que conecta, montando em tempo real a lista de quem está ali.',
+              'Rebaixa a conexão quando interessa: empurra o aparelho de 4G ou 5G para 2G, onde a criptografia da rede é antiga e quebrada, para inspecionar chamadas e SMS.',
+            ]} />
             <Figure asset={cartaoAsset} alt="Chip de cartão SIM em macro sobre superfície escura com luz cobre" caption="O IMSI amarra o chip à sua linha e fica exposto a qualquer estação base, verdadeira ou falsa, com que o aparelho conversa." />
           </div>
         </section>
@@ -147,14 +148,7 @@ export default function ImsiCatcherComoFunciona() {
           <Backdrop asset={antenasAsset} alt="Torres de telecomunicações contra o céu noturno" light />
           <div className="mx-auto max-w-[1600px]">
             <Heading chapter="05 / Defesas que realmente valem">Reduza a superfície, <span className="smx-editorial">não a sanidade.</span></Heading>
-            <div className="grid gap-4">
-              {DEFESAS.map((text, i) => (
-                <motion.article key={text} {...reveal(i * .05)} className="smx-card group grid gap-5 rounded-lg border p-6 transition-all duration-500 hover:translate-x-1 md:grid-cols-[64px_1fr] md:p-8">
-                  <div className="smx-step flex h-12 w-12 items-center justify-center rounded-full text-sm font-black">{String(i + 1).padStart(2, '0')}</div>
-                  <p className="self-center text-lg leading-[1.75]">{text}</p>
-                </motion.article>
-              ))}
-            </div>
+            <ChecklistDefesas itens={DEFESAS} />
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               <Button asChild size="lg" className="smx-btn h-14 justify-between px-6 font-bold"><Link to="/seguranca-mobile/grapheneos">GrapheneOS e o controle de rádio <ArrowRight /></Link></Button>
               <Button asChild size="lg" className="smx-btn h-14 justify-between px-6 font-bold"><Link to="/seguranca-mobile/vpn-no-celular">VPN no celular, o que ela cobre <ArrowRight /></Link></Button>

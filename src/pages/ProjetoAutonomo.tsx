@@ -1,21 +1,44 @@
 import PageFloatingToc from "@/components/PageFloatingToc";
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowRight, Shield, Clock, Leaf, Wheat, AlertTriangle, Heart, Sprout, Package, Flame, Droplets, Wind, Sun, Tent, Siren, Cross, Egg, TreePine, Layers, Thermometer, Bug, Shovel, BookOpen, ChevronDown, Activity, Brain, Zap, Pill, Wind as WindIcon, ChevronRight, Eye, Target, Compass, FlaskConical, Moon } from 'lucide-react';
-import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 
 import imgSoberaniaAlimentar from '@/assets/fase03-soberania-alimentar.webp';
 import imgBase72 from '@/assets/fase01-base72.webp';
 import imgAutonomiaBiologica from '@/assets/fase02-autonomia-biologica.webp';
 import imgConhecimentoPerdido from '@/assets/cp-hero-conhecimento.webp';
 import imgCozinhaFuncional from '@/assets/receitas/hub-cozinha-funcional-light.webp';
-import imgCozinhaFuncionalHero from '@/assets/receitas/hub-cozinha-funcional-light.webp';
-import bgFase01 from '@/assets/bg-fase01-base72.webp';
-import bgFase02 from '@/assets/bg-fase02-autonomia.webp';
-import bgFase03 from '@/assets/bg-fase03-alimentar.webp';
-import bgFase04 from '@/assets/bg-fase04-conhecimento.webp';
 import bgFase05 from '@/assets/bg-fase05-toxicos.webp';
+import imgManipulacao from '@/assets/toxicos/bg-manipulacao.webp';
+import imgDependencia from '@/assets/toxicos/bg-dependencia.webp';
+import imgLeituraCritica from '@/assets/bg-novilingua.webp';
+import imgSoberaniaCognitiva from '@/assets/bg-silencio-queda.webp';
+import imgKit72 from '@/assets/kit72h-agua.webp';
+import imgApagao from '@/assets/apagao-energia.webp';
+import imgAgua from '@/assets/agua-filtro.webp';
+import imgAbrigo from '@/assets/abrigo-a-frame.webp';
+import imgComms from '@/assets/comms-radio-amfm.webp';
+import imgNavegacao from '@/assets/nav-bussola.webp';
+import imgBioPlantas from '@/assets/bio-12-plantas.webp';
+import imgPrimeirosSocorros from '@/assets/ps-kit.webp';
+import imgSinais from '@/assets/sinais-temperatura.webp';
+import imgSaudePreventiva from '@/assets/saude-microbiota.webp';
+import imgFitoterapia from '@/assets/bg-fitoterapia.webp';
+import imgVetores from '@/assets/vetores-repelentes.webp';
+import imgHorta from '@/assets/horta-vertical.webp';
+import imgProducao from '@/assets/producao-consorcio-culturas.webp';
+import imgUltraprocessados from '@/assets/toxicos/dossie-ultraprocessados.webp';
+import imgProteina from '@/assets/proteina-aquaponia-tilapia.webp';
+import imgSolo from '@/assets/solo-composteira.webp';
+import imgConserva from '@/assets/conserva-metodos-preservacao.webp';
+import imgCpSistemas from '@/assets/bg-fase04-conhecimento.webp';
+import imgCpPlantas from '@/assets/cp-plantas-pratica.webp';
+import imgCpFamilia from '@/assets/planta-camomila.webp';
+import imgToxinasAmb from '@/assets/toxicos/bg-ambientais.webp';
+import imgSobremesa from '@/assets/receitas/hero-sobremesa-rivotril.webp';
+import imgCozinhaHub from '@/assets/receitas/hub-cozinha-funcional-light.webp';
 import tlBase72 from '@/assets/timeline/fase-base72.webp';
 import tlAutonomia from '@/assets/timeline/fase-autonomia-biologica.webp';
 import tlAlimentar from '@/assets/timeline/fase-soberania-alimentar.webp';
@@ -26,7 +49,8 @@ import RiskBlock from '@/components/RiskBlock';
 import { PainelTaticoFisiologico } from '@/components/PainelTaticoFisiologico';
 import VersionBadge from '@/components/VersionBadge';
 import BackToHome from '@/components/BackToHome';
-import OrganicLivingBackground from '@/components/backgrounds/OrganicLivingBackground';
+import OrganicVideoBackground from '@/components/backgrounds/OrganicVideoBackground';
+import ExpandingPanels from '@/components/ExpandingPanels';
 
 /* ─── SEO: meta keywords target ───
    soberania orgânica, base 72 horas, autonomia biológica, soberania alimentar,
@@ -55,30 +79,30 @@ const scaleIn = {
 
 /* ─── PHASE DATA (all content preserved) ─── */
 const BASE72_ITEMS = [
-  { icon: Package, label: 'Kit Tático 72h', desc: 'Água, alimento, documentos, rádio e medicamentos para autonomia mínima de 3 dias.', slug: 'kit-72h' },
-  { icon: Flame, label: 'Protocolos de Apagão', desc: 'Iluminação, cozimento e aquecimento alternativos quando a rede elétrica está indisponível.', slug: 'protocolos-apagao' },
-  { icon: Droplets, label: 'Purificação de Água', desc: 'Fervura, cloração, filtros improvisados. Três métodos validados por defesa civil.', slug: 'purificacao-agua' },
-  { icon: Tent, label: 'Abrigo de Emergência', desc: 'Proteção térmica e estrutural com materiais acessíveis em diferentes cenários.', slug: 'abrigo-emergencia' },
-  { icon: Siren, label: 'Comunicação sem Internet', desc: 'Rádio AM/FM, sinais visuais e protocolos de ponto de encontro familiar.', slug: 'comunicacao-offline' },
-  { icon: Wind, label: 'Navegação Primária', desc: 'Bússola, referências solares e leitura de terreno. Orientação sem dependência digital.', slug: 'navegacao-primaria' },
+  { icon: Package, label: 'Kit Tático 72h', desc: 'Água, alimento, documentos, rádio e medicamentos para autonomia mínima de 3 dias.', slug: 'kit-72h', img: imgKit72 },
+  { icon: Flame, label: 'Protocolos de Apagão', desc: 'Iluminação, cozimento e aquecimento alternativos quando a rede elétrica está indisponível.', slug: 'protocolos-apagao', img: imgApagao },
+  { icon: Droplets, label: 'Purificação de Água', desc: 'Fervura, cloração, filtros improvisados. Três métodos validados por defesa civil.', slug: 'purificacao-agua', img: imgAgua },
+  { icon: Tent, label: 'Abrigo de Emergência', desc: 'Proteção térmica e estrutural com materiais acessíveis em diferentes cenários.', slug: 'abrigo-emergencia', img: imgAbrigo },
+  { icon: Siren, label: 'Comunicação sem Internet', desc: 'Rádio AM/FM, sinais visuais e protocolos de ponto de encontro familiar.', slug: 'comunicacao-offline', img: imgComms },
+  { icon: Wind, label: 'Navegação Primária', desc: 'Bússola, referências solares e leitura de terreno. Orientação sem dependência digital.', slug: 'navegacao-primaria', img: imgNavegacao },
 ];
 
 const BIO_ITEMS = [
-  { icon: Leaf, label: 'Suporte Fitoterápico', desc: 'Biblioteca técnica de 14 plantas e compostos essenciais. Dosagens, contraindicações e métodos de preparo.', slug: 'autonomia-biologica' },
-  { icon: Cross, label: 'Primeiros Socorros', desc: 'Contenção de sangramento, imobilização, tratamento de queimaduras em ambiente remoto.', slug: 'primeiros-socorros' },
-  { icon: Thermometer, label: 'Avaliação Básica de Sinais', desc: 'Interpretar febre, desidratação e sinais vitais com recursos mínimos.', slug: 'sinais-vitais' },
-  { icon: Sun, label: 'Saúde Preventiva', desc: 'Exposição solar, qualidade do sono, movimento e alimentação consciente como base preventiva.', slug: 'saude-preventiva' },
-  { icon: Sprout, label: 'Fitoterapia Aplicada', desc: 'Protocolos terapêuticos por sistema corporal. Sinergia entre plantas, ciclos de uso e critérios de interrupção.', slug: 'fitoterapia-aplicada' },
-  { icon: Bug, label: 'Controle de Vetores', desc: 'Repelentes naturais, manejo de água parada e proteção com métodos de baixo impacto.', slug: 'controle-vetores' },
+  { icon: Leaf, label: 'Suporte Fitoterápico', desc: 'Biblioteca técnica de 14 plantas e compostos essenciais. Dosagens, contraindicações e métodos de preparo.', slug: 'autonomia-biologica', img: imgBioPlantas },
+  { icon: Cross, label: 'Primeiros Socorros', desc: 'Contenção de sangramento, imobilização, tratamento de queimaduras em ambiente remoto.', slug: 'primeiros-socorros', img: imgPrimeirosSocorros },
+  { icon: Thermometer, label: 'Avaliação Básica de Sinais', desc: 'Interpretar febre, desidratação e sinais vitais com recursos mínimos.', slug: 'sinais-vitais', img: imgSinais },
+  { icon: Sun, label: 'Saúde Preventiva', desc: 'Exposição solar, qualidade do sono, movimento e alimentação consciente como base preventiva.', slug: 'saude-preventiva', img: imgSaudePreventiva },
+  { icon: Sprout, label: 'Fitoterapia Aplicada', desc: 'Protocolos terapêuticos por sistema corporal. Sinergia entre plantas, ciclos de uso e critérios de interrupção.', slug: 'fitoterapia-aplicada', img: imgFitoterapia },
+  { icon: Bug, label: 'Controle de Vetores', desc: 'Repelentes naturais, manejo de água parada e proteção com métodos de baixo impacto.', slug: 'controle-vetores', img: imgVetores },
 ];
 
 const ALIMENTAR_LAYERS = [
-  { icon: Sprout, title: 'Horta Urbana', desc: 'Varandas, janelas e telhados. Espaço mínimo, colheita consistente.', details: 'Vasos autoirrigáveis, cultivo vertical, hidroponia caseira e aproveitamento de recipientes reciclados.', slug: 'horta-urbana' },
-  { icon: Layers, title: 'Produção em Pequenos Espaços', desc: 'Planejamento correto transforma 4m² em fonte de alimento.', details: 'Consórcio de culturas, rotação de canteiros e aproveitamento de microclimas urbanos.', slug: 'producao-pequenos-espacos' },
-  { icon: FlaskConical, title: 'Engenharia do Vício Alimentar', desc: 'Por que você não consegue comer só um. Bliss point, crocância acústica e hand-to-mouth.', details: 'Investigação editorial sobre as quatro alavancas industriais que sequestram seu cérebro nos ultraprocessados.', slug: 'engenharia-vicio-alimentar' },
-  { icon: Egg, title: 'Proteína Sustentável', desc: 'Galinhas, codornas, peixes e sistemas compactos de produção animal.', details: 'Aquaponia, galinheiro móvel e criação de tilápia em espaços reduzidos.', slug: 'proteina-sustentavel' },
-  { icon: Shovel, title: 'Solo e Fertilidade', desc: 'Compostagem, bokashi, húmus de minhoca. Terra viva gera alimento vivo.', details: 'Análise caseira de pH, cobertura morta, adubação verde e rotação de nutrientes.', slug: 'solo-fertilidade' },
-  { icon: Flame, title: 'Conservação e Armazenamento', desc: 'Defumação, salga, fermentação, desidratação. Técnicas milenares validadas.', details: 'Compotas, conservas em vinagre, secagem solar e fermentação lactobacilar.', slug: 'conservacao-armazenamento' },
+  { icon: Sprout, title: 'Horta Urbana', desc: 'Varandas, janelas e telhados. Espaço mínimo, colheita consistente.', details: 'Vasos autoirrigáveis, cultivo vertical, hidroponia caseira e aproveitamento de recipientes reciclados.', slug: 'horta-urbana', img: imgHorta },
+  { icon: Layers, title: 'Produção em Pequenos Espaços', desc: 'Planejamento correto transforma 4m² em fonte de alimento.', details: 'Consórcio de culturas, rotação de canteiros e aproveitamento de microclimas urbanos.', slug: 'producao-pequenos-espacos', img: imgProducao },
+  { icon: FlaskConical, title: 'Engenharia do Vício Alimentar', desc: 'Por que você não consegue comer só um. Bliss point, crocância acústica e hand-to-mouth.', details: 'Investigação editorial sobre as quatro alavancas industriais que sequestram seu cérebro nos ultraprocessados.', slug: 'engenharia-vicio-alimentar', img: imgUltraprocessados },
+  { icon: Egg, title: 'Proteína Sustentável', desc: 'Galinhas, codornas, peixes e sistemas compactos de produção animal.', details: 'Aquaponia, galinheiro móvel e criação de tilápia em espaços reduzidos.', slug: 'proteina-sustentavel', img: imgProteina },
+  { icon: Shovel, title: 'Solo e Fertilidade', desc: 'Compostagem, bokashi, húmus de minhoca. Terra viva gera alimento vivo.', details: 'Análise caseira de pH, cobertura morta, adubação verde e rotação de nutrientes.', slug: 'solo-fertilidade', img: imgSolo },
+  { icon: Flame, title: 'Conservação e Armazenamento', desc: 'Defumação, salga, fermentação, desidratação. Técnicas milenares validadas.', details: 'Compotas, conservas em vinagre, secagem solar e fermentação lactobacilar.', slug: 'conservacao-armazenamento', img: imgConserva },
 ];
 
 const PLANTAS_SOBERANAS = [
@@ -102,25 +126,6 @@ const SISTEMA_LABELS: Record<string, string> = {
   digestivo: "Digestivo", respiratorio: "Respiratório", nervoso: "Nervoso", imuno: "Imunológico", glandular: "Glandular",
 };
 
-/* ─── Mouse Parallax Hook ─── */
-function useMouseParallax(strength = 15) {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
-  const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
-  const handleMouse = useCallback((e: MouseEvent) => {
-    const cx = window.innerWidth / 2;
-    const cy = window.innerHeight / 2;
-    mouseX.set(((e.clientX - cx) / cx) * strength);
-    mouseY.set(((e.clientY - cy) / cy) * strength);
-  }, [mouseX, mouseY, strength]);
-  useEffect(() => {
-    window.addEventListener('mousemove', handleMouse);
-    return () => window.removeEventListener('mousemove', handleMouse);
-  }, [handleMouse]);
-  return { springX, springY };
-}
-
 /* ═══════════════════════════════════════════════════════════════
    MAIN PAGE — COMPLETE LAYOUT REDESIGN
 ═══════════════════════════════════════════════════════════════ */
@@ -138,46 +143,46 @@ const TOC_ITEMS = [
 export default function ProjetoAutonomo() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
-  const { springX, springY } = useMouseParallax(12);
   const [activeSistema, setActiveSistema] = useState<string | null>(null);
   const [activePhase, setActivePhase] = useState<number | null>(null);
+  const [activeMindPanel, setActiveMindPanel] = useState(0);
   const progressWidth = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const phases = [
     {
-      num: '01', title: 'Base 72', sub: 'Protege o corpo', accent: '#f43f5e',
+      num: '01', title: 'Base 72', sub: 'Protege o corpo', accent: '#c8775a',
       sectionId: 'fase-01', icon: Clock, image: tlBase72, size: 'tall',
       desc: 'Autonomia mínima nas primeiras 72 horas. Abrigo, água potável, comunicação resiliente, deslocamento e kit tático essencial para o intervalo crítico de qualquer ruptura urbana.',
       tag: 'Sobrevivência tática',
     },
     {
-      num: '02', title: 'Autonomia Biológica', sub: 'Fortalece o corpo', accent: '#10b981',
+      num: '02', title: 'Autonomia Biológica', sub: 'Fortalece o corpo', accent: '#8fa88a',
       sectionId: 'fase-02', icon: Heart, image: tlAutonomia, size: 'short',
       desc: 'Saúde preventiva, primeiros socorros e fitoterapia aplicada como primeira linha de defesa. O corpo deixa de depender de respostas externas para questões cotidianas.',
       tag: 'Defesa interna',
     },
     {
-      num: '03', title: 'Soberania Alimentar', sub: 'Alimenta o corpo', accent: '#f59e0b',
+      num: '03', title: 'Soberania Alimentar', sub: 'Alimenta o corpo', accent: '#d4a95e',
       sectionId: 'fase-03', icon: Wheat, image: tlAlimentar, size: 'tall',
       desc: 'Produção própria de alimento. Horta urbana, solo vivo, conservação sem refrigeração, proteína sustentável e domínio da cadeia que alimenta sua família.',
       tag: 'Produção real',
     },
     {
-      num: '04', title: 'Conhecimento Perdido', sub: 'Ensina a entender o corpo', accent: '#14b8a6',
+      num: '04', title: 'Conhecimento Perdido', sub: 'Ensina a entender o corpo', accent: '#7fa59c',
       sectionId: 'fase-04', icon: BookOpen, image: tlConhecimento, size: 'short',
       desc: 'Formação bioquímica e botânica. 12 plantas, 5 sistemas fisiológicos, 9 seções técnicas por ficha. Recupera o que três gerações foram condicionadas a esquecer.',
       tag: 'Formação técnica',
     },
     {
-      num: '05', title: 'Tóxicos Ocultos', sub: 'Revela o que adoece o corpo', accent: '#ef4444',
+      num: '05', title: 'Tóxicos Ocultos', sub: 'Revela o que adoece o corpo', accent: '#b4593f',
       sectionId: 'fase-05', icon: Eye, image: bgFase05, size: 'tall',
       desc: 'Laboratório de discernimento sobre toxinas alimentares, ambientais, manipulação informacional e dependência tecnológica. Quatro vetores invisíveis que reduzem clareza, saúde e liberdade de escolha.',
       tag: 'Laboratório de discernimento',
     },
     {
-      num: '06', title: 'Mente Blindada', sub: 'Protege a soberania cognitiva', accent: '#a855f7',
+      num: '06', title: 'Mente Blindada', sub: 'Protege a soberania cognitiva', accent: '#9c86b0',
       sectionId: 'fase-06', icon: Brain, image: tlMente, size: 'tall',
       desc: 'Se a mente é manipulável, nenhuma autonomia é real. Você pode ter alimento, saúde e conhecimento, mas se sua percepção for controlada, tudo desmorona.',
       tag: 'Defesa cognitiva',
@@ -199,7 +204,7 @@ export default function ProjetoAutonomo() {
       fechamento: 'Sem mente livre, nenhuma soberania se sustenta.',
     },
     {
-      num: '07', title: 'Cozinha Funcional', sub: 'Substitui a big pharma', accent: '#fbbf24',
+      num: '07', title: 'Cozinha Funcional', sub: 'Substitui a big pharma', accent: '#e3b56a',
       sectionId: 'fase-07', icon: Moon, image: imgCozinhaFuncional, size: 'mega',
       desc: 'Depois da defesa cognitiva, a aplicação prática diária. Receitas com ensaio clínico randomizado por trás de cada ingrediente: glicina para o sono, Passiflora para o cortisol, camomila para a ansiedade. A sobremesa que substitui o Rivotril abre a coleção que devolve à cozinha o papel terapêutico que a indústria farmacêutica capturou.',
       tag: 'Aplicação prática diária',
@@ -220,8 +225,8 @@ export default function ProjetoAutonomo() {
       </Helmet>
 
       <PageFloatingToc items={TOC_ITEMS} accentColor="emerald" />
-    {/* Fundo temático persistente — botânico vivo */}
-    <OrganicLivingBackground />
+    {/* Fundo cinematográfico persistente */}
+    <OrganicVideoBackground />
     <div
       ref={containerRef}
       className="min-h-screen text-stone-100 font-sans selection:bg-emerald-400/30 relative overflow-hidden"
@@ -229,57 +234,18 @@ export default function ProjetoAutonomo() {
     >
       {/* ── SCROLL PROGRESS ── */}
       <motion.div className="fixed top-0 left-0 right-0 h-[2px] z-50 origin-left"
-        style={{ width: progressWidth, background: 'linear-gradient(90deg, #10b981, #f59e0b)' }}
+        style={{ width: progressWidth, background: 'linear-gradient(90deg, #8fa88a, #d4a95e)' }}
       />
-
-      {/* ── AMBIENT BG ── */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <style>{`
-          @keyframes sporeDrift {
-            0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.5; }
-            90% { opacity: 0.3; }
-            100% { transform: translateY(-800px) translateX(80px) rotate(360deg); opacity: 0; }
-          }
-        `}</style>
-        <motion.div className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.06) 0%, transparent 60%)', x: springX, y: springY }}
-        />
-        <motion.div className="absolute bottom-[5%] left-[-5%] w-[600px] h-[600px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 60%)',
-            x: useTransform(springX, v => -v * 0.5), y: useTransform(springY, v => -v * 0.5) }}
-        />
-        {/* Grain */}
-        <div className="absolute inset-0 opacity-[0.015]"
-          style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`, backgroundSize: '128px 128px' }}
-        />
-      </div>
-
-      {/* ── SPORE PARTICLES ── */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-25">
-        {Array.from({ length: 10 }).map((_, i) => (
-          <div key={i} className="absolute rounded-full bg-emerald-400/30"
-            style={{ width: `${2 + Math.random() * 3}px`, height: `${2 + Math.random() * 3}px`, left: `${Math.random() * 100}%`, bottom: `-${Math.random() * 20}px`, animation: `sporeDrift ${30 + Math.random() * 40}s linear ${Math.random() * 20}s infinite` }}
-          />
-        ))}
-      </div>
 
       {/* ═══════════════════════════════════════════════════════════
          SECTION 1 — FULL-VIEWPORT CINEMATIC HERO
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-10 min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20">
-        {/* Hero background image with parallax */}
+        {/* Hero treatment over the persistent video */}
         <motion.div
           className="absolute inset-0 z-0"
           style={{ y: useTransform(scrollYProgress, [0, 0.3], [0, 120]) }}
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center will-change-transform"
-            style={{
-              backgroundImage: `url('/heroes/soberania-organica.webp')`,
-              filter: 'brightness(0.45) saturate(0.85)',
-            }}
-          />
           {/* Cinematic overlay gradient */}
           <div
             className="absolute inset-0"
@@ -297,7 +263,7 @@ export default function ProjetoAutonomo() {
         </motion.div>
         {/* Breadcrumb — top left */}
         <nav className="absolute top-6 left-6 md:left-16 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em]">
-          <Link to="/" className="text-stone-600 hover:text-emerald-400 transition-colors">Início</Link>
+          <Link to="/" className="text-stone-400 hover:text-emerald-400 transition-colors">Início</Link>
           <span className="text-stone-700">/</span>
           <span className="text-emerald-400">Soberania Orgânica</span>
         </nav>
@@ -364,7 +330,7 @@ export default function ProjetoAutonomo() {
               Terceiriza sua <span className="text-emerald-400 font-bold">cura</span> para um sistema que gerencia sintomas, mas nunca elimina causas.
               E terceiriza seu <span className="text-emerald-400 font-bold">conhecimento</span> para algoritmos que escondem o que realmente importa.
             </p>
-            <p className="text-stone-600 text-xs leading-relaxed">
+            <p className="text-stone-400 text-xs leading-relaxed">
               Sete frentes. Uma blindagem. A construção metódica da sua <span className="font-semibold text-stone-300">independência física</span>.
               <SimboloOculto id="folha" className="ml-2 align-middle" />
             </p>
@@ -373,7 +339,7 @@ export default function ProjetoAutonomo() {
 
         {/* Scroll indicator — bottom center */}
         <motion.div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-stone-600"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-stone-400"
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
         >
           <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
@@ -631,9 +597,9 @@ export default function ProjetoAutonomo() {
 
           {/* Expansion badge */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="flex justify-center mt-20">
-            <div className="inline-flex items-center gap-3 bg-white/[0.03] border border-white/[0.08] px-6 py-3 rounded-full backdrop-blur-md">
+            <div className="inline-flex items-center gap-3 bg-[#0b100d]/90 border border-white/10 px-6 py-3 rounded-full backdrop-blur-md shadow-xl shadow-black/40">
               <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_12px_rgba(52,211,153,0.6)]" />
-              <span className="text-stone-500 text-[10px] font-bold uppercase tracking-[0.4em]">Conteúdo em expansão contínua</span>
+              <span className="text-stone-300 text-[10px] font-bold uppercase tracking-[0.4em]">Conteúdo em expansão contínua</span>
             </div>
           </motion.div>
         </div>
@@ -655,7 +621,7 @@ export default function ProjetoAutonomo() {
               ].map((item, i) => (
                 <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.3}>
                   <div className="h-px w-10 bg-amber-500/20 mx-auto mb-4" />
-                  <p className="text-stone-500 text-sm leading-relaxed">
+                  <p className="text-stone-300 text-sm leading-relaxed">
                     <span className="text-stone-200 font-semibold block mb-1">{item.bold}</span>
                     {item.rest}
                   </p>
@@ -670,12 +636,6 @@ export default function ProjetoAutonomo() {
          FASE 01 — BASE 72 — BENTO GRID LAYOUT (was: simple 3-col grid)
       ═══════════════════════════════════════════════════════════ */}
       <section id="fase-01" className="relative z-10 scroll-mt-20 py-20 md:py-32">
-        {/* Ambient background image */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={bgFase01} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" style={{ filter: 'saturate(0.5)' }} loading="lazy" decoding="async" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050808] via-transparent to-[#050808]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-transparent to-[#050808]" />
-        </div>
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           {/* Phase Hero — Full-width immersive banner (new: split layout) */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn} custom={0}
@@ -704,66 +664,17 @@ export default function ProjetoAutonomo() {
                   Após uma interrupção grave, os primeiros três dias exigem autonomia mínima.
                   Essa preparação é baseada em <span className="font-semibold text-stone-200">dados históricos de resposta a desastres</span>.
                 </p>
-                <p className="text-stone-600 text-xs font-semibold uppercase tracking-wider">
+                <p className="text-stone-400 text-xs font-semibold uppercase tracking-wider">
                   Preparação mínima. Autonomia imediata. Protocolo objetivo.
                 </p>
               </div>
             </div>
           </motion.div>
 
-          {/* BENTO GRID — 2 featured + 4 small (was: equal 6-card grid) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-            {/* Featured cards — span 2 rows on desktop */}
-            {BASE72_ITEMS.slice(0, 2).map((item, i) => (
-              <motion.div key={item.label} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.3}
-                className={i === 0 ? 'lg:row-span-2' : ''}
-              >
-                <Link to={`/soberania-organica/${item.slug}`}
-                  className={`group block h-full relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-rose-500/20 transition-all duration-500 hover:-translate-y-1 ${i === 0 ? 'p-8 md:p-10' : 'p-6 md:p-8'}`}
-                >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                    style={{ background: 'radial-gradient(ellipse at bottom right, rgba(244,63,94,0.08), transparent 60%)' }}
-                  />
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/15 w-fit mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                      <item.icon size={i === 0 ? 24 : 20} className="text-rose-400" />
-                    </div>
-                    <h4 className={`${i === 0 ? 'text-xl md:text-2xl' : 'text-base'} font-bold text-stone-200 tracking-tight mb-2 group-hover:text-white transition-colors`}>
-                      {item.label}
-                    </h4>
-                    <p className={`text-stone-500 ${i === 0 ? 'text-sm' : 'text-xs'} leading-relaxed group-hover:text-stone-400 transition-colors flex-1`}>
-                      {item.desc}
-                    </p>
-                    <div className="flex items-center gap-2 mt-4 text-rose-400/50 group-hover:text-rose-400/80 transition-colors">
-                      <span className="text-[10px] font-bold uppercase tracking-wider">Acessar módulo</span>
-                      <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                  {/* Top accent line */}
-                  <div className="absolute top-0 left-0 w-full h-[2px] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700 bg-gradient-to-r from-rose-500 to-transparent" />
-                </Link>
-              </motion.div>
-            ))}
+          <ExpandingPanels accent="rose" items={BASE72_ITEMS.map((item) => ({
+            icon: item.icon, title: item.label, desc: item.desc, link: `/soberania-organica/${item.slug}`, img: item.img,
+          }))} />
 
-            {/* Remaining 4 cards */}
-            {BASE72_ITEMS.slice(2).map((item, i) => (
-              <motion.div key={item.label} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={(i + 2) * 0.2}>
-                <Link to={`/soberania-organica/${item.slug}`}
-                  className="group block h-full relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-rose-500/15 transition-all duration-500 hover:-translate-y-1 p-5"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-lg bg-rose-500/8 border border-rose-500/10 shrink-0 group-hover:scale-110 transition-transform duration-500">
-                      <item.icon size={16} className="text-rose-400/70" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-stone-300 mb-1 group-hover:text-white transition-colors">{item.label}</h4>
-                      <p className="text-stone-600 text-xs leading-relaxed group-hover:text-stone-500 transition-colors">{item.desc}</p>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
 
           <RiskBlock theme="dark" title="Sem esta base, o que acontece?" consequences={[
             "Dependência total de resgate externo nas primeiras 72 horas — tempo em que sistemas públicos estão sobrecarregados.",
@@ -783,12 +694,6 @@ export default function ProjetoAutonomo() {
          (was: same card grid, now: hero + 2-column split + interactive map)
       ═══════════════════════════════════════════════════════════ */}
       <section id="fase-02" className="relative z-10 scroll-mt-20 py-20 md:py-32">
-        {/* Ambient background image */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={bgFase02} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" style={{ filter: 'saturate(0.5)' }} loading="eager" fetchPriority="high" decoding="async" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050808] via-transparent to-[#050808]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-transparent to-[#050808]" />
-        </div>
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           {/* Split Hero — Image right, content left */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn} custom={0}
@@ -808,7 +713,7 @@ export default function ProjetoAutonomo() {
                   Fortalecer o corpo é a base da resiliência. Conhecimento tradicional de cuidado
                   complementa o sistema de saúde e amplia a capacidade de resposta em cenários adversos.
                 </p>
-                <p className="text-stone-600 text-xs font-semibold uppercase tracking-wider">
+                <p className="text-stone-400 text-xs font-semibold uppercase tracking-wider">
                   Base preventiva. Suporte tradicional. Complemento ao cuidado convencional.
                 </p>
               </div>
@@ -823,87 +728,15 @@ export default function ProjetoAutonomo() {
             </div>
           </motion.div>
 
-          {/* BENTO GRID — Asymmetric layout: 1 tall featured + 2 medium + 3 compact */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-            {/* Featured — tall card spanning 2 rows */}
-            {BIO_ITEMS.slice(0, 1).map((item) => (
-              <motion.div key={item.label} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
-                className="lg:row-span-2"
-              >
-                <Link to={`/soberania-organica/${item.slug}`}
-                  className="group block h-full relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-emerald-500/20 transition-all duration-500 hover:-translate-y-1 p-8 md:p-10"
-                >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                    style={{ background: 'radial-gradient(ellipse at bottom left, rgba(16,185,129,0.08), transparent 60%)' }}
-                  />
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/15 w-fit mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                      <item.icon size={24} className="text-emerald-400" />
-                    </div>
-                    <h4 className="text-xl md:text-2xl font-bold text-stone-200 tracking-tight mb-3 group-hover:text-white transition-colors">
-                      {item.label}
-                    </h4>
-                    <p className="text-stone-500 text-sm leading-relaxed flex-1 group-hover:text-stone-400 transition-colors">
-                      {item.desc}
-                    </p>
-                    <div className="flex items-center gap-2 mt-6 text-emerald-400/50 group-hover:text-emerald-400/80 transition-colors">
-                      <span className="text-[10px] font-bold uppercase tracking-wider">Explorar catálogo</span>
-                      <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                  <div className="absolute top-0 left-0 w-full h-[2px] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700 bg-gradient-to-r from-emerald-500 to-transparent" />
-                </Link>
-              </motion.div>
-            ))}
+          <ExpandingPanels accent="emerald" items={BIO_ITEMS.map((item, i) => ({
+            icon: item.icon, title: item.label, desc: item.desc, link: `/soberania-organica/${item.slug}`, img: item.img,
+            ...(i === 0 ? { cta: 'Explorar catálogo' } : {}),
+          }))} />
 
-            {/* Medium cards — second tier */}
-            {BIO_ITEMS.slice(1, 3).map((item, i) => (
-              <motion.div key={item.label} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={(i + 1) * 0.3}>
-                <Link to={`/soberania-organica/${item.slug}`}
-                  className="group block h-full relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-emerald-500/20 transition-all duration-500 hover:-translate-y-1 p-6 md:p-8"
-                >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                    style={{ background: 'radial-gradient(ellipse at top right, rgba(16,185,129,0.06), transparent 60%)' }}
-                  />
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/15 w-fit mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                      <item.icon size={20} className="text-emerald-400" />
-                    </div>
-                    <h4 className="text-base font-bold text-stone-200 tracking-tight mb-2 group-hover:text-white transition-colors">{item.label}</h4>
-                    <p className="text-stone-500 text-xs leading-relaxed flex-1 group-hover:text-stone-400 transition-colors">{item.desc}</p>
-                    <div className="flex items-center gap-2 mt-4 text-emerald-400/50 group-hover:text-emerald-400/80 transition-colors">
-                      <span className="text-[10px] font-bold uppercase tracking-wider">Acessar módulo</span>
-                      <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                  <div className="absolute top-0 left-0 w-full h-[2px] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700 bg-gradient-to-r from-emerald-500 to-transparent" />
-                </Link>
-              </motion.div>
-            ))}
-
-            {/* Compact cards — bottom row */}
-            {BIO_ITEMS.slice(3).map((item, i) => (
-              <motion.div key={item.label} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={(i + 3) * 0.2}>
-                <Link to={`/soberania-organica/${item.slug}`}
-                  className="group block h-full relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-emerald-500/15 transition-all duration-500 hover:-translate-y-1 p-5"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-lg bg-emerald-500/8 border border-emerald-500/10 shrink-0 group-hover:scale-110 transition-transform duration-500">
-                      <item.icon size={16} className="text-emerald-400/70" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-stone-300 mb-1 group-hover:text-white transition-colors">{item.label}</h4>
-                      <p className="text-stone-600 text-xs leading-relaxed group-hover:text-stone-500 transition-colors">{item.desc}</p>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
 
           {/* PHYSIOLOGICAL MAP — Interactive */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
-            className="bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6 md:p-10 mb-10"
+            className="bg-[#0b100d]/90 backdrop-blur-md shadow-2xl shadow-black/50 border border-white/10 rounded-2xl p-6 md:p-10 mb-10"
           >
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
               <div>
@@ -912,7 +745,7 @@ export default function ProjetoAutonomo() {
                   A base que sustenta cada decisão de <span className="text-emerald-400">saúde</span>
                 </h3>
               </div>
-              <p className="text-stone-600 text-xs max-w-sm">Clique em um sistema para revelar plantas, foco terapêutico e estratégia de autonomia.</p>
+              <p className="text-stone-400 text-xs max-w-sm">Clique em um sistema para revelar plantas, foco terapêutico e estratégia de autonomia.</p>
             </div>
             <div className="flex flex-wrap gap-3">
               {Object.entries(SISTEMAS_DATA).map(([key, sys]) => {
@@ -924,7 +757,7 @@ export default function ProjetoAutonomo() {
                     whileHover={{ scale: 1.08, y: -2 }} whileTap={{ scale: 0.95 }}
                     className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border text-sm font-semibold transition-all duration-500 cursor-pointer ${
                       isActive ? 'bg-emerald-500 text-white border-emerald-400 shadow-lg shadow-emerald-500/20'
-                        : 'bg-white/[0.04] text-stone-400 border-white/[0.08] hover:bg-emerald-500/10 hover:border-emerald-500/30 hover:text-emerald-300'
+                        : 'bg-[#0b100d]/80 text-stone-300 border-white/10 hover:bg-emerald-500/10 hover:border-emerald-500/30 hover:text-emerald-300'
                     }`}
                   >
                     <Icon size={16} className={isActive ? 'text-white' : 'text-emerald-500/70'} />
@@ -954,7 +787,7 @@ export default function ProjetoAutonomo() {
                   </div>
                   <div>
                     <p className="text-emerald-300 text-sm font-bold">Sabedoria Ancestral</p>
-                    <p className="text-stone-500 text-xs mt-0.5">Hub completo: plantas medicinais, saúde natural e soberania alimentar</p>
+                    <p className="text-stone-300 text-xs mt-0.5">Hub completo: plantas medicinais, saúde natural e soberania alimentar</p>
                   </div>
                 </div>
                 <ArrowRight className="text-emerald-500/40 group-hover:translate-x-2 group-hover:text-emerald-400 transition-all duration-500" size={18} />
@@ -986,12 +819,6 @@ export default function ProjetoAutonomo() {
          (was: simple list cards, now: vertical pipeline with connected nodes)
       ═══════════════════════════════════════════════════════════ */}
       <section id="fase-03" className="relative z-10 scroll-mt-20 py-20 md:py-32">
-        {/* Ambient background image */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={bgFase03} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" style={{ filter: 'saturate(0.4)' }} loading="lazy" decoding="async" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050808] via-transparent to-[#050808]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-transparent to-[#050808]" />
-        </div>
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           {/* Full-width hero with centered text over image */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn} custom={0}
@@ -1033,118 +860,19 @@ export default function ProjetoAutonomo() {
                     ${i === 0 ? 'bg-amber-500/10 border-amber-500/20' : i === 1 ? 'bg-amber-500/15 border-amber-500/25' : 'bg-amber-500/20 border-amber-500/35'}`}>
                     <Sprout className="text-amber-400" size={i === 2 ? 28 : i === 1 ? 24 : 20} />
                   </div>
-                  <span className="text-stone-500 text-xs md:text-sm font-bold">{step}</span>
+                  <span className="text-stone-300 text-xs md:text-sm font-bold">{step}</span>
                 </motion.div>
                 {i < 2 && <ArrowRight className="text-amber-500/30 mb-6" size={20} />}
               </React.Fragment>
             ))}
           </motion.div>
 
-          {/* BENTO GRID — 2 large featured + 3 compact */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-            {/* Featured cards — first 2 get large treatment */}
-            {ALIMENTAR_LAYERS.slice(0, 2).map((layer, i) => (
-              <motion.div key={layer.title} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.3}
-                className={i === 0 ? 'lg:row-span-2' : ''}
-              >
-                <Link to={(layer as any).externalRoute ?? `/soberania-organica/${layer.slug}`}
-                  className={`group block h-full relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-amber-500/20 transition-all duration-500 hover:-translate-y-1 ${i === 0 ? 'p-8 md:p-10' : 'p-6 md:p-8'}`}
-                >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                    style={{ background: `radial-gradient(ellipse at ${i === 0 ? 'bottom right' : 'top left'}, rgba(245,158,11,0.08), transparent 60%)` }}
-                  />
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-2xl font-black text-stone-700 tabular-nums" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>0{i + 1}</span>
-                      <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/15 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                        <layer.icon size={i === 0 ? 24 : 20} className="text-amber-400" />
-                      </div>
-                    </div>
-                    <h4 className={`${i === 0 ? 'text-xl md:text-2xl' : 'text-base'} font-bold text-stone-200 tracking-tight mb-2 group-hover:text-white transition-colors`}>
-                      {layer.title}
-                    </h4>
-                    <p className="text-amber-400/50 text-[10px] font-semibold uppercase tracking-wider mb-3">{layer.desc}</p>
-                    <p className={`text-stone-500 ${i === 0 ? 'text-sm' : 'text-xs'} leading-relaxed group-hover:text-stone-400 transition-colors flex-1`}>
-                      {layer.details}
-                    </p>
-                    <div className="flex items-center gap-2 mt-4 text-amber-400/50 group-hover:text-amber-400/80 transition-colors">
-                      <span className="text-[10px] font-bold uppercase tracking-wider">Acessar módulo</span>
-                      <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                  <div className="absolute top-0 left-0 w-full h-[2px] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700 bg-gradient-to-r from-amber-500 to-transparent" />
-                </Link>
-              </motion.div>
-            ))}
+          <ExpandingPanels accent="amber" numbered items={ALIMENTAR_LAYERS.map((layer, i) => ({
+            icon: layer.icon, title: layer.title, kicker: layer.desc, desc: layer.details,
+            link: (layer as any).externalRoute ?? `/soberania-organica/${layer.slug}`, img: layer.img,
+            ...(i === 2 ? { badge: 'Investigação', cta: 'Abrir dossiê' } : {}),
+          }))} />
 
-            {/* Compact cards — remaining 3 */}
-            {ALIMENTAR_LAYERS.slice(2).map((layer, i) => (
-              <motion.div key={layer.title} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={(i + 2) * 0.2}>
-                <Link to={(layer as any).externalRoute ?? `/soberania-organica/${layer.slug}`}
-                  className={`group block h-full relative overflow-hidden rounded-xl border transition-all duration-500 hover:-translate-y-1 ${
-                    i === 0
-                      ? 'border-amber-500/20 bg-amber-500/[0.03] hover:bg-amber-500/[0.06] hover:border-amber-500/30 p-7'
-                      : 'border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-amber-500/15 p-5'
-                  }`}
-                >
-                  {i === 0 && (
-                    <span className="absolute top-3 right-3 text-[9px] font-bold uppercase tracking-[0.2em] text-amber-400/70 px-2 py-1 rounded border border-amber-500/25 bg-amber-500/5">
-                      Investigação
-                    </span>
-                  )}
-                  <div className={`flex items-start ${i === 0 ? 'gap-5' : 'gap-4'}`}>
-                    <div className="flex items-center gap-2 shrink-0">
-                      <span
-                        className={`font-black tabular-nums ${i === 0 ? 'text-2xl text-amber-400/60' : 'text-lg text-stone-700'}`}
-                        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                      >
-                        0{i + 3}
-                      </span>
-                      <div
-                        className={`rounded-lg border group-hover:scale-110 transition-transform duration-500 ${
-                          i === 0
-                            ? 'p-3 bg-amber-500/15 border-amber-500/25'
-                            : 'p-2 bg-amber-500/8 border-amber-500/10'
-                        }`}
-                      >
-                        <layer.icon size={i === 0 ? 22 : 16} className={i === 0 ? 'text-amber-400' : 'text-amber-400/70'} />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h4
-                        className={`font-bold tracking-tight mb-2 group-hover:text-white transition-colors ${
-                          i === 0 ? 'text-lg md:text-xl text-stone-100' : 'text-sm text-stone-300'
-                        }`}
-                      >
-                        {layer.title}
-                      </h4>
-                      {i === 0 && (
-                        <p className="text-amber-400/60 text-[10px] font-semibold uppercase tracking-wider mb-3">
-                          {layer.desc}
-                        </p>
-                      )}
-                      <p
-                        className={`leading-relaxed group-hover:text-stone-400 transition-colors ${
-                          i === 0 ? 'text-stone-400 text-sm' : 'text-stone-600 text-xs'
-                        }`}
-                      >
-                        {layer.details}
-                      </p>
-                      {i === 0 && (
-                        <div className="flex items-center gap-2 mt-4 text-amber-400/60 group-hover:text-amber-400 transition-colors">
-                          <span className="text-[10px] font-bold uppercase tracking-wider">Abrir dossiê</span>
-                          <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  {i === 0 && (
-                    <div className="absolute top-0 left-0 w-full h-[2px] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700 bg-gradient-to-r from-amber-500 to-transparent" />
-                  )}
-                </Link>
-              </motion.div>
-            ))}
-          </div>
 
           <div className="p-5 bg-amber-500/[0.03] border border-amber-500/8 rounded-xl mb-10">
             <p className="text-amber-400/50 text-sm font-medium">
@@ -1171,12 +899,6 @@ export default function ProjetoAutonomo() {
          (was: equal 4-card grid, now: large visual showcase)
       ═══════════════════════════════════════════════════════════ */}
       <section id="fase-04" className="relative z-10 scroll-mt-20 py-20 md:py-32">
-        {/* Ambient background image */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={bgFase04} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.06]" style={{ filter: 'saturate(0.4)' }} loading="lazy" decoding="async" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050808] via-transparent to-[#050808]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-transparent to-[#050808]" />
-        </div>
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           {/* Full-width image hero — centered overlay */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn} custom={0}
@@ -1202,89 +924,13 @@ export default function ProjetoAutonomo() {
             </div>
           </motion.div>
 
-          {/* BENTO GRID — 1 large featured spanning + 3 compact */}
-          {(() => {
-            const cpItems = [
-              { icon: Leaf, label: '5 Sistemas Corporais', desc: 'Digestivo, respiratório, nervoso, imunológico e circulatório mapeados.', longDesc: 'Cada sistema é documentado com suas plantas associadas, foco terapêutico e estratégia de autonomia. O mapa fisiológico conecta todos os pontos.', link: '/conhecimento-perdido/base-fisiologica' },
-              { icon: BookOpen, label: '12 Plantas Documentadas', desc: 'Fichas técnicas com dosagens, contraindicações e métodos de preparo.', longDesc: 'Cada ficha possui 9 seções técnicas: identificação, princípios ativos, dosagens, contraindicações, interações, métodos de preparo, conservação, referências e aplicação prática.', link: '/conhecimento-perdido/aplicacao-pratica' },
-              { icon: Heart, label: 'Educação Familiar', desc: 'Conteúdo adaptado para ensinar crianças sobre botânica e saúde natural.', longDesc: 'Atividades práticas de identificação botânica, jogos de reconhecimento de plantas e protocolos seguros de preparo supervisionado.', link: '/conhecimento-perdido/continuidade-familiar' },
-              { icon: Shield, label: 'Integração Completa', desc: 'Conectado a todo o Protocolo Autônomo como base de conhecimento.', longDesc: 'Hub central com navegação entre todos os blocos: contexto histórico, base fisiológica, segurança, aplicação prática e continuidade familiar.', link: '/soberania-organica/conhecimento-perdido' },
-            ];
-            const Icon0 = cpItems[0].icon;
-            const Icon1 = cpItems[1].icon;
-            return (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-                {/* Featured — large card spanning 2 rows */}
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="lg:row-span-2">
-                  <Link to={cpItems[0].link}
-                    className="group block h-full relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-teal-500/20 transition-all duration-500 hover:-translate-y-1 p-8 md:p-10"
-                  >
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                      style={{ background: 'radial-gradient(ellipse at bottom left, rgba(20,184,166,0.08), transparent 60%)' }}
-                    />
-                    <div className="relative z-10 flex flex-col h-full">
-                      <div className="p-3.5 rounded-xl bg-teal-500/10 border border-teal-500/15 w-fit mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                        <Icon0 size={24} className="text-teal-400" />
-                      </div>
-                      <h4 className="text-xl md:text-2xl font-bold text-stone-200 tracking-tight mb-3 group-hover:text-white transition-colors">
-                        {cpItems[0].label}
-                      </h4>
-                      <p className="text-stone-500 text-sm leading-relaxed flex-1 group-hover:text-stone-400 transition-colors">
-                        {cpItems[0].longDesc}
-                      </p>
-                      <div className="flex items-center gap-2 mt-6 text-teal-400/50 group-hover:text-teal-400/80 transition-colors">
-                        <span className="text-[10px] font-bold uppercase tracking-wider">Explorar sistemas</span>
-                        <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
-                    <div className="absolute top-0 left-0 w-full h-[2px] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700 bg-gradient-to-r from-teal-500 to-transparent" />
-                  </Link>
-                </motion.div>
+          <ExpandingPanels accent="teal" className="mb-10" items={[
+            { icon: Leaf, title: '5 Sistemas Corporais', kicker: 'Digestivo, respiratório, nervoso, imunológico e circulatório mapeados.', desc: 'Cada sistema é documentado com suas plantas associadas, foco terapêutico e estratégia de autonomia. O mapa fisiológico conecta todos os pontos.', link: '/conhecimento-perdido/base-fisiologica', img: imgCpSistemas, cta: 'Explorar sistemas' },
+            { icon: BookOpen, title: '12 Plantas Documentadas', kicker: 'Fichas técnicas com dosagens, contraindicações e métodos de preparo.', desc: 'Cada ficha possui 9 seções técnicas: identificação, princípios ativos, dosagens, contraindicações, interações, métodos de preparo, conservação, referências e aplicação prática.', link: '/conhecimento-perdido/aplicacao-pratica', img: imgCpPlantas, cta: 'Ver fichas' },
+            { icon: Heart, title: 'Educação Familiar', kicker: 'Conteúdo adaptado para ensinar crianças sobre botânica e saúde natural.', desc: 'Atividades práticas de identificação botânica, jogos de reconhecimento de plantas e protocolos seguros de preparo supervisionado.', link: '/conhecimento-perdido/continuidade-familiar', img: imgCpFamilia },
+            { icon: Shield, title: 'Integração Completa', kicker: 'Conectado a todo o Protocolo Autônomo como base de conhecimento.', desc: 'Hub central com navegação entre todos os blocos: contexto histórico, base fisiológica, segurança, aplicação prática e continuidade familiar.', link: '/soberania-organica/conhecimento-perdido', img: imgConhecimentoPerdido },
+          ]} />
 
-                {/* Medium card */}
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0.3}>
-                  <Link to={cpItems[1].link}
-                    className="group block h-full relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-teal-500/20 transition-all duration-500 hover:-translate-y-1 p-6 md:p-8"
-                  >
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                      style={{ background: 'radial-gradient(ellipse at top right, rgba(20,184,166,0.06), transparent 60%)' }}
-                    />
-                    <div className="relative z-10 flex flex-col h-full">
-                      <div className="p-3 rounded-xl bg-teal-500/10 border border-teal-500/15 w-fit mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                        <Icon1 size={20} className="text-teal-400" />
-                      </div>
-                      <h4 className="text-base font-bold text-stone-200 tracking-tight mb-2 group-hover:text-white transition-colors">{cpItems[1].label}</h4>
-                      <p className="text-stone-500 text-xs leading-relaxed flex-1 group-hover:text-stone-400 transition-colors">{cpItems[1].longDesc}</p>
-                      <div className="flex items-center gap-2 mt-4 text-teal-400/50 group-hover:text-teal-400/80 transition-colors">
-                        <span className="text-[10px] font-bold uppercase tracking-wider">Ver fichas</span>
-                        <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
-                    <div className="absolute top-0 left-0 w-full h-[2px] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700 bg-gradient-to-r from-teal-500 to-transparent" />
-                  </Link>
-                </motion.div>
-
-                {/* Compact cards — bottom */}
-                {cpItems.slice(2).map((item, i) => (
-                  <motion.div key={item.label} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={(i + 2) * 0.2}>
-                    <Link to={item.link}
-                      className="group block h-full relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-teal-500/15 transition-all duration-500 hover:-translate-y-1 p-5"
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="p-2 rounded-lg bg-teal-500/8 border border-teal-500/10 shrink-0 group-hover:scale-110 transition-transform duration-500">
-                          <item.icon size={16} className="text-teal-400/70" />
-                        </div>
-                        <div>
-                          <h4 className="text-sm font-bold text-stone-300 mb-1 group-hover:text-white transition-colors">{item.label}</h4>
-                          <p className="text-stone-600 text-xs leading-relaxed group-hover:text-stone-500 transition-colors">{item.desc}</p>
-                        </div>
-                      </div>
-                    </Link>
-                  </motion.div>
-                ))}
-              </div>
-            );
-          })()}
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="flex flex-col sm:flex-row gap-4 mb-10">
             <Link to="/soberania-organica/conhecimento-perdido"
@@ -1312,12 +958,6 @@ export default function ProjetoAutonomo() {
          FASE 05 — TÓXICOS OCULTOS — LABORATÓRIO DE DISCERNIMENTO
       ═══════════════════════════════════════════════════════════ */}
       <section id="fase-05" className="relative z-10 scroll-mt-20 py-20 md:py-32">
-        {/* Ambient background image */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={bgFase05} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.08]" style={{ filter: 'saturate(0.6)' }} loading="lazy" decoding="async" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050808] via-transparent to-[#050808]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-transparent to-[#050808]" />
-        </div>
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn} custom={0}
             className="relative rounded-3xl overflow-hidden mb-16 md:mb-20 h-72 md:h-[450px]"
@@ -1341,31 +981,13 @@ export default function ProjetoAutonomo() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-            {[
-              { icon: Target, label: 'Toxinas Alimentares', desc: 'Aditivos, ultraprocessados, açúcar oculto e agrotóxicos na dieta cotidiana.', link: '/soberania-organica/toxicos-ocultos/toxinas-alimentares', color: 'amber' },
-              { icon: Brain, label: 'Manipulação Informacional', desc: 'Propaganda, novilíngua, viés algorítmico e engenharia de consentimento.', link: '/soberania-organica/toxicos-ocultos/manipulacao-informacional', color: 'violet' },
-              { icon: Compass, label: 'Dependência Tecnológica', desc: 'Design comportamental, dopamina digital, rastreamento e obsolescência.', link: '/soberania-organica/toxicos-ocultos/dependencia-tecnologica', color: 'cyan' },
-              { icon: Eye, label: 'Toxinas Ambientais', desc: 'Plásticos, produtos de limpeza, poluição indoor e cosméticos tóxicos.', link: '/soberania-organica/toxicos-ocultos/toxinas-ambientais', color: 'green' },
-            ].map((item, i) => (
-              <motion.div key={item.label} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.15}>
-                <Link to={item.link}
-                  className="group block h-full relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-red-500/15 transition-all duration-500 hover:-translate-y-1 p-6"
-                >
-                  <div className="absolute top-0 left-0 w-full h-[2px] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700 bg-gradient-to-r from-red-500 to-transparent" />
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-lg bg-red-500/8 border border-red-500/10 shrink-0 group-hover:scale-110 transition-transform duration-500">
-                      <item.icon size={18} className="text-red-400/70" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-stone-200 mb-1 group-hover:text-white transition-colors">{item.label}</h4>
-                      <p className="text-stone-600 text-xs leading-relaxed group-hover:text-stone-500 transition-colors">{item.desc}</p>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+          <ExpandingPanels accent="red" className="mb-10" items={[
+            { icon: Target, title: 'Toxinas Alimentares', desc: 'Aditivos, ultraprocessados, açúcar oculto e agrotóxicos na dieta cotidiana.', link: '/soberania-organica/toxicos-ocultos/toxinas-alimentares', img: imgUltraprocessados, cta: 'Abrir investigação' },
+            { icon: Brain, title: 'Manipulação Informacional', desc: 'Propaganda, novilíngua, viés algorítmico e engenharia de consentimento.', link: '/soberania-organica/toxicos-ocultos/manipulacao-informacional', img: imgManipulacao, cta: 'Abrir investigação' },
+            { icon: Compass, title: 'Dependência Tecnológica', desc: 'Design comportamental, dopamina digital, rastreamento e obsolescência.', link: '/soberania-organica/toxicos-ocultos/dependencia-tecnologica', img: imgDependencia, cta: 'Abrir investigação' },
+            { icon: Eye, title: 'Toxinas Ambientais', desc: 'Plásticos, produtos de limpeza, poluição indoor e cosméticos tóxicos.', link: '/soberania-organica/toxicos-ocultos/toxinas-ambientais', img: imgToxinasAmb, cta: 'Abrir investigação' },
+          ]} />
+
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <Link to="/soberania-organica/toxicos-ocultos"
@@ -1381,12 +1003,6 @@ export default function ProjetoAutonomo() {
          FASE 06 — MENTE BLINDADA — DEFESA COGNITIVA
       ═══════════════════════════════════════════════════════════ */}
       <section id="fase-06" className="relative z-10 scroll-mt-20 py-20 md:py-32">
-        {/* Ambient background image */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={tlMente} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.10]" style={{ filter: 'saturate(0.5)' }} loading="lazy" decoding="async" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050808] via-transparent to-[#050808]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-transparent to-[#050808]" />
-        </div>
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn} custom={0}
             className="relative rounded-3xl overflow-hidden mb-16 md:mb-20 h-72 md:h-[450px]"
@@ -1410,26 +1026,50 @@ export default function ProjetoAutonomo() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+          <div
+            className="flex flex-col md:flex-row gap-3 md:h-[400px] mb-10"
+            onMouseLeave={() => setActiveMindPanel(0)}
+          >
             {[
-              { icon: Brain, label: 'Manipulação Informacional', desc: 'Propaganda, novilíngua, viés algorítmico e engenharia de consentimento.', link: '/soberania-organica/toxicos-ocultos/manipulacao-informacional' },
-              { icon: Compass, label: 'Dependência Tecnológica', desc: 'Design comportamental, dopamina digital, rastreamento e obsolescência programada.', link: '/soberania-organica/toxicos-ocultos/dependencia-tecnologica' },
-              { icon: Eye, label: 'Leitura Crítica de Mídia', desc: 'Identificar enquadramento, omissões e gatilhos emocionais na narrativa diária.', link: '/novilingua' },
-              { icon: Shield, label: 'Soberania Cognitiva', desc: 'Higiene mental, foco profundo e protocolos de desintoxicação informacional.', link: '/silencio-queda' },
+              { icon: Brain, label: 'Manipulação Informacional', desc: 'Propaganda, novilíngua, viés algorítmico e engenharia de consentimento.', link: '/soberania-organica/toxicos-ocultos/manipulacao-informacional', img: imgManipulacao },
+              { icon: Compass, label: 'Dependência Tecnológica', desc: 'Design comportamental, dopamina digital, rastreamento e obsolescência programada.', link: '/soberania-organica/toxicos-ocultos/dependencia-tecnologica', img: imgDependencia },
+              { icon: Eye, label: 'Leitura Crítica de Mídia', desc: 'Identificar enquadramento, omissões e gatilhos emocionais na narrativa diária.', link: '/novilingua', img: imgLeituraCritica },
+              { icon: Shield, label: 'Soberania Cognitiva', desc: 'Higiene mental, foco profundo e protocolos de desintoxicação informacional.', link: '/silencio-queda', img: imgSoberaniaCognitiva },
             ].map((item, i) => (
-              <motion.div key={item.label} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.15}>
-                <Link to={item.link}
-                  className="group block h-full relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-violet-500/20 transition-all duration-500 hover:-translate-y-1 p-6"
+              <motion.div
+                key={item.label}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={i * 0.15}
+                className={`min-w-0 md:basis-0 motion-safe:transition-[flex-grow] motion-safe:duration-500 motion-safe:ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none ${activeMindPanel === i ? 'md:grow-[2.2]' : 'md:grow'}`}
+                onMouseEnter={() => setActiveMindPanel(i)}
+              >
+                <Link
+                  to={item.link}
+                  onFocus={() => setActiveMindPanel(i)}
+                  aria-label={`${item.label}: ${item.desc}`}
+                  className={`group flex h-full min-h-32 md:min-h-0 flex-col justify-end relative overflow-hidden rounded-xl border bg-[#0b100d] shadow-2xl shadow-black/50 p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:transition-[border-color,box-shadow] motion-safe:duration-500 motion-reduce:transition-none ${activeMindPanel === i ? 'border-violet-500/35 shadow-violet-950/25' : 'border-white/10'}`}
                 >
-                  <div className="absolute top-0 left-0 w-full h-[2px] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700 bg-gradient-to-r from-violet-500 to-transparent" />
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-lg bg-violet-500/8 border border-violet-500/15 shrink-0 group-hover:scale-110 transition-transform duration-500">
+                  <img
+                    src={item.img}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    className={`absolute inset-0 h-full w-full object-cover motion-safe:transition-[transform,opacity] motion-safe:duration-700 motion-safe:ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none ${activeMindPanel === i ? 'scale-105 opacity-70' : 'scale-100 opacity-45'}`}
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/25 motion-safe:transition-opacity motion-safe:duration-500 motion-reduce:transition-none ${activeMindPanel === i ? 'opacity-90' : 'opacity-100'}`} />
+                  <div className={`absolute top-0 left-0 h-[2px] origin-left bg-gradient-to-r from-violet-500 to-transparent motion-safe:transition-[width] motion-safe:duration-700 motion-reduce:transition-none ${activeMindPanel === i ? 'w-full' : 'w-0'}`} />
+                  <div className="relative z-10">
+                    <div className={`mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-violet-500/10 border motion-safe:transition-[transform,border-color] motion-safe:duration-500 motion-reduce:transition-none ${activeMindPanel === i ? 'border-violet-400/40 md:scale-110' : 'border-violet-500/15'}`}>
                       <item.icon size={18} className="text-violet-300/80" />
                     </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-stone-200 mb-1 group-hover:text-white transition-colors">{item.label}</h4>
-                      <p className="text-stone-600 text-xs leading-relaxed group-hover:text-stone-500 transition-colors">{item.desc}</p>
-                    </div>
+                    <h4 className="text-base font-bold text-stone-100 leading-snug mb-2 transition-colors group-hover:text-white">{item.label}</h4>
+                    <p className={`text-stone-300 text-sm leading-relaxed overflow-hidden motion-safe:transition-[max-height,opacity,transform] motion-safe:duration-500 motion-reduce:transition-none md:translate-y-2 md:max-h-0 md:opacity-0 ${activeMindPanel === i ? 'md:translate-y-0 md:max-h-28 md:opacity-100' : ''}`}>{item.desc}</p>
+                    <span className={`mt-5 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-violet-300 motion-safe:transition-opacity motion-safe:duration-500 motion-reduce:transition-none md:opacity-0 ${activeMindPanel === i ? 'md:opacity-100' : ''}`}>
+                      Abrir análise <ArrowRight size={14} aria-hidden="true" />
+                    </span>
                   </div>
                 </Link>
               </motion.div>
@@ -1450,11 +1090,6 @@ export default function ProjetoAutonomo() {
          FASE 07 — COZINHA FUNCIONAL — SUBSTITUI A BIG PHARMA
       ═══════════════════════════════════════════════════════════ */}
       <section id="fase-07" className="relative z-10 scroll-mt-20 py-20 md:py-32">
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={imgCozinhaFuncionalHero} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.12]" style={{ filter: 'saturate(0.6)' }} loading="eager" fetchPriority="high" decoding="async" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050808] via-transparent to-[#050808]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050808] via-transparent to-[#050808]" />
-        </div>
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn} custom={0}
             className="relative rounded-3xl overflow-hidden mb-16 md:mb-20 h-72 md:h-[450px]"
@@ -1477,29 +1112,11 @@ export default function ProjetoAutonomo() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-            {[
-              { icon: Moon, label: 'A Sobremesa que Substitui o Rivotril', desc: 'Glicina (3g), Passiflora, camomila e chia hidratada. Quatro ativos, oito estudos primários. 30 a 60 min antes de dormir.', link: '/soberania-organica/cozinha-funcional/sobremesa-substitui-rivotril' },
-              { icon: FlaskConical, label: 'Coleção Cozinha Funcional', desc: 'Hub editorial com todas as receitas funcionais. Cada prato é um protocolo nutricional documentado, sem influencer e sem e-book pago.', link: '/soberania-organica/cozinha-funcional' },
-            ].map((item, i) => (
-              <motion.div key={item.label} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.15}>
-                <Link to={item.link}
-                  className="group block h-full relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-amber-500/25 transition-all duration-500 hover:-translate-y-1 p-6"
-                >
-                  <div className="absolute top-0 left-0 w-full h-[2px] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700 bg-gradient-to-r from-amber-400 to-transparent" />
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-lg bg-amber-500/8 border border-amber-500/15 shrink-0 group-hover:scale-110 transition-transform duration-500">
-                      <item.icon size={18} className="text-amber-300/80" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-stone-200 mb-1 group-hover:text-white transition-colors">{item.label}</h4>
-                      <p className="text-stone-600 text-xs leading-relaxed group-hover:text-stone-500 transition-colors">{item.desc}</p>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+          <ExpandingPanels accent="amber" className="mb-10" items={[
+            { icon: Moon, title: 'A Sobremesa que Substitui o Rivotril', desc: 'Glicina (3g), Passiflora, camomila e chia hidratada. Quatro ativos, oito estudos primários. 30 a 60 min antes de dormir.', link: '/soberania-organica/cozinha-funcional/sobremesa-substitui-rivotril', img: imgSobremesa, cta: 'Abrir receita' },
+            { icon: FlaskConical, title: 'Coleção Cozinha Funcional', desc: 'Hub editorial com todas as receitas funcionais. Cada prato é um protocolo nutricional documentado, sem influencer e sem e-book pago.', link: '/soberania-organica/cozinha-funcional', img: imgCozinhaHub, cta: 'Abrir coleção' },
+          ]} />
+
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <Link to="/soberania-organica/cozinha-funcional"
@@ -1519,15 +1136,15 @@ export default function ProjetoAutonomo() {
         <div className="max-w-6xl mx-auto px-6 md:px-10 py-12">
           <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-20">
             {[
-              { phase: 'Base 72', accent: '#f43f5e' },
-              { phase: 'Autonomia Biológica', accent: '#10b981' },
-              { phase: 'Soberania Alimentar', accent: '#f59e0b' },
-              { phase: 'Conhecimento Perdido', accent: '#14b8a6' },
-              { phase: 'Tóxicos Ocultos', accent: '#ef4444' },
-              { phase: 'Mente Blindada', accent: '#a855f7' },
-              { phase: 'Cozinha Funcional', accent: '#fbbf24' },
+              { phase: 'Base 72', accent: '#c8775a' },
+              { phase: 'Autonomia Biológica', accent: '#8fa88a' },
+              { phase: 'Soberania Alimentar', accent: '#d4a95e' },
+              { phase: 'Conhecimento Perdido', accent: '#7fa59c' },
+              { phase: 'Tóxicos Ocultos', accent: '#b4593f' },
+              { phase: 'Mente Blindada', accent: '#9c86b0' },
+              { phase: 'Cozinha Funcional', accent: '#e3b56a' },
             ].map((s) => (
-              <div key={s.phase} className="flex items-center gap-2 border border-white/[0.06] bg-white/[0.02] px-4 py-2 rounded-full">
+              <div key={s.phase} className="flex items-center gap-2 border border-white/10 bg-[#0b100d]/90 backdrop-blur-md px-4 py-2 rounded-full">
                 <div className="w-2 h-2 rounded-full" style={{ background: s.accent }} />
                 <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: s.accent }}>{s.phase}</span>
               </div>
@@ -1536,24 +1153,26 @@ export default function ProjetoAutonomo() {
 
           {/* Closing manifesto */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="text-center max-w-3xl mx-auto mb-16">
-            <p className="text-stone-700 text-xs font-medium uppercase tracking-[0.4em] mb-8">Redução inteligente de dependência</p>
+            <p className="text-stone-400 text-xs font-medium uppercase tracking-[0.4em] mb-8">Redução inteligente de dependência</p>
             <h3 className="text-3xl md:text-5xl font-black tracking-tight leading-tight mb-3 text-stone-200" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               Autonomia não é fuga do sistema.
             </h3>
-            <p className="text-2xl md:text-4xl font-black tracking-tight text-emerald-400 mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <p className="text-2xl md:text-4xl font-black tracking-tight text-[#b9c9a8] mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               É gestão de risco pessoal.
             </p>
             <Link to="/recursos-e-ferramentas"
-              className="inline-flex items-center gap-3 bg-emerald-500 text-white px-10 py-5 font-bold text-sm tracking-wide rounded-xl hover:bg-emerald-400 hover:shadow-2xl hover:shadow-emerald-500/20 hover:scale-[1.03] hover:-translate-y-1 transition-all duration-500 group"
+              className="inline-flex items-center gap-3 bg-[#5f6f4a] text-stone-50 border border-[#b9c9a8]/30 px-10 py-5 font-bold text-sm tracking-wide rounded-xl hover:bg-[#6d7f55] hover:shadow-2xl hover:shadow-black/40 hover:scale-[1.03] hover:-translate-y-1 transition-all duration-500 group"
             >
               <Shield size={18} className="group-hover:rotate-12 transition-transform duration-500" /> Voltar ao centro de operações
             </Link>
           </motion.div>
 
           {/* Seal */}
-          <div className="pt-12 border-t border-white/[0.04] text-right">
-            <p className="text-stone-700 font-medium text-base tracking-tight italic">Quem planta, não implora.</p>
-          </div>
+          <figure className="mx-auto max-w-md rounded-2xl border border-[#d4a95e]/25 bg-[#0b100d]/90 backdrop-blur-md shadow-2xl shadow-black/50 px-8 py-8 text-center">
+            <div className="mx-auto mb-5 h-px w-16 bg-gradient-to-r from-transparent via-[#d4a95e]/70 to-transparent" />
+            <blockquote className="text-2xl md:text-3xl italic text-[#ecd9ac]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Quem planta, não implora.</blockquote>
+            <figcaption className="mt-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-stone-400">Selo da Soberania Orgânica</figcaption>
+          </figure>
         </div>
       </section>
     </div>

@@ -135,6 +135,7 @@ const AristolochiaAlerta = lazy(() => import("./pages/plantas/AristolochiaAlerta
 import CodigoAutonomiaModal from "./components/CodigoAutonomiaModal";
 import ScrollToTop from "./components/ScrollToTop";
 import TrailNav from "./components/TrailNav";
+import AutoFloatingToc from "./components/AutoFloatingToc";
 
 const MapaDaSoberania = lazy(() => import("./pages/MapaDaSoberania"));
 const BabosaAcemannan = lazy(() => import("./pages/BabosaAcemannan"));
@@ -244,6 +245,7 @@ const App = () => (
         <ContextualLeadCapture />
         <ScrollToTop />
         <TrailNav />
+        <AutoFloatingToc />
 
         <Suspense fallback={<div className="min-h-screen" aria-busy="true" />}>
         <Routes>

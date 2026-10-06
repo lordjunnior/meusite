@@ -58,7 +58,7 @@ const FloatingToc = () => {
   };
 
   return (
-    <AnimatePresence>
+    <><span data-page-toc hidden /><AnimatePresence>
       {isVisible && (
         <motion.div
           initial={{ opacity: 0, x: 20 }}
@@ -134,7 +134,7 @@ const FloatingToc = () => {
           </AnimatePresence>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence></>
   );
 };
 
