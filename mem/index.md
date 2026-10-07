@@ -15,8 +15,11 @@ MÍNIMO POR PÁGINA: 6+ imagens reais, hero full-bleed ponta a ponta, animaçõe
 Navigation icons must be strictly monochromatic.
 Mandatory "PIX NÃO É PRIVADO" warning on PIX guides.
 Toda imagem criada com texto visível deve estar em português do Brasil.
+Toda página: cards com imagem e painéis expansíveis, tudo interativo, ganchos/PNL, tela cheia, nada flutuante cobrindo conteúdo.
+Antes de entregar: revisar página inteira (cantos, topo, rodapé, celular) e corrigir sozinho erros já apontados.
 
 ## Memories
+- [Prioridades de página](mem://design/prioridades-de-pagina) — Checklist obrigatório do usuário; erros que nunca podem se repetir
 - [Padrão mínimo de página](mem://design/page-minimum-standard) — 6+ imagens, hero full-bleed, animações, hover, sem emoji, sem vícios de IA
 - [Painéis de Mente Blindada](mem://design/mente-blindada-paineis) — Os quatro atalhos usam expansão fluida no conceito Arquivo vertical.
 - [Imagens em pt-BR](mem://constraints/design/imagens-em-portugues) — Texto em qualquer imagem criada sempre em português do Brasil; padrão Comece Aqui aprovado

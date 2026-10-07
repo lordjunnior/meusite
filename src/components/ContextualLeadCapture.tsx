@@ -120,6 +120,8 @@ const ContextualLeadCapture = () => {
         transition: { duration: 0.5, ease: EASE },
       };
 
+  if (pathname.replace(/\/+$/, '') === '/dolar-virtual') return null;
+
   return (
     <AnimatePresence>
       {visible && (
@@ -127,7 +129,7 @@ const ContextualLeadCapture = () => {
           key={offer.id}
           {...motionProps}
           aria-label={`Material sugerido: ${offer.titulo}`}
-          className="fixed z-[70] bottom-[18vh] left-3 right-3 sm:bottom-6 sm:left-auto sm:right-6 sm:w-[24rem] lg:bottom-24"
+          className="fixed z-[70] bottom-3 left-3 right-20 sm:bottom-6 sm:left-auto sm:right-6 sm:w-[24rem] lg:bottom-24"
         >
           <div className="relative isolate overflow-hidden rounded-2xl border border-editorial-teal/25 bg-editorial-sand shadow-[0_24px_60px_-28px_rgba(0,0,0,0.55)]">
 
@@ -140,7 +142,7 @@ const ContextualLeadCapture = () => {
               <X size={18} aria-hidden="true" />
             </button>
 
-            <div className="p-5 pr-12 sm:p-6 sm:pr-12">
+            <div className="p-3 pr-12 sm:p-6 sm:pr-12">
               {success ? (
                 <div className="flex items-start gap-3 py-1">
                   <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-editorial-teal" aria-hidden="true" />
@@ -153,19 +155,19 @@ const ContextualLeadCapture = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-editorial-teal">
+                  <p className="hidden text-[10px] font-semibold uppercase tracking-[0.22em] text-editorial-teal sm:block">
                     {offer.eyebrow}
                   </p>
-                  <h2 className="mt-2 font-display text-lg font-bold leading-tight text-editorial-ink">
+                  <h2 className="font-display text-sm font-bold leading-tight text-editorial-ink sm:mt-2 sm:text-lg">
                     {offer.titulo}
                   </h2>
-                  <p className="mt-2 text-xs leading-relaxed text-editorial-ink/75">{offer.descricao}</p>
+                  <p className={`mt-2 text-xs leading-relaxed text-editorial-ink/75 ${expanded ? 'block' : 'hidden sm:block'}`}>{offer.descricao}</p>
 
                   {!expanded ? (
                     <button
                       type="button"
                       onClick={() => setExpanded(true)}
-                      className="mt-4 inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-editorial-teal px-5 text-sm font-bold text-editorial-sand transition-colors hover:bg-editorial-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-editorial-terracotta focus-visible:ring-offset-2"
+                      className="mt-2 inline-flex min-h-[40px] w-full items-center justify-center gap-2 rounded-xl bg-editorial-teal px-4 text-sm font-bold text-editorial-sand transition-colors hover:bg-editorial-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-editorial-terracotta focus-visible:ring-offset-2 sm:mt-4 sm:min-h-[44px]"
                     >
                       {offer.cta}
                       <ArrowRight size={16} aria-hidden="true" />

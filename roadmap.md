@@ -1,5 +1,12 @@
 # Roadmap
 
+## Comunicação Offline, correções de direção de arte
+- [x] Substituir imagens com texto estrangeiro por versões em português do Brasil.
+- [x] Dar interação ao Diagnóstico e Fundamento Operacional, preservando o texto.
+- [x] Compactar as cinco camadas e integrar imagens aos painéis expansíveis.
+- [x] Transformar os cinco erros críticos em cards com consequências e orientações reveladas.
+- [x] Verificar mouse, teclado, toque, imagens e redução de movimento.
+
 ## Publicação
 - [x] Forçar novo envio ao repositório para disparar a publicação (06/10/2026).
 
@@ -270,3 +277,8 @@ Nada será codificado antes da aprovação das decisões pendentes da seção 16
 ## Hub Soberania Orgânica, cards com imagem editorial (concluído)
 - [x] Aplicar o padrão dos painéis de Mente Blindada (imagem editorial full-bleed + gradiente de leitura + micro-zoom no hover) em todos os cards das fases 01, 02, 03, 04, 05 e 07.
 - [x] Validado em desktop e celular: 28 cards com imagem, sem overflow horizontal, sem erros de página.
+
+## Dólar Virtual, reformulação editorial
+- [x] Preservar capítulos e procedimentos completos com posicionamento educacional e riscos explícitos.
+- [x] Aplicar vídeo próprio, paleta editorial, painéis com imagens e navegação sem sobreposições.
+- [x] Validar tutorial, FAQ, imagens, teclado, celular e movimento reduzido.

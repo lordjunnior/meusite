@@ -9,3 +9,6 @@
 - Keep Stalkerware inspection definitions in `src/data/` and its interactions in a page-specific module; this preserves editorial copy while keeping the technical scan testable.
 - Keep the Soberania Organica hub background as a dedicated, unfiltered video component with no overlay or replacement poster; this preserves the exact media the user supplied.
 - On pages with a dynamic video background, cards and content blocks must be solid obsidian plates (opaque dark surface, backdrop blur, strong shadow, high-contrast text); transparent cards become illegible over moving video.
+- Keep Comunicação Offline image-panel interactions in its page-specific editorial module with scoped styles and global semantic color tokens; this prevents changes to approved panels elsewhere.
+- Global floating docks (TrailNav) center themselves on the reading area and offset for the sidebar only when `[data-app-sidebar]` is present; pages render the sidebar themselves, so fixed sidebar offsets misalign them.
+- Keep Dólar Virtual editorial interactions and video playback in a page-specific module with scoped styles and an in-flow TOC; this preserves complete procedures without floating navigation obscuring the guide.

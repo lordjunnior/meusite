@@ -13,33 +13,37 @@
 ## 📌 Visão Geral
 
 Aplicação web estática orientada a alta performance e baixa latência, estruturada como um arsenal tático com mais de 200 diretórios temáticos:
-* **Soberania Financeira:** Autocustódia de Bitcoin, transações P2P sem KYC e blindagem patrimonial.
-* **Privacidade & Segurança Mobile:** Dispositivos desvinculados, sistemas operacionais focados em privacidade e tráfego seguro.
-* **Resposta a Crises & Infraestrutura:** Gestão hídrica, kits de emergência, protocolos térmicos e autonomia de energia.
-* **Autonomia Biológica:** Fitoterapia, farmacopeia natural, bancos de sementes crioulas e conservação de alimentos.
+
+- **Soberania Financeira:** Autocustódia de Bitcoin, transações P2P sem KYC e blindagem patrimonial.
+- **Privacidade & Segurança Mobile:** Dispositivos desvinculados, sistemas operacionais focados em privacidade e tráfego seguro.
+- **Resposta a Crises & Infraestrutura:** Gestão hídrica, kits de emergência, protocolos térmicos e autonomia de energia.
+- **Autonomia Biológica:** Fitoterapia, farmacopeia natural, bancos de sementes crioulas e conservação de alimentos.
 
 ---
 
 ## 🛠️ Stack Tecnológica
 
-* **Core:** [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-* **Build Tool:** [Vite](https://vitejs.dev/)
-* **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
-* **Componentes UI:** [shadcn/ui](https://ui.shadcn.com/) + [Radix UI](https://www.radix-ui.com/)
-* **Ícones:** [Lucide Icons](https://lucide.dev/)
-* **Animações & Interatividade:** [Framer Motion](https://www.framer.com/motion/) / Canvas API
+- **Core:** [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
+- **Componentes UI:** [shadcn/ui](https://ui.shadcn.com/) + [Radix UI](https://www.radix-ui.com/)
+- **Ícones:** [Lucide Icons](https://lucide.dev/)
+- **Animações & Interatividade:** [Framer Motion](https://www.framer.com/motion/) / Canvas API
 
 ---
 
 ## 🚀 Ambiente de Desenvolvimento
 
 ### Pré-requisitos
-* Node.js (versão 18.x ou superior)
-* Gestor de pacotes npm, pnpm ou yarn
+
+- Node.js (versão 18.x ou superior)
+- Gestor de pacotes npm, pnpm ou yarn
 
 ### Instalação e Execução
 
 1. Clone o repositório:
+
 ```bash
-git clone [https://github.com/SEU_USUARIO/meusite.git](https://github.com/SEU_USUARIO/meusite.git)
+git clone [https://github.com/lordjunnior/meusite.git](https://github.com/lordjunnior/meusite.git)
 cd meusite
+```

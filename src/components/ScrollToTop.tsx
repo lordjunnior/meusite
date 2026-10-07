@@ -1,8 +1,10 @@
+import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ArrowUp, ArrowDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ScrollToTop = () => {
+  const location = useLocation();
   const [visible, setVisible] = useState(false);
   const [atBottom, setAtBottom] = useState(false);
 
@@ -19,6 +21,8 @@ const ScrollToTop = () => {
   const scrollDown = () => {
     window.scrollBy({ top: window.innerHeight * 0.85, behavior: "smooth" });
   };
+
+  if (location.pathname.replace(/\/+$/, "") === "/dolar-virtual") return null;
 
   return (
     <AnimatePresence>

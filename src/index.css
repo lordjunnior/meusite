@@ -13,6 +13,20 @@
     --editorial-terracotta: 22 61% 47%;
     --editorial-copper-light: 24 73% 66%;
     --editorial-ink: 174 30% 12%;
+    --dv-hero-wash: linear-gradient(90deg, hsl(var(--editorial-sand) / .96) 0%, hsl(var(--editorial-sand) / .86) 38%, hsl(var(--editorial-sand) / .12) 74%);
+    --dv-hero-mobile-wash: linear-gradient(180deg, hsl(var(--editorial-sand) / .9), hsl(var(--editorial-sand) / .8));
+    --dv-card-shadow: 0 15px 35px -22px hsl(var(--editorial-teal) / .4);
+    --dv-elevated-shadow: 0 22px 44px -24px hsl(var(--editorial-teal) / .5);
+    --comms-surface: 200 16% 9%;
+    --comms-ink: 40 20% 96%;
+    --comms-muted: 180 8% 75%;
+    --comms-signal: 38 78% 65%;
+    --comms-safe: 174 48% 64%;
+    --comms-danger: 3 75% 70%;
+    --comms-shadow: 200 20% 3%;
+    --comms-image-shade: linear-gradient(180deg, hsl(var(--comms-shadow) / .08) 0%, hsl(var(--comms-shadow) / .4) 35%, hsl(var(--comms-shadow) / .96) 100%);
+    --comms-card-shadow: 0 18px 45px -20px hsl(var(--comms-shadow) / .8);
+    --comms-active-shadow: 0 20px 48px -24px hsl(var(--comms-signal) / .4);
 
     /* ─── PALETA GRAFITE SOBERANO + ÂMBAR ELEGANTE ─── */
 
@@ -727,3 +741,10 @@
 section[id^="fase-"]{scroll-margin-top:5rem}
 @media (prefers-reduced-motion:reduce){.comece-card,.comece-pill,.comece-cta,.comece-panel-img,.comece-aside-photo img,.comece-final-img{transition:none}.comece-lift:hover,.comece-pill:hover,.comece-cta:hover{transform:none}.comece-panel:hover .comece-panel-img,.comece-aside-photo:hover img,.comece-final:hover .comece-final-img{transform:none}}
 @media (min-width:1024px){.comece-panel ul{transition:opacity .4s}.comece-expand:hover>*:not(:hover) ul{opacity:0}}
+
+/* TrailNav: docks centralizados na área útil; descontam a barra lateral só quando ela existe */
+.trail-dock { padding-left: 0.75rem; padding-right: 0.75rem; }
+@media (max-width: 1023px) { .trail-dock--bottom { padding-right: 4.75rem; } }
+@media (min-width: 1024px) {
+  body:has([data-app-sidebar]) .trail-dock { padding-left: calc(280px + 1rem); }
+}
