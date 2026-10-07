@@ -3,9 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { AlertTriangle } from 'lucide-react';
 import ScrollToTop from '@/components/ScrollToTop';
 import MicroCtaResistencia from '@/components/MicroCtaResistencia';
-import RapeHookCard from '@/components/RapeHookCard';
 import SaudePreventivaHero from '@/components/editorial/SaudePreventivaHero';
-import { Inflamacao, PilarSection, Protocolo, Faq, FooterNav } from '@/components/editorial/SaudePreventivaBody';
+import { Inflamacao, PilarSection, Protocolo, Faq, FooterNav, RapeBloco } from '@/components/editorial/SaudePreventivaBody';
 import folhas from '@/assets/saude/sp-ref-folhas.png';
 import imgSol from '@/assets/saude/hero-sol.webp';
 import imgSono from '@/assets/saude/hero-sono.webp';
@@ -216,16 +215,7 @@ const SaudePreventiva = () => {
         </div>
       </section>
 
-      {/* RAPÉ HOOK */}
-      <section className="sp-sec sp-sec-black" style={{ paddingBlock: 64 }}>
-        <div className="sp-wrap">
-          <RapeHookCard
-            variant="saude"
-            title="RAPÉ: Modulação Vagal Ancestral"
-            hook="Antes da meditação virar app, povos amazônicos já regulavam o eixo HPA com um pó cerimonial. Não é misticismo, é bioquímica do nervo vago documentada em literatura técnica. O dossiê está aqui."
-          />
-        </div>
-      </section>
+      <RapeBloco />
 
       <FooterNav />
       </div>
