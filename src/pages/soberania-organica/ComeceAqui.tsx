@@ -9,7 +9,7 @@ import {
 import SeoHead from '@/components/SeoHead';
 import BackToHome from '@/components/BackToHome';
 import OrganicVideoBackground from '@/components/backgrounds/OrganicVideoBackground';
-import comeceVideo from '@/assets/soberania-organica-background-20260815.mp4.asset.json';
+const COMECE_VIDEO_URL = '/heroes/soberania-organica-comece-aqui.mp4';
 import semAgua from '@/assets/agua-filtro.webp';
 import semHorta from '@/assets/horta-vertical.webp';
 import semConserva from '@/assets/conserva-metodos-preservacao.webp';
@@ -584,7 +584,7 @@ export default function ComeceAqui() {
           <BackToHome />
         </div>
 
-        <OrganicVideoBackground src={comeceVideo.url} position="fixed" />
+        <OrganicVideoBackground src={COMECE_VIDEO_URL} position="fixed" />
         <div className="relative z-10">
         <Hero />
 

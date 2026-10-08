@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import hubVideo from '@/assets/soberania-organica-background.mp4.asset.json';
+
+/** Static local path so the video ships with the repo and works on any host. */
+const HUB_VIDEO_URL = '/heroes/soberania-organica-hub.mp4';
 
 interface Props {
   /** Video URL; defaults to the Soberania Organica hub video. */
@@ -9,7 +11,7 @@ interface Props {
 }
 
 /** Unfiltered video background with reduced-motion support. */
-export default function OrganicVideoBackground({ src = hubVideo.url, position = 'fixed' }: Props) {
+export default function OrganicVideoBackground({ src = HUB_VIDEO_URL, position = 'fixed' }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [reduceMotion, setReduceMotion] = useState(false);
 
@@ -39,16 +41,16 @@ export default function OrganicVideoBackground({ src = hubVideo.url, position = 
     >
       <video
         ref={videoRef}
+        key={src}
         className="absolute inset-0 h-full w-full object-cover"
+        src={src}
         autoPlay={!reduceMotion}
         muted
         loop
         playsInline
         preload={reduceMotion ? 'metadata' : 'auto'}
         disablePictureInPicture
-      >
-        <source src={src} type="video/mp4" />
-      </video>
+      />
     </div>
   );
 }

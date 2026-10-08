@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, ChevronDown, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { EASE } from '@/components/seguranca-mobile/EditorialKit';
-import webmAsset from '@/assets/dolar-virtual/reference.webm.asset.json';
-import videoAsset from '@/assets/dolar-virtual/reference.mp4.asset.json';
+const REF_WEBM_URL = '/heroes/dolar-virtual-reference.webm';
+const REF_MP4_URL = '/heroes/dolar-virtual-reference.mp4';
 import wallet from '@/assets/dolar-virtual/carteira-fisica.jpg';
 import backup from '@/assets/dolar-virtual/backup-ptbr.jpg';
 import payment from '@/assets/dolar-virtual/conferencia-ptbr.jpg';
@@ -32,7 +32,7 @@ export function ReferenceVideo({ hero = false }: { hero?: boolean }) {
     else video.play().catch(() => undefined);
   }, [reduce, visible]);
   return <div className={`dv-video ${hero ? 'dv-video-hero' : ''}`}>
-    <video ref={ref} muted loop playsInline preload={hero ? 'auto' : 'metadata'} aria-label="Animação de moedas no fundo da referência" onLoadedData={() => { if (!reduce && visible) ref.current?.play().catch(() => undefined); }}><source src={webmAsset.url} type="video/webm"/><source src={videoAsset.url} type="video/mp4"/></video>
+    <video ref={ref} muted loop playsInline preload={hero ? 'auto' : 'metadata'} aria-label="Animação de moedas no fundo da referência" onLoadedData={() => { if (!reduce && visible) ref.current?.play().catch(() => undefined); }}><source src={REF_WEBM_URL} type="video/webm"/><source src={REF_MP4_URL} type="video/mp4"/></video>
   </div>;
 }
 
