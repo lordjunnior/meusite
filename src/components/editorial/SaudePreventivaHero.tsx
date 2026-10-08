@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowLeft, Menu, X, Shield, Moon, Droplets, Sun, Search } from 'lucide-react';
+import { ArrowUpRight, CornerUpLeft, Menu, X, Shield, Moon, Droplets, Sun, Search } from 'lucide-react';
 import bg from '@/assets/saude/sp-ref-bg.jpg';
 import produto from '@/assets/saude/sp-ref-produto.png';
 import folhas from '@/assets/saude/sp-ref-folhas.png';
@@ -43,16 +43,13 @@ export default function SaudePreventivaHero() {
   return (
     <header className="sp-ref" style={{ backgroundImage: `url(${bg})` }}>
       <nav className="sp-ref-nav sp-a-fade" aria-label="Navegação da página" data-page-toc>
-        <Link to="/soberania-organica" className="sp-ref-back sp-a-left sp-d2" aria-label="Voltar para Soberania Orgânica">
-          <ArrowLeft size={16} className="sp-ref-back-ic" />
-          <span>Voltar</span>
-        </Link>
+        <Link to="/soberania-organica" className="sp-ref-brand sp-a-left sp-d2">Saúde Preventiva</Link>
         <ul className="sp-ref-links sp-a-fade sp-d4">
           {NAV.map(([h, l]) => <li key={h}><a href={h}>{l}</a></li>)}
         </ul>
         <div className="sp-ref-icons sp-a-right sp-d3">
-          <span className="sp-ref-brand">Saúde Preventiva</span>
           <a href="#inflamacao" aria-label="Ir para o conteúdo"><Search size={20} strokeWidth={1.5} /></a>
+          <Link to="/soberania-organica" aria-label="Voltar para Soberania Orgânica" className="sp-ref-back"><CornerUpLeft size={20} strokeWidth={1.5} /><span>Voltar</span></Link>
           <button type="button" className="sp-ref-menu" aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open} onClick={() => setOpen(!open)}>
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -62,8 +59,8 @@ export default function SaudePreventivaHero() {
       {open && (
         <div className="sp-ref-overlay" role="dialog" aria-label="Menu">
           <button type="button" aria-label="Fechar menu" className="sp-ref-close" onClick={() => setOpen(false)}><X size={26} /></button>
-          <Link to="/soberania-organica" className="sp-ref-overlay-back" onClick={() => setOpen(false)}>Voltar para Soberania Orgânica</Link>
           {NAV.map(([h, l]) => <a key={h} href={h} onClick={() => setOpen(false)}>{l}</a>)}
+          <Link to="/soberania-organica">Voltar para Soberania Orgânica</Link>
         </div>
       )}
 
