@@ -54,7 +54,8 @@ export function SimuladorBloqueio() {
             <text x="40" y="130" fill="hsl(var(--muted-foreground))" fontSize="12">Parte do patrimônio fora do seu alcance</text>
             <motion.text x="40" y="200" fill="hsl(var(--foreground))" fontSize="56" fontWeight="900" key={pctPreso}
               initial={{ opacity: 0.4 }} animate={{ opacity: 1 }}>{pctPreso}%</motion.text>
-            <text x="40" y="232" fill="hsl(var(--muted-foreground))" fontSize="12">devolvido depois, em parcelas, com correção abaixo da inflação</text>
+            <text x="40" y="228" fill="hsl(var(--muted-foreground))" fontSize="11">devolvido depois, em parcelas,</text>
+            <text x="40" y="244" fill="hsl(var(--muted-foreground))" fontSize="11">com correção abaixo da inflação</text>
           </svg>
         </div>
       </div>
