@@ -282,3 +282,8 @@ Nada será codificado antes da aprovação das decisões pendentes da seção 16
 - [x] Preservar capítulos e procedimentos completos com posicionamento educacional e riscos explícitos.
 - [x] Aplicar vídeo próprio, paleta editorial, painéis com imagens e navegação sem sobreposições.
 - [x] Validar tutorial, FAQ, imagens, teclado, celular e movimento reduzido.
+
+## Padrão tático nas páginas pilares
+- [x] Confisco de 1990: simulador de bloqueio e alternador discurso x registro.
+- [ ] CBDC/DREX
+- [ ] SIM Swap

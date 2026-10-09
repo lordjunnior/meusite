@@ -11,6 +11,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import BackToHome from "@/components/BackToHome";
 import SnippetBait from "@/components/SnippetBait";
 import { confiscoArticleSchema, confiscoFaqSchema, confiscoBreadcrumbSchema } from "@/lib/confiscoData";
+import { SimuladorBloqueio, AlternadorRealidade } from "@/components/confisco/ConfiscoModules";
 import presidenteImg from "@/assets/presidente-confisco-1990.webp";
 import hiperinflacaoImg from "@/assets/confisco-hiperinflacao-1989.webp";
 import decretoImg from "@/assets/confisco-decreto-noite.webp";
@@ -290,6 +291,8 @@ const Confisco1990 = () => {
           </motion.div>
         </section>
 
+        <SimuladorBloqueio />
+
         {/* Connector */}
         <div className="relative max-w-7xl mx-auto">
           <div className="absolute left-1/2 -translate-x-1/2 top-0 w-px h-32 bg-gradient-to-b from-destructive/20 to-transparent" />
@@ -379,6 +382,8 @@ const Confisco1990 = () => {
               </motion.article>
             );
           })}
+
+          <div className="-mx-6"><AlternadorRealidade /></div>
 
           {/* ══════════════════════════════════════ */}
           {/* TRANSITION: 1990 → HOJE               */}
