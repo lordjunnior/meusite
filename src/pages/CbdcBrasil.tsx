@@ -8,6 +8,7 @@ import CinematicHero from '@/components/CinematicHero';
 import ScrollToTop from '@/components/ScrollToTop';
 import { NAV_ITEMS, CBDC_GLOBAL, COMO_FUNCIONA_ETAPAS, COMPARACAO, RISCOS, FERRAMENTAS, TIMELINE_ITEMS, FAQ_ITEMS } from '@/lib/cbdcBrasilData';
 import BackToHome from '@/components/BackToHome';
+import { SimuladorProgramavel } from '@/components/cbdc/CbdcModules';
 
 const APPLE_EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = {
@@ -179,6 +180,8 @@ export default function CbdcBrasil() {
             </div>
           </div>
         </motion.section>
+
+        <SimuladorProgramavel />
 
         {/* 5 RISCOS */}
         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="mb-28">
