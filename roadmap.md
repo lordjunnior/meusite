@@ -285,5 +285,5 @@ Nada será codificado antes da aprovação das decisões pendentes da seção 16
 
 ## Padrão tático nas páginas pilares
 - [x] Confisco de 1990: simulador de bloqueio e alternador discurso x registro.
-- [ ] CBDC/DREX
+- [x] CBDC/DREX: simulador de dinheiro programável.
 - [ ] SIM Swap
