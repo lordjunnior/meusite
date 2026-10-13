@@ -1,49 +1,79 @@
-# 🛡️ Lord Junnior · Soberania Individual
+<div align="center">
 
-> Plataforma e centro de comando para soberania financeira, segurança digital, resposta a crises e autonomia biológica.
+# Soberania Individual
 
-[![Production](https://img.shields.io/badge/status-production-success.svg)](#)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-18.x-61dafb.svg)](https://react.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.x-38bdf8.svg)](https://tailwindcss.com/)
-[![Vite](https://img.shields.io/badge/Vite-5.x-646cff.svg)](https://vitejs.dev/)
+**Uma plataforma web para autonomia financeira, segurança digital e preparação prática.**
 
----
+[**Acessar o site**](https://lordjunnior.com.br/) · [**Explorar o código**](https://github.com/lordjunnior/meusite)
 
-## 📌 Visão Geral
-
-Aplicação web estática orientada a alta performance e baixa latência, estruturada como um arsenal tático com mais de 200 diretórios temáticos:
-
-- **Soberania Financeira:** Autocustódia de Bitcoin, transações P2P sem KYC e blindagem patrimonial.
-- **Privacidade & Segurança Mobile:** Dispositivos desvinculados, sistemas operacionais focados em privacidade e tráfego seguro.
-- **Resposta a Crises & Infraestrutura:** Gestão hídrica, kits de emergência, protocolos térmicos e autonomia de energia.
-- **Autonomia Biológica:** Fitoterapia, farmacopeia natural, bancos de sementes crioulas e conservação de alimentos.
+</div>
 
 ---
 
-## 🛠️ Stack Tecnológica
+## O produto
 
-- **Core:** [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-- **Build Tool:** [Vite](https://vitejs.dev/)
-- **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
-- **Componentes UI:** [shadcn/ui](https://ui.shadcn.com/) + [Radix UI](https://www.radix-ui.com/)
-- **Ícones:** [Lucide Icons](https://lucide.dev/)
-- **Animações & Interatividade:** [Framer Motion](https://www.framer.com/motion/) / Canvas API
+Soberania Individual organiza conhecimento e ferramentas práticas em uma experiência web orientada à autonomia. O conteúdo conecta autocustódia de Bitcoin, privacidade digital, preparação para emergências e autonomia cotidiana.
 
----
+O desafio do produto não é apenas publicar artigos: é transformar uma grande biblioteca temática em caminhos compreensíveis, navegáveis e úteis para pessoas com diferentes níveis de experiência.
 
-## 🚀 Ambiente de Desenvolvimento
+## Principais recursos
 
-### Pré-requisitos
+- **Navegação por trilhas:** conteúdo organizado por áreas e caminhos de aprofundamento.
+- **Painéis interativos:** seções expansíveis que permitem explorar informações sem sobrecarregar a página.
+- **Experiências orientadas por perfil:** caminhos iniciais adaptados a diferentes necessidades.
+- **Recursos editoriais:** conteúdo aprofundado, exemplos, procedimentos e referências.
+- **Experiência responsiva e acessível:** interações planejadas para mouse, teclado e toque, com atenção à preferência por movimento reduzido.
+- **Otimização de ativos:** conversão de imagens para WebP e redução do volume dos recursos visuais.
+- **Base técnica para publicação:** geração de sitemap, verificação de URLs canônicas e checagens de consistência editorial.
 
-- Node.js (versão 18.x ou superior)
-- Gestor de pacotes npm, pnpm ou yarn
+## Decisões de implementação
 
-### Instalação e Execução
+- **Conteúdo e interface trabalham juntos.** Os componentes interativos ajudam a revelar informação no contexto, sem exigir que tudo seja exibido de uma vez.
+- **Desempenho faz parte do produto.** O fluxo de build inclui geração de metadados e verificações antes da publicação.
+- **Acessibilidade é funcionalidade.** As interações consideram teclado, toque e preferência por movimento reduzido.
+- **A estrutura precisa evoluir.** Conteúdo, navegação e componentes são refinados de forma incremental.
 
-1. Clone o repositório:
+## Stack técnica
+
+- **Interface:** React, TypeScript e Vite
+- **Componentes:** Radix UI e shadcn/ui
+- **Estilização:** Tailwind CSS
+- **Interações:** Framer Motion e GSAP
+- **Formulários e validação:** React Hook Form e Zod
+- **Dados e serviços:** Supabase, conforme os recursos utilizados
+- **Qualidade:** ESLint e Vitest
+
+## Executar localmente
+
+### Requisitos
+
+- Node.js
+- Bun disponível para os scripts auxiliares chamados pelo ciclo de desenvolvimento e build
+- npm
+
+### Instalação
 
 ```bash
-git clone [https://github.com/lordjunnior/meusite.git](https://github.com/lordjunnior/meusite.git)
+git clone https://github.com/lordjunnior/meusite.git
 cd meusite
+npm install
+npm run dev
 ```
+
+### Verificações
+
+```bash
+npm run lint
+npm test
+npm run build
+```
+
+O build executa verificações adicionais de metadados, URLs canônicas e tokens editoriais antes de gerar os arquivos de produção.
+
+## Objetivo técnico
+
+Construir uma plataforma de conteúdo que seja mais do que uma coleção de páginas: uma experiência organizada, responsiva e progressivamente aprimorada, com atenção à navegação, acessibilidade, desempenho e manutenção.
+
+---
+
+<p align="center"><sub>Projeto de Junnior · Software, conteúdo e experiência digital</sub></p>
