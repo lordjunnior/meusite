@@ -26,6 +26,23 @@ O desafio do produto não é apenas publicar artigos: é transformar uma grande 
 - **Otimização de ativos:** conversão de imagens para WebP e redução do volume dos recursos visuais.
 - **Base técnica para publicação:** geração de sitemap, verificação de URLs canônicas e checagens de consistência editorial.
 
+## Ferramentas autorais
+
+A plataforma também reúne uma suíte de aplicações interativas desenvolvidas para resolver tarefas específicas, com experiências próprias em vez de páginas estáticas.
+
+- **Gerador de Entropia BIP-39:** gera e valida mnemônicos localmente no navegador, usando `crypto.getRandomValues`, a wordlist oficial e checksum.
+- **Bitcoin vs. Imóveis:** simulador de comparação de valorização.
+- **O Último Bloco:** visualização de cenários de oferta de Bitcoin.
+- **Calculadora Taxa de Fuga:** estimativa de custos associados à mudança internacional.
+- **Tradutor de Novilíngua:** dicionário satírico interativo.
+- **HoraJusta:** ferramenta de registro de jornada e cálculo de horas.
+- **SaveSat:** comparação de taxas e spreads de saque.
+- **Lucro do Bitcoin:** simulador de preço médio, retorno e projeções patrimoniais.
+
+Alguns itens do catálogo estão em teste ou no roadmap; a página de ferramentas indica o estado de cada um.
+
+**[Explorar as ferramentas no site →](https://lordjunnior.com.br/ferramentas)**
+
 ## Decisões de implementação
 
 - **Conteúdo e interface trabalham juntos.** Os componentes interativos ajudam a revelar informação no contexto, sem exigir que tudo seja exibido de uma vez.
