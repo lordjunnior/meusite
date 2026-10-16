@@ -43,7 +43,7 @@ const BASE = 'https://lordjunnior.com.br';
 
 export const SEO_DATA: Record<string, SeoPageData> = {
   '/anula-rastro': {
-    title: 'Anula-Rastro: Remova Metadados de Imagens no Próprio Dispositivo',
+    title: 'Anula-Rastro: Remova Metadados de Fotos com Segurança',
     description: 'Reconstrua imagens JPG, PNG e WebP no navegador para reduzir metadados ocultos antes de publicar. Processamento local, sem upload intencional.',
     canonical: `${BASE}/anula-rastro`,
     primaryKeyword: 'remover metadados de imagens',
