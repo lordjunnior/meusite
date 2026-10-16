@@ -14,6 +14,7 @@ const Bitcoin = lazy(() => import("./pages/Bitcoin"));
 const Filosofia = lazy(() => import("./pages/Filosofia"));
 const Saida = lazy(() => import("./pages/Saida"));
 const Ferramentas = lazy(() => import("./pages/Ferramentas"));
+const AnulaRastro = lazy(() => import("./pages/AnulaRastro"));
 const Educacao = lazy(() => import("./pages/Educacao"));
 const BibliotecaTecnica = lazy(() => import("./pages/BibliotecaTecnica"));
 const CentroDeConhecimento = lazy(() => import("./pages/CentroDeConhecimento"));
@@ -260,6 +261,7 @@ const App = () => (
           <Route path="/filosofia" element={<Filosofia />} />
           <Route path="/saida" element={<Saida />} />
           <Route path="/saida/gateway" element={<Gateway />} />
+          <Route path="/anula-rastro" element={<AnulaRastro />} />
           <Route path="/ferramentas" element={<Ferramentas />} />
           <Route path="/ferramentas/:toolId" element={<Ferramentas />} />
           <Route path="/educacao" element={<Educacao />} />

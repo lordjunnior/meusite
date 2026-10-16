@@ -174,6 +174,18 @@ const TOOLS_LIST = [
     num: '10',
   },
   {
+    id: 'anula-rastro',
+    title: 'Anula-Rastro — Limpeza de Metadados',
+    badge: 'Privacidade Local',
+    desc: 'Reconstrua imagens no próprio navegador para reduzir metadados ocultos antes de publicar. Os arquivos não são enviados para um servidor pela ferramenta.',
+    cta: 'Higienizar Imagens',
+    accent: '#7bb69a',
+    icon: ShieldCheck,
+    component: null,
+    num: '11',
+    clientSide: true,
+  },
+  {
     id: 'dev',
     title: 'Próximas Ferramentas',
     badge: 'Roadmap',
@@ -423,6 +435,10 @@ const Ferramentas: React.FC = () => {
 
   const handleSetActive = useCallback((id: string | null) => {
     setIframeLoaded(false);
+    if (id === "anula-rastro") {
+      navigate("/anula-rastro");
+      return;
+    }
     if (id) {
       navigate(`/ferramentas/${id}`);
     } else {

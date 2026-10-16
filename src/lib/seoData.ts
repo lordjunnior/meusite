@@ -42,6 +42,19 @@ const BASE = 'https://lordjunnior.com.br';
 // ═══════════════════════════════════════════════════════
 
 export const SEO_DATA: Record<string, SeoPageData> = {
+  '/anula-rastro': {
+    title: 'Anula-Rastro: Remova Metadados de Fotos com Segurança',
+    description: 'Reconstrua imagens JPG, PNG e WebP no navegador para reduzir metadados ocultos antes de publicar. Processamento local, sem upload intencional.',
+    canonical: `${BASE}/anula-rastro`,
+    primaryKeyword: 'remover metadados de imagens',
+    lsiKeywords: ['limpar EXIF de fotos', 'remover GPS de imagem', 'privacidade de fotos', 'limpeza de metadados online', 'higienização de imagens', 'EXIF JPEG PNG WebP'],
+    longTailKeywords: ['como remover localização GPS de uma foto', 'remover metadados de imagens antes de publicar', 'limpar EXIF de imagem sem enviar para servidor'],
+    breadcrumbs: [{ name: 'Início', url: '/' }, { name: 'Anula-Rastro', url: '/anula-rastro' }],
+    schemaType: 'WebPage',
+    articleSection: 'Privacidade e segurança digital',
+    relatedPages: ['/privacidade', '/seguranca-mobile'],
+  },
+
   '/': {
     title: 'Lord Junnior — Soberania Individual: Bitcoin, Saúde e Liberdade',
     description: 'Pare de terceirizar sua vida. Do Bitcoin à medicina natural, ferramentas práticas para viver fora do cabresto do sistema. 97+ guias gratuitos.',
