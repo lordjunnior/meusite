@@ -92,7 +92,7 @@ export default function AnulaRastro() {
 
   const addFiles = useCallback((incoming: FileList | File[]) => {
     const next = Array.from(incoming).map((file): FileItem => {
-      const base = { id: `${file.name}-${file.size}-${file.lastModified}-${Math.random().toString(36).slice(2)}`, file, status: "ready" };
+      const base: FileItem = { id: `${file.name}-${file.size}-${file.lastModified}-${Math.random().toString(36).slice(2)}`, file, status: "ready" };
       if (file.size > MAX_FILE_BYTES) return { ...base, status: "unsupported", note: "Limite de 20 MB por arquivo." };
       if (!isSupported(file)) return { ...base, status: "unsupported", note: "Formato ainda não processado nesta versão. Nenhum dado foi alterado." };
       return base;
@@ -145,7 +145,7 @@ export default function AnulaRastro() {
   return (
     <main className="ar-page">
       <Helmet>
-        <title>Anula-Rastro: Remova Metadados de Imagens no Próprio Dispositivo</title>
+        <title>Anula-Rastro: Remova Metadados de Fotos com Segurança</title>
         <meta name="description" content="Reconstrua imagens JPG, PNG e WebP no navegador para reduzir metadados ocultos antes de publicar. Processamento local, sem envio de arquivos para um servidor." />
         <meta name="robots" content="index,follow,max-image-preview:large" />
         <link rel="canonical" href="https://lordjunnior.com.br/anula-rastro" />
